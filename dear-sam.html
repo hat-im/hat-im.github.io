@@ -196,35 +196,10 @@
             text-decoration: underline;
         }
         
-        .book-info {
-            display: flex;
-            align-items: flex-start;
-            margin: 20px 0;
-            gap: 20px;
-        }
-        
         @keyframes subtle-shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-2px); }
             75% { transform: translateX(2px); }
-        }
-
-        .book-cover {
-            width: 50px;
-            height: auto;
-            flex-shrink: 0;
-        }
-        
-        .book-text {
-            font-size: 14px;
-            line-height: 1.5;
-            font-style: italic;
-            text-align: left;
-        }
-        
-        .book-text a {
-            color: #000000;
-            text-decoration: underline;
         }
         
         .solution {
@@ -245,6 +220,76 @@
             font-weight: bold;
             margin: 10px 0;
             text-align: center;
+        }
+        
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .popup-content {
+            background-color: #ffffff;
+            border: 3px solid #000000;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        
+        .popup-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #8B2635;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .popup-message {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+        
+        .popup-hint {
+            font-size: 14px;
+            font-style: italic;
+            color: #666666;
+            margin-bottom: 25px;
+            border-top: 1px solid #cccccc;
+            padding-top: 15px;
+        }
+        
+        .popup-close {
+            background-color: #8B2635;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .popup-close:hover {
+            background-color: #a0303f;
         }
         
         @media (max-width: 600px) {
@@ -281,9 +326,6 @@
                 font-size: 12px;
             }
             
-            .book-text {
-                font-size: 12px;
-            }
             
             .letters-remaining h3 {
                 font-size: 14px;
@@ -293,7 +335,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="connect1ions.html" target="_blank" class="header-link">
+        <a href="connect1ons.html" target="_blank" class="header-link">
             <img src="https://murdle.com/crypt/header-crypt.png" alt="Escape the Crypt" onerror="this.style.display='none'; document.querySelector('.fallback-title').style.display='block';">
         </a>
         <div class="fallback-title" style="display: none;">
@@ -313,631 +355,29 @@
         <div class="line">
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="X" data-original="D" data-index="0" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="1" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="2" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="H" data-original="R" data-index="3" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">X</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">H</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="4" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="5" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="R" data-original="M" data-index="6" autocomplete="off">
-    <div class="punctuation-inline">,</div>
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">R</div>
-    <div class="empty-space"></div>
-  </div>
-</div>
-</div>
-<div class="line">
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="U" data-original="I" data-index="7" autocomplete="off">
-    <div class="punctuation-inline">'</div>
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="V" data-index="8" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="9" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">U</div>
-    <div class="empty-space"></div>
-    <div class="encrypted-letter">A</div>
-    <div class="encrypted-letter">V</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="O" data-original="B" data-index="10" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="11" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="12" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="T" data-original="N" data-index="13" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">O</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">T</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="14" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="15" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="16" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="17" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="K" data-index="18" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="19" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="20" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="G" data-index="21" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">P</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">B</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="22" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="O" data-original="B" data-index="23" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="24" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="25" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="26" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">O</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="27" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="J" data-original="F" data-index="28" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">J</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="29" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="30" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="D" data-index="31" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">X</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="32" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="33" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="K" data-original="W" data-index="34" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">K</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="35" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="E" data-original="O" data-index="36" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">E</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="H" data-original="R" data-index="37" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="38" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="39" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="40" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="41" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">H</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">W</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="42" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="E" data-original="O" data-index="43" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">E</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="Y" data-index="44" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="45" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="46" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="H" data-original="R" data-index="47" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">W</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">H</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="48" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="49" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="G" data-index="50" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="51" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="52" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="53" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="54" autocomplete="off">
-    <div class="punctuation-inline">.</div>
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">B</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">Q</div>
-    <div class="empty-space"></div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="55" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="56" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="57" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="58" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="G" data-index="59" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="60" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">B</div>
-    <div class="encrypted-letter">Q</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="61" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="62" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="V" data-index="63" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="64" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="T" data-original="N" data-index="65" autocomplete="off">
-    <div class="punctuation-inline">'</div>
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="66" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">A</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">T</div>
-    <div class="empty-space"></div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="O" data-original="B" data-index="67" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="68" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="69" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="T" data-original="N" data-index="70" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">O</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">T</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="I" data-original="Q" data-index="71" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="72" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="73" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="74" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="75" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="I" data-original="D" data-index="0" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="1" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="2" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="R" data-index="3" autocomplete="off">
   </div>
   <div class="encrypted-row">
     <div class="encrypted-letter">I</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">V</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="76" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="E" data-original="O" data-index="77" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">E</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="78" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="79" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="M" data-index="80" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="81" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="82" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="83" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">R</div>
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">V</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="84" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="85" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="86" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="87" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="88" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="89" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">S</div>
     <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">W</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="90" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="T" data-original="N" data-index="91" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">T</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="M" data-index="92" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="93" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">R</div>
-    <div class="encrypted-letter">W</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="94" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="95" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="D" data-index="96" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">X</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="97" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="98" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="D" data-index="99" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">X</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="U" data-original="I" data-index="100" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">U</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="X" data-original="D" data-index="101" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="102" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="103" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="O" data-original="B" data-index="104" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="105" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">X</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">O</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="106" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="107" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="108" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="109" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="110" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="111" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="G" data-index="112" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">B</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="M" data-index="113" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="114" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">R</div>
-    <div class="encrypted-letter">W</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="H" data-original="R" data-index="115" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="116" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="117" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="118" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="119" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="120" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="121" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="122" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">H</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">V</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="123" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="T" data-original="N" data-index="124" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">T</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="125" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="126" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="Z" data-index="127" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="Z" data-index="128" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="129" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="130" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="131" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">M</div>
     <div class="encrypted-letter">M</div>
     <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">Q</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="132" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="133" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">Q</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="G" data-index="134" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="135" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="136" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="137" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="F" data-original="A" data-index="138" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">B</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">F</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="139" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="140" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="141" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="C" data-original="P" data-index="142" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="4" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="5" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="U" data-original="M" data-index="6" autocomplete="off">
     <div class="punctuation-inline">,</div>
   </div>
   <div class="encrypted-row">
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">C</div>
-    <div class="empty-space"></div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="O" data-original="B" data-index="143" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="144" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="145" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">O</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="U" data-original="I" data-index="146" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">M</div>
     <div class="encrypted-letter">U</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="147" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Y" data-original="X" data-index="148" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="149" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="150" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="G" data-original="C" data-index="151" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="152" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">Y</div>
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">G</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="Y" data-index="153" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="154" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="N" data-original="U" data-index="155" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">W</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">N</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="M" data-index="156" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="157" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="G" data-index="158" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="159" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="160" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">R</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">B</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="161" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="162" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Z" data-original="J" data-index="163" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="164" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="165" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">Z</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">W</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="166" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="167" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="168" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">V</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="G" data-original="C" data-index="169" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="170" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="171" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="172" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="173" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="174" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="175" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="G" data-index="176" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="177" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="178" autocomplete="off">
-    <div class="punctuation-inline">.</div>
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">G</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">B</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">Q</div>
     <div class="empty-space"></div>
   </div>
 </div>
@@ -945,234 +385,794 @@
 <div class="line">
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="179" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="180" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="V" data-index="181" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="182" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="L" data-original="I" data-index="7" autocomplete="off">
   </div>
   <div class="encrypted-row">
     <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">A</div>
-    <div class="encrypted-letter">V</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="J" data-original="F" data-index="183" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="184" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="T" data-original="N" data-index="185" autocomplete="off">
-    <div class="punctuation-inline">,</div>
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="8" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="9" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="10" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="11" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="X" data-original="G" data-index="12" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="13" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="14" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">X</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="15" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="B" data-index="16" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="17" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="18" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="19" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">Q</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="W" data-index="20" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="21" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="22" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="23" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="24" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="25" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="R" data-index="26" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">D</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">S</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="27" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="28" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="I" data-original="D" data-index="29" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">I</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="30" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="31" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="W" data-index="32" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">D</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="L" data-original="I" data-index="33" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">L</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="34" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="35" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="36" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="37" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="38" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="I" data-original="D" data-index="39" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">I</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="R" data-index="40" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="41" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="P" data-index="42" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="43" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Z" data-original="Y" data-index="44" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">S</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">E</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">Z</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="45" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="K" data-original="O" data-index="46" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">K</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Z" data-original="Y" data-index="47" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="48" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="49" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="R" data-index="50" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">Z</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">S</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="M" data-index="51" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="52" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="53" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="54" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="55" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="X" data-original="G" data-index="56" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="57" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="58" autocomplete="off">
+    <div class="punctuation-inline">.</div>
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">U</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">X</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">P</div>
+    <div class="empty-space"></div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="L" data-original="I" data-index="59" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">L</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="J" data-original="C" data-index="60" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="61" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="62" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="G" data-original="F" data-index="63" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="64" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="65" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="66" autocomplete="off">
   </div>
   <div class="encrypted-row">
     <div class="encrypted-letter">J</div>
-    <div class="encrypted-letter">N</div>
-    <div class="encrypted-letter">T</div>
-    <div class="empty-space"></div>
-  </div>
-</div>
-</div>
-<div class="line">
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="186" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="187" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="188" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">F</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-</div>
-<div class="line">
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="C" data-original="P" data-index="189" autocomplete="off">
-    <div class="punctuation-inline">.</div>
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="190" autocomplete="off">
-    <div class="punctuation-inline">.</div>
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">C</div>
-    <div class="empty-space"></div>
-    <div class="encrypted-letter">Q</div>
-    <div class="empty-space"></div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="191" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="192" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="G" data-original="C" data-index="193" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="194" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">B</div>
     <div class="encrypted-letter">G</div>
-    <div class="encrypted-letter">V</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">P</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="Y" data-index="195" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="196" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="N" data-original="U" data-index="197" autocomplete="off">
-    <div class="punctuation-inline">'</div>
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="V" data-index="198" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="V" data-original="E" data-index="199" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="67" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="68" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="69" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="70" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="X" data-original="G" data-index="71" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="72" autocomplete="off">
   </div>
   <div class="encrypted-row">
     <div class="encrypted-letter">W</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">N</div>
-    <div class="empty-space"></div>
-    <div class="encrypted-letter">A</div>
-    <div class="encrypted-letter">V</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="200" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="201" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="202" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="V" data-index="203" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="204" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="D" data-index="205" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">A</div>
-    <div class="encrypted-letter">V</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">B</div>
     <div class="encrypted-letter">X</div>
+    <div class="encrypted-letter">P</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="206" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="207" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="208" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Q" data-original="S" data-index="209" autocomplete="off">
-    <div class="punctuation-inline">,</div>
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="73" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="74" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="V" data-index="75" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="76" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="N" data-index="77" autocomplete="off">
+    <div class="punctuation-inline">'</div>
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="78" autocomplete="off">
   </div>
   <div class="encrypted-row">
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">Q</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">C</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">B</div>
     <div class="empty-space"></div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="210" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="O" data-index="211" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="T" data-index="212" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">T</div>
-    <div class="encrypted-letter">E</div>
-    <div class="encrypted-letter">D</div>
-  </div>
-</div>
-<div class="word-group">
-  <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="213" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="V" data-index="214" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="215" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="H" data-original="R" data-index="216" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="Y" data-index="217" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="218" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="H" data-index="219" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="220" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="N" data-index="221" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="G" data-index="222" autocomplete="off">
-  </div>
-  <div class="encrypted-row">
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">A</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">H</div>
     <div class="encrypted-letter">W</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">L</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">T</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="B" data-index="79" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="80" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="81" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="N" data-index="82" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">Q</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">F</div>
     <div class="encrypted-letter">B</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="W" data-index="223" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="224" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="225" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="L" data-index="226" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="O" data-original="Q" data-index="83" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="84" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="85" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="86" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="F" data-original="E" data-index="87" autocomplete="off">
   </div>
   <div class="encrypted-row">
+    <div class="encrypted-letter">O</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">F</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="88" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="K" data-original="O" data-index="89" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">K</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="90" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="91" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="M" data-index="92" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="P" data-index="93" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="94" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="F" data-original="E" data-index="95" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">U</div>
+    <div class="encrypted-letter">E</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">F</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="96" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="97" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="98" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="99" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="100" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Z" data-original="Y" data-index="101" autocomplete="off">
+    <div class="punctuation-inline">,</div>
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">Z</div>
+    <div class="empty-space"></div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="B" data-index="102" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="103" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="104" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">Q</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="L" data-original="I" data-index="105" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">L</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="I" data-original="D" data-index="106" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="107" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="N" data-index="108" autocomplete="off">
+    <div class="punctuation-inline">'</div>
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="109" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">I</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">B</div>
+    <div class="empty-space"></div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="K" data-index="110" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="111" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="112" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="W" data-index="113" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">V</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">D</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="114" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="115" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="W" data-index="116" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">D</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="117" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="K" data-original="O" data-index="118" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">K</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="119" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="120" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="121" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="R" data-original="L" data-index="122" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">R</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Z" data-original="Y" data-index="123" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="124" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="N" data-original="U" data-index="125" autocomplete="off">
+    <div class="punctuation-inline">.</div>
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">Z</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">N</div>
+    <div class="empty-space"></div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="126" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="127" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="R" data-index="128" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">S</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="I" data-original="D" data-index="129" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="K" data-original="O" data-index="130" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">I</div>
+    <div class="encrypted-letter">K</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="L" data-original="I" data-index="131" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">L</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="K" data-index="132" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="133" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="134" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="D" data-original="W" data-index="135" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">V</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">D</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="W" data-index="136" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="137" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="138" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="139" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">D</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="L" data-original="I" data-index="140" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">L</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="141" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Y" data-original="X" data-index="142" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="P" data-index="143" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="144" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="J" data-original="C" data-index="145" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="146" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">Y</div>
+    <div class="encrypted-letter">E</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">J</div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="G" data-original="F" data-index="147" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="R" data-index="148" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="149" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="U" data-original="M" data-index="150" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">G</div>
+    <div class="encrypted-letter">S</div>
     <div class="encrypted-letter">K</div>
     <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">S</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="227" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="228" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="A" data-index="229" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="230" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="P" data-index="151" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="152" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="153" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="154" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="155" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="156" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="G" data-index="157" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">E</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">X</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="158" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="159" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="160" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="161" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">P</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="162" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="B" data-original="N" data-index="163" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">B</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="E" data-original="P" data-index="164" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="165" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="Z" data-index="166" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="A" data-original="Z" data-index="167" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="168" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="169" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="170" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">E</div>
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">A</div>
+    <div class="encrypted-letter">A</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">P</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="171" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="172" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="173" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="174" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="175" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="R" data-index="176" autocomplete="off">
+    <div class="punctuation-inline">,</div>
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">S</div>
+    <div class="empty-space"></div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="B" data-index="177" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="178" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="179" autocomplete="off">
   </div>
   <div class="encrypted-row">
     <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">N</div>
     <div class="encrypted-letter">W</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="P" data-index="231" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="232" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="H" data-original="R" data-index="233" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="J" data-original="F" data-index="234" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="V" data-original="E" data-index="235" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="G" data-original="C" data-index="236" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="237" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="238" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="Y" data-index="239" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="180" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="181" autocomplete="off">
   </div>
   <div class="encrypted-row">
-    <div class="encrypted-letter">C</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">H</div>
-    <div class="encrypted-letter">J</div>
-    <div class="encrypted-letter">V</div>
-    <div class="encrypted-letter">G</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">S</div>
+    <div class="encrypted-letter">M</div>
     <div class="encrypted-letter">W</div>
   </div>
 </div>
 <div class="word-group">
   <div class="input-row">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="Q" data-original="S" data-index="240" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="T" data-index="241" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="I" data-index="242" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input" data-encrypted="S" data-original="L" data-index="243" autocomplete="off">
-    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="S" data-original="L" data-index="244" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="182" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="183" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="184" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="185" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="186" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">W</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="187" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="188" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="189" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="190" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">P</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="D" data-original="W" data-index="191" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="192" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Z" data-original="Y" data-index="193" autocomplete="off">
+    <div class="punctuation-inline">,</div>
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">D</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">Z</div>
+    <div class="empty-space"></div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="194" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="195" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="U" data-original="M" data-index="196" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="197" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="198" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="199" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="200" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="201" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="G" data-index="202" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">U</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">X</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="203" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="204" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="I" data-original="D" data-index="205" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="P" data-original="S" data-index="206" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">I</div>
+    <div class="encrypted-letter">P</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="N" data-original="U" data-index="207" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="E" data-original="P" data-index="208" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">N</div>
+    <div class="encrypted-letter">E</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="X" data-original="G" data-index="209" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="210" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="211" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="W" data-original="T" data-index="212" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="L" data-original="I" data-index="213" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="214" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="X" data-original="G" data-index="215" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">X</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">W</div>
+    <div class="encrypted-letter">L</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">X</div>
+  </div>
+</div>
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="P" data-original="S" data-index="216" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="217" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="R" data-original="L" data-index="218" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="C" data-original="V" data-index="219" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="220" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="I" data-original="D" data-index="221" autocomplete="off">
     <div class="punctuation-inline">.</div>
   </div>
   <div class="encrypted-row">
-    <div class="encrypted-letter">Q</div>
-    <div class="encrypted-letter">D</div>
-    <div class="encrypted-letter">U</div>
-    <div class="encrypted-letter">S</div>
-    <div class="encrypted-letter">S</div>
+    <div class="encrypted-letter">P</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">R</div>
+    <div class="encrypted-letter">C</div>
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">I</div>
     <div class="empty-space"></div>
+  </div>
+</div>
+</div>
+<div class="line">
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="F" data-original="E" data-index="222" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="B" data-original="N" data-index="223" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="H" data-original="J" data-index="224" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="K" data-original="O" data-index="225" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="Z" data-original="Y" data-index="226" autocomplete="off">
+    <div class="punctuation-inline">,</div>
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">F</div>
+    <div class="encrypted-letter">B</div>
+    <div class="encrypted-letter">H</div>
+    <div class="encrypted-letter">K</div>
+    <div class="encrypted-letter">Z</div>
+    <div class="empty-space"></div>
+  </div>
+</div>
+</div>
+<div class="line">
+<div class="word-group">
+  <div class="input-row">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="T" data-original="H" data-index="227" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input" data-encrypted="M" data-original="A" data-index="228" autocomplete="off">
+    <input type="text" maxlength="1" class="letter-input last-alpha" data-encrypted="W" data-original="T" data-index="229" autocomplete="off">
+  </div>
+  <div class="encrypted-row">
+    <div class="encrypted-letter">T</div>
+    <div class="encrypted-letter">M</div>
+    <div class="encrypted-letter">W</div>
   </div>
 </div>
 </div>
@@ -1193,16 +1193,23 @@
         </div>
     </div>
     
-    <div class="book-info">
-        <img src="book-cover.jpg" alt="Murdle Book" class="book-cover" onerror="this.style.display='none';">
-        <div class="book-text">
-            <em>Escape the Crypt</em> is a clone of the puzzle by <em>Murdle: Killer Puzzles</em>. 
-            You can get your copy in bookstores everywhere or online!
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-title">Puzzle Solved!</div>
+            <div class="popup-message">
+                Congratulations! You've decrypted the message and escaped this crypt.<br><br>
+                But wait... there's a way out to continue your adventure, but you'll need to find it yourself.
+            </div>
+            <div class="popup-hint">
+                <em>The header bears witness to your success. Look closely.</em>
+            </div>
+            <button class="popup-close" onclick="closePopup()">Continue Exploring</button>
         </div>
     </div>
 
     <script>
-        const correctMapping = {"F": "A", "O": "B", "G": "C", "X": "D", "V": "E", "J": "F", "B": "G", "L": "H", "U": "I", "Z": "J", "P": "K", "S": "L", "R": "M", "T": "N", "E": "O", "C": "P", "I": "Q", "H": "R", "Q": "S", "D": "T", "N": "U", "A": "V", "K": "W", "Y": "X", "W": "Y", "M": "Z"};
+        const correctMapping = {"M": "A", "Q": "B", "J": "C", "I": "D", "F": "E", "G": "F", "X": "G", "T": "H", "L": "I", "H": "J", "V": "K", "R": "L", "U": "M", "B": "N", "K": "O", "E": "P", "O": "Q", "S": "R", "P": "S", "W": "T", "N": "U", "C": "V", "D": "W", "Y": "X", "Z": "Y", "A": "Z"};
         const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let currentSelected = null;
         let puzzleSolved = false;
@@ -1235,6 +1242,51 @@
             return null;
         }
         
+        function getPreviousEmptyInput(currentInput) {
+            const allInputs = Array.from(document.querySelectorAll('.letter-input'));
+            const currentIndex = parseInt(currentInput.dataset.index);
+            
+            // Check if all inputs are filled
+            const allFilled = allInputs.every(input => input.value.trim() !== '');
+            if (allFilled) {
+                // If all filled, behave like left arrow
+                return getPreviousInput(currentInput);
+            }
+            
+            // Find the previous empty input by index (closest one with lower index)
+            let previousEmptyInput = null;
+            let closestIndex = -1;
+            for (let input of allInputs) {
+                const inputIndex = parseInt(input.dataset.index);
+                if (inputIndex < currentIndex && input.value.trim() === '' && inputIndex > closestIndex) {
+                    previousEmptyInput = input;
+                    closestIndex = inputIndex;
+                }
+            }
+            return previousEmptyInput;
+        }
+        
+        function getNextEmptyInput(currentInput) {
+            const allInputs = Array.from(document.querySelectorAll('.letter-input'));
+            const currentIndex = parseInt(currentInput.dataset.index);
+            
+            // Check if all inputs are filled
+            const allFilled = allInputs.every(input => input.value.trim() !== '');
+            if (allFilled) {
+                // If all filled, behave like right arrow
+                return getNextInput(currentInput);
+            }
+            
+            // Find the next empty input by index
+            for (let input of allInputs) {
+                const inputIndex = parseInt(input.dataset.index);
+                if (inputIndex > currentIndex && input.value.trim() === '') {
+                    return input;
+                }
+            }
+            return null;
+        }
+        
         function toggleHowToSolve() {
             const link = document.getElementById('how-to-link');
             const text = document.getElementById('how-to-text');
@@ -1246,6 +1298,16 @@
                 link.style.display = 'inline';
                 text.style.display = 'none';
             }
+        }
+        
+        function showPopup() {
+            const popup = document.getElementById('popup-overlay');
+            popup.style.display = 'flex';
+        }
+        
+        function closePopup() {
+            const popup = document.getElementById('popup-overlay');
+            popup.style.display = 'none';
         }
         
         function checkForDuplicates() {
@@ -1332,6 +1394,11 @@
 
                 // Enable and animate the book cover link and header link
                 document.querySelector('.header-link').classList.add('enabled');
+                
+                // Show the popup after a short delay
+                setTimeout(() => {
+                    showPopup();
+                }, 500);
             }, 1000);
         }
         
@@ -1415,19 +1482,23 @@
                     this.value = ''; // Clear existing value to allow replacement
                 }
                 
-                // Allow navigation with arrow keys to next/previous input
-                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                // Allow navigation with arrow keys
+                if (e.key === 'ArrowLeft' || e.key === 'ArrowRight' || e.key === 'ArrowUp' || e.key === 'ArrowDown') {
                     e.preventDefault();
+                    let targetInput = null;
+                    
                     if (e.key === 'ArrowRight') {
-                        const nextInput = getNextInput(this);
-                        if (nextInput) {
-                            nextInput.focus();
-                        }
+                        targetInput = getNextInput(this);
                     } else if (e.key === 'ArrowLeft') {
-                        const previousInput = getPreviousInput(this);
-                        if (previousInput) {
-                            previousInput.focus();
-                        }
+                        targetInput = getPreviousInput(this);
+                    } else if (e.key === 'ArrowDown') {
+                        targetInput = getNextEmptyInput(this);
+                    } else if (e.key === 'ArrowUp') {
+                        targetInput = getPreviousEmptyInput(this);
+                    }
+                    
+                    if (targetInput) {
+                        targetInput.focus();
                     }
                 }
                 

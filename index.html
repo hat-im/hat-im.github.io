@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Pocketful of Puzzles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Times New Roman', serif;
-            max-width: 700px;
+            font-family: 'Crimson Text', 'Georgia', 'Playfair Display', serif;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #fefefe;
-            line-height: 1.6;
-            color: #2c2c2c;
+            padding: 20px 30px;
+            background: #fefefe;
+            line-height: 1.7;
+            color: #1e293b;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
@@ -23,33 +26,37 @@
         
         .header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 30px;
         }
         
         .header h1 {
-            font-family: 'Georgia', serif;
+            font-family: 'Playfair Display', 'Georgia', serif;
             font-size: 36px;
-            font-weight: 400;
-            letter-spacing: 1px;
-            margin: 20px 0 15px 0;
-            color: #1a1a1a;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin: 15px 0 18px 0;
+            color: #0f172a;
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .header p {
-            font-size: 18px;
-            font-style: italic;
-            color: #555;
-            margin-bottom: 8px;
-            font-weight: 300;
+            font-size: 20px;
+            font-weight: 400;
+            color: #64748b;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
         
         .dedication {
-            font-size: 13px;
+            font-size: 14px;
             font-style: italic;
-            color: #999;
-            margin-top: 0;
-            letter-spacing: 1px;
-            font-weight: 300;
+            color: #94a3b8;
+            margin-top: 8px;
+            letter-spacing: 1.5px;
+            font-weight: 400;
         }
         
         .welcome-content {
@@ -58,41 +65,46 @@
         }
         
         .welcome-message {
-            font-size: 17px;
-            margin: 40px 0;
+            font-size: 18px;
+            margin: 30px 0;
             line-height: 1.8;
-            color: #444;
+            color: #475569;
             font-weight: 400;
         }
         
         .entry-button {
-            background-color: #2c2c2c;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
-            border: 1px solid #2c2c2c;
-            padding: 15px 35px;
-            font-family: 'Georgia', serif;
+            border: none;
+            border-radius: 12px;
+            padding: 18px 40px;
+            font-family: 'Crimson Text', 'Georgia', serif;
             font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            margin: 30px 0;
-            transition: all 0.3s ease;
-            letter-spacing: 1px;
+            margin: 24px 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15), 0 2px 4px rgba(15, 23, 42, 0.1);
         }
         
         .entry-button:hover {
-            background-color: white;
-            color: #2c2c2c;
-            border: 1px solid #2c2c2c;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25), 0 4px 8px rgba(15, 23, 42, 0.15);
         }
         
         .countdown {
-            font-size: 14px;
-            font-style: italic;
-            margin-top: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            margin-top: 24px;
             opacity: 0;
             transition: opacity 0.5s ease;
-            color: #666;
+            color: #64748b;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
         }
         
         .countdown.show {
@@ -100,23 +112,31 @@
         }
         
         .footer-text {
-            font-size: 13px;
-            line-height: 1.6;
-            margin: 50px 0 20px 0;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 30px 0 20px 0;
             text-align: center;
-            color: #777;
+            color: #94a3b8;
             font-style: italic;
-            font-weight: 300;
+            font-weight: 400;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        
+        .footer-text.fade-out {
+            opacity: 0;
+            transform: translateY(-10px);
         }
         
         .footer-text a {
-            color: #2c2c2c;
+            color: #475569;
             text-decoration: none;
-            border-bottom: 1px dotted #2c2c2c;
+            border-bottom: 1px dotted #94a3b8;
+            transition: all 0.2s ease;
         }
         
         .footer-text a:hover {
-            border-bottom: 1px solid #2c2c2c;
+            color: #1e293b;
+            border-bottom: 1px solid #475569;
         }
         
         @keyframes fadeIn {
@@ -129,8 +149,46 @@
         }
         
         @media (max-width: 600px) {
+            body {
+                padding: 15px 20px;
+            }
+            
+            .header h1 {
+                font-size: 36px;
+            }
+            
+            .header p {
+                font-size: 18px;
+            }
+            
+            .welcome-message {
+                font-size: 17px;
+                margin: 20px 0;
+            }
+            
+            .entry-button {
+                padding: 16px 32px;
+                font-size: 15px;
+            }
+            
+            .countdown {
+                font-size: 14px;
+                padding: 10px 16px;
+            }
+            
+            .footer-text {
+                font-size: 13px;
+                margin: 20px 0 15px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .header h1 {
                 font-size: 32px;
+            }
+            
+            .header p {
+                font-size: 16px;
             }
             
             .welcome-message {
@@ -138,12 +196,8 @@
             }
             
             .entry-button {
-                padding: 12px 28px;
-                font-size: 15px;
-            }
-            
-            .footer-text {
-                font-size: 13px;
+                padding: 14px 28px;
+                font-size: 14px;
             }
         }
     </style>
@@ -157,13 +211,14 @@
     
     <div class="welcome-content">
         <div class="welcome-message">
-            Does asynchronous puzzle communication count as no contact?<br><br>
-            
-            There are a few of them here.<br>
-            Good luck.
+            I've crafted a few puzzles here for you.<br>
+            I hope you enjoy them.<br><br>
+            Put your thinking hat on.<br>
+            Have some hot chocolate.<br>
+            Play some music.
         </div>
         
-        <button class="entry-button" onclick="enterPuzzles()">
+        <button class="entry-button" onclick="enterPuzzles(true)">
             Begin
         </button>
         
@@ -173,15 +228,29 @@
     </div>
     
     <div class="footer-text">
-        Take your time with them.<br>
-        Though time has a way of feeling both endless and fleeting.
+        Take your time with these.<br>
+        (Does asynchronous puzzle communication count as no contact?)
     </div>
 
     <script>
         let countdownTimer;
         let timeLeft = 5;
+        let userClicked = false;
         
-        function enterPuzzles() {
+        function animateFooterChange(newText, callback) {
+            const footer = document.querySelector('.footer-text');
+            footer.classList.add('fade-out');
+            
+            setTimeout(() => {
+                footer.innerHTML = newText;
+                footer.classList.remove('fade-out');
+                if (callback) callback();
+            }, 400);
+        }
+        
+        function enterPuzzles(clickedByUser = false) {
+            userClicked = clickedByUser;
+            
             // Disable the button
             const button = document.querySelector('.entry-button');
             button.disabled = true;
@@ -189,37 +258,51 @@
             button.style.cursor = 'not-allowed';
             button.textContent = 'Starting...';
             
-            // Change footer message first
-            const footer = document.querySelector('.footer-text');
-            footer.innerHTML = 'Okay maybe not *that much* time...';
+            if (userClicked) {
+                // User clicked sequence
+                animateFooterChange('Perfect timing.', () => {
+                    setTimeout(() => {
+                        animateFooterChange('Let\'s get started then.', () => {
+                            setTimeout(() => {
+                                showCountdown();
+                            }, 2500);
+                        });
+                    }, 2000);
+                });
+            } else {
+                // Auto-redirect sequence
+                animateFooterChange('Okay, maybe not <em>that</em> much time...', () => {
+                    setTimeout(() => {
+                        animateFooterChange('Alright, I\'ll just redirect you myself.', () => {
+                            setTimeout(() => {
+                                showCountdown();
+                            }, 2500);
+                        });
+                    }, 3500);
+                });
+            }
+        }
+        
+        function showCountdown() {
+            const countdown = document.getElementById('countdown');
+            countdown.classList.add('show');
             
-            // After 4 seconds, change it again
-            setTimeout(() => {
-                footer.innerHTML = 'Fine, I\'ll do it myself.';
-            }, 4000);
-            
-            // Show countdown after the second message change
-            setTimeout(() => {
-                const countdown = document.getElementById('countdown');
-                countdown.classList.add('show');
+            // Start countdown
+            countdownTimer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').textContent = timeLeft;
                 
-                // Start countdown
-                countdownTimer = setInterval(() => {
-                    timeLeft--;
-                    document.getElementById('timer').textContent = timeLeft;
-                    
-                    if (timeLeft <= 0) {
-                        clearInterval(countdownTimer);
-                        window.location.href = 'dear-sam.html';
-                    }
-                }, 1000);
-            }, 7000);
+                if (timeLeft <= 0) {
+                    clearInterval(countdownTimer);
+                    window.location.href = 'dear-sam.html';
+                }
+            }, 1000);
         }
         
         // Optional: Auto-redirect after 30 seconds of inactivity
         setTimeout(() => {
-            if (timeLeft === 5) { // If user hasn't clicked the button
-                enterPuzzles();
+            if (timeLeft === 5 && !userClicked) { // If user hasn't clicked the button
+                enterPuzzles(false);
             }
         }, 30000);
         
@@ -228,7 +311,7 @@
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 if (timeLeft === 5) { // Only if countdown hasn't started
-                    enterPuzzles();
+                    enterPuzzles(true);
                 }
             }
         });
