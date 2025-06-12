@@ -2130,6 +2130,7 @@
         mobileInput.autocorrect = "off";
         mobileInput.autocapitalize = "characters";
         mobileInput.spellcheck = false;
+        mobileInput.maxLength = 1;
 
         document.body.appendChild(mobileInput);
 
@@ -2137,8 +2138,11 @@
           const value = e.target.value.toUpperCase();
           if (value && /^[A-Z]$/.test(value)) {
             addLetter(value);
-            mobileInput.value = ""; // Clear after processing
           }
+          // Keep input empty but maintain focus
+          setTimeout(() => {
+            mobileInput.value = "";
+          }, 10);
         });
 
         mobileInput.addEventListener("keydown", function (e) {
@@ -2149,6 +2153,60 @@
             e.preventDefault();
             deleteLetter();
           }
+        });
+
+        // Prevent blur on mobile
+        mobileInput.addEventListener("blur", function (e) {
+          if (!isWordComplete && !isWordFailed && !cooldownActive) {
+            setTimeout(() => {
+              if (mobileInput && document.activeElement !== mobileInput) {
+                mobileInput.focus();
+              }
+            }, 100);
+          }
+        });
+      }
+
+      // Focus mobile input when game area is tapped
+      document.addEventListener("touchstart", function (e) {
+        if (!mobileInput) createMobileInput();
+
+        // Only focus if we're not in a completed/failed state
+        if (!isWordComplete && !isWordFailed && !cooldownActive) {
+          e.preventDefault(); // Prevent other touch behaviors
+          mobileInput.focus();
+
+          // Force focus again after a short delay
+          setTimeout(() => {
+            if (
+              mobileInput &&
+              !isWordComplete &&
+              !isWordFailed &&
+              !cooldownActive
+            ) {
+              mobileInput.focus();
+            }
+          }, 100);
+        }
+      });
+
+      // Keep focus when user interacts with the game
+      document.addEventListener("click", function (e) {
+        if (!mobileInput) createMobileInput();
+
+        if (!isWordComplete && !isWordFailed && !cooldownActive) {
+          setTimeout(() => {
+            if (mobileInput) {
+              mobileInput.focus();
+            }
+          }, 50);
+        }
+      });
+
+      // Create mobile input on load for mobile devices
+      if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+        document.addEventListener("DOMContentLoaded", function () {
+          createMobileInput();
         });
       }
 
