@@ -816,8 +816,20 @@
           guesses: 5,
           max_score: 100,
         },
-        { word: "ONE", punctuation: "", length: 3, guesses: 10, max_score: 90 },
-        { word: "TWO", punctuation: "", length: 3, guesses: 10, max_score: 90 },
+        {
+          word: "ONE",
+          punctuation: "",
+          length: 3,
+          guesses: 10,
+          max_score: 90,
+        },
+        {
+          word: "TWO",
+          punctuation: "",
+          length: 3,
+          guesses: 10,
+          max_score: 90,
+        },
         {
           word: "THREE",
           punctuation: "!",
@@ -1112,10 +1124,7 @@
         }
       }
       function calculateCooldownDuration(failedAttempts) {
-        // Fixed 1-hour cooldown for any failure
-        // For testing, you can change this to a shorter duration like 10 seconds:
-        return 10; // 10 seconds for testing
-        // return 60 * 60; // 3600 seconds = 1 hour
+        return 10 * 60; // 10 minutes
       }
       function updateTitle() {
         const titleElement = document.querySelector("h1");
