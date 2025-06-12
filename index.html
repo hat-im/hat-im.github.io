@@ -1,7 +1,4 @@
-.device-note {
-                font-size: 6px;
-                margin-top: 6px;
-            }<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -281,7 +278,7 @@
         }
         
         .entry-button {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(135deg, #8b5c44 0%, #a0824a 100%);
             color: white;
             border: none;
             border-radius: 14px;
@@ -294,8 +291,8 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             letter-spacing: 0.8px;
             box-shadow: 
-                0 4px 16px rgba(15, 23, 42, 0.2), 
-                0 2px 8px rgba(15, 23, 42, 0.15),
+                0 4px 16px rgba(139, 92, 68, 0.2), 
+                0 2px 8px rgba(139, 92, 68, 0.15),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
@@ -317,11 +314,11 @@
         }
         
         .entry-button:hover {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            background: linear-gradient(135deg, #a0824a 0%, #b89660 100%);
             transform: translateY(-3px);
             box-shadow: 
-                0 8px 32px rgba(15, 23, 42, 0.3), 
-                0 4px 16px rgba(15, 23, 42, 0.2),
+                0 8px 32px rgba(139, 92, 68, 0.3), 
+                0 4px 16px rgba(139, 92, 68, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.15);
         }
         
@@ -985,17 +982,12 @@
                 // Add a simple celebration effect
                 setTimeout(() => {
                     const button = document.querySelector('.entry-button');
-                    button.style.background = 'linear-gradient(135deg, #a0824a 0%, #b89660 100%)';
                     button.textContent = 'Begin Your Adventure';
-                    setTimeout(() => {
-                        button.style.background = 'linear-gradient(135deg, #8b5c44 0%, #a0824a 100%)';
-                    }, 2000);
                 }, 500);
             } else {
                 document.getElementById('surpriseMessage').classList.remove('show');
                 const button = document.querySelector('.entry-button');
-                button.style.background = 'linear-gradient(135deg, #8b5c44 0%, #a0824a 100%)';
-                button.textContent = 'Begin Journey';
+                button.textContent = 'I am ready to begin';
             }
         }
 
