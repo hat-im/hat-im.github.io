@@ -6,7 +6,7 @@
     <meta name="description" content="A mobile-optimized Wordle-style word guessing game" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <title>Wordle Mobile</title>
+    <title>Wordle++</title>
     <style>
       /* Mobile-First Dark Mode Wordle Color Scheme */
       :root {
@@ -343,6 +343,22 @@
         animation: titleMorph 1.5s var(--ease-bounce) forwards;
       }
 
+      .title-s.shaking {
+        animation: titleShake 0.8s ease-in-out infinite;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .title-s.shaking:hover {
+        color: var(--color-correct);
+        transform: scale(1.1);
+      }
+
+      .title-s.shaking:active {
+        transform: scale(0.95);
+        color: var(--color-present);
+      }
+
       @keyframes titleMorph {
         0% {
           opacity: 0;
@@ -363,6 +379,39 @@
           opacity: 1;
           transform: translateY(0) scale(1) rotate(0deg);
           filter: blur(0px);
+        }
+      }
+
+      @keyframes titleShake {
+        0%, 100% {
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        20% {
+          transform: translateX(2px) rotate(1deg);
+        }
+        30% {
+          transform: translateX(-3px) rotate(-2deg);
+        }
+        40% {
+          transform: translateX(3px) rotate(2deg);
+        }
+        50% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        60% {
+          transform: translateX(2px) rotate(1deg);
+        }
+        70% {
+          transform: translateX(-1px) rotate(-0.5deg);
+        }
+        80% {
+          transform: translateX(1px) rotate(0.5deg);
+        }
+        90% {
+          transform: translateX(-0.5px) rotate(-0.25deg);
         }
       }
 
@@ -1979,9 +2028,40 @@
         const avgGuesses = gameStats.totalGuesses / Math.max(gameStats.wordsCompleted, 1);
         const accuracy = Math.round((gameStats.wordsCompleted / (gameStats.wordsCompleted + gameStats.wordsFailed)) * 100);
 
+        // Start shaking the 's' and make it clickable
+        startTitleShaking();
+
         localStorage.setItem("wordle_completed", "true");
         showCongratulationsPopup(completionRate, avgGuesses, accuracy);
         localStorage.removeItem("wordleGameState");
+      }
+
+      function startTitleShaking() {
+        const titleS = document.getElementById("title-s");
+        if (titleS && hasCompletedFirstWord) {
+          titleS.classList.add("shaking");
+          
+          // Add click/tap event listener for navigation
+          const handleNavigation = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Add a brief color change feedback
+            titleS.style.color = 'var(--color-correct)';
+            setTimeout(() => {
+              titleS.style.color = '';
+              window.location.href = 'connect1ons.html';
+            }, 150);
+          };
+          
+          // Remove any existing listeners first
+          titleS.removeEventListener('click', handleNavigation);
+          titleS.removeEventListener('touchend', handleNavigation);
+          
+          // Add both click and touch events for cross-platform compatibility
+          titleS.addEventListener('click', handleNavigation);
+          titleS.addEventListener('touchend', handleNavigation);
+        }
       }
 
       function saveGameProgress() {

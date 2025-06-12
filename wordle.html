@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A Wordle-style word guessing game" />
-    <title>Wordle Game</title>
+    <title>Wordle++</title>
     <script>
       // Mobile detection and redirect script
       (function() {
@@ -347,6 +347,23 @@
       .title-s.morphing {
         animation: titleMorph 1.5s var(--ease-bounce) forwards;
       }
+
+      .title-s.shaking {
+        animation: titleShake 0.8s ease-in-out infinite;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .title-s.shaking:hover {
+        color: var(--color-correct);
+        transform: scale(1.1);
+      }
+
+      .title-s.shaking:active {
+        transform: scale(0.95);
+        color: var(--color-present);
+      }
+
       @keyframes titleMorph {
         0% {
           opacity: 0;
@@ -367,6 +384,39 @@
           opacity: 1;
           transform: translateY(0) scale(1) rotate(0deg);
           filter: blur(0px);
+        }
+      }
+
+      @keyframes titleShake {
+        0%, 100% {
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        20% {
+          transform: translateX(2px) rotate(1deg);
+        }
+        30% {
+          transform: translateX(-3px) rotate(-2deg);
+        }
+        40% {
+          transform: translateX(3px) rotate(2deg);
+        }
+        50% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        60% {
+          transform: translateX(2px) rotate(1deg);
+        }
+        70% {
+          transform: translateX(-1px) rotate(-0.5deg);
+        }
+        80% {
+          transform: translateX(1px) rotate(0.5deg);
+        }
+        90% {
+          transform: translateX(-0.5px) rotate(-0.25deg);
         }
       }
       .punctuation {
@@ -813,9 +863,9 @@
     </div>
     <div id="continue-game-popup" class="continue-game-popup hidden">
       <div class="popup-content">
-        <div class="popup-title">Welcome Back</div>
+        <div class="popup-title">Hello again</div>
         <div class="popup-message">
-          Would you like to continue where you left off or start a new game?
+          Do you want to start a new game, or continue where you left?
         </div>
         <div class="popup-buttons">
           <button class="popup-button primary" id="continue-game-btn">
@@ -828,7 +878,7 @@
     <div id="toast" class="toast"></div>
     <div id="congratulations-popup" class="continue-game-popup hidden">
       <div class="popup-content">
-        <div class="popup-title">Congratulations!</div>
+        <div class="popup-title">Awesome!</div>
         <div id="congratulations-message" class="popup-message"></div>
         <div id="star-rating" class="star-rating">
           <span class="star">★</span>
@@ -2071,12 +2121,42 @@
         // Set completion flag in localStorage (never cleared)
         localStorage.setItem("wordle_completed", "true");
 
+        // Start shaking the 's' and make it clickable
+        startTitleShaking();
+
         // Show congratulations popup
         showCongratulationsPopup(completionRate, avgGuesses, accuracy);
 
         // Clear localStorage for this session
         localStorage.removeItem("wordleGameState");
       }
+
+      function startTitleShaking() {
+        const titleS = document.getElementById("title-s");
+        if (titleS && hasCompletedFirstWord) {
+          titleS.classList.add("shaking");
+          
+          // Add click event listener for navigation
+          const handleNavigation = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Add a brief color change feedback
+            titleS.style.color = 'var(--color-correct)';
+            setTimeout(() => {
+              titleS.style.color = '';
+              window.location.href = 'connect1ons.html';
+            }, 150);
+          };
+          
+          // Remove any existing listeners first
+          titleS.removeEventListener('click', handleNavigation);
+          
+          // Add click event
+          titleS.addEventListener('click', handleNavigation);
+        }
+      }
+
       // Local storage functions
       function saveGameProgress() {
         // Save current word state first
@@ -2493,17 +2573,17 @@
             message = "Perfect game! You solved every word on the first try!";
           } else if (avgGuesses <= 2) {
             message =
-              "Outstanding! You completed all words with exceptional skill!";
+              "Holy shit! You got so many of them right! Suspicous...";
           } else {
-            message = "Excellent work! You completed all words successfully!";
+            message = "You got 'em all! Amaaazing!";
           }
         } else if (accuracy >= 80) {
-          message = "Great job! You showed solid word-solving skills!";
+          message = "Great job! You're a rising wordle-er!";
         } else if (accuracy >= 60) {
-          message = "Nice work! You solved most of the words!";
+          message = "Nicee! You solved the words! (Most of them)";
         } else {
           message =
-            "Thanks for playing! Keep practicing to improve your skills!";
+            "Maybe you would like to play again!";
         }
 
         // Create stats display
