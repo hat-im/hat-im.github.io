@@ -1344,8 +1344,19 @@
         wordContainer.id = `completed-word-${wordIndex}`;
         
         const hasP = wordInfo.punctuation && wordInfo.punctuation.trim() !== "";
-        const tileSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-size'));
-        const tileGap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-gap'));
+        // Get computed tile size and gap from a temporary element
+        const tempTile = document.createElement('div');
+        tempTile.style.width = 'var(--tile-size)';
+        tempTile.style.height = 'var(--tile-size)';
+        tempTile.style.marginRight = 'var(--tile-gap)';
+        tempTile.style.visibility = 'hidden';
+        tempTile.style.position = 'absolute';
+        document.body.appendChild(tempTile);
+        const computedStyle = getComputedStyle(tempTile);
+        const tileSize = parseFloat(computedStyle.width);
+        const tileGap = parseFloat(computedStyle.marginRight);
+        document.body.removeChild(tempTile);
+        
         const containerWidth = hasP 
           ? `${wordInfo.length * (tileSize + tileGap) + tileSize}px`
           : `${wordInfo.length * (tileSize + tileGap) - tileGap}px`;
@@ -1413,7 +1424,7 @@
             punctuationTile.id = `completed-punctuation-${wordIndex}`;
             punctuationTile.textContent = wordInfo.punctuation;
             punctuationTile.style.position = "absolute";
-            punctuationTile.style.left = `${wordInfo.length * (tileSize + tileGap) + (tileSize/2)}px`;
+            punctuationTile.style.left = `${wordInfo.length * (tileSize + tileGap)}px`;
             punctuationTile.style.top = "50%";
             punctuationTile.style.transform = "translateY(-50%)";
             punctuationTile.style.width = "var(--tile-size)";
@@ -1452,8 +1463,18 @@
         const correctRowIndex = parseInt(correctRow.dataset.rowIndex);
         const isCurrentlyCollapsed = gridWrapper.classList.contains("drawer-collapsed");
         
-        const tileSize = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-size'));
-        const tileGap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-gap'));
+        // Get computed tile size and gap from a temporary element
+        const tempTile = document.createElement('div');
+        tempTile.style.width = 'var(--tile-size)';
+        tempTile.style.height = 'var(--tile-size)';
+        tempTile.style.marginRight = 'var(--tile-gap)';
+        tempTile.style.visibility = 'hidden';
+        tempTile.style.position = 'absolute';
+        document.body.appendChild(tempTile);
+        const computedStyle = getComputedStyle(tempTile);
+        const tileSize = parseFloat(computedStyle.width);
+        const tileGap = parseFloat(computedStyle.marginRight);
+        document.body.removeChild(tempTile);
         const distance = tileSize + tileGap;
         
         if (isCurrentlyCollapsed) {
