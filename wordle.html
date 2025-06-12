@@ -5,6 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A Wordle-style word guessing game" />
     <title>Wordle Game</title>
+    <script>
+      // Mobile detection and redirect script
+      (function() {
+        // Check if already on mobile version
+        if (window.location.pathname.includes('wordle-mobile.html')) {
+          return;
+        }
+
+        // Detect mobile devices
+        function isMobileDevice() {
+          // Check user agent for mobile indicators
+          const userAgent = navigator.userAgent.toLowerCase();
+          const mobileKeywords = [
+            'android', 'webos', 'iphone', 'ipad', 'ipod', 
+            'blackberry', 'windows phone', 'opera mini'
+          ];
+          
+          const hasMobileKeyword = mobileKeywords.some(keyword => 
+            userAgent.includes(keyword)
+          );
+
+          // Check for touch capability and screen size
+          const isTouchDevice = 'ontouchstart' in window || 
+            navigator.maxTouchPoints > 0 || 
+            navigator.msMaxTouchPoints > 0;
+
+          const hasSmallScreen = window.screen.width <= 768 || 
+            window.innerWidth <= 768;
+
+          // Additional mobile checks
+          const hasLimitedPointer = window.matchMedia('(pointer: coarse)').matches;
+          const hasLimitedHover = window.matchMedia('(hover: none)').matches;
+
+          return hasMobileKeyword || 
+            (isTouchDevice && hasSmallScreen) || 
+            (hasLimitedPointer && hasLimitedHover);
+        }
+
+        // Redirect to mobile version if on mobile device
+        if (isMobileDevice()) {
+          // Preserve any URL parameters or hash
+          const currentUrl = new URL(window.location);
+          const mobileUrl = new URL('wordle-mobile.html', currentUrl.origin + currentUrl.pathname.replace(/\/[^\/]*$/, '/'));
+          
+          // Copy search parameters and hash
+          mobileUrl.search = currentUrl.search;
+          mobileUrl.hash = currentUrl.hash;
+          
+          // Add a parameter to indicate redirect happened (useful for analytics)
+          const params = new URLSearchParams(mobileUrl.search);
+          if (!params.has('mobile_redirect')) {
+            params.set('mobile_redirect', '1');
+            mobileUrl.search = params.toString();
+          }
+          
+          // Perform redirect
+          window.location.replace(mobileUrl.toString());
+        }
+      })();
+    </script>
     <style>
       /* Dark Mode Wordle Color Scheme */
       :root {
@@ -1566,7 +1626,7 @@
         const guess = gameGrid[currentGuessIndex].join("");
         // Basic validation
         if (guess.length !== currentWord.length) {
-          showToast("Word must be " + currentWord.length + " letters");
+          showToast("Not enough letters");
           animateInvalidWord(currentGuessIndex);
           return;
         }
@@ -1578,20 +1638,21 @@
         }
         // Check for repeat guess
         if (usedGuesses.has(guess)) {
-          showToast("Word already guessed");
+          showToast("Already guessed");
           animateInvalidWord(currentGuessIndex);
           return;
         }
         // Validate green letter constraints
-        if (!validateGreenConstraints(guess)) {
-          showToast("Must use confirmed letters in correct positions");
+        const constraintError = validateGreenConstraints(guess);
+        if (constraintError) {
+          showToast(constraintError);
           animateInvalidWord(currentGuessIndex);
           return;
         }
         // Validate against dictionary
         const isValidWord = await validateGuessWithFallback(guess);
         if (!isValidWord) {
-          showToast("Not a valid word");
+          showToast("Word not in list");
           animateInvalidWord(currentGuessIndex);
           return;
         }
@@ -1651,10 +1712,28 @@
         // Check if guess respects known correct letter positions
         for (let pos in knownLetters) {
           if (guess[pos] !== knownLetters[pos]) {
-            return false;
+            const position = parseInt(pos) + 1; // Convert to 1-based position
+            const ordinal = getOrdinal(position);
+            return `${ordinal} letter must be ${knownLetters[pos]}`;
           }
         }
-        return true;
+        return null; // No constraint violations
+      }
+
+      function getOrdinal(num) {
+        const lastDigit = num % 10;
+        const lastTwoDigits = num % 100;
+        
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
+          return num + "th";
+        }
+        
+        switch (lastDigit) {
+          case 1: return num + "st";
+          case 2: return num + "nd";
+          case 3: return num + "rd";
+          default: return num + "th";
+        }
       }
       async function validateGuessWithFallback(word) {
         // For testing, allow common words immediately

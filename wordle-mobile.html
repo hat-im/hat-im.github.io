@@ -1675,7 +1675,7 @@
         const guess = gameGrid[currentGuessIndex].join("");
         
         if (guess.length !== currentWord.length) {
-          showToast("Word must be " + currentWord.length + " letters");
+          showToast("Not enough letters");
           animateInvalidWord(currentGuessIndex);
           return;
         }
@@ -1689,20 +1689,21 @@
         }
         
         if (usedGuesses.has(guess)) {
-          showToast("Word already guessed");
+          showToast("Already guessed");
           animateInvalidWord(currentGuessIndex);
           return;
         }
         
-        if (!validateGreenConstraints(guess)) {
-          showToast("Must use confirmed letters in correct positions");
+        const constraintError = validateGreenConstraints(guess);
+        if (constraintError) {
+          showToast(constraintError);
           animateInvalidWord(currentGuessIndex);
           return;
         }
         
         const isValidWord = await validateGuessWithFallback(guess);
         if (!isValidWord) {
-          showToast("Not a valid word");
+          showToast("Word not in list");
           animateInvalidWord(currentGuessIndex);
           return;
         }
@@ -1757,12 +1758,31 @@
       }
 
       function validateGreenConstraints(guess) {
+        // Check if guess respects known correct letter positions
         for (let pos in knownLetters) {
           if (guess[pos] !== knownLetters[pos]) {
-            return false;
+            const position = parseInt(pos) + 1; // Convert to 1-based position
+            const ordinal = getOrdinal(position);
+            return `${ordinal} letter must be ${knownLetters[pos]}`;
           }
         }
-        return true;
+        return null; // No constraint violations
+      }
+
+      function getOrdinal(num) {
+        const lastDigit = num % 10;
+        const lastTwoDigits = num % 100;
+        
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
+          return num + "th";
+        }
+        
+        switch (lastDigit) {
+          case 1: return num + "st";
+          case 2: return num + "nd";
+          case 3: return num + "rd";
+          default: return num + "th";
+        }
       }
 
       async function validateGuessWithFallback(word) {
