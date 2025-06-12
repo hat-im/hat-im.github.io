@@ -42,6 +42,13 @@
         color: var(--color-text);
         line-height: 1.4;
         padding: 20px;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        touch-action: manipulation;
       }
       .container {
         max-width: 500px; /* Increased to accommodate punctuation */
@@ -551,16 +558,85 @@
         transform: translateY(0);
       }
       @media (max-width: 480px) {
-        .tile {
-          width: 50px;
-          height: 50px;
-          font-size: 1.5rem;
+        body {
+          padding: 10px;
         }
-        h1 {
+        .tile,
+        .completed-tile,
+        .timer-digit {
+          width: 45px;
+          height: 45px;
+          font-size: 1.3rem;
+        }
+        .timer-digit.colon {
           font-size: 2rem;
         }
+        h1 {
+          font-size: 1.8rem;
+        }
         .container {
-          padding: 10px;
+          padding: 5px;
+          max-width: 350px;
+        }
+        .word-grid-wrapper {
+          width: 350px !important;
+          height: 300px !important;
+        }
+        .popup-content {
+          padding: 20px;
+          max-width: 320px;
+        }
+        .popup-buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .popup-button {
+          width: 100%;
+          padding: 15px 20px;
+          font-size: 1.1rem;
+        }
+        .star-rating {
+          font-size: 1.5rem;
+        }
+        .stats-grid {
+          gap: 8px;
+          font-size: 0.9rem;
+        }
+        .status-message {
+          font-size: 1rem;
+          margin: 15px 0;
+        }
+        .toast {
+          bottom: 80px;
+          font-size: 1rem;
+          padding: 15px 25px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .tile,
+        .completed-tile,
+        .timer-digit {
+          width: 40px;
+          height: 40px;
+          font-size: 1.2rem;
+        }
+        .timer-digit.colon {
+          font-size: 1.8rem;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        .container {
+          max-width: 320px;
+        }
+        .word-grid-wrapper {
+          width: 320px !important;
+          height: 280px !important;
+        }
+        .popup-content {
+          max-width: 290px;
+          padding: 15px;
         }
       }
       .status-message {
@@ -624,6 +700,11 @@
         font-weight: bold;
         cursor: pointer;
         transition: all 0.2s ease;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+        min-height: 48px;
+        min-width: 48px;
       }
       .popup-button:hover {
         background-color: var(--color-border-focus);
@@ -1609,7 +1690,7 @@
           if (currentWordIndex === 0 && !hasCompletedFirstWord) {
             animateTitleChange();
           }
-          // Calculate score for this word (max guesses - actual guesses + 1)
+          // Calculate score for this word using the formula: max_score * (guesses_left + 1) / max_guesses
           const guessesLeft = currentWord.guesses - currentGuessIndex;
           const wordScore = Math.round(
             (currentWord.max_score * (guessesLeft + 1)) / currentWord.guesses
@@ -1989,6 +2070,9 @@
             100
         );
 
+        // Set completion flag in localStorage (never cleared)
+        localStorage.setItem("wordle_completed", "true");
+
         // Show congratulations popup
         showCongratulationsPopup(completionRate, avgGuesses, accuracy);
 
@@ -2167,9 +2251,24 @@
         });
       }
 
+      // Enhanced mobile input handling
+      function isMobile() {
+        return (
+          "ontouchstart" in window ||
+          navigator.maxTouchPoints > 0 ||
+          /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          )
+        );
+      }
+
       // Focus mobile input when game area is tapped
       document.addEventListener("touchstart", function (e) {
+        if (!isMobile()) return;
         if (!mobileInput) createMobileInput();
+
+        // Don't interfere with popup interactions
+        if (e.target.closest(".popup-content")) return;
 
         // Only focus if we're not in a completed/failed state
         if (!isWordComplete && !isWordFailed && !cooldownActive) {
@@ -2192,7 +2291,11 @@
 
       // Keep focus when user interacts with the game
       document.addEventListener("click", function (e) {
+        if (!isMobile()) return;
         if (!mobileInput) createMobileInput();
+
+        // Don't interfere with popup interactions
+        if (e.target.closest(".popup-content")) return;
 
         if (!isWordComplete && !isWordFailed && !cooldownActive) {
           setTimeout(() => {
@@ -2204,26 +2307,20 @@
       });
 
       // Create mobile input on load for mobile devices
-      if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+      if (isMobile()) {
         document.addEventListener("DOMContentLoaded", function () {
           createMobileInput();
-        });
-      }
-
-      // Focus mobile input when game area is tapped
-      document.addEventListener("touchstart", function (e) {
-        if (!mobileInput) createMobileInput();
-
-        // Only focus if we're not in a completed/failed state
-        if (!isWordComplete && !isWordFailed && !cooldownActive) {
-          mobileInput.focus();
-        }
-      });
-
-      // Create mobile input on load for mobile devices
-      if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
-        document.addEventListener("DOMContentLoaded", function () {
-          createMobileInput();
+          // Auto-focus on mobile after a short delay
+          setTimeout(() => {
+            if (
+              mobileInput &&
+              !isWordComplete &&
+              !isWordFailed &&
+              !cooldownActive
+            ) {
+              mobileInput.focus();
+            }
+          }, 500);
         });
       }
       function delay(ms) {
@@ -2565,22 +2662,24 @@
 
         popup.classList.remove("hidden");
 
-        // Add event listener for play againdocument.getElementById("play-again-btn").onclick = function() {
-        popup.classList.add("hidden");
-        location.reload(); // Refresh page to start new game
-      }
-
-      // Add event listener for close button
-      document.getElementById("close-popup-btn").onclick = function () {
-        popup.classList.add("hidden");
-      };
-
-      // Allow closing popup by clicking outside
-      popup.onclick = function (e) {
-        if (e.target === popup) {
+        // Add event listener for play again
+        document.getElementById("play-again-btn").onclick = function () {
           popup.classList.add("hidden");
-        }
-      };
+          location.reload(); // Refresh page to start new game
+        };
+
+        // Add event listener for close button
+        document.getElementById("close-popup-btn").onclick = function () {
+          popup.classList.add("hidden");
+        };
+
+        // Allow closing popup by clicking outside
+        popup.onclick = function (e) {
+          if (e.target === popup) {
+            popup.classList.add("hidden");
+          }
+        };
+      }
 
       function showToast(message) {
         const toast = document.getElementById("toast");
