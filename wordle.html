@@ -2454,23 +2454,23 @@
         popup.classList.remove("hidden");
 
         // Add event listener for play again
-        document.getElementById("play-again-btn").onclick = function() {
+        document.getElementById("play-again-btn").onclick = function () {
           popup.classList.add("hidden");
           location.reload(); // Refresh page to start new game
         };
 
-      // Add event listener for close button
-      document.getElementById("close-popup-btn").onclick = function () {
-        popup.classList.add("hidden");
-      };
-
-      // Allow closing popup by clicking outside
-      popup.onclick = function (e) {
-        if (e.target === popup) {
+        // Add event listener for close button
+        document.getElementById("close-popup-btn").onclick = function () {
           popup.classList.add("hidden");
-        }
-      };
-    }
+        };
+
+        // Allow closing popup by clicking outside
+        popup.onclick = function (e) {
+          if (e.target === popup) {
+            popup.classList.add("hidden");
+          }
+        };
+      }
 
       function showToast(message) {
         const toast = document.getElementById("toast");
