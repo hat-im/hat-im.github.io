@@ -42,13 +42,6 @@
         color: var(--color-text);
         line-height: 1.4;
         padding: 20px;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        touch-action: manipulation;
       }
       .container {
         max-width: 500px; /* Increased to accommodate punctuation */
@@ -558,85 +551,16 @@
         transform: translateY(0);
       }
       @media (max-width: 480px) {
-        body {
-          padding: 10px;
-        }
-        .tile,
-        .completed-tile,
-        .timer-digit {
-          width: 45px;
-          height: 45px;
-          font-size: 1.3rem;
-        }
-        .timer-digit.colon {
-          font-size: 2rem;
-        }
-        h1 {
-          font-size: 1.8rem;
-        }
-        .container {
-          padding: 5px;
-          max-width: 350px;
-        }
-        .word-grid-wrapper {
-          width: 350px !important;
-          height: 300px !important;
-        }
-        .popup-content {
-          padding: 20px;
-          max-width: 320px;
-        }
-        .popup-buttons {
-          flex-direction: column;
-          gap: 10px;
-        }
-        .popup-button {
-          width: 100%;
-          padding: 15px 20px;
-          font-size: 1.1rem;
-        }
-        .star-rating {
+        .tile {
+          width: 50px;
+          height: 50px;
           font-size: 1.5rem;
         }
-        .stats-grid {
-          gap: 8px;
-          font-size: 0.9rem;
-        }
-        .status-message {
-          font-size: 1rem;
-          margin: 15px 0;
-        }
-        .toast {
-          bottom: 80px;
-          font-size: 1rem;
-          padding: 15px 25px;
-        }
-      }
-
-      @media (max-width: 360px) {
-        .tile,
-        .completed-tile,
-        .timer-digit {
-          width: 40px;
-          height: 40px;
-          font-size: 1.2rem;
-        }
-        .timer-digit.colon {
-          font-size: 1.8rem;
-        }
         h1 {
-          font-size: 1.6rem;
+          font-size: 2rem;
         }
         .container {
-          max-width: 320px;
-        }
-        .word-grid-wrapper {
-          width: 320px !important;
-          height: 280px !important;
-        }
-        .popup-content {
-          max-width: 290px;
-          padding: 15px;
+          padding: 10px;
         }
       }
       .status-message {
@@ -700,11 +624,6 @@
         font-weight: bold;
         cursor: pointer;
         transition: all 0.2s ease;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-        user-select: none;
-        min-height: 48px;
-        min-width: 48px;
       }
       .popup-button:hover {
         background-color: var(--color-border-focus);
@@ -1690,7 +1609,7 @@
           if (currentWordIndex === 0 && !hasCompletedFirstWord) {
             animateTitleChange();
           }
-          // Calculate score for this word using the formula: max_score * (guesses_left + 1) / max_guesses
+          // Calculate score for this word (max guesses - actual guesses + 1)
           const guessesLeft = currentWord.guesses - currentGuessIndex;
           const wordScore = Math.round(
             (currentWord.max_score * (guessesLeft + 1)) / currentWord.guesses
@@ -2172,20 +2091,16 @@
         }
       }
       // Global keyboard handling for direct grid input
-      // Replace the existing keydown event listener with this:
       document.addEventListener("keydown", function (event) {
         // Don't interfere with browser shortcuts
         if (event.ctrlKey || event.metaKey || event.altKey) {
-          return;
+          return; // Let browser handle Ctrl+R, Cmd+W, Alt+Tab, etc.
         }
-
         // Only process if game is active
         if (isWordComplete || isWordFailed || cooldownActive) {
           return;
         }
-
         const isLetter = /^[a-zA-Z]$/.test(event.key);
-
         // Only prevent default for keys we actually use
         if (event.key === "Enter") {
           event.preventDefault();
@@ -2197,132 +2112,8 @@
           event.preventDefault();
           addLetter(event.key.toUpperCase());
         }
+        // All other keys (F5, Ctrl+R, Cmd+W, etc.) pass through normally
       });
-      // Add mobile keyboard support
-      let mobileInput = null;
-
-      function createMobileInput() {
-        if (mobileInput) return;
-
-        mobileInput = document.createElement("input");
-        mobileInput.type = "text";
-        mobileInput.style.position = "absolute";
-        mobileInput.style.left = "-9999px";
-        mobileInput.style.opacity = "0";
-        mobileInput.style.pointerEvents = "none";
-        mobileInput.autocomplete = "off";
-        mobileInput.autocorrect = "off";
-        mobileInput.autocapitalize = "characters";
-        mobileInput.spellcheck = false;
-        mobileInput.maxLength = 1;
-
-        document.body.appendChild(mobileInput);
-
-        mobileInput.addEventListener("input", function (e) {
-          const value = e.target.value.toUpperCase();
-          if (value && /^[A-Z]$/.test(value)) {
-            addLetter(value);
-          }
-          // Keep input empty but maintain focus
-          setTimeout(() => {
-            mobileInput.value = "";
-          }, 10);
-        });
-
-        mobileInput.addEventListener("keydown", function (e) {
-          if (e.key === "Enter") {
-            e.preventDefault();
-            makeGuess();
-          } else if (e.key === "Backspace") {
-            e.preventDefault();
-            deleteLetter();
-          }
-        });
-
-        // Prevent blur on mobile
-        mobileInput.addEventListener("blur", function (e) {
-          if (!isWordComplete && !isWordFailed && !cooldownActive) {
-            setTimeout(() => {
-              if (mobileInput && document.activeElement !== mobileInput) {
-                mobileInput.focus();
-              }
-            }, 100);
-          }
-        });
-      }
-
-      // Enhanced mobile input handling
-      function isMobile() {
-        return (
-          "ontouchstart" in window ||
-          navigator.maxTouchPoints > 0 ||
-          /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-          )
-        );
-      }
-
-      // Focus mobile input when game area is tapped
-      document.addEventListener("touchstart", function (e) {
-        if (!isMobile()) return;
-        if (!mobileInput) createMobileInput();
-
-        // Don't interfere with popup interactions
-        if (e.target.closest(".popup-content")) return;
-
-        // Only focus if we're not in a completed/failed state
-        if (!isWordComplete && !isWordFailed && !cooldownActive) {
-          e.preventDefault(); // Prevent other touch behaviors
-          mobileInput.focus();
-
-          // Force focus again after a short delay
-          setTimeout(() => {
-            if (
-              mobileInput &&
-              !isWordComplete &&
-              !isWordFailed &&
-              !cooldownActive
-            ) {
-              mobileInput.focus();
-            }
-          }, 100);
-        }
-      });
-
-      // Keep focus when user interacts with the game
-      document.addEventListener("click", function (e) {
-        if (!isMobile()) return;
-        if (!mobileInput) createMobileInput();
-
-        // Don't interfere with popup interactions
-        if (e.target.closest(".popup-content")) return;
-
-        if (!isWordComplete && !isWordFailed && !cooldownActive) {
-          setTimeout(() => {
-            if (mobileInput) {
-              mobileInput.focus();
-            }
-          }, 50);
-        }
-      });
-
-      // Create mobile input on load for mobile devices
-      if (isMobile()) {
-        document.addEventListener("DOMContentLoaded", function () {
-          createMobileInput();
-          // Auto-focus on mobile after a short delay
-          setTimeout(() => {
-            if (
-              mobileInput &&
-              !isWordComplete &&
-              !isWordFailed &&
-              !cooldownActive
-            ) {
-              mobileInput.focus();
-            }
-          }, 500);
-        });
-      }
       function delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
       }
@@ -2663,23 +2454,23 @@
         popup.classList.remove("hidden");
 
         // Add event listener for play again
-        document.getElementById("play-again-btn").onclick = function () {
+        document.getElementById("play-again-btn").onclick = function() {
           popup.classList.add("hidden");
           location.reload(); // Refresh page to start new game
         };
 
-        // Add event listener for close button
-        document.getElementById("close-popup-btn").onclick = function () {
-          popup.classList.add("hidden");
-        };
+      // Add event listener for close button
+      document.getElementById("close-popup-btn").onclick = function () {
+        popup.classList.add("hidden");
+      };
 
-        // Allow closing popup by clicking outside
-        popup.onclick = function (e) {
-          if (e.target === popup) {
-            popup.classList.add("hidden");
-          }
-        };
-      }
+      // Allow closing popup by clicking outside
+      popup.onclick = function (e) {
+        if (e.target === popup) {
+          popup.classList.add("hidden");
+        }
+      };
+    }
 
       function showToast(message) {
         const toast = document.getElementById("toast");
