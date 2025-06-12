@@ -1248,6 +1248,8 @@ async function animateCorrectGuess(correctGroup) {
                 playAgainBtn.disabled = false;
                 playAgainBtn.textContent = 'Play Again';
                 cooldownTimer.textContent = '';
+                // Mark connect1ons as completed
+                localStorage.setItem('connect1ons_completed', 'true');
             } else {
                 gameOverTitle.textContent = 'Game Over';
                 gameOverMessage.textContent = 'Better luck next time!';
@@ -1292,10 +1294,10 @@ async function animateCorrectGuess(correctGroup) {
                         if (globalCellIndex >= totalCells - 4) {
                             // Define unique links for the last row
                             const lastRowLinks = [
-                                'sonnections.html',                                           // Last row, cell 0
-                                'https://www.google.com/search?q=congratulations+you+won',   // Last row, cell 1
-                                'https://www.wikipedia.org/wiki/Puzzle',                     // Last row, cell 2
-                                'https://github.com/anthropics/claude-code'                  // Last row, cell 3
+                                'sonnections.html',
+                                'wordle.html',
+                                'sonnections.html',
+                                'wordle.html'
                             ];
                             
                             const lastRowIndex = globalCellIndex - (totalCells - 4);

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connections</title>
+    <title>Sonnections</title>
     <style>
         * {
             margin: 0;
@@ -169,7 +169,7 @@
         }
 
         .play-button.playing {
-            color: #ffffff;
+            color: #121212;
         }
 
         .word-tile.selected .play-button {
@@ -682,7 +682,7 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <h1 class="title">Connections</h1>
+            <h1 class="title">Sonnections</h1>
             <p class="subtitle">Create four groups of four!</p>
         </div>
     </header>
@@ -1446,12 +1446,14 @@ async function animateCorrectGuess(correctGroup) {
             
             if (won) {
                 gameOverTitle.textContent = 'Congratulations!';
-                gameOverMessage.textContent = 'You found all the connections!';
+                gameOverMessage.textContent = 'You found all the sonnections!';
                 playAgainBtn.disabled = false;
                 playAgainBtn.textContent = 'Play Again';
                 cooldownTimer.textContent = '';
                 // Clear saved attempts when user wins
                 localStorage.removeItem('sonnections_lastAttempts');
+                // Mark sonnections as completed
+                localStorage.setItem('sonnections_completed', 'true');
             } else {
                 gameOverTitle.textContent = 'Game Over';
                 gameOverMessage.textContent = 'Better luck next time!';
