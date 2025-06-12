@@ -2088,16 +2088,20 @@
         }
       }
       // Global keyboard handling for direct grid input
+      // Replace the existing keydown event listener with this:
       document.addEventListener("keydown", function (event) {
         // Don't interfere with browser shortcuts
         if (event.ctrlKey || event.metaKey || event.altKey) {
-          return; // Let browser handle Ctrl+R, Cmd+W, Alt+Tab, etc.
+          return;
         }
+
         // Only process if game is active
         if (isWordComplete || isWordFailed || cooldownActive) {
           return;
         }
+
         const isLetter = /^[a-zA-Z]$/.test(event.key);
+
         // Only prevent default for keys we actually use
         if (event.key === "Enter") {
           event.preventDefault();
@@ -2109,8 +2113,61 @@
           event.preventDefault();
           addLetter(event.key.toUpperCase());
         }
-        // All other keys (F5, Ctrl+R, Cmd+W, etc.) pass through normally
       });
+      // Add mobile keyboard support
+      let mobileInput = null;
+
+      function createMobileInput() {
+        if (mobileInput) return;
+
+        mobileInput = document.createElement("input");
+        mobileInput.type = "text";
+        mobileInput.style.position = "absolute";
+        mobileInput.style.left = "-9999px";
+        mobileInput.style.opacity = "0";
+        mobileInput.style.pointerEvents = "none";
+        mobileInput.autocomplete = "off";
+        mobileInput.autocorrect = "off";
+        mobileInput.autocapitalize = "characters";
+        mobileInput.spellcheck = false;
+
+        document.body.appendChild(mobileInput);
+
+        mobileInput.addEventListener("input", function (e) {
+          const value = e.target.value.toUpperCase();
+          if (value && /^[A-Z]$/.test(value)) {
+            addLetter(value);
+            mobileInput.value = ""; // Clear after processing
+          }
+        });
+
+        mobileInput.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            makeGuess();
+          } else if (e.key === "Backspace") {
+            e.preventDefault();
+            deleteLetter();
+          }
+        });
+      }
+
+      // Focus mobile input when game area is tapped
+      document.addEventListener("touchstart", function (e) {
+        if (!mobileInput) createMobileInput();
+
+        // Only focus if we're not in a completed/failed state
+        if (!isWordComplete && !isWordFailed && !cooldownActive) {
+          mobileInput.focus();
+        }
+      });
+
+      // Create mobile input on load for mobile devices
+      if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+        document.addEventListener("DOMContentLoaded", function () {
+          createMobileInput();
+        });
+      }
       function delay(ms) {
         return new Promise((resolve) => setTimeout(resolve, ms));
       }
