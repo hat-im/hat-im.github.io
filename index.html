@@ -41,7 +41,7 @@
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-radius: 16px;
-            padding: 35px 30px;
+            padding: 25px 30px 20px;
             box-shadow: 
                 0 12px 40px rgba(139, 92, 68, 0.08),
                 0 6px 20px rgba(139, 92, 68, 0.04),
@@ -51,8 +51,10 @@
             z-index: 10;
             max-width: 450px;
             width: 100%;
-            max-height: 90vh;
+            max-height: 95vh;
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .word-wall {
@@ -102,8 +104,9 @@
         
         .header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 18px;
             position: relative;
+            flex-shrink: 0;
         }
 
         .header::after {
@@ -119,10 +122,10 @@
         
         .header h1 {
             font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 400;
             letter-spacing: -0.5px;
-            margin: 0 0 12px 0;
+            margin: 0 0 8px 0;
             color: #8b5c44;
             position: relative;
         }
@@ -159,12 +162,16 @@
             max-width: 500px;
             margin: 0 auto;
             position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .welcome-message {
-            font-size: 15px;
-            margin: 20px 0;
-            line-height: 1.7;
+            font-size: 14px;
+            margin: 12px 0;
+            line-height: 1.6;
             color: #705447;
             font-weight: 300;
             position: relative;
@@ -176,9 +183,9 @@
         .instructions {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin: 20px 0;
-            padding: 20px;
+            gap: 8px;
+            margin: 15px 0;
+            padding: 16px;
             background: rgba(252, 248, 241, 0.7);
             border-radius: 10px;
             border: 1px solid rgba(212, 179, 150, 0.3);
@@ -199,82 +206,107 @@
         .instruction-item {
             display: flex;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px;
             color: #705447;
             font-weight: 400;
             cursor: pointer;
             transition: all 0.3s ease;
-            padding: 6px 0;
+            padding: 4px 0;
             user-select: none;
             letter-spacing: 0.2px;
+            margin-bottom: 0;
+        }
+
+        .instruction-item:last-of-type {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .instruction-item:hover {
             color: #5c453a;
         }
 
-        .checklist-box {
-            width: 18px;
-            height: 18px;
-            border: 1.5px solid #d4b396;
-            border-radius: 4px;
-            margin-right: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .instruction-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instruction-item.scratched-off {
+            position: relative;
+        }
+
+        .instruction-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, #8b5c44, #a0824a, #8b5c44);
+            transform: scaleX(0);
+            transform-origin: left;
+            z-index: 2;
+            transition: transform 0.8s ease-out;
+        }
+
+        .instruction-item.scratched-off .instruction-text::after {
+            transform: scaleX(1);
+        }
+
+        .instruction-item.scratched-off .instruction-text {
+            color: #9a8475;
+            animation: fadeToGray 0.8s ease-out forwards;
+        }
+
+
+        @keyframes fadeToGray {
+            0% {
+                color: #705447;
+                filter: none;
+            }
+            100% {
+                color: #9a8475;
+                filter: opacity(0.7);
+            }
+        }
+
+        .instruction-text {
             transition: all 0.3s ease;
             position: relative;
-            flex-shrink: 0;
-            background: rgba(255, 252, 247, 0.9);
-        }
-
-        .instruction-item.checked .checklist-box {
-            background: linear-gradient(135deg, #8b5c44 0%, #a0824a 100%);
-            border-color: #8b5c44;
-            transform: scale(1.05);
-        }
-
-        .instruction-item.checked {
-            color: #5c453a;
-            font-weight: 500;
-        }
-
-        .checkmark {
-            color: white;
-            font-size: 10px;
-            font-weight: 600;
-            opacity: 0;
-            transform: scale(0);
-            transition: all 0.2s ease;
-        }
-
-        .instruction-item.checked .checkmark {
-            opacity: 1;
-            transform: scale(1);
+            z-index: 1;
+            display: inline-block;
         }
 
         .surprise-message {
-            margin-top: 15px;
-            padding: 18px;
-            background: linear-gradient(135deg, #f9f5f0 0%, #f2eee6 100%);
-            border: 1px solid #d4b396;
-            border-radius: 10px;
+            margin-top: 8px;
             color: #8b5c44;
             font-weight: 500;
             text-align: center;
-            font-size: 13px;
+            font-size: 12px;
             opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.4s ease;
             pointer-events: none;
             letter-spacing: 0.3px;
             font-style: italic;
+            min-height: 16px;
+            transition: opacity 0.3s ease;
         }
 
         .surprise-message.show {
             opacity: 1;
-            transform: translateY(0);
             pointer-events: auto;
+        }
+
+        .surprise-message.typing {
+            opacity: 1;
+        }
+
+        .typing-cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
         }
         
         .entry-button {
@@ -282,12 +314,12 @@
             color: white;
             border: none;
             border-radius: 14px;
-            padding: 20px 50px;
+            padding: 16px 40px;
             font-family: 'Crimson Text', 'Georgia', serif;
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            margin: 30px 0;
+            margin: 20px 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             letter-spacing: 0.8px;
             box-shadow: 
@@ -323,20 +355,20 @@
         }
         
         .countdown {
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
-            margin-top: 24px;
+            margin-top: 15px;
             opacity: 0;
             transition: opacity 0.5s ease;
             color: #64748b;
             background: rgba(255, 255, 255, 0.9);
-            padding: 12px 20px;
+            padding: 10px 16px;
             border-radius: 8px;
             border: 1px solid rgba(0, 0, 0, 0.08);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
         
         .countdown.show {
@@ -363,17 +395,18 @@
         }
         
         .footer-text {
-            font-size: 11px;
-            line-height: 1.7;
-            margin: 25px 0 0 0;
+            font-size: 10px;
+            line-height: 1.5;
+            margin: 15px 0 0 0;
             text-align: center;
             color: #b8956d;
             font-style: italic;
             font-weight: 300;
             transition: opacity 0.4s ease, transform 0.4s ease;
             position: relative;
-            padding-top: 20px;
+            padding-top: 15px;
             letter-spacing: 0.2px;
+            flex-shrink: 0;
         }
 
         .footer-text::before {
@@ -688,33 +721,19 @@
 
             <div class="instructions">
                 <div class="checklist-title">Puzzle Checklist</div>
-                <div class="instruction-item" onclick="toggleChecklistItem(this)">
-                    <div class="checklist-box">
-                        <span class="checkmark">✓</span>
-                    </div>
-                    <span>Hot chocolate (or coffee)</span>
+                <div class="instruction-item" onclick="toggleScratchItem(this)">
+                    <span class="instruction-text">Hot chocolate (or coffee)</span>
                 </div>
-                <div class="instruction-item" onclick="toggleChecklistItem(this)">
-                    <div class="checklist-box">
-                        <span class="checkmark">✓</span>
-                    </div>
-                    <span>Play some music</span>
+                <div class="instruction-item" onclick="toggleScratchItem(this)">
+                    <span class="instruction-text">Classical Pop Music</span>
                 </div>
-                <div class="instruction-item" onclick="toggleChecklistItem(this)">
-                    <div class="checklist-box">
-                        <span class="checkmark">✓</span>
-                    </div>
-                    <span>Put your thinking hat on</span>
+                <div class="instruction-item" onclick="toggleScratchItem(this)">
+                    <span class="instruction-text">Brain cell</span>
                 </div>
-                <div class="instruction-item" onclick="toggleChecklistItem(this)">
-                    <div class="checklist-box">
-                        <span class="checkmark">✓</span>
-                    </div>
-                    <span>Relax</span>
+                <div class="instruction-item" onclick="toggleScratchItem(this)">
+                    <span class="instruction-text">Horizontal (gets blood to the brain)</span>
                 </div>
-                <div class="surprise-message" id="surpriseMessage">
-                    Let's gooooo.
-                </div>
+                <div class="surprise-message" id="surpriseMessage"></div>
             </div>
             
             <button class="entry-button" onclick="enterPuzzles(true)">
@@ -966,32 +985,62 @@
         // Hidden message in JavaScript variable (not easily found)
         const projectSignature = 'Made with love';
 
-        // Checklist functionality
-        function toggleChecklistItem(item) {
-            item.classList.toggle('checked');
+        // Scratch-off functionality
+        function toggleScratchItem(item) {
+            if (!item.classList.contains('scratched-off')) {
+                item.classList.add('scratched-off');
+            } else {
+                item.classList.remove('scratched-off');
+            }
             checkAllItemsCompleted();
         }
 
         function checkAllItemsCompleted() {
             const items = document.querySelectorAll('.instruction-item');
-            const checkedItems = document.querySelectorAll('.instruction-item.checked');
+            const scratchedItems = document.querySelectorAll('.instruction-item.scratched-off');
             
-            if (checkedItems.length === items.length) {
-                document.getElementById('surpriseMessage').classList.add('show');
-                
-                // Add a simple celebration effect
-                setTimeout(() => {
-                    const button = document.querySelector('.entry-button');
-                    button.textContent = 'Begin Your Adventure';
-                }, 500);
+            if (scratchedItems.length === items.length) {
+                startTypingMessage();
             } else {
-                document.getElementById('surpriseMessage').classList.remove('show');
+                const surpriseMessage = document.getElementById('surpriseMessage');
+                surpriseMessage.classList.remove('show', 'typing');
+                surpriseMessage.innerHTML = '';
                 const button = document.querySelector('.entry-button');
                 button.textContent = 'I am ready to begin';
             }
         }
 
-        // Add pulse animation for button celebration
+        function startTypingMessage() {
+            const message = "Let's gooooo";
+            const surpriseMessage = document.getElementById('surpriseMessage');
+            
+            surpriseMessage.classList.add('typing');
+            surpriseMessage.innerHTML = '';
+            
+            let charIndex = 0;
+            
+            function typeNextChar() {
+                if (charIndex < message.length) {
+                    surpriseMessage.innerHTML = message.substring(0, charIndex + 1) + '<span class="typing-cursor">|</span>';
+                    charIndex++;
+                    setTimeout(typeNextChar, 100); // Adjust typing speed here
+                } else {
+                    // Remove cursor and add show class
+                    surpriseMessage.innerHTML = message;
+                    surpriseMessage.classList.add('show');
+                    
+                    // Update button text
+                    setTimeout(() => {
+                        const button = document.querySelector('.entry-button');
+                        button.textContent = 'Begin Your Adventure';
+                    }, 200);
+                }
+            }
+            
+            typeNextChar();
+        }
+
+        // Add animations for button celebration
         const style = document.createElement('style');
         style.textContent = `
             @keyframes pulse {

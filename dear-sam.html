@@ -1198,11 +1198,11 @@
         <div class="popup-content">
             <div class="popup-title">Puzzle Solved!</div>
             <div class="popup-message">
-                Congratulations! You've decrypted the message and escaped this crypt.<br><br>
-                But wait... there's a way out to continue your adventure, but you'll need to find it yourself.
+                Congratulations! You've decrypted the message.<br><br>
+                Should you choose, there's a way to continue your adventure here, but you'll need to find it yourself.
             </div>
             <div class="popup-hint">
-                <em>The header bears witness to your success. Look closely.</em>
+                <em>Look aHead more than normal (aHeader than usual, if I may).</em>
             </div>
             <button class="popup-close" onclick="closePopup()">Continue Exploring</button>
         </div>
@@ -1375,6 +1375,9 @@
             if (puzzleSolved) return;
             
             puzzleSolved = true;
+            
+            // Mark cryptogram as completed
+            localStorage.setItem('cryptogram_completed', 'true');
             
             // Start the fade animation for encrypted letters
             document.querySelectorAll('.encrypted-letter').forEach(letter => {
