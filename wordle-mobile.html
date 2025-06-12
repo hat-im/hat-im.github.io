@@ -899,9 +899,9 @@
 
     <div id="continue-game-popup" class="continue-game-popup hidden">
       <div class="popup-content">
-        <div class="popup-title">Welcome Back</div>
+        <div class="popup-title">Hello again</div>
         <div class="popup-message">
-          Would you like to continue where you left off or start a new game?
+          Do you want to start a new game, or continue where you left?
         </div>
         <div class="popup-buttons">
           <button class="popup-button primary" id="continue-game-btn">
@@ -914,7 +914,7 @@
     <div id="toast" class="toast"></div>
     <div id="congratulations-popup" class="continue-game-popup hidden">
       <div class="popup-content">
-        <div class="popup-title">Congratulations!</div>
+        <div class="popup-title">Awesome!</div>
         <div id="congratulations-message" class="popup-message"></div>
         <div id="star-rating" class="star-rating">
           <span class="star">★</span>
@@ -2352,16 +2352,16 @@
           if (gameStats.perfectWords === WORDS_DATA.length) {
             message = "Perfect game! You solved every word on the first try!";
           } else if (avgGuesses <= 2) {
-            message = "Outstanding! You completed all words with exceptional skill!";
+            message = "Holy shit! You got so many of them right! Suspicous...";
           } else {
-            message = "Excellent work! You completed all words successfully!";
+            message = "You got 'em all! Amaaazing!";
           }
         } else if (accuracy >= 80) {
-          message = "Great job! You showed solid word-solving skills!";
+          message = "Great job! You're a rising wordle-er!";
         } else if (accuracy >= 60) {
-          message = "Nice work! You solved most of the words!";
+          message = "Nicee! You solved the words! (Most of them)";
         } else {
-          message = "Thanks for playing! Keep practicing to improve your skills!";
+          message = "Maybe you would like to play again!";
         }
 
         const statsHTML = `
