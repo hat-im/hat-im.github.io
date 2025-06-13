@@ -1,1 +1,176 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Eventually This Will Become Shakespeare</title><style>@font-face{font-family:'Next Mono';src:url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/mono.woff') format('woff')}*{margin:0;padding:0;box-sizing:border-box}body{background:#fefefe;font-family:'Next Mono',monospace;font-size:10px;line-height:1.2;color:#333;overflow:hidden;height:100vh;width:100vw}.text-container{width:100vw;height:100vh;white-space:pre;font-weight:400;letter-spacing:0;padding:0;margin:0}</style></head><body><div class="text-container" id="t"></div><script>let a='ABCDEFGHIJKLMNOPQRSTUVWXYZ ',b='EVENTUALLY THIS WILL BECOME SHAKESPEARE',c=[],d,e,f=0,g=0.0008,h=50,i,j;function k(){let m=document.createElement('div');m.style.cssText='font-family:Next Mono,monospace;font-size:10px;line-height:1.2;position:absolute;visibility:hidden;white-space:pre';m.textContent='M'.repeat(100);document.body.appendChild(m);let n=m.offsetWidth/100;m.textContent='M\nM';let o=m.offsetHeight/2;document.body.removeChild(m);d=Math.floor(window.innerWidth/n);e=Math.floor(window.innerHeight/o)+3;return{p:d,q:e}}function l(){let{p:r,q:s}=k();d=r;e=s;c=[];let t=d*e;for(let u=0;u<t;u++){if(u<b.length){let v=b[u],w=v!==' ';c.push({x:' ',y:w,z:0,o:v})}else{c.push({x:' ',y:false,z:0})}}m();i=performance.now()}function m(){let n=document.getElementById('t'),o='';for(let p=0;p<e;p++){for(let q=0;q<d;q++){let r=p*d+q;if(r<c.length){o+=c[r].x}}if(p<e-1){o+='\n'}}n.textContent=o}function s(t){if(t-f<h)return;let u=t-f,T=(t-i)/2000,v=Math.max(0,(t-i-2000)/20000),w=Math.pow(Math.min(v,1),10)*g,x=false;if(T<1){let C=Math.floor(T*b.length)+1;for(let D=0;D<C&&D<c.length;D++){if(c[D].o&&c[D].x!=c[D].o){c[D].x=c[D].o;x=true}}}else{c.forEach((y,z)=>{if(!y.y&&y.x===' '){let A=1-Math.exp(-w*u);if(Math.random()<A){y.x=a[Math.floor(Math.random()*a.length)];y.z=t;x=true}}else if(!y.y&&y.x!==' '){let B=1-Math.exp(-w*u*0.3);if(Math.random()<B){y.x=a[Math.floor(Math.random()*a.length)];y.z=t;x=true}}})}if(x){m();f=t}}function n(o){s(o);requestAnimationFrame(n)}function p(){l();f=performance.now();requestAnimationFrame(n)}window.addEventListener('resize',()=>{setTimeout(p,100)});window.addEventListener('load',p);</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Eventually This Will Become Shakespeare</title>
+    <style>
+      @font-face {
+        font-family: "Next Mono";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/mono.woff")
+          format("woff");
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #fefefe;
+        width: 100vw;
+        height: 100vh;
+      }
+      canvas {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      const text = "EVENTUALLY THIS WILL BECOME SHAKESPEARE";
+      const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+      const fontSize = 10;
+      const lineHeight = 1.2;
+      const fontFamily = "Next Mono";
+      const delay = 50;
+      const baseDecay = 0.0012;
+
+      let canvas = document.getElementById("canvas");
+      let ctx = canvas.getContext("2d");
+
+      let cols,
+        rows,
+        grid = [],
+        startTime = 0,
+        lastFrame = 0;
+      let charWidth, charHeight;
+      let mouseX = -1000,
+        mouseY = -1000;
+
+      window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function measureFontMetrics() {
+        ctx.font = `${fontSize}px ${fontFamily}`;
+        const metrics = ctx.measureText("M");
+        charWidth = metrics.width;
+        charHeight = fontSize * lineHeight;
+      }
+      function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+        ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset any previous transform
+        ctx.scale(dpr, dpr); // Scale drawing for crispness
+
+        measureFontMetrics();
+        cols = Math.ceil(window.innerWidth / charWidth);
+        rows = Math.ceil(window.innerHeight / charHeight);
+
+        grid = [];
+        let total = cols * rows;
+
+        for (let i = 0; i < total; i++) {
+          let o = text[i] || " ";
+          let isFinal = o !== " ";
+          grid.push({ x: " ", y: isFinal, z: 0, o });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#333";
+        ctx.font = `${fontSize}px ${fontFamily}`;
+        ctx.textBaseline = "top";
+
+        const topPadding = 1; // in pixels
+        for (let i = 0; i < grid.length; i++) {
+          let col = i % cols;
+          let row = Math.floor(i / cols);
+          let ch = grid[i].x;
+          let x = col * charWidth;
+          let y = row * charHeight + topPadding;
+          ctx.fillText(ch, x, y);
+        }
+      }
+
+      function update(t) {
+        if (!startTime) startTime = t;
+        if (t - lastFrame < delay) return;
+
+        let elapsed = t - startTime;
+        let T = elapsed / 2000;
+        let progress = Math.max(0, (elapsed - 2000) / 20000);
+        let decayRate = Math.pow(Math.min(progress, 1), 10) * baseDecay;
+        let changed = false;
+
+        if (T < 1) {
+          let count = Math.floor(T * text.length) + 1;
+          for (let i = 0; i < count && i < grid.length; i++) {
+            let g = grid[i];
+            if (g.o && g.x !== g.o) {
+              g.x = g.o;
+              changed = true;
+            }
+          }
+        } else {
+          grid.forEach((g, i) => {
+            if (g.y) return;
+
+            let col = i % cols;
+            let row = Math.floor(i / cols);
+            let cx = col * charWidth + charWidth / 2;
+            let cy = row * charHeight + charHeight / 2;
+            let dx = cx - mouseX;
+            let dy = cy - mouseY;
+            let dist = Math.sqrt(dx * dx + dy * dy);
+            let boost = Math.exp(-dist * 0.02);
+            let decay = decayRate * (1 + 35 * boost);
+            let chance = 1 - Math.exp(-decay * (t - lastFrame));
+
+            if (g.x === " ") {
+              if (Math.random() < chance) {
+                g.x = alphabet[Math.floor(Math.random() * alphabet.length)];
+                g.z = t;
+                changed = true;
+              }
+            } else {
+              let reduceChance = 1 - Math.exp(-decay * (t - lastFrame) * 0.3);
+              if (Math.random() < reduceChance) {
+                g.x = alphabet[Math.floor(Math.random() * alphabet.length)];
+                g.z = t;
+                changed = true;
+              }
+            }
+          });
+        }
+
+        if (changed) {
+          draw();
+          lastFrame = t;
+        }
+      }
+
+      function loop(t) {
+        update(t);
+        requestAnimationFrame(loop);
+      }
+
+      window.addEventListener("resize", () => {
+        resize();
+        draw();
+      });
+
+      window.addEventListener("load", () => {
+        resize();
+        draw();
+        lastFrame = performance.now();
+        requestAnimationFrame(loop);
+      });
+    </script>
+  </body>
+</html>
