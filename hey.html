@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Pocketful of Puzzles</title>
+    <title>A Puzzling Pocketful</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
@@ -618,30 +618,10 @@
 
         .puzzle-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
             gap: 8px;
             margin-bottom: 12px;
-        }
-        
-        .puzzle-grid .puzzle-button:nth-child(4) {
-            grid-column: 1;
-            grid-row: 2;
-        }
-        
-        .puzzle-grid .puzzle-button:nth-child(5) {
-            grid-column: 2;
-            grid-row: 2;
-        }
-        
-        .puzzle-grid .puzzle-button:nth-child(6) {
-            grid-column: 3;
-            grid-row: 2;
-        }
-        
-        .puzzle-grid .puzzle-button:nth-child(7) {
-            grid-column: 2;
-            grid-row: 3;
+            justify-items: stretch;
+            align-items: stretch;
         }
 
 
@@ -781,15 +761,15 @@
 
     <div class="content-card">
         <div class="header">
-            <h1>A Pocketful of Puzzles</h1>
-            <p>Assorted challenges and diversions</p>
+            <h1>A Puzzling Pocketful</h1>
+            <p>An assortment of challenge and diversions</p>
             <div class="dedication">from Hat, to Sam</div>
         </div>
         
         <div class="welcome-content">
             <div class="welcome-message">
-                I've crafted some games here for you.<br>
-                I hope you enjoy them.
+                I've crafted a game here for you.<br>
+                I hope you enjoy.
             </div>
 
             <div class="instructions">
@@ -820,14 +800,14 @@
         </div>
         
         <div class="footer-text">
-            Take your time.<br>
+            Take your time with these.<br>
             (Does asynchronous puzzle communication count as no-contact?)
             <div class="device-note">For best results, open on laptop</div>
         </div>
     </div>
 
     <!-- Hidden message - invisible to users but findable by developers -->
-    <div class="hidden-message" aria-hidden="true">Made with love</div>
+    <div class="hidden-message" aria-hidden="true">Made with love, for the one I love.</div>
 
     <!-- Puzzle Card Toggle Button -->
     <button class="puzzle-card-toggle" id="puzzleToggle" onclick="togglePuzzleCard()">
@@ -843,13 +823,7 @@
             <button class="puzzle-card-close" onclick="hidePuzzleCard()">&times;</button>
         </div>
         <div class="puzzle-grid" id="puzzleGrid">
-            <button class="puzzle-button disabled" id="cryptogram">???</button>
-            <button class="puzzle-button disabled" id="connect1ons">???</button>
-            <button class="puzzle-button disabled" id="sonnections">???</button>
-            <button class="puzzle-button disabled" id="wordle">???</button>
-            <button class="puzzle-button disabled">???</button>
-            <button class="puzzle-button disabled">???</button>
-            <button class="puzzle-button disabled">???</button>
+            <!-- Puzzle buttons will be dynamically added here -->
         </div>
     </div>
 
@@ -969,18 +943,34 @@
 
         // Puzzle Card Functions
         function checkCompletedPuzzles() {
-            const cryptogramCompleted = localStorage.getItem('cryptogram_completed') === 'true';
-            const connect1onsCompleted = localStorage.getItem('connect1ons_completed') === 'true';
-            const sonnectionsCompleted = localStorage.getItem('sonnections_completed') === 'true';
-            const wordleCompleted = localStorage.getItem('wordle_completed') === 'true';
+            const puzzles = [
+                { id: 'cryptogram', name: 'Cryptogram', url: 'dear-sam.html', completed: localStorage.getItem('cryptogram_completed') === 'true' },
+                { id: 'connect1ons', name: 'Connect1ons', url: 'connect1ons.html', completed: localStorage.getItem('connect1ons_completed') === 'true' },
+                { id: 'sonnections', name: 'Sonnections', url: 'sonnections.html', completed: localStorage.getItem('sonnections_completed') === 'true' },
+                { id: 'wordle', name: 'Wordle++', url: 'wordle.html', completed: localStorage.getItem('wordle_completed') === 'true' }
+            ];
             
-            // Update puzzle buttons based on completion status
-            updatePuzzleButton('cryptogram', cryptogramCompleted, 'Cryptogram', 'dear-sam.html');
-            updatePuzzleButton('connect1ons', connect1onsCompleted, 'Connect1ons', 'connect1ons.html');
-            updatePuzzleButton('sonnections', sonnectionsCompleted, 'Sonnections', 'sonnections.html');
-            updatePuzzleButton('wordle', wordleCompleted, 'Wordle++', 'wordle.html');
+            // Filter to only completed puzzles
+            const completedPuzzles = puzzles.filter(puzzle => puzzle.completed);
             
-            if (cryptogramCompleted || connect1onsCompleted || sonnectionsCompleted || wordleCompleted) {
+            if (completedPuzzles.length > 0) {
+                // Clear existing grid
+                const puzzleGrid = document.getElementById('puzzleGrid');
+                puzzleGrid.innerHTML = '';
+                
+                // Dynamically adjust grid layout based on number of completed puzzles
+                updateGridLayout(completedPuzzles.length);
+                
+                // Add only completed puzzles
+                completedPuzzles.forEach(puzzle => {
+                    const link = document.createElement('a');
+                    link.href = puzzle.url;
+                    link.className = 'puzzle-button';
+                    link.id = puzzle.id;
+                    link.textContent = puzzle.name;
+                    puzzleGrid.appendChild(link);
+                });
+                
                 // Show the toggle button
                 document.getElementById('puzzleToggle').classList.add('show');
                 
@@ -999,27 +989,29 @@
                 }
             }
         }
-
-        function updatePuzzleButton(buttonId, isCompleted, puzzleName, puzzleUrl) {
-            const button = document.getElementById(buttonId);
-            if (!button) return;
+        
+        function updateGridLayout(numPuzzles) {
+            const puzzleGrid = document.getElementById('puzzleGrid');
             
-            if (isCompleted) {
-                // Convert to clickable link
-                const link = document.createElement('a');
-                link.href = puzzleUrl;
-                link.className = 'puzzle-button';
-                link.id = buttonId;
-                link.textContent = puzzleName;
-                
-                // Replace the button with the link
-                button.parentNode.replaceChild(link, button);
+            // Remove existing grid positioning CSS
+            puzzleGrid.style.gridTemplateColumns = '';
+            puzzleGrid.style.gridTemplateRows = '';
+            
+            if (numPuzzles === 1) {
+                puzzleGrid.style.gridTemplateColumns = '1fr';
+                puzzleGrid.style.justifyItems = 'center';
+            } else if (numPuzzles === 2) {
+                puzzleGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+            } else if (numPuzzles === 3) {
+                puzzleGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
             } else {
-                // Ensure it stays as disabled button with ???
-                button.className = 'puzzle-button disabled';
-                button.textContent = '???';
+                // 4 puzzles - 2x2 grid
+                puzzleGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+                puzzleGrid.style.gridTemplateRows = 'repeat(2, 1fr)';
             }
         }
+
+        // Remove the old updatePuzzleButton function since we're using dynamic creation now
 
         function togglePuzzleCard() {
             const card = document.getElementById('puzzleCard');
