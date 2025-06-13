@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Escape the Crypt! A daily cryptogram.</title>
-    <link rel="icon" type="image/x-icon" href="https://murdle.com/favicon.ico?update">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
             font-family: 'Courier New', monospace;
@@ -371,7 +371,7 @@
 <body>
     <div class="header">
         <a href="connect1ons.html" target="_blank" class="header-link">
-            <img src="https://murdle.com/crypt/header-crypt.png" alt="Escape the Crypt" onerror="this.style.display='none'; document.querySelector('.fallback-title').style.display='block';">
+            <img src="header-crypt.png" alt="Escape the Crypt" onerror="this.style.display='none'; document.querySelector('.fallback-title').style.display='block';">
         </a>
         <div class="fallback-title" style="display: none;">
             <h1 style="color: #8B2635; font-size: 36px; letter-spacing: 3px; margin: 20px 0;">ESCAPE THE CRYPT</h1>
@@ -1234,10 +1234,10 @@
             <div class="popup-title">Puzzle Solved!</div>
             <div class="popup-message">
                 Congratulations! You've decrypted the message.<br><br>
-                Should you choose, there's a way to continue your adventure here, but you'll need to find it yourself.
+                Should you find it, there's a secret here, but you'll need to find it yourself.
             </div>
             <div class="popup-hint">
-                <em>Look aHead more than normal (aHeader than usual, if I may).</em>
+                <em>Look aHeader than usual.</em>
             </div>
             <button class="popup-close" onclick="closePopup()">Continue Exploring</button>
         </div>
@@ -1248,6 +1248,9 @@
         const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         let currentSelected = null;
         let puzzleSolved = false;
+        
+        // Flag to control next puzzle access
+        const NEXT_PUZZLES_ENABLED = false; // Set to true to enable all next puzzles
         
         function getPreviousInput(currentInput) {
             const allInputs = Array.from(document.querySelectorAll('.letter-input'));
@@ -1345,6 +1348,22 @@
             popup.style.display = 'none';
         }
         
+        function showEarlyPopup() {
+            const popup = document.getElementById('popup-overlay');
+            const title = popup.querySelector('.popup-title');
+            const message = popup.querySelector('.popup-message');
+            const hint = popup.querySelector('.popup-hint');
+            const button = popup.querySelector('.popup-close');
+            
+            // Update popup content
+            title.textContent = 'That Was Fast!';
+            message.innerHTML = 'Congratulations, cryptogram-annihilator!<br><br>You\'ve found a secret path, but it\'s still closed, for now.';
+            hint.innerHTML = '<em>Some doors open only when the stars align just right...</em>';
+            button.textContent = 'I understand';
+            
+            popup.style.display = 'flex';
+        }
+        
         function checkForDuplicates() {
             // Clear all error states first
             document.querySelectorAll('.letter-input').forEach(input => {
@@ -1430,8 +1449,17 @@
                     letter.style.visibility = 'hidden';
                 });
 
-                // Enable and animate the book cover link and header link
-                document.querySelector('.header-link').classList.add('enabled');
+                // Enable and animate the header link
+                const headerLink = document.querySelector('.header-link');
+                headerLink.classList.add('enabled');
+                
+                // Add click handler based on flag
+                if (!NEXT_PUZZLES_ENABLED) {
+                    headerLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showEarlyPopup();
+                    });
+                }
                 
                 // Show the popup after a short delay
                 setTimeout(() => {

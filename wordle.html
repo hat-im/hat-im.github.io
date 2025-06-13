@@ -816,6 +816,56 @@
         font-weight: bold;
         margin-top: 10px;
       }
+      
+      /* Early Access Popup - Match existing popup style */
+      .early-access-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+      }
+      .early-access-popup.show {
+        display: flex;
+      }
+      .early-access-content {
+        background-color: var(--color-bg);
+        padding: 30px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      }
+      .early-access-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: var(--color-text);
+      }
+      .early-access-message {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        color: var(--color-text);
+        line-height: 1.4;
+      }
+      .early-access-close {
+        padding: 12px 24px;
+        border: 2px solid var(--color-correct);
+        background-color: var(--color-correct);
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .early-access-close:hover {
+        background-color: #4a7c59;
+        border-color: #4a7c59;
+      }
     </style>
   </head>
   <body>
@@ -995,6 +1045,9 @@
         "https://api.dictionaryapi.dev/api/v2/entries/en/",
         "https://dictionaryapi.com/api/v3/references/collegiate/json/",
       ];
+      // Flag to control next puzzle access
+      const NEXT_PUZZLES_ENABLED = false; // Set to true to enable all next puzzles
+      
       // Game state variables
       let currentWordIndex = 0;
       let currentGuessIndex = 0;
@@ -2189,7 +2242,11 @@
             titleS.style.color = "var(--color-correct)";
             setTimeout(() => {
               titleS.style.color = "";
-              window.location.href = "connect1ons.html";
+              if (NEXT_PUZZLES_ENABLED) {
+                window.location.href = "connect1ons.html";
+              } else {
+                showEarlyAccessPopup();
+              }
             }, 150);
           };
 
@@ -2683,6 +2740,31 @@
           toast.classList.remove("show");
         }, 2000);
       }
+      
+      // Show early access popup
+      function showEarlyAccessPopup() {
+        const popup = document.getElementById('early-access-popup');
+        popup.classList.add('show');
+      }
+      
+      // Close early access popup
+      function closeEarlyAccessPopup() {
+        const popup = document.getElementById('early-access-popup');
+        popup.classList.remove('show');
+      }
     </script>
+    
+    <!-- Early Access Popup -->
+    <div class="early-access-popup" id="early-access-popup">
+      <div class="early-access-content">
+        <div class="early-access-title">Word Master!</div>
+        <div class="early-access-message">
+          Incredible! You've conquered every word puzzle!<br><br>
+          You've reached the edge of what exists for now.<br><br>
+          <em style="color: #999;">The dictionary is still being written...</em>
+        </div>
+        <button class="early-access-close" onclick="closeEarlyAccessPopup()">Roger that</button>
+      </div>
+    </div>
   </body>
 </html>

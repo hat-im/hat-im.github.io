@@ -677,6 +677,58 @@
             margin: 15px 0;
             color: #666;
         }
+        
+        /* Early Access Popup - Match game-over popup style */
+        .early-access-popup {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            z-index: 1000;
+            min-width: 300px;
+            max-width: 90%;
+            display: none;
+        }
+        
+        .early-access-popup.show {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+            display: block;
+        }
+        
+        .early-access-popup h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.2s forwards;
+        }
+        
+        .early-access-popup p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.3s forwards;
+        }
+        
+        .early-access-popup .btn {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.4s forwards;
+        }
     </style>
 </head>
 <body>
@@ -758,6 +810,9 @@
                 ]
             };
 
+        // Flag to control next puzzle access
+        const NEXT_PUZZLES_ENABLED = false; // Set to true to enable all next puzzles
+        
         // Game state
         let gameState = {
             words: [],
@@ -908,6 +963,18 @@
             window.toastTimeout = setTimeout(() => {
                 toastEl.className = 'toast';
             }, 2000);
+        }
+        
+        // Show early access popup
+        function showEarlyAccessPopup() {
+            const popup = document.getElementById('early-access-popup');
+            popup.classList.add('show');
+        }
+        
+        // Close early access popup
+        function closeEarlyAccessPopup() {
+            const popup = document.getElementById('early-access-popup');
+            popup.classList.remove('show');
         }
 
         // Initialize game
@@ -1542,7 +1609,12 @@ async function animateCorrectGuess(correctGroup) {
                             cell.classList.add('shake-link');
                             
                             cell.addEventListener('click', () => {
-                                window.open(specialLinks[linkIndex], '_blank');
+                                const link = specialLinks[linkIndex];
+                                if (!NEXT_PUZZLES_ENABLED) {
+                                    showEarlyAccessPopup();
+                                } else {
+                                    window.open(link, '_blank');
+                                }
                             });
                         });
                     }
@@ -1616,5 +1688,13 @@ async function animateCorrectGuess(correctGroup) {
         // Initialize game on load
         initGame();
     </script>
+    
+    <!-- Early Access Popup -->
+    <div class="early-access-popup" id="early-access-popup">
+        <h2>You Found It!</h2>
+        <p>No harmony escapes you!<br><br>Your ears have led you to something still in harmony.</p>
+        <p style="font-style: italic; font-size: 1rem; color: #999;">The next movement hasn't been composed yet...</p>
+        <button class="btn" onclick="closeEarlyAccessPopup()">I hear you</button>
+    </div>
 </body>
 </html>
