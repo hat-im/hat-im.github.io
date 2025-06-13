@@ -1,1120 +1,1217 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A Pocketful of Puzzle</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M455.209,199.201c-26.516,0-37.773,21.462-47.26,13.648c-8.138-6.702-7.665-10.03-5.054-26.726l10.766-82.518c3.74-17.94-10.556-28.803-22.767-28.444c0,0-77.78,2.68-89.202,2.68c-11.424,0-18.291,6.85-13.718,15.996c4.581,9.137,23.669,22.881,25.132,43.388c2.286,31.983-25.132,59.402-57.106,59.402c-31.973,0-59.392-27.418-57.106-59.402c1.463-20.507,20.55-34.251,25.132-43.388c4.572-9.145-2.296-15.996-13.718-15.996c-11.424,0-89.203-2.68-89.203-2.68c-12.211-0.36-26.507,10.503-22.767,28.444l10.766,82.518c2.611,16.705,3.084,20.034-5.054,26.726c-9.488,7.814-20.744-13.648-47.26-13.648C25.438,199.201,0,224.639,0,256c0,31.36,25.438,56.8,56.79,56.8c26.517,0,37.773-21.462,47.26-13.648c8.138,6.702,7.665,10.03,5.054,26.727l-10.766,82.518c-3.74,17.94,10.556,28.802,22.767,28.443c0,0,77.78-2.68,89.203-2.68c11.422,0,18.29-6.851,13.718-15.996c-4.582-9.137-23.67-22.881-25.132-43.389c-2.287-31.982,25.132-59.4,57.106-59.4c31.974,0,59.392,27.418,57.106,59.4c-1.463,20.508-20.551,34.252-25.132,43.389c-4.573,9.145,2.295,15.996,13.718,15.996c11.422,0,89.202,2.68,89.202,2.68c12.211,0.359,26.508-10.503,22.767-28.443l-10.766-82.518c-2.61-16.705-3.084-20.034,5.054-26.727c9.487-7.814,20.744,13.648,47.26,13.648C486.561,312.8,512,287.36,512,256C512,224.639,486.561,199.201,455.209,199.201z"/></svg>'>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M455.209,199.201c-26.516,0-37.773,21.462-47.26,13.648c-8.138-6.702-7.665-10.03-5.054-26.726l10.766-82.518c3.74-17.94-10.556-28.803-22.767-28.444c0,0-77.78,2.68-89.202,2.68c-11.424,0-18.291,6.85-13.718,15.996c4.581,9.137,23.669,22.881,25.132,43.388c2.286,31.983-25.132,59.402-57.106,59.402c-31.973,0-59.392-27.418-57.106-59.402c1.463-20.507,20.55-34.251,25.132-43.388c4.572-9.145-2.296-15.996-13.718-15.996c-11.424,0-89.203-2.68-89.203-2.68c-12.211-0.36-26.507,10.503-22.767,28.444l10.766,82.518c2.611,16.705,3.084,20.034-5.054,26.726c-9.488,7.814-20.744-13.648-47.26-13.648C25.438,199.201,0,224.639,0,256c0,31.36,25.438,56.8,56.79,56.8c26.517,0,37.773-21.462,47.26-13.648c8.138,6.702,7.665,10.03,5.054,26.727l-10.766,82.518c-3.74,17.94,10.556,28.802,22.767,28.443c0,0,77.78-2.68,89.203-2.68c11.422,0,18.29-6.851,13.718-15.996c-4.582-9.137-23.67-22.881-25.132-43.389c-2.287-31.982,25.132-59.4,57.106-59.4c31.974,0,59.392,27.418,57.106,59.4c-1.463,20.508-20.551,34.252-25.132,43.389c-4.573,9.145,2.295,15.996,13.718,15.996c11.422,0,89.202,2.68,89.202,2.68c12.211,0.359,26.508-10.503,22.767-28.443l-10.766-82.518c-2.61-16.705-3.084-20.034,5.054-26.727c9.487-7.814,20.744,13.648,47.26,13.648C486.561,312.8,512,287.36,512,256C512,224.639,486.561,199.201,455.209,199.201z"/></svg>'
+    />
     <style>
-        body {
-            font-family: 'Crimson Text', 'Georgia', 'Playfair Display', serif;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 15px;
-            background: linear-gradient(45deg, #faf7f2, #f5f1e8, #f0e9d8, #f7f3ed, #fdf9f1);
-            background-size: 400% 400%;
-            animation: luxuriousGradient 12s ease-in-out infinite;
-            line-height: 1.7;
-            color: #3c2f2f;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+      body {
+        font-family: "Crimson Text", "Georgia", "Playfair Display", serif;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 15px;
+        background: linear-gradient(
+          45deg,
+          #faf7f2,
+          #f5f1e8,
+          #f0e9d8,
+          #f7f3ed,
+          #fdf9f1
+        );
+        background-size: 400% 400%;
+        animation: luxuriousGradient 12s ease-in-out infinite;
+        line-height: 1.7;
+        color: #3c2f2f;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-        @keyframes luxuriousGradient {
-            0% { background-position: 0% 50%; }
-            25% { background-position: 100% 25%; }
-            50% { background-position: 50% 100%; }
-            75% { background-position: 25% 0%; }
-            100% { background-position: 0% 50%; }
+      @keyframes luxuriousGradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        25% {
+          background-position: 100% 25%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        75% {
+          background-position: 25% 0%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .content-card {
+        background: rgba(255, 252, 247, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-radius: 16px;
+        padding: 25px 30px 20px;
+        box-shadow: 0 12px 40px rgba(139, 92, 68, 0.08),
+          0 6px 20px rgba(139, 92, 68, 0.04),
+          inset 0 1px 0 rgba(255, 252, 247, 0.9);
+        border: 1px solid rgba(222, 195, 165, 0.3);
+        position: relative;
+        z-index: 10;
+        max-width: 450px;
+        width: 100%;
+        max-height: 95vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .word-wall {
+        display: none;
+      }
+
+      .word {
+        position: absolute;
+        font-family: "Crimson Text", serif;
+        font-size: 12px;
+        font-weight: 300;
+        color: rgba(15, 23, 42, 0.06);
+        user-select: none;
+        white-space: nowrap;
+        will-change: opacity, text-shadow;
+        animation: wordGlow 6s ease-in-out infinite;
+        animation-delay: var(--delay);
+      }
+
+      .word.love-word {
+        color: rgba(139, 69, 19, 0.1);
+        animation: loveGlow 8s ease-in-out infinite;
+        animation-delay: 0s;
+      }
+
+      @keyframes wordGlow {
+        0%,
+        100% {
+          opacity: 0.3;
+          text-shadow: 0 0 1px rgba(15, 23, 42, 0.08);
+        }
+        50% {
+          opacity: 0.7;
+          text-shadow: 0 0 6px rgba(15, 23, 42, 0.15);
+        }
+      }
+
+      @keyframes loveGlow {
+        0%,
+        100% {
+          opacity: 0.4;
+          text-shadow: 0 0 2px rgba(139, 69, 19, 0.2);
+        }
+        50% {
+          opacity: 0.9;
+          text-shadow: 0 0 15px rgba(139, 69, 19, 0.4);
+        }
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 12px;
+        position: relative;
+        flex-shrink: 0;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #d4b396, transparent);
+      }
+
+      .header h1 {
+        font-family: "Playfair Display", "Georgia", serif;
+        font-size: 28px;
+        font-weight: 400;
+        letter-spacing: -0.5px;
+        margin: 0 0 8px 0;
+        color: #8b5c44;
+        position: relative;
+      }
+
+      .header p {
+        font-size: 13px;
+        font-weight: 400;
+        color: #a0824a;
+        margin-bottom: 10px;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        font-family: "Crimson Text", serif;
+      }
+
+      .dedication {
+        font-size: 10px;
+        font-style: italic;
+        color: #b8956d;
+        margin-top: 10px;
+        letter-spacing: 1.3px;
+        font-weight: 300;
+        position: relative;
+      }
+
+      .dedication::before,
+      .dedication::after {
+        content: "◦";
+        color: #d4b396;
+        margin: 0 8px;
+        font-size: 8px;
+      }
+
+      .welcome-content {
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .welcome-message {
+        font-size: 14px;
+        margin: 8px 0;
+        line-height: 1.5;
+        color: #705447;
+        font-weight: 300;
+        position: relative;
+        padding: 0;
+        text-align: center;
+        font-style: italic;
+      }
+
+      .instructions {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin: 10px 0;
+        padding: 12px;
+        background: rgba(252, 248, 241, 0.7);
+        border-radius: 8px;
+        border: 1px solid rgba(212, 179, 150, 0.3);
+        position: relative;
+      }
+
+      .checklist-title {
+        font-family: "Playfair Display", serif;
+        font-size: 12px;
+        font-weight: 500;
+        color: #8b5c44;
+        text-align: center;
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .instruction-item {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        color: #705447;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 4px 0;
+        user-select: none;
+        letter-spacing: 0.2px;
+        margin-bottom: 0;
+      }
+
+      .instruction-item:last-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .instruction-item:hover {
+        color: #5c453a;
+      }
+
+      .instruction-item {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .instruction-item.scratched-off {
+        position: relative;
+      }
+
+      .instruction-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, #8b5c44, #a0824a, #8b5c44);
+        transform: scaleX(0);
+        transform-origin: left;
+        z-index: 2;
+        transition: transform 0.8s ease-out;
+      }
+
+      .instruction-item.scratched-off .instruction-text::after {
+        transform: scaleX(1);
+      }
+
+      .instruction-item.scratched-off .instruction-text {
+        color: #9a8475;
+        animation: fadeToGray 0.8s ease-out forwards;
+      }
+
+      @keyframes fadeToGray {
+        0% {
+          color: #705447;
+          filter: none;
+        }
+        100% {
+          color: #9a8475;
+          filter: opacity(0.7);
+        }
+      }
+
+      .instruction-text {
+        transition: all 0.3s ease;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+      }
+
+      .surprise-message {
+        margin-top: 8px;
+        color: #8b5c44;
+        font-weight: 500;
+        text-align: center;
+        font-size: 12px;
+        opacity: 0;
+        pointer-events: none;
+        letter-spacing: 0.3px;
+        font-style: italic;
+        min-height: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      .surprise-message.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .surprise-message.typing {
+        opacity: 1;
+      }
+
+      .typing-cursor {
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0;
+        }
+      }
+
+      .entry-button {
+        background: linear-gradient(135deg, #8b5c44 0%, #a0824a 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        padding: 12px 32px;
+        font-family: "Crimson Text", "Georgia", serif;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 12px 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        letter-spacing: 0.6px;
+        box-shadow: 0 4px 16px rgba(139, 92, 68, 0.2),
+          0 2px 8px rgba(139, 92, 68, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .entry-button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .entry-button:hover::before {
+        left: 100%;
+      }
+
+      .entry-button:hover {
+        background: linear-gradient(135deg, #a0824a 0%, #b89660 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 32px rgba(139, 92, 68, 0.3),
+          0 4px 16px rgba(139, 92, 68, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      }
+
+      .countdown {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 15px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        color: #64748b;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .countdown.show {
+        opacity: 1;
+      }
+
+      .abort-button {
+        background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-family: "Crimson Text", serif;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        letter-spacing: 0.3px;
+      }
+
+      .abort-button:hover {
+        background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+        transform: translateY(-1px);
+      }
+
+      .footer-text {
+        font-size: 12px;
+        line-height: 1.4;
+        margin: 10px 0 0 0;
+        text-align: center;
+        color: #b8956d;
+        font-style: italic;
+        font-weight: 300;
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        position: relative;
+        padding-top: 10px;
+        letter-spacing: 0.2px;
+        flex-shrink: 0;
+      }
+
+      .footer-text::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #d4b396, transparent);
+      }
+
+      .footer-text.fade-out {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      .footer-text a {
+        color: #a0824a;
+        text-decoration: none;
+        border-bottom: 1px dotted #b8956d;
+        transition: all 0.3s ease;
+      }
+
+      .footer-text a:hover {
+        color: #8b5c44;
+        border-bottom: 1px solid #a0824a;
+      }
+
+      .device-note {
+        font-size: 11px;
+        color: #d4b396;
+        font-style: italic;
+        margin-top: 8px;
+        letter-spacing: 0.3px;
+        font-weight: 300;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .welcome-content {
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      @media (max-width: 600px) {
+        body {
+          padding: 15px;
+          justify-content: flex-start;
+          align-items: center;
+          min-height: 100vh;
+          overflow-y: auto;
         }
 
         .content-card {
-            background: rgba(255, 252, 247, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-radius: 16px;
-            padding: 25px 30px 20px;
-            box-shadow: 
-                0 12px 40px rgba(139, 92, 68, 0.08),
-                0 6px 20px rgba(139, 92, 68, 0.04),
-                inset 0 1px 0 rgba(255, 252, 247, 0.9);
-            border: 1px solid rgba(222, 195, 165, 0.3);
-            position: relative;
-            z-index: 10;
-            max-width: 450px;
-            width: 100%;
-            max-height: 95vh;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
+          padding: 20px 15px;
+          border-radius: 12px;
+          margin: 0;
+          width: calc(100% - 30px);
+          max-width: calc(100vw - 30px);
+          max-height: none;
+          min-height: auto;
+          overflow-y: visible;
         }
 
-        .word-wall {
-            display: none;
-        }
-
-        .word {
-            position: absolute;
-            font-family: 'Crimson Text', serif;
-            font-size: 12px;
-            font-weight: 300;
-            color: rgba(15, 23, 42, 0.06);
-            user-select: none;
-            white-space: nowrap;
-            will-change: opacity, text-shadow;
-            animation: wordGlow 6s ease-in-out infinite;
-            animation-delay: var(--delay);
-        }
-
-        .word.love-word {
-            color: rgba(139, 69, 19, 0.1);
-            animation: loveGlow 8s ease-in-out infinite;
-            animation-delay: 0s;
-        }
-
-        @keyframes wordGlow {
-            0%, 100% { 
-                opacity: 0.3;
-                text-shadow: 0 0 1px rgba(15, 23, 42, 0.08);
-            }
-            50% { 
-                opacity: 0.7;
-                text-shadow: 0 0 6px rgba(15, 23, 42, 0.15);
-            }
-        }
-
-        @keyframes loveGlow {
-            0%, 100% { 
-                opacity: 0.4;
-                text-shadow: 0 0 2px rgba(139, 69, 19, 0.2);
-            }
-            50% { 
-                opacity: 0.9;
-                text-shadow: 0 0 15px rgba(139, 69, 19, 0.4);
-            }
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 12px;
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #d4b396, transparent);
-        }
-        
         .header h1 {
-            font-family: 'Playfair Display', 'Georgia', serif;
-            font-size: 28px;
-            font-weight: 400;
-            letter-spacing: -0.5px;
-            margin: 0 0 8px 0;
-            color: #8b5c44;
-            position: relative;
-        }
-        
-        .header p {
-            font-size: 13px;
-            font-weight: 400;
-            color: #a0824a;
-            margin-bottom: 10px;
-            letter-spacing: 1.3px;
-            text-transform: uppercase;
-            font-family: 'Crimson Text', serif;
-        }
-        
-        .dedication {
-            font-size: 10px;
-            font-style: italic;
-            color: #b8956d;
-            margin-top: 10px;
-            letter-spacing: 1.3px;
-            font-weight: 300;
-            position: relative;
+          font-size: 28px;
         }
 
-        .dedication::before,
-        .dedication::after {
-            content: '◦';
-            color: #d4b396;
-            margin: 0 8px;
-            font-size: 8px;
-        }
-        
-        .welcome-content {
-            max-width: 500px;
-            margin: 0 auto;
-            position: relative;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        .welcome-message {
-            font-size: 14px;
-            margin: 8px 0;
-            line-height: 1.5;
-            color: #705447;
-            font-weight: 300;
-            position: relative;
-            padding: 0;
-            text-align: center;
-            font-style: italic;
+        .header p {
+          font-size: 13px;
         }
 
         .instructions {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin: 10px 0;
-            padding: 12px;
-            background: rgba(252, 248, 241, 0.7);
-            border-radius: 8px;
-            border: 1px solid rgba(212, 179, 150, 0.3);
-            position: relative;
-        }
-
-        .checklist-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 12px;
-            font-weight: 500;
-            color: #8b5c44;
-            text-align: center;
-            margin-bottom: 6px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+          padding: 10px;
+          margin: 8px 0;
         }
 
         .instruction-item {
-            display: flex;
-            align-items: center;
-            font-size: 13px;
-            color: #705447;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 4px 0;
-            user-select: none;
-            letter-spacing: 0.2px;
-            margin-bottom: 0;
+          font-size: 13px;
+          padding: 2px 0;
         }
 
-        .instruction-item:last-of-type {
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .welcome-message {
+          font-size: 13px;
+          margin: 10px 0;
         }
 
-        .instruction-item:hover {
-            color: #5c453a;
-        }
-
-        .instruction-item {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .instruction-item.scratched-off {
-            position: relative;
-        }
-
-        .instruction-text::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, #8b5c44, #a0824a, #8b5c44);
-            transform: scaleX(0);
-            transform-origin: left;
-            z-index: 2;
-            transition: transform 0.8s ease-out;
-        }
-
-        .instruction-item.scratched-off .instruction-text::after {
-            transform: scaleX(1);
-        }
-
-        .instruction-item.scratched-off .instruction-text {
-            color: #9a8475;
-            animation: fadeToGray 0.8s ease-out forwards;
-        }
-
-
-        @keyframes fadeToGray {
-            0% {
-                color: #705447;
-                filter: none;
-            }
-            100% {
-                color: #9a8475;
-                filter: opacity(0.7);
-            }
-        }
-
-        .instruction-text {
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-        }
-
-        .surprise-message {
-            margin-top: 8px;
-            color: #8b5c44;
-            font-weight: 500;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0;
-            pointer-events: none;
-            letter-spacing: 0.3px;
-            font-style: italic;
-            min-height: 16px;
-            transition: opacity 0.3s ease;
-        }
-
-        .surprise-message.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .surprise-message.typing {
-            opacity: 1;
-        }
-
-        .typing-cursor {
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-        
         .entry-button {
-            background: linear-gradient(135deg, #8b5c44 0%, #a0824a 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            padding: 12px 32px;
-            font-family: 'Crimson Text', 'Georgia', serif;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            margin: 12px 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            letter-spacing: 0.6px;
-            box-shadow: 
-                0 4px 16px rgba(139, 92, 68, 0.2), 
-                0 2px 8px rgba(139, 92, 68, 0.15),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
+          padding: 12px 28px;
+          font-size: 14px;
+          margin: 10px 0;
         }
 
-        .entry-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .entry-button:hover::before {
-            left: 100%;
-        }
-        
-        .entry-button:hover {
-            background: linear-gradient(135deg, #a0824a 0%, #b89660 100%);
-            transform: translateY(-3px);
-            box-shadow: 
-                0 8px 32px rgba(139, 92, 68, 0.3), 
-                0 4px 16px rgba(139, 92, 68, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.15);
-        }
-        
         .countdown {
-            font-size: 14px;
-            font-weight: 500;
-            margin-top: 15px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            color: #64748b;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 10px 16px;
-            border-radius: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .countdown.show {
-            opacity: 1;
+          font-size: 13px;
+          padding: 8px 12px;
         }
 
-        .abort-button {
-            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 20px;
-            font-family: 'Crimson Text', serif;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: 0.3px;
-        }
-
-        .abort-button:hover {
-            background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
-            transform: translateY(-1px);
-        }
-        
         .footer-text {
-            font-size: 12px;
-            line-height: 1.4;
-            margin: 10px 0 0 0;
-            text-align: center;
-            color: #b8956d;
-            font-style: italic;
-            font-weight: 300;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            position: relative;
-            padding-top: 10px;
-            letter-spacing: 0.2px;
-            flex-shrink: 0;
-        }
-
-        .footer-text::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #d4b396, transparent);
-        }
-        
-        .footer-text.fade-out {
-            opacity: 0;
-            transform: translateY(-6px);
-        }
-        
-        .footer-text a {
-            color: #a0824a;
-            text-decoration: none;
-            border-bottom: 1px dotted #b8956d;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-text a:hover {
-            color: #8b5c44;
-            border-bottom: 1px solid #a0824a;
+          font-size: 13px;
+          margin: 8px 0 0 0;
+          line-height: 1.4;
         }
 
         .device-note {
-            font-size: 11px;
-            color: #d4b396;
-            font-style: italic;
-            margin-top: 8px;
-            letter-spacing: 0.3px;
-            font-weight: 300;
+          font-size: 12px;
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .welcome-content {
-            animation: fadeIn 1.2s ease-out;
-        }
-        
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
-                justify-content: flex-start;
-                align-items: center;
-                min-height: 100vh;
-                overflow-y: auto;
-            }
+      }
 
-            .content-card {
-                padding: 20px 15px;
-                border-radius: 12px;
-                margin: 0;
-                width: calc(100% - 30px);
-                max-width: calc(100vw - 30px);
-                max-height: none;
-                min-height: auto;
-                overflow-y: visible;
-            }
-
-            .header h1 {
-                font-size: 28px;
-            }
-            
-            .header p {
-                font-size: 13px;
-            }
-
-            .instructions {
-                padding: 10px;
-                margin: 8px 0;
-            }
-
-            .instruction-item {
-                font-size: 13px;
-                padding: 2px 0;
-            }
-            
-            .welcome-message {
-                font-size: 13px;
-                margin: 10px 0;
-            }
-            
-            .entry-button {
-                padding: 12px 28px;
-                font-size: 14px;
-                margin: 10px 0;
-            }
-            
-            .countdown {
-                font-size: 13px;
-                padding: 8px 12px;
-            }
-            
-            .footer-text {
-                font-size: 13px;
-                margin: 8px 0 0 0;
-                line-height: 1.4;
-            }
-            
-            .device-note {
-                font-size: 12px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            body {
-                padding: 12px;
-            }
-
-            .content-card {
-                padding: 15px 12px;
-                border-radius: 10px;
-                margin: 0;
-                width: calc(100% - 24px);
-                max-width: calc(100vw - 24px);
-            }
-
-            .header h1 {
-                font-size: 34px;
-            }
-            
-            .header p {
-                font-size: 15px;
-            }
-
-            .instructions {
-                padding: 14px;
-            }
-
-            .instruction-item {
-                font-size: 13px;
-            }
-            
-            .welcome-message {
-                font-size: 15px;
-            }
-            
-            .entry-button {
-                padding: 16px 36px;
-                font-size: 15px;
-            }
+      @media (max-width: 480px) {
+        body {
+          padding: 12px;
         }
 
-        /* Puzzle Card Styles */
+        .content-card {
+          padding: 15px 12px;
+          border-radius: 10px;
+          margin: 0;
+          width: calc(100% - 24px);
+          max-width: calc(100vw - 24px);
+        }
+
+        .header h1 {
+          font-size: 34px;
+        }
+
+        .header p {
+          font-size: 15px;
+        }
+
+        .instructions {
+          padding: 14px;
+        }
+
+        .instruction-item {
+          font-size: 13px;
+        }
+
+        .welcome-message {
+          font-size: 15px;
+        }
+
+        .entry-button {
+          padding: 16px 36px;
+          font-size: 15px;
+        }
+      }
+
+      /* Puzzle Card Styles */
+      .puzzle-card {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #ffffff;
+        border: 2px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1),
+          0 4px 8px rgba(0, 0, 0, 0.05);
+        max-width: 300px;
+        z-index: 1000;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .puzzle-card.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .puzzle-card-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+        position: relative;
+      }
+
+      .puzzle-card-title {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+        text-align: center;
+      }
+
+      .puzzle-card-close {
+        background: none;
+        border: none;
+        font-size: 20px;
+        color: #64748b;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+        position: absolute;
+        right: 0;
+      }
+
+      .puzzle-card-close:hover {
+        background: #f1f5f9;
+        color: #334155;
+      }
+
+      .puzzle-grid {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 12px;
+        justify-items: stretch;
+        align-items: stretch;
+      }
+
+      .puzzle-button {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 8px;
+        font-family: "Crimson Text", serif;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        height: 40px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .puzzle-button:hover {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        transform: translateY(-1px);
+      }
+
+      .puzzle-button.disabled {
+        background: #e2e8f0;
+        color: #94a3b8;
+        cursor: not-allowed;
+      }
+
+      .puzzle-button.disabled:hover {
+        transform: none;
+        background: #e2e8f0;
+      }
+
+      .puzzle-card-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+        transition: all 0.3s ease;
+        z-index: 999;
+        display: none;
+      }
+
+      .puzzle-card-toggle:hover {
+        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        transform: scale(1.05);
+      }
+
+      .puzzle-card-toggle.show {
+        display: block;
+      }
+
+      @media (max-width: 600px) {
         .puzzle-card {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #ffffff;
-            border: 2px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
-            max-width: 300px;
-            z-index: 1000;
-            transform: translateX(100%);
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .puzzle-card.show {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .puzzle-card-header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 16px;
-            position: relative;
-        }
-
-        .puzzle-card-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e293b;
-            margin: 0;
-            text-align: center;
-        }
-
-        .puzzle-card-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            color: #64748b;
-            cursor: pointer;
-            padding: 4px;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-            position: absolute;
-            right: 0;
-        }
-
-        .puzzle-card-close:hover {
-            background: #f1f5f9;
-            color: #334155;
-        }
-
-        .puzzle-grid {
-            display: grid;
-            gap: 8px;
-            margin-bottom: 12px;
-            justify-items: stretch;
-            align-items: stretch;
-        }
-
-
-        .puzzle-button {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 8px;
-            font-family: 'Crimson Text', serif;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 40px;
-            height: 40px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .puzzle-button:hover {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            transform: translateY(-1px);
-        }
-
-        .puzzle-button.disabled {
-            background: #e2e8f0;
-            color: #94a3b8;
-            cursor: not-allowed;
-        }
-
-        .puzzle-button.disabled:hover {
-            transform: none;
-            background: #e2e8f0;
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          left: 10px;
+          max-width: none;
+          padding: 12px;
         }
 
         .puzzle-card-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 18px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
-            transition: all 0.3s ease;
-            z-index: 999;
-            display: none;
+          top: 10px;
+          right: 10px;
         }
 
-        .puzzle-card-toggle:hover {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            transform: scale(1.05);
+        .puzzle-card-header {
+          margin-bottom: 8px;
         }
 
-        .puzzle-card-toggle.show {
-            display: block;
+        .puzzle-card-title {
+          font-size: 14px;
         }
 
-        @media (max-width: 600px) {
-            .puzzle-card {
-                position: fixed;
-                top: 10px;
-                right: 10px;
-                left: 10px;
-                max-width: none;
-                padding: 12px;
-            }
-
-            .puzzle-card-toggle {
-                top: 10px;
-                right: 10px;
-            }
-            
-            .puzzle-card-header {
-                margin-bottom: 8px;
-            }
-            
-            .puzzle-card-title {
-                font-size: 14px;
-            }
-            
-            .puzzle-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 4px;
-                margin-bottom: 8px;
-            }
-            
-            .puzzle-button {
-                font-size: 9px;
-                padding: 4px 2px;
-                min-height: 28px;
-                height: 28px;
-                border-radius: 4px;
-            }
-            
-            .puzzle-card-close {
-                font-size: 16px;
-                padding: 2px;
-            }
+        .puzzle-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 4px;
+          margin-bottom: 8px;
         }
 
-        /* Hidden message styles */
-        .hidden-message {
-            position: absolute;
-            left: -9999px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
+        .puzzle-button {
+          font-size: 9px;
+          padding: 4px 2px;
+          min-height: 28px;
+          height: 28px;
+          border-radius: 4px;
         }
 
-        /* Alternative hidden message in CSS content */
-        body::after {
-            content: "Made with love";
-            position: absolute;
-            left: -9999px;
-            top: -9999px;
-            font-size: 0;
-            opacity: 0;
-            pointer-events: none;
+        .puzzle-card-close {
+          font-size: 16px;
+          padding: 2px;
         }
+      }
+
+      /* Hidden message styles */
+      .hidden-message {
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+      }
+
+      /* Alternative hidden message in CSS content */
+      body::after {
+        content: "Made with love";
+        position: absolute;
+        left: -9999px;
+        top: -9999px;
+        font-size: 0;
+        opacity: 0;
+        pointer-events: none;
+      }
     </style>
-</head>
-<body>
-    <!-- Hidden message - invisible to users but findable by developers -->
-    <div class="hidden-message" aria-hidden="true">Made with love</div>
-
+  </head>
+  <body>
     <div class="content-card">
-        <div class="header">
-            <h1>A Pocketful of Puzzle</h1>
-            <p>An assortment of challenge and distraction</p>
-            <div class="dedication">from Hat, to Sam</div>
-        </div>
-        
-        <div class="welcome-content">
-            <div class="welcome-message">
-                I've crafted a game for you.<br>
-                I hope you enjoy.
-            </div>
+      <div class="header">
+        <h1>A Pocketful of Puzzle</h1>
+        <p>An assortment of challenge and distraction</p>
+        <div class="dedication">from Hat, to Sam</div>
+      </div>
 
-            <div class="instructions">
-                <div class="checklist-title">Ingredients for Success</div>
-                <div class="instruction-item" onclick="toggleScratchItem(this)">
-                    <span class="instruction-text">• Horizontal position (optimal for heavy thinking)</span>
-                </div>
-                <div class="instruction-item" onclick="toggleScratchItem(this)">
-                    <span class="instruction-text">• A soft kitty to pet (or annoy)</span>
-                </div>
-                <div class="instruction-item" onclick="toggleScratchItem(this)">
-                    <span class="instruction-text">• The "Pop Goes Classical" playlist</span>
-                </div>
-                <div class="instruction-item" onclick="toggleScratchItem(this)">
-                    <span class="instruction-text">• A tall cup of hot chocolate (or coffee)</span>
-                </div>
-                <div class="instruction-item" onclick="toggleScratchItem(this)">
-                    <span class="instruction-text">• A brain cell (borrow if unavailable)</span>
-                </div>
-                <div class="surprise-message" id="surpriseMessage"></div>
-            </div>
-            
-            <button class="entry-button" onclick="enterPuzzles(true)">
-                I am ready to begin
-            </button>
-            
-            <div class="countdown" id="countdown">
-                <div>Redirecting in <span id="timer">5</span> seconds...</div>
-                <button class="abort-button" onclick="abortRedirect()">Stay Here</button>
-            </div>
+      <div class="welcome-content">
+        <div class="welcome-message">
+          Check off your inventory before you start.
         </div>
-        
-        <div class="footer-text">
-            Take your time with these.<br>
-            (Does asynchronous puzzle communication count as no-contact?)
-            <div class="device-note">For best results, open on laptop</div>
+
+        <div class="instructions">
+          <div class="checklist-title">Ingredients for Success</div>
+          <div class="instruction-item" onclick="toggleScratchItem(this)">
+            <span class="instruction-text"
+              >• Horizontal position (optimal for heavy thinking)</span
+            >
+          </div>
+          <div class="instruction-item" onclick="toggleScratchItem(this)">
+            <span class="instruction-text"
+              >• A soft kitty to pet (or annoy)</span
+            >
+          </div>
+          <div class="instruction-item" onclick="toggleScratchItem(this)">
+            <span class="instruction-text"
+              >• The "Pop Goes Classical" playlist</span
+            >
+          </div>
+          <div class="instruction-item" onclick="toggleScratchItem(this)">
+            <span class="instruction-text"
+              >• A tall cup of hot chocolate (or coffee)</span
+            >
+          </div>
+          <div class="instruction-item" onclick="toggleScratchItem(this)">
+            <span class="instruction-text"
+              >• A brain cell (borrow if unavailable)</span
+            >
+          </div>
+          <div class="surprise-message" id="surpriseMessage"></div>
         </div>
+
+        <button class="entry-button" onclick="enterPuzzles(true)">
+          Begin
+        </button>
+
+        <div class="countdown" id="countdown">
+          <div>Redirecting in <span id="timer">5</span> seconds...</div>
+          <button class="abort-button" onclick="abortRedirect()">
+            Stay Here
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-text">
+        Take your time with these.
+        <div class="device-note">
+          For best results, open on laptop<br />
+          Please puzzle responsibly.
+        </div>
+      </div>
     </div>
 
     <!-- Hidden message - invisible to users but findable by developers -->
-    <div class="hidden-message" aria-hidden="true">Made with love, for the one I love.</div>
+    <div class="hidden-message" aria-hidden="true">Made with love.</div>
 
     <!-- Puzzle Card Toggle Button -->
-    <button class="puzzle-card-toggle" id="puzzleToggle" onclick="togglePuzzleCard()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C10.9 2 10 2.9 10 4V6H8C6.9 6 6 6.9 6 8V10C6 11.1 6.9 12 8 12H10V14H8C6.9 14 6 14.9 6 16V18C6 19.1 6.9 20 8 20H10V22C10 23.1 10.9 24 12 24C13.1 24 14 23.1 14 22V20H16C17.1 20 18 19.1 18 18V16C18 14.9 17.1 14 16 14H14V12H16C17.1 12 18 11.1 18 10V8C18 6.9 17.1 6 16 6H14V4C14 2.9 13.1 2 12 2Z" fill="currentColor"/>
-        </svg>
+    <button
+      class="puzzle-card-toggle"
+      id="puzzleToggle"
+      onclick="togglePuzzleCard()"
+    >
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 2C10.9 2 10 2.9 10 4V6H8C6.9 6 6 6.9 6 8V10C6 11.1 6.9 12 8 12H10V14H8C6.9 14 6 14.9 6 16V18C6 19.1 6.9 20 8 20H10V22C10 23.1 10.9 24 12 24C13.1 24 14 23.1 14 22V20H16C17.1 20 18 19.1 18 18V16C18 14.9 17.1 14 16 14H14V12H16C17.1 12 18 11.1 18 10V8C18 6.9 17.1 6 16 6H14V4C14 2.9 13.1 2 12 2Z"
+          fill="currentColor"
+        />
+      </svg>
     </button>
 
     <!-- Puzzle Card -->
     <div class="puzzle-card" id="puzzleCard">
-        <div class="puzzle-card-header">
-            <h3 class="puzzle-card-title">Puzzles</h3>
-            <button class="puzzle-card-close" onclick="hidePuzzleCard()">&times;</button>
-        </div>
-        <div class="puzzle-grid" id="puzzleGrid">
-            <!-- Puzzle buttons will be dynamically added here -->
-        </div>
+      <div class="puzzle-card-header">
+        <h3 class="puzzle-card-title">Puzzles</h3>
+        <button class="puzzle-card-close" onclick="hidePuzzleCard()">
+          &times;
+        </button>
+      </div>
+      <div class="puzzle-grid" id="puzzleGrid">
+        <!-- Puzzle buttons will be dynamically added here -->
+      </div>
     </div>
 
     <script>
-        let countdownTimer;
-        let timeLeft = 5;
-        let userClicked = false;
-        let redirectAborted = false;
-        
-        function animateFooterChange(newText, callback) {
-            const footer = document.querySelector('.footer-text');
-            footer.classList.add('fade-out');
-            
-            setTimeout(() => {
-                footer.innerHTML = newText;
-                footer.classList.remove('fade-out');
-                if (callback) callback();
-            }, 400);
-        }
-        
-        function enterPuzzles(clickedByUser = false) {
-            userClicked = clickedByUser;
-            
-            // Disable the button
-            const button = document.querySelector('.entry-button');
-            button.disabled = true;
-            button.style.opacity = '0.5';
-            button.style.cursor = 'not-allowed';
-            button.textContent = 'Starting...';
-            
-            if (userClicked) {
-                // User clicked sequence
-                animateFooterChange('Perfect timing.', () => {
-                    setTimeout(() => {
-                        animateFooterChange('Let\'s get started then.', () => {
-                            setTimeout(() => {
-                                showCountdown();
-                            }, 2500);
-                        });
-                    }, 2000);
-                });
-            } else {
-                // Auto-redirect sequence
-                animateFooterChange('Okay, maybe not <em>that</em> much time...', () => {
-                    setTimeout(() => {
-                        animateFooterChange('Alright, I\'ll just redirect you myself.', () => {
-                            setTimeout(() => {
-                                showCountdown();
-                            }, 2500);
-                        });
-                    }, 3500);
-                });
-            }
-        }
+      let countdownTimer;
+      let timeLeft = 5;
+      let userClicked = false;
+      let redirectAborted = false;
 
-        function abortRedirect() {
-            redirectAborted = true;
-            clearInterval(countdownTimer);
-            
-            const countdown = document.getElementById('countdown');
-            countdown.classList.remove('show');
-            
-            // Re-enable the begin button
-            const button = document.querySelector('.entry-button');
-            button.disabled = false;
-            button.style.opacity = '1';
-            button.style.cursor = 'pointer';
-            button.textContent = 'Begin';
-            
-            // Reset timer
-            timeLeft = 5;
-            
-            animateFooterChange('Take your time with these.<br>(Does asynchronous puzzle communication count as no contact?)');
-        }
-        
-        function showCountdown() {
-            if (redirectAborted) return;
-            
-            const countdown = document.getElementById('countdown');
-            countdown.classList.add('show');
-            
-            // Start countdown
-            countdownTimer = setInterval(() => {
-                if (redirectAborted) {
-                    clearInterval(countdownTimer);
-                    return;
-                }
-                
-                timeLeft--;
-                document.getElementById('timer').textContent = timeLeft;
-                
-                if (timeLeft <= 0) {
-                    clearInterval(countdownTimer);
-                    if (!redirectAborted) {
-                        window.location.href = 'dear-sam.html';
-                    }
-                }
-            }, 1000);
-        }
-        
-        // Auto-redirect after 60 seconds of inactivity
+      function animateFooterChange(newText, callback) {
+        const footer = document.querySelector(".footer-text");
+        footer.classList.add("fade-out");
+
         setTimeout(() => {
-            if (timeLeft === 5 && !userClicked && !redirectAborted) {
-                enterPuzzles(false);
-            }
-        }, 60000);
-        
-        // Add some keyboard shortcuts
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                if (timeLeft === 5) { // Only if countdown hasn't started
-                    enterPuzzles(true);
-                }
-            }
-        });
+          footer.innerHTML = newText;
+          footer.classList.remove("fade-out");
+          if (callback) callback();
+        }, 400);
+      }
 
-        // Puzzle Card Functions
-        function checkCompletedPuzzles() {
-            const puzzles = [
-                { id: 'cryptogram', name: 'Cryptogram', url: 'dear-sam.html', completed: localStorage.getItem('cryptogram_completed') === 'true' },
-                { id: 'connect1ons', name: 'Connect1ons', url: 'connect1ons.html', completed: localStorage.getItem('connect1ons_completed') === 'true' },
-                { id: 'sonnections', name: 'Sonnections', url: 'sonnections.html', completed: localStorage.getItem('sonnections_completed') === 'true' },
-                { id: 'wordle', name: 'Wordle++', url: 'wordle.html', completed: localStorage.getItem('wordle_completed') === 'true' }
-            ];
-            
-            // Filter to only completed puzzles
-            const completedPuzzles = puzzles.filter(puzzle => puzzle.completed);
-            
-            if (completedPuzzles.length > 0) {
-                // Clear existing grid
-                const puzzleGrid = document.getElementById('puzzleGrid');
-                puzzleGrid.innerHTML = '';
-                
-                // Dynamically adjust grid layout based on number of completed puzzles
-                updateGridLayout(completedPuzzles.length);
-                
-                // Add only completed puzzles
-                completedPuzzles.forEach(puzzle => {
-                    const link = document.createElement('a');
-                    link.href = puzzle.url;
-                    link.className = 'puzzle-button';
-                    link.id = puzzle.id;
-                    link.textContent = puzzle.name;
-                    puzzleGrid.appendChild(link);
-                });
-                
-                // Show the toggle button
-                document.getElementById('puzzleToggle').classList.add('show');
-                
-                // Auto-show the card briefly if this is the first time
-                const cardShown = localStorage.getItem('puzzle_card_shown') === 'true';
-                if (!cardShown) {
+      function enterPuzzles(clickedByUser = false) {
+        userClicked = clickedByUser;
+
+        // Disable the button
+        const button = document.querySelector(".entry-button");
+        button.disabled = true;
+        button.style.opacity = "0.5";
+        button.style.cursor = "not-allowed";
+        button.textContent = "Starting...";
+
+        if (userClicked) {
+          // User clicked sequence
+          animateFooterChange("Perfect timing.", () => {
+            setTimeout(() => {
+              animateFooterChange("Let's get started then.", () => {
+                setTimeout(() => {
+                  showCountdown();
+                }, 2500);
+              });
+            }, 2000);
+          });
+        } else {
+          // Auto-redirect sequence
+          animateFooterChange(
+            "Okay, maybe not <em>that</em> much time...",
+            () => {
+              setTimeout(() => {
+                animateFooterChange(
+                  "Alright, I'll just redirect you myself.",
+                  () => {
                     setTimeout(() => {
-                        showPuzzleCard();
-                        localStorage.setItem('puzzle_card_shown', 'true');
-                        
-                        // Auto-hide after 5 seconds
-                        setTimeout(() => {
-                            hidePuzzleCard();
-                        }, 5000);
-                    }, 1000);
-                }
+                      showCountdown();
+                    }, 2500);
+                  }
+                );
+              }, 3500);
             }
+          );
         }
-        
-        function updateGridLayout(numPuzzles) {
-            const puzzleGrid = document.getElementById('puzzleGrid');
-            
-            // Remove existing grid positioning CSS
-            puzzleGrid.style.gridTemplateColumns = '';
-            puzzleGrid.style.gridTemplateRows = '';
-            
-            if (numPuzzles === 1) {
-                puzzleGrid.style.gridTemplateColumns = '1fr';
-                puzzleGrid.style.justifyItems = 'center';
-            } else if (numPuzzles === 2) {
-                puzzleGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-            } else if (numPuzzles === 3) {
-                puzzleGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-            } else {
-                // 4 puzzles - 2x2 grid
-                puzzleGrid.style.gridTemplateColumns = 'repeat(2, 1fr)';
-                puzzleGrid.style.gridTemplateRows = 'repeat(2, 1fr)';
+      }
+
+      function abortRedirect() {
+        redirectAborted = true;
+        clearInterval(countdownTimer);
+
+        const countdown = document.getElementById("countdown");
+        countdown.classList.remove("show");
+
+        // Re-enable the begin button
+        const button = document.querySelector(".entry-button");
+        button.disabled = false;
+        button.style.opacity = "1";
+        button.style.cursor = "pointer";
+        button.textContent = "Begin";
+
+        // Reset timer
+        timeLeft = 5;
+
+        animateFooterChange(
+          "Take your time with these.<br>(Does asynchronous puzzle communication count as no contact?)"
+        );
+      }
+
+      function showCountdown() {
+        if (redirectAborted) return;
+
+        const countdown = document.getElementById("countdown");
+        countdown.classList.add("show");
+
+        // Start countdown
+        countdownTimer = setInterval(() => {
+          if (redirectAborted) {
+            clearInterval(countdownTimer);
+            return;
+          }
+
+          timeLeft--;
+          document.getElementById("timer").textContent = timeLeft;
+
+          if (timeLeft <= 0) {
+            clearInterval(countdownTimer);
+            if (!redirectAborted) {
+              window.location.href = "dear-sam.html";
             }
+          }
+        }, 1000);
+      }
+
+      // Auto-redirect after 60 seconds of inactivity
+      setTimeout(() => {
+        if (timeLeft === 5 && !userClicked && !redirectAborted) {
+          enterPuzzles(false);
         }
+      }, 60000);
 
-        // Remove the old updatePuzzleButton function since we're using dynamic creation now
+      // Add some keyboard shortcuts
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          if (timeLeft === 5) {
+            // Only if countdown hasn't started
+            enterPuzzles(true);
+          }
+        }
+      });
 
-        function togglePuzzleCard() {
-            const card = document.getElementById('puzzleCard');
-            if (card.classList.contains('show')) {
+      // Puzzle Card Functions
+      function checkCompletedPuzzles() {
+        const puzzles = [
+          {
+            id: "cryptogram",
+            name: "Cryptogram",
+            url: "dear-sam.html",
+            completed: localStorage.getItem("cryptogram_completed") === "true",
+          },
+          {
+            id: "connect1ons",
+            name: "Connect1ons",
+            url: "connect1ons.html",
+            completed: localStorage.getItem("connect1ons_completed") === "true",
+          },
+          {
+            id: "sonnections",
+            name: "Sonnections",
+            url: "sonnections.html",
+            completed: localStorage.getItem("sonnections_completed") === "true",
+          },
+          {
+            id: "wordle",
+            name: "Wordle++",
+            url: "wordle.html",
+            completed: localStorage.getItem("wordle_completed") === "true",
+          },
+        ];
+
+        // Filter to only completed puzzles
+        const completedPuzzles = puzzles.filter((puzzle) => puzzle.completed);
+
+        if (completedPuzzles.length > 0) {
+          // Clear existing grid
+          const puzzleGrid = document.getElementById("puzzleGrid");
+          puzzleGrid.innerHTML = "";
+
+          // Dynamically adjust grid layout based on number of completed puzzles
+          updateGridLayout(completedPuzzles.length);
+
+          // Add only completed puzzles
+          completedPuzzles.forEach((puzzle) => {
+            const link = document.createElement("a");
+            link.href = puzzle.url;
+            link.className = "puzzle-button";
+            link.id = puzzle.id;
+            link.textContent = puzzle.name;
+            puzzleGrid.appendChild(link);
+          });
+
+          // Show the toggle button
+          document.getElementById("puzzleToggle").classList.add("show");
+
+          // Auto-show the card briefly if this is the first time
+          const cardShown =
+            localStorage.getItem("puzzle_card_shown") === "true";
+          if (!cardShown) {
+            setTimeout(() => {
+              showPuzzleCard();
+              localStorage.setItem("puzzle_card_shown", "true");
+
+              // Auto-hide after 5 seconds
+              setTimeout(() => {
                 hidePuzzleCard();
-            } else {
-                showPuzzleCard();
-            }
+              }, 5000);
+            }, 1000);
+          }
+        }
+      }
+
+      function updateGridLayout(numPuzzles) {
+        const puzzleGrid = document.getElementById("puzzleGrid");
+
+        // Remove existing grid positioning CSS
+        puzzleGrid.style.gridTemplateColumns = "";
+        puzzleGrid.style.gridTemplateRows = "";
+
+        if (numPuzzles === 1) {
+          puzzleGrid.style.gridTemplateColumns = "1fr";
+          puzzleGrid.style.justifyItems = "center";
+        } else if (numPuzzles === 2) {
+          puzzleGrid.style.gridTemplateColumns = "repeat(2, 1fr)";
+        } else if (numPuzzles === 3) {
+          puzzleGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
+        } else {
+          // 4 puzzles - 2x2 grid
+          puzzleGrid.style.gridTemplateColumns = "repeat(2, 1fr)";
+          puzzleGrid.style.gridTemplateRows = "repeat(2, 1fr)";
+        }
+      }
+
+      // Remove the old updatePuzzleButton function since we're using dynamic creation now
+
+      function togglePuzzleCard() {
+        const card = document.getElementById("puzzleCard");
+        if (card.classList.contains("show")) {
+          hidePuzzleCard();
+        } else {
+          showPuzzleCard();
+        }
+      }
+
+      function showPuzzleCard() {
+        const card = document.getElementById("puzzleCard");
+        const toggle = document.getElementById("puzzleToggle");
+
+        card.classList.add("show");
+        toggle.style.display = "none";
+      }
+
+      function hidePuzzleCard() {
+        const card = document.getElementById("puzzleCard");
+        const toggle = document.getElementById("puzzleToggle");
+
+        card.classList.remove("show");
+        toggle.style.display = "block";
+      }
+
+      // Check for completed puzzles on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        checkCompletedPuzzles();
+      });
+
+      // Hidden message in JavaScript variable (not easily found)
+      const projectSignature = "Made with love";
+
+      // Scratch-off functionality
+      function toggleScratchItem(item) {
+        if (!item.classList.contains("scratched-off")) {
+          item.classList.add("scratched-off");
+        } else {
+          item.classList.remove("scratched-off");
+        }
+        checkAllItemsCompleted();
+      }
+
+      function checkAllItemsCompleted() {
+        const items = document.querySelectorAll(".instruction-item");
+        const scratchedItems = document.querySelectorAll(
+          ".instruction-item.scratched-off"
+        );
+
+        if (scratchedItems.length === items.length) {
+          startTypingMessage();
+        } else {
+          const surpriseMessage = document.getElementById("surpriseMessage");
+          surpriseMessage.classList.remove("show", "typing");
+          surpriseMessage.innerHTML = "";
+          const button = document.querySelector(".entry-button");
+          button.textContent = "Begin!";
+        }
+      }
+
+      function startTypingMessage() {
+        const message = "Let's gooooooo";
+        const surpriseMessage = document.getElementById("surpriseMessage");
+
+        surpriseMessage.classList.add("typing");
+        surpriseMessage.innerHTML = "";
+
+        let charIndex = 0;
+
+        function typeNextChar() {
+          if (charIndex < message.length) {
+            surpriseMessage.innerHTML =
+              message.substring(0, charIndex + 1) +
+              '<span class="typing-cursor">|</span>';
+            charIndex++;
+            setTimeout(typeNextChar, 100); // Adjust typing speed here
+          } else {
+            // Remove cursor and add show class
+            surpriseMessage.innerHTML = message;
+            surpriseMessage.classList.add("show");
+
+            // Update button text
+            setTimeout(() => {
+              const button = document.querySelector(".entry-button");
+              button.textContent = "Begin!!";
+            }, 200);
+          }
         }
 
-        function showPuzzleCard() {
-            const card = document.getElementById('puzzleCard');
-            const toggle = document.getElementById('puzzleToggle');
-            
-            card.classList.add('show');
-            toggle.style.display = 'none';
-            
-        }
+        typeNextChar();
+      }
 
-        function hidePuzzleCard() {
-            const card = document.getElementById('puzzleCard');
-            const toggle = document.getElementById('puzzleToggle');
-            
-            card.classList.remove('show');
-            toggle.style.display = 'block';
-        }
-
-        // Check for completed puzzles on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            checkCompletedPuzzles();
-        });
-
-        // Hidden message in JavaScript variable (not easily found)
-        const projectSignature = 'Made with love';
-
-        // Scratch-off functionality
-        function toggleScratchItem(item) {
-            if (!item.classList.contains('scratched-off')) {
-                item.classList.add('scratched-off');
-            } else {
-                item.classList.remove('scratched-off');
-            }
-            checkAllItemsCompleted();
-        }
-
-        function checkAllItemsCompleted() {
-            const items = document.querySelectorAll('.instruction-item');
-            const scratchedItems = document.querySelectorAll('.instruction-item.scratched-off');
-            
-            if (scratchedItems.length === items.length) {
-                startTypingMessage();
-            } else {
-                const surpriseMessage = document.getElementById('surpriseMessage');
-                surpriseMessage.classList.remove('show', 'typing');
-                surpriseMessage.innerHTML = '';
-                const button = document.querySelector('.entry-button');
-                button.textContent = 'I am ready to begin';
-            }
-        }
-
-        function startTypingMessage() {
-            const message = "Let's gooooo";
-            const surpriseMessage = document.getElementById('surpriseMessage');
-            
-            surpriseMessage.classList.add('typing');
-            surpriseMessage.innerHTML = '';
-            
-            let charIndex = 0;
-            
-            function typeNextChar() {
-                if (charIndex < message.length) {
-                    surpriseMessage.innerHTML = message.substring(0, charIndex + 1) + '<span class="typing-cursor">|</span>';
-                    charIndex++;
-                    setTimeout(typeNextChar, 100); // Adjust typing speed here
-                } else {
-                    // Remove cursor and add show class
-                    surpriseMessage.innerHTML = message;
-                    surpriseMessage.classList.add('show');
-                    
-                    // Update button text
-                    setTimeout(() => {
-                        const button = document.querySelector('.entry-button');
-                        button.textContent = 'Begin Your Adventure';
-                    }, 200);
-                }
-            }
-            
-            typeNextChar();
-        }
-
-        // Add animations for button celebration
-        const style = document.createElement('style');
-        style.textContent = `
+      // Add animations for button celebration
+      const style = document.createElement("style");
+      style.textContent = `
             @keyframes pulse {
                 0%, 100% { transform: scale(1); }
                 50% { transform: scale(1.05); }
             }
         `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
     </script>
-</body>
+  </body>
 </html>
