@@ -308,15 +308,14 @@
             
             .puzzle-container {
                 margin: 20px 0;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
                 max-width: calc(100vw - 20px);
             }
             
             .line {
                 margin-bottom: 10px;
-                min-width: max-content;
-                white-space: nowrap;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px;
             }
             
             .paragraph-break {
