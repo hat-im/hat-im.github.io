@@ -77,11 +77,20 @@
         rows = Math.ceil(window.innerHeight / charHeight);
 
         grid = [];
+        textIndices = []; // reset on each resize
         let total = cols * rows;
 
+        let startCol = Math.floor((cols - text.length) / 2);
+        let startRow = Math.floor(rows / 2);
+        let textStartIndex = startRow * cols + startCol;
+
         for (let i = 0; i < total; i++) {
-          let o = text[i] || " ";
+          let o =
+            i >= textStartIndex && i < textStartIndex + text.length
+              ? text[i - textStartIndex]
+              : " ";
           let isFinal = o !== " ";
+          if (isFinal) textIndices.push(i);
           grid.push({ x: " ", y: isFinal, z: 0, o });
         }
       }
@@ -112,11 +121,11 @@
         let progress = Math.max(0, (elapsed - 2000) / 20000);
         let decayRate = Math.pow(Math.min(progress, 1), 10) * baseDecay;
         let changed = false;
-
         if (T < 1) {
           let count = Math.floor(T * text.length) + 1;
-          for (let i = 0; i < count && i < grid.length; i++) {
-            let g = grid[i];
+          for (let i = 0; i < count && i < textIndices.length; i++) {
+            let idx = textIndices[i];
+            let g = grid[idx];
             if (g.o && g.x !== g.o) {
               g.x = g.o;
               changed = true;
