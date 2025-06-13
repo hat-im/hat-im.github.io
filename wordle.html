@@ -7,9 +7,9 @@
     <title>Wordle++</title>
     <script>
       // Mobile detection and redirect script
-      (function() {
+      (function () {
         // Check if already on mobile version
-        if (window.location.pathname.includes('wordle-mobile.html')) {
+        if (window.location.pathname.includes("wordle-mobile.html")) {
           return;
         }
 
@@ -18,48 +18,61 @@
           // Check user agent for mobile indicators
           const userAgent = navigator.userAgent.toLowerCase();
           const mobileKeywords = [
-            'android', 'webos', 'iphone', 'ipad', 'ipod', 
-            'blackberry', 'windows phone', 'opera mini'
+            "android",
+            "webos",
+            "iphone",
+            "ipad",
+            "ipod",
+            "blackberry",
+            "windows phone",
+            "opera mini",
           ];
-          
-          const hasMobileKeyword = mobileKeywords.some(keyword => 
+
+          const hasMobileKeyword = mobileKeywords.some((keyword) =>
             userAgent.includes(keyword)
           );
 
           // Check for touch capability and screen size
-          const isTouchDevice = 'ontouchstart' in window || 
-            navigator.maxTouchPoints > 0 || 
+          const isTouchDevice =
+            "ontouchstart" in window ||
+            navigator.maxTouchPoints > 0 ||
             navigator.msMaxTouchPoints > 0;
 
-          const hasSmallScreen = window.screen.width <= 768 || 
-            window.innerWidth <= 768;
+          const hasSmallScreen =
+            window.screen.width <= 768 || window.innerWidth <= 768;
 
           // Additional mobile checks
-          const hasLimitedPointer = window.matchMedia('(pointer: coarse)').matches;
-          const hasLimitedHover = window.matchMedia('(hover: none)').matches;
+          const hasLimitedPointer =
+            window.matchMedia("(pointer: coarse)").matches;
+          const hasLimitedHover = window.matchMedia("(hover: none)").matches;
 
-          return hasMobileKeyword || 
-            (isTouchDevice && hasSmallScreen) || 
-            (hasLimitedPointer && hasLimitedHover);
+          return (
+            hasMobileKeyword ||
+            (isTouchDevice && hasSmallScreen) ||
+            (hasLimitedPointer && hasLimitedHover)
+          );
         }
 
         // Redirect to mobile version if on mobile device
         if (isMobileDevice()) {
           // Preserve any URL parameters or hash
           const currentUrl = new URL(window.location);
-          const mobileUrl = new URL('wordle-mobile.html', currentUrl.origin + currentUrl.pathname.replace(/\/[^\/]*$/, '/'));
-          
+          const mobileUrl = new URL(
+            "wordle-mobile.html",
+            currentUrl.origin + currentUrl.pathname.replace(/\/[^\/]*$/, "/")
+          );
+
           // Copy search parameters and hash
           mobileUrl.search = currentUrl.search;
           mobileUrl.hash = currentUrl.hash;
-          
+
           // Add a parameter to indicate redirect happened (useful for analytics)
           const params = new URLSearchParams(mobileUrl.search);
-          if (!params.has('mobile_redirect')) {
-            params.set('mobile_redirect', '1');
+          if (!params.has("mobile_redirect")) {
+            params.set("mobile_redirect", "1");
             mobileUrl.search = params.toString();
           }
-          
+
           // Perform redirect
           window.location.replace(mobileUrl.toString());
         }
@@ -388,7 +401,8 @@
       }
 
       @keyframes titleShake {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateX(0) rotate(0deg);
         }
         10% {
@@ -899,57 +913,83 @@
       // Game data embedded from Python
       const WORDS_DATA = [
         {
-          word: "HELLO",
-          punctuation: ",",
+          word: "ANGRY",
+          punctuation: "?",
           length: 5,
           guesses: 6,
           max_score: 100,
         },
         {
-          word: "THERE",
+          word: "ME",
+          punctuation: "",
+          length: 2,
+          guesses: 13,
+          max_score: 100,
+        },
+        {
+          word: "TOO",
+          punctuation: ",",
+          length: 3,
+          guesses: 10,
+          max_score: 90,
+        },
+        {
+          word: "SOMETIMES",
           punctuation: ".",
-          length: 5,
-          guesses: 6,
-          max_score: 100,
+          length: 9,
+          guesses: 4,
+          max_score: 90,
         },
         {
-          word: "TEST",
-          punctuation: ",",
+          word: "MOSTLY",
+          punctuation: "",
+          length: 6,
+          guesses: 6,
+          max_score: 90,
+        },
+        {
+          word: "MISS",
+          punctuation: "",
           length: 4,
           guesses: 8,
           max_score: 90,
         },
         {
-          word: "TESTING",
+          word: "YOU",
           punctuation: ".",
-          length: 7,
-          guesses: 5,
-          max_score: 100,
+          length: 3,
+          guesses: 10,
+          max_score: 90,
         },
         {
-          word: "ONE",
+          word: "HOPE",
+          punctuation: "",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
+        },
+        {
+          word: "YOU",
           punctuation: "",
           length: 3,
           guesses: 10,
           max_score: 90,
         },
         {
-          word: "TWO",
+          word: "ARE",
           punctuation: "",
           length: 3,
           guesses: 10,
           max_score: 90,
         },
         {
-          word: "THREE",
-          punctuation: "!",
-          length: 5,
-          guesses: 6,
-          max_score: 100,
+          word: "OKAY",
+          punctuation: ".",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
         },
       ];
-      const FIRST_LETTER_LINK = "{FIRST_LETTER_LINK}";
-      const LAST_LETTER_LINK = "{LAST_LETTER_LINK}";
       // Dictionary API URLs with fallbacks
       const DICTIONARY_APIS = [
         "https://api.dictionaryapi.dev/api/v2/entries/en/",
@@ -1773,16 +1813,20 @@
       function getOrdinal(num) {
         const lastDigit = num % 10;
         const lastTwoDigits = num % 100;
-        
+
         if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
           return num + "th";
         }
-        
+
         switch (lastDigit) {
-          case 1: return num + "st";
-          case 2: return num + "nd";
-          case 3: return num + "rd";
-          default: return num + "th";
+          case 1:
+            return num + "st";
+          case 2:
+            return num + "nd";
+          case 3:
+            return num + "rd";
+          default:
+            return num + "th";
         }
       }
       async function validateGuessWithFallback(word) {
@@ -2135,25 +2179,25 @@
         const titleS = document.getElementById("title-s");
         if (titleS && hasCompletedFirstWord) {
           titleS.classList.add("shaking");
-          
+
           // Add click event listener for navigation
-          const handleNavigation = function(e) {
+          const handleNavigation = function (e) {
             e.preventDefault();
             e.stopPropagation();
-            
+
             // Add a brief color change feedback
-            titleS.style.color = 'var(--color-correct)';
+            titleS.style.color = "var(--color-correct)";
             setTimeout(() => {
-              titleS.style.color = '';
-              window.location.href = 'connect1ons.html';
+              titleS.style.color = "";
+              window.location.href = "connect1ons.html";
             }, 150);
           };
-          
+
           // Remove any existing listeners first
-          titleS.removeEventListener('click', handleNavigation);
-          
+          titleS.removeEventListener("click", handleNavigation);
+
           // Add click event
-          titleS.addEventListener('click', handleNavigation);
+          titleS.addEventListener("click", handleNavigation);
         }
       }
 
@@ -2572,8 +2616,7 @@
           if (gameStats.perfectWords === WORDS_DATA.length) {
             message = "Perfect game! You solved every word on the first try!";
           } else if (avgGuesses <= 2) {
-            message =
-              "Holy shit! You got so many of them right! Suspicous...";
+            message = "Holy shit! You got so many of them right! Suspicous...";
           } else {
             message = "You got 'em all! Amaaazing!";
           }
@@ -2582,8 +2625,7 @@
         } else if (accuracy >= 60) {
           message = "Nicee! You solved the words! (Most of them)";
         } else {
-          message =
-            "Maybe you would like to play again!";
+          message = "Maybe you would like to play again!";
         }
 
         // Create stats display

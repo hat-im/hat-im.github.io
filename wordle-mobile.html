@@ -2,10 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="description" content="A mobile-optimized Wordle-style word guessing game" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="A mobile-optimized Wordle-style word guessing game"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <title>Wordle++</title>
     <style>
       /* Mobile-First Dark Mode Wordle Color Scheme */
@@ -27,7 +36,7 @@
         --animation-typing-duration: 0.6s;
         --animation-collapse-duration: 0.6s;
         --animation-expand-duration: 0.5s;
-        --animation-stack-duration: 1.0s;
+        --animation-stack-duration: 1s;
         --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
         --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
         --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -48,7 +57,8 @@
       }
 
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+          sans-serif;
         background-color: var(--color-bg);
         color: var(--color-text);
         line-height: 1.4;
@@ -103,21 +113,35 @@
       }
 
       .completed-word-row.collapsing {
-        animation: collapseUp var(--animation-collapse-duration) var(--ease-smooth) forwards;
+        animation: collapseUp var(--animation-collapse-duration)
+          var(--ease-smooth) forwards;
       }
 
       .completed-word-row.moving-to-stack {
-        animation: moveToStack var(--animation-stack-duration) var(--ease-smooth) forwards;
+        animation: moveToStack var(--animation-stack-duration)
+          var(--ease-smooth) forwards;
       }
 
       @keyframes collapseUp {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(calc(-1 * (var(--tile-size) + var(--tile-gap)))); }
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(
+            calc(-1 * (var(--tile-size) + var(--tile-gap)))
+          );
+        }
       }
 
       @keyframes moveToStack {
-        0% { transform: translateY(0); }
-        100% { transform: translateY(calc(-0.8 * (var(--tile-size) + var(--tile-gap)))); }
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(
+            calc(-0.8 * (var(--tile-size) + var(--tile-gap)))
+          );
+        }
       }
 
       .completed-word-grid {
@@ -209,7 +233,8 @@
         overflow: hidden;
       }
 
-      .completed-grid-wrapper.drawer-collapsed .drawer-row:not([data-correct-row="true"]) {
+      .completed-grid-wrapper.drawer-collapsed
+        .drawer-row:not([data-correct-row="true"]) {
         height: 0px !important;
         margin-bottom: 0px !important;
         visibility: hidden !important;
@@ -314,16 +339,19 @@
 
       .tile.current {
         border-color: var(--color-border-focus);
-        box-shadow: 0 0 0 2px var(--color-border-focus), 0 0 min(5vw, 20px) rgba(86, 87, 88, 0.3);
+        box-shadow: 0 0 0 2px var(--color-border-focus),
+          0 0 min(5vw, 20px) rgba(86, 87, 88, 0.3);
         animation: currentGlow 2s ease-in-out infinite alternate;
       }
 
       @keyframes currentGlow {
         0% {
-          box-shadow: 0 0 0 2px var(--color-border-focus), 0 0 min(2.5vw, 10px) rgba(86, 87, 88, 0.2);
+          box-shadow: 0 0 0 2px var(--color-border-focus),
+            0 0 min(2.5vw, 10px) rgba(86, 87, 88, 0.2);
         }
         100% {
-          box-shadow: 0 0 0 2px var(--color-border-focus), 0 0 min(6vw, 25px) rgba(86, 87, 88, 0.5);
+          box-shadow: 0 0 0 2px var(--color-border-focus),
+            0 0 min(6vw, 25px) rgba(86, 87, 88, 0.5);
         }
       }
 
@@ -383,7 +411,8 @@
       }
 
       @keyframes titleShake {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateX(0) rotate(0deg);
         }
         10% {
@@ -488,14 +517,21 @@
       }
 
       .tile.flipping {
-        animation: flip3d var(--animation-flip-duration) var(--ease-in-out-cubic) forwards;
+        animation: flip3d var(--animation-flip-duration)
+          var(--ease-in-out-cubic) forwards;
         transform-style: preserve-3d;
       }
 
       @keyframes flip3d {
-        0% { transform: rotateX(0deg); }
-        50% { transform: rotateX(-90deg); }
-        100% { transform: rotateX(0deg); }
+        0% {
+          transform: rotateX(0deg);
+        }
+        50% {
+          transform: rotateX(-90deg);
+        }
+        100% {
+          transform: rotateX(0deg);
+        }
       }
 
       .tile.shake {
@@ -503,27 +539,53 @@
       }
 
       @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
-        20%, 40%, 60%, 80% { transform: translateX(3px); }
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: translateX(-3px);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          transform: translateX(3px);
+        }
       }
 
       .tile.success {
-        animation: successBounce var(--animation-bounce-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        animation: successBounce var(--animation-bounce-duration)
+          cubic-bezier(0.68, -0.55, 0.265, 1.55);
       }
 
       @keyframes successBounce {
-        0% { transform: scale(1); }
-        25% { transform: scale(1.1) rotate(2deg); }
-        50% { transform: scale(0.95) rotate(-1deg); }
-        75% { transform: scale(1.05) rotate(1deg); }
-        100% { transform: scale(1) rotate(0deg); }
+        0% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1) rotate(2deg);
+        }
+        50% {
+          transform: scale(0.95) rotate(-1deg);
+        }
+        75% {
+          transform: scale(1.05) rotate(1deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
       }
 
       .tile.typing {
         background-color: #2d2d30;
         border-color: var(--color-border-focus);
-        animation: typing-pulse var(--animation-typing-duration) ease-in-out infinite alternate;
+        animation: typing-pulse var(--animation-typing-duration) ease-in-out
+          infinite alternate;
       }
 
       .timer-container {
@@ -571,7 +633,8 @@
       }
 
       .timer-digit.flipping {
-        animation: flip3d var(--animation-flip-duration) var(--ease-in-out-cubic) forwards;
+        animation: flip3d var(--animation-flip-duration)
+          var(--ease-in-out-cubic) forwards;
         transform-style: preserve-3d;
       }
 
@@ -863,7 +926,9 @@
       }
 
       /* Prevent zoom on double tap */
-      .tile, .keyboard-key, .popup-button {
+      .tile,
+      .keyboard-key,
+      .popup-button {
         touch-action: manipulation;
       }
 
@@ -888,11 +953,25 @@
           <!-- Completed words will stack here -->
         </div>
         <div id="current-word-container" class="current-word-container">
-          <div class="word-grid-wrapper" style="position: relative; width: 100%; margin: 0 auto;">
-            <div class="game-grid" id="game-grid" style="position: relative;">
+          <div
+            class="word-grid-wrapper"
+            style="position: relative; width: 100%; margin: 0 auto"
+          >
+            <div class="game-grid" id="game-grid" style="position: relative">
               <!-- Current word grid will be generated here -->
             </div>
-            <div id="punctuation-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1000;">
+            <div
+              id="punctuation-overlay"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+              "
+            >
               <!-- Punctuation will be positioned here -->
             </div>
           </div>
@@ -980,58 +1059,86 @@
         </div>
       </div>
     </div>
-    
+
     <script>
       // Game data embedded from Python
       const WORDS_DATA = [
         {
-          word: "HELLO",
-          punctuation: ",",
+          word: "ANGRY",
+          punctuation: "?",
           length: 5,
           guesses: 6,
           max_score: 100,
         },
         {
-          word: "THERE",
+          word: "ME",
+          punctuation: "",
+          length: 2,
+          guesses: 13,
+          max_score: 100,
+        },
+        {
+          word: "TOO",
+          punctuation: ",",
+          length: 3,
+          guesses: 10,
+          max_score: 90,
+        },
+        {
+          word: "SOMETIMES",
           punctuation: ".",
-          length: 5,
-          guesses: 6,
-          max_score: 100,
+          length: 9,
+          guesses: 4,
+          max_score: 90,
         },
         {
-          word: "TEST",
-          punctuation: ",",
+          word: "MOSTLY",
+          punctuation: "",
+          length: 6,
+          guesses: 6,
+          max_score: 90,
+        },
+        {
+          word: "MISS",
+          punctuation: "",
           length: 4,
           guesses: 8,
           max_score: 90,
         },
         {
-          word: "TESTING",
+          word: "YOU",
           punctuation: ".",
-          length: 7,
-          guesses: 5,
-          max_score: 100,
+          length: 3,
+          guesses: 10,
+          max_score: 90,
         },
         {
-          word: "ONE",
+          word: "HOPE",
+          punctuation: "",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
+        },
+        {
+          word: "YOU",
           punctuation: "",
           length: 3,
           guesses: 10,
           max_score: 90,
         },
         {
-          word: "TWO",
+          word: "ARE",
           punctuation: "",
           length: 3,
           guesses: 10,
           max_score: 90,
         },
         {
-          word: "THREE",
-          punctuation: "!",
-          length: 5,
-          guesses: 6,
-          max_score: 100,
+          word: "OKAY",
+          punctuation: ".",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
         },
       ];
 
@@ -1068,54 +1175,54 @@
 
       // Mobile keyboard setup
       function setupMobileKeyboard() {
-        const keyboard = document.getElementById('mobile-keyboard');
-        const keys = keyboard.querySelectorAll('.keyboard-key');
-        
-        keys.forEach(key => {
-          key.addEventListener('touchstart', function(e) {
+        const keyboard = document.getElementById("mobile-keyboard");
+        const keys = keyboard.querySelectorAll(".keyboard-key");
+
+        keys.forEach((key) => {
+          key.addEventListener("touchstart", function (e) {
             e.preventDefault();
-            this.style.transform = 'scale(0.95)';
+            this.style.transform = "scale(0.95)";
           });
-          
-          key.addEventListener('touchend', function(e) {
+
+          key.addEventListener("touchend", function (e) {
             e.preventDefault();
-            this.style.transform = '';
-            
+            this.style.transform = "";
+
             const keyValue = this.dataset.key;
-            if (keyValue === 'Enter') {
+            if (keyValue === "Enter") {
               makeGuess();
-            } else if (keyValue === 'Backspace') {
+            } else if (keyValue === "Backspace") {
               deleteLetter();
             } else {
               addLetter(keyValue);
             }
           });
-          
-          key.addEventListener('touchcancel', function(e) {
+
+          key.addEventListener("touchcancel", function (e) {
             e.preventDefault();
-            this.style.transform = '';
+            this.style.transform = "";
           });
         });
       }
 
       function toggleMobileKeyboard(show) {
-        const keyboard = document.getElementById('mobile-keyboard');
+        const keyboard = document.getElementById("mobile-keyboard");
         if (show && !showMobileKeyboard) {
-          keyboard.classList.add('show');
+          keyboard.classList.add("show");
           showMobileKeyboard = true;
           // Adjust body padding to account for keyboard
-          document.body.style.paddingBottom = keyboard.offsetHeight + 'px';
+          document.body.style.paddingBottom = keyboard.offsetHeight + "px";
         } else if (!show && showMobileKeyboard) {
-          keyboard.classList.remove('show');
+          keyboard.classList.remove("show");
           showMobileKeyboard = false;
-          document.body.style.paddingBottom = '';
+          document.body.style.paddingBottom = "";
         }
       }
 
       // Initialize the game when page loads
       document.addEventListener("DOMContentLoaded", function () {
         setupMobileKeyboard();
-        
+
         // Check if user wants to continue previous game
         const savedGame = localStorage.getItem("wordleGameState");
         if (savedGame) {
@@ -1174,7 +1281,7 @@
           totalScore: 0,
           maxPossibleScore: 0,
         };
-        
+
         for (let i = 0; i < WORDS_DATA.length; i++) {
           allWordsData[i] = {
             gameGrid: [],
@@ -1193,14 +1300,21 @@
 
       function saveCurrentWordState() {
         if (allWordsData[currentWordIndex]) {
-          allWordsData[currentWordIndex].gameGrid = JSON.parse(JSON.stringify(gameGrid));
-          allWordsData[currentWordIndex].gameState = JSON.parse(JSON.stringify(gameState));
+          allWordsData[currentWordIndex].gameGrid = JSON.parse(
+            JSON.stringify(gameGrid)
+          );
+          allWordsData[currentWordIndex].gameState = JSON.parse(
+            JSON.stringify(gameState)
+          );
           allWordsData[currentWordIndex].usedGuesses = Array.from(usedGuesses);
-          allWordsData[currentWordIndex].knownLetters = JSON.parse(JSON.stringify(knownLetters));
+          allWordsData[currentWordIndex].knownLetters = JSON.parse(
+            JSON.stringify(knownLetters)
+          );
           allWordsData[currentWordIndex].isComplete = isWordComplete;
           allWordsData[currentWordIndex].isFailed = isWordFailed;
           allWordsData[currentWordIndex].guessCount = currentGuessIndex;
-          allWordsData[currentWordIndex].currentLetterIndex = currentLetterIndex;
+          allWordsData[currentWordIndex].currentLetterIndex =
+            currentLetterIndex;
         }
       }
 
@@ -1222,9 +1336,9 @@
         const currentWord = WORDS_DATA[currentWordIndex];
         const wordLength = currentWord.length;
         const maxGuesses = currentWord.guesses;
-        
+
         punctuationAnimated = false;
-        
+
         if (!allWordsData[currentWordIndex]) {
           allWordsData[currentWordIndex] = {
             gameGrid: [],
@@ -1234,15 +1348,19 @@
             isComplete: false,
             guessCount: 0,
           };
-          
+
           for (let i = 0; i < maxGuesses; i++) {
-            allWordsData[currentWordIndex].gameGrid[i] = new Array(wordLength).fill("");
-            allWordsData[currentWordIndex].gameState[i] = new Array(wordLength).fill("");
+            allWordsData[currentWordIndex].gameGrid[i] = new Array(
+              wordLength
+            ).fill("");
+            allWordsData[currentWordIndex].gameState[i] = new Array(
+              wordLength
+            ).fill("");
           }
         }
-        
+
         loadCurrentWordState();
-        
+
         if (gameGrid.length === 0) {
           gameGrid = [];
           gameState = [];
@@ -1262,10 +1380,10 @@
       function startCooldown(durationSeconds) {
         cooldownActive = true;
         cooldownEndTime = Date.now() + durationSeconds * 1000;
-        
+
         // Hide mobile keyboard during cooldown
         toggleMobileKeyboard(false);
-        
+
         renderGrid();
         updateCooldownDisplay();
         cooldownTimer = setInterval(() => {
@@ -1283,18 +1401,21 @@
           clearInterval(cooldownTimer);
           cooldownTimer = null;
         }
-        
+
         await resetCurrentWordForRetry();
         renderGrid();
         updateUI();
-        
+
         // Show mobile keyboard again after cooldown
         toggleMobileKeyboard(true);
       }
 
       function updateCooldownDisplay() {
         if (!cooldownActive) return;
-        const timeLeft = Math.max(0, Math.ceil((cooldownEndTime - Date.now()) / 1000));
+        const timeLeft = Math.max(
+          0,
+          Math.ceil((cooldownEndTime - Date.now()) / 1000)
+        );
         if (timeLeft > 0) {
           updateTimerDisplay();
         }
@@ -1315,15 +1436,19 @@
         knownLetters = {};
         isWordComplete = false;
         isWordFailed = false;
-        
+
         for (let i = 0; i < maxGuesses; i++) {
           gameGrid[i] = new Array(wordLength).fill("");
           gameState[i] = new Array(wordLength).fill("");
         }
-        
+
         if (allWordsData[currentWordIndex]) {
-          allWordsData[currentWordIndex].gameGrid = JSON.parse(JSON.stringify(gameGrid));
-          allWordsData[currentWordIndex].gameState = JSON.parse(JSON.stringify(gameState));
+          allWordsData[currentWordIndex].gameGrid = JSON.parse(
+            JSON.stringify(gameGrid)
+          );
+          allWordsData[currentWordIndex].gameState = JSON.parse(
+            JSON.stringify(gameState)
+          );
           allWordsData[currentWordIndex].usedGuesses = [];
           allWordsData[currentWordIndex].knownLetters = {};
           allWordsData[currentWordIndex].isComplete = false;
@@ -1347,31 +1472,48 @@
       function renderCompletedWordsStack() {
         const stackContainer = document.getElementById("completed-words-stack");
         stackContainer.innerHTML = "";
-        
-        const endIndex = isWordComplete ? currentWordIndex + 1 : currentWordIndex;
+
+        const endIndex = isWordComplete
+          ? currentWordIndex + 1
+          : currentWordIndex;
         for (let i = 0; i < endIndex; i++) {
           const wordData = allWordsData[i];
           const wordInfo = WORDS_DATA[i];
           if (wordData && wordData.isComplete) {
             const wordRow = createCompletedWordRow(i, wordData, wordInfo);
             stackContainer.appendChild(wordRow);
-            
+
             if (collapsedWords.has(i)) {
               const container = document.getElementById(`completed-word-${i}`);
-              const gridWrapper = container?.querySelector(".completed-grid-wrapper");
+              const gridWrapper = container?.querySelector(
+                ".completed-grid-wrapper"
+              );
               if (container && gridWrapper) {
                 gridWrapper.classList.add("drawer-collapsed");
                 container.classList.add("drawer-collapsed");
-                
+
                 const drawerRows = gridWrapper.querySelectorAll(".drawer-row");
-                const correctRow = gridWrapper.querySelector('[data-correct-row="true"]');
+                const correctRow = gridWrapper.querySelector(
+                  '[data-correct-row="true"]'
+                );
                 if (correctRow) {
                   const correctRowIndex = parseInt(correctRow.dataset.rowIndex);
                   drawerRows.forEach((row) => {
                     const rowIndex = parseInt(row.dataset.rowIndex);
                     if (rowIndex !== correctRowIndex) {
                       const isAbove = rowIndex < correctRowIndex;
-                      const distance = Math.abs(rowIndex - correctRowIndex) * (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-size')) + parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--tile-gap')));
+                      const distance =
+                        Math.abs(rowIndex - correctRowIndex) *
+                        (parseFloat(
+                          getComputedStyle(
+                            document.documentElement
+                          ).getPropertyValue("--tile-size")
+                        ) +
+                          parseFloat(
+                            getComputedStyle(
+                              document.documentElement
+                            ).getPropertyValue("--tile-gap")
+                          ));
                       if (isAbove) {
                         row.style.transform = `translateY(${distance}px)`;
                       } else {
@@ -1391,26 +1533,26 @@
         const wordContainer = document.createElement("div");
         wordContainer.className = "completed-word-container";
         wordContainer.id = `completed-word-${wordIndex}`;
-        
+
         const hasP = wordInfo.punctuation && wordInfo.punctuation.trim() !== "";
         // Get computed tile size and gap from a temporary element
-        const tempTile = document.createElement('div');
-        tempTile.style.width = 'var(--tile-size)';
-        tempTile.style.height = 'var(--tile-size)';
-        tempTile.style.marginRight = 'var(--tile-gap)';
-        tempTile.style.visibility = 'hidden';
-        tempTile.style.position = 'absolute';
+        const tempTile = document.createElement("div");
+        tempTile.style.width = "var(--tile-size)";
+        tempTile.style.height = "var(--tile-size)";
+        tempTile.style.marginRight = "var(--tile-gap)";
+        tempTile.style.visibility = "hidden";
+        tempTile.style.position = "absolute";
         document.body.appendChild(tempTile);
         const computedStyle = getComputedStyle(tempTile);
         const tileSize = parseFloat(computedStyle.width);
         const tileGap = parseFloat(computedStyle.marginRight);
         document.body.removeChild(tempTile);
-        
-        const containerWidth = hasP 
+
+        const containerWidth = hasP
           ? `${wordInfo.length * (tileSize + tileGap) + tileSize}px`
           : `${wordInfo.length * (tileSize + tileGap) - tileGap}px`;
         wordContainer.style.width = containerWidth;
-        
+
         const gridWrapper = document.createElement("div");
         gridWrapper.className = "completed-grid-wrapper";
         gridWrapper.style.position = "relative";
@@ -1420,24 +1562,25 @@
         gridWrapper.style.gap = "var(--tile-gap)";
         gridWrapper.style.overflow = "hidden";
         gridWrapper.style.width = containerWidth;
-        
+
         const correctRowIndex = wordData.guessCount - 1;
         const maxGuesses = wordInfo.guesses;
-        
+
         for (let row = 0; row < maxGuesses; row++) {
           const rowWrapper = document.createElement("div");
           rowWrapper.className = "completed-word-grid drawer-row";
           rowWrapper.dataset.rowIndex = row;
           rowWrapper.dataset.correctRow = row === correctRowIndex;
           rowWrapper.style.gridTemplateColumns = `repeat(${wordInfo.length}, var(--tile-size))`;
-          
+
           if (row === correctRowIndex && wordInfo.punctuation) {
             rowWrapper.style.width = containerWidth;
             rowWrapper.style.position = "relative";
           }
-          
-          rowWrapper.style.transition = "transform 0.4s ease, height 0.4s ease, margin 0.4s ease";
-          
+
+          rowWrapper.style.transition =
+            "transform 0.4s ease, height 0.4s ease, margin 0.4s ease";
+
           if (row === correctRowIndex) {
             rowWrapper.style.cursor = "pointer";
             rowWrapper.onclick = () => toggleWordDrawer(wordIndex);
@@ -1448,19 +1591,25 @@
             rowWrapper.style.zIndex = "1";
             rowWrapper.style.position = "relative";
           }
-          
+
           rowWrapper.style.height = "var(--tile-size)";
           rowWrapper.style.visibility = "visible";
-          
+
           for (let col = 0; col < wordInfo.length; col++) {
             const tile = document.createElement("div");
             tile.className = "completed-tile";
-            
-            const letter = wordData.gameGrid[row] && wordData.gameGrid[row][col] ? wordData.gameGrid[row][col] : "";
-            const state = wordData.gameState[row] && wordData.gameState[row][col] ? wordData.gameState[row][col] : "";
-            
+
+            const letter =
+              wordData.gameGrid[row] && wordData.gameGrid[row][col]
+                ? wordData.gameGrid[row][col]
+                : "";
+            const state =
+              wordData.gameState[row] && wordData.gameState[row][col]
+                ? wordData.gameState[row][col]
+                : "";
+
             tile.textContent = letter;
-            
+
             if (state) {
               tile.classList.add(state);
             }
@@ -1473,7 +1622,9 @@
             punctuationTile.id = `completed-punctuation-${wordIndex}`;
             punctuationTile.textContent = wordInfo.punctuation;
             punctuationTile.style.position = "absolute";
-            punctuationTile.style.left = `${wordInfo.length * (tileSize + tileGap)}px`;
+            punctuationTile.style.left = `${
+              wordInfo.length * (tileSize + tileGap)
+            }px`;
             punctuationTile.style.top = "50%";
             punctuationTile.style.transform = "translateY(-50%)";
             punctuationTile.style.width = "var(--tile-size)";
@@ -1484,11 +1635,14 @@
             punctuationTile.style.fontSize = "clamp(1.2rem, 4vw, 1.8rem)";
             punctuationTile.style.fontWeight = "bold";
             punctuationTile.style.color = "var(--color-text)";
-            
+
             const isAlreadyRevealed = revealedPunctuation.has(wordIndex);
             punctuationTile.style.opacity = isAlreadyRevealed ? "1" : "0";
-            punctuationTile.style.visibility = isAlreadyRevealed ? "visible" : "hidden";
-            punctuationTile.style.transition = "opacity 0.5s ease, visibility 0.5s ease";
+            punctuationTile.style.visibility = isAlreadyRevealed
+              ? "visible"
+              : "hidden";
+            punctuationTile.style.transition =
+              "opacity 0.5s ease, visibility 0.5s ease";
             rowWrapper.appendChild(punctuationTile);
           }
 
@@ -1500,37 +1654,44 @@
       }
 
       function toggleWordDrawer(wordIndex) {
-        const wordContainer = document.getElementById(`completed-word-${wordIndex}`);
+        const wordContainer = document.getElementById(
+          `completed-word-${wordIndex}`
+        );
         if (!wordContainer) return;
-        
-        const gridWrapper = wordContainer.querySelector(".completed-grid-wrapper");
+
+        const gridWrapper = wordContainer.querySelector(
+          ".completed-grid-wrapper"
+        );
         const drawerRows = gridWrapper.querySelectorAll(".drawer-row");
-        const correctRow = gridWrapper.querySelector('[data-correct-row="true"]');
-        
+        const correctRow = gridWrapper.querySelector(
+          '[data-correct-row="true"]'
+        );
+
         if (!correctRow) return;
-        
+
         const correctRowIndex = parseInt(correctRow.dataset.rowIndex);
-        const isCurrentlyCollapsed = gridWrapper.classList.contains("drawer-collapsed");
-        
+        const isCurrentlyCollapsed =
+          gridWrapper.classList.contains("drawer-collapsed");
+
         // Get computed tile size and gap from a temporary element
-        const tempTile = document.createElement('div');
-        tempTile.style.width = 'var(--tile-size)';
-        tempTile.style.height = 'var(--tile-size)';
-        tempTile.style.marginRight = 'var(--tile-gap)';
-        tempTile.style.visibility = 'hidden';
-        tempTile.style.position = 'absolute';
+        const tempTile = document.createElement("div");
+        tempTile.style.width = "var(--tile-size)";
+        tempTile.style.height = "var(--tile-size)";
+        tempTile.style.marginRight = "var(--tile-gap)";
+        tempTile.style.visibility = "hidden";
+        tempTile.style.position = "absolute";
         document.body.appendChild(tempTile);
         const computedStyle = getComputedStyle(tempTile);
         const tileSize = parseFloat(computedStyle.width);
         const tileGap = parseFloat(computedStyle.marginRight);
         document.body.removeChild(tempTile);
         const distance = tileSize + tileGap;
-        
+
         if (isCurrentlyCollapsed) {
           gridWrapper.classList.remove("drawer-collapsed");
           wordContainer.classList.remove("drawer-collapsed");
           collapsedWords.delete(wordIndex);
-          
+
           drawerRows.forEach((row, index) => {
             const rowIndex = parseInt(row.dataset.rowIndex);
             if (rowIndex !== correctRowIndex) {
@@ -1539,7 +1700,7 @@
               }, 50);
             }
           });
-          
+
           setTimeout(() => {
             animateAdjacentWordles();
           }, 450);
@@ -1547,19 +1708,27 @@
           gridWrapper.classList.add("drawer-collapsed");
           wordContainer.classList.add("drawer-collapsed");
           collapsedWords.add(wordIndex);
-          
+
           drawerRows.forEach((row, index) => {
             const rowIndex = parseInt(row.dataset.rowIndex);
             if (rowIndex !== correctRowIndex) {
               const isAbove = rowIndex < correctRowIndex;
-              const translateDistance = Math.abs(rowIndex - correctRowIndex) * distance;
+              const translateDistance =
+                Math.abs(rowIndex - correctRowIndex) * distance;
               if (isAbove) {
                 row.style.transform = `translateY(${translateDistance}px)`;
               } else {
                 row.style.transform = `translateY(-${translateDistance}px)`;
               }
-              
-              if (rowIndex === Math.max(...Array.from(drawerRows).map((r) => parseInt(r.dataset.rowIndex)))) {
+
+              if (
+                rowIndex ===
+                Math.max(
+                  ...Array.from(drawerRows).map((r) =>
+                    parseInt(r.dataset.rowIndex)
+                  )
+                )
+              ) {
                 setTimeout(() => {
                   animateAdjacentWordles();
                   revealCompletedWordPunctuation(wordIndex);
@@ -1573,13 +1742,15 @@
       function animateAdjacentWordles() {
         const stackContainer = document.getElementById("completed-words-stack");
         if (!stackContainer) return;
-        
-        const completedWords = Array.from(stackContainer.querySelectorAll(".completed-word-container"));
-        
+
+        const completedWords = Array.from(
+          stackContainer.querySelectorAll(".completed-word-container")
+        );
+
         completedWords.forEach((wordContainer) => {
           wordContainer.style.transition = "transform 0.3s ease";
         });
-        
+
         requestAnimationFrame(() => {
           stackContainer.offsetHeight;
           setTimeout(() => {
@@ -1591,7 +1762,9 @@
       }
 
       function revealCompletedWordPunctuation(wordIndex) {
-        const punctuationElement = document.getElementById(`completed-punctuation-${wordIndex}`);
+        const punctuationElement = document.getElementById(
+          `completed-punctuation-${wordIndex}`
+        );
         if (punctuationElement) {
           setTimeout(() => {
             punctuationElement.style.opacity = "1";
@@ -1609,7 +1782,7 @@
         const gridContainer = document.getElementById("game-grid");
         gridContainer.innerHTML = "";
         gridContainer.style.gridTemplateColumns = `repeat(${wordLength}, var(--tile-size))`;
-        
+
         for (let row = 0; row < maxGuesses; row++) {
           for (let col = 0; col < wordLength; col++) {
             const tile = document.createElement("div");
@@ -1625,8 +1798,14 @@
                 tile.classList.add(state);
               }
             }
-            
-            if (row === currentGuessIndex && col === currentLetterIndex && !isWordComplete && !isWordFailed && !cooldownActive) {
+
+            if (
+              row === currentGuessIndex &&
+              col === currentLetterIndex &&
+              !isWordComplete &&
+              !isWordFailed &&
+              !cooldownActive
+            ) {
               tile.classList.add("current");
             }
             gridContainer.appendChild(tile);
@@ -1641,7 +1820,8 @@
 
         if (cooldownActive) {
           timerContainer.classList.remove("hidden");
-          timerContainer.style.animation = "timerFadeInSlideUp 0.5s ease forwards";
+          timerContainer.style.animation =
+            "timerFadeInSlideUp 0.5s ease forwards";
           updateTimerDisplay();
         } else {
           timerContainer.classList.add("hidden");
@@ -1652,11 +1832,15 @@
       function updateTimerDisplay() {
         if (!cooldownActive) return;
 
-        const timeLeft = Math.max(0, Math.floor((cooldownEndTime - Date.now()) / 1000));
+        const timeLeft = Math.max(
+          0,
+          Math.floor((cooldownEndTime - Date.now()) / 1000)
+        );
 
         if (timeLeft <= 0) {
           const timerContainer = document.getElementById("timer-container");
-          timerContainer.style.animation = "timerFadeOutSlideDown 0.5s ease forwards";
+          timerContainer.style.animation =
+            "timerFadeOutSlideDown 0.5s ease forwards";
           return;
         }
 
@@ -1690,15 +1874,17 @@
       }
 
       function renderPunctuation() {
-        const punctuationOverlay = document.getElementById("punctuation-overlay");
+        const punctuationOverlay = document.getElementById(
+          "punctuation-overlay"
+        );
         if (punctuationAnimated) {
           return;
         }
-        
+
         if (currentWordIndex >= WORDS_DATA.length) {
           return;
         }
-        
+
         if (!punctuationAnimated) {
           punctuationOverlay.innerHTML = "";
         }
@@ -1736,72 +1922,74 @@
 
       async function makeGuess() {
         const currentWord = WORDS_DATA[currentWordIndex];
-        
+
         if (isAnimating || cooldownActive) {
           updateCooldownDisplay();
           return;
         }
-        
+
         const guess = gameGrid[currentGuessIndex].join("");
-        
+
         if (guess.length !== currentWord.length) {
           showToast("Not enough letters");
           animateInvalidWord(currentGuessIndex);
           return;
         }
-        
+
         if (currentGuessIndex >= currentWord.guesses) {
           return;
         }
-        
+
         if (isWordComplete || isWordFailed) {
           return;
         }
-        
+
         if (usedGuesses.has(guess)) {
           showToast("Already guessed");
           animateInvalidWord(currentGuessIndex);
           return;
         }
-        
+
         const constraintError = validateGreenConstraints(guess);
         if (constraintError) {
           showToast(constraintError);
           animateInvalidWord(currentGuessIndex);
           return;
         }
-        
+
         const isValidWord = await validateGuessWithFallback(guess);
         if (!isValidWord) {
           showToast("Word not in list");
           animateInvalidWord(currentGuessIndex);
           return;
         }
-        
+
         usedGuesses.add(guess);
-        
+
         const results = checkWord(guess, currentGuessIndex);
         await animateFlipTiles(currentGuessIndex, results);
         currentGuessIndex++;
         currentLetterIndex = 0;
-        
+
         if (guess === currentWord.word) {
           isWordComplete = true;
-          
+
           if (currentWordIndex === 0 && !hasCompletedFirstWord) {
             animateTitleChange();
           }
-          
+
           const guessesLeft = currentWord.guesses - currentGuessIndex;
-          const wordScore = Math.round((currentWord.max_score * (guessesLeft + 1)) / currentWord.guesses);
+          const wordScore = Math.round(
+            (currentWord.max_score * (guessesLeft + 1)) / currentWord.guesses
+          );
           gameStats.totalScore += wordScore;
-          
+
           gameStats.wordsCompleted++;
           gameStats.totalGuesses += currentGuessIndex;
           if (currentGuessIndex === 1) gameStats.perfectWords++;
-          
+
           await animateGridTransition();
-          
+
           setTimeout(() => {
             if (currentWordIndex < WORDS_DATA.length - 1) {
               nextWord();
@@ -1811,15 +1999,15 @@
           }, 500);
         } else if (currentGuessIndex >= currentWord.guesses) {
           gameStats.wordsFailed++;
-          
+
           if (!allWordsData[currentWordIndex].failedAttempts) {
             allWordsData[currentWordIndex].failedAttempts = 0;
           }
           allWordsData[currentWordIndex].failedAttempts++;
-          
+
           const failedAttempts = allWordsData[currentWordIndex].failedAttempts;
           const cooldownDuration = calculateCooldownDuration(failedAttempts);
-          
+
           startCooldown(cooldownDuration);
         }
         renderGrid();
@@ -1842,27 +2030,154 @@
       function getOrdinal(num) {
         const lastDigit = num % 10;
         const lastTwoDigits = num % 100;
-        
+
         if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
           return num + "th";
         }
-        
+
         switch (lastDigit) {
-          case 1: return num + "st";
-          case 2: return num + "nd";
-          case 3: return num + "rd";
-          default: return num + "th";
+          case 1:
+            return num + "st";
+          case 2:
+            return num + "nd";
+          case 3:
+            return num + "rd";
+          default:
+            return num + "th";
         }
       }
 
       async function validateGuessWithFallback(word) {
         const commonWords = [
-          "THE", "AND", "FOR", "ARE", "BUT", "NOT", "YOU", "ALL", "CAN", "HER", "WAS", "ONE", "OUR", "HAD", "BY", "HOT", "WORD", "WHAT", "SOME", "WE", "IT", "DO", "OUT", "OTHER", "MANY", "TIME", "VERY", "WHEN", "COME", "HERE", "HOW", "JUST", "LIKE", "LONG", "MAKE", "MUCH", "OVER", "SUCH", "TAKE", "THAN", "THEM", "WELL", "WERE", "WILL", "WITH", "HAVE", "THIS", "THAT", "FROM", "THEY", "KNOW", "WANT", "BEEN", "GOOD", "SOME", "TIME", "VERY", "WHEN", "COME", "HERE", "HELLO", "WORLD", "HOUSE", "WATER", "LIGHT", "RIGHT", "MUSIC", "PHONE", "MONEY", "STORY", "HAPPY", "PLACE", "THINK", "GREAT", "WHERE", "EVERY", "STILL", "SMALL", "FOUND", "THOSE", "NEVER", "UNDER", "MIGHT", "WHILE", "SOUND", "BELOW", "SAW", "SOMETHING", "THOUGHT", "BOTH", "CAT", "DOG", "RUN", "JUMP", "TREE", "BOOK", "LOVE", "HELP", "WORK", "PLAY", "LOOK", "TALK", "WALK", "READ", "OPEN", "CLOSE", "START", "STOP", "END", "BEGIN", "NICE", "COOL", "WARM", "COLD", "TESTS", "WORDS", "GUESS", "GAMES", "LETTERS", "TILES", "VALID", "WRONG", "RIGHT", "CHECK",
+          "THE",
+          "AND",
+          "FOR",
+          "ARE",
+          "BUT",
+          "NOT",
+          "YOU",
+          "ALL",
+          "CAN",
+          "HER",
+          "WAS",
+          "ONE",
+          "OUR",
+          "HAD",
+          "BY",
+          "HOT",
+          "WORD",
+          "WHAT",
+          "SOME",
+          "WE",
+          "IT",
+          "DO",
+          "OUT",
+          "OTHER",
+          "MANY",
+          "TIME",
+          "VERY",
+          "WHEN",
+          "COME",
+          "HERE",
+          "HOW",
+          "JUST",
+          "LIKE",
+          "LONG",
+          "MAKE",
+          "MUCH",
+          "OVER",
+          "SUCH",
+          "TAKE",
+          "THAN",
+          "THEM",
+          "WELL",
+          "WERE",
+          "WILL",
+          "WITH",
+          "HAVE",
+          "THIS",
+          "THAT",
+          "FROM",
+          "THEY",
+          "KNOW",
+          "WANT",
+          "BEEN",
+          "GOOD",
+          "SOME",
+          "TIME",
+          "VERY",
+          "WHEN",
+          "COME",
+          "HERE",
+          "HELLO",
+          "WORLD",
+          "HOUSE",
+          "WATER",
+          "LIGHT",
+          "RIGHT",
+          "MUSIC",
+          "PHONE",
+          "MONEY",
+          "STORY",
+          "HAPPY",
+          "PLACE",
+          "THINK",
+          "GREAT",
+          "WHERE",
+          "EVERY",
+          "STILL",
+          "SMALL",
+          "FOUND",
+          "THOSE",
+          "NEVER",
+          "UNDER",
+          "MIGHT",
+          "WHILE",
+          "SOUND",
+          "BELOW",
+          "SAW",
+          "SOMETHING",
+          "THOUGHT",
+          "BOTH",
+          "CAT",
+          "DOG",
+          "RUN",
+          "JUMP",
+          "TREE",
+          "BOOK",
+          "LOVE",
+          "HELP",
+          "WORK",
+          "PLAY",
+          "LOOK",
+          "TALK",
+          "WALK",
+          "READ",
+          "OPEN",
+          "CLOSE",
+          "START",
+          "STOP",
+          "END",
+          "BEGIN",
+          "NICE",
+          "COOL",
+          "WARM",
+          "COLD",
+          "TESTS",
+          "WORDS",
+          "GUESS",
+          "GAMES",
+          "LETTERS",
+          "TILES",
+          "VALID",
+          "WRONG",
+          "RIGHT",
+          "CHECK",
         ];
         if (commonWords.includes(word.toUpperCase())) {
           return true;
         }
-        
+
         try {
           const controller = new AbortController();
           const timeoutId = setTimeout(() => controller.abort(), 3000);
@@ -1880,11 +2195,11 @@
             return false;
           }
         } catch (error) {}
-        
+
         if (word.length < 2 || !/^[A-Z]+$/.test(word)) {
           return false;
         }
-        
+
         return true;
       }
 
@@ -1893,14 +2208,14 @@
         const targetWord = currentWord.word;
         const targetLetters = targetWord.split("");
         const guessLetters = guess.split("");
-        
+
         const result = new Array(targetWord.length);
         const targetLetterCounts = {};
-        
+
         for (let letter of targetLetters) {
           targetLetterCounts[letter] = (targetLetterCounts[letter] || 0) + 1;
         }
-        
+
         for (let i = 0; i < guessLetters.length; i++) {
           if (guessLetters[i] === targetLetters[i]) {
             result[i] = "correct";
@@ -1908,7 +2223,7 @@
             knownLetters[i] = guessLetters[i];
           }
         }
-        
+
         for (let i = 0; i < guessLetters.length; i++) {
           if (result[i] === "correct") {
             continue;
@@ -1921,7 +2236,7 @@
             result[i] = "absent";
           }
         }
-        
+
         for (let i = 0; i < result.length; i++) {
           const tile = document.getElementById(`tile-${rowIndex}-${i}`);
           const state = result[i];
@@ -1929,7 +2244,7 @@
           tile.classList.add(state);
           gameState[rowIndex][i] = state;
         }
-        
+
         return result;
       }
 
@@ -1937,30 +2252,41 @@
         const lastWordIndex = currentWordIndex;
         saveCurrentWordState();
         punctuationAnimated = false;
-        
-        const punctuationOverlay = document.getElementById("punctuation-overlay");
+
+        const punctuationOverlay = document.getElementById(
+          "punctuation-overlay"
+        );
         if (punctuationOverlay) {
           punctuationOverlay.innerHTML = "";
         }
-        
+
         currentWordIndex++;
-        
-        const currentWordContainer = document.getElementById("current-word-container");
+
+        const currentWordContainer = document.getElementById(
+          "current-word-container"
+        );
         if (currentWordContainer) {
           currentWordContainer.style.display = "none";
         }
-        
+
         // Hide mobile keyboard
         toggleMobileKeyboard(false);
-        
+
         renderCompletedWordsStack();
         updateUI();
-        
+
         setTimeout(() => {
-          const completedWordContainer = document.getElementById(`completed-word-${lastWordIndex}`);
+          const completedWordContainer = document.getElementById(
+            `completed-word-${lastWordIndex}`
+          );
           if (completedWordContainer) {
-            const gridWrapper = completedWordContainer.querySelector(".completed-grid-wrapper");
-            if (gridWrapper && !gridWrapper.classList.contains("drawer-collapsed")) {
+            const gridWrapper = completedWordContainer.querySelector(
+              ".completed-grid-wrapper"
+            );
+            if (
+              gridWrapper &&
+              !gridWrapper.classList.contains("drawer-collapsed")
+            ) {
               toggleWordDrawer(lastWordIndex);
               setTimeout(() => {
                 revealCompletedWordPunctuation(lastWordIndex);
@@ -1968,7 +2294,7 @@
             }
           }
         }, 200);
-        
+
         setTimeout(() => {
           showGameComplete();
         }, 700);
@@ -1978,23 +2304,32 @@
         if (currentWordIndex < WORDS_DATA.length - 1) {
           saveCurrentWordState();
           const previousWordIndex = currentWordIndex;
-          
+
           punctuationAnimated = false;
-          const punctuationOverlay = document.getElementById("punctuation-overlay");
+          const punctuationOverlay = document.getElementById(
+            "punctuation-overlay"
+          );
           if (punctuationOverlay) {
             punctuationOverlay.innerHTML = "";
           }
-          
+
           currentWordIndex++;
           setupCurrentWord();
           updateUI();
           saveGameProgress();
-          
+
           setTimeout(() => {
-            const completedWordContainer = document.getElementById(`completed-word-${previousWordIndex}`);
+            const completedWordContainer = document.getElementById(
+              `completed-word-${previousWordIndex}`
+            );
             if (completedWordContainer) {
-              const gridWrapper = completedWordContainer.querySelector(".completed-grid-wrapper");
-              if (gridWrapper && !gridWrapper.classList.contains("drawer-collapsed")) {
+              const gridWrapper = completedWordContainer.querySelector(
+                ".completed-grid-wrapper"
+              );
+              if (
+                gridWrapper &&
+                !gridWrapper.classList.contains("drawer-collapsed")
+              ) {
                 toggleWordDrawer(previousWordIndex);
                 setTimeout(() => {
                   revealCompletedWordPunctuation(previousWordIndex);
@@ -2002,8 +2337,10 @@
               }
             }
           }, 200);
-          
-          const currentWordContainer = document.getElementById("current-word-container");
+
+          const currentWordContainer = document.getElementById(
+            "current-word-container"
+          );
           if (currentWordContainer) {
             currentWordContainer.classList.add("fade-in");
             setTimeout(() => {
@@ -2017,16 +2354,23 @@
 
       function showGameComplete() {
         isGameComplete = true;
-        
+
         if (cooldownTimer) {
           clearInterval(cooldownTimer);
           cooldownTimer = null;
         }
         cooldownActive = false;
 
-        const completionRate = Math.round((gameStats.wordsCompleted / WORDS_DATA.length) * 100);
-        const avgGuesses = gameStats.totalGuesses / Math.max(gameStats.wordsCompleted, 1);
-        const accuracy = Math.round((gameStats.wordsCompleted / (gameStats.wordsCompleted + gameStats.wordsFailed)) * 100);
+        const completionRate = Math.round(
+          (gameStats.wordsCompleted / WORDS_DATA.length) * 100
+        );
+        const avgGuesses =
+          gameStats.totalGuesses / Math.max(gameStats.wordsCompleted, 1);
+        const accuracy = Math.round(
+          (gameStats.wordsCompleted /
+            (gameStats.wordsCompleted + gameStats.wordsFailed)) *
+            100
+        );
 
         // Start shaking the 's' and make it clickable
         startTitleShaking();
@@ -2040,27 +2384,27 @@
         const titleS = document.getElementById("title-s");
         if (titleS && hasCompletedFirstWord) {
           titleS.classList.add("shaking");
-          
+
           // Add click/tap event listener for navigation
-          const handleNavigation = function(e) {
+          const handleNavigation = function (e) {
             e.preventDefault();
             e.stopPropagation();
-            
+
             // Add a brief color change feedback
-            titleS.style.color = 'var(--color-correct)';
+            titleS.style.color = "var(--color-correct)";
             setTimeout(() => {
-              titleS.style.color = '';
-              window.location.href = 'connect1ons.html';
+              titleS.style.color = "";
+              window.location.href = "connect1ons.html";
             }, 150);
           };
-          
+
           // Remove any existing listeners first
-          titleS.removeEventListener('click', handleNavigation);
-          titleS.removeEventListener('touchend', handleNavigation);
-          
+          titleS.removeEventListener("click", handleNavigation);
+          titleS.removeEventListener("touchend", handleNavigation);
+
           // Add both click and touch events for cross-platform compatibility
-          titleS.addEventListener('click', handleNavigation);
-          titleS.addEventListener('touchend', handleNavigation);
+          titleS.addEventListener("click", handleNavigation);
+          titleS.addEventListener("touchend", handleNavigation);
         }
       }
 
@@ -2086,7 +2430,10 @@
           hasCompletedFirstWord,
           timestamp: Date.now(),
         };
-        localStorage.setItem("wordleGameState", JSON.stringify(gameProgressState));
+        localStorage.setItem(
+          "wordleGameState",
+          JSON.stringify(gameProgressState)
+        );
       }
 
       function loadGameProgress() {
@@ -2110,9 +2457,11 @@
               cooldownEndTime = savedState.cooldownEndTime || 0;
               expandedWords = new Set(savedState.expandedWords || []);
               collapsedWords = new Set(savedState.collapsedWords || []);
-              revealedPunctuation = new Set(savedState.revealedPunctuation || []);
+              revealedPunctuation = new Set(
+                savedState.revealedPunctuation || []
+              );
               hasCompletedFirstWord = savedState.hasCompletedFirstWord || false;
-              
+
               if (allWordsData.length === 0) {
                 for (let i = 0; i < WORDS_DATA.length; i++) {
                   allWordsData[i] = {
@@ -2125,7 +2474,7 @@
                   };
                 }
               }
-              
+
               if (cooldownActive && cooldownEndTime > Date.now()) {
                 renderGrid();
                 updateCooldownDisplay();
@@ -2153,13 +2502,13 @@
         if (event.ctrlKey || event.metaKey || event.altKey) {
           return;
         }
-        
+
         if (isWordComplete || isWordFailed || cooldownActive) {
           return;
         }
-        
+
         const isLetter = /^[a-zA-Z]$/.test(event.key);
-        
+
         if (event.key === "Enter") {
           event.preventDefault();
           makeGuess();
@@ -2184,15 +2533,22 @@
         }
         isAnimating = true;
         const currentWord = WORDS_DATA[currentWordIndex];
-        
+
         const rootStyles = getComputedStyle(document.documentElement);
-        const flipDurationStr = rootStyles.getPropertyValue("--animation-flip-duration").trim();
-        const flipDelayStr = rootStyles.getPropertyValue("--animation-flip-delay").trim();
-        
-        const flipDuration = parseFloat(flipDurationStr) * (flipDurationStr.includes("ms") ? 1 : 1000);
-        const flipDelay = parseFloat(flipDelayStr) * (flipDelayStr.includes("ms") ? 1 : 1000);
+        const flipDurationStr = rootStyles
+          .getPropertyValue("--animation-flip-duration")
+          .trim();
+        const flipDelayStr = rootStyles
+          .getPropertyValue("--animation-flip-delay")
+          .trim();
+
+        const flipDuration =
+          parseFloat(flipDurationStr) *
+          (flipDurationStr.includes("ms") ? 1 : 1000);
+        const flipDelay =
+          parseFloat(flipDelayStr) * (flipDelayStr.includes("ms") ? 1 : 1000);
         const halfFlip = flipDuration / 2;
-        
+
         const tilesToFlip = [];
         for (let i = 0; i < currentWord.length; i++) {
           const tile = document.getElementById(`tile-${rowIndex}-${i}`);
@@ -2200,14 +2556,14 @@
             tilesToFlip.push({ tile: tile, index: i, state: results[i] });
           }
         }
-        
+
         tilesToFlip.forEach((tileData) => {
           const tile = tileData.tile;
           tile.classList.remove("flipping", "correct", "present", "absent");
         });
-        
+
         await new Promise((resolve) => setTimeout(resolve, 30));
-        
+
         const animationPromises = tilesToFlip.map((tileData) => {
           const tile = tileData.tile;
           const index = tileData.index;
@@ -2217,12 +2573,12 @@
               requestAnimationFrame(() => {
                 tile.style.willChange = "transform";
                 tile.classList.add("flipping");
-                
+
                 setTimeout(() => {
                   tile.classList.add(state);
                   gameState[rowIndex][index] = state;
                 }, flipDuration / 2);
-                
+
                 setTimeout(() => {
                   tile.classList.remove("flipping");
                   tile.style.willChange = "auto";
@@ -2232,13 +2588,16 @@
             }, index * flipDelay);
           });
         });
-        
+
         await Promise.all(animationPromises);
         isAnimating = false;
       }
 
       function animateInvalidWord(rowIndex) {
-        if (currentWordIndex >= WORDS_DATA.length || !WORDS_DATA[currentWordIndex]) {
+        if (
+          currentWordIndex >= WORDS_DATA.length ||
+          !WORDS_DATA[currentWordIndex]
+        ) {
           return;
         }
         const currentWord = WORDS_DATA[currentWordIndex];
@@ -2293,11 +2652,18 @@
         }
 
         const rootStyles = getComputedStyle(document.documentElement);
-        const flipDurationStr = rootStyles.getPropertyValue("--animation-flip-duration").trim();
-        const flipDuration = parseFloat(flipDurationStr) * (flipDurationStr.includes("ms") ? 1 : 1000);
-        
-        const flipDelayStr = rootStyles.getPropertyValue("--animation-flip-delay").trim();
-        const flipDelay = parseFloat(flipDelayStr) * (flipDelayStr.includes("ms") ? 1 : 1000);
+        const flipDurationStr = rootStyles
+          .getPropertyValue("--animation-flip-duration")
+          .trim();
+        const flipDuration =
+          parseFloat(flipDurationStr) *
+          (flipDurationStr.includes("ms") ? 1 : 1000);
+
+        const flipDelayStr = rootStyles
+          .getPropertyValue("--animation-flip-delay")
+          .trim();
+        const flipDelay =
+          parseFloat(flipDelayStr) * (flipDelayStr.includes("ms") ? 1 : 1000);
 
         const clearPromises = [];
         for (let row = 0; row < maxGuesses; row++) {
@@ -2314,7 +2680,12 @@
 
                   setTimeout(() => {
                     tile.textContent = "";
-                    tile.classList.remove("correct", "present", "absent", "filled");
+                    tile.classList.remove(
+                      "correct",
+                      "present",
+                      "absent",
+                      "filled"
+                    );
                   }, flipDuration / 2);
 
                   setTimeout(() => {
@@ -2341,12 +2712,14 @@
           tile.style.animation = "";
           tile.style.animationDelay = "";
         });
-        
-        const containers = document.querySelectorAll(".current-word-container, .completed-words-stack");
+
+        const containers = document.querySelectorAll(
+          ".current-word-container, .completed-words-stack"
+        );
         containers.forEach((container) => {
           container.style.willChange = "auto";
         });
-        
+
         isAnimating = false;
       }
 
@@ -2361,8 +2734,10 @@
           tile.style.opacity = "";
           tile.style.transition = "";
         });
-        
-        const containers = document.querySelectorAll(".current-word-container, .completed-words-stack, .word-attempts");
+
+        const containers = document.querySelectorAll(
+          ".current-word-container, .completed-words-stack, .word-attempts"
+        );
         containers.forEach((container) => {
           container.style.willChange = "auto";
           container.style.transform = "";
@@ -2398,7 +2773,8 @@
         const starRatingEl = document.getElementById("star-rating");
         const ratingTextEl = document.getElementById("rating-text");
 
-        const scorePercentage = (gameStats.totalScore / gameStats.maxPossibleScore) * 100;
+        const scorePercentage =
+          (gameStats.totalScore / gameStats.maxPossibleScore) * 100;
         let stars = 0;
         let ratingText = "";
 
@@ -2448,13 +2824,17 @@
           <strong>Game Statistics</strong>
           <div class="stats-grid">
             <div class="stats-label">Words Completed:</div>
-            <div class="stats-value">${gameStats.wordsCompleted}/${WORDS_DATA.length}</div>
+            <div class="stats-value">${gameStats.wordsCompleted}/${
+          WORDS_DATA.length
+        }</div>
             <div class="stats-label">Accuracy:</div>
             <div class="stats-value">${accuracy}%</div>
             <div class="stats-label">Average Guesses:</div>
             <div class="stats-value">${avgGuesses.toFixed(1)}</div>
             <div class="stats-label">Score:</div>
-            <div class="stats-value">${gameStats.totalScore}/${gameStats.maxPossibleScore}</div>
+            <div class="stats-value">${gameStats.totalScore}/${
+          gameStats.maxPossibleScore
+        }</div>
             <div class="stats-label">Perfect Words:</div>
             <div class="stats-value">${gameStats.perfectWords}</div>
           </div>
