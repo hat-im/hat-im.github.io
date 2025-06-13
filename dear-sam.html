@@ -300,21 +300,23 @@
             body {
                 padding: 10px;
                 margin: 0;
-                max-width: 100%;
+                max-width: 100vw;
                 min-height: 100vh;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
+                overflow-x: hidden;
+                box-sizing: border-box;
             }
             
             .puzzle-container {
                 margin: 20px 0;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
+                max-width: calc(100vw - 20px);
             }
             
             .line {
                 margin-bottom: 10px;
                 min-width: max-content;
+                white-space: nowrap;
             }
             
             .paragraph-break {
@@ -1464,6 +1466,7 @@
                 
                 const encrypted = this.dataset.encrypted;
                 let value = this.value.toUpperCase();
+                const wasAlreadyFilled = this.dataset.wasFilled === 'true';
                 
                 // Only allow single uppercase letters
                 if (value.length > 1) {
@@ -1488,6 +1491,9 @@
                         setTimeout(() => nextInput.focus(), 50);
                     }
                 }
+                
+                // Clear the filled flag
+                this.dataset.wasFilled = 'false';
                 
                 // Auto-check if puzzle is complete
                 const allInputs = document.querySelectorAll('.letter-input');
@@ -1516,6 +1522,8 @@
                 
                 // Handle letter replacement - any letter key will replace existing content
                 if (e.key.match(/^[a-zA-Z]$/)) {
+                    // Mark if this input was already filled
+                    this.dataset.wasFilled = this.value.trim() !== '' ? 'true' : 'false';
                     this.value = ''; // Clear existing value to allow replacement
                 }
                 
