@@ -1335,61 +1335,213 @@
             updateControls();
         }
 
-        // Animate correct guess (simplified for mobile)
+        // Animate correct guess with tile movement
         async function animateCorrectGuess(correctGroup) {
-            const selectedTiles = Array.from(document.querySelectorAll('.word-tile.selected'));
-            
-            // Simple hop animation
-            const hopPromises = selectedTiles.map((tile, i) => {
-                return new Promise(resolve => {
-                    setTimeout(() => {
-                        tile.classList.add('hop');
-                        setTimeout(() => {
-                            tile.classList.remove('hop');
-                            resolve();
-                        }, 300);
-                    }, i * 100);
-                });
-            });
-            
-            await Promise.all(hopPromises);
-            
-            // Update game state
-            const groupWithSubset = {
-                ...correctGroup,
-                words: gameState.wordSubsets[correctGroup.category] || correctGroup.words
-            };
-            gameState.foundGroups.push(groupWithSubset);
-            gameState.completionOrder.push(correctGroup.color);
-            gameState.attempts.push({
-                words: [...gameState.selectedWords],
-                colors: gameState.selectedWords.map(() => correctGroup.color),
-                correct: true
-            });
-            gameState.selectedWords = [];
-            
-            // Re-render grid first to show the new group
-            renderWordGrid();
-            
-            // Find the newly created group block and add animation
-            setTimeout(() => {
-                const groupBlocks = document.querySelectorAll('.group-block');
-                const newGroupBlock = groupBlocks[gameState.foundGroups.length - 1];
-                if (newGroupBlock) {
-                    newGroupBlock.classList.add('new-group');
-                    setTimeout(() => {
-                        newGroupBlock.classList.remove('new-group');
-                    }, 500);
+            try {
+                const selectedTiles = Array.from(document.querySelectorAll('.word-tile.selected'));
+                
+                // Step 1: Hop animation
+                if (selectedTiles.length > 0) {
+                    const hopPromises = selectedTiles.map((tile, i) => {
+                        return new Promise(resolve => {
+                            setTimeout(() => {
+                                tile.classList.add('hop');
+                                setTimeout(() => {
+                                    tile.classList.remove('hop');
+                                    resolve();
+                                }, 300);
+                            }, i * 100);
+                        });
+                    });
+                    
+                    await Promise.all(hopPromises);
                 }
-            }, 50);
-            
-            updateControls();
-            saveGameState();
-            
-            if (gameState.foundGroups.length === 4) {
-                clearSavedGameState();
-                clearWordSubsets();
-                endGame(true);
+                
+                // Step 2: Calculate target positions and move tiles
+                const wordGrid = document.getElementById('word-grid');
+                if (wordGrid && selectedTiles.length > 0) {
+                    const gridRect = wordGrid.getBoundingClientRect();
+                    const allTiles = Array.from(wordGrid.querySelectorAll('.word-tile'));
+                    const targetRowIndex = gameState.foundGroups.length;
+                    
+                    // Calculate target positions
+                    const targetPositions = [];
+                    const tileHeight = selectedTiles[0].offsetHeight;
+                    const tileWidth = selectedTiles[0].offsetWidth;
+                    const gap = 8;
+                    
+                    for (let col = 0; col < 4; col++) {
+                        const x = gridRect.left + col * (tileWidth + gap);
+                        const y = gridRect.top + targetRowIndex * (tileHeight + gap);
+                        targetPositions.push({ x, y });
+                    }
+                    
+                    // Find tiles in target row that need to be displaced
+                    const tilesInTargetRow = allTiles.filter(tile => {
+                        if (tile.classList.contains('selected')) return false;
+                        
+                        const tileRect = tile.getBoundingClientRect();
+                        const tileRowIndex = Math.round((tileRect.top - gridRect.top) / (tileHeight + gap));
+                        
+                        return tileRowIndex === targetRowIndex;
+                    });
+                    
+                    // Move selected tiles to target row
+                    selectedTiles.forEach((selectedTile, index) => {
+                        const selectedRect = selectedTile.getBoundingClientRect();
+                        const targetPos = targetPositions[index];
+                        
+                        const deltaX = targetPos.x - selectedRect.left;
+                        const deltaY = targetPos.y - selectedRect.top;
+                        
+                        selectedTile.classList.add('moving');
+                        selectedTile.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                    });
+                    
+                    // Calculate available positions for displaced tiles
+                    const remainingTiles = allTiles.filter(tile => 
+                        !tile.classList.contains('selected') && 
+                        !tilesInTargetRow.includes(tile)
+                    );
+                    
+                    const availablePositions = [];
+                    for (let row = targetRowIndex + 1; row < 4; row++) {
+                        for (let col = 0; col < 4; col++) {
+                            const x = gridRect.left + col * (tileWidth + gap);
+                            const y = gridRect.top + row * (tileHeight + gap);
+                            availablePositions.push({ x, y });
+                        }
+                    }
+                    
+                    // Find occupied positions
+                    const occupiedPositions = new Set();
+                    remainingTiles.forEach(tile => {
+                        const tileRect = tile.getBoundingClientRect();
+                        availablePositions.forEach((pos, index) => {
+                            if (Math.abs(tileRect.left - pos.x) < 10 && Math.abs(tileRect.top - pos.y) < 10) {
+                                occupiedPositions.add(index);
+                            }
+                        });
+                    });
+                    
+                    // Move displaced tiles to available positions
+                    let assignmentIndex = 0;
+                    tilesInTargetRow.forEach((displacedTile) => {
+                        while (assignmentIndex < availablePositions.length && occupiedPositions.has(assignmentIndex)) {
+                            assignmentIndex++;
+                        }
+                        
+                        if (assignmentIndex < availablePositions.length) {
+                            const targetPos = availablePositions[assignmentIndex];
+                            const tileRect = displacedTile.getBoundingClientRect();
+                            
+                            const deltaX = targetPos.x - tileRect.left;
+                            const deltaY = targetPos.y - tileRect.top;
+                            
+                            displacedTile.classList.add('moving');
+                            displacedTile.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                            
+                            occupiedPositions.add(assignmentIndex);
+                            assignmentIndex++;
+                        }
+                    });
+                    
+                    // Wait for movement animation
+                    await new Promise(resolve => setTimeout(resolve, 600));
+                    
+                    // Clean up transforms
+                    selectedTiles.forEach(tile => {
+                        tile.classList.remove('moving', 'selected');
+                        tile.style.transform = '';
+                    });
+                    
+                    tilesInTargetRow.forEach(tile => {
+                        tile.classList.remove('moving');
+                        tile.style.transform = '';
+                    });
+                    
+                    await new Promise(resolve => requestAnimationFrame(resolve));
+                    
+                    // Temporarily disable transitions
+                    const allRemainingTiles = wordGrid.querySelectorAll('.word-tile:not(.selected)');
+                    allRemainingTiles.forEach(tile => {
+                        tile.style.transition = 'none';
+                    });
+                    
+                    // Update game state
+                    const groupWithSubset = {
+                        ...correctGroup,
+                        words: gameState.wordSubsets[correctGroup.category] || correctGroup.words
+                    };
+                    gameState.foundGroups.push(groupWithSubset);
+                    gameState.completionOrder.push(correctGroup.color);
+                    gameState.attempts.push({
+                        words: [...gameState.selectedWords],
+                        colors: gameState.selectedWords.map(() => correctGroup.color),
+                        correct: true
+                    });
+                    gameState.selectedWords = [];
+                    
+                    // Re-render grid
+                    renderWordGrid();
+                    
+                    // Re-enable transitions
+                    setTimeout(() => {
+                        allRemainingTiles.forEach(tile => {
+                            tile.style.transition = '';
+                        });
+                    }, 50);
+                } else {
+                    // Fallback if no grid - just update state
+                    const groupWithSubset = {
+                        ...correctGroup,
+                        words: gameState.wordSubsets[correctGroup.category] || correctGroup.words
+                    };
+                    gameState.foundGroups.push(groupWithSubset);
+                    gameState.completionOrder.push(correctGroup.color);
+                    gameState.attempts.push({
+                        words: [...gameState.selectedWords],
+                        colors: gameState.selectedWords.map(() => correctGroup.color),
+                        correct: true
+                    });
+                    gameState.selectedWords = [];
+                    renderWordGrid();
+                }
+                
+                // Animate new group block
+                setTimeout(() => {
+                    const groupBlocks = document.querySelectorAll('.group-block');
+                    const newGroupBlock = groupBlocks[gameState.foundGroups.length - 1];
+                    if (newGroupBlock) {
+                        newGroupBlock.classList.add('new-group');
+                        setTimeout(() => {
+                            newGroupBlock.classList.remove('new-group');
+                        }, 500);
+                    }
+                }, 100);
+                
+                updateControls();
+                saveGameState();
+                
+                if (gameState.foundGroups.length === 4) {
+                    clearSavedGameState();
+                    clearWordSubsets();
+                    endGame(true);
+                }
+            } catch (error) {
+                console.error('Animation error:', error);
+                // Fallback - just update state without animation
+                const groupWithSubset = {
+                    ...correctGroup,
+                    words: gameState.wordSubsets[correctGroup.category] || correctGroup.words
+                };
+                gameState.foundGroups.push(groupWithSubset);
+                gameState.selectedWords = [];
+                renderWordGrid();
+                updateControls();
+                if (gameState.foundGroups.length === 4) {
+                    endGame(true);
+                }
             }
         }
 
