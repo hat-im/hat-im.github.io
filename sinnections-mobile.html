@@ -397,6 +397,13 @@
             background-color: #ba81c5 !important;
         }
 
+        .attempt-cell.animate {
+            opacity: 0;
+            transform: scale(0.9);
+            animation: cellAppear 0.3s ease-out forwards;
+            animation-delay: calc(var(--row-index) * 0.1s + var(--cell-index) * 0.05s);
+        }
+
         .attempt-row {
             display: contents;
         }
@@ -504,6 +511,17 @@
             animation: groupAppear 0.5s ease-out;
         }
 
+        @keyframes cellAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         @keyframes groupAppear {
             from {
                 transform: translateY(20px) scale(0.95);
@@ -540,9 +558,8 @@
             font-size: 12px;
             margin-bottom: 2px;
             font-weight: 700;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: textAppear 0.3s ease-out 0.2s forwards;
+            opacity: 0.9;
+            transform: translateY(0);
             line-height: 1;
             color: inherit;
         }
@@ -550,12 +567,24 @@
         .group-words {
             font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 10px;
-            opacity: 0;
+            opacity: 0.9;
             font-weight: 500;
-            transform: translateY(10px);
-            animation: textAppear 0.3s ease-out 0.3s forwards;
+            transform: translateY(0);
             line-height: 1;
             color: inherit;
+        }
+
+        /* Only animate text in new groups */
+        .group-block.new-group .group-category {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.2s forwards;
+        }
+
+        .group-block.new-group .group-words {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.3s forwards;
         }
 
         @keyframes textAppear {
@@ -673,6 +702,43 @@
         .color-green { background-color: #a0c35a; }
         .color-blue { background-color: #b0c4ef; }
         .color-purple { background-color: #ba81c5; }
+
+        /* Victory shake animations for mobile */
+        @keyframes subtle-shake-1 {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-1px, 0, 0); }
+            75% { transform: translate3d(1px, 0, 0); }
+        }
+
+        @keyframes subtle-shake-2 {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            33% { transform: translate3d(0, -1px, 0); }
+            66% { transform: translate3d(0, 1px, 0); }
+        }
+
+        @keyframes subtle-shake-3 {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            20% { transform: translate3d(-1px, 0, 0); }
+            40% { transform: translate3d(1px, -1px, 0); }
+            60% { transform: translate3d(0, 1px, 0); }
+            80% { transform: translate3d(1px, 0, 0); }
+        }
+
+        @keyframes subtle-shake-4 {
+            0%, 100% { transform: rotate3d(0, 0, 1, 0deg); }
+            25% { transform: rotate3d(0, 0, 1, -0.5deg); }
+            75% { transform: rotate3d(0, 0, 1, 0.5deg); }
+        }
+
+        .attempt-cell.victory-shake {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .attempt-cell.victory-shake:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
     </style>
 </head>
 <body>
@@ -1302,27 +1368,20 @@
             });
             gameState.selectedWords = [];
             
-            // Create the new group block
-            const groupBlock = document.createElement('div');
-            groupBlock.className = `group-block ${correctGroup.color} new-group`;
-            
-            const categoryEl = document.createElement('div');
-            categoryEl.className = 'group-category';
-            categoryEl.textContent = correctGroup.category;
-            
-            const wordsEl = document.createElement('div');
-            wordsEl.className = 'group-words';
-            wordsEl.textContent = correctGroup.words.join(', ');
-            
-            groupBlock.appendChild(categoryEl);
-            groupBlock.appendChild(wordsEl);
-            
-            // Re-render grid
+            // Re-render grid first to show the new group
             renderWordGrid();
             
+            // Find the newly created group block and add animation
             setTimeout(() => {
-                groupBlock.classList.remove('new-group');
-            }, 500);
+                const groupBlocks = document.querySelectorAll('.group-block');
+                const newGroupBlock = groupBlocks[gameState.foundGroups.length - 1];
+                if (newGroupBlock) {
+                    newGroupBlock.classList.add('new-group');
+                    setTimeout(() => {
+                        newGroupBlock.classList.remove('new-group');
+                    }, 500);
+                }
+            }, 50);
             
             updateControls();
             saveGameState();
@@ -1472,9 +1531,82 @@
             });
         }
 
+        // Add victory shake to the last row of attempts grid (mobile version)
+        function addVictoryShake() {
+            // Use a more reliable approach to wait for the attempts grid
+            const checkForGrid = () => {
+                const attemptsGrid = gameOverEl.querySelector('.attempts-grid');
+                
+                if (attemptsGrid && gameState.attempts.length > 0) {
+                    const attemptCells = attemptsGrid.querySelectorAll('.attempt-cell');
+                    
+                    // Calculate expected number of cells (4 cells per attempt)
+                    const expectedCells = gameState.attempts.length * 4;
+                    
+                    if (attemptCells.length >= expectedCells && attemptCells.length >= 4) {
+                        // Get the last 4 cells (representing the final winning attempt)
+                        const lastRowCells = Array.from(attemptCells).slice(-4);
+                        
+                        // Double-check that these cells are visible
+                        const allVisible = lastRowCells.every(cell => {
+                            const style = window.getComputedStyle(cell);
+                            return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+                        });
+                        
+                        if (allVisible) {
+                            // Add victory shake to each cell in the last row
+                            lastRowCells.forEach((cell, index) => {
+                                cell.classList.add('victory-shake');
+                                
+                                // Randomly assign one of the shake animations
+                                const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
+                                const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
+                                
+                                // Add random duration between 1.5s and 2.5s for more variety
+                                const randomDuration = (1.5 + Math.random()).toFixed(1);
+                                
+                                // Add random delay between 0 and 0.5s to stagger the animations
+                                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                                
+                                cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+                                cell.style.animationDelay = `${randomDelay}s`;
+                            });
+                            
+                            return true; // Successfully added victory shake
+                        }
+                    }
+                }
+                return false; // Grid not ready yet
+            };
+            
+            // Try immediately first
+            if (!checkForGrid()) {
+                // If not ready, wait and try again with shorter intervals for better responsiveness
+                let attempts = 0;
+                const maxAttempts = 10;
+                
+                const tryAgain = () => {
+                    attempts++;
+                    if (checkForGrid() || attempts >= maxAttempts) {
+                        return; // Success or max attempts reached
+                    }
+                    setTimeout(tryAgain, 200); // Try every 200ms for up to 2 seconds
+                };
+                
+                setTimeout(tryAgain, 100);
+            }
+        }
+
         // End game
         function endGame(won) {
             showGameOverScreen(won);
+            
+            if (won) {
+                // Add victory shake to the last row of attempts grid after screen is shown
+                setTimeout(() => {
+                    addVictoryShake();
+                }, 200);
+            }
         }
 
         // Helper function to get color codes
