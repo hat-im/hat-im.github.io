@@ -20,9 +20,10 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
-        background: #fefefe;
         width: 100vw;
         height: 100vh;
+        background: #fefefe;
+        color: #111;
       }
       canvas {
         display: block;
@@ -43,14 +44,17 @@
       let canvas = document.getElementById("canvas");
       let ctx = canvas.getContext("2d");
 
-      let cols,
-        rows,
-        grid = [],
-        startTime = 0,
-        lastFrame = 0;
+      let cols, rows, grid = [], startTime = 0, lastFrame = 0;
       let charWidth, charHeight;
-      let mouseX = -1000,
-        mouseY = -1000;
+      let mouseX = -1000, mouseY = -1000;
+      let darkMode = false;
+
+      function checkDarkMode() {
+        const hour = new Date().getHours();
+        darkMode = hour >= 18 || hour < 6;
+        document.body.style.background = darkMode ? "#111" : "#fefefe";
+        document.body.style.color = darkMode ? "#fefefe" : "#111";
+      }
 
       window.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
@@ -63,21 +67,22 @@
         charWidth = metrics.width;
         charHeight = fontSize * lineHeight;
       }
+
       function resize() {
         const dpr = window.devicePixelRatio || 1;
         canvas.width = window.innerWidth * dpr;
         canvas.height = window.innerHeight * dpr;
         canvas.style.width = window.innerWidth + "px";
         canvas.style.height = window.innerHeight + "px";
-        ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset any previous transform
-        ctx.scale(dpr, dpr); // Scale drawing for crispness
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
 
         measureFontMetrics();
         cols = Math.ceil(window.innerWidth / charWidth);
         rows = Math.ceil(window.innerHeight / charHeight);
 
         grid = [];
-        textIndices = []; // reset on each resize
+        textIndices = [];
         let total = cols * rows;
 
         let startCol = Math.floor((cols - text.length) / 2);
@@ -97,11 +102,11 @@
 
       function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = "#333";
+        ctx.fillStyle = darkMode ? "#fefefe" : "#333";
         ctx.font = `${fontSize}px ${fontFamily}`;
         ctx.textBaseline = "top";
 
-        const topPadding = 1; // in pixels
+        const topPadding = 1;
         for (let i = 0; i < grid.length; i++) {
           let col = i % cols;
           let row = Math.floor(i / cols);
@@ -121,6 +126,7 @@
         let progress = Math.max(0, (elapsed - 2000) / 20000);
         let decayRate = Math.pow(Math.min(progress, 1), 10) * baseDecay;
         let changed = false;
+
         if (T < 1) {
           let count = Math.floor(T * text.length) + 1;
           for (let i = 0; i < count && i < textIndices.length; i++) {
@@ -180,6 +186,7 @@
       });
 
       window.addEventListener("load", () => {
+        checkDarkMode();
         resize();
         draw();
         lastFrame = performance.now();
