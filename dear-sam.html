@@ -277,7 +277,13 @@
             padding-top: 15px;
         }
         
-        .popup-close {
+        .popup-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .popup-close, .popup-restart {
             background-color: #8B2635;
             color: white;
             border: none;
@@ -292,8 +298,16 @@
             transition: background-color 0.3s ease;
         }
         
-        .popup-close:hover {
+        .popup-close:hover, .popup-restart:hover {
             background-color: #a0303f;
+        }
+        
+        .popup-restart {
+            background-color: #666666;
+        }
+        
+        .popup-restart:hover {
+            background-color: #777777;
         }
         
         @media (max-width: 600px) {
@@ -370,7 +384,7 @@
 </head>
 <body>
     <div class="header">
-        <a href="sinnections" target="_blank" class="header-link">
+        <a href="connect1ons.html" target="_blank" class="header-link">
             <img src="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/header-crypt.png" alt="Escape the Crypt" onerror="this.style.display='none'; document.querySelector('.fallback-title').style.display='block';">
         </a>
         <div class="fallback-title" style="display: none;">
@@ -1901,7 +1915,10 @@
             <div class="popup-hint">
                 <em>Look aHeader than usual.</em>
             </div>
-            <button class="popup-close" onclick="closePopup()">Continue Exploring</button>
+            <div class="popup-buttons">
+                <button class="popup-close" onclick="closePopup()">Continue Exploring</button>
+                <button class="popup-restart" onclick="restartGame()" style="display: none;">Play Again</button>
+            </div>
         </div>
     </div>
 
@@ -2000,14 +2017,115 @@
             }
         }
         
-        function showPopup() {
+        function showPopup(isReturningUser = false) {
             const popup = document.getElementById('popup-overlay');
+            const title = popup.querySelector('.popup-title');
+            const message = popup.querySelector('.popup-message');
+            const hint = popup.querySelector('.popup-hint');
+            const continueBtn = popup.querySelector('.popup-close');
+            const playAgainBtn = popup.querySelector('.popup-restart');
+            
+            if (isReturningUser) {
+                // Show different content for returning users
+                title.textContent = 'Welcome Back!';
+                message.innerHTML = 'You\'ve already solved this cryptogram.<br><br>The message has been revealed for you.';
+                hint.innerHTML = '<em>Feel free to explore or play again.</em>';
+                continueBtn.textContent = 'Continue Exploring';
+                playAgainBtn.style.display = 'inline-block';
+            } else {
+                // Original completion content
+                title.textContent = 'Puzzle Solved!';
+                message.innerHTML = 'Congratulations! You\'ve decrypted the message.<br><br>Should you find it, there\'s a secret here, but you\'ll need to find it yourself.';
+                hint.innerHTML = '<em>Look aHeader than usual.</em>';
+                continueBtn.textContent = 'Continue Exploring';
+                playAgainBtn.style.display = 'inline-block';
+            }
+            
             popup.style.display = 'flex';
         }
         
         function closePopup() {
             const popup = document.getElementById('popup-overlay');
             popup.style.display = 'none';
+        }
+        
+        function revealCompletedMessage() {
+            // Fill in all the correct answers
+            document.querySelectorAll('.letter-input').forEach(input => {
+                const encrypted = input.dataset.encrypted;
+                const correct = correctMapping[encrypted];
+                input.value = correct;
+                input.classList.add('solved');
+            });
+            
+            // Hide encrypted letters
+            document.querySelectorAll('.encrypted-letter').forEach(letter => {
+                letter.style.visibility = 'hidden';
+            });
+            
+            // Enable header link
+            const headerLink = document.querySelector('.header-link');
+            headerLink.classList.add('enabled');
+            
+            // Set up header click handler if needed
+            if (!NEXT_PUZZLES_ENABLED) {
+                headerLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showEarlyPopup();
+                });
+            }
+            
+            // Update remaining letters
+            updateRemainingLetters();
+            
+            // Set puzzle as solved
+            puzzleSolved = true;
+        }
+        
+        function restartGame() {
+            // Clear completion state
+            localStorage.removeItem('cryptogram_completed');
+            
+            // Reset puzzle state
+            puzzleSolved = false;
+            currentSelected = null;
+            
+            // Clear all inputs
+            document.querySelectorAll('.letter-input').forEach(input => {
+                input.value = '';
+                input.classList.remove('solved', 'error', 'highlighted', 'selected');
+            });
+            
+            // Show encrypted letters again
+            document.querySelectorAll('.encrypted-letter').forEach(letter => {
+                letter.classList.remove('fade-out');
+                letter.style.visibility = 'visible';
+            });
+            
+            // Disable header link
+            const headerLink = document.querySelector('.header-link');
+            headerLink.classList.remove('enabled');
+            
+            // Update remaining letters
+            updateRemainingLetters();
+            
+            // Close popup
+            closePopup();
+        }
+        
+        function initializePage() {
+            // Check if puzzle was already completed
+            const isCompleted = localStorage.getItem('cryptogram_completed') === 'true';
+            
+            if (isCompleted) {
+                // Reveal the message immediately
+                revealCompletedMessage();
+                
+                // Show the welcome back popup
+                setTimeout(() => {
+                    showPopup(true);
+                }, 500);
+            }
         }
         
         function showEarlyPopup() {
@@ -2264,6 +2382,7 @@
         
         // Initialize
         updateRemainingLetters();
+        initializePage();
     </script>
 </body>
 </html>
