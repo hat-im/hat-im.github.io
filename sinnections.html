@@ -1465,12 +1465,10 @@
 
                 // Incorrect guess
                 gameState.mistakes++;
-                // Clear selected words after submitting guess
-                gameState.selectedWords = [];
                 
                 updateMistakesDisplay();
                 saveGameState(); // Save state after incorrect guess
-                renderWordGrid(); // Re-render to show cleared selections
+                renderWordGrid(); // Re-render to keep selections
                 
                 // Check if game is lost
                 if (gameState.mistakes >= gameState.maxMistakes) {
