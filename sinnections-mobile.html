@@ -847,7 +847,7 @@
         };
 
         // Flag to control next puzzle access
-        const NEXT_PUZZLES_ENABLED = false;
+        const NEXT_PUZZLES_ENABLED = true;
         
         // Cooldown duration in milliseconds
         const COOLDOWN_DURATION = 3600000; // 1 hour (3600000ms)
@@ -1622,7 +1622,7 @@
                         const totalCells = gameState.attempts.length * 4;
                         
                         if (globalCellIndex >= totalCells - 4) {
-                            const lastRowLinks = ['', '', '', ''];
+                            const lastRowLinks = [atob('c29ubmVjdGlvbnMuaHRtbA=='), '', '', ''];
                             const lastRowIndex = globalCellIndex - (totalCells - 4);
                             
                             cell.style.cursor = 'pointer';
