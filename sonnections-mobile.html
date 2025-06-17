@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connections</title>
+    <title>Sonnections</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/connections-favicon.ico">
     <style>
         @font-face {
@@ -204,10 +204,10 @@
             background-color: #efefe6;
             border: none;
             border-radius: 6px;
-            padding: 8px;
+            padding: 6px;
             text-align: center;
             font-weight: 700;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.3px;
             cursor: pointer;
@@ -216,6 +216,7 @@
             width: 100%;
             aspect-ratio: 1;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             will-change: transform, background-color;
@@ -225,6 +226,7 @@
             color: #121212;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             line-height: 1.1;
+            position: relative;
         }
 
         .word-tile:hover {
@@ -246,16 +248,35 @@
             animation: correctTile 0.5s ease-out;
         }
 
-        @keyframes correctTile {
-            0% {
-                transform: scale(1);
-            }
-            35% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .play-button {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 18px;
+            height: 18px;
+            background-color: rgba(18, 18, 18, 0.8);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            color: white;
+            z-index: 10;
+        }
+
+        .play-button.show {
+            display: flex;
+        }
+
+        .play-button:hover {
+            background-color: rgba(18, 18, 18, 1);
+        }
+
+        .word-tile.selected .play-button {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #121212;
         }
 
         .controls {
@@ -277,7 +298,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: all 0.15s ease;
-            text-transform: capitalize;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
             height: 44px;
             width: 100%;
@@ -341,6 +362,18 @@
             will-change: transform;
         }
 
+        @keyframes correctTile {
+            0% {
+                transform: scale(1);
+            }
+            35% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
         @keyframes hop {
             0% { transform: translate3d(0, 0, 0); }
             50% { transform: translate3d(0, -6px, 0); }
@@ -349,12 +382,6 @@
 
         .word-tile.hop {
             animation: hop 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            will-change: transform;
-        }
-
-        .word-tile.moving {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 10;
             will-change: transform;
         }
 
@@ -381,6 +408,13 @@
             backface-visibility: hidden;
         }
 
+        .attempt-cell.animate {
+            opacity: 0;
+            transform: scale(0.9);
+            animation: cellAppear 0.3s ease-out forwards;
+            animation-delay: calc(var(--row-index) * 0.1s + var(--cell-index) * 0.05s);
+        }
+
         .attempts-grid .attempt-cell[data-color="yellow"] {
             background-color: #f9df84 !important;
         }
@@ -395,13 +429,6 @@
         
         .attempts-grid .attempt-cell[data-color="purple"] {
             background-color: #ba81c5 !important;
-        }
-
-        .attempt-cell.animate {
-            opacity: 0;
-            transform: scale(0.9);
-            animation: cellAppear 0.3s ease-out forwards;
-            animation-delay: calc(var(--row-index) * 0.1s + var(--cell-index) * 0.05s);
         }
 
         .attempt-row {
@@ -492,7 +519,7 @@
             grid-column: span 4;
             background-color: #a0c35a;
             border-radius: 6px;
-            padding: 8px;
+            padding: 6px;
             text-align: center;
             color: #fff;
             font-weight: 700;
@@ -533,6 +560,12 @@
             }
         }
 
+        .word-tile.moving {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+            will-change: transform;
+        }
+
         .group-block.yellow {
             background-color: #f9df84;
             color: #121212;
@@ -555,7 +588,7 @@
 
         .group-category {
             font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             margin-bottom: 2px;
             font-weight: 700;
             opacity: 0.9;
@@ -566,7 +599,7 @@
 
         .group-words {
             font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             opacity: 0.9;
             font-weight: 500;
             transform: translateY(0);
@@ -750,7 +783,7 @@
         }
         
         if (!isMobile()) {
-            window.location.href = 'sinnections.html';
+            window.location.href = 'sonnections.html';
         }
     </script>
 
@@ -761,7 +794,7 @@
     
     <header class="header">
         <div class="header-content">
-            <h1 class="title">Connections</h1>
+            <h1 class="title">Sonnections</h1>
         </div>
     </header>
     
@@ -816,30 +849,34 @@
     </main>
 
     <script>
-        // Game data
+        // Game data with audio files (mobile-optimized audio handling)
         const gameData = {
             groups: [
                 {
-                    category: "FRIENDS-TO-VAMPIRES",
-                    words: ["CORNBREAD", "STACK", "MARY", "PEARLINE"],
+                    category: "SINNERS WHO WENT TOO FAR",
+                    words: ["MARY", "SAMMIE", "STACK", "CORNBREAD"],
+                    audioFiles: ["audio/mary.mp3", "audio/sammie.mp3", "audio/stack.mp3", "audio/cornbread.mp3"],
                     color: "yellow",
                     difficulty: 1
                 },
                 {
-                    category: "SAMMIE'S SUMMONED SYMPHONIES",
+                    category: "TONES IN SONIC SPACES",
                     words: ["TRAP", "BLUES", "ROCK", "CLUB"],
+                    audioFiles: ["audio/trap.mp3", "audio/blues.mp3", "audio/rock.mp3", "audio/club.mp3"],
                     color: "green",
                     difficulty: 2
                 },
                 {
-                    category: "VAMPIRE-SLAYERS",
-                    words: ["SMOKE", "SUNLIGHT", "SILVER", "STAKE"],
+                    category: "ELEMENTS THAT CLEANSE EVIL",
+                    words: ["SILVER", "SMOKE", "SUNLIGHT", "STAKE"],
+                    audioFiles: ["audio/silver.mp3", "audio/smoke.mp3", "audio/sunlight.mp3", "audio/stake.mp3"],
                     color: "blue",
                     difficulty: 3
                 },
                 {
-                    category: "MY THOUGHTS ON SINNERS",
-                    words: ["FIRE", "SMART", "SHARP", "FRESH"],
+                    category: "WORDS THAT COME BEFORE \"GOOD\"",
+                    words: ["VERY", "SINNERS", "WAS", "GOOD"],
+                    audioFiles: ["audio/very.mp3", "audio/sinners.mp3", "audio/was.mp3", "audio/good.mp3"],
                     color: "purple",
                     difficulty: 4
                 }
@@ -847,14 +884,16 @@
         };
 
         // Flag to control next puzzle access
-        const NEXT_PUZZLES_ENABLED = true;
+        const NEXT_PUZZLES_ENABLED = false;
         
         // Cooldown duration in milliseconds
-        const COOLDOWN_DURATION = 3600000; // 1 hour (3600000ms)
+        const COOLDOWN_DURATION = 60000;
         
-        // Game state
+        // Game state (simplified for mobile)
         let gameState = {
             words: [],
+            wordToAudio: new Map(),
+            audioInstances: new Map(),
             selectedWords: [],
             foundGroups: [],
             completionOrder: [],
@@ -865,7 +904,8 @@
             lastAttemptTime: null,
             timerInterval: null,
             attempts: [],
-            wordSubsets: {}
+            playButtonsShown: false,
+            firstSelectionMade: false
         };
 
         // DOM elements
@@ -882,25 +922,21 @@
         const timerSection = document.getElementById('timerSection');
         const timerEl = document.getElementById('timer');
 
-        // Check if user is in cooldown period
+        // Basic game functions (same logic as desktop but simplified)
         function isInCooldown() {
-            const lastAttempt = localStorage.getItem('sinnections_lastAttemptTime');
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
             if (!lastAttempt) return false;
-
             const now = new Date().getTime();
             const timeDiff = now - parseInt(lastAttempt);
             return timeDiff < COOLDOWN_DURATION;
         }
 
-        // Update cooldown timer display
         function updateCooldownTimer() {
-            const lastAttempt = localStorage.getItem('sinnections_lastAttemptTime');
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
             if (!lastAttempt) return;
-
             const now = new Date().getTime();
             const timeDiff = now - parseInt(lastAttempt);
             const timeLeft = Math.max(COOLDOWN_DURATION - timeDiff, 0);
-
             if (timeLeft === 0) {
                 cooldownTimer.textContent = 'You can now play again!';
                 playAgainBtn.disabled = false;
@@ -908,150 +944,97 @@
                 clearInterval(gameState.timerInterval);
                 return;
             }
-
             const hours = Math.floor(timeLeft / 3600000);
             const minutes = Math.floor((timeLeft % 3600000) / 60000);
             const seconds = Math.floor((timeLeft % 60000) / 1000);
-
             cooldownTimer.textContent = `Next game available in: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
             playAgainBtn.disabled = true;
             playAgainBtn.textContent = 'Please Wait';
         }
 
-        // Show toast message
         function showToast(message) {
             if (window.toastTimeout) {
                 clearTimeout(window.toastTimeout);
             }
-            
             toastEl.textContent = message;
             toastEl.className = 'toast show';
-            
             window.toastTimeout = setTimeout(() => {
                 toastEl.className = 'toast';
             }, 2000);
         }
-        
-        // Show early access popup
+
         function showEarlyAccessPopup() {
             const popup = document.getElementById('early-access-popup');
             popup.classList.add('show');
         }
-        
-        // Close early access popup
+
         function closeEarlyAccessPopup() {
             const popup = document.getElementById('early-access-popup');
             popup.classList.remove('show');
         }
 
-        // Close game over popup
         function closeGameOverPopup() {
             gameOverEl.classList.remove('show');
         }
 
-        // Save game state with error handling
-        function saveGameState() {
-            try {
-                if (!gameState || gameState.gameOver) {
-                    return;
-                }
-                
-                const stateToSave = {
-                    words: gameState.words || [],
-                    selectedWords: gameState.selectedWords || [],
-                    foundGroups: gameState.foundGroups || [],
-                    completionOrder: gameState.completionOrder || [],
-                    mistakes: gameState.mistakes || 0,
-                    maxMistakes: gameState.maxMistakes || 4,
-                    previousGuesses: Array.from(gameState.previousGuesses || []),
-                    attempts: gameState.attempts || [],
-                    wordSubsets: gameState.wordSubsets || {},
-                    timestamp: Date.now()
-                };
-                localStorage.setItem('sinnections_gameState', JSON.stringify(stateToSave));
-            } catch (e) {
-                console.warn('Failed to save game state:', e);
-            }
-        }
-        
-        // Load game state with validation
-        function loadGameState() {
-            try {
-                const savedState = localStorage.getItem('sinnections_gameState');
-                if (!savedState) return false;
-                
-                const state = JSON.parse(savedState);
-                
-                if (!state.words || !Array.isArray(state.words) || state.words.length === 0) {
-                    return false;
-                }
-                
-                gameState.words = state.words;
-                gameState.selectedWords = state.selectedWords || [];
-                gameState.foundGroups = state.foundGroups || [];
-                gameState.completionOrder = state.completionOrder || [];
-                gameState.mistakes = state.mistakes || 0;
-                gameState.maxMistakes = state.maxMistakes || 4;
-                gameState.previousGuesses = new Set(state.previousGuesses || []);
-                gameState.attempts = state.attempts || [];
-                gameState.wordSubsets = state.wordSubsets || {};
-                gameState.gameOver = false;
-                gameState.lastAttemptTime = null;
-                gameState.timerInterval = null;
-                
-                return true;
-            } catch (e) {
-                console.warn('Failed to load game state:', e);
-                localStorage.removeItem('sinnections_gameState');
-                return false;
-            }
-        }
-        
-        // Clear saved game state
-        function clearSavedGameState() {
-            try {
-                localStorage.removeItem('sinnections_gameState');
-            } catch (e) {
-                console.warn('Failed to clear game state:', e);
-            }
+        function showHowToPlayPopup() {
+            const popup = document.getElementById('how-to-play-popup');
+            popup.classList.add('show');
         }
 
-        // Initialize game
+        function closeHowToPlayPopup() {
+            const popup = document.getElementById('how-to-play-popup');
+            popup.classList.remove('show');
+        }
+
+        // Mobile audio handling (simplified)
+        function playAudio(word) {
+            const audioFile = gameState.wordToAudio.get(word);
+            if (!audioFile) return;
+            
+            // Simple audio play for mobile
+            const audio = new Audio(audioFile);
+            audio.volume = 0.7;
+            audio.play().catch(e => console.warn('Audio play failed:', e));
+        }
+
+        // Initialize game (same as desktop but simplified)
         function initGame() {
-            const lastAttempt = localStorage.getItem('sinnections_lastAttemptTime');
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
             if (lastAttempt) {
                 const now = new Date().getTime();
                 const timeDiff = now - parseInt(lastAttempt);
                 if (timeDiff >= COOLDOWN_DURATION) {
-                    localStorage.removeItem('sinnections_lastAttemptTime');
-                    clearSavedGameState();
-                    localStorage.removeItem('sinnections_attempts');
+                    localStorage.removeItem('sonnections_lastAttemptTime');
+                    localStorage.removeItem('sonnections_lastAttempts');
                 }
             }
             
             if (isInCooldown()) {
-                const hasLoadedState = loadGameState();
-                
-                if (!hasLoadedState) {
-                    gameState = {
-                        words: getGameWords(),
-                        selectedWords: [],
-                        foundGroups: [],
-                        completionOrder: [],
-                        mistakes: 4,
-                        maxMistakes: 4,
-                        gameOver: true,
-                        previousGuesses: new Set(),
-                        lastAttemptTime: null,
-                        timerInterval: null,
-                        attempts: [],
-                        wordSubsets: getWordSubsets()
-                    };
-                    shuffleArray(gameState.words);
-                } else {
-                    gameState.gameOver = true;
-                }
-                
+                gameState = {
+                    words: [],
+                    wordToAudio: new Map(),
+                    audioInstances: new Map(),
+                    selectedWords: [],
+                    foundGroups: [],
+                    completionOrder: [],
+                    mistakes: 4,
+                    maxMistakes: 4,
+                    gameOver: true,
+                    previousGuesses: new Set(),
+                    lastAttemptTime: null,
+                    timerInterval: null,
+                    attempts: [],
+                    playButtonsShown: false,
+                    firstSelectionMade: false
+                };
+                gameData.groups.forEach(group => {
+                    group.words.forEach((word, index) => {
+                        gameState.words.push(word);
+                        gameState.wordToAudio.set(word, group.audioFiles[index]);
+                    });
+                });
+                shuffleArray(gameState.words);
                 toastEl.className = 'toast';
                 updateMistakesDisplay();
                 renderWordGrid();
@@ -1062,6 +1045,8 @@
 
             gameState = {
                 words: [],
+                wordToAudio: new Map(),
+                audioInstances: new Map(),
                 selectedWords: [],
                 foundGroups: [],
                 completionOrder: [],
@@ -1072,93 +1057,25 @@
                 lastAttemptTime: null,
                 timerInterval: null,
                 attempts: [],
-                wordSubsets: {}
+                playButtonsShown: false,
+                firstSelectionMade: false
             };
 
-            const hasLoadedState = loadGameState();
-            
-            if (!hasLoadedState) {
-                gameState.wordSubsets = getWordSubsets();
-                gameState.words = getGameWords();
-                shuffleArray(gameState.words);
-            }
+            gameData.groups.forEach(group => {
+                group.words.forEach((word, index) => {
+                    gameState.words.push(word);
+                    gameState.wordToAudio.set(word, group.audioFiles[index]);
+                });
+            });
+            shuffleArray(gameState.words);
 
-            // Check if user won and closed popup previously
-            const winPopupClosed = localStorage.getItem('sinnections_winPopupClosed');
-            const hasWon = gameState.foundGroups.length === 4;
-            
             toastEl.className = 'toast';
             gameOverEl.className = 'game-over';
             updateMistakesDisplay();
             renderWordGrid();
             updateControls();
-            
-            // If user won but popup was closed, show categories without popup
-            // If user won and refreshed, show popup again
-            if (hasWon) {
-                if (winPopupClosed === 'true') {
-                    // Show categories without popup
-                    gameState.gameOver = true;
-                } else {
-                    // Show win popup on refresh
-                    gameState.gameOver = true;
-                    showGameOverScreen(true);
-                }
-            }
         }
 
-        // Get or create word subsets for categories with more than 4 words
-        function getWordSubsets() {
-            // Try to load existing subsets first
-            const savedSubsets = localStorage.getItem('sinnections_wordSubsets');
-            if (savedSubsets) {
-                try {
-                    return JSON.parse(savedSubsets);
-                } catch (e) {
-                    console.warn('Failed to load word subsets:', e);
-                }
-            }
-            
-            // Create new subsets
-            const subsets = {};
-            gameData.groups.forEach(group => {
-                if (group.words.length > 4) {
-                    // Randomly select 4 words from the group
-                    const shuffledWords = [...group.words];
-                    shuffleArray(shuffledWords);
-                    subsets[group.category] = shuffledWords.slice(0, 4);
-                } else {
-                    // Use all words if 4 or fewer
-                    subsets[group.category] = [...group.words];
-                }
-            });
-            
-            // Save the subsets
-            try {
-                localStorage.setItem('sinnections_wordSubsets', JSON.stringify(subsets));
-            } catch (e) {
-                console.warn('Failed to save word subsets:', e);
-            }
-            
-            return subsets;
-        }
-        
-        // Get the current game words based on subsets
-        function getGameWords() {
-            const subsets = gameState.wordSubsets || getWordSubsets();
-            return Object.values(subsets).flat();
-        }
-        
-        // Clear word subsets (only called when user wins and plays again)
-        function clearWordSubsets() {
-            try {
-                localStorage.removeItem('sinnections_wordSubsets');
-            } catch (e) {
-                console.warn('Failed to clear word subsets:', e);
-            }
-        }
-
-        // Shuffle array
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -1166,7 +1083,6 @@
             }
         }
 
-        // Render word grid
         function renderWordGrid() {
             const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
             const remainingWords = gameState.words.filter(word => !foundWords.has(word));
@@ -1174,24 +1090,34 @@
             
             const fragment = document.createDocumentFragment();
             
-            gameState.foundGroups.forEach((group, index) => {
+            // Add found groups
+            gameState.foundGroups.forEach((group) => {
                 const groupBlock = document.createElement('div');
                 groupBlock.className = `group-block ${group.color}`;
-                
                 groupBlock.innerHTML = `
                     <div class="group-category">${group.category}</div>
                     <div class="group-words">${group.words.join(', ')}</div>
                 `;
-                
                 fragment.appendChild(groupBlock);
             });
             
+            // Add remaining word tiles
             remainingWords.forEach(word => {
                 const tile = document.createElement('div');
                 tile.className = `word-tile${selectedWordsSet.has(word) ? ' selected' : ''}`;
                 tile.textContent = word;
-                tile.addEventListener('click', () => selectWord(word), { passive: true });
                 
+                // Add play button for mobile
+                const playButton = document.createElement('button');
+                playButton.className = `play-button${gameState.playButtonsShown ? ' show' : ''}`;
+                playButton.innerHTML = '▶';
+                playButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    playAudio(word);
+                });
+                
+                tile.appendChild(playButton);
+                tile.addEventListener('click', () => selectWord(word));
                 fragment.appendChild(tile);
             });
             
@@ -1199,13 +1125,16 @@
             wordGrid.appendChild(fragment);
         }
 
-        // Select/deselect word
         function selectWord(word) {
             if (gameState.gameOver) return;
             
-            const isFound = gameState.foundGroups.some(group => 
-                group.words.includes(word)
-            );
+            if (!gameState.firstSelectionMade) {
+                gameState.firstSelectionMade = true;
+                gameState.playButtonsShown = true;
+                renderWordGrid();
+            }
+            
+            const isFound = gameState.foundGroups.some(group => group.words.includes(word));
             if (isFound) return;
 
             const index = gameState.selectedWords.indexOf(word);
@@ -1216,48 +1145,35 @@
                 gameState.selectedWords.push(word);
             }
             
-            saveGameState(); // Save state when selections change
             renderWordGrid();
             updateControls();
         }
 
-        // Update control buttons
         function updateControls() {
             submitBtn.disabled = gameState.selectedWords.length !== 4;
             deselectBtn.disabled = gameState.selectedWords.length === 0;
             shuffleBtn.disabled = gameState.gameOver || gameState.mistakes >= gameState.maxMistakes || gameState.foundGroups.length === 4;
         }
 
-        // Shuffle words
         function shuffleWords() {
             const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
             const remainingWords = gameState.words.filter(word => !foundWords.has(word));
-            
             shuffleArray(remainingWords);
-            
             gameState.words = [
                 ...gameState.foundGroups.flatMap(group => group.words),
                 ...remainingWords
             ];
-            
             // DON'T clear selected words when shuffling
-            
-            requestAnimationFrame(() => {
-                wordGrid.innerHTML = '';
-                renderWordGrid();
-                updateControls();
-            });
-        }
-
-        // Deselect all words
-        function deselectAll() {
-            gameState.selectedWords = [];
-            saveGameState(); // Save state when clearing selections
             renderWordGrid();
             updateControls();
         }
 
-        // Submit guess
+        function deselectAll() {
+            gameState.selectedWords = [];
+            renderWordGrid();
+            updateControls();
+        }
+
         function submitGuess() {
             if (gameState.selectedWords.length !== 4) return;
 
@@ -1266,18 +1182,15 @@
             if (gameState.previousGuesses.has(sortedGuess)) {
                 showToast('Already guessed');
                 gameState.selectedWords = [];
-                saveGameState(); // Save state after clearing selections
                 renderWordGrid();
                 updateControls();
                 return;
             }
 
-            const correctGroup = gameData.groups.find(group => {
-                const groupSubset = gameState.wordSubsets[group.category] || group.words;
-                return gameState.selectedWords.every(word => groupSubset.includes(word)) &&
-                       groupSubset.every(word => gameState.selectedWords.includes(word)) &&
-                       gameState.selectedWords.length === 4;
-            });
+            const correctGroup = gameData.groups.find(group => 
+                gameState.selectedWords.every(word => group.words.includes(word)) &&
+                gameState.selectedWords.length === 4
+            );
 
             if (correctGroup) {
                 animateCorrectGuess(correctGroup);
@@ -1285,10 +1198,7 @@
                 gameState.previousGuesses.add(sortedGuess);
 
                 const selectedColors = gameState.selectedWords.map(word => {
-                    const group = gameData.groups.find(g => {
-                        const groupSubset = gameState.wordSubsets[g.category] || g.words;
-                        return groupSubset.includes(word);
-                    });
+                    const group = gameData.groups.find(g => g.words.includes(word));
                     return group ? group.color : 'gray';
                 });
                 gameState.attempts.push({
@@ -1298,9 +1208,8 @@
                 });
 
                 const oneAwayGroup = gameData.groups.find(group => {
-                    const groupSubset = gameState.wordSubsets[group.category] || group.words;
                     const matchingWords = gameState.selectedWords.filter(word => 
-                        groupSubset.includes(word)
+                        group.words.includes(word)
                     );
                     return matchingWords.length === 3;
                 });
@@ -1312,21 +1221,17 @@
                 const selectedTiles = document.querySelectorAll('.word-tile.selected');
                 selectedTiles.forEach(tile => {
                     tile.classList.add('incorrect-guess');
-                    requestAnimationFrame(() => {
-                        setTimeout(() => {
-                            tile.classList.remove('incorrect-guess');
-                        }, 400);
-                    });
+                    setTimeout(() => {
+                        tile.classList.remove('incorrect-guess');
+                    }, 400);
                 });
 
                 gameState.mistakes++;
-                
                 updateMistakesDisplay();
-                saveGameState(); // Save state after incorrect guess
                 
                 if (gameState.mistakes >= gameState.maxMistakes) {
-                    localStorage.setItem('sinnections_lastAttemptTime', new Date().getTime().toString());
-                    saveGameState();
+                    localStorage.setItem('sonnections_lastAttemptTime', new Date().getTime().toString());
+                    localStorage.setItem('sonnections_lastAttempts', JSON.stringify(gameState.attempts));
                     endGame(false);
                 }
             }
@@ -1334,7 +1239,6 @@
             updateControls();
         }
 
-        // Animate correct guess - exact copy from desktop
         async function animateCorrectGuess(correctGroup) {
             const selectedTiles = Array.from(document.querySelectorAll('.word-tile.selected'));
             
@@ -1462,12 +1366,7 @@
             await new Promise(resolve => setTimeout(resolve, 600));
             
             // Step 4: Update game state
-            // Create a copy of the group with the subset words
-            const groupWithSubset = {
-                ...correctGroup,
-                words: gameState.wordSubsets[correctGroup.category] || correctGroup.words
-            };
-            gameState.foundGroups.push(groupWithSubset);
+            gameState.foundGroups.push(correctGroup);
             gameState.completionOrder.push(correctGroup.color);
             gameState.attempts.push({
                 words: [...gameState.selectedWords],
@@ -1511,7 +1410,7 @@
             
             const wordsEl = document.createElement('div');
             wordsEl.className = 'group-words';
-            wordsEl.textContent = (gameState.wordSubsets[correctGroup.category] || correctGroup.words).join(', ');
+            wordsEl.textContent = correctGroup.words.join(', ');
             
             groupBlock.appendChild(categoryEl);
             groupBlock.appendChild(wordsEl);
@@ -1540,16 +1439,14 @@
             }, 500);
             
             updateControls();
-            saveGameState();
             
             if (gameState.foundGroups.length === 4) {
-                clearSavedGameState();
-                clearWordSubsets();
+                localStorage.removeItem('sonnections_lastAttempts');
+                localStorage.setItem('sonnections_completed', 'true');
                 endGame(true);
             }
         }
 
-        // Update mistakes display
         function updateMistakesDisplay() {            
             for (let i = 1; i <= 4; i++) {
                 const dot = document.getElementById(`dot${i}`);
@@ -1561,7 +1458,19 @@
             }
         }
 
-        // Show game over screen
+        // Playful toast messages for clicked cells (mobile version)
+        const playfulMessages = [
+            "\"ouch\"", "\"that's rude\"", "\"that tickles\"", "\"hey!\"", "\"stop that!\"",
+            "\"easy!\"", "\"careful!\"", "\"jeez\"", "\"what was that for?\"",
+            "\"space please!\"", "\"ow\"", "\"that stings\"", "\"why?\"",
+            "\"I didn't do anything\"", "\"uncalled for\"", "\"rude\"", "\"ooof\""
+        ];
+
+        // Function to get random playful message
+        function getRandomPlayfulMessage() {
+            return playfulMessages[Math.floor(Math.random() * playfulMessages.length)];
+        }
+
         function showGameOverScreen(won, fromCooldown = false) {
             gameState.gameOver = true;
             
@@ -1577,11 +1486,11 @@
             
             if (won) {
                 gameOverTitle.textContent = 'Congratulations!';
-                gameOverMessage.textContent = 'You found all the connections!';
+                gameOverMessage.textContent = 'You found all the sonnections!';
                 playAgainBtn.disabled = false;
                 playAgainBtn.textContent = 'Play Again';
                 cooldownTimer.textContent = '';
-                localStorage.setItem('sinnections_completed', 'true');
+                localStorage.setItem('sonnections_completed', 'true');
             } else {
                 gameOverTitle.textContent = 'Game Over';
                 gameOverMessage.textContent = 'Better luck next time!';
@@ -1599,11 +1508,23 @@
             }
 
             // Show attempts grid
-            if (gameState.attempts.length > 0) {
+            let attemptsToShow = gameState.attempts;
+            if (!won && fromCooldown) {
+                const savedAttempts = localStorage.getItem('sonnections_lastAttempts');
+                if (savedAttempts) {
+                    try {
+                        attemptsToShow = JSON.parse(savedAttempts);
+                    } catch (e) {
+                        console.warn('Failed to parse saved attempts:', e);
+                    }
+                }
+            }
+
+            if (attemptsToShow && attemptsToShow.length > 0) {
                 const attemptsGrid = document.createElement('div');
                 attemptsGrid.className = 'attempts-grid';
                 
-                gameState.attempts.forEach((attempt, rowIndex) => {
+                attemptsToShow.forEach((attempt, rowIndex) => {
                     const attemptRow = document.createElement('div');
                     attemptRow.className = 'attempt-row';
                     
@@ -1612,37 +1533,13 @@
                         cell.className = 'attempt-cell';
                         
                         const bgColor = getColorCode(color);
-                        
                         cell.style.backgroundColor = bgColor;
-                        cell.style.background = bgColor;
                         cell.setAttribute('data-color', color);
-                        cell.setAttribute('data-bg-color', bgColor);
                         
                         const globalCellIndex = rowIndex * 4 + cellIndex;
-                        const totalCells = gameState.attempts.length * 4;
+                        const totalCells = attemptsToShow.length * 4;
                         
-                        if (globalCellIndex >= totalCells - 4) {
-                            const lastRowLinks = [atob('c29ubmVjdGlvbnMuaHRtbA=='), atob('bnVtYmVyX2JlZS5odG1s'), atob('d29yZGxlLmh0bWw='), ''];
-                            const lastRowIndex = globalCellIndex - (totalCells - 4);
-                            
-                            cell.style.cursor = 'pointer';
-                            cell.addEventListener('click', () => {
-                                const link = lastRowLinks[lastRowIndex];
-                                
-                                if (!NEXT_PUZZLES_ENABLED) {
-                                    showEarlyAccessPopup();
-                                } else {
-                                    if (link && link.trim() !== '') {
-                                        window.open(link, '_blank');
-                                    } else {
-                                        showToast('Not yet!');
-                                    }
-                                }
-                            });
-                        }
                         
-                        cell.style.setProperty('--row-index', rowIndex);
-                        cell.style.setProperty('--cell-index', cellIndex);
                         attemptRow.appendChild(cell);
                     });
                     
@@ -1650,26 +1547,25 @@
                 });
                 
                 gameOverMessage.insertAdjacentElement('afterend', attemptsGrid);
+                
+                // Add shake animation and click handlers to random half of cells (only when won)
+                if (won) {
+                    setTimeout(() => {
+                        addShakeAndClickHandlers(attemptsGrid);
+                    }, 500);
+                }
             }
 
             const solvedGroups = gameState.foundGroups;
-            
             wordGrid.innerHTML = '';
             
             solvedGroups.forEach(group => {
                 const groupBlock = document.createElement('div');
                 groupBlock.className = `group-block ${group.color}`;
-                
-                const categoryEl = document.createElement('div');
-                categoryEl.className = 'group-category';
-                categoryEl.textContent = group.category;
-                
-                const wordsEl = document.createElement('div');
-                wordsEl.className = 'group-words';
-                wordsEl.textContent = group.words.join(', ');
-                
-                groupBlock.appendChild(categoryEl);
-                groupBlock.appendChild(wordsEl);
+                groupBlock.innerHTML = `
+                    <div class="group-category">${group.category}</div>
+                    <div class="group-words">${group.words.join(', ')}</div>
+                `;
                 wordGrid.appendChild(groupBlock);
             });
             
@@ -1682,23 +1578,66 @@
                     const tile = document.createElement('div');
                     tile.className = 'word-tile';
                     tile.textContent = word;
-                    tile.addEventListener('click', () => selectWord(word), { passive: true });
                     
+                    // Add play button for mobile
+                    const playButton = document.createElement('button');
+                    playButton.className = `play-button${gameState.playButtonsShown ? ' show' : ''}`;
+                    playButton.innerHTML = '▶';
+                    playButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        playAudio(word);
+                    });
+                    
+                    tile.appendChild(playButton);
                     wordGrid.appendChild(tile);
                 });
             }
             
             gameOverEl.className = 'game-over show';
+        }
+
+        // Add shake animation and click handlers to random half of cells (mobile version)
+        function addShakeAndClickHandlers(attemptsGrid) {
+            const attemptCells = Array.from(attemptsGrid.querySelectorAll('.attempt-cell'));
             
-            requestAnimationFrame(() => {
-                const attemptsGrid = gameOverEl.querySelector('.attempts-grid');
-                if (attemptsGrid) {
-                    attemptsGrid.style.display = 'grid';
-                    const attemptCells = attemptsGrid.querySelectorAll('.attempt-cell');
-                    attemptCells.forEach(cell => {
-                        cell.style.cssText = 'opacity: 1; transform: scale(1);';
-                    });
-                }
+            if (attemptCells.length === 0) return;
+            
+            // Select random half of the cells
+            const halfCount = Math.ceil(attemptCells.length / 2);
+            const shuffledCells = [...attemptCells];
+            
+            // Shuffle the array
+            for (let i = shuffledCells.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledCells[i], shuffledCells[j]] = [shuffledCells[j], shuffledCells[i]];
+            }
+            
+            // Take the first half
+            const selectedCells = shuffledCells.slice(0, halfCount);
+            
+            // Add shake animation and click handlers to selected cells
+            selectedCells.forEach((cell, index) => {
+                cell.classList.add('victory-shake');
+                
+                // Randomly assign one of the shake animations (reusing existing ones)
+                const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
+                const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
+                
+                // Add random duration between 1.5s and 2.5s for more variety
+                const randomDuration = (1.5 + Math.random()).toFixed(1);
+                
+                // Add random delay between 0 and 0.5s to stagger the animations
+                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                
+                cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+                cell.style.animationDelay = `${randomDelay}s`;
+                cell.style.cursor = 'pointer';
+                
+                // Add click handler for toast message
+                cell.addEventListener('click', () => {
+                    const message = getRandomPlayfulMessage();
+                    showToast(message);
+                });
             });
         }
 
@@ -1768,7 +1707,6 @@
             }
         }
 
-        // End game
         function endGame(won) {
             showGameOverScreen(won);
             
@@ -1780,7 +1718,6 @@
             }
         }
 
-        // Helper function to get color codes
         function getColorCode(color) {
             const colorMap = {
                 'yellow': '#f9df84',
@@ -1791,38 +1728,14 @@
             return colorMap[color] || '#999';
         }
 
-        // Show how to play popup
-        function showHowToPlayPopup() {
-            const popup = document.getElementById('how-to-play-popup');
-            popup.classList.add('show');
-        }
-        
-        // Close how to play popup
-        function closeHowToPlayPopup() {
-            const popup = document.getElementById('how-to-play-popup');
-            popup.classList.remove('show');
-        }
-
-        // Close game over popup
-        function closeGameOverPopup() {
-            gameOverEl.classList.remove('show');
-            // If the user won, mark the win state as closed so they can see the categories
-            if (gameState.foundGroups.length === 4) {
-                localStorage.setItem('sinnections_winPopupClosed', 'true');
-            }
-        }
-
         // Event listeners
         shuffleBtn.addEventListener('click', shuffleWords);
         deselectBtn.addEventListener('click', deselectAll);
         submitBtn.addEventListener('click', submitGuess);
         playAgainBtn.addEventListener('click', () => {
             if (!isInCooldown()) {
-                localStorage.removeItem('sinnections_lastAttemptTime');
-                clearSavedGameState();
-                localStorage.removeItem('sinnections_attempts');
-                localStorage.removeItem('sinnections_winPopupClosed');
-                clearWordSubsets();
+                localStorage.removeItem('sonnections_lastAttemptTime');
+                localStorage.removeItem('sonnections_lastAttempts');
                 gameOverEl.classList.remove('show');
             }
             initGame();
@@ -1851,6 +1764,7 @@
         <ul>
             <li>Select four items and tap <strong>'Submit'</strong> to check if your guess is correct.</li>
             <li>Find the groups without making 4 mistakes!</li>
+            <li>Tap the play button (▶) to hear each word!</li>
         </ul>
         
         <h3>Category Examples</h3>
