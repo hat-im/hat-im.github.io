@@ -1942,42 +1942,6 @@ async function animateCorrectGuess(correctGroup) {
                 
                 gameOverMessage.insertAdjacentElement('afterend', attemptsGrid);
                 
-                // Only add shaking links if the user won
-                if (won) {
-                    const allCells = Array.from(attemptsGrid.querySelectorAll('.attempt-cell'));
-                    const totalCells = allCells.length;
-                    
-                    if (totalCells >= 2) {
-                        // Randomly select 2 different cell indices
-                        const selectedIndices = [];
-                        while (selectedIndices.length < 2) {
-                            const randomIndex = Math.floor(Math.random() * totalCells);
-                            if (!selectedIndices.includes(randomIndex)) {
-                                selectedIndices.push(randomIndex);
-                            }
-                        }
-                        
-                        // Define links for the 2 special cells
-                        const specialLinks = [
-                            'connect1ons.html',
-                            'wordle.html'
-                        ];
-                        
-                        selectedIndices.forEach((cellIndex, linkIndex) => {
-                            const cell = allCells[cellIndex];
-                            cell.classList.add('shake-link');
-                            
-                            cell.addEventListener('click', () => {
-                                const link = specialLinks[linkIndex];
-                                if (!NEXT_PUZZLES_ENABLED) {
-                                    showEarlyAccessPopup();
-                                } else {
-                                    window.open(link, '_blank');
-                                }
-                            });
-                        });
-                    }
-                }
             }
 
             // Use groups in the order they were solved (preserve existing layout)

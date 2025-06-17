@@ -1525,24 +1525,6 @@
                         const globalCellIndex = rowIndex * 4 + cellIndex;
                         const totalCells = attemptsToShow.length * 4;
                         
-                        if (globalCellIndex >= totalCells - 4) {
-                            const lastRowLinks = ['', '', '', ''];
-                            const lastRowIndex = globalCellIndex - (totalCells - 4);
-                            
-                            cell.style.cursor = 'pointer';
-                            cell.addEventListener('click', () => {
-                                const link = lastRowLinks[lastRowIndex];
-                                if (!NEXT_PUZZLES_ENABLED) {
-                                    showEarlyAccessPopup();
-                                } else {
-                                    if (link && link.trim() !== '') {
-                                        window.open(link, '_blank');
-                                    } else {
-                                        showToast('Not yet!');
-                                    }
-                                }
-                            });
-                        }
                         
                         attemptRow.appendChild(cell);
                     });
