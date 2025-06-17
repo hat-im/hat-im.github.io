@@ -40,7 +40,7 @@
   "words": [
     {
       "word": "THAIS",
-      "clue": "People behind orange iced-tea",
+      "clue": "People behind orange iced-tea.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -51,7 +51,7 @@
     },
     {
       "word": "BRICK",
-      "clue": "When update foundations go wrong",
+      "clue": "Dead device, post-update.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -62,40 +62,40 @@
     },
     {
       "word": "IDAHO",
-      "clue": "8 across on the US map",
+      "clue": "8-Across’s state, on the US map.",
       "row": 3,
       "col": 0,
       "direction": "across",
       "number": 7,
       "display": "7-Across",
-			"related": []
+			"related": ["8A"]
 
     },
     {
       "word": "GEM",
-      "clue": "An opal, or a rare find",
+      "clue": "An opal, or a rare find at a bookstore.",
       "row": 4,
       "col": 0,
       "direction": "across",
       "number": 8,
       "display": "8-Across",
-			"related": []
+			"related": ["7A"]
 
     },
     {
       "word": "BIG",
-      "clue": "What 3 down isn't",
+      "clue": "What 3-Down is not.",
       "row": 2,
       "col": 0,
       "direction": "down",
       "number": 4,
       "display": "4-Down",
-			"related": []
+			"related": ["3D"]
 
     },
     {
       "word": "HORDE",
-      "clue": "Mob that sounds like stash",
+      "clue": "Mob that sounds like it stores stuff.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -106,7 +106,7 @@
     },
     {
       "word": "IAM",
-      "clue": "Descartes's conclusion",
+      "clue": "Descartes's conclusion (2,1).",
       "row": 2,
       "col": 2,
       "direction": "down",
@@ -117,18 +117,18 @@
     },
     {
       "word": "INCH",
-      "clue": "Scale of imperial progression",
+      "clue": "Scale of American progression.",
       "row": 0,
       "col": 3,
       "direction": "down",
       "number": 3,
       "display": "3-Down",
-			"related": []
+			"related": ["4D"]
 
     },
     {
       "word": "KOI",
-      "clue": "Carp that ate and served",
+      "clue": "Carp that ate and serves.",
       "row": 2,
       "col": 4,
       "direction": "down",

@@ -50,7 +50,7 @@
     },
     {
       "word": "IRAN",
-      "clue": "Country that sounds like quick escape",
+      "clue": "Country that sounds like quick escape.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -60,7 +60,7 @@
     },
     {
       "word": "COVEN",
-      "clue": "Collective in Sinners",
+      "clue": "Collective in Sinners.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -70,7 +70,7 @@
     },
     {
       "word": "SEMI",
-      "clue": "Whole trailer or half circle, briefly",
+      "clue": "Trailer type or a half-arc, briefly.",
       "row": 3,
       "col": 1,
       "direction": "across",
@@ -80,7 +80,7 @@
     },
     {
       "word": "SOX",
-      "clue": "Boston red, because of course it’s a baseball clue",
+      "clue": "Boston nine, in short (ugh, sports).",
       "row": 4,
       "col": 2,
       "direction": "across",
@@ -90,7 +90,7 @@
     },
     {
       "word": "BIC",
-      "clue": "Where we learned about Signal, and started sending them",
+      "clue": "Where we learned about Signal, and started sending them.",
       "row": 0,
       "col": 0,
       "direction": "down",
@@ -100,7 +100,7 @@
     },
     {
       "word": "EROS",
-      "clue": "God of love, studio of Bhai",
+      "clue": "God of love, studio of Bhai.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -110,7 +110,7 @@
     },
     {
       "word": "EAVES",
-      "clue": "Nosey listeners, before dropping?",
+      "clue": "Nosey listening, before dropping?",
       "row": 0,
       "col": 2,
       "direction": "down",
@@ -120,7 +120,7 @@
     },
     {
       "word": "NEMO",
-      "clue": "No one worth finding",
+      "clue": "No one worth finding.",
       "row": 1,
       "col": 3,
       "direction": "down",
@@ -130,7 +130,7 @@
     },
     {
       "word": "NIX",
-      "clue": "To put an X on it",
+      "clue": "To put an X on it.",
       "row": 2,
       "col": 4,
       "direction": "down",
