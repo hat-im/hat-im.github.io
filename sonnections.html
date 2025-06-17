@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connections</title>
+    <title>Sonnections</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/connections-favicon.ico">
     <style>
         @font-face {
@@ -177,17 +177,17 @@
         }
 
         .mistake-dot {
-            width: 16px;
-            height: 16px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
-            background-color: #5a594e;
+            background-color: #121212;
             transition: opacity 0.3s ease;
             opacity: 1;
         }
 
         .mistake-dot.used {
             background-color: #dfdfdf;
-            opacity: 0;
+            opacity: 1;
         }
 
         .word-grid {
@@ -203,7 +203,7 @@
             background-color: #efefe6;
             border: none;
             border-radius: 6px;
-            padding: 0;
+            padding: 8px;
             text-align: center;
             font-weight: 700;
             font-size: 20px;
@@ -222,6 +222,45 @@
             transition: all 0.15s ease;
             color: #121212;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .play-button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+            color: #121212;
+            font-size: 16px;
+            background: none;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+
+        .play-button.playing {
+            color: #121212;
+        }
+
+        .word-tile.selected .play-button {
+            color: #ffffff;
+        }
+
+        .word-tile.selected .play-button:hover {
+            color: #f0f0f0;
+        }
+
+        .word-tile.selected .play-button.playing {
+            color: #ffffff;
+        }
+
+        .hidden-word {
+            display: none;
         }
 
         .word-tile:hover {
@@ -273,7 +312,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: all 0.15s ease;
-            text-transform: capitalize;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
             height: 40px;
             min-width: 80px;
@@ -445,6 +484,24 @@
             background-color: #ba81c5 !important;
         }
 
+        /* Shaking animation for special cells */
+        .attempt-cell.shake-link {
+            cursor: pointer;
+            animation: shake-subtle 2s ease-in-out infinite;
+        }
+
+        .attempt-cell.shake-link:hover {
+            animation-duration: 1s;
+            transform: scale(1.05);
+        }
+
+        @keyframes shake-subtle {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-1px, 0, 0); }
+            75% { transform: translate3d(1px, 0, 0); }
+        }
+
+
 
         @keyframes cellAppear {
             from {
@@ -565,6 +622,101 @@
         }
 
         /* Mobile users will be redirected to mobile version */
+
+        .show-play-buttons .play-button {
+            display: flex;
+        }
+
+        .group-block {
+            grid-column: span 4;
+            background-color: #a0c35a;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-block.new-group {
+            animation: groupAppear 0.5s ease-out;
+        }
+
+        @keyframes groupAppear {
+            from {
+                transform: translateY(20px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .group-block.yellow {
+            background-color: #f9df84;
+            color: #121212;
+        }
+
+        .group-block.green {
+            background-color: #a0c35a;
+            color: #ffffff;
+        }
+
+        .group-block.blue {
+            background-color: #b0c4ef;
+            color: #121212;
+        }
+
+        .group-block.purple {
+            background-color: #ba81c5;
+            color: #ffffff;
+        }
+
+        .group-category {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            margin-bottom: 2px;
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.2s forwards;
+            line-height: 1;
+            color: #121212;
+        }
+
+        .group-words {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            opacity: 0;
+            font-weight: 500;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.3s forwards;
+            line-height: 1;
+            color: #121212;
+        }
+
+        @keyframes textAppear {
+            to {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+
+        .cooldown-timer {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 15px 0;
+            color: #666;
+        }
         
         /* Early Access Popup - Match game-over popup style */
         .early-access-popup {
@@ -738,97 +890,6 @@
         .color-green { background-color: #a0c35a; }
         .color-blue { background-color: #b0c4ef; }
         .color-purple { background-color: #ba81c5; }
-
-        .group-block {
-            grid-column: span 4;
-            background-color: #a0c35a;
-            border-radius: 6px;
-            padding: 12px;
-            text-align: center;
-            color: #fff;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            height: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .group-block.new-group {
-            animation: groupAppear 0.5s ease-out;
-        }
-
-        @keyframes groupAppear {
-            from {
-                transform: translateY(20px) scale(0.95);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-        }
-
-        .group-block.yellow {
-            background-color: #f9df84;
-            color: #121212;
-        }
-
-        .group-block.green {
-            background-color: #a0c35a;
-            color: #ffffff;
-        }
-
-        .group-block.blue {
-            background-color: #b0c4ef;
-            color: #121212;
-        }
-
-        .group-block.purple {
-            background-color: #ba81c5;
-            color: #ffffff;
-        }
-
-        .group-category {
-            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 20px;
-            margin-bottom: 2px;
-            font-weight: 700;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: textAppear 0.3s ease-out 0.2s forwards;
-            line-height: 1;
-            color: #121212;
-        }
-
-        .group-words {
-            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 20px;
-            opacity: 0;
-            font-weight: 500;
-            transform: translateY(10px);
-            animation: textAppear 0.3s ease-out 0.3s forwards;
-            line-height: 1;
-            color: #121212;
-        }
-
-        @keyframes textAppear {
-            to {
-                opacity: 0.9;
-                transform: translateY(0);
-            }
-        }
-
-        .cooldown-timer {
-            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            font-weight: 500;
-            margin: 15px 0;
-            color: #666;
-        }
     </style>
 </head>
 <body>
@@ -839,7 +900,7 @@
     
     <header class="header">
         <div class="header-content">
-            <h1 class="title">Connections</h1>
+            <h1 class="title">Sonnections</h1>
         </div>
     </header>
     
@@ -901,41 +962,45 @@
         }
         
         if (isMobile()) {
-            window.location.href = 'sinnections-mobile.html';
+            window.location.href = 'sonnections-mobile.html';
         }
         
         // Game data
         const gameData = {
             groups: [
-                {
-                    category: "FRIENDS-TO-VAMPIRES",
-                    words: ["CORNBREAD", "STACK", "MARY", "PEARLINE"],
-                    color: "yellow",
-                    difficulty: 1
-                },
-                {
-                    category: "SAMMIE'S SUMMONED SYMPHONIES",
-                    words: ["TRAP", "BLUES", "ROCK", "CLUB"],
-                    color: "green",
-                    difficulty: 2
-                },
-                {
-                    category: "VAMPIRE-SLAYERS",
-                    words: ["SMOKE", "SUNLIGHT", "SILVER", "STAKE"],
-                    color: "blue",
-                    difficulty: 3
-                },
-                {
-                    category: "MY THOUGHTS ON SINNERS",
-                    words: ["FIRE", "SMART", "SHARP", "FRESH"],
-                    color: "purple",
-                    difficulty: 4
-                }
-            ]
-        };
+                    {
+                        category: "\"CAFE\" SPELLED MUSICALLY",
+                        words: ["GUITAR", "HARMONIUM", "ORCHESTRA", "PIANO"],
+                        audioFiles: ["https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/guitar.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/harmonium.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/orchestra.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/piano.mp3"],
+                        color: "yellow",
+                        difficulty: 1
+                    },
+                    {
+                        category: "WORKPLACE AMBIENCE",
+                        words: ["SLACK NOTIFICATION", "TYPING", "GOOGLE MEET", "MICROWAVE"],
+                        audioFiles: ["https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/slack.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/typing.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/gmeet.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/microwave.mp3"],
+                        color: "green",
+                        difficulty: 2
+                    },
+                    {
+                        category: "SOUNDS LIKE BANGALORE",
+                        words: ["NAMMA YATRI", "MONSOON", "AUTO RICKSHAW", "GPAY"],
+                        audioFiles: ["https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/namma-yatri.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/monsoon.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/auto.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/gpay.mp3"],
+                        color: "blue",
+                        difficulty: 3
+                    },
+                    {
+                        category: "SOUNDS ALSO MADE BY GEESE",
+                        words: ["HONK", "HISS", "TRUMPET", "CHATTER"],
+                        audioFiles: ["https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/honk.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/hiss.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/trumpet.mp3", "https://raw.githubusercontent.com/hat-im/hat-im.github.io/69fd20e412a394c31337361b6ea988af7bd01852/audio/chatter.mp3"],
+                        color: "purple",
+                        difficulty: 4
+                    }
+                ]
+            };
 
         // Flag to control next puzzle access
-        const NEXT_PUZZLES_ENABLED = true; // Set to true to enable all next puzzles
+        const NEXT_PUZZLES_ENABLED = false; // Set to true to enable all next puzzles
         
         // Cooldown duration in milliseconds
         const COOLDOWN_DURATION = 3600000; // 1 hour (3600000ms)
@@ -943,6 +1008,8 @@
         // Game state
         let gameState = {
             words: [],
+            wordToAudio: new Map(), // Map words to their audio files
+            audioInstances: new Map(), // Map words to their audio instances
             selectedWords: [],
             foundGroups: [],
             completionOrder: [],
@@ -953,8 +1020,77 @@
             lastAttemptTime: null, // Track when the last attempt was made
             timerInterval: null, // Track the timer interval
             attempts: [], // Track all attempts with their colors
-            wordSubsets: {} // Track selected word subsets for each category
+            playButtonsShown: false, // Track if play buttons have been shown
+            firstSelectionMade: false // Track if first selection has been made
         };
+
+        // Audio management
+        function playSound(word, audioFile) {
+            try {
+                // Stop any currently playing audio for this word
+                if (gameState.audioInstances.has(word)) {
+                    const existingAudio = gameState.audioInstances.get(word);
+                    existingAudio.pause();
+                    existingAudio.currentTime = 0;
+                }
+                
+                const audio = new Audio(audioFile);
+                audio.volume = 0.7;
+                
+                // Store the audio instance
+                gameState.audioInstances.set(word, audio);
+                
+                // Update button state when audio starts playing
+                audio.addEventListener('play', () => {
+                    updatePlayButtonState(word, 'playing');
+                });
+                
+                // Update button state when audio ends
+                audio.addEventListener('ended', () => {
+                    updatePlayButtonState(word, 'stopped');
+                    gameState.audioInstances.delete(word);
+                });
+                
+                // Update button state when audio is paused
+                audio.addEventListener('pause', () => {
+                    updatePlayButtonState(word, 'stopped');
+                });
+                
+                audio.play().catch(e => {
+                    console.warn('Could not play audio:', audioFile, e);
+                    updatePlayButtonState(word, 'stopped');
+                });
+            } catch (e) {
+                console.warn('Audio error:', e);
+            }
+        }
+        
+        function stopSound(word) {
+            if (gameState.audioInstances.has(word)) {
+                const audio = gameState.audioInstances.get(word);
+                audio.pause();
+                audio.currentTime = 0;
+                updatePlayButtonState(word, 'stopped');
+                gameState.audioInstances.delete(word);
+            }
+        }
+        
+        function updatePlayButtonState(word, state) {
+            const tiles = document.querySelectorAll('.word-tile');
+            tiles.forEach(tile => {
+                const hiddenWordEl = tile.querySelector('.hidden-word');
+                const playButton = tile.querySelector('.play-button');
+                if (hiddenWordEl && hiddenWordEl.textContent === word && playButton) {
+                    if (state === 'playing') {
+                        playButton.innerHTML = '⏸'; // Pause/stop symbol
+                        playButton.classList.add('playing');
+                    } else {
+                        playButton.innerHTML = '▶'; // Play symbol
+                        playButton.classList.remove('playing');
+                    }
+                }
+            });
+        }
 
         // DOM elements
         const wordGrid = document.getElementById('wordGrid');
@@ -972,7 +1108,7 @@
 
         // Check if user is in cooldown period
         function isInCooldown() {
-            const lastAttempt = localStorage.getItem('sinnections_lastAttemptTime');
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
             if (!lastAttempt) return false;
 
             const now = new Date().getTime();
@@ -982,7 +1118,7 @@
 
         // Update cooldown timer display
         function updateCooldownTimer() {
-            const lastAttempt = localStorage.getItem('sinnections_lastAttemptTime');
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
             if (!lastAttempt) return;
 
             const now = new Date().getTime();
@@ -1033,6 +1169,12 @@
             const popup = document.getElementById('early-access-popup');
             popup.classList.remove('show');
         }
+        
+        // Close game over popup
+        function closeGameOverPopup() {
+            const popup = document.getElementById('gameOver');
+            popup.classList.remove('show');
+        }
 
         // Save game state with error handling
         function saveGameState() {
@@ -1043,17 +1185,18 @@
                 
                 const stateToSave = {
                     words: gameState.words || [],
-                    selectedWords: gameState.selectedWords || [], // Always save current selections
+                    selectedWords: gameState.selectedWords || [],
                     foundGroups: gameState.foundGroups || [],
                     completionOrder: gameState.completionOrder || [],
                     mistakes: gameState.mistakes || 0,
                     maxMistakes: gameState.maxMistakes || 4,
                     previousGuesses: Array.from(gameState.previousGuesses || []),
                     attempts: gameState.attempts || [],
-                    wordSubsets: gameState.wordSubsets || {},
+                    playButtonsShown: gameState.playButtonsShown || false,
+                    firstSelectionMade: gameState.firstSelectionMade || false,
                     timestamp: Date.now()
                 };
-                localStorage.setItem('sinnections_gameState', JSON.stringify(stateToSave));
+                localStorage.setItem('sonnections_gameState', JSON.stringify(stateToSave));
             } catch (e) {
                 console.warn('Failed to save game state:', e);
             }
@@ -1062,7 +1205,7 @@
         // Load game state with validation
         function loadGameState() {
             try {
-                const savedState = localStorage.getItem('sinnections_gameState');
+                const savedState = localStorage.getItem('sonnections_gameState');
                 if (!savedState) return false;
                 
                 const state = JSON.parse(savedState);
@@ -1081,40 +1224,39 @@
                 gameState.maxMistakes = state.maxMistakes || 4;
                 gameState.previousGuesses = new Set(state.previousGuesses || []);
                 gameState.attempts = state.attempts || [];
-                gameState.wordSubsets = state.wordSubsets || {};
+                gameState.playButtonsShown = state.playButtonsShown || false;
+                gameState.firstSelectionMade = state.firstSelectionMade || false;
                 gameState.gameOver = false;
                 gameState.lastAttemptTime = null;
                 gameState.timerInterval = null;
+                gameState.audioInstances = new Map();
+                gameState.wordToAudio = new Map();
                 
                 return true;
             } catch (e) {
                 console.warn('Failed to load game state:', e);
-                localStorage.removeItem('sinnections_gameState');
+                localStorage.removeItem('sonnections_gameState');
                 return false;
             }
         }
         
         // Clear saved game state
         function clearSavedGameState() {
-            try {
-                localStorage.removeItem('sinnections_gameState');
-            } catch (e) {
-                console.warn('Failed to clear game state:', e);
-            }
+            localStorage.removeItem('sonnections_gameState');
         }
 
         // Initialize game
         function initGame() {
             // Check if cooldown has expired and clean up if needed
-            const lastAttempt = localStorage.getItem('sinnections_lastAttemptTime');
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
             if (lastAttempt) {
                 const now = new Date().getTime();
                 const timeDiff = now - parseInt(lastAttempt);
                 if (timeDiff >= COOLDOWN_DURATION) {
                     // Cooldown has expired - clear all saved data for fresh start
-                    localStorage.removeItem('sinnections_lastAttemptTime');
+                    localStorage.removeItem('sonnections_lastAttemptTime');
                     clearSavedGameState();
-                    localStorage.removeItem('sinnections_attempts');
+                    localStorage.removeItem('sonnections_lastAttempts');
                 }
             }
             
@@ -1126,7 +1268,9 @@
                 if (!hasLoadedState) {
                     // Fallback if no saved state - create basic game state
                     gameState = {
-                        words: getGameWords(),
+                        words: [],
+                        wordToAudio: new Map(),
+                        audioInstances: new Map(),
                         selectedWords: [],
                         foundGroups: [],
                         completionOrder: [],
@@ -1137,12 +1281,25 @@
                         lastAttemptTime: null,
                         timerInterval: null,
                         attempts: [],
-                        wordSubsets: getWordSubsets()
+                        playButtonsShown: false,
+                        firstSelectionMade: false
                     };
+                    // Create word-to-audio mapping
+                    gameData.groups.forEach(group => {
+                        group.words.forEach((word, index) => {
+                            gameState.words.push(word);
+                            gameState.wordToAudio.set(word, group.audioFiles[index]);
+                        });
+                    });
                     shuffleArray(gameState.words);
                 } else {
-                    // Use loaded state but ensure game is marked as over
+                    // Use loaded state but ensure game is marked as over and rebuild audio mapping
                     gameState.gameOver = true;
+                    gameData.groups.forEach(group => {
+                        group.words.forEach((word, index) => {
+                            gameState.wordToAudio.set(word, group.audioFiles[index]);
+                        });
+                    });
                 }
                 
                 // Reset UI and render grid so tiles are visible behind popup
@@ -1153,10 +1310,12 @@
                 showGameOverScreen(false, true);
                 return;
             }
-
+            
             // Initialize base game state
             gameState = {
                 words: [],
+                wordToAudio: new Map(),
+                audioInstances: new Map(),
                 selectedWords: [],
                 foundGroups: [],
                 completionOrder: [],
@@ -1167,93 +1326,41 @@
                 lastAttemptTime: null,
                 timerInterval: null,
                 attempts: [],
-                wordSubsets: {}
+                playButtonsShown: false,
+                firstSelectionMade: false
             };
-
+            
             // Try to load existing game state
             const hasLoadedState = loadGameState();
             
             if (!hasLoadedState) {
-                // Create new game - get word subsets and shuffle
-                gameState.wordSubsets = getWordSubsets();
-                gameState.words = getGameWords();
+                // Create new game - flatten all words and shuffle, also create word-to-audio mapping
+                gameState.words = [];
+                gameData.groups.forEach(group => {
+                    group.words.forEach((word, index) => {
+                        gameState.words.push(word);
+                        gameState.wordToAudio.set(word, group.audioFiles[index]);
+                    });
+                });
                 shuffleArray(gameState.words);
+            } else {
+                // If we loaded state, rebuild the word-to-audio mapping
+                gameData.groups.forEach(group => {
+                    group.words.forEach((word, index) => {
+                        gameState.wordToAudio.set(word, group.audioFiles[index]);
+                    });
+                });
             }
 
-            // Check if user won and closed popup previously
-            const winPopupClosed = localStorage.getItem('sinnections_winPopupClosed');
-            const hasWon = gameState.foundGroups.length === 4;
-            
+            // Clear saved attempts when starting new game
+            localStorage.removeItem('sonnections_lastAttempts');
+
             // Reset UI
             toastEl.className = 'toast';
             gameOverEl.className = 'game-over';
             updateMistakesDisplay();
             renderWordGrid();
             updateControls();
-            
-            // If user won but popup was closed, show categories without popup
-            // If user won and refreshed, show popup again
-            if (hasWon) {
-                if (winPopupClosed === 'true') {
-                    // Show categories without popup
-                    gameState.gameOver = true;
-                } else {
-                    // Show win popup on refresh
-                    gameState.gameOver = true;
-                    showGameOverScreen(true);
-                }
-            }
-        }
-
-        // Get or create word subsets for categories with more than 4 words
-        function getWordSubsets() {
-            // Try to load existing subsets first
-            const savedSubsets = localStorage.getItem('sinnections_wordSubsets');
-            if (savedSubsets) {
-                try {
-                    return JSON.parse(savedSubsets);
-                } catch (e) {
-                    console.warn('Failed to load word subsets:', e);
-                }
-            }
-            
-            // Create new subsets
-            const subsets = {};
-            gameData.groups.forEach(group => {
-                if (group.words.length > 4) {
-                    // Randomly select 4 words from the group
-                    const shuffledWords = [...group.words];
-                    shuffleArray(shuffledWords);
-                    subsets[group.category] = shuffledWords.slice(0, 4);
-                } else {
-                    // Use all words if 4 or fewer
-                    subsets[group.category] = [...group.words];
-                }
-            });
-            
-            // Save the subsets
-            try {
-                localStorage.setItem('sinnections_wordSubsets', JSON.stringify(subsets));
-            } catch (e) {
-                console.warn('Failed to save word subsets:', e);
-            }
-            
-            return subsets;
-        }
-        
-        // Get the current game words based on subsets
-        function getGameWords() {
-            const subsets = gameState.wordSubsets || getWordSubsets();
-            return Object.values(subsets).flat();
-        }
-        
-        // Clear word subsets (only called when user wins and plays again)
-        function clearWordSubsets() {
-            try {
-                localStorage.removeItem('sinnections_wordSubsets');
-            } catch (e) {
-                console.warn('Failed to clear word subsets:', e);
-            }
         }
 
         // Shuffle array
@@ -1267,7 +1374,10 @@
         // Optimized render word grid with reduced DOM manipulation
         function renderWordGrid() {
             const currentTiles = wordGrid.querySelectorAll('.word-tile');
-            const currentWords = Array.from(currentTiles).map(tile => tile.textContent);
+            const currentWords = Array.from(currentTiles).map(tile => {
+                const hiddenWordElement = tile.querySelector('.hidden-word');
+                return hiddenWordElement ? hiddenWordElement.textContent : tile.textContent;
+            });
             
             // Get remaining words (not found yet) - use Set for faster lookup
             const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
@@ -1279,7 +1389,8 @@
                 currentWords.every((word, index) => word === remainingWords[index])) {
                 // Just update selection states - words are in same order
                 currentTiles.forEach(tile => {
-                    const word = tile.textContent;
+                    const hiddenWordElement = tile.querySelector('.hidden-word');
+                    const word = hiddenWordElement ? hiddenWordElement.textContent : tile.textContent;
                     tile.classList.toggle('selected', selectedWordsSet.has(word));
                 });
             } else {
@@ -1303,7 +1414,29 @@
                 remainingWords.forEach(word => {
                     const tile = document.createElement('div');
                     tile.className = `word-tile${selectedWordsSet.has(word) ? ' selected' : ''}`;
-                    tile.textContent = word;
+                    
+                    // Create play button
+                    const playButton = document.createElement('button');
+                    playButton.className = 'play-button';
+                    playButton.innerHTML = '▶';
+                    playButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (gameState.audioInstances.has(word)) {
+                            // Audio is playing, stop it
+                            stopSound(word);
+                        } else {
+                            // Audio is not playing, start it
+                            playSound(word, gameState.wordToAudio.get(word));
+                        }
+                    });
+                    
+                    // Create hidden word element for reference
+                    const hiddenWord = document.createElement('span');
+                    hiddenWord.className = 'hidden-word';
+                    hiddenWord.textContent = word;
+                    
+                    tile.appendChild(playButton);
+                    tile.appendChild(hiddenWord);
                     tile.addEventListener('click', () => selectWord(word), { passive: true });
                     
                     fragment.appendChild(tile);
@@ -1331,12 +1464,23 @@
                 // Deselect word
                 gameState.selectedWords.splice(index, 1);
             } else if (gameState.selectedWords.length < 4) {
-                // Select word
+                // Select word and only play sound on very first selection
                 gameState.selectedWords.push(word);
+                if (!gameState.firstSelectionMade) {
+                    playSound(word, gameState.wordToAudio.get(word));
+                    gameState.firstSelectionMade = true;
+                }
+            }
+            
+            // Show play buttons when any word is selected for the first time
+            if (gameState.selectedWords.length > 0 && !gameState.playButtonsShown) {
+                wordGrid.classList.add('show-play-buttons');
+                gameState.playButtonsShown = true;
             }
             
             renderWordGrid();
             updateControls();
+            saveGameState();
         }
 
         // Update control buttons
@@ -1374,8 +1518,10 @@
         // Deselect all words
         function deselectAll() {
             gameState.selectedWords = [];
+            // Don't hide play buttons once they've been shown
             renderWordGrid();
             updateControls();
+            saveGameState();
         }
 
         // Submit guess
@@ -1390,18 +1536,17 @@
                 showToast('Already guessed');
                 gameState.selectedWords = [];
                 saveGameState(); // Save state after clearing selections
+                // Don't hide play buttons once they've been shown
                 renderWordGrid();
                 updateControls();
                 return;
             }
 
-            // Check if this combination forms a valid group (using subsets)
-            const correctGroup = gameData.groups.find(group => {
-                const groupSubset = gameState.wordSubsets[group.category] || group.words;
-                return gameState.selectedWords.every(word => groupSubset.includes(word)) &&
-                       groupSubset.every(word => gameState.selectedWords.includes(word)) &&
-                       gameState.selectedWords.length === 4;
-            });
+            // Check if this combination forms a valid group
+            const correctGroup = gameData.groups.find(group => 
+                gameState.selectedWords.every(word => group.words.includes(word)) &&
+                gameState.selectedWords.length === 4
+            );
 
             if (correctGroup) {
                 // Animate correct guess sequence
@@ -1410,13 +1555,12 @@
                 // Add to previous guesses
                 gameState.previousGuesses.add(sortedGuess);
 
-                // Find the group that has the most matches with the selected words (using subsets)
+                // Find the group that has the most matches with the selected words
                 let bestMatch = null;
                 let maxMatches = 0;
                 gameData.groups.forEach(group => {
-                    const groupSubset = gameState.wordSubsets[group.category] || group.words;
                     const matches = gameState.selectedWords.filter(word => 
-                        groupSubset.includes(word)
+                        group.words.includes(word)
                     ).length;
                     if (matches > maxMatches) {
                         maxMatches = matches;
@@ -1424,13 +1568,10 @@
                     }
                 });
 
-                // Track the attempt with colors in order (using subsets)
+                // Track the attempt with colors in order
                 const selectedColors = gameState.selectedWords.map(word => {
                     // Find which group this word belongs to
-                    const group = gameData.groups.find(g => {
-                        const groupSubset = gameState.wordSubsets[g.category] || g.words;
-                        return groupSubset.includes(word);
-                    });
+                    const group = gameData.groups.find(g => g.words.includes(word));
                     return group ? group.color : 'gray';
                 });
                 gameState.attempts.push({
@@ -1439,11 +1580,10 @@
                     correct: false
                 });
 
-                // Check if "one away" (3 out of 4 words are correct, using subsets)
+                // Check if "one away" (3 out of 4 words are correct)
                 const oneAwayGroup = gameData.groups.find(group => {
-                    const groupSubset = gameState.wordSubsets[group.category] || group.words;
                     const matchingWords = gameState.selectedWords.filter(word => 
-                        groupSubset.includes(word)
+                        group.words.includes(word)
                     );
                     return matchingWords.length === 3;
                 });
@@ -1466,15 +1606,18 @@
 
                 // Incorrect guess
                 gameState.mistakes++;
+                // Clear selected words after submitting guess
+                gameState.selectedWords = [];
                 
                 updateMistakesDisplay();
                 saveGameState(); // Save state after incorrect guess
-                renderWordGrid(); // Re-render to keep selections
+                renderWordGrid(); // Re-render to show cleared selections
                 
                 // Check if game is lost
                 if (gameState.mistakes >= gameState.maxMistakes) {
-                    // Store the loss time in localStorage
-                    localStorage.setItem('sinnections_lastAttemptTime', new Date().getTime().toString());
+                    // Store the loss time and attempts in localStorage
+                    localStorage.setItem('sonnections_lastAttemptTime', new Date().getTime().toString());
+                    localStorage.setItem('sonnections_lastAttempts', JSON.stringify(gameState.attempts));
                     // DON'T clear saved state on loss - preserve it for cooldown period
                     saveGameState(); // Save final state so user can see it during cooldown
                     endGame(false);
@@ -1611,12 +1754,7 @@ async function animateCorrectGuess(correctGroup) {
     await new Promise(resolve => setTimeout(resolve, 600));
     
     // Step 4: Update game state
-    // Create a copy of the group with the subset words
-    const groupWithSubset = {
-        ...correctGroup,
-        words: gameState.wordSubsets[correctGroup.category] || correctGroup.words
-    };
-    gameState.foundGroups.push(groupWithSubset);
+    gameState.foundGroups.push(correctGroup);
     gameState.completionOrder.push(correctGroup.color);
     gameState.attempts.push({
         words: [...gameState.selectedWords],
@@ -1624,6 +1762,8 @@ async function animateCorrectGuess(correctGroup) {
         correct: true
     });
     gameState.selectedWords = [];
+    
+    // Don't hide play buttons once they've been shown
     
     // Step 5: Clean up transforms first, THEN modify DOM
     selectedTiles.forEach(tile => {
@@ -1694,7 +1834,6 @@ async function animateCorrectGuess(correctGroup) {
     // Check if game is won
     if (gameState.foundGroups.length === 4) {
         clearSavedGameState(); // Clear saved state on game completion
-        clearWordSubsets(); // Clear word subsets on win so new game gets new subsets
         endGame(true);
     }
 }
@@ -1709,6 +1848,19 @@ async function animateCorrectGuess(correctGroup) {
                     dot.classList.remove('used');
                 }
             }
+        }
+
+        // Playful toast messages for clicked cells
+        const playfulMessages = [
+            "\"ouch\"", "\"that's rude\"", "\"that tickles\"", "\"hey!\"", "\"stop that!\"",
+            "\"easy!\"", "\"careful!\"", "\"jeez\"", "\"what was that for?\"",
+            "\"space please!\"", "\"ow\"", "\"that stings\"", "\"why?\"",
+            "\"I didn't do anything\"", "\"uncalled for\"", "\"rude\"", "\"ooof\""
+        ];
+
+        // Function to get random playful message
+        function getRandomPlayfulMessage() {
+            return playfulMessages[Math.floor(Math.random() * playfulMessages.length)];
         }
 
         // Show game over screen
@@ -1731,12 +1883,14 @@ async function animateCorrectGuess(correctGroup) {
             
             if (won) {
                 gameOverTitle.textContent = 'Congratulations!';
-                gameOverMessage.textContent = 'You found all the connections!';
+                gameOverMessage.textContent = 'You found all the sonnections!';
                 playAgainBtn.disabled = false;
                 playAgainBtn.textContent = 'Play Again';
                 cooldownTimer.textContent = '';
-                // Mark connect1ons as completed
-                localStorage.setItem('sinnections_completed', 'true');
+                // Clear saved attempts when user wins
+                localStorage.removeItem('sonnections_lastAttempts');
+                // Mark sonnections as completed
+                localStorage.setItem('sonnections_completed', 'true');
             } else {
                 gameOverTitle.textContent = 'Game Over';
                 gameOverMessage.textContent = 'Better luck next time!';
@@ -1755,12 +1909,25 @@ async function animateCorrectGuess(correctGroup) {
                 }
             }
 
+            // For losers, always try to show saved attempts grid first
+            let attemptsToShow = gameState.attempts;
+            if (!won && fromCooldown) {
+                const savedAttempts = localStorage.getItem('sonnections_lastAttempts');
+                if (savedAttempts) {
+                    try {
+                        attemptsToShow = JSON.parse(savedAttempts);
+                    } catch (e) {
+                        console.warn('Failed to parse saved attempts:', e);
+                    }
+                }
+            }
+
             // Always show attempts grid at the end
-            if (gameState.attempts.length > 0) {
+            if (attemptsToShow && attemptsToShow.length > 0) {
                 const attemptsGrid = document.createElement('div');
                 attemptsGrid.className = 'attempts-grid';
                 
-                gameState.attempts.forEach((attempt, rowIndex) => {
+                attemptsToShow.forEach((attempt, rowIndex) => {
                     const attemptRow = document.createElement('div');
                     attemptRow.className = 'attempt-row';
                     
@@ -1776,39 +1943,8 @@ async function animateCorrectGuess(correctGroup) {
                         cell.setAttribute('data-color', color);
                         cell.setAttribute('data-bg-color', bgColor);
                         
-                        // Calculate unique cell index across all attempts
-                        const globalCellIndex = rowIndex * 4 + cellIndex;
-                        const totalCells = gameState.attempts.length * 4;
-                        
-                        // Only add links to the last row (final 4 cells)
-                        if (globalCellIndex >= totalCells - 4) {
-                            // Define unique links for the last row
-                            const lastRowLinks = [
-                                atob('c29ubmVjdGlvbnMuaHRtbA=='),
-                                atob('bnVtYmVyX2JlZS5odG1s'),
-                                atob('d29yZGxlLmh0bWw='),
-                                ''
-                            ];
-                            
-                            const lastRowIndex = globalCellIndex - (totalCells - 4);
-                            
-                            cell.style.cursor = 'pointer';
-                            cell.addEventListener('click', () => {
-                                const link = lastRowLinks[lastRowIndex];
-                                
-                                // If next puzzles are disabled, always show popup
-                                if (!NEXT_PUZZLES_ENABLED) {
-                                    showEarlyAccessPopup();
-                                } else {
-                                    // Only check link validity when puzzles are enabled
-                                    if (link && link.trim() !== '') {
-                                        window.open(link, '_blank');
-                                    } else {
-                                        showToast('Not yet!');
-                                    }
-                                }
-                            });
-                        }
+                        // Store cell reference for later link assignment
+                        cell.globalIndex = rowIndex * 4 + cellIndex;
                         
                         cell.style.setProperty('--row-index', rowIndex);
                         cell.style.setProperty('--cell-index', cellIndex);
@@ -1819,6 +1955,13 @@ async function animateCorrectGuess(correctGroup) {
                 });
                 
                 gameOverMessage.insertAdjacentElement('afterend', attemptsGrid);
+                
+                // Add shake animation and click handlers to random half of cells (only when won)
+                if (won) {
+                    setTimeout(() => {
+                        addShakeAndClickHandlers(attemptsGrid);
+                    }, 500);
+                }
             }
 
             // Use groups in the order they were solved (preserve existing layout)
@@ -1853,11 +1996,34 @@ async function animateCorrectGuess(correctGroup) {
                 remainingWords.forEach(word => {
                     const tile = document.createElement('div');
                     tile.className = 'word-tile';
-                    tile.textContent = word;
-                    tile.addEventListener('click', () => selectWord(word), { passive: true });
                     
+                    // Create hidden word element for reference
+                    const hiddenWord = document.createElement('span');
+                    hiddenWord.className = 'hidden-word';
+                    hiddenWord.textContent = word;
+                    
+                    // Create play button
+                    const playButton = document.createElement('button');
+                    playButton.className = 'play-button';
+                    playButton.innerHTML = '▶';
+                    playButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        if (gameState.audioInstances.has(word)) {
+                            stopSound(word);
+                        } else {
+                            playSound(word, gameState.wordToAudio.get(word));
+                        }
+                    });
+                    
+                    tile.appendChild(playButton);
+                    tile.appendChild(hiddenWord);
                     wordGrid.appendChild(tile);
                 });
+                
+                // Show play buttons if they were shown during gameplay
+                if (gameState.playButtonsShown) {
+                    wordGrid.classList.add('show-play-buttons');
+                }
             }
             
             // Show the game over screen
@@ -1877,93 +2043,55 @@ async function animateCorrectGuess(correctGroup) {
             });
         }
 
+        // Add shake animation and click handlers to random half of cells
+        function addShakeAndClickHandlers(attemptsGrid) {
+            const attemptCells = Array.from(attemptsGrid.querySelectorAll('.attempt-cell'));
+            
+            if (attemptCells.length === 0) return;
+            
+            // Select random half of the cells
+            const halfCount = Math.ceil(attemptCells.length / 2);
+            const shuffledCells = [...attemptCells];
+            
+            // Shuffle the array
+            for (let i = shuffledCells.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledCells[i], shuffledCells[j]] = [shuffledCells[j], shuffledCells[i]];
+            }
+            
+            // Take the first half
+            const selectedCells = shuffledCells.slice(0, halfCount);
+            
+            // Add shake animation and click handlers to selected cells
+            selectedCells.forEach((cell, index) => {
+                cell.classList.add('shake-link');
+                
+                // Randomly assign one of the shake animations (reusing existing ones)
+                const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
+                const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
+                
+                // Add random duration between 1.5s and 2.5s for more variety
+                const randomDuration = (1.5 + Math.random()).toFixed(1);
+                
+                // Add random delay between 0 and 0.5s to stagger the animations
+                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                
+                cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+                cell.style.animationDelay = `${randomDelay}s`;
+                
+                // Add click handler for toast message
+                cell.addEventListener('click', () => {
+                    const message = getRandomPlayfulMessage();
+                    showToast(message);
+                });
+            });
+        }
+
         // End game
         function endGame(won) {
             showGameOverScreen(won);
-            
-            if (won) {
-                // Add victory shake to the last row of group blocks after screen is shown
-                setTimeout(() => {
-                    addVictoryShake();
-                }, 200);
-            }
         }
 
-        // Add victory shake and click handlers to the last row of attempts grid
-        function addVictoryShake() {
-            // Use a more reliable approach to wait for the attempts grid
-            const checkForGrid = () => {
-                const attemptsGrid = gameOverEl.querySelector('.attempts-grid');
-                
-                if (attemptsGrid && gameState.attempts.length > 0) {
-                    const attemptCells = attemptsGrid.querySelectorAll('.attempt-cell');
-                    
-                    // Calculate expected number of cells (4 cells per attempt)
-                    const expectedCells = gameState.attempts.length * 4;
-                    
-                    if (attemptCells.length >= expectedCells && attemptCells.length >= 4) {
-                        // Get the last 4 cells (representing the final winning attempt)
-                        const lastRowCells = Array.from(attemptCells).slice(-4);
-                        
-                        // Double-check that these cells are visible
-                        const allVisible = lastRowCells.every(cell => {
-                            const style = window.getComputedStyle(cell);
-                            return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
-                        });
-                        
-                        if (allVisible) {
-                            // Define unique links for each cell in the last row
-                            const links = [
-                                '/',
-                                'https://www.google.com/search?q=congratulations+you+won',
-                                'https://www.wikipedia.org/wiki/Puzzle',
-                                'https://github.com/anthropics/claude-code'
-                            ];
-                            
-                            // Add victory shake and click handlers to each cell in the last row
-                            lastRowCells.forEach((cell, index) => {
-                                cell.classList.add('victory-shake');
-                                
-                                // Randomly assign one of the shake animations
-                                const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
-                                const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
-                                
-                                // Add random duration between 1.5s and 2.5s for more variety
-                                const randomDuration = (1.5 + Math.random()).toFixed(1);
-                                
-                                // Add random delay between 0 and 0.5s to stagger the animations
-                                const randomDelay = (Math.random() * 0.5).toFixed(2);
-                                
-                                cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
-                                cell.style.animationDelay = `${randomDelay}s`;
-                                
-                                // Click handlers are already added in showGameOverScreen function
-                            });
-                            
-                            return true; // Successfully added victory shake
-                        }
-                    }
-                }
-                return false; // Grid not ready yet
-            };
-            
-            // Try immediately first
-            if (!checkForGrid()) {
-                // If not ready, wait and try again with shorter intervals for better responsiveness
-                let attempts = 0;
-                const maxAttempts = 10;
-                
-                const tryAgain = () => {
-                    attempts++;
-                    if (checkForGrid() || attempts >= maxAttempts) {
-                        return; // Success or max attempts reached
-                    }
-                    setTimeout(tryAgain, 200); // Try every 200ms for up to 2 seconds
-                };
-                
-                setTimeout(tryAgain, 100);
-            }
-        }
 
         // Helper function to get color codes
         function getColorCode(color) {
@@ -1988,15 +2116,6 @@ async function animateCorrectGuess(correctGroup) {
             popup.classList.remove('show');
         }
 
-        // Close game over popup
-        function closeGameOverPopup() {
-            gameOverEl.classList.remove('show');
-            // If the user won, mark the win state as closed so they can see the categories
-            if (gameState.foundGroups.length === 4) {
-                localStorage.setItem('sinnections_winPopupClosed', 'true');
-            }
-        }
-
         // Event listeners
         shuffleBtn.addEventListener('click', shuffleWords);
         deselectBtn.addEventListener('click', deselectAll);
@@ -2004,12 +2123,9 @@ async function animateCorrectGuess(correctGroup) {
         playAgainBtn.addEventListener('click', () => {
             // If cooldown just ended, clear all saved data first
             if (!isInCooldown()) {
-                localStorage.removeItem('sinnections_lastAttemptTime');
+                localStorage.removeItem('sonnections_lastAttemptTime');
                 clearSavedGameState();
-                localStorage.removeItem('sinnections_attempts');
-                localStorage.removeItem('sinnections_winPopupClosed');
-                // Clear word subsets when starting a new game after win/cooldown
-                clearWordSubsets();
+                localStorage.removeItem('sonnections_lastAttempts');
                 gameOverEl.classList.remove('show');
             }
             initGame();
@@ -2024,9 +2140,9 @@ async function animateCorrectGuess(correctGroup) {
     <div class="early-access-popup" id="early-access-popup">
         <button class="close-btn" onclick="closeEarlyAccessPopup()">✕</button>
         <h2>You Found It!</h2>
-        <p>Impressive work connecting all those patterns!<br><br>You've discovered something that's still taking shape.</p>
-        <p style="font-style: italic; font-size: 1rem; color: #999;">The final pieces are yet to connect...</p>
-        <button class="btn" onclick="closeEarlyAccessPopup()">Understood</button>
+        <p>No harmony escapes you!<br><br>Your ears have led you to something still in harmony.</p>
+        <p style="font-style: italic; font-size: 1rem; color: #999;">The next movement hasn't been composed yet...</p>
+        <button class="btn" onclick="closeEarlyAccessPopup()">I hear you</button>
     </div>
     
     <!-- How to Play Popup -->
