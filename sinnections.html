@@ -1890,14 +1890,6 @@ async function animateCorrectGuess(correctGroup) {
                         });
                         
                         if (allVisible) {
-                            // Define unique links for each cell in the last row
-                            const links = [
-                                '/',
-                                'https://www.google.com/search?q=congratulations+you+won',
-                                'https://www.wikipedia.org/wiki/Puzzle',
-                                'https://github.com/anthropics/claude-code'
-                            ];
-                            
                             // Add victory shake and click handlers to each cell in the last row
                             lastRowCells.forEach((cell, index) => {
                                 cell.classList.add('victory-shake');
@@ -1914,10 +1906,7 @@ async function animateCorrectGuess(correctGroup) {
                                 
                                 cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
                                 cell.style.animationDelay = `${randomDelay}s`;
-                                
-                                // Click handlers are already added in showGameOverScreen function
                             });
-                            
                             return true; // Successfully added victory shake
                         }
                     }
