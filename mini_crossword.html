@@ -1,0 +1,3674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Mini Crossword</title>
+    <style>
+        @font-face {
+            font-family: 'Karnak';
+            src: url('fonts/karnak/karnak-cond-normal.ttf') format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Franklin-Bold';
+            src: url('fonts/franklin/franklin-normal-700.ttf') format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Franklin-Medium';
+            src: url('fonts/franklin/franklin-normal-500.ttf') format('truetype');
+        }
+        
+        @font-face {
+            font-family: 'Karnak-Normal';
+            src: url('fonts/karnak/karnak-normal.woff') format('woff');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #e9ecef;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+        }
+
+        .title {
+            font-family: 'Karnak', Arial, sans-serif;
+            font-size: 42px;
+            font-weight: normal;
+            color: #000;
+        }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 45px;
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-bottom: 30px;
+            padding: 0 20px;
+            background-color: white;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .controls-left {
+            display: flex;
+            gap: 0;
+            flex: 1;
+            justify-content: flex-start;
+        }
+        
+        .controls-center {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        
+        .controls-right {
+            display: flex;
+            gap: 0;
+            flex: 1;
+            justify-content: flex-end;
+        }
+        
+        .check-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .check-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: 0;
+            top: 100%;
+            border: 1px solid #ccc;
+        }
+        
+        .check-dropdown-content.show {
+            display: block;
+        }
+        
+        .check-option {
+            color: black;
+            padding: 8px 32px 8px 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-size: 16px;
+            border: none;
+            background: none;
+            height: 45px;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .check-option:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .check-option:disabled {
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .check-option:disabled:hover {
+            background-color: white;
+        }
+        
+        .check-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        
+        .check-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .timer-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            width: 120px; /* Fixed width to prevent shifting */
+        }
+
+        .timer {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .pause-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: none;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            transition: background-color 0.2s;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            min-width: 120px;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .action-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .action-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: transparent;
+        }
+
+        .action-btn:disabled:hover {
+            background-color: transparent;
+        }
+
+        /* Current clue */
+        .current-clue {
+            background-color: rgb(220, 239, 255);
+            padding: 15px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 16.8px;
+            text-align: left;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .current-clue .clue-number {
+            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 16.8px;
+        }
+
+        /* Main content */
+        .main-content {
+            display: flex;
+            gap: 40px;
+            align-items: start;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: flex-start;
+        }
+
+        /* Grid container */
+        .grid-container {
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .left-panel {
+            flex-shrink: 0;
+            width: 600px;
+        }
+
+        .crossword-grid {
+            display: grid;
+            gap: 1px;
+            background-color: #000;
+            border: 2px solid #000;
+            padding: 1px;
+            width: 600px;
+            height: 600px;
+            flex-shrink: 0;
+        }
+
+        .grid-cell {
+            background-color: white;
+            position: relative;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cell-input {
+            border: none;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            outline: none;
+            caret-color: transparent;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 40%;
+            box-sizing: border-box;
+        }
+
+        .grid-cell.black {
+            background-color: #000;
+            cursor: default;
+        }
+
+        .grid-cell.highlighted {
+            background-color: rgb(167, 216, 255);
+        }
+
+        .grid-cell.selected {
+            background-color: rgb(255, 218, 0);
+            color: black;
+        }
+
+        .cell-number {
+            position: absolute;
+            top: 2px;
+            left: 3px;
+            color: #000;
+            pointer-events: none;
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            z-index: 10;
+            line-height: 1;
+            display: block;
+        }
+
+        /* Clues */
+        .clues-container {
+            display: grid;
+            grid-template-columns: 250px 250px;
+            gap: 85px;
+            width: 585px;
+            flex-shrink: 0;
+        }
+
+        .clues-section {
+            display: flex;
+            gap: 85px;
+            width: 585px;
+            background: white;
+            padding: 0;
+        }
+
+        .clues-column {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .clues-title {
+            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #000;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .clue-item {
+            padding: 8px 4px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 14px;
+        }
+
+        .clue-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .clue-item.active {
+            background-color: rgb(167, 216, 255);
+            font-weight: 500;
+        }
+
+        .clue-number {
+            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 8px;
+        }
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .crossword-grid {
+                width: 400px;
+                height: 400px;
+            }
+            
+            .left-panel {
+                width: 400px;
+            }
+            
+            .clues-container {
+                width: 100%;
+            }
+            
+            .grid-cell {
+                font-size: 18px;
+            }
+            
+            .cell-number {
+                font-size: 10px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 20px;
+            }
+            
+            .controls-left, .controls-center, .controls-right {
+                flex: none;
+            }
+        }
+
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .popup-overlay.show {
+            display: flex;
+        }
+
+        .popup {
+            width: 600px;
+            min-height: 660px;
+            max-height: 90vh;
+            background-color: white;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow-y: auto;
+            gap: 30px;
+        }
+
+        .popup-title {
+            font-family: 'Karnak', Arial, sans-serif;
+            font-size: 50px;
+            font-weight: normal;
+            color: #000;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .popup-subtitle {
+            font-family: 'Karnak-Normal', Arial, sans-serif;
+            font-size: 34px;
+            font-weight: normal;
+            color: #666;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .popup-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            border-radius: 24px;
+            height: 48px;
+            padding: 0 32px;
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: auto;
+        }
+
+        .popup-button:hover {
+            background-color: #333;
+        }
+
+        .popup-buttons {
+            display: flex;
+            gap: 16px;
+            margin: 0;
+        }
+
+        .popup-button.secondary {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        .popup-button.secondary:hover {
+            background-color: #e0e0e0;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.2s ease;
+        }
+
+        .popup-close:hover {
+            background-color: #f0f0f0;
+        }
+
+        .popup-close::before,
+        .popup-close::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 2px;
+            background-color: #666;
+            border-radius: 1px;
+        }
+
+        .popup-close::before {
+            transform: rotate(45deg);
+        }
+
+        .popup-close::after {
+            transform: rotate(-45deg);
+        }
+
+        .cooldown-timer {
+            font-family: 'Karnak-Normal', Arial, sans-serif;
+            font-size: 30px;
+            font-weight: normal;
+            color: #000;
+            margin: 20px 0;
+            letter-spacing: 1px;
+        }
+
+        .popup.cooldown .popup-close {
+            display: none;
+        }
+
+        .popup.cooldown .popup-buttons {
+            display: none;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 0;
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-size: 14px;
+            z-index: 1001;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
+
+        /* Final stats popup */
+        .stats-table {
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .stats-row:last-child {
+            border-bottom: none;
+        }
+
+        .stats-label {
+            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .stats-value {
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .popup-button {
+            background-color: #000;
+            color: white;
+            border: none;
+            height: 48px;
+            min-width: 228px;
+            padding: 0 25px;
+            font-size: 16px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-family: 'Franklin-Medium', Arial, sans-serif;
+            text-transform: capitalize;
+            margin: 0;
+            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="title">The Mini Crossword</h1>
+        </div>
+
+
+        <!-- Game content -->
+        <div class="game-content" id="game-content">
+            <!-- Controls -->
+            <div class="controls">
+                <div class="controls-left"></div>
+                <div class="controls-center">
+                    <div class="timer-section">
+                        <div class="timer" id="timer">0:00</div>
+                        <button class="pause-btn">⏸</button>
+                    </div>
+                </div>
+                <div class="controls-right">
+                    <!-- Navigation buttons will be created dynamically by createGameInterface() -->
+                </div>
+            </div>
+
+            <!-- Main content -->
+            <div class="main-content">
+                <div class="left-panel">
+                    <!-- Current clue -->
+                    <div class="current-clue" id="current-clue">
+                        Select a crossword to begin
+                    </div>
+                    
+                    <!-- Grid -->
+                    <div class="grid-container">
+                        <div class="crossword-grid" id="crossword-grid">
+                            <!-- Grid cells will be generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clues -->
+                <div class="clues-container">
+                    <div class="clues-section">
+                        <h2 class="clues-title">ACROSS</h2>
+                        <div id="across-clues">
+                            <!-- Across clues will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="clues-section">
+                        <h2 class="clues-title">DOWN</h2>
+                        <div id="down-clues">
+                            <!-- Down clues will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration - SET THE CROSSWORD FILE HERE
+        const CROSSWORD_FILE = '8_00.json'; // Change this to '8_00.json' or any other crossword file
+        
+        // Puzzle sequence configuration - CUSTOMIZE YOUR PATTERN HERE
+        const PUZZLE_SEQUENCE = [5, 8, 5]; // Pattern: 5x5 → 5x5 → 8x8, repeat
+        // Global variables
+        let crosswordData = null;
+        let currentWord = null;
+        let currentDirection = 'across';
+        let userGrid = [];
+        let selectedCell = null;
+        
+        // Timer variables
+        let timeLeft = 300; // 5 minutes in seconds
+        let timerInterval = null;
+        let isPaused = false;
+        let isManuallyPaused = false;
+        let isViewingCompletedPuzzle = false; // Track when viewing completed puzzles
+        let cooldownEnd = null;
+        let cooldownInterval = null;
+        
+        // Puzzle progression variables
+        let currentPuzzleIndex = 0;
+        let actualCurrentPuzzleIndex = 0; // The puzzle the user is actually working on
+        let puzzlesBySize = {}; // Dictionary storing puzzles by size: {5: [...], 8: [...]}
+        let sessionPuzzleOrder = []; // Randomized sequence for current session
+        let completedPuzzles = new Set();
+        let puzzleStartTime = null;
+        let puzzleStats = [];
+        let sessionStats = {
+            puzzlesCompleted: 0,
+            totalTime: 0,
+            averageTime: 0,
+            shortestTime: Infinity,
+            longestTime: 0,
+            accuracy: 100, // Will calculate based on mistakes
+            totalMistakes: 0
+        };
+
+        // Popup message arrays
+        const pauseMessages = [
+            { title: "Game Paused", subtitle: "Take a breather and come back refreshed!" },
+            { title: "Timeout", subtitle: "Sometimes the best ideas come during breaks." },
+            { title: "Paused", subtitle: "Your progress is saved. Take your time!" },
+            { title: "Break Time", subtitle: "Step away and let your mind wander." },
+            { title: "Intermission", subtitle: "Great puzzlers know when to pause." }
+        ];
+
+        const incorrectMessages = [
+            { title: "Not Quite Right", subtitle: "Every expert was once a beginner. Keep going!" },
+            { title: "Close!", subtitle: "You're on the right track. Check your answers." },
+            { title: "Almost There", subtitle: "A few more corrections and you'll have it!" },
+            { title: "Keep Trying", subtitle: "The best puzzles are worth the challenge." },
+            { title: "Try Again", subtitle: "Success is just one more attempt away." }
+        ];
+
+        const correctMessages = [
+            { title: "Brilliant!", subtitle: "You've mastered this crossword perfectly!" },
+            { title: "Excellent Work", subtitle: "Your puzzle-solving skills are impressive!" },
+            { title: "Congratulations!", subtitle: "You've cracked every clue with finesse!" },
+            { title: "Well Done!", subtitle: "A true wordsmith at work!" },
+            { title: "Perfect!", subtitle: "You've conquered this crossword!" }
+        ];
+
+        const revealedMessages = [
+            { title: "Puzzle Revealed", subtitle: "Sometimes we all need a little help!" },
+            { title: "All Solved", subtitle: "The full solution has been revealed." },
+            { title: "Complete", subtitle: "Every answer has been filled in for you." },
+            { title: "Revealed", subtitle: "No shame in checking the answers!" }
+        ];
+
+        const cooldownMessages = [
+            { title: "Time's Up!", subtitle: "Take a break and come back refreshed!" },
+            { title: "Timeout", subtitle: "Great puzzlers know when to rest." },
+            { title: "Cool Down", subtitle: "Use this time to sharpen your wordplay!" },
+            { title: "Intermission", subtitle: "The best is yet to come!" },
+            { title: "Recharge Time", subtitle: "Every expert needs a breather." }
+        ];
+        
+        const restartMessages = [
+            { title: "Restart Session?", subtitle: "This will clear all progress and start fresh." },
+            { title: "Start Over?", subtitle: "All your progress will be lost. Are you sure?" },
+            { title: "Fresh Start?", subtitle: "This will reset everything and begin again." }
+        ];
+
+        // Initialize the page
+        async function initializePage() {
+            // Check if session was completed and user refreshed
+            const sessionWasComplete = localStorage.getItem('sessionComplete') === 'true';
+            
+            if (sessionWasComplete) {
+                // Load the saved game state to restore stats, then show final stats popup
+                loadGameState();
+                
+                // Show the final stats popup instead of clearing data
+                setTimeout(() => {
+                    showFinalStats();
+                }, 100); // Small delay to ensure DOM is ready
+                
+                return; // Don't continue with normal initialization
+            }
+            
+            // Normal initialization for non-completed sessions
+            loadGameState();
+            
+            // Check if there's an existing session
+            const hasSavedState = localStorage.getItem('crosswordGameState');
+            if (hasSavedState) {
+                // Already loaded game state above, just pause and show session popup
+                isPaused = true; // Ensure game is paused
+                
+                // Show session in progress popup after loading content
+                setTimeout(() => {
+                    showSessionInProgressPopup();
+                }, 100);
+            } else {
+                // No saved state - fresh start, already loaded above but ensure clean state
+                resetPuzzleIndex();
+                actualCurrentPuzzleIndex = 0;
+                completedPuzzles.clear();
+                puzzleStats = [];
+                sessionStats = {
+                    puzzlesCompleted: 0,
+                    totalTime: 0,
+                    averageTime: 0,
+                    shortestTime: Infinity,
+                    longestTime: 0,
+                    accuracy: 100,
+                    totalMistakes: 0
+                };
+                timeLeft = 300;
+                isPaused = false;
+                if (timerInterval) clearInterval(timerInterval);
+                puzzlesBySize = {};
+                sessionPuzzleOrder = [];
+                userGrid = [];
+                currentWord = null;
+                selectedCell = null;
+                puzzleStartTime = null;
+            }
+            
+            // Detect available puzzles
+            await detectAvailablePuzzles();
+            
+            // Ensure we have a valid session order
+            if (sessionPuzzleOrder.length === 0) {
+                generateSessionOrder();
+            }
+            
+            // Navigation button event listeners will be set up after createGameInterface()
+            
+            // If user was viewing a previous puzzle (currentPuzzleIndex < actualCurrentPuzzleIndex), 
+            // take them back to their actual current puzzle
+            if (currentPuzzleIndex < actualCurrentPuzzleIndex) {
+                currentPuzzleIndex = actualCurrentPuzzleIndex;
+            }
+            
+            // Get current puzzle file
+            const currentFile = getCurrentPuzzleFile();
+            if (currentFile) {
+                loadPuzzleFromFile(currentFile);
+            }
+        }
+        
+        // Timer functions
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            
+            timerInterval = setInterval(() => {
+                if (!isPaused && timeLeft > 0) {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    saveGameState();
+                    
+                    if (timeLeft === 0) {
+                        clearInterval(timerInterval);
+                        startCooldown();
+                    }
+                }
+            }, 1000);
+        }
+        
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timer').textContent = display;
+        }
+        
+        function togglePause() {
+            isPaused = !isPaused;
+            isManuallyPaused = isPaused; // Track that this was a manual pause/unpause
+            const pauseBtn = document.querySelector('.pause-btn');
+            pauseBtn.textContent = isPaused ? '▶' : '⏸';
+            
+            // When manually pausing/unpausing, reset completed puzzle viewing state
+            if (isPaused) {
+                isViewingCompletedPuzzle = false; // Manual pause should hide clues
+            } else {
+                isViewingCompletedPuzzle = false; // Resume normal gameplay
+            }
+            
+            saveGameState();
+            updateClueVisibility(); // Update clue visibility based on pause state
+            updatePuzzleViewState(); // Update pause button and input state
+            
+            if (isPaused) {
+                showPopup('pause');
+            }
+        }
+
+        function updateClueVisibility() {
+            const acrossClues = document.getElementById('across-clues');
+            const downClues = document.getElementById('down-clues');
+            
+            if (acrossClues && downClues) {
+                if (isPaused && !isViewingCompletedPuzzle) {
+                    // Hide clue items only when manually paused, not when viewing completed puzzles
+                    acrossClues.style.display = 'none';
+                    downClues.style.display = 'none';
+                } else {
+                    // Show clue items when not paused or when viewing completed puzzles
+                    acrossClues.style.display = 'block';
+                    downClues.style.display = 'block';
+                }
+            }
+        }
+
+        function updatePuzzleViewState() {
+            const pauseBtn = document.querySelector('.pause-btn');
+            const inputs = document.querySelectorAll('.cell-input');
+            
+            if (isViewingCompletedPuzzle) {
+                // Hide pause button when viewing completed puzzles
+                if (pauseBtn) {
+                    pauseBtn.style.visibility = 'hidden';
+                }
+                
+                // Make all inputs read-only when viewing completed puzzles
+                inputs.forEach(input => {
+                    input.readOnly = true;
+                    input.style.cursor = 'default';
+                });
+            } else {
+                // Show/hide pause button based on pause type
+                if (pauseBtn) {
+                    // Hide pause button if paused automatically (not manually)
+                    if (isPaused && !isManuallyPaused) {
+                        pauseBtn.style.visibility = 'hidden';
+                    } else {
+                        pauseBtn.style.visibility = 'visible';
+                    }
+                }
+                
+                // Make inputs editable for active puzzles
+                inputs.forEach(input => {
+                    input.readOnly = false;
+                    input.style.cursor = 'text';
+                });
+            }
+        }
+        
+        // Save game state to localStorage
+        function saveGameState() {
+            const gameState = {
+                crosswordFile: getCurrentPuzzleFile(),
+                userGrid: userGrid,
+                timeLeft: timeLeft,
+                isPaused: isPaused,
+                isViewingCompletedPuzzle: isViewingCompletedPuzzle,
+                currentDirection: currentDirection,
+                selectedCell: selectedCell,
+                currentWord: currentWord,
+                cooldownEnd: cooldownEnd,
+                currentPuzzleIndex: currentPuzzleIndex,
+                actualCurrentPuzzleIndex: actualCurrentPuzzleIndex,
+                puzzlesBySize: puzzlesBySize,
+                sessionPuzzleOrder: sessionPuzzleOrder,
+                completedPuzzles: Array.from(completedPuzzles),
+                puzzleStartTime: puzzleStartTime,
+                puzzleStats: puzzleStats,
+                sessionStats: sessionStats
+            };
+            localStorage.setItem('crosswordGameState', JSON.stringify(gameState));
+        }
+        
+        // Load game state from localStorage
+        function loadGameState() {
+            const saved = localStorage.getItem('crosswordGameState');
+            if (saved) {
+                const gameState = JSON.parse(saved);
+                timeLeft = gameState.timeLeft || 300;
+                isPaused = gameState.isPaused || false;
+                isViewingCompletedPuzzle = gameState.isViewingCompletedPuzzle || false;
+                currentDirection = gameState.currentDirection || 'across';
+                selectedCell = gameState.selectedCell || null;
+                currentWord = gameState.currentWord || null;
+                cooldownEnd = gameState.cooldownEnd || null;
+                currentPuzzleIndex = gameState.currentPuzzleIndex || 0;
+                actualCurrentPuzzleIndex = gameState.actualCurrentPuzzleIndex || 0;
+                puzzlesBySize = gameState.puzzlesBySize || {};
+                sessionPuzzleOrder = gameState.sessionPuzzleOrder || [];
+                completedPuzzles = new Set(gameState.completedPuzzles || []);
+                puzzleStartTime = gameState.puzzleStartTime || null;
+                puzzleStats = gameState.puzzleStats || [];
+                sessionStats = gameState.sessionStats || {
+                    puzzlesCompleted: 0,
+                    totalTime: 0,
+                    averageTime: 0,
+                    shortestTime: Infinity,
+                    longestTime: 0,
+                    accuracy: 100,
+                    totalMistakes: 0
+                };
+                
+                // Validate currentPuzzleIndex after loading
+                if (sessionPuzzleOrder.length > 0 && currentPuzzleIndex >= sessionPuzzleOrder.length) {
+                    resetPuzzleIndex();
+                }
+                
+                // Check if we're still in cooldown
+                if (cooldownEnd && new Date().getTime() < cooldownEnd) {
+                    showCooldownPopup();
+                    return;
+                } else if (cooldownEnd) {
+                    // Cooldown has ended, clear it
+                    cooldownEnd = null;
+                    saveGameState();
+                }
+                // userGrid will be restored after crossword data loads
+            } else {
+                // No saved state - set default values for fresh start
+                isViewingCompletedPuzzle = false;
+            }
+        }
+        
+        // Restore user grid after crossword loads
+        function restoreUserGrid() {
+            const saved = localStorage.getItem('crosswordGameState');
+            if (saved) {
+                const gameState = JSON.parse(saved);
+                if (gameState.crosswordFile === getCurrentPuzzleFile() && gameState.userGrid) {
+                    userGrid = gameState.userGrid;
+                    
+                    // Fill in the grid inputs with saved data
+                    for (let row = 0; row < crosswordData.size; row++) {
+                        for (let col = 0; col < crosswordData.size; col++) {
+                            if (userGrid[row] && userGrid[row][col]) {
+                                const input = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                                if (input) {
+                                    input.value = userGrid[row][col];
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Helper functions for common operations
+        function clearGameStorage() {
+            localStorage.removeItem('crosswordGameState');
+            localStorage.removeItem('pendingBonus');
+            localStorage.removeItem('sessionComplete');
+        }
+        
+        function resetPuzzleIndex() {
+            currentPuzzleIndex = 0;
+        }
+
+        // Puzzle management functions
+        async function detectAvailablePuzzles(forceRefresh = false) {
+            if (Object.keys(puzzlesBySize).length === 0 || forceRefresh) {
+                // Clear existing data if refreshing
+                if (forceRefresh) {
+                    puzzlesBySize = {};
+                    sessionPuzzleOrder = [];
+                    completedPuzzles.clear();
+                    resetPuzzleIndex();
+                }
+                
+                // Try to load puzzles.json which contains the organized puzzle directory
+                try {
+                    const response = await fetch('crosswords/puzzles.json');
+                    if (response.ok) {
+                        const puzzleDirectory = await response.json();
+                        puzzlesBySize = puzzleDirectory;
+                    } else {
+                        throw new Error('puzzles.json not found');
+                    }
+                } catch (e) {
+                    
+                    // Fallback: organize embedded puzzles by size
+                    puzzlesBySize = {};
+                    for (const [filename, puzzleData] of Object.entries(embeddedPuzzles)) {
+                        const size = puzzleData.size;
+                        if (!puzzlesBySize[size]) {
+                            puzzlesBySize[size] = [];
+                        }
+                        puzzlesBySize[size].push(filename);
+                    }
+                    
+                    // Sort each size group by number
+                    Object.keys(puzzlesBySize).forEach(size => {
+                        puzzlesBySize[size].sort((a, b) => {
+                            const aNum = parseInt(a.split('_')[1].split('.')[0]);
+                            const bNum = parseInt(b.split('_')[1].split('.')[0]);
+                            return aNum - bNum;
+                        });
+                    });
+                }
+                
+                
+                // Validate that we have puzzles for all required sizes
+                validatePuzzleAvailability();
+                
+                // Generate randomized session order
+                generateSessionOrder();
+            }
+        }
+        
+        // Function to refresh puzzle directory (call when adding new puzzles)
+        async function refreshPuzzleDirectory() {
+            await detectAvailablePuzzles(true);
+            
+            // Save updated state
+            saveGameState();
+        }
+        
+        // Expose refresh function to global scope for console access
+        window.refreshPuzzleDirectory = refreshPuzzleDirectory;
+
+        function validatePuzzleAvailability() {
+            const requiredSizes = [...new Set(PUZZLE_SEQUENCE)];
+            const missingSizes = [];
+            
+            requiredSizes.forEach(size => {
+                if (!puzzlesBySize[size] || puzzlesBySize[size].length === 0) {
+                    missingSizes.push(size);
+                }
+            });
+            
+            if (missingSizes.length > 0) {
+                // Missing puzzles for some sizes
+            }
+        }
+
+        function generateSessionOrder() {
+            sessionPuzzleOrder = [];
+            
+            // Create shuffled arrays for each size used in the sequence
+            const shuffledBySize = {};
+            const indexesBySize = {};
+            
+            // Get unique sizes from the sequence
+            const uniqueSizes = [...new Set(PUZZLE_SEQUENCE)];
+            
+            // Shuffle puzzles for each size and initialize indexes
+            uniqueSizes.forEach(size => {
+                if (puzzlesBySize[size]) {
+                    shuffledBySize[size] = [...puzzlesBySize[size]];
+                    shuffleArray(shuffledBySize[size]);
+                    indexesBySize[size] = 0;
+                } else {
+                    shuffledBySize[size] = [];
+                    indexesBySize[size] = 0;
+                }
+            });
+            
+            
+            // Calculate total available puzzles
+            const totalPuzzles = uniqueSizes.reduce((sum, size) => {
+                return sum + (shuffledBySize[size]?.length || 0);
+            }, 0);
+            
+            if (totalPuzzles === 0) {
+                return;
+            }
+            
+            // Generate sequence following the configured pattern
+            let cycleCount = 0;
+            let puzzlesAdded = 0;
+            
+            // Continue until we've used all available puzzles
+            while (puzzlesAdded < totalPuzzles) {
+                const sequencePosition = cycleCount % PUZZLE_SEQUENCE.length;
+                const requiredSize = PUZZLE_SEQUENCE[sequencePosition];
+                
+                // Check if we have puzzles of the required size
+                if (shuffledBySize[requiredSize] && 
+                    indexesBySize[requiredSize] < shuffledBySize[requiredSize].length) {
+                    
+                    // Add puzzle of required size
+                    const puzzle = shuffledBySize[requiredSize][indexesBySize[requiredSize]];
+                    sessionPuzzleOrder.push(puzzle);
+                    indexesBySize[requiredSize]++;
+                    puzzlesAdded++;
+                    
+                } else {
+                    // Required size exhausted, try to find any available puzzle
+                    let foundAlternative = false;
+                    
+                    for (const size of uniqueSizes) {
+                        if (shuffledBySize[size] && 
+                            indexesBySize[size] < shuffledBySize[size].length) {
+                            
+                            const puzzle = shuffledBySize[size][indexesBySize[size]];
+                            sessionPuzzleOrder.push(puzzle);
+                            indexesBySize[size]++;
+                            puzzlesAdded++;
+                            foundAlternative = true;
+                            break;
+                        }
+                    }
+                    
+                    if (!foundAlternative) {
+                        // Should not happen, but safety check
+                        break;
+                    }
+                }
+                
+                cycleCount++;
+            }
+            
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function getCurrentPuzzleFile() {
+            // Reset index if it's beyond available puzzles
+            if (currentPuzzleIndex >= sessionPuzzleOrder.length) {
+                resetPuzzleIndex();
+            }
+            
+            return sessionPuzzleOrder[currentPuzzleIndex];
+        }
+
+        async function loadNextPuzzle() {
+            await detectAvailablePuzzles();
+            
+            
+            // Find next unplayed puzzle
+            let nextIndex = currentPuzzleIndex + 1;
+            while (nextIndex < sessionPuzzleOrder.length && completedPuzzles.has(sessionPuzzleOrder[nextIndex])) {
+                nextIndex++;
+            }
+            
+            
+            if (nextIndex >= sessionPuzzleOrder.length) {
+                // All puzzles completed
+                showFinalStats();
+                return;
+            }
+            
+            currentPuzzleIndex = nextIndex;
+            actualCurrentPuzzleIndex = nextIndex; // Update actual current puzzle when advancing
+            const puzzleFile = sessionPuzzleOrder[currentPuzzleIndex];
+            
+            // Load new puzzle
+            loadPuzzleFromFile(puzzleFile);
+        }
+
+        // Embedded puzzle data for local testing (copied from actual files)
+        const embeddedPuzzles = {
+            '5_00.json': {
+                "size": 5,
+                "grid": [
+                    ["T", "H", "A", "I", "S"],
+                    [".", "O", ".", "N", "."],
+                    ["B", "R", "I", "C", "K"],
+                    ["I", "D", "A", "H", "O"],
+                    ["G", "E", "M", ".", "I"]
+                ],
+                "words": [
+                    {
+                        "word": "THAIS",
+                        "clue": "People behind orange iced-tea",
+                        "row": 0,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 1,
+                        "display": "1-Across",
+						"related": []
+                    },
+                    {
+                        "word": "BRICK",
+                        "clue": "When update foundations go wrong",
+                        "row": 2,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 4,
+                        "display": "4-Across",
+						"related": []
+                    },
+                    {
+                        "word": "IDAHO",
+                        "clue": "8 across on the US map",
+                        "row": 3,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 7,
+                        "display": "7-Across",
+						"related": ["8A"]
+                    },
+                    {
+                        "word": "GEM",
+                        "clue": "An opal, or a rare find",
+                        "row": 4,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 8,
+                        "display": "8-Across",
+						"related": []
+                    },
+                    {
+                        "word": "BIG",
+                        "clue": "What 8-down isn't",
+                        "row": 2,
+                        "col": 0,
+                        "direction": "down",
+                        "number": 4,
+                        "display": "4-Down",
+						"related": ["3D"]
+                    },
+                    {
+                        "word": "HORDE",
+                        "clue": "Mob that sounds like stash",
+                        "row": 0,
+                        "col": 1,
+                        "direction": "down",
+                        "number": 2,
+                        "display": "2-Down",
+						"related": []
+                    },
+                    {
+                        "word": "IAM",
+                        "clue": "Descartes's conclusion",
+                        "row": 2,
+                        "col": 2,
+                        "direction": "down",
+                        "number": 5,
+                        "display": "5-Down",
+						"related": []
+                    },
+                    {
+                        "word": "INCH",
+                        "clue": "Scale of imperial progression",
+                        "row": 0,
+                        "col": 3,
+                        "direction": "down",
+                        "number": 3,
+                        "display": "3-Down",
+						"related": []
+                    },
+                    {
+                        "word": "KOI",
+                        "clue": "Carp that ate and served",
+                        "row": 2,
+                        "col": 4,
+                        "direction": "down",
+                        "number": 6,
+                        "display": "6-Down",
+						"related": []
+                    }
+                ]
+            },
+            '5_01.json': {
+                "size": 5,
+                "grid": [
+                    ["T", "H", "A", "I", "S"],
+                    [".", "O", ".", "N", "."],
+                    ["B", "R", "I", "C", "K"],
+                    ["I", "D", "A", "H", "O"],
+                    ["G", "E", "M", ".", "I"]
+                ],
+                "words": [
+                    {
+                        "word": "THAIS",
+                        "clue": "People behind orange iced-tea",
+                        "row": 0,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 1,
+                        "display": "1-Across",
+						"related": []
+                    },
+                    {
+                        "word": "BRICK",
+                        "clue": "When update foundations go wrong",
+                        "row": 2,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 4,
+                        "display": "4-Across",
+						"related": []
+                    },
+                    {
+                        "word": "IDAHO",
+                        "clue": "8-across on the US map",
+                        "row": 3,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 7,
+                        "display": "7-Across",
+						"related": ["8A"]
+                    },
+                    {
+                        "word": "GEM",
+                        "clue": "An opal, or a rare find",
+                        "row": 4,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 8,
+                        "display": "8-Across",
+						"related": []
+                    },
+                    {
+                        "word": "BIG",
+                        "clue": "What 3-down isn't",
+                        "row": 2,
+                        "col": 0,
+                        "direction": "down",
+                        "number": 4,
+                        "display": "4-Down",
+						"related": ["3D"]
+                    },
+                    {
+                        "word": "HORDE",
+                        "clue": "Mob that sounds like stash",
+                        "row": 0,
+                        "col": 1,
+                        "direction": "down",
+                        "number": 2,
+                        "display": "2-Down",
+						"related": []
+                    },
+                    {
+                        "word": "IAM",
+                        "clue": "Descartes's conclusion",
+                        "row": 2,
+                        "col": 2,
+                        "direction": "down",
+                        "number": 5,
+                        "display": "5-Down",
+						"related": []
+                    },
+                    {
+                        "word": "INCH",
+                        "clue": "Scale of imperial progression",
+                        "row": 0,
+                        "col": 3,
+                        "direction": "down",
+                        "number": 3,
+                        "display": "3-Down",
+						"related": []
+                    },
+                    {
+                        "word": "KOI",
+                        "clue": "Carp that ate and served",
+                        "row": 2,
+                        "col": 4,
+                        "direction": "down",
+                        "number": 6,
+                        "display": "6-Down",
+						"related": []
+                    }
+                ]
+            },
+            '8_00.json': {
+                "size": 8,
+                "grid": [
+                    ["S", "C", "R", "A", "B", "B", "L", "E"],
+                    ["A", ".", "E", "D", "A", ".", ".", "C"],
+                    ["H", ".", "C", "A", "L", "I", "C", "O"],
+                    ["A", "B", "U", ".", ".", "N", "O", "N"],
+                    ["D", "O", "R", ".", ".", "P", "R", "O"],
+                    ["E", "A", "S", "E", "L", "S", ".", "M"],
+                    ["V", ".", ".", "A", "B", "S", ".", "I"],
+                    ["A", "C", "O", "U", "S", "T", "I", "C"]
+                ],
+                "words": [
+                    {
+                        "word": "SCRABBLE",
+                        "clue": "Where qi comes in handy",
+                        "row": 0,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 1,
+                        "display": "1-Across",
+						"related": []
+                    },
+                    {
+                        "word": "EDA",
+                        "clue": "Name that's big in Turkey, bigger in data",
+                        "row": 1,
+                        "col": 2,
+                        "direction": "across",
+                        "number": 6,
+                        "display": "6-Across",
+						"related": []
+                    },
+                    {
+                        "word": "CALICO",
+                        "clue": "Haju's heritage of hues",
+                        "row": 2,
+                        "col": 2,
+                        "direction": "across",
+                        "number": 7,
+                        "display": "7-Across",
+						"related": []
+                    },
+                    {
+                        "word": "ABU",
+                        "clue": "UAE capital starter",
+                        "row": 3,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 10,
+                        "display": "10-Across",
+						"related": []
+                    },
+                    {
+                        "word": "NON",
+                        "clue": "Italian refusal",
+                        "row": 3,
+                        "col": 5,
+                        "direction": "across",
+                        "number": 12,
+                        "display": "12-Across",
+						"related": []
+                    },
+                    {
+                        "word": "DOR",
+                        "clue": "British burrowing beetle",
+                        "row": 4,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 13,
+                        "display": "13-Across",
+						"related": []
+                    },
+                    {
+                        "word": "PRO",
+                        "clue": "One who's in favor (and probably better at it)",
+                        "row": 4,
+                        "col": 5,
+                        "direction": "across",
+                        "number": 14,
+                        "display": "14-Across",
+						"related": []
+                    },
+                    {
+                        "word": "EASELS",
+                        "clue": "Stands for art",
+                        "row": 5,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 15,
+                        "display": "15-Across",
+						"related": []
+                    },
+                    {
+                        "word": "ABS",
+                        "clue": "Core focus at gym",
+                        "row": 6,
+                        "col": 3,
+                        "direction": "across",
+                        "number": 18,
+                        "display": "18-Across",
+						"related": []
+                    },
+                    {
+                        "word": "ACOUSTIC",
+                        "clue": "No-current music",
+                        "row": 7,
+                        "col": 0,
+                        "direction": "across",
+                        "number": 19,
+                        "display": "19-Across",
+						"related": []
+                    },
+                    {
+                        "word": "SAHADEVA",
+                        "clue": "Nakula's typographic twin",
+                        "row": 0,
+                        "col": 0,
+                        "direction": "down",
+                        "number": 1,
+                        "display": "1-Down",
+						"related": []
+                    },
+                    {
+                        "word": "BOA",
+                        "clue": "Neck wrap, reptilian or feathery",
+                        "row": 3,
+                        "col": 1,
+                        "direction": "down",
+                        "number": 11,
+                        "display": "11-Down",
+						"related": []
+                    },
+                    {
+                        "word": "RECURS",
+                        "clue": "Over / and over",
+                        "row": 0,
+                        "col": 2,
+                        "direction": "down",
+                        "number": 2,
+                        "display": "2-Down",
+						"related": []
+                    },
+                    {
+                        "word": "ADA",
+                        "clue": "First name in programming history",
+                        "row": 0,
+                        "col": 3,
+                        "direction": "down",
+                        "number": 3,
+                        "display": "3-Down",
+						"related": []
+                    },
+                    {
+                        "word": "EAU",
+                        "clue": "A Parisians idea of rehydration",
+                        "row": 5,
+                        "col": 3,
+                        "direction": "down",
+                        "number": 16,
+                        "display": "16-Down",
+						"related": []
+                    },
+                    {
+                        "word": "BAL",
+                        "clue": "Upper-level seat, for short",
+                        "row": 0,
+                        "col": 4,
+                        "direction": "down",
+                        "number": 4,
+                        "display": "4-Down",
+						"related": []
+                    },
+                    {
+                        "word": "LBS",
+                        "clue": "What you gain after the Fourth, briefly",
+                        "row": 5,
+                        "col": 4,
+                        "direction": "down",
+                        "number": 17,
+                        "display": "17-Down",
+						"related": []
+                    },
+                    {
+                        "word": "INPSST",
+                        "clue": "Soft spot for a double S",
+                        "row": 2,
+                        "col": 5,
+                        "direction": "down",
+                        "number": 8,
+                        "display": "8-Down",
+						"related": []
+                    },
+                    {
+                        "word": "COR",
+                        "clue": "Where \"heart\" began",
+                        "row": 2,
+                        "col": 6,
+                        "direction": "down",
+                        "number": 9,
+                        "display": "9-Down",
+						"related": []
+                    },
+                    {
+                        "word": "ECONOMIC",
+                        "clue": "A state Jaden Smith is concerned about",
+                        "row": 0,
+                        "col": 7,
+                        "direction": "down",
+                        "number": 5,
+                        "display": "5-Down",
+						"related": []
+                    }
+                ]
+            }
+        };
+
+        async function loadPuzzleFromFile(filename) {
+            try {
+                // First try embedded data for local testing
+                if (embeddedPuzzles[filename]) {
+                    crosswordData = embeddedPuzzles[filename];
+                } else {
+                    // Try to fetch from file
+                    const response = await fetch(`crosswords/${filename}`);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${filename}`);
+                    }
+                    crosswordData = await response.json();
+                }
+                
+                // Reset grid for new puzzle
+                userGrid = Array(crosswordData.size).fill(null).map(() => 
+                    Array(crosswordData.size).fill('')
+                );
+                
+                // Clear and recreate UI
+                document.getElementById('game-content').innerHTML = '';
+                createGameInterface();
+                
+                // Start timing this puzzle
+                puzzleStartTime = Date.now();
+                
+                saveGameState();
+            } catch (error) {
+                // Fall back to first embedded puzzle if all else fails
+                if (embeddedPuzzles['5_00.json']) {
+                    crosswordData = embeddedPuzzles['5_00.json'];
+                    createGameInterface();
+                    puzzleStartTime = Date.now();
+                    saveGameState();
+                }
+            }
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function calculatePuzzleStats(puzzleTime, puzzleSize) {
+            const stats = {
+                time: puzzleTime,
+                size: puzzleSize,
+                completed: Date.now()
+            };
+            
+            puzzleStats.push(stats);
+            
+            // Update session stats
+            sessionStats.puzzlesCompleted++;
+            sessionStats.totalTime += puzzleTime;
+            sessionStats.averageTime = sessionStats.totalTime / sessionStats.puzzlesCompleted;
+            sessionStats.shortestTime = Math.min(sessionStats.shortestTime, puzzleTime);
+            sessionStats.longestTime = Math.max(sessionStats.longestTime, puzzleTime);
+            
+            return stats;
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function showFinalStats() {
+            const randomMessage = correctMessages[Math.floor(Math.random() * correctMessages.length)];
+            
+            // Mark session as complete
+            localStorage.setItem('sessionComplete', 'true');
+            
+            // Hide pause button since all puzzles are completed
+            const pauseBtn = document.querySelector('.pause-btn');
+            if (pauseBtn) {
+                pauseBtn.style.visibility = 'hidden';
+            }
+            
+            document.getElementById('popup-title').textContent = "Session Complete!";
+            
+            // Create content with stats below subtitle
+            const subtitleElement = document.getElementById('popup-subtitle');
+            subtitleElement.innerHTML = `
+                Amazing work! Here are your stats:
+                <div class="stats-table" style="margin-top: 30px;">
+                    <div class="stats-row">
+                        <span class="stats-label">Puzzles Completed</span>
+                        <span class="stats-value">${sessionStats.puzzlesCompleted}</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Total Time</span>
+                        <span class="stats-value">${formatTime(Math.floor(sessionStats.totalTime / 1000))}</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Average Time</span>
+                        <span class="stats-value">${formatTime(Math.floor(sessionStats.averageTime / 1000))}</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Shortest Puzzle</span>
+                        <span class="stats-value">${formatTime(Math.floor(sessionStats.shortestTime / 1000))}</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Longest Puzzle</span>
+                        <span class="stats-value">${formatTime(Math.floor(sessionStats.longestTime / 1000))}</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Accuracy</span>
+                        <span class="stats-value">${sessionStats.accuracy.toFixed(1)}%</span>
+                    </div>
+                </div>
+            `;
+            
+            // Set button at bottom
+            const buttonsContainer = document.getElementById('popup-buttons');
+            buttonsContainer.innerHTML = `<button class="popup-button" onclick="startNewSession()">Play Again</button>`;
+            
+            document.getElementById('popup-overlay').classList.add('show');
+        }
+
+        async function startNewSession() {
+            // Only clear data if session was complete (user won)
+            const sessionWasComplete = localStorage.getItem('sessionComplete') === 'true';
+            
+            if (sessionWasComplete) {
+                // Clear ALL saved data from localStorage
+                clearGameStorage();
+                
+                // Reset all game variables
+                resetPuzzleIndex();
+                actualCurrentPuzzleIndex = 0;
+                completedPuzzles.clear();
+                puzzleStats = [];
+                sessionStats = {
+                    puzzlesCompleted: 0,
+                    totalTime: 0,
+                    averageTime: 0,
+                    shortestTime: Infinity,
+                    longestTime: 0,
+                    accuracy: 100,
+                    totalMistakes: 0
+                };
+                
+                // Reset timer and pause state
+                timeLeft = 300;
+                isPaused = false;
+                if (timerInterval) clearInterval(timerInterval);
+                
+                // Reset puzzle variables
+                puzzlesBySize = {};
+                sessionPuzzleOrder = [];
+                userGrid = [];
+                currentWord = null;
+                selectedCell = null;
+                puzzleStartTime = null;
+                
+                // Re-detect puzzles and generate new randomized order
+                await detectAvailablePuzzles();
+            } else {
+                // Session was not complete, just close popup and continue current session
+                localStorage.removeItem('sessionComplete'); // Clean up flag if it exists
+            }
+            
+            closePopup();
+            loadPuzzleFromFile(getCurrentPuzzleFile());
+        }
+
+        // Popup functions
+        function showPopup(type) {
+            let messages;
+            let buttonText = "Continue";
+            
+            switch (type) {
+                case 'pause':
+                    messages = pauseMessages;
+                    buttonText = "Resume";
+                    break;
+                case 'incorrect':
+                    messages = incorrectMessages;
+                    buttonText = "Keep Trying";
+                    break;
+                case 'correct':
+                    messages = correctMessages;
+                    buttonText = "Continue";
+                    break;
+                case 'revealed':
+                    messages = revealedMessages;
+                    buttonText = "Continue";
+                    break;
+                case 'restart':
+                    messages = restartMessages;
+                    buttonText = "Restart";
+                    break;
+                default:
+                    return;
+            }
+            
+            // Select random message
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Update popup content
+            document.getElementById('popup-title').textContent = randomMessage.title;
+            document.getElementById('popup-subtitle').textContent = randomMessage.subtitle;
+            
+            // Handle button configuration
+            const buttonsContainer = document.getElementById('popup-buttons');
+            
+            if (type === 'correct') {
+                // Two buttons for correct completion
+                buttonsContainer.innerHTML = `
+                    <button class="popup-button secondary" onclick="continueToNextPuzzle()">${buttonText}</button>
+                    <button class="popup-button" onclick="admirePuzzle()">Admire Your Puzzle</button>
+                `;
+            } else if (type === 'restart') {
+                // Two buttons for restart confirmation
+                buttonsContainer.innerHTML = `
+                    <button class="popup-button secondary" onclick="closePopup()">Cancel</button>
+                    <button class="popup-button" onclick="confirmRestart()">Restart</button>
+                `;
+            } else {
+                // Single button for other cases
+                buttonsContainer.innerHTML = `
+                    <button class="popup-button" onclick="closePopup()">${buttonText}</button>
+                `;
+            }
+            
+            // Always pause timer when showing any popup (except if manually paused)
+            if (!isPaused || isManuallyPaused) {
+                isPaused = true;
+                isManuallyPaused = false; // This is an automatic pause
+                if (timerInterval) clearInterval(timerInterval);
+                const pauseBtn = document.querySelector('.pause-btn');
+                if (pauseBtn) {
+                    pauseBtn.textContent = '▶';
+                }
+                updatePuzzleViewState(); // Hide pause button since it's automatically paused
+            }
+            
+            // Show popup
+            document.getElementById('popup-overlay').classList.add('show');
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').classList.remove('show');
+            
+            // If we were paused and this is a resume action, unpause the game
+            if (isPaused) {
+                isPaused = false;
+                isViewingCompletedPuzzle = false; // Reset completed puzzle viewing state
+                const pauseBtn = document.querySelector('.pause-btn');
+                if (pauseBtn) {
+                    pauseBtn.textContent = '⏸';
+                }
+                updateClueVisibility(); // Show clues when resuming
+                updatePuzzleViewState(); // Update pause button and input state
+                saveGameState();
+            }
+        }
+
+        function showSessionInProgressPopup() {
+            document.getElementById('popup-title').textContent = "Session In Progress";
+            document.getElementById('popup-subtitle').textContent = "You have an ongoing puzzle session. Your progress has been saved.";
+            
+            const buttonsContainer = document.getElementById('popup-buttons');
+            buttonsContainer.innerHTML = `<button class="popup-button" onclick="continueSession()">Continue</button>`;
+            
+            document.getElementById('popup-overlay').classList.add('show');
+        }
+
+        function continueSession() {
+            closePopup();
+            isPaused = false;
+            isViewingCompletedPuzzle = false;
+            startTimer();
+            updateClueVisibility(); // Show clues when resuming
+            updatePuzzleViewState(); // Update pause button and input state
+        }
+
+        async function continueToNextPuzzle() {
+            closePopup();
+            await loadNextPuzzle();
+            
+            // Show bonus toast if there's a pending bonus
+            const pendingBonus = localStorage.getItem('pendingBonus');
+            if (pendingBonus) {
+                showToast(pendingBonus);
+                localStorage.removeItem('pendingBonus');
+            }
+            
+            // Resume timer for next puzzle
+            isPaused = false;
+            startTimer();
+        }
+
+        function admirePuzzle() {
+            closePopup();
+            
+            // Mark puzzle as completed if not already marked
+            const currentFile = getCurrentPuzzleFile();
+            if (!completedPuzzles.has(currentFile)) {
+                completedPuzzles.add(currentFile);
+                // Calculate puzzle completion stats
+                const puzzleTime = Date.now() - puzzleStartTime;
+                const puzzleSize = crosswordData.size;
+                calculatePuzzleStats(puzzleTime, puzzleSize);
+            }
+            
+            // Pause the timer to allow admiring the completed puzzle
+            isPaused = true;
+            isViewingCompletedPuzzle = true;
+            if (timerInterval) clearInterval(timerInterval);
+            const pauseBtn = document.querySelector('.pause-btn');
+            if (pauseBtn) {
+                pauseBtn.textContent = '▶';
+            }
+            updateClueVisibility(); // This will keep clues visible due to isViewingCompletedPuzzle flag
+            updatePuzzleViewState(); // Hide pause button and make inputs read-only
+            updateNavigationButtons(); // Update button states after marking as completed
+            saveGameState();
+        }
+
+        function goToPreviousPuzzle() {
+            if (currentPuzzleIndex > 0) {
+                currentPuzzleIndex--;
+                const previousFile = sessionPuzzleOrder[currentPuzzleIndex];
+                
+                // Check if the previous puzzle is completed
+                const isPreviousCompleted = completedPuzzles.has(previousFile);
+                
+                if (isPreviousCompleted) {
+                    // Previous puzzle is completed - pause timer when navigating to it
+                    isPaused = true;
+                    isViewingCompletedPuzzle = true;
+                    if (timerInterval) clearInterval(timerInterval);
+                } else {
+                    // Previous puzzle is not completed - start timer for it
+                    isPaused = false;
+                    isViewingCompletedPuzzle = false;
+                    puzzleStartTime = Date.now(); // Reset start time for puzzle
+                }
+                
+                loadPuzzleFromFile(previousFile);
+                
+                // Fill in all answers when going to a previous puzzle
+                setTimeout(() => {
+                    for (let word of crosswordData.words) {
+                        for (let i = 0; i < word.word.length; i++) {
+                            let row, col;
+                            if (word.direction === 'across') {
+                                row = word.row;
+                                col = word.col + i;
+                            } else {
+                                row = word.row + i;
+                                col = word.col;
+                            }
+                            
+                            const correctLetter = word.word[i];
+                            userGrid[row][col] = correctLetter;
+                            const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                            if (inputElement) {
+                                inputElement.value = correctLetter;
+                            }
+                        }
+                    }
+                }, 100); // Small delay to ensure DOM is ready
+                
+                updateNavigationButtons();
+                updateClueVisibility(); // Update clue visibility based on completed state
+                updatePuzzleViewState(); // Update pause button and input state
+                saveGameState();
+                
+                // Start timer if moving to uncompleted puzzle
+                if (!isPreviousCompleted) {
+                    startTimer();
+                }
+            }
+        }
+
+        function goToNextPuzzle() {
+            // Only allow if current puzzle is completed
+            const currentFile = getCurrentPuzzleFile();
+            if (completedPuzzles.has(currentFile) && currentPuzzleIndex < sessionPuzzleOrder.length - 1) {
+                currentPuzzleIndex++;
+                const nextFile = sessionPuzzleOrder[currentPuzzleIndex];
+                
+                // Check if the next puzzle is already completed
+                const isNextCompleted = completedPuzzles.has(nextFile);
+                
+                if (isNextCompleted) {
+                    // Next puzzle is completed - pause timer when navigating to it
+                    isPaused = true;
+                    isViewingCompletedPuzzle = true;
+                    if (timerInterval) clearInterval(timerInterval);
+                } else {
+                    // Next puzzle is not completed - start timer for it
+                    isPaused = false;
+                    isViewingCompletedPuzzle = false;
+                    puzzleStartTime = Date.now(); // Reset start time for new puzzle
+                }
+                
+                loadPuzzleFromFile(nextFile);
+                updateNavigationButtons();
+                updateClueVisibility(); // Update clue visibility based on completed state
+                updatePuzzleViewState(); // Update pause button and input state
+                saveGameState();
+                
+                // Start timer if moving to uncompleted puzzle
+                if (!isNextCompleted) {
+                    startTimer();
+                }
+            }
+        }
+
+        function restartGame() {
+            showPopup('restart');
+        }
+        
+        function confirmRestart() {
+            closePopup();
+            
+            // Clear ALL saved data
+            clearGameStorage();
+            
+            // Reset all variables to initial state
+            resetPuzzleIndex();
+            actualCurrentPuzzleIndex = 0;
+            completedPuzzles.clear();
+            puzzleStats = [];
+            sessionStats = {
+                puzzlesCompleted: 0,
+                totalTime: 0,
+                averageTime: 0,
+                shortestTime: Infinity,
+                longestTime: 0,
+                accuracy: 100,
+                totalMistakes: 0
+            };
+            timeLeft = 300;
+            isPaused = false;
+            if (timerInterval) clearInterval(timerInterval);
+            puzzlesBySize = {};
+            sessionPuzzleOrder = [];
+            userGrid = [];
+            currentWord = null;
+            selectedCell = null;
+            puzzleStartTime = null;
+            
+            // Reload the page to start fresh
+            location.reload();
+        }
+
+        function updateNavigationButtons() {
+            const nextBtn = document.getElementById('next-btn');
+            const previousBtn = document.getElementById('previous-btn');
+            
+            if (nextBtn && previousBtn) {
+                // Previous button: disabled if at first puzzle
+                previousBtn.disabled = currentPuzzleIndex === 0;
+                
+                // Next button: disabled if current puzzle not completed or at last puzzle
+                const currentFile = getCurrentPuzzleFile();
+                const isCurrentCompleted = completedPuzzles.has(currentFile);
+                const isLastPuzzle = currentPuzzleIndex >= sessionPuzzleOrder.length - 1;
+                const shouldDisableNext = !isCurrentCompleted || isLastPuzzle;
+                
+                
+                nextBtn.disabled = shouldDisableNext;
+                
+            }
+        }
+
+        function startCooldown() {
+            // Set cooldown end time (1 hour from now)
+            cooldownEnd = new Date().getTime() + (60 * 60 * 1000); // 1 hour in milliseconds
+            saveGameState();
+            showCooldownPopup();
+        }
+
+        function showCooldownPopup() {
+            // Select random cooldown message
+            const randomMessage = cooldownMessages[Math.floor(Math.random() * cooldownMessages.length)];
+            
+            // Update popup content
+            document.getElementById('popup-title').textContent = randomMessage.title;
+            document.getElementById('popup-subtitle').textContent = randomMessage.subtitle;
+            
+            // Add cooldown class and timer
+            const popup = document.querySelector('.popup');
+            const buttonsContainer = document.getElementById('popup-buttons');
+            
+            popup.classList.add('cooldown');
+            buttonsContainer.innerHTML = `<div class="cooldown-timer" id="cooldown-timer">60:00</div>`;
+            
+            // Show popup
+            document.getElementById('popup-overlay').classList.add('show');
+            
+            // Start cooldown timer
+            updateCooldownTimer();
+            cooldownInterval = setInterval(updateCooldownTimer, 1000);
+        }
+
+        function updateCooldownTimer() {
+            const now = new Date().getTime();
+            const timeRemaining = cooldownEnd - now;
+            
+            if (timeRemaining <= 0) {
+                // Cooldown finished
+                clearInterval(cooldownInterval);
+                cooldownEnd = null;
+                saveGameState();
+                
+                // Reset popup to normal state
+                const popup = document.querySelector('.popup');
+                popup.classList.remove('cooldown');
+                closePopup();
+                
+                return;
+            }
+            
+            // Convert to MM:SS format
+            const minutes = Math.floor(timeRemaining / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            const timerElement = document.getElementById('cooldown-timer');
+            if (timerElement) {
+                timerElement.textContent = display;
+            }
+        }
+
+        function playAgain() {
+            // Clear the saved game state
+            localStorage.removeItem('crosswordGameState');
+            
+            // Reset the game
+            timeLeft = 300;
+            isPaused = false;
+            cooldownEnd = null;
+            
+            // Clear any running intervals
+            if (timerInterval) clearInterval(timerInterval);
+            if (cooldownInterval) clearInterval(cooldownInterval);
+            
+            // Clear the grid
+            userGrid = Array(crosswordData.size).fill(null).map(() => 
+                Array(crosswordData.size).fill('')
+            );
+            
+            // Clear all input fields
+            document.querySelectorAll('.cell-input').forEach(input => {
+                input.value = '';
+            });
+            
+            // Reset timer and start
+            updateTimerDisplay();
+            startTimer();
+            
+            // Reset pause button
+            const pauseBtn = document.querySelector('.pause-btn');
+            pauseBtn.textContent = '⏸';
+            
+            // Set initial state
+            setCurrentWord(crosswordData.words[0]);
+            
+            // Reset popup to normal state
+            const popup = document.querySelector('.popup');
+            popup.classList.remove('cooldown');
+            
+            // Close popup
+            closePopup();
+        }
+
+        // Load crossword data based on selected file
+        function loadCrosswordData() {
+            // Crossword data based on selected file
+            const crosswordFiles = {
+                '5_00.json': {
+                    "size": 5,
+                    "grid": [
+                        ["T", "H", "A", "I", "S"],
+                        [".", "O", ".", "N", "."],
+                        ["B", "R", "I", "C", "K"],
+                        ["I", "D", "A", "H", "O"],
+                        ["G", "E", "M", ".", "I"]
+                    ],
+                    "words": [
+                        {
+                            "word": "THAIS",
+                            "clue": "People behind orange iced-tea",
+                            "row": 0,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 1,
+                            "display": "1-Across",
+						"related": []
+                        },
+                        {
+                            "word": "BRICK",
+                            "clue": "When update foundations go wrong",
+                            "row": 2,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 4,
+                            "display": "4-Across",
+						"related": []
+                        },
+                        {
+                            "word": "IDAHO",
+                            "clue": "8 across on the US map",
+                            "row": 3,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 7,
+                            "display": "7-Across",
+						"related": []
+                        },
+                        {
+                            "word": "GEM",
+                            "clue": "An opal, or a rare find",
+                            "row": 4,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 8,
+                            "display": "8-Across",
+						"related": []
+                        },
+                        {
+                            "word": "BIG",
+                            "clue": "What 8-down isn't",
+                            "row": 2,
+                            "col": 0,
+                            "direction": "down",
+                            "number": 4,
+                            "display": "4-Down",
+						"related": []
+                        },
+                        {
+                            "word": "HORDE",
+                            "clue": "Mob that sounds like stash",
+                            "row": 0,
+                            "col": 1,
+                            "direction": "down",
+                            "number": 2,
+                            "display": "2-Down",
+						"related": []
+                        },
+                        {
+                            "word": "IAM",
+                            "clue": "Descartes's conclusion",
+                            "row": 2,
+                            "col": 2,
+                            "direction": "down",
+                            "number": 5,
+                            "display": "5-Down",
+						"related": []
+                        },
+                        {
+                            "word": "INCH",
+                            "clue": "Scale of imperial progression",
+                            "row": 0,
+                            "col": 3,
+                            "direction": "down",
+                            "number": 3,
+                            "display": "3-Down",
+						"related": []
+                        },
+                        {
+                            "word": "KOI",
+                            "clue": "Carp that ate and served",
+                            "row": 2,
+                            "col": 4,
+                            "direction": "down",
+                            "number": 6,
+                            "display": "6-Down",
+						"related": []
+                        }
+                    ]
+                },
+                '8_00.json': {
+                    "size": 8,
+                    "grid": [
+                        ["S", "C", "R", "A", "B", "B", "L", "E"],
+                        ["A", ".", "E", "D", "A", ".", ".", "C"],
+                        ["H", ".", "C", "A", "L", "I", "C", "O"],
+                        ["A", "B", "U", ".", ".", "N", "O", "N"],
+                        ["D", "O", "R", ".", ".", "P", "R", "O"],
+                        ["E", "A", "S", "E", "L", "S", ".", "M"],
+                        ["V", ".", ".", "A", "B", "S", ".", "I"],
+                        ["A", "C", "O", "U", "S", "T", "I", "C"]
+                    ],
+                    "words": [
+                        {
+                            "word": "SCRABBLE",
+                            "clue": "Where qi comes in handy",
+                            "row": 0,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 1,
+                            "display": "1-Across",
+						"related": []
+                        },
+                        {
+                            "word": "EDA",
+                            "clue": "Name that's big in Turkey, bigger in data",
+                            "row": 1,
+                            "col": 2,
+                            "direction": "across",
+                            "number": 6,
+                            "display": "6-Across",
+						"related": []
+                        },
+                        {
+                            "word": "CALICO",
+                            "clue": "Haju's heritage of hues",
+                            "row": 2,
+                            "col": 2,
+                            "direction": "across",
+                            "number": 7,
+                            "display": "7-Across",
+						"related": []
+                        },
+                        {
+                            "word": "ABU",
+                            "clue": "UAE capital starter",
+                            "row": 3,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 10,
+                            "display": "10-Across",
+						"related": []
+                        },
+                        {
+                            "word": "NON",
+                            "clue": "Italian refusal",
+                            "row": 3,
+                            "col": 5,
+                            "direction": "across",
+                            "number": 12,
+                            "display": "12-Across",
+						"related": []
+                        },
+                        {
+                            "word": "DOR",
+                            "clue": "British burrowing beetle",
+                            "row": 4,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 13,
+                            "display": "13-Across",
+						"related": []
+                        },
+                        {
+                            "word": "PRO",
+                            "clue": "One who's in favor (and probably better at it)",
+                            "row": 4,
+                            "col": 5,
+                            "direction": "across",
+                            "number": 14,
+                            "display": "14-Across",
+						"related": []
+                        },
+                        {
+                            "word": "EASELS",
+                            "clue": "Stands for art",
+                            "row": 5,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 15,
+                            "display": "15-Across",
+						"related": []
+                        },
+                        {
+                            "word": "ABS",
+                            "clue": "Core focus at gym",
+                            "row": 6,
+                            "col": 3,
+                            "direction": "across",
+                            "number": 18,
+                            "display": "18-Across",
+						"related": []
+                        },
+                        {
+                            "word": "ACOUSTIC",
+                            "clue": "No-current music",
+                            "row": 7,
+                            "col": 0,
+                            "direction": "across",
+                            "number": 19,
+                            "display": "19-Across",
+						"related": []
+                        },
+                        {
+                            "word": "SAHADEVA",
+                            "clue": "Nakula's typographic twin",
+                            "row": 0,
+                            "col": 0,
+                            "direction": "down",
+                            "number": 1,
+                            "display": "1-Down",
+						"related": []
+                        },
+                        {
+                            "word": "BOA",
+                            "clue": "Neck wrap, reptilian or feathery",
+                            "row": 3,
+                            "col": 1,
+                            "direction": "down",
+                            "number": 11,
+                            "display": "11-Down",
+						"related": []
+                        },
+                        {
+                            "word": "RECURS",
+                            "clue": "Over / and over",
+                            "row": 0,
+                            "col": 2,
+                            "direction": "down",
+                            "number": 2,
+                            "display": "2-Down",
+						"related": []
+                        },
+                        {
+                            "word": "ADA",
+                            "clue": "First name in programming history",
+                            "row": 0,
+                            "col": 3,
+                            "direction": "down",
+                            "number": 3,
+                            "display": "3-Down",
+						"related": []
+                        },
+                        {
+                            "word": "EAU",
+                            "clue": "A Parisians idea of rehydration",
+                            "row": 5,
+                            "col": 3,
+                            "direction": "down",
+                            "number": 16,
+                            "display": "16-Down",
+						"related": []
+                        },
+                        {
+                            "word": "BAL",
+                            "clue": "Upper-level seat, for short",
+                            "row": 0,
+                            "col": 4,
+                            "direction": "down",
+                            "number": 4,
+                            "display": "4-Down",
+						"related": []
+                        },
+                        {
+                            "word": "LBS",
+                            "clue": "What you gain after the Fourth, briefly",
+                            "row": 5,
+                            "col": 4,
+                            "direction": "down",
+                            "number": 17,
+                            "display": "17-Down",
+						"related": []
+                        },
+                        {
+                            "word": "INPSST",
+                            "clue": "Soft spot for a double S",
+                            "row": 2,
+                            "col": 5,
+                            "direction": "down",
+                            "number": 8,
+                            "display": "8-Down",
+						"related": []
+                        },
+                        {
+                            "word": "COR",
+                            "clue": "Where \"heart\" began",
+                            "row": 2,
+                            "col": 6,
+                            "direction": "down",
+                            "number": 9,
+                            "display": "9-Down",
+						"related": []
+                        },
+                        {
+                            "word": "ECONOMIC",
+                            "clue": "A state Jaden Smith is concerned about",
+                            "row": 0,
+                            "col": 7,
+                            "direction": "down",
+                            "number": 5,
+                            "display": "5-Down",
+						"related": []
+                        }
+                    ]
+                }
+            };
+
+            // Get the selected crossword data
+            crosswordData = crosswordFiles[CROSSWORD_FILE];
+            
+            if (crosswordData) {
+                // Initialize the crossword game
+                initializeCrossword();
+            }
+        }
+
+        // Create the game interface
+        function createGameInterface() {
+            // Create main content HTML
+            const gameContent = document.getElementById('game-content');
+            gameContent.innerHTML = `
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="controls-left">
+                        <button class="action-btn" id="restart-btn">Restart</button>
+                        <button class="action-btn" id="previous-btn">Previous</button>
+                        <button class="action-btn" id="next-btn">Next</button>
+                    </div>
+                    <div class="controls-center">
+                        <div class="timer-section">
+                            <div class="timer" id="timer">0:00</div>
+                            <button class="pause-btn">⏸</button>
+                        </div>
+                    </div>
+                    <div class="controls-right">
+                        <button class="action-btn" id="reveal-letter-btn">Reveal Letter</button>
+                        <button class="action-btn" id="reveal-word-btn">Reveal Word</button>
+                        <button class="action-btn" id="reveal-puzzle-btn">Reveal Puzzle</button>
+                    </div>
+                </div>
+
+                <!-- Main content -->
+                <div class="main-content">
+                    <!-- Crossword grid -->
+                    <div class="crossword-section">
+                        <div class="current-clue" id="current-clue">
+                            <span class="clue-label" id="clue-label">1-Across</span>
+                            <span class="clue-text" id="clue-text">Sample clue text</span>
+                        </div>
+                        <div class="crossword-grid" id="crossword-grid"></div>
+                    </div>
+
+                    <!-- Clues -->
+                    <div class="clues-section">
+                        <div class="clues-column">
+                            <h3 class="clues-title">Across</h3>
+                            <div class="clues-list" id="across-clues"></div>
+                        </div>
+                        <div class="clues-column">
+                            <h3 class="clues-title">Down</h3>
+                            <div class="clues-list" id="down-clues"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Initialize user grid
+            userGrid = Array(crosswordData.size).fill(null).map(() => 
+                Array(crosswordData.size).fill('')
+            );
+
+            // Create grid
+            createGrid();
+            
+            // Create clues
+            createClues();
+            
+            // Set initial state
+            setCurrentWord(crosswordData.words[0]);
+            
+            // Start timing this puzzle if not already started
+            if (!puzzleStartTime) {
+                puzzleStartTime = Date.now();
+            }
+            
+            // Initialize and start timer
+            updateTimerDisplay();
+            if (!isPaused && !isViewingCompletedPuzzle) {
+                startTimer();
+            }
+            
+            // Add pause button functionality
+            const pauseBtn = document.querySelector('.pause-btn');
+            pauseBtn.textContent = isPaused ? '▶' : '⏸';
+            pauseBtn.addEventListener('click', togglePause);
+            
+            // Set initial clue visibility based on pause state
+            updateClueVisibility();
+            
+            // Restore user input after DOM elements are created
+            restoreUserGrid();
+            
+            // Update navigation button states
+            updateNavigationButtons();
+            
+            // Update puzzle view state (pause button visibility and input editability)
+            // The isViewingCompletedPuzzle state is preserved from loadGameState()
+            updatePuzzleViewState();
+            
+            // Add resize listener to recalculate font sizes
+            window.addEventListener('resize', () => {
+                setTimeout(setDynamicFontSizes, 100);
+            });
+            
+            // Add event listeners for navigation buttons (must be after HTML is created)
+            const prevBtn = document.getElementById('previous-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const restartBtn = document.getElementById('restart-btn');
+            const revealLetterBtn = document.getElementById('reveal-letter-btn');
+            const revealWordBtn = document.getElementById('reveal-word-btn');
+            const revealPuzzleBtn = document.getElementById('reveal-puzzle-btn');
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    goToPreviousPuzzle();
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    goToNextPuzzle();
+                });
+            }
+            if (restartBtn) {
+                restartBtn.addEventListener('click', function() {
+                    restartGame();
+                });
+            }
+            if (revealLetterBtn) {
+                revealLetterBtn.addEventListener('click', revealLetter);
+            }
+            if (revealWordBtn) {
+                revealWordBtn.addEventListener('click', revealWord);
+            }
+            if (revealPuzzleBtn) {
+                revealPuzzleBtn.addEventListener('click', revealPuzzle);
+            }
+        }
+
+        // Initialize the crossword (legacy function for embedded data)
+        function initializeCrossword() {
+            createGameInterface();
+        }
+
+        // Create the crossword grid
+        function createGrid() {
+            const gridElement = document.getElementById('crossword-grid');
+            gridElement.style.gridTemplateColumns = `repeat(${crosswordData.size}, 1fr)`;
+            gridElement.style.gridTemplateRows = `repeat(${crosswordData.size}, 1fr)`;
+            
+            // Create number mapping for cells
+            const numberMap = {};
+            crosswordData.words.forEach(word => {
+                const key = `${word.row}-${word.col}`;
+                if (!numberMap[key] || numberMap[key] > word.number) {
+                    numberMap[key] = word.number;
+                }
+            });
+
+            for (let row = 0; row < crosswordData.size; row++) {
+                for (let col = 0; col < crosswordData.size; col++) {
+                    const cellContainer = document.createElement('div');
+                    cellContainer.className = 'grid-cell';
+                    cellContainer.dataset.row = row;
+                    cellContainer.dataset.col = col;
+                    
+                    // Check if cell is black
+                    if (crosswordData.grid[row][col] === '.') {
+                        cellContainer.className += ' black';
+                    } else {
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.maxLength = 1;
+                        input.className = 'cell-input';
+                        
+                        // Add cell number if this cell starts a word
+                        const key = `${row}-${col}`;
+                        if (numberMap[key]) {
+                            const numberSpan = document.createElement('span');
+                            numberSpan.className = 'cell-number';
+                            numberSpan.textContent = numberMap[key];
+                            cellContainer.appendChild(numberSpan);
+                        }
+                        
+                        cellContainer.appendChild(input);
+                        
+                        // Add event listeners
+                        cellContainer.addEventListener('click', () => selectCell(row, col));
+                        input.addEventListener('input', (e) => handleInput(e, row, col));
+                        input.addEventListener('keydown', (e) => handleKeydown(e, row, col));
+                    }
+                    
+                    gridElement.appendChild(cellContainer);
+                }
+            }
+            
+            // Set dynamic font sizes based on cell size
+            setDynamicFontSizes();
+        }
+        
+        // Set font sizes based on cell dimensions
+        function setDynamicFontSizes() {
+            // Get the actual cell size after the grid is rendered
+            const firstCell = document.querySelector('.grid-cell:not(.black)');
+            if (firstCell) {
+                const cellSize = firstCell.offsetWidth; // Get actual rendered width
+                
+                const numberFontSize = Math.round(cellSize / 3);
+                const letterFontSize = Math.round((2 * cellSize) / 3);
+                
+                // Apply font sizes to all cells
+                document.querySelectorAll('.cell-number').forEach(number => {
+                    number.style.fontSize = `${numberFontSize}px`;
+                });
+                
+                document.querySelectorAll('.cell-input').forEach(input => {
+                    input.style.fontSize = `${letterFontSize}px`;
+                });
+            }
+        }
+
+        // Create clues sections
+        function createClues() {
+            const acrossClues = document.getElementById('across-clues');
+            const downClues = document.getElementById('down-clues');
+            
+            const across = crosswordData.words.filter(w => w.direction === 'across');
+            const down = crosswordData.words.filter(w => w.direction === 'down');
+            
+            // Sort by number
+            across.sort((a, b) => a.number - b.number);
+            down.sort((a, b) => a.number - b.number);
+            
+            across.forEach(word => {
+                const clueDiv = document.createElement('div');
+                clueDiv.className = 'clue-item';
+                clueDiv.dataset.wordIndex = crosswordData.words.indexOf(word);
+                clueDiv.innerHTML = `<span class="clue-number">${word.number}</span>${word.clue}`;
+                clueDiv.addEventListener('click', () => setCurrentWord(word));
+                acrossClues.appendChild(clueDiv);
+            });
+            
+            down.forEach(word => {
+                const clueDiv = document.createElement('div');
+                clueDiv.className = 'clue-item';
+                clueDiv.dataset.wordIndex = crosswordData.words.indexOf(word);
+                clueDiv.innerHTML = `<span class="clue-number">${word.number}</span>${word.clue}`;
+                clueDiv.addEventListener('click', () => setCurrentWord(word));
+                downClues.appendChild(clueDiv);
+            });
+        }
+
+        // Set current word and highlight
+        function setCurrentWord(word) {
+            currentWord = word;
+            currentDirection = word.direction;
+            
+            // Update current clue display
+            document.getElementById('current-clue').innerHTML = 
+                `<span class="clue-number">${word.number}${word.direction === 'across' ? 'A' : 'D'}</span> ${word.clue}`;
+            
+            // Remove previous highlights
+            document.querySelectorAll('.clue-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelectorAll('.grid-cell').forEach(cell => {
+                cell.classList.remove('highlighted', 'selected');
+            });
+            
+            // Highlight current clue
+            document.querySelector(`[data-word-index="${crosswordData.words.indexOf(word)}"]`).classList.add('active');
+            
+            // Highlight word cells
+            highlightWord(word);
+            
+            // Select first cell of word
+            const firstCell = document.querySelector(`[data-row="${word.row}"][data-col="${word.col}"]`);
+            if (firstCell && !firstCell.disabled) {
+                selectCell(word.row, word.col);
+            }
+        }
+
+        // Helper function to find word by shortened reference (e.g., '3D' -> number: 3, direction: 'down')
+        function findWordByShortRef(shortRef) {
+            const number = parseInt(shortRef.match(/\d+/)[0]);
+            const direction = shortRef.includes('D') ? 'down' : 'across';
+            
+            return crosswordData.words.find(w => w.number === number && w.direction === direction);
+        }
+        
+        // Highlight word cells and related words
+        function highlightWord(word) {
+            // Highlight the main word cells
+            for (let i = 0; i < word.word.length; i++) {
+                let row, col;
+                if (word.direction === 'across') {
+                    row = word.row;
+                    col = word.col + i;
+                } else {
+                    row = word.row + i;
+                    col = word.col;
+                }
+                
+                const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+                if (cell && !cell.disabled) {
+                    cell.classList.add('highlighted');
+                }
+            }
+            
+            // Highlight related words if they exist
+            if (word.related && word.related.length > 0) {
+                word.related.forEach(relatedShortRef => {
+                    const relatedWord = findWordByShortRef(relatedShortRef);
+                    if (relatedWord) {
+                        for (let i = 0; i < relatedWord.word.length; i++) {
+                            let row, col;
+                            if (relatedWord.direction === 'across') {
+                                row = relatedWord.row;
+                                col = relatedWord.col + i;
+                            } else {
+                                row = relatedWord.row + i;
+                                col = relatedWord.col;
+                            }
+                            
+                            const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+                            if (cell && !cell.disabled) {
+                                cell.classList.add('highlighted');
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Select a specific cell
+        function selectCell(row, col) {
+            // Remove previous selection
+            document.querySelectorAll('.grid-cell').forEach(cell => {
+                cell.classList.remove('selected');
+            });
+            
+            const cell = document.querySelector(`[data-row="${row}"][data-col="${col}"]`);
+            if (cell && !cell.classList.contains('black')) {
+                cell.classList.add('selected');
+                const input = cell.querySelector('.cell-input');
+                if (input) {
+                    input.focus();
+                }
+                selectedCell = { row, col };
+            }
+        }
+
+        // Handle input in grid cells
+        function handleInput(event, row, col) {
+            const value = event.target.value.toUpperCase();
+            if (value.match(/[A-Z]/)) {
+                userGrid[row][col] = value;
+                event.target.value = value;
+                
+                // Move to next cell in current word
+                moveToNextCellInWord(row, col);
+                
+                // Check if puzzle is solved
+                checkPuzzleCompletion();
+            } else {
+                event.target.value = '';
+                userGrid[row][col] = '';
+            }
+            
+            // Save game state after any input change
+            saveGameState();
+        }
+
+        // Check if the entire puzzle is solved correctly
+        function checkPuzzleCompletion() {
+            // First check if all cells are filled
+            let allFilled = true;
+            let allCorrect = true;
+            
+            for (let word of crosswordData.words) {
+                for (let i = 0; i < word.word.length; i++) {
+                    let row, col;
+                    if (word.direction === 'across') {
+                        row = word.row;
+                        col = word.col + i;
+                    } else {
+                        row = word.row + i;
+                        col = word.col;
+                    }
+                    
+                    const userLetter = userGrid[row][col];
+                    const correctLetter = word.word[i];
+                    
+                    if (userLetter === '' || userLetter === null || userLetter === undefined) {
+                        allFilled = false;
+                    }
+                    
+                    if (userLetter !== correctLetter) {
+                        allCorrect = false;
+                    }
+                }
+            }
+            
+            // If all filled but not all correct, show incorrect completion toast
+            if (allFilled && !allCorrect) {
+                showToast("So close! Something is amiss.");
+                return;
+            }
+            
+            // If not all filled, just return (puzzle incomplete)
+            if (!allFilled) {
+                return;
+            }
+            
+            // If we get here, puzzle is filled and correct
+            
+            // If we get here, puzzle is solved correctly
+            clearInterval(timerInterval);
+            isPaused = true; // Pause timer until next puzzle loads
+            
+            // Calculate puzzle completion stats
+            const puzzleTime = Date.now() - puzzleStartTime;
+            const puzzleSize = crosswordData.size;
+            
+            calculatePuzzleStats(puzzleTime, puzzleSize);
+            completedPuzzles.add(getCurrentPuzzleFile());
+            
+            // Update navigation buttons after completion
+            updateNavigationButtons();
+            
+            // Calculate and apply time bonuses
+            let bonusTime = 0;
+            
+            if (puzzleSize === 5) {
+                if (puzzleTime < 30000) { // Less than 30 seconds
+                    bonusTime = 45;
+                } else {
+                    bonusTime = 30;
+                }
+            } else if (puzzleSize === 8) {
+                if (puzzleTime < 45000) { // Less than 45 seconds
+                    bonusTime = 60;
+                } else {
+                    bonusTime = 45;
+                }
+            }
+            
+            timeLeft += bonusTime;
+            
+            // Store bonus info for next puzzle start (but not for final puzzle)
+            const remainingPuzzlesForBonus = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
+            if (remainingPuzzlesForBonus.length > 0) {
+                localStorage.setItem('pendingBonus', `+${bonusTime} Seconds`);
+            }
+            
+            saveGameState();
+            
+            // Check if this is the final puzzle
+            const remainingPuzzles = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
+            
+            if (remainingPuzzles.length === 0) {
+                // This was the final puzzle - go straight to final stats
+                showFinalStats();
+            } else {
+                // Not the final puzzle - show normal congratulations popup
+                showPopup('correct');
+            }
+        }
+
+        // Check puzzle for errors (triggered by manual check)
+        function checkPuzzleForErrors() {
+            // Check if all cells are filled and correct
+            for (let word of crosswordData.words) {
+                for (let i = 0; i < word.word.length; i++) {
+                    let row, col;
+                    if (word.direction === 'across') {
+                        row = word.row;
+                        col = word.col + i;
+                    } else {
+                        row = word.row + i;
+                        col = word.col;
+                    }
+                    
+                    const userLetter = userGrid[row][col];
+                    const correctLetter = word.word[i];
+                    
+                    if (userLetter !== correctLetter || userLetter === '') {
+                        // Puzzle has errors or is incomplete
+                        showPopup('incorrect');
+                        return;
+                    }
+                }
+            }
+            
+            // If we get here, puzzle is actually correct
+            // This should call the regular completion function
+            checkPuzzleCompletion();
+        }
+
+        // Handle keydown events
+        function handleKeydown(event, row, col) {
+            // Handle letter replacement - clear field first if it's a letter
+            if (event.key.match(/^[A-Za-z]$/)) {
+                event.target.value = '';
+                userGrid[row][col] = '';
+                return; // Let the input event handle the new letter
+            }
+            
+            switch (event.key) {
+                case 'Backspace':
+                    if (event.target.value === '') {
+                        // Move to previous cell and delete
+                        moveToPreviousCell(row, col);
+                    } else {
+                        userGrid[row][col] = '';
+                        event.target.value = '';
+                    }
+                    saveGameState();
+                    break;
+                case ' ':
+                case 'Space':
+                    event.preventDefault();
+                    // Clear current cell and advance
+                    userGrid[row][col] = '';
+                    event.target.value = '';
+                    moveToNextCellInWord(row, col);
+                    saveGameState();
+                    break;
+                case 'Enter':
+                    event.preventDefault();
+                    if (event.shiftKey) {
+                        moveToPreviousWord();
+                    } else {
+                        moveToNextWord();
+                    }
+                    break;
+                case 'Tab':
+                    event.preventDefault();
+                    if (event.shiftKey) {
+                        moveToPreviousWord();
+                    } else {
+                        moveToNextWord();
+                    }
+                    break;
+                case 'ArrowRight':
+                    event.preventDefault();
+                    if (currentDirection === 'down') {
+                        switchToAcrossDirection(row, col, true);
+                    } else {
+                        moveInDirection(row, col, 0, 1);
+                    }
+                    break;
+                case 'ArrowLeft':
+                    event.preventDefault();
+                    if (currentDirection === 'down') {
+                        switchToAcrossDirection(row, col, true);
+                    } else {
+                        moveInDirection(row, col, 0, -1);
+                    }
+                    break;
+                case 'ArrowDown':
+                    event.preventDefault();
+                    if (currentDirection === 'across') {
+                        switchToDownDirection(row, col, true);
+                    } else {
+                        moveInDirection(row, col, 1, 0);
+                    }
+                    break;
+                case 'ArrowUp':
+                    event.preventDefault();
+                    if (currentDirection === 'across') {
+                        switchToDownDirection(row, col, true);
+                    } else {
+                        moveInDirection(row, col, -1, 0);
+                    }
+                    break;
+            }
+        }
+
+        // Move to next cell in current word (skip filled cells)
+        function moveToNextCellInWord(row, col) {
+            if (!currentWord) return;
+            
+            // First, try to find the next empty cell in the word after current position
+            let nextEmptyRow = -1;
+            let nextEmptyCol = -1;
+            
+            for (let i = 0; i < currentWord.word.length; i++) {
+                let checkRow, checkCol;
+                if (currentWord.direction === 'across') {
+                    checkRow = currentWord.row;
+                    checkCol = currentWord.col + i;
+                } else {
+                    checkRow = currentWord.row + i;
+                    checkCol = currentWord.col;
+                }
+                
+                // Look for next empty cell after current position
+                if ((checkRow > row || (checkRow === row && checkCol > col)) && userGrid[checkRow][checkCol] === '') {
+                    nextEmptyRow = checkRow;
+                    nextEmptyCol = checkCol;
+                    break;
+                }
+            }
+            
+            // If we found an empty cell, move there
+            if (nextEmptyRow !== -1) {
+                selectCell(nextEmptyRow, nextEmptyCol);
+                return;
+            }
+            
+            // If no empty cells found, move to the next cell in sequence
+            let nextRow = row;
+            let nextCol = col;
+            
+            if (currentWord.direction === 'across') {
+                nextCol++;
+            } else {
+                nextRow++;
+            }
+            
+            // Check if the next cell is still within the current word
+            const wordEndRow = currentWord.direction === 'across' ? currentWord.row : currentWord.row + currentWord.word.length - 1;
+            const wordEndCol = currentWord.direction === 'across' ? currentWord.col + currentWord.word.length - 1 : currentWord.col;
+            
+            if (nextRow <= wordEndRow && nextCol <= wordEndCol && 
+                nextRow >= currentWord.row && nextCol >= currentWord.col) {
+                selectCell(nextRow, nextCol);
+            }
+            // If it's the last cell, stay there (don't move)
+        }
+        
+        // Move to first empty cell in current word
+        function moveToFirstEmptyCellInWord() {
+            if (!currentWord) return;
+            
+            const firstEmpty = findFirstEmptyCell(currentWord);
+            selectCell(firstEmpty.row, firstEmpty.col);
+        }
+
+        // Move to previous cell in current word
+        function moveToPreviousCell(row, col) {
+            if (!currentWord) return;
+            
+            let prevRow = row;
+            let prevCol = col;
+            
+            if (currentWord.direction === 'across') {
+                prevCol--;
+            } else {
+                prevRow--;
+            }
+            
+            // Check if previous cell is within the current word
+            if (prevRow >= currentWord.row && prevCol >= currentWord.col && 
+                prevRow >= 0 && prevCol >= 0) {
+                const prevCell = document.querySelector(`[data-row="${prevRow}"][data-col="${prevCol}"]`);
+                if (prevCell && !prevCell.classList.contains('black')) {
+                    selectCell(prevRow, prevCol);
+                    const input = prevCell.querySelector('.cell-input');
+                    if (input) {
+                        input.value = '';
+                    }
+                    userGrid[prevRow][prevCol] = '';
+                }
+            } else {
+                // At beginning of word, jump to first empty cell
+                moveToFirstEmptyCellInWord();
+            }
+        }
+
+        // Move in a specific direction
+        function moveInDirection(row, col, deltaRow, deltaCol) {
+            const newRow = row + deltaRow;
+            const newCol = col + deltaCol;
+            
+            if (newRow >= 0 && newRow < crosswordData.size && 
+                newCol >= 0 && newCol < crosswordData.size) {
+                const newCell = document.querySelector(`[data-row="${newRow}"][data-col="${newCol}"]`);
+                if (newCell && !newCell.classList.contains('black')) {
+                    selectCell(newRow, newCol);
+                }
+            }
+        }
+
+        // Get words in current direction sorted by number
+        function getWordsInDirection(direction) {
+            return crosswordData.words
+                .filter(w => w.direction === direction)
+                .sort((a, b) => a.number - b.number);
+        }
+
+        // Find first empty cell in a word
+        function findFirstEmptyCell(word) {
+            for (let i = 0; i < word.word.length; i++) {
+                let row, col;
+                if (word.direction === 'across') {
+                    row = word.row;
+                    col = word.col + i;
+                } else {
+                    row = word.row + i;
+                    col = word.col;
+                }
+                
+                if (userGrid[row][col] === '') {
+                    return { row, col };
+                }
+            }
+            // If no empty cells, return first cell
+            return { row: word.row, col: word.col };
+        }
+
+        // Check if a word is completely filled
+        function isWordComplete(word) {
+            for (let i = 0; i < word.word.length; i++) {
+                let row, col;
+                if (word.direction === 'across') {
+                    row = word.row;
+                    col = word.col + i;
+                } else {
+                    row = word.row + i;
+                    col = word.col;
+                }
+                
+                if (userGrid[row][col] === '') {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        // Move to next word in current direction
+        function moveToNextWord() {
+            const wordsInDirection = getWordsInDirection(currentDirection);
+            const currentIndex = wordsInDirection.findIndex(w => w === currentWord);
+            
+            // Look for next incomplete word in same direction
+            let nextWord = null;
+            for (let i = currentIndex + 1; i < wordsInDirection.length; i++) {
+                if (!isWordComplete(wordsInDirection[i])) {
+                    nextWord = wordsInDirection[i];
+                    break;
+                }
+            }
+            
+            // If no incomplete word found in current direction, switch directions
+            if (!nextWord) {
+                const otherDirection = currentDirection === 'across' ? 'down' : 'across';
+                const otherWords = getWordsInDirection(otherDirection);
+                
+                // Find first incomplete word in other direction
+                for (let i = 0; i < otherWords.length; i++) {
+                    if (!isWordComplete(otherWords[i])) {
+                        nextWord = otherWords[i];
+                        break;
+                    }
+                }
+                
+                // If still no incomplete word found, just switch direction to first word
+                if (!nextWord && otherWords.length > 0) {
+                    nextWord = otherWords[0];
+                }
+            }
+            
+            if (nextWord) {
+                setCurrentWord(nextWord);
+                const firstEmpty = findFirstEmptyCell(nextWord);
+                selectCell(firstEmpty.row, firstEmpty.col);
+            }
+        }
+
+        // Move to previous word in current direction
+        function moveToPreviousWord() {
+            const wordsInDirection = getWordsInDirection(currentDirection);
+            const currentIndex = wordsInDirection.findIndex(w => w === currentWord);
+            
+            let prevWord;
+            if (currentIndex === -1 || currentIndex === 0) {
+                // If at beginning of current direction, switch to other direction (last word)
+                const otherDirection = currentDirection === 'across' ? 'down' : 'across';
+                const otherWords = getWordsInDirection(otherDirection);
+                prevWord = otherWords[otherWords.length - 1];
+            } else {
+                // Move to previous word in same direction
+                prevWord = wordsInDirection[currentIndex - 1];
+            }
+            
+            if (prevWord) {
+                setCurrentWord(prevWord);
+                const firstEmpty = findFirstEmptyCell(prevWord);
+                selectCell(firstEmpty.row, firstEmpty.col);
+            }
+        }
+
+        // Switch to across direction at current position
+        function switchToAcrossDirection(row, col, stayInSameSquare = false) {
+            // Find across word that contains this cell
+            const acrossWord = crosswordData.words.find(w => 
+                w.direction === 'across' && 
+                w.row === row && 
+                col >= w.col && 
+                col < w.col + w.word.length
+            );
+            
+            if (acrossWord) {
+                setCurrentWord(acrossWord);
+                if (stayInSameSquare) {
+                    selectCell(row, col);
+                }
+            } else {
+                // If no across word at this position, just change direction
+                currentDirection = 'across';
+            }
+        }
+
+        // Switch to down direction at current position
+        function switchToDownDirection(row, col, stayInSameSquare = false) {
+            // Find down word that contains this cell
+            const downWord = crosswordData.words.find(w => 
+                w.direction === 'down' && 
+                w.col === col && 
+                row >= w.row && 
+                row < w.row + w.word.length
+            );
+            
+            if (downWord) {
+                setCurrentWord(downWord);
+                if (stayInSameSquare) {
+                    selectCell(row, col);
+                }
+            } else {
+                // If no down word at this position, just change direction
+                currentDirection = 'down';
+            }
+        }
+
+        // Check dropdown functionality
+        let autocheckEnabled = false;
+        
+        function initializeCheckDropdown() {
+            const checkBtn = document.getElementById('check-btn');
+            const dropdown = document.getElementById('check-dropdown');
+            const autocheckOption = document.getElementById('autocheck-option');
+            const squareOption = document.getElementById('square-option');
+            const wordOption = document.getElementById('word-option');
+            const puzzleOption = document.getElementById('puzzle-option');
+            
+            // Toggle dropdown
+            checkBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdown.classList.toggle('show');
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function() {
+                dropdown.classList.remove('show');
+            });
+            
+            // Prevent dropdown from closing when clicking inside
+            dropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+            
+            // Autocheck toggle
+            autocheckOption.addEventListener('click', function() {
+                autocheckEnabled = !autocheckEnabled;
+                updateAutocheckDisplay();
+                dropdown.classList.remove('show');
+            });
+            
+            // Check puzzle functionality
+            puzzleOption.addEventListener('click', function() {
+                if (!autocheckEnabled) {
+                    checkPuzzleForErrors();
+                    dropdown.classList.remove('show');
+                }
+            });
+            
+            // Other options (placeholder functionality)
+            [squareOption, wordOption].forEach(option => {
+                option.addEventListener('click', function() {
+                    if (!autocheckEnabled) {
+                        // Add functionality for these options later
+                        dropdown.classList.remove('show');
+                    }
+                });
+            });
+        }
+        
+        function updateAutocheckDisplay() {
+            const checkBtn = document.getElementById('check-btn');
+            const autocheckOption = document.getElementById('autocheck-option');
+            const squareOption = document.getElementById('square-option');
+            const wordOption = document.getElementById('word-option');
+            const puzzleOption = document.getElementById('puzzle-option');
+            
+            const checkSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"></polyline></svg>';
+            
+            if (autocheckEnabled) {
+                // Update button text
+                checkBtn.textContent = 'Autocheck';
+                
+                // Add check to autocheck option
+                autocheckOption.querySelector('.check-icon').innerHTML = checkSvg;
+                
+                // Disable other options
+                squareOption.disabled = true;
+                wordOption.disabled = true;
+                puzzleOption.disabled = true;
+            } else {
+                // Update button text
+                checkBtn.textContent = 'Check';
+                
+                // Remove check from autocheck option
+                autocheckOption.querySelector('.check-icon').innerHTML = '';
+                
+                // Enable other options
+                squareOption.disabled = false;
+                wordOption.disabled = false;
+                puzzleOption.disabled = false;
+            }
+        }
+
+        // Reveal functions
+        function revealLetter() {
+            if (!selectedCell || selectedCell.row === null || selectedCell.col === null) {
+                return; // No cell selected
+            }
+
+            // Apply 5 second penalty
+            timeLeft = Math.max(0, timeLeft - 5);
+            updateTimerDisplay();
+            showToast("-5 Seconds");
+
+            // Find the correct letter for the selected cell
+            const row = selectedCell.row;
+            const col = selectedCell.col;
+            
+            for (let word of crosswordData.words) {
+                for (let i = 0; i < word.word.length; i++) {
+                    let wordRow, wordCol;
+                    if (word.direction === 'across') {
+                        wordRow = word.row;
+                        wordCol = word.col + i;
+                    } else {
+                        wordRow = word.row + i;
+                        wordCol = word.col;
+                    }
+                    
+                    if (wordRow === row && wordCol === col) {
+                        const correctLetter = word.word[i];
+                        userGrid[row][col] = correctLetter;
+                        const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                        if (inputElement) {
+                            inputElement.value = correctLetter;
+                        }
+                        saveGameState();
+                        checkPuzzleCompletion();
+                        return;
+                    }
+                }
+            }
+        }
+
+        function revealWord() {
+            if (!currentWord) {
+                return; // No word selected
+            }
+
+            // Apply 15 second penalty
+            timeLeft = Math.max(0, timeLeft - 15);
+            updateTimerDisplay();
+            showToast("-15 Seconds");
+
+            // Fill in the entire current word
+            for (let i = 0; i < currentWord.word.length; i++) {
+                let row, col;
+                if (currentWord.direction === 'across') {
+                    row = currentWord.row;
+                    col = currentWord.col + i;
+                } else {
+                    row = currentWord.row + i;
+                    col = currentWord.col;
+                }
+                
+                const correctLetter = currentWord.word[i];
+                userGrid[row][col] = correctLetter;
+                const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                if (inputElement) {
+                    inputElement.value = correctLetter;
+                }
+            }
+            
+            saveGameState();
+            checkPuzzleCompletion();
+        }
+
+        function revealPuzzle() {
+            // Apply 30 second penalty
+            timeLeft = Math.max(0, timeLeft - 30);
+            updateTimerDisplay();
+            showToast("-30 Seconds");
+            
+            // Put user in admire mode (like viewing a completed puzzle)
+            isPaused = true;
+            isManuallyPaused = false;
+            isViewingCompletedPuzzle = true;
+            if (timerInterval) clearInterval(timerInterval);
+
+            // Fill in the entire puzzle
+            for (let word of crosswordData.words) {
+                for (let i = 0; i < word.word.length; i++) {
+                    let row, col;
+                    if (word.direction === 'across') {
+                        row = word.row;
+                        col = word.col + i;
+                    } else {
+                        row = word.row + i;
+                        col = word.col;
+                    }
+                    
+                    const correctLetter = word.word[i];
+                    userGrid[row][col] = correctLetter;
+                    const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                    if (inputElement) {
+                        inputElement.value = correctLetter;
+                    }
+                }
+            }
+            
+            saveGameState();
+            
+            // For reveal puzzle, show the revealed popup instead of checking completion
+            // Check if this is the final puzzle
+            const remainingPuzzles = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
+            
+            // Mark puzzle as completed
+            completedPuzzles.add(getCurrentPuzzleFile());
+            const puzzleTime = Date.now() - puzzleStartTime;
+            const puzzleSize = crosswordData.size;
+            calculatePuzzleStats(puzzleTime, puzzleSize);
+            
+            // Update navigation buttons to enable next button
+            updateNavigationButtons();
+            
+            // Update UI for admire mode
+            updateClueVisibility(); // Keep clues visible in admire mode
+            updatePuzzleViewState(); // Hide pause button and make inputs read-only
+            
+            if (remainingPuzzles.length <= 1) {
+                // This was the final puzzle - go straight to final stats
+                showFinalStats();
+            } else {
+                // Not the final puzzle - show revealed popup
+                showPopup('revealed');
+            }
+        }
+
+        // Initialize the page when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializePage();
+        });
+    </script>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popup-overlay">
+        <div class="popup">
+            <div class="popup-close" onclick="closePopup()"></div>
+            <h2 class="popup-title" id="popup-title"></h2>
+            <p class="popup-subtitle" id="popup-subtitle"></p>
+            <div class="popup-buttons" id="popup-buttons">
+                <button class="popup-button" id="popup-button" onclick="closePopup()">Continue</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
