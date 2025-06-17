@@ -1,0 +1,147 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "B",
+      "E",
+      "E",
+      ".",
+      "."
+    ],
+    [
+      "I",
+      "R",
+      "A",
+      "N",
+      "."
+    ],
+    [
+      "C",
+      "O",
+      "V",
+      "E",
+      "N"
+    ],
+    [
+      ".",
+      "S",
+      "E",
+      "M",
+      "I"
+    ],
+    [
+      ".",
+      ".",
+      "S",
+      "O",
+      "X"
+    ]
+  ],
+  "words": [
+    {
+      "word": "BEE",
+      "clue": "Second letter or stinger?",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "IRAN",
+      "clue": "Country that sounds like quick escape",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+      "related": []
+    },
+    {
+      "word": "COVEN",
+      "clue": "Collective in Sinners",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "SEMI",
+      "clue": "Whole trailer or half circle, briefly",
+      "row": 3,
+      "col": 1,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "SOX",
+      "clue": "Boston red, because of course it’s a baseball clue",
+      "row": 4,
+      "col": 2,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "BIC",
+      "clue": "Where we learned about Signal, and started sending them",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "EROS",
+      "clue": "God of love, studio of Bhai",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "EAVES",
+      "clue": "Nosey listeners, before dropping?",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "NEMO",
+      "clue": "No one worth finding",
+      "row": 1,
+      "col": 3,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    },
+    {
+      "word": "NIX",
+      "clue": "To put an X on it",
+      "row": 2,
+      "col": 4,
+      "direction": "down",
+      "number": 7,
+      "display": "7-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 10,
+    "grid_size": "5x5"
+  }
+}
