@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonnections</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/connections-favicon.ico">
+    <style>
+        @font-face {
+            font-family: 'Franklin';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-700.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Franklin';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-500.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Karnak';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-cond-normal.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'KarnakNormal';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-normal.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #ffffff;
+            color: #121212;
+            line-height: 1.4;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #dfdfdf;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header:nth-of-type(2) {
+            z-index: 99;
+        }
+        
+        .header.help-header {
+            padding: 0;
+            height: 48px;
+            z-index: 98;
+        }
+
+        .header-content {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 16px;
+            text-align: center;
+        }
+        
+        .help-bar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 48px;
+            width: 100%;
+            padding: 0 16px;
+        }
+        
+        .help-icon {
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s ease;
+        }
+        
+        .help-icon:hover {
+            opacity: 0.7;
+        }
+        
+        .help-icon svg {
+            --text: #121212;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            padding: 0;
+        }
+
+        .title {
+            font-family: 'Karnak', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            font-weight: 400;
+            color: #121212;
+            margin: 0;
+            letter-spacing: -0.5px;
+            line-height: 1;
+        }
+
+        .subtitle {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: #363636;
+            margin: 16px 0;
+            line-height: 1.3;
+            text-align: center;
+        }
+
+        .mistakes-section {
+            text-align: center;
+            margin: 16px 0;
+        }
+
+        .timer-section {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 16px 0;
+            color: #363636;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .timer-section.show {
+            opacity: 1;
+        }
+
+        .mistakes {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: #121212;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .mistake-dots {
+            display: inline-flex;
+            gap: 6px;
+            margin-left: 8px;
+        }
+
+        .mistake-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #5a594e;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .mistake-dot.used {
+            background-color: #dfdfdf;
+            opacity: 0;
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin: 0 auto 20px auto;
+            min-height: calc(4 * (70px + 6px));
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .word-tile {
+            background-color: #efefe6;
+            border: none;
+            border-radius: 6px;
+            padding: 6px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            user-select: none;
+            height: 70px;
+            width: 100%;
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            will-change: transform, background-color;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            transition: all 0.15s ease;
+            color: #121212;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .word-tile:hover {
+            background-color: #e6e6dd;
+            transform: scale(1.02);
+        }
+
+        .word-tile.selected {
+            background-color: #5a594e;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .word-tile.correct {
+            background-color: #a0c35a;
+            border-color: #a0c35a;
+            color: #fff;
+            cursor: default;
+            animation: correctTile 0.5s ease-out;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: 18px;
+            height: 18px;
+            background-color: rgba(18, 18, 18, 0.8);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            color: white;
+            z-index: 10;
+        }
+
+        .play-button.show {
+            display: flex;
+        }
+
+        .play-button:hover {
+            background-color: rgba(18, 18, 18, 1);
+        }
+
+        .word-tile.selected .play-button {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #121212;
+        }
+
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            padding: 0 24px;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            height: 44px;
+            width: 100%;
+            max-width: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .btn:disabled:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .toast {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            font-weight: 500;
+            font-size: 16px;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            min-width: 200px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        @keyframes incorrect-shake {
+            0% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-3px, 0, 0); }
+            50% { transform: translate3d(3px, 0, 0); }
+            75% { transform: translate3d(-3px, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        .word-tile.incorrect-guess {
+            animation: incorrect-shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+            will-change: transform;
+        }
+
+        @keyframes correctTile {
+            0% {
+                transform: scale(1);
+            }
+            35% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes hop {
+            0% { transform: translate3d(0, 0, 0); }
+            50% { transform: translate3d(0, -6px, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        .word-tile.hop {
+            animation: hop 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .attempts-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px;
+            margin: 16px auto;
+            max-width: 160px;
+            min-height: 40px;
+            width: 160px;
+            flex-shrink: 0;
+        }
+
+        .attempt-cell {
+            width: 100%;
+            padding-bottom: 100%;
+            position: relative;
+            border-radius: 3px;
+            background-color: #ddd;
+            opacity: 1;
+            transform: scale(1);
+            will-change: transform, opacity;
+            backface-visibility: hidden;
+        }
+
+        .attempt-cell.animate {
+            opacity: 0;
+            transform: scale(0.9);
+            animation: cellAppear 0.3s ease-out forwards;
+            animation-delay: calc(var(--row-index) * 0.1s + var(--cell-index) * 0.05s);
+        }
+
+        .attempts-grid .attempt-cell[data-color="yellow"] {
+            background-color: #f9df84 !important;
+        }
+        
+        .attempts-grid .attempt-cell[data-color="green"] {
+            background-color: #a0c35a !important;
+        }
+        
+        .attempts-grid .attempt-cell[data-color="blue"] {
+            background-color: #b0c4ef !important;
+        }
+        
+        .attempts-grid .attempt-cell[data-color="purple"] {
+            background-color: #ba81c5 !important;
+        }
+
+        .attempt-row {
+            display: contents;
+        }
+
+        .game-over {
+            text-align: center;
+            padding: 24px;
+            background-color: #fff;
+            border-radius: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-over.show {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+        }
+
+        .game-over h2 {
+            font-family: 'Karnak', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #333;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.2s forwards;
+        }
+
+        .game-over p {
+            font-family: 'KarnakNormal', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.3s forwards;
+        }
+
+        .game-over .btn {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.4s forwards;
+            max-width: 200px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #666;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease;
+        }
+        
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .group-block {
+            grid-column: span 4;
+            background-color: #a0c35a;
+            border-radius: 6px;
+            padding: 6px;
+            text-align: center;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            height: 70px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .group-block.new-group {
+            animation: groupAppear 0.5s ease-out;
+        }
+
+        @keyframes cellAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes groupAppear {
+            from {
+                transform: translateY(20px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .word-tile.moving {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+            will-change: transform;
+        }
+
+        .group-block.yellow {
+            background-color: #f9df84;
+            color: #121212;
+        }
+
+        .group-block.green {
+            background-color: #a0c35a;
+            color: #ffffff;
+        }
+
+        .group-block.blue {
+            background-color: #b0c4ef;
+            color: #121212;
+        }
+
+        .group-block.purple {
+            background-color: #ba81c5;
+            color: #ffffff;
+        }
+
+        .group-category {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 11px;
+            margin-bottom: 2px;
+            font-weight: 700;
+            opacity: 0.9;
+            transform: translateY(0);
+            line-height: 1;
+            color: inherit;
+        }
+
+        .group-words {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 9px;
+            opacity: 0.9;
+            font-weight: 500;
+            transform: translateY(0);
+            line-height: 1;
+            color: inherit;
+        }
+
+        /* Only animate text in new groups */
+        .group-block.new-group .group-category {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.2s forwards;
+        }
+
+        .group-block.new-group .group-words {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.3s forwards;
+        }
+
+        @keyframes textAppear {
+            to {
+                opacity: 0.9;
+                transform: translateY(0);
+            }
+        }
+
+        .cooldown-timer {
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 12px 0;
+            color: #666;
+        }
+
+        /* Popup styles for mobile */
+        .early-access-popup, .how-to-play-popup {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            z-index: 1000;
+            width: 90%;
+            max-width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .early-access-popup.show, .how-to-play-popup.show {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+            display: block;
+        }
+        
+        .early-access-popup h2, .how-to-play-popup h2 {
+            font-family: 'Karnak', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        
+        .early-access-popup p, .how-to-play-popup p {
+            font-family: 'KarnakNormal', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+        
+        .how-to-play-popup {
+            text-align: left;
+        }
+        
+        .how-to-play-popup h2 {
+            text-align: center;
+        }
+        
+        .how-to-play-popup ul {
+            font-family: 'KarnakNormal', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 16px;
+            padding-left: 16px;
+            line-height: 1.6;
+        }
+        
+        .how-to-play-popup li {
+            margin-bottom: 6px;
+        }
+        
+        .how-to-play-popup h3 {
+            font-family: 'Karnak', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin: 20px 0 12px 0;
+            color: #333;
+        }
+        
+        .difficulty-colors {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin: 12px 0;
+        }
+        
+        .difficulty-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+        
+        .color-yellow { background-color: #f9df84; }
+        .color-green { background-color: #a0c35a; }
+        .color-blue { background-color: #b0c4ef; }
+        .color-purple { background-color: #ba81c5; }
+
+        /* Victory shake animations for mobile */
+        @keyframes subtle-shake-1 {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-1px, 0, 0); }
+            75% { transform: translate3d(1px, 0, 0); }
+        }
+
+        @keyframes subtle-shake-2 {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            33% { transform: translate3d(0, -1px, 0); }
+            66% { transform: translate3d(0, 1px, 0); }
+        }
+
+        @keyframes subtle-shake-3 {
+            0%, 100% { transform: translate3d(0, 0, 0); }
+            20% { transform: translate3d(-1px, 0, 0); }
+            40% { transform: translate3d(1px, -1px, 0); }
+            60% { transform: translate3d(0, 1px, 0); }
+            80% { transform: translate3d(1px, 0, 0); }
+        }
+
+        @keyframes subtle-shake-4 {
+            0%, 100% { transform: rotate3d(0, 0, 1, 0deg); }
+            25% { transform: rotate3d(0, 0, 1, -0.5deg); }
+            75% { transform: rotate3d(0, 0, 1, 0.5deg); }
+        }
+
+        .attempt-cell.victory-shake {
+            cursor: pointer;
+            position: relative;
+        }
+
+        .attempt-cell.victory-shake:hover {
+            transform: scale(1.1);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Mobile redirect check - redirect to desktop if not mobile
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+                   (window.innerWidth <= 768 && window.innerHeight <= 1024);
+        }
+        
+        if (!isMobile()) {
+            window.location.href = 'sonnections.html';
+        }
+    </script>
+
+    <header class="header">
+        <div class="header-content">
+        </div>
+    </header>
+    
+    <header class="header">
+        <div class="header-content">
+            <h1 class="title">Sonnections</h1>
+        </div>
+    </header>
+    
+    <header class="header help-header">
+        <div class="header-content">
+            <div class="help-bar">
+                <div class="help-icon" id="helpIcon">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 32 32" width="32" class="game-icon" data-testid="icon-help">
+                        <path fill="var(--text)" d="M15 24H17.6667V21.3333H15V24ZM16.3333 2.66666C8.97333 2.66666 3 8.63999 3 16C3 23.36 8.97333 29.3333 16.3333 29.3333C23.6933 29.3333 29.6667 23.36 29.6667 16C29.6667 8.63999 23.6933 2.66666 16.3333 2.66666ZM16.3333 26.6667C10.4533 26.6667 5.66667 21.88 5.66667 16C5.66667 10.12 10.4533 5.33332 16.3333 5.33332C22.2133 5.33332 27 10.12 27 16C27 21.88 22.2133 26.6667 16.3333 26.6667ZM16.3333 7.99999C13.3867 7.99999 11 10.3867 11 13.3333H13.6667C13.6667 11.8667 14.8667 10.6667 16.3333 10.6667C17.8 10.6667 19 11.8667 19 13.3333C19 16 15 15.6667 15 20H17.6667C17.6667 17 21.6667 16.6667 21.6667 13.3333C21.6667 10.3867 19.28 7.99999 16.3333 7.99999Z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <p class="subtitle">Create four groups of four!</p>
+            <div class="toast" id="toast"></div>
+            <div class="word-grid" id="wordGrid"></div>
+
+            <div class="mistakes-section">
+                <div class="mistakes">
+                    Mistakes remaining:
+                    <div class="mistake-dots">
+                        <div class="mistake-dot" id="dot4"></div>
+                        <div class="mistake-dot" id="dot3"></div>
+                        <div class="mistake-dot" id="dot2"></div>
+                        <div class="mistake-dot" id="dot1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timer-section" id="timerSection">
+                Next attempt available in: <span id="timer">00:00:00</span>
+            </div>
+
+            <div class="controls">
+                <button class="btn" id="shuffleBtn">Shuffle</button>
+                <button class="btn" id="deselectBtn">Deselect All</button>
+                <button class="btn" id="submitBtn" disabled>Submit</button>
+            </div>
+
+            <div class="game-over" id="gameOver">
+                <button class="close-btn" onclick="closeGameOverPopup()">✕</button>
+                <h2 id="gameOverTitle">Game Over!</h2>
+                <p id="gameOverMessage"></p>
+                <div class="cooldown-timer" id="cooldownTimer"></div>
+                <button class="btn" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Game data with audio files (mobile-optimized audio handling)
+        const gameData = {
+            groups: [
+                {
+                    category: "SINNERS WHO WENT TOO FAR",
+                    words: ["MARY", "SAMMIE", "STACK", "CORNBREAD"],
+                    audioFiles: ["audio/mary.mp3", "audio/sammie.mp3", "audio/stack.mp3", "audio/cornbread.mp3"],
+                    color: "yellow",
+                    difficulty: 1
+                },
+                {
+                    category: "TONES IN SONIC SPACES",
+                    words: ["TRAP", "BLUES", "ROCK", "CLUB"],
+                    audioFiles: ["audio/trap.mp3", "audio/blues.mp3", "audio/rock.mp3", "audio/club.mp3"],
+                    color: "green",
+                    difficulty: 2
+                },
+                {
+                    category: "ELEMENTS THAT CLEANSE EVIL",
+                    words: ["SILVER", "SMOKE", "SUNLIGHT", "STAKE"],
+                    audioFiles: ["audio/silver.mp3", "audio/smoke.mp3", "audio/sunlight.mp3", "audio/stake.mp3"],
+                    color: "blue",
+                    difficulty: 3
+                },
+                {
+                    category: "WORDS THAT COME BEFORE \"GOOD\"",
+                    words: ["VERY", "SINNERS", "WAS", "GOOD"],
+                    audioFiles: ["audio/very.mp3", "audio/sinners.mp3", "audio/was.mp3", "audio/good.mp3"],
+                    color: "purple",
+                    difficulty: 4
+                }
+            ]
+        };
+
+        // Flag to control next puzzle access
+        const NEXT_PUZZLES_ENABLED = false;
+        
+        // Cooldown duration in milliseconds
+        const COOLDOWN_DURATION = 60000;
+        
+        // Game state (simplified for mobile)
+        let gameState = {
+            words: [],
+            wordToAudio: new Map(),
+            audioInstances: new Map(),
+            selectedWords: [],
+            foundGroups: [],
+            completionOrder: [],
+            mistakes: 0,
+            maxMistakes: 4,
+            gameOver: false,
+            previousGuesses: new Set(),
+            lastAttemptTime: null,
+            timerInterval: null,
+            attempts: [],
+            playButtonsShown: false,
+            firstSelectionMade: false
+        };
+
+        // DOM elements
+        const wordGrid = document.getElementById('wordGrid');
+        const toastEl = document.getElementById('toast');
+        const shuffleBtn = document.getElementById('shuffleBtn');
+        const deselectBtn = document.getElementById('deselectBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        const gameOverEl = document.getElementById('gameOver');
+        const gameOverTitle = document.getElementById('gameOverTitle');
+        const gameOverMessage = document.getElementById('gameOverMessage');
+        const cooldownTimer = document.getElementById('cooldownTimer');
+        const playAgainBtn = document.getElementById('playAgainBtn');
+        const timerSection = document.getElementById('timerSection');
+        const timerEl = document.getElementById('timer');
+
+        // Basic game functions (same logic as desktop but simplified)
+        function isInCooldown() {
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
+            if (!lastAttempt) return false;
+            const now = new Date().getTime();
+            const timeDiff = now - parseInt(lastAttempt);
+            return timeDiff < COOLDOWN_DURATION;
+        }
+
+        function updateCooldownTimer() {
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
+            if (!lastAttempt) return;
+            const now = new Date().getTime();
+            const timeDiff = now - parseInt(lastAttempt);
+            const timeLeft = Math.max(COOLDOWN_DURATION - timeDiff, 0);
+            if (timeLeft === 0) {
+                cooldownTimer.textContent = 'You can now play again!';
+                playAgainBtn.disabled = false;
+                playAgainBtn.textContent = 'Play Again';
+                clearInterval(gameState.timerInterval);
+                return;
+            }
+            const hours = Math.floor(timeLeft / 3600000);
+            const minutes = Math.floor((timeLeft % 3600000) / 60000);
+            const seconds = Math.floor((timeLeft % 60000) / 1000);
+            cooldownTimer.textContent = `Next game available in: ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            playAgainBtn.disabled = true;
+            playAgainBtn.textContent = 'Please Wait';
+        }
+
+        function showToast(message) {
+            if (window.toastTimeout) {
+                clearTimeout(window.toastTimeout);
+            }
+            toastEl.textContent = message;
+            toastEl.className = 'toast show';
+            window.toastTimeout = setTimeout(() => {
+                toastEl.className = 'toast';
+            }, 2000);
+        }
+
+        function showEarlyAccessPopup() {
+            const popup = document.getElementById('early-access-popup');
+            popup.classList.add('show');
+        }
+
+        function closeEarlyAccessPopup() {
+            const popup = document.getElementById('early-access-popup');
+            popup.classList.remove('show');
+        }
+
+        function closeGameOverPopup() {
+            gameOverEl.classList.remove('show');
+        }
+
+        function showHowToPlayPopup() {
+            const popup = document.getElementById('how-to-play-popup');
+            popup.classList.add('show');
+        }
+
+        function closeHowToPlayPopup() {
+            const popup = document.getElementById('how-to-play-popup');
+            popup.classList.remove('show');
+        }
+
+        // Mobile audio handling (simplified)
+        function playAudio(word) {
+            const audioFile = gameState.wordToAudio.get(word);
+            if (!audioFile) return;
+            
+            // Simple audio play for mobile
+            const audio = new Audio(audioFile);
+            audio.volume = 0.7;
+            audio.play().catch(e => console.warn('Audio play failed:', e));
+        }
+
+        // Initialize game (same as desktop but simplified)
+        function initGame() {
+            const lastAttempt = localStorage.getItem('sonnections_lastAttemptTime');
+            if (lastAttempt) {
+                const now = new Date().getTime();
+                const timeDiff = now - parseInt(lastAttempt);
+                if (timeDiff >= COOLDOWN_DURATION) {
+                    localStorage.removeItem('sonnections_lastAttemptTime');
+                    localStorage.removeItem('sonnections_lastAttempts');
+                }
+            }
+            
+            if (isInCooldown()) {
+                gameState = {
+                    words: [],
+                    wordToAudio: new Map(),
+                    audioInstances: new Map(),
+                    selectedWords: [],
+                    foundGroups: [],
+                    completionOrder: [],
+                    mistakes: 4,
+                    maxMistakes: 4,
+                    gameOver: true,
+                    previousGuesses: new Set(),
+                    lastAttemptTime: null,
+                    timerInterval: null,
+                    attempts: [],
+                    playButtonsShown: false,
+                    firstSelectionMade: false
+                };
+                gameData.groups.forEach(group => {
+                    group.words.forEach((word, index) => {
+                        gameState.words.push(word);
+                        gameState.wordToAudio.set(word, group.audioFiles[index]);
+                    });
+                });
+                shuffleArray(gameState.words);
+                toastEl.className = 'toast';
+                updateMistakesDisplay();
+                renderWordGrid();
+                updateControls();
+                showGameOverScreen(false, true);
+                return;
+            }
+
+            gameState = {
+                words: [],
+                wordToAudio: new Map(),
+                audioInstances: new Map(),
+                selectedWords: [],
+                foundGroups: [],
+                completionOrder: [],
+                mistakes: 0,
+                maxMistakes: 4,
+                gameOver: false,
+                previousGuesses: new Set(),
+                lastAttemptTime: null,
+                timerInterval: null,
+                attempts: [],
+                playButtonsShown: false,
+                firstSelectionMade: false
+            };
+
+            gameData.groups.forEach(group => {
+                group.words.forEach((word, index) => {
+                    gameState.words.push(word);
+                    gameState.wordToAudio.set(word, group.audioFiles[index]);
+                });
+            });
+            shuffleArray(gameState.words);
+
+            toastEl.className = 'toast';
+            gameOverEl.className = 'game-over';
+            updateMistakesDisplay();
+            renderWordGrid();
+            updateControls();
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function renderWordGrid() {
+            const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
+            const remainingWords = gameState.words.filter(word => !foundWords.has(word));
+            const selectedWordsSet = new Set(gameState.selectedWords);
+            
+            const fragment = document.createDocumentFragment();
+            
+            // Add found groups
+            gameState.foundGroups.forEach((group) => {
+                const groupBlock = document.createElement('div');
+                groupBlock.className = `group-block ${group.color}`;
+                groupBlock.innerHTML = `
+                    <div class="group-category">${group.category}</div>
+                    <div class="group-words">${group.words.join(', ')}</div>
+                `;
+                fragment.appendChild(groupBlock);
+            });
+            
+            // Add remaining word tiles
+            remainingWords.forEach(word => {
+                const tile = document.createElement('div');
+                tile.className = `word-tile${selectedWordsSet.has(word) ? ' selected' : ''}`;
+                tile.textContent = word;
+                
+                // Add play button for mobile
+                const playButton = document.createElement('button');
+                playButton.className = `play-button${gameState.playButtonsShown ? ' show' : ''}`;
+                playButton.innerHTML = '▶';
+                playButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    playAudio(word);
+                });
+                
+                tile.appendChild(playButton);
+                tile.addEventListener('click', () => selectWord(word));
+                fragment.appendChild(tile);
+            });
+            
+            wordGrid.innerHTML = '';
+            wordGrid.appendChild(fragment);
+        }
+
+        function selectWord(word) {
+            if (gameState.gameOver) return;
+            
+            if (!gameState.firstSelectionMade) {
+                gameState.firstSelectionMade = true;
+                gameState.playButtonsShown = true;
+                renderWordGrid();
+            }
+            
+            const isFound = gameState.foundGroups.some(group => group.words.includes(word));
+            if (isFound) return;
+
+            const index = gameState.selectedWords.indexOf(word);
+            
+            if (index > -1) {
+                gameState.selectedWords.splice(index, 1);
+            } else if (gameState.selectedWords.length < 4) {
+                gameState.selectedWords.push(word);
+            }
+            
+            renderWordGrid();
+            updateControls();
+        }
+
+        function updateControls() {
+            submitBtn.disabled = gameState.selectedWords.length !== 4;
+            deselectBtn.disabled = gameState.selectedWords.length === 0;
+            shuffleBtn.disabled = gameState.gameOver || gameState.mistakes >= gameState.maxMistakes || gameState.foundGroups.length === 4;
+        }
+
+        function shuffleWords() {
+            const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
+            const remainingWords = gameState.words.filter(word => !foundWords.has(word));
+            shuffleArray(remainingWords);
+            gameState.words = [
+                ...gameState.foundGroups.flatMap(group => group.words),
+                ...remainingWords
+            ];
+            // DON'T clear selected words when shuffling
+            renderWordGrid();
+            updateControls();
+        }
+
+        function deselectAll() {
+            gameState.selectedWords = [];
+            renderWordGrid();
+            updateControls();
+        }
+
+        function submitGuess() {
+            if (gameState.selectedWords.length !== 4) return;
+
+            const sortedGuess = [...gameState.selectedWords].sort().join(',');
+
+            if (gameState.previousGuesses.has(sortedGuess)) {
+                showToast('Already guessed');
+                gameState.selectedWords = [];
+                renderWordGrid();
+                updateControls();
+                return;
+            }
+
+            const correctGroup = gameData.groups.find(group => 
+                gameState.selectedWords.every(word => group.words.includes(word)) &&
+                gameState.selectedWords.length === 4
+            );
+
+            if (correctGroup) {
+                animateCorrectGuess(correctGroup);
+            } else {
+                gameState.previousGuesses.add(sortedGuess);
+
+                const selectedColors = gameState.selectedWords.map(word => {
+                    const group = gameData.groups.find(g => g.words.includes(word));
+                    return group ? group.color : 'gray';
+                });
+                gameState.attempts.push({
+                    words: [...gameState.selectedWords],
+                    colors: selectedColors,
+                    correct: false
+                });
+
+                const oneAwayGroup = gameData.groups.find(group => {
+                    const matchingWords = gameState.selectedWords.filter(word => 
+                        group.words.includes(word)
+                    );
+                    return matchingWords.length === 3;
+                });
+
+                if (oneAwayGroup) {
+                    showToast('One away');
+                }
+
+                const selectedTiles = document.querySelectorAll('.word-tile.selected');
+                selectedTiles.forEach(tile => {
+                    tile.classList.add('incorrect-guess');
+                    setTimeout(() => {
+                        tile.classList.remove('incorrect-guess');
+                    }, 400);
+                });
+
+                gameState.mistakes++;
+                updateMistakesDisplay();
+                
+                if (gameState.mistakes >= gameState.maxMistakes) {
+                    localStorage.setItem('sonnections_lastAttemptTime', new Date().getTime().toString());
+                    localStorage.setItem('sonnections_lastAttempts', JSON.stringify(gameState.attempts));
+                    endGame(false);
+                }
+            }
+            
+            updateControls();
+        }
+
+        async function animateCorrectGuess(correctGroup) {
+            const selectedTiles = Array.from(document.querySelectorAll('.word-tile.selected'));
+            
+            // Step 1: Hop animation - each tile hops one at a time with optimized timing
+            const hopPromises = selectedTiles.map((tile, i) => {
+                return new Promise(resolve => {
+                    setTimeout(() => {
+                        tile.classList.add('hop');
+                        // Use requestAnimationFrame for smoother cleanup
+                        requestAnimationFrame(() => {
+                            setTimeout(() => {
+                                tile.classList.remove('hop');
+                                resolve();
+                            }, 300);
+                        });
+                    }, i * 100);
+                });
+            });
+            
+            await Promise.all(hopPromises);
+            
+            // Step 2: Calculate target row and positions
+            const grid = document.getElementById('wordGrid');
+            const gridRect = grid.getBoundingClientRect();
+            const allTiles = Array.from(grid.querySelectorAll('.word-tile'));
+            
+            // Target row is right after existing groups (at index gameState.foundGroups.length)
+            const targetRowIndex = gameState.foundGroups.length;
+            
+            // Calculate the exact grid positions for the target row
+            const targetPositions = [];
+            const tileHeight = selectedTiles[0].offsetHeight;
+            const tileWidth = selectedTiles[0].offsetWidth;
+            const gap = 8; // CSS gap value
+            
+            for (let col = 0; col < 4; col++) {
+                const x = gridRect.left + col * (tileWidth + gap);
+                const y = gridRect.top + targetRowIndex * (tileHeight + gap);
+                targetPositions.push({ x, y });
+            }
+            
+            // Step 3: Find tiles that are exactly in the target row positions
+            const tilesToDisplace = [];
+            const swapAnimations = [];
+            
+            // Get all non-selected tiles currently in the target row
+            const tilesInTargetRow = allTiles.filter(tile => {
+                if (tile.classList.contains('selected')) return false;
+                
+                const tileRect = tile.getBoundingClientRect();
+                const tileRowIndex = Math.round((tileRect.top - gridRect.top) / (tileHeight + gap));
+                
+                // Only include tiles that are exactly in the target row
+                return tileRowIndex === targetRowIndex;
+            });
+            
+            // These are the tiles that need to be displaced
+            tilesToDisplace.push(...tilesInTargetRow);
+            
+            // Move selected tiles to target row
+            selectedTiles.forEach((selectedTile, index) => {
+                const selectedRect = selectedTile.getBoundingClientRect();
+                const targetPos = targetPositions[index];
+                
+                const deltaX = targetPos.x - selectedRect.left;
+                const deltaY = targetPos.y - selectedRect.top;
+                
+                selectedTile.classList.add('moving');
+                selectedTile.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+            });
+            
+            // Calculate exact destination positions for displaced tiles
+            const remainingTiles = allTiles.filter(tile => 
+                !tile.classList.contains('selected') && 
+                !tilesToDisplace.includes(tile)
+            );
+            
+            // Create a list of all available positions after the target row
+            const availablePositions = [];
+            for (let row = targetRowIndex + 1; row < 4; row++) {
+                for (let col = 0; col < 4; col++) {
+                    const x = gridRect.left + col * (tileWidth + gap);
+                    const y = gridRect.top + row * (tileHeight + gap);
+                    availablePositions.push({ x, y, row, col });
+                }
+            }
+            
+            // First, account for tiles that are already in correct positions and don't need to move
+            const occupiedPositions = new Set();
+            remainingTiles.forEach(tile => {
+                const tileRect = tile.getBoundingClientRect();
+                availablePositions.forEach((pos, index) => {
+                    if (Math.abs(tileRect.left - pos.x) < 10 && Math.abs(tileRect.top - pos.y) < 10) {
+                        occupiedPositions.add(index);
+                    }
+                });
+            });
+            
+            // Assign displaced tiles to the first available positions
+            let assignmentIndex = 0;
+            tilesToDisplace.forEach((displacedTile) => {
+                // Find next available position
+                while (assignmentIndex < availablePositions.length && occupiedPositions.has(assignmentIndex)) {
+                    assignmentIndex++;
+                }
+                
+                if (assignmentIndex < availablePositions.length) {
+                    const targetPos = availablePositions[assignmentIndex];
+                    const tileRect = displacedTile.getBoundingClientRect();
+                    
+                    const deltaX = targetPos.x - tileRect.left;
+                    const deltaY = targetPos.y - tileRect.top;
+                    
+                    displacedTile.classList.add('moving');
+                    displacedTile.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+                    swapAnimations.push({ targetTile: displacedTile });
+                    
+                    // Mark this position as occupied
+                    occupiedPositions.add(assignmentIndex);
+                    assignmentIndex++;
+                }
+            });
+            
+            // Wait for movement animation to complete
+            await new Promise(resolve => setTimeout(resolve, 600));
+            
+            // Step 4: Update game state
+            gameState.foundGroups.push(correctGroup);
+            gameState.completionOrder.push(correctGroup.color);
+            gameState.attempts.push({
+                words: [...gameState.selectedWords],
+                colors: gameState.selectedWords.map(() => correctGroup.color),
+                correct: true
+            });
+            gameState.selectedWords = [];
+            
+            // Step 5: Clean up transforms first, THEN modify DOM
+            selectedTiles.forEach(tile => {
+                tile.classList.remove('moving', 'selected');
+                tile.style.transform = '';
+            });
+            
+            swapAnimations.forEach(({ targetTile }) => {
+                targetTile.classList.remove('moving');
+                targetTile.style.transform = '';
+            });
+            
+            // Wait a frame to ensure transforms are cleared
+            await new Promise(resolve => requestAnimationFrame(resolve));
+            
+            // Step 6: Temporarily disable transitions to prevent second movement
+            const allRemainingTiles = grid.querySelectorAll('.word-tile:not(.selected)');
+            allRemainingTiles.forEach(tile => {
+                tile.style.transition = 'none';
+            });
+            
+            // Now remove tiles and insert group block
+            selectedTiles.forEach(tile => {
+                tile.remove();
+            });
+            
+            // Create the new group block
+            const groupBlock = document.createElement('div');
+            groupBlock.className = `group-block ${correctGroup.color} new-group`;
+            
+            const categoryEl = document.createElement('div');
+            categoryEl.className = 'group-category';
+            categoryEl.textContent = correctGroup.category;
+            
+            const wordsEl = document.createElement('div');
+            wordsEl.className = 'group-words';
+            wordsEl.textContent = correctGroup.words.join(', ');
+            
+            groupBlock.appendChild(categoryEl);
+            groupBlock.appendChild(wordsEl);
+            
+            // Insert at the correct position
+            const firstTile = grid.querySelector('.word-tile');
+            
+            if (firstTile) {
+                grid.insertBefore(groupBlock, firstTile);
+            } else {
+                grid.appendChild(groupBlock);
+            }
+            
+            // Re-enable transitions after a frame
+            requestAnimationFrame(() => {
+                allRemainingTiles.forEach(tile => {
+                    if (tile.parentNode) { // Check if tile still exists
+                        tile.style.transition = '';
+                    }
+                });
+            });
+            
+            // Clean up the new-group class after animation
+            setTimeout(() => {
+                groupBlock.classList.remove('new-group');
+            }, 500);
+            
+            updateControls();
+            
+            if (gameState.foundGroups.length === 4) {
+                localStorage.removeItem('sonnections_lastAttempts');
+                localStorage.setItem('sonnections_completed', 'true');
+                endGame(true);
+            }
+        }
+
+        function updateMistakesDisplay() {            
+            for (let i = 1; i <= 4; i++) {
+                const dot = document.getElementById(`dot${i}`);
+                if (i <= gameState.mistakes) {
+                    dot.classList.add('used');
+                } else {
+                    dot.classList.remove('used');
+                }
+            }
+        }
+
+        // Playful toast messages for clicked cells (mobile version)
+        const playfulMessages = [
+            "\"ouch\"", "\"that's rude\"", "\"that tickles\"", "\"hey!\"", "\"stop that!\"",
+            "\"easy!\"", "\"careful!\"", "\"jeez\"", "\"what was that for?\"",
+            "\"space please!\"", "\"ow\"", "\"that stings\"", "\"why?\"",
+            "\"I didn't do anything\"", "\"uncalled for\"", "\"rude\"", "\"ooof\""
+        ];
+
+        // Function to get random playful message
+        function getRandomPlayfulMessage() {
+            return playfulMessages[Math.floor(Math.random() * playfulMessages.length)];
+        }
+
+        function showGameOverScreen(won, fromCooldown = false) {
+            gameState.gameOver = true;
+            
+            const existingGrids = gameOverEl.querySelectorAll('.attempts-grid, .completion-grid');
+            existingGrids.forEach(grid => grid.remove());
+            
+            const closeBtn = gameOverEl.querySelector('.close-btn');
+            if (won || !fromCooldown) {
+                closeBtn.style.display = 'block';
+            } else {
+                closeBtn.style.display = 'none';
+            }
+            
+            if (won) {
+                gameOverTitle.textContent = 'Congratulations!';
+                gameOverMessage.textContent = 'You found all the sonnections!';
+                playAgainBtn.disabled = false;
+                playAgainBtn.textContent = 'Play Again';
+                cooldownTimer.textContent = '';
+                localStorage.setItem('sonnections_completed', 'true');
+            } else {
+                gameOverTitle.textContent = 'Game Over';
+                gameOverMessage.textContent = 'Better luck next time!';
+                playAgainBtn.textContent = 'Play Again';
+                
+                if (fromCooldown) {
+                    playAgainBtn.disabled = true;
+                    updateCooldownTimer();
+                    gameState.timerInterval = setInterval(updateCooldownTimer, 1000);
+                } else {
+                    playAgainBtn.disabled = true;
+                    updateCooldownTimer();
+                    gameState.timerInterval = setInterval(updateCooldownTimer, 1000);
+                }
+            }
+
+            // Show attempts grid
+            let attemptsToShow = gameState.attempts;
+            if (!won && fromCooldown) {
+                const savedAttempts = localStorage.getItem('sonnections_lastAttempts');
+                if (savedAttempts) {
+                    try {
+                        attemptsToShow = JSON.parse(savedAttempts);
+                    } catch (e) {
+                        console.warn('Failed to parse saved attempts:', e);
+                    }
+                }
+            }
+
+            if (attemptsToShow && attemptsToShow.length > 0) {
+                const attemptsGrid = document.createElement('div');
+                attemptsGrid.className = 'attempts-grid';
+                
+                attemptsToShow.forEach((attempt, rowIndex) => {
+                    const attemptRow = document.createElement('div');
+                    attemptRow.className = 'attempt-row';
+                    
+                    attempt.colors.forEach((color, cellIndex) => {
+                        const cell = document.createElement('div');
+                        cell.className = 'attempt-cell';
+                        
+                        const bgColor = getColorCode(color);
+                        cell.style.backgroundColor = bgColor;
+                        cell.setAttribute('data-color', color);
+                        
+                        const globalCellIndex = rowIndex * 4 + cellIndex;
+                        const totalCells = attemptsToShow.length * 4;
+                        
+                        
+                        attemptRow.appendChild(cell);
+                    });
+                    
+                    attemptsGrid.appendChild(attemptRow);
+                });
+                
+                gameOverMessage.insertAdjacentElement('afterend', attemptsGrid);
+                
+                // Add shake animation and click handlers to random half of cells (only when won)
+                if (won) {
+                    setTimeout(() => {
+                        addShakeAndClickHandlers(attemptsGrid);
+                    }, 500);
+                }
+            }
+
+            const solvedGroups = gameState.foundGroups;
+            wordGrid.innerHTML = '';
+            
+            solvedGroups.forEach(group => {
+                const groupBlock = document.createElement('div');
+                groupBlock.className = `group-block ${group.color}`;
+                groupBlock.innerHTML = `
+                    <div class="group-category">${group.category}</div>
+                    <div class="group-words">${group.words.join(', ')}</div>
+                `;
+                wordGrid.appendChild(groupBlock);
+            });
+            
+            // If the game was lost, also show the remaining ungrouped tiles
+            if (!won) {
+                const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
+                const remainingWords = gameState.words.filter(word => !foundWords.has(word));
+                
+                remainingWords.forEach(word => {
+                    const tile = document.createElement('div');
+                    tile.className = 'word-tile';
+                    tile.textContent = word;
+                    
+                    // Add play button for mobile
+                    const playButton = document.createElement('button');
+                    playButton.className = `play-button${gameState.playButtonsShown ? ' show' : ''}`;
+                    playButton.innerHTML = '▶';
+                    playButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        playAudio(word);
+                    });
+                    
+                    tile.appendChild(playButton);
+                    wordGrid.appendChild(tile);
+                });
+            }
+            
+            gameOverEl.className = 'game-over show';
+        }
+
+        // Add shake animation and click handlers to random half of cells (mobile version)
+        function addShakeAndClickHandlers(attemptsGrid) {
+            const attemptCells = Array.from(attemptsGrid.querySelectorAll('.attempt-cell'));
+            
+            if (attemptCells.length === 0) return;
+            
+            // Select random half of the cells
+            const halfCount = Math.ceil(attemptCells.length / 2);
+            const shuffledCells = [...attemptCells];
+            
+            // Shuffle the array
+            for (let i = shuffledCells.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledCells[i], shuffledCells[j]] = [shuffledCells[j], shuffledCells[i]];
+            }
+            
+            // Take the first half
+            const selectedCells = shuffledCells.slice(0, halfCount);
+            
+            // Add shake animation and click handlers to selected cells
+            selectedCells.forEach((cell, index) => {
+                cell.classList.add('victory-shake');
+                
+                // Randomly assign one of the shake animations (reusing existing ones)
+                const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
+                const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
+                
+                // Add random duration between 1.5s and 2.5s for more variety
+                const randomDuration = (1.5 + Math.random()).toFixed(1);
+                
+                // Add random delay between 0 and 0.5s to stagger the animations
+                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                
+                cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+                cell.style.animationDelay = `${randomDelay}s`;
+                cell.style.cursor = 'pointer';
+                
+                // Add click handler for toast message
+                cell.addEventListener('click', () => {
+                    const message = getRandomPlayfulMessage();
+                    showToast(message);
+                });
+            });
+        }
+
+        // Add victory shake to the last row of attempts grid (mobile version)
+        function addVictoryShake() {
+            // Use a more reliable approach to wait for the attempts grid
+            const checkForGrid = () => {
+                const attemptsGrid = gameOverEl.querySelector('.attempts-grid');
+                
+                if (attemptsGrid && gameState.attempts.length > 0) {
+                    const attemptCells = attemptsGrid.querySelectorAll('.attempt-cell');
+                    
+                    // Calculate expected number of cells (4 cells per attempt)
+                    const expectedCells = gameState.attempts.length * 4;
+                    
+                    if (attemptCells.length >= expectedCells && attemptCells.length >= 4) {
+                        // Get the last 4 cells (representing the final winning attempt)
+                        const lastRowCells = Array.from(attemptCells).slice(-4);
+                        
+                        // Double-check that these cells are visible
+                        const allVisible = lastRowCells.every(cell => {
+                            const style = window.getComputedStyle(cell);
+                            return style.display !== 'none' && style.visibility !== 'hidden' && style.opacity !== '0';
+                        });
+                        
+                        if (allVisible) {
+                            // Add victory shake to each cell in the last row
+                            lastRowCells.forEach((cell, index) => {
+                                cell.classList.add('victory-shake');
+                                
+                                // Randomly assign one of the shake animations
+                                const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
+                                const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
+                                
+                                // Add random duration between 1.5s and 2.5s for more variety
+                                const randomDuration = (1.5 + Math.random()).toFixed(1);
+                                
+                                // Add random delay between 0 and 0.5s to stagger the animations
+                                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                                
+                                cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
+                                cell.style.animationDelay = `${randomDelay}s`;
+                            });
+                            
+                            return true; // Successfully added victory shake
+                        }
+                    }
+                }
+                return false; // Grid not ready yet
+            };
+            
+            // Try immediately first
+            if (!checkForGrid()) {
+                // If not ready, wait and try again with shorter intervals for better responsiveness
+                let attempts = 0;
+                const maxAttempts = 10;
+                
+                const tryAgain = () => {
+                    attempts++;
+                    if (checkForGrid() || attempts >= maxAttempts) {
+                        return; // Success or max attempts reached
+                    }
+                    setTimeout(tryAgain, 200); // Try every 200ms for up to 2 seconds
+                };
+                
+                setTimeout(tryAgain, 100);
+            }
+        }
+
+        function endGame(won) {
+            showGameOverScreen(won);
+            
+            if (won) {
+                // Add victory shake to the last row of attempts grid after screen is shown
+                setTimeout(() => {
+                    addVictoryShake();
+                }, 200);
+            }
+        }
+
+        function getColorCode(color) {
+            const colorMap = {
+                'yellow': '#f9df84',
+                'green': '#a0c35a',
+                'blue': '#b0c4ef',
+                'purple': '#ba81c5'
+            };
+            return colorMap[color] || '#999';
+        }
+
+        // Event listeners
+        shuffleBtn.addEventListener('click', shuffleWords);
+        deselectBtn.addEventListener('click', deselectAll);
+        submitBtn.addEventListener('click', submitGuess);
+        playAgainBtn.addEventListener('click', () => {
+            if (!isInCooldown()) {
+                localStorage.removeItem('sonnections_lastAttemptTime');
+                localStorage.removeItem('sonnections_lastAttempts');
+                gameOverEl.classList.remove('show');
+            }
+            initGame();
+        });
+        document.getElementById('helpIcon').addEventListener('click', showHowToPlayPopup);
+
+        // Initialize game on load
+        initGame();
+    </script>
+    
+    <!-- Early Access Popup -->
+    <div class="early-access-popup" id="early-access-popup">
+        <button class="close-btn" onclick="closeEarlyAccessPopup()">✕</button>
+        <h2>You Found It!</h2>
+        <p>Impressive work connecting all those patterns!<br><br>You've discovered something that's still taking shape.</p>
+        <p style="font-style: italic; font-size: 0.9rem; color: #999;">The final pieces are yet to connect...</p>
+        <button class="btn" onclick="closeEarlyAccessPopup()">Understood</button>
+    </div>
+    
+    <!-- How to Play Popup -->
+    <div class="how-to-play-popup" id="how-to-play-popup">
+        <button class="close-btn" onclick="closeHowToPlayPopup()">✕</button>
+        <h2>How to Play</h2>
+        <p>Find groups of four items that share something in common.</p>
+        
+        <ul>
+            <li>Select four items and tap <strong>'Submit'</strong> to check if your guess is correct.</li>
+            <li>Find the groups without making 4 mistakes!</li>
+            <li>Tap the play button (▶) to hear each word!</li>
+        </ul>
+        
+        <h3>Category Examples</h3>
+        <ul>
+            <li><strong>FISH:</strong> Bass, Flounder, Salmon, Trout</li>
+            <li><strong>FIRE ___:</strong> Ant, Drill, Island, Opal</li>
+        </ul>
+        
+        <p>Categories will always be more specific than "5-LETTER-WORDS," "NAMES" or "VERBS."</p>
+        
+        <p>Each puzzle has exactly one solution. Watch out for words that seem to belong to multiple categories!</p>
+        
+        <p>Each group is assigned a color, which will be revealed as you solve:</p>
+        
+        <div class="difficulty-colors">
+            <div class="difficulty-item">
+                <div class="color-box color-yellow"></div>
+                <span>Straightforward</span>
+            </div>
+            <div class="difficulty-item">
+                <div class="color-box color-green"></div>
+                <span>↓</span>
+            </div>
+            <div class="difficulty-item">
+                <div class="color-box color-blue"></div>
+                <span></span>
+            </div>
+            <div class="difficulty-item">
+                <div class="color-box color-purple"></div>
+                <span>Tricky</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
