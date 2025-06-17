@@ -1782,13 +1782,7 @@ async function animateCorrectGuess(correctGroup) {
                         // Only add links to the last row (final 4 cells)
                         if (globalCellIndex >= totalCells - 4) {
                             // Define unique links for the last row
-                            const lastRowLinks = [
-                                atob('c29ubmVjdGlvbnMuaHRtbA=='),
-                                atob('bnVtYmVyX2JlZS5odG1s'),
-                                atob('d29yZGxlLmh0bWw='),
-                                atob('bWluaV9jcm9zc3dvcmQuaHRtbA==')
-                            ];
-                            
+                            const lastRowLinks = ['', '', '', ''];
                             const lastRowIndex = globalCellIndex - (totalCells - 4);
                             
                             cell.style.cursor = 'pointer';
