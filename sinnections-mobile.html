@@ -1225,6 +1225,7 @@
         function updateControls() {
             submitBtn.disabled = gameState.selectedWords.length !== 4;
             deselectBtn.disabled = gameState.selectedWords.length === 0;
+            shuffleBtn.disabled = gameState.gameOver || gameState.mistakes >= gameState.maxMistakes || gameState.foundGroups.length === 4;
         }
 
         // Shuffle words
@@ -1671,6 +1672,21 @@
                 groupBlock.appendChild(wordsEl);
                 wordGrid.appendChild(groupBlock);
             });
+            
+            // If the game was lost, also show the remaining ungrouped tiles
+            if (!won) {
+                const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
+                const remainingWords = gameState.words.filter(word => !foundWords.has(word));
+                
+                remainingWords.forEach(word => {
+                    const tile = document.createElement('div');
+                    tile.className = 'word-tile';
+                    tile.textContent = word;
+                    tile.addEventListener('click', () => selectWord(word), { passive: true });
+                    
+                    wordGrid.appendChild(tile);
+                });
+            }
             
             gameOverEl.className = 'game-over show';
             
