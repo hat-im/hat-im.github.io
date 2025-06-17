@@ -935,7 +935,7 @@
         };
 
         // Flag to control next puzzle access
-        const NEXT_PUZZLES_ENABLED = false; // Set to true to enable all next puzzles
+        const NEXT_PUZZLES_ENABLED = true; // Set to true to enable all next puzzles
         
         // Cooldown duration in milliseconds
         const COOLDOWN_DURATION = 3600000; // 1 hour (3600000ms)
@@ -1343,6 +1343,7 @@
         function updateControls() {
             submitBtn.disabled = gameState.selectedWords.length !== 4;
             deselectBtn.disabled = gameState.selectedWords.length === 0;
+            shuffleBtn.disabled = gameState.gameOver || gameState.mistakes >= gameState.maxMistakes || gameState.foundGroups.length === 4;
         }
 
         // Shuffle words with optimized performance
@@ -1782,7 +1783,13 @@ async function animateCorrectGuess(correctGroup) {
                         // Only add links to the last row (final 4 cells)
                         if (globalCellIndex >= totalCells - 4) {
                             // Define unique links for the last row
-                            const lastRowLinks = ['', '', '', ''];
+                            const lastRowLinks = [
+                                atob('c29ubmVjdGlvbnMuaHRtbA=='),
+                                '',
+                                '',
+                                ''
+                            ];
+                            
                             const lastRowIndex = globalCellIndex - (totalCells - 4);
                             
                             cell.style.cursor = 'pointer';
@@ -1837,6 +1844,21 @@ async function animateCorrectGuess(correctGroup) {
                 groupBlock.appendChild(wordsEl);
                 wordGrid.appendChild(groupBlock);
             });
+            
+            // If the game was lost, also show the remaining ungrouped tiles
+            if (!won) {
+                const foundWords = new Set(gameState.foundGroups.flatMap(group => group.words));
+                const remainingWords = gameState.words.filter(word => !foundWords.has(word));
+                
+                remainingWords.forEach(word => {
+                    const tile = document.createElement('div');
+                    tile.className = 'word-tile';
+                    tile.textContent = word;
+                    tile.addEventListener('click', () => selectWord(word), { passive: true });
+                    
+                    wordGrid.appendChild(tile);
+                });
+            }
             
             // Show the game over screen
             gameOverEl.className = 'game-over show';
