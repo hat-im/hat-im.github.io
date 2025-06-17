@@ -626,8 +626,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
         position: relative;
+        min-height: 28px;
+        padding-right: 30px;
       }
 
       .puzzle-card-title {
@@ -659,10 +661,11 @@
 
       .puzzle-grid {
         display: grid;
-        gap: 8px;
-        margin-bottom: 12px;
+        gap: 10px;
+        margin-bottom: 16px;
         justify-items: stretch;
         align-items: stretch;
+        margin-top: 8px;
       }
 
       .puzzle-button {
@@ -1024,14 +1027,38 @@
           {
             id: "cryptogram",
             name: "Cryptogram",
-            url: "dear-sam.html",
+            url: atob("ZGVhci1zYW0uaHRtbA=="),
             completed: localStorage.getItem("cryptogram_completed") === "true",
           },
           {
             id: "sinnections",
             name: "Sinnections",
-            url: "sinnections.html",
+            url: atob("c2lubmVjdGlvbnMuaHRtbA=="),
             completed: localStorage.getItem("sinnections_completed") === "true",
+          },
+          {
+            id: "numberbee",
+            name: "Number Bee",
+            url: atob("bnVtYmVyX2JlZS5odG1s"),
+            completed: localStorage.getItem("numberbee_completed") === "true",
+          },
+          {
+            id: "minicrossword",
+            name: "Mini Crossword",
+            url: atob("bWluaV9jcm9zc3dvcmQuaHRtbA=="),
+            completed: localStorage.getItem("sessionComplete") === "true",
+          },
+          {
+            id: "sonnections",
+            name: "Sonnections",
+            url: atob("c29ubmVjdGlvbnMuaHRtbA=="),
+            completed: localStorage.getItem("sonnections_completed") === "true",
+          },
+          {
+            id: "wordle",
+            name: "Wordle",
+            url: atob("d29yZGxlLmh0bWw="),
+            completed: localStorage.getItem("wordle_completed") === "true",
           },
         ];
 
@@ -1082,6 +1109,7 @@
         // Remove existing grid positioning CSS
         puzzleGrid.style.gridTemplateColumns = "";
         puzzleGrid.style.gridTemplateRows = "";
+        puzzleGrid.style.justifyItems = "";
 
         if (numPuzzles === 1) {
           puzzleGrid.style.gridTemplateColumns = "1fr";
@@ -1090,9 +1118,15 @@
           puzzleGrid.style.gridTemplateColumns = "repeat(2, 1fr)";
         } else if (numPuzzles === 3) {
           puzzleGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
-        } else {
-          // 4 puzzles - 2x2 grid
+        } else if (numPuzzles === 4) {
           puzzleGrid.style.gridTemplateColumns = "repeat(2, 1fr)";
+          puzzleGrid.style.gridTemplateRows = "repeat(2, 1fr)";
+        } else if (numPuzzles === 5) {
+          puzzleGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
+          puzzleGrid.style.gridTemplateRows = "repeat(2, 1fr)";
+        } else {
+          // 6 puzzles - 3x2 grid
+          puzzleGrid.style.gridTemplateColumns = "repeat(3, 1fr)";
           puzzleGrid.style.gridTemplateRows = "repeat(2, 1fr)";
         }
       }
@@ -1127,7 +1161,68 @@
       // Check for completed puzzles on page load
       document.addEventListener("DOMContentLoaded", function () {
         checkCompletedPuzzles();
+        checkForReturnVisitor();
       });
+
+      function checkForReturnVisitor() {
+        // Check if user has visited before
+        const hasVisitedBefore = localStorage.getItem("hey_page_visited") === "true";
+        
+        if (hasVisitedBefore) {
+          // Show welcome back message
+          showWelcomeBackMessage();
+        }
+        
+        // Mark this visit
+        localStorage.setItem("hey_page_visited", "true");
+      }
+
+      function showWelcomeBackMessage() {
+        const surpriseMessage = document.getElementById("surpriseMessage");
+        const welcomeBackText = "Welcome back, puzzle solver.";
+        
+        surpriseMessage.classList.add("typing");
+        surpriseMessage.innerHTML = "";
+        
+        let charIndex = 0;
+        
+        function typeWelcomeBack() {
+          if (charIndex < welcomeBackText.length) {
+            surpriseMessage.innerHTML = welcomeBackText.substring(0, charIndex + 1) + '<span class="typing-cursor">|</span>';
+            charIndex++;
+            setTimeout(typeWelcomeBack, 80);
+          } else {
+            // Remove cursor and add show class
+            surpriseMessage.innerHTML = welcomeBackText;
+            surpriseMessage.classList.add("show");
+            
+            // After 3 seconds, start deleting
+            setTimeout(() => {
+              deleteWelcomeBackMessage(surpriseMessage, welcomeBackText);
+            }, 3000);
+          }
+        }
+        
+        typeWelcomeBack();
+      }
+
+      function deleteWelcomeBackMessage(element, text) {
+        let charIndex = text.length;
+        
+        function deleteNextChar() {
+          if (charIndex > 0) {
+            element.innerHTML = text.substring(0, charIndex) + '<span class="typing-cursor">|</span>';
+            charIndex--;
+            setTimeout(deleteNextChar, 50); // Faster deletion
+          } else {
+            // Remove everything including cursor
+            element.classList.remove("show", "typing");
+            element.innerHTML = "";
+          }
+        }
+        
+        deleteNextChar();
+      }
 
       // Hidden message in JavaScript variable (not easily found)
       const projectSignature = "Made with love";
