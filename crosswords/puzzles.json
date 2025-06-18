@@ -18,7 +18,10 @@
       "5_00.json",
       "5_01.json",
       "5_02.json",
-      "5_03.json"
+      "5_03.json",
+      "5_04.json",
+      "5_05.json",
+      "5_06.json"
     ],
     "bonusSettings": {
       "fastCompletionThresholdSeconds": 30,

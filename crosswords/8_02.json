@@ -85,7 +85,7 @@
   "words": [
     {
       "word": "ALIAS",
-      "clue": "Smoothing onscreen letters.",
+      "clue": "Anti-smoothing onscreen letters.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -255,7 +255,7 @@
     },
     {
       "word": "SHE",
-      "clue": "Sounding like someone put together.",
+      "clue": "Not he.",
       "row": 5,
       "col": 3,
       "direction": "down",
@@ -275,7 +275,7 @@
     },
     {
       "word": "KERNS",
-      "clue": "Space to avoid a designers judgement.",
+      "clue": "Spaces to avoid a designers judgement.",
       "row": 3,
       "col": 5,
       "direction": "down",

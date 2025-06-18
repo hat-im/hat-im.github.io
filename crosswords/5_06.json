@@ -3,54 +3,54 @@
   "grid": [
     [
       "C",
-      ".",
-      "G",
-      "E",
-      "G"
-    ],
-    [
-      "H",
-      "I",
-      "R",
-      "E",
-      "R"
-    ],
-    [
       "A",
-      ".",
-      "I",
       "R",
-      "E"
+      "B",
+      "S"
     ],
     [
       "O",
-      "P",
-      "P",
-      "I",
-      "E"
+      "T",
+      ".",
+      "R",
+      "O"
     ],
     [
-      "S",
-      "P",
+      "H",
+      "O",
+      "N",
       "E",
+      "Y"
+    ],
+    [
       "E",
-      "D"
+      "N",
+      ".",
+      "A",
+      "."
+    ],
+    [
+      "N",
+      "E",
+      "R",
+      "D",
+      "S"
     ]
   ],
   "words": [
     {
-      "word": "GEG",
-      "clue": "Belfast laugh or breakfast that was scrambled?",
+      "word": "CARBS",
+      "clue": "The primary offering by pasta, bread and rice.",
       "row": 0,
-      "col": 2,
+      "col": 0,
       "direction": "across",
-      "number": 2,
-      "display": "2-Across",
+      "number": 1,
+      "display": "1-Across",
       "related": []
     },
     {
-      "word": "HIRER",
-      "clue": "Opposite of a firer... for now.",
+      "word": "OT",
+      "clue": "When work doesn't stop, abbreviated.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -59,19 +59,19 @@
       "related": []
     },
     {
-      "word": "IRE",
-      "clue": "The heart of 5-across.",
-      "row": 2,
-      "col": 2,
+      "word": "RO",
+      "clue": "Water filtered by counter-direction semi-permeation.",
+      "row": 1,
+      "col": 3,
       "direction": "across",
       "number": 6,
       "display": "6-Across",
-      "related": ["5A"]
+      "related": []
     },
     {
-      "word": "OPPIE",
-      "clue": "First film, first meeting, and the start of our chain reaction, briefly.",
-      "row": 3,
+      "word": "HONEY",
+      "clue": "The best sweetener for grassy tea.",
+      "row": 2,
       "col": 0,
       "direction": "across",
       "number": 7,
@@ -79,8 +79,18 @@
       "related": []
     },
     {
-      "word": "SPEED",
-      "clue": "A Roy sibling and The One walk onto a bus...",
+      "word": "EN",
+      "clue": "A letter between M and O.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "NERDS",
+      "clue": "You for typography. Me for fractals. Also a candy.",
       "row": 4,
       "col": 0,
       "direction": "across",
@@ -89,8 +99,8 @@
       "related": []
     },
     {
-      "word": "CHAOS",
-      "clue": "The real dish in Overcooked 2.",
+      "word": "COHEN",
+      "clue": "Leonard or Sacha Baron, take your pick.",
       "row": 0,
       "col": 0,
       "direction": "down",
@@ -99,28 +109,18 @@
       "related": []
     },
     {
-      "word": "PP",
-      "clue": "#1, but twice",
-      "row": 3,
-      "col": 1,
-      "direction": "down",
-      "number": 8,
-      "display": "8-Down",
-      "related": []
-    },
-    {
-      "word": "GRIPE",
-      "clue": "Minor issue that definitely didn't ruin the vibe.",
+      "word": "ATONE",
+      "clue": "Post-carb remorse.",
       "row": 0,
-      "col": 2,
+      "col": 1,
       "direction": "down",
       "number": 2,
       "display": "2-Down",
       "related": []
     },
     {
-      "word": "EERIE",
-      "clue": "The feeling when the goose stops honking .",
+      "word": "BREAD",
+      "clue": "I'll tell you the answer if you give me some dough.",
       "row": 0,
       "col": 3,
       "direction": "down",
@@ -129,8 +129,8 @@
       "related": []
     },
     {
-      "word": "GREED",
-      "clue": "This is the type they warned about in the Bible.",
+      "word": "SOY",
+      "clue": "An underrated milk for matcha.",
       "row": 0,
       "col": 4,
       "direction": "down",

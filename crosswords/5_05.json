@@ -1,0 +1,167 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "A",
+      "T",
+      "E",
+      ".",
+      "S"
+    ],
+    [
+      "G",
+      "H",
+      "O",
+      "S",
+      "T"
+    ],
+    [
+      "O",
+      "I",
+      ".",
+      "M",
+      "O"
+    ],
+    [
+      "D",
+      "R",
+      "O",
+      "O",
+      "L"
+    ],
+    [
+      "A",
+      "D",
+      "E",
+      "L",
+      "E"
+    ]
+  ],
+  "words": [
+    {
+      "word": "ATE",
+      "clue": "Slayed. Served. Devoured. Fashionably.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "GHOST",
+      "clue": "Didn’t text back, or returned with a sheet on.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    },
+    {
+      "word": "OI",
+      "clue": "A Brit's \"Hey\".",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "MO",
+      "clue": "Short for Mohammed, long on cringe.",
+      "row": 2,
+      "col": 3,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "DROOL",
+      "clue": "Sofie's overflowing contribution to every outfit.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "ADELE",
+      "clue": "Go-to British balladeer for belting.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 11,
+      "display": "11-Across",
+      "related": []
+    },
+    {
+      "word": "AGODA",
+      "clue": "Travel site with good deals.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "THIRD",
+      "clue": "The wave of coffee we frequented.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "EO",
+      "clue": "Cinematic donkey who lost everything.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "OE",
+      "clue": "What's shared between \"foe\" or \"toe.\".",
+      "row": 3,
+      "col": 2,
+      "direction": "down",
+      "number": 10,
+      "display": "10-Down",
+      "related": []
+    },
+    {
+      "word": "SMOL",
+      "clue": "So tiny. So soft. So powerful.",
+      "row": 1,
+      "col": 3,
+      "direction": "down",
+      "number": 6,
+      "display": "6-Down",
+      "related": []
+    },
+    {
+      "word": "STOLE",
+      "clue": "Draped in autos, done to hearts.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 12,
+    "grid_size": "5x5"
+  }
+}
