@@ -1,12 +1,29 @@
 {
-  "8": [
-    "8_00.json",
-    "8_02.json"
-  ],
-  "5": [
-    "5_00.json",
-    "5_01.json",
-    "5_02.json",
-    "5_03.json"
-  ]
+  "globalSettings": {
+    "gameDurationSeconds": 330
+  },
+  "8": {
+    "puzzles": [
+      "8_00.json",
+      "8_02.json"
+    ],
+    "bonusSettings": {
+      "fastCompletionThresholdSeconds": 45,
+      "fastCompletionBonusSeconds": 60,
+      "normalCompletionBonusSeconds": 45
+    }
+  },
+  "5": {
+    "puzzles": [
+      "5_00.json",
+      "5_01.json",
+      "5_02.json",
+      "5_03.json"
+    ],
+    "bonusSettings": {
+      "fastCompletionThresholdSeconds": 30,
+      "fastCompletionBonusSeconds": 45,
+      "normalCompletionBonusSeconds": 30
+    }
+  }
 }
