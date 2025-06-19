@@ -50,7 +50,7 @@
     },
     {
       "word": "IRAN",
-      "clue": "Country that sounds like quick escape.",
+      "clue": "Country that sounds like a self-admitted escape.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -60,7 +60,7 @@
     },
     {
       "word": "COVEN",
-      "clue": "Collective in Sinners.",
+      "clue": "The collective in Sinners.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -90,7 +90,7 @@
     },
     {
       "word": "BIC",
-      "clue": "Where we learned about Signal, and started sending them.",
+      "clue": "Where we learned about Signal, and started sending them, abbreviated.",
       "row": 0,
       "col": 0,
       "direction": "down",

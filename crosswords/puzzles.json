@@ -21,12 +21,24 @@
       "5_03.json",
       "5_04.json",
       "5_05.json",
-      "5_06.json"
+      "5_06.json",
+      "5_07.json"
     ],
     "bonusSettings": {
       "fastCompletionThresholdSeconds": 30,
       "fastCompletionBonusSeconds": 45,
       "normalCompletionBonusSeconds": 30
+    }
+  },
+  "6": {
+    "puzzles": [
+      "6_00.json",
+      "6_01.json"
+    ],
+    "bonusSettings": {
+      "fastCompletionThresholdSeconds": 40,
+      "fastCompletionBonusSeconds": 45,
+      "normalCompletionBonusSeconds": 45
     }
   }
 }

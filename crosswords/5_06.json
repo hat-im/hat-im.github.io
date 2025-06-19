@@ -40,7 +40,7 @@
   "words": [
     {
       "word": "CARBS",
-      "clue": "The primary offering by pasta, bread and rice.",
+      "clue": "What pasta, bread and rice all have, but nobody likes counting.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -50,7 +50,7 @@
     },
     {
       "word": "OT",
-      "clue": "When work doesn't stop, abbreviated.",
+      "clue": "When capitalism doesn't stop, abbreviated.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -70,7 +70,7 @@
     },
     {
       "word": "HONEY",
-      "clue": "The best sweetener for grassy tea.",
+      "clue": "The best sweetener green tea sweetener.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -80,7 +80,7 @@
     },
     {
       "word": "EN",
-      "clue": "A letter between M and O.",
+      "clue": "After em and before oh.",
       "row": 3,
       "col": 0,
       "direction": "across",
@@ -100,7 +100,7 @@
     },
     {
       "word": "COHEN",
-      "clue": "Leonard or Sacha Baron, take your pick.",
+      "clue": "Last name. Leonard or Sacha Baron, take your pick.",
       "row": 0,
       "col": 0,
       "direction": "down",
@@ -110,7 +110,7 @@
     },
     {
       "word": "ATONE",
-      "clue": "Post-carb remorse.",
+      "clue": "The feeling that sounds atonal.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -120,7 +120,7 @@
     },
     {
       "word": "BREAD",
-      "clue": "I'll tell you the answer if you give me some dough.",
+      "clue": "Gotta load that dough.",
       "row": 0,
       "col": 3,
       "direction": "down",

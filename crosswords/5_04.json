@@ -60,13 +60,13 @@
     },
     {
       "word": "HAZEL",
-      "clue": "Concerned, cautious, confused, and completely irreplaceable calico.",
+      "clue": "A nut that disagrees with your stomach, and a calico that agrees with your heart.",
       "row": 4,
       "col": 0,
       "direction": "across",
       "number": 8,
       "display": "8-Across",
-      "related": ["7A"]
+      "related": ["7A", "4A"]
     },
     {
       "word": "PEACH",
