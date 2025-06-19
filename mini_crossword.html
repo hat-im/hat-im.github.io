@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Mini Crossword</title>
+    <link rel="icon" type="image/svg+xml" href="mini.svg">
     <style>
         @font-face {
+            font-family: 'Franklin';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-700.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'Franklin';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-500.ttf') format('truetype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        
+        @font-face {
             font-family: 'Karnak';
-            src: url('fonts/karnak/karnak-cond-normal.ttf') format('truetype');
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-cond-normal.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
         }
         
         @font-face {
-            font-family: 'Franklin-Bold';
-            src: url('fonts/franklin/franklin-normal-700.ttf') format('truetype');
-        }
-        
-        @font-face {
-            font-family: 'Franklin-Medium';
-            src: url('fonts/franklin/franklin-normal-500.ttf') format('truetype');
-        }
-        
-        @font-face {
-            font-family: 'Karnak-Normal';
-            src: url('fonts/karnak/karnak-normal.woff') format('woff');
+            font-family: 'KarnakNormal';
+            src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-normal.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
         }
 
         * {
@@ -32,7 +41,7 @@
         }
 
         body {
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             background-color: white;
             color: #333;
             line-height: 1.4;
@@ -124,7 +133,7 @@
             display: flex;
             align-items: center;
             cursor: pointer;
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-size: 16px;
             border: none;
             background: none;
@@ -156,6 +165,14 @@
         .check-icon svg {
             width: 100%;
             height: 100%;
+        }
+
+        .puzzle-progress {
+            font-size: 14px;
+            font-weight: 500;
+            color: #666;
+            text-align: center;
+            margin-bottom: 5px;
         }
 
         .timer-section {
@@ -195,7 +212,7 @@
             padding: 0 20px;
             cursor: pointer;
             font-size: 16px;
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             transition: background-color 0.2s;
             height: 45px;
             display: flex;
@@ -219,6 +236,70 @@
             background-color: transparent;
         }
 
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background: none;
+            border: none;
+            padding: 0 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Franklin', Arial, sans-serif;
+            transition: background-color 0.2s;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            min-width: 120px;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .dropdown-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .dropdown-btn::after {
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border: 1px solid #ddd;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Franklin', Arial, sans-serif;
+            width: 100%;
+            text-align: left;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: #e0e0e0;
+        }
+
         /* Current clue */
         .current-clue {
             background-color: rgb(220, 239, 255);
@@ -233,7 +314,7 @@
         }
         
         .current-clue .clue-number {
-            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-weight: bold;
             font-size: 16.8px;
         }
@@ -299,6 +380,15 @@
             box-sizing: border-box;
         }
 
+        /* Check button feedback styles */
+        .cell-input.correct {
+            color: rgb(40, 96, 216) !important;
+        }
+
+        .cell-input.incorrect {
+            color: red !important;
+        }
+
         .grid-cell.black {
             background-color: #000;
             cursor: default;
@@ -319,7 +409,7 @@
             left: 3px;
             color: #000;
             pointer-events: none;
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             z-index: 10;
             line-height: 1;
             display: block;
@@ -348,7 +438,7 @@
         }
 
         .clues-title {
-            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;
             margin-bottom: 10px;
@@ -363,6 +453,8 @@
             cursor: pointer;
             transition: background-color 0.2s;
             font-size: 14px;
+            display: flex;
+            align-items: flex-start;
         }
 
         .clue-item:hover {
@@ -375,10 +467,16 @@
         }
 
         .clue-number {
-            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-weight: bold;
             font-size: 14px;
-            margin-right: 8px;
+            margin-right: 4px;
+            flex-shrink: 0;
+            min-width: 16px;
+        }
+
+        .clue-text {
+            flex: 1;
         }
 
 
@@ -467,7 +565,7 @@
         }
 
         .popup-subtitle {
-            font-family: 'Karnak-Normal', Arial, sans-serif;
+            font-family: 'KarnakNormal', Arial, sans-serif;
             font-size: 34px;
             font-weight: normal;
             color: #666;
@@ -482,7 +580,7 @@
             border-radius: 24px;
             height: 48px;
             padding: 0 32px;
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.2s ease;
@@ -546,7 +644,7 @@
         }
 
         .cooldown-timer {
-            font-family: 'Karnak-Normal', Arial, sans-serif;
+            font-family: 'KarnakNormal', Arial, sans-serif;
             font-size: 30px;
             font-weight: normal;
             color: #000;
@@ -558,7 +656,7 @@
             display: none;
         }
 
-        .popup.cooldown .popup-buttons {
+        .popup.cooldown .popup-button {
             display: none;
         }
 
@@ -572,7 +670,7 @@
             color: white;
             padding: 12px 24px;
             border-radius: 0;
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-size: 14px;
             z-index: 1001;
             opacity: 0;
@@ -602,13 +700,13 @@
         }
 
         .stats-label {
-            font-family: 'Franklin-Bold', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-size: 16px;
             color: #333;
         }
 
         .stats-value {
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             font-size: 16px;
             color: #333;
             font-weight: bold;
@@ -624,7 +722,7 @@
             font-size: 16px;
             border-radius: 24px;
             cursor: pointer;
-            font-family: 'Franklin-Medium', Arial, sans-serif;
+            font-family: 'Franklin', Arial, sans-serif;
             text-transform: capitalize;
             margin: 0;
             transition: background-color 0.3s ease;
@@ -703,8 +801,30 @@
         const CROSSWORD_FILE = '8_00.json'; // Change this to '8_00.json' or any other crossword file
         
         // Puzzle sequence configuration - CUSTOMIZE YOUR PATTERN HERE
-        const PUZZLE_SEQUENCE = [5, 8, 5]; // Pattern: 5x5 → 5x5 → 8x8, repeat
+        const PUZZLE_SEQUENCE = [6, 5]; // Pattern: 5x5 → 5x5 → 8x8, repeat
+        
+        // Check and store puzzle sequence for change detection
+        function validatePuzzleSequence() {
+            const currentSequenceStr = JSON.stringify(PUZZLE_SEQUENCE);
+            const storedSequenceStr = localStorage.getItem('puzzleSequence');
+            
+            if (storedSequenceStr && storedSequenceStr !== currentSequenceStr) {
+                // Sequence changed - clear all saved data
+                clearAllSavedData();
+            }
+            
+            // Store current sequence
+            localStorage.setItem('puzzleSequence', currentSequenceStr);
+        }
+        
+        // Clear all saved game data
+        function clearAllSavedData() {
+            localStorage.removeItem('crosswordGameState');
+            localStorage.removeItem('pendingBonus');
+            localStorage.removeItem('sessionComplete');
+        }
         // Global variables
+        let maxPuzzlesPerSession = 20; // Default value, will be updated from config
         let crosswordData = null;
         let currentWord = null;
         let currentDirection = 'across';
@@ -712,7 +832,8 @@
         let selectedCell = null;
         
         // Timer variables
-        let timeLeft = 300; // 5 minutes in seconds
+        let defaultGameDuration = 300; // Default, will be updated from config
+        let timeLeft = defaultGameDuration; // Will be set from config
         let timerInterval = null;
         let isPaused = false;
         let isManuallyPaused = false;
@@ -740,15 +861,15 @@
 
         // Popup message arrays
         const pauseMessages = [
-            { title: "Game Paused", subtitle: "Take a breather and come back refreshed!" },
-            { title: "Timeout", subtitle: "Sometimes the best ideas come during breaks." },
+            { title: "Game Paused", subtitle: "Take a breather and come back!" },
+            { title: "Timeout", subtitle: "The best ideas come from relaxation." },
             { title: "Paused", subtitle: "Your progress is saved. Take your time!" },
             { title: "Break Time", subtitle: "Step away and let your mind wander." },
             { title: "Intermission", subtitle: "Great puzzlers know when to pause." }
         ];
 
         const incorrectMessages = [
-            { title: "Not Quite Right", subtitle: "Every expert was once a beginner. Keep going!" },
+            { title: "Not Quite Right", subtitle: "Almost there. Keep going!" },
             { title: "Close!", subtitle: "You're on the right track. Check your answers." },
             { title: "Almost There", subtitle: "A few more corrections and you'll have it!" },
             { title: "Keep Trying", subtitle: "The best puzzles are worth the challenge." },
@@ -756,7 +877,7 @@
         ];
 
         const correctMessages = [
-            { title: "Brilliant!", subtitle: "You've mastered this crossword perfectly!" },
+            { title: "Brilliant!", subtitle: "You're mastery over crossword is remarkable!" },
             { title: "Excellent Work", subtitle: "Your puzzle-solving skills are impressive!" },
             { title: "Congratulations!", subtitle: "You've cracked every clue with finesse!" },
             { title: "Well Done!", subtitle: "A true wordsmith at work!" },
@@ -765,7 +886,7 @@
 
         const revealedMessages = [
             { title: "Puzzle Revealed", subtitle: "Sometimes we all need a little help!" },
-            { title: "All Solved", subtitle: "The full solution has been revealed." },
+            { title: "All Solved", subtitle: "The full grid has been revealed." },
             { title: "Complete", subtitle: "Every answer has been filled in for you." },
             { title: "Revealed", subtitle: "No shame in checking the answers!" }
         ];
@@ -779,13 +900,16 @@
         ];
         
         const restartMessages = [
-            { title: "Restart Session?", subtitle: "This will clear all progress and start fresh." },
+            { title: "Restart Game?", subtitle: "This will clear all progress and start fresh." },
             { title: "Start Over?", subtitle: "All your progress will be lost. Are you sure?" },
             { title: "Fresh Start?", subtitle: "This will reset everything and begin again." }
         ];
 
         // Initialize the page
         async function initializePage() {
+            // Validate puzzle sequence and clear data if changed
+            validatePuzzleSequence();
+            
             // Check if session was completed and user refreshed
             const sessionWasComplete = localStorage.getItem('sessionComplete') === 'true';
             
@@ -803,6 +927,12 @@
             
             // Normal initialization for non-completed sessions
             loadGameState();
+            
+            // Check if we're in cooldown after loading state
+            if (cooldownEnd && new Date().getTime() < cooldownEnd) {
+                // We're in cooldown, showCooldownPopup was already called in loadGameState
+                return; // Don't show session popup or continue initialization
+            }
             
             // Check if there's an existing session
             const hasSavedState = localStorage.getItem('crosswordGameState');
@@ -829,7 +959,7 @@
                     accuracy: 100,
                     totalMistakes: 0
                 };
-                timeLeft = 300;
+                timeLeft = defaultGameDuration; // Will be updated from config
                 isPaused = false;
                 if (timerInterval) clearInterval(timerInterval);
                 puzzlesBySize = {};
@@ -842,6 +972,11 @@
             
             // Detect available puzzles
             await detectAvailablePuzzles();
+            
+            // Update timeLeft for fresh games with the loaded config
+            if (!hasSavedState) {
+                timeLeft = defaultGameDuration;
+            }
             
             // Ensure we have a valid session order
             if (sessionPuzzleOrder.length === 0) {
@@ -859,7 +994,7 @@
             // Get current puzzle file
             const currentFile = getCurrentPuzzleFile();
             if (currentFile) {
-                loadPuzzleFromFile(currentFile);
+                loadPuzzleFromFile(currentFile, true); // Restore grid during page load
             }
         }
         
@@ -990,7 +1125,7 @@
             const saved = localStorage.getItem('crosswordGameState');
             if (saved) {
                 const gameState = JSON.parse(saved);
-                timeLeft = gameState.timeLeft || 300;
+                timeLeft = gameState.timeLeft || defaultGameDuration;
                 isPaused = gameState.isPaused || false;
                 isViewingCompletedPuzzle = gameState.isViewingCompletedPuzzle || false;
                 currentDirection = gameState.currentDirection || 'across';
@@ -1080,35 +1215,35 @@
                     resetPuzzleIndex();
                 }
                 
-                // Try to load puzzles.json which contains the organized puzzle directory
+                // Load puzzles.json from GitHub repository
                 try {
-                    const response = await fetch('crosswords/puzzles.json');
+                    const response = await fetch(`${GITHUB_CROSSWORDS_BASE}puzzles.json?t=${Date.now()}`);
                     if (response.ok) {
                         const puzzleDirectory = await response.json();
-                        puzzlesBySize = puzzleDirectory;
+                        
+                        // Extract game settings
+                        if (puzzleDirectory.globalSettings) {
+                            defaultGameDuration = puzzleDirectory.globalSettings.gameDurationSeconds;
+                            timeLeft = defaultGameDuration;
+                            
+                            if (puzzleDirectory.globalSettings.maxPuzzlesPerSession) {
+                                maxPuzzlesPerSession = puzzleDirectory.globalSettings.maxPuzzlesPerSession;
+                            }
+                        }
+                        
+                        // Extract puzzle lists and bonus settings
+                        puzzlesBySize = {};
+                        Object.keys(puzzleDirectory).forEach(key => {
+                            if (key !== 'globalSettings') {
+                                puzzlesBySize[key] = puzzleDirectory[key];
+                            }
+                        });
                     } else {
-                        throw new Error('puzzles.json not found');
+                        throw new Error('puzzles.json not found on GitHub');
                     }
                 } catch (e) {
-                    
-                    // Fallback: organize embedded puzzles by size
-                    puzzlesBySize = {};
-                    for (const [filename, puzzleData] of Object.entries(embeddedPuzzles)) {
-                        const size = puzzleData.size;
-                        if (!puzzlesBySize[size]) {
-                            puzzlesBySize[size] = [];
-                        }
-                        puzzlesBySize[size].push(filename);
-                    }
-                    
-                    // Sort each size group by number
-                    Object.keys(puzzlesBySize).forEach(size => {
-                        puzzlesBySize[size].sort((a, b) => {
-                            const aNum = parseInt(a.split('_')[1].split('.')[0]);
-                            const bNum = parseInt(b.split('_')[1].split('.')[0]);
-                            return aNum - bNum;
-                        });
-                    });
+                    console.error('Failed to load puzzle directory from GitHub:', e);
+                    throw new Error('Cannot load crossword puzzles. Please check your internet connection.');
                 }
                 
                 
@@ -1136,7 +1271,7 @@
             const missingSizes = [];
             
             requiredSizes.forEach(size => {
-                if (!puzzlesBySize[size] || puzzlesBySize[size].length === 0) {
+                if (!puzzlesBySize[size] || !puzzlesBySize[size].puzzles || puzzlesBySize[size].puzzles.length === 0) {
                     missingSizes.push(size);
                 }
             });
@@ -1158,8 +1293,8 @@
             
             // Shuffle puzzles for each size and initialize indexes
             uniqueSizes.forEach(size => {
-                if (puzzlesBySize[size]) {
-                    shuffledBySize[size] = [...puzzlesBySize[size]];
+                if (puzzlesBySize[size] && puzzlesBySize[size].puzzles) {
+                    shuffledBySize[size] = [...puzzlesBySize[size].puzzles];
                     shuffleArray(shuffledBySize[size]);
                     indexesBySize[size] = 0;
                 } else {
@@ -1182,8 +1317,8 @@
             let cycleCount = 0;
             let puzzlesAdded = 0;
             
-            // Continue until we've used all available puzzles
-            while (puzzlesAdded < totalPuzzles) {
+            // Continue until we've used all available puzzles or reached session limit
+            while (puzzlesAdded < totalPuzzles && puzzlesAdded < maxPuzzlesPerSession) {
                 const sequencePosition = cycleCount % PUZZLE_SEQUENCE.length;
                 const requiredSize = PUZZLE_SEQUENCE[sequencePosition];
                 
@@ -1266,464 +1401,38 @@
             loadPuzzleFromFile(puzzleFile);
         }
 
-        // Embedded puzzle data for local testing (copied from actual files)
-        const embeddedPuzzles = {
-            '5_00.json': {
-                "size": 5,
-                "grid": [
-                    ["T", "H", "A", "I", "S"],
-                    [".", "O", ".", "N", "."],
-                    ["B", "R", "I", "C", "K"],
-                    ["I", "D", "A", "H", "O"],
-                    ["G", "E", "M", ".", "I"]
-                ],
-                "words": [
-                    {
-                        "word": "THAIS",
-                        "clue": "People behind orange iced-tea",
-                        "row": 0,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 1,
-                        "display": "1-Across",
-						"related": []
-                    },
-                    {
-                        "word": "BRICK",
-                        "clue": "When update foundations go wrong",
-                        "row": 2,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 4,
-                        "display": "4-Across",
-						"related": []
-                    },
-                    {
-                        "word": "IDAHO",
-                        "clue": "8 across on the US map",
-                        "row": 3,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 7,
-                        "display": "7-Across",
-						"related": ["8A"]
-                    },
-                    {
-                        "word": "GEM",
-                        "clue": "An opal, or a rare find",
-                        "row": 4,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 8,
-                        "display": "8-Across",
-						"related": []
-                    },
-                    {
-                        "word": "BIG",
-                        "clue": "What 8-down isn't",
-                        "row": 2,
-                        "col": 0,
-                        "direction": "down",
-                        "number": 4,
-                        "display": "4-Down",
-						"related": ["3D"]
-                    },
-                    {
-                        "word": "HORDE",
-                        "clue": "Mob that sounds like stash",
-                        "row": 0,
-                        "col": 1,
-                        "direction": "down",
-                        "number": 2,
-                        "display": "2-Down",
-						"related": []
-                    },
-                    {
-                        "word": "IAM",
-                        "clue": "Descartes's conclusion",
-                        "row": 2,
-                        "col": 2,
-                        "direction": "down",
-                        "number": 5,
-                        "display": "5-Down",
-						"related": []
-                    },
-                    {
-                        "word": "INCH",
-                        "clue": "Scale of imperial progression",
-                        "row": 0,
-                        "col": 3,
-                        "direction": "down",
-                        "number": 3,
-                        "display": "3-Down",
-						"related": []
-                    },
-                    {
-                        "word": "KOI",
-                        "clue": "Carp that ate and served",
-                        "row": 2,
-                        "col": 4,
-                        "direction": "down",
-                        "number": 6,
-                        "display": "6-Down",
-						"related": []
-                    }
-                ]
-            },
-            '5_01.json': {
-                "size": 5,
-                "grid": [
-                    ["T", "H", "A", "I", "S"],
-                    [".", "O", ".", "N", "."],
-                    ["B", "R", "I", "C", "K"],
-                    ["I", "D", "A", "H", "O"],
-                    ["G", "E", "M", ".", "I"]
-                ],
-                "words": [
-                    {
-                        "word": "THAIS",
-                        "clue": "People behind orange iced-tea",
-                        "row": 0,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 1,
-                        "display": "1-Across",
-						"related": []
-                    },
-                    {
-                        "word": "BRICK",
-                        "clue": "When update foundations go wrong",
-                        "row": 2,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 4,
-                        "display": "4-Across",
-						"related": []
-                    },
-                    {
-                        "word": "IDAHO",
-                        "clue": "8-across on the US map",
-                        "row": 3,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 7,
-                        "display": "7-Across",
-						"related": ["8A"]
-                    },
-                    {
-                        "word": "GEM",
-                        "clue": "An opal, or a rare find",
-                        "row": 4,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 8,
-                        "display": "8-Across",
-						"related": []
-                    },
-                    {
-                        "word": "BIG",
-                        "clue": "What 3-down isn't",
-                        "row": 2,
-                        "col": 0,
-                        "direction": "down",
-                        "number": 4,
-                        "display": "4-Down",
-						"related": ["3D"]
-                    },
-                    {
-                        "word": "HORDE",
-                        "clue": "Mob that sounds like stash",
-                        "row": 0,
-                        "col": 1,
-                        "direction": "down",
-                        "number": 2,
-                        "display": "2-Down",
-						"related": []
-                    },
-                    {
-                        "word": "IAM",
-                        "clue": "Descartes's conclusion",
-                        "row": 2,
-                        "col": 2,
-                        "direction": "down",
-                        "number": 5,
-                        "display": "5-Down",
-						"related": []
-                    },
-                    {
-                        "word": "INCH",
-                        "clue": "Scale of imperial progression",
-                        "row": 0,
-                        "col": 3,
-                        "direction": "down",
-                        "number": 3,
-                        "display": "3-Down",
-						"related": []
-                    },
-                    {
-                        "word": "KOI",
-                        "clue": "Carp that ate and served",
-                        "row": 2,
-                        "col": 4,
-                        "direction": "down",
-                        "number": 6,
-                        "display": "6-Down",
-						"related": []
-                    }
-                ]
-            },
-            '8_00.json': {
-                "size": 8,
-                "grid": [
-                    ["S", "C", "R", "A", "B", "B", "L", "E"],
-                    ["A", ".", "E", "D", "A", ".", ".", "C"],
-                    ["H", ".", "C", "A", "L", "I", "C", "O"],
-                    ["A", "B", "U", ".", ".", "N", "O", "N"],
-                    ["D", "O", "R", ".", ".", "P", "R", "O"],
-                    ["E", "A", "S", "E", "L", "S", ".", "M"],
-                    ["V", ".", ".", "A", "B", "S", ".", "I"],
-                    ["A", "C", "O", "U", "S", "T", "I", "C"]
-                ],
-                "words": [
-                    {
-                        "word": "SCRABBLE",
-                        "clue": "Where qi comes in handy",
-                        "row": 0,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 1,
-                        "display": "1-Across",
-						"related": []
-                    },
-                    {
-                        "word": "EDA",
-                        "clue": "Name that's big in Turkey, bigger in data",
-                        "row": 1,
-                        "col": 2,
-                        "direction": "across",
-                        "number": 6,
-                        "display": "6-Across",
-						"related": []
-                    },
-                    {
-                        "word": "CALICO",
-                        "clue": "Haju's heritage of hues",
-                        "row": 2,
-                        "col": 2,
-                        "direction": "across",
-                        "number": 7,
-                        "display": "7-Across",
-						"related": []
-                    },
-                    {
-                        "word": "ABU",
-                        "clue": "UAE capital starter",
-                        "row": 3,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 10,
-                        "display": "10-Across",
-						"related": []
-                    },
-                    {
-                        "word": "NON",
-                        "clue": "Italian refusal",
-                        "row": 3,
-                        "col": 5,
-                        "direction": "across",
-                        "number": 12,
-                        "display": "12-Across",
-						"related": []
-                    },
-                    {
-                        "word": "DOR",
-                        "clue": "British burrowing beetle",
-                        "row": 4,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 13,
-                        "display": "13-Across",
-						"related": []
-                    },
-                    {
-                        "word": "PRO",
-                        "clue": "One who's in favor (and probably better at it)",
-                        "row": 4,
-                        "col": 5,
-                        "direction": "across",
-                        "number": 14,
-                        "display": "14-Across",
-						"related": []
-                    },
-                    {
-                        "word": "EASELS",
-                        "clue": "Stands for art",
-                        "row": 5,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 15,
-                        "display": "15-Across",
-						"related": []
-                    },
-                    {
-                        "word": "ABS",
-                        "clue": "Core focus at gym",
-                        "row": 6,
-                        "col": 3,
-                        "direction": "across",
-                        "number": 18,
-                        "display": "18-Across",
-						"related": []
-                    },
-                    {
-                        "word": "ACOUSTIC",
-                        "clue": "No-current music",
-                        "row": 7,
-                        "col": 0,
-                        "direction": "across",
-                        "number": 19,
-                        "display": "19-Across",
-						"related": []
-                    },
-                    {
-                        "word": "SAHADEVA",
-                        "clue": "Nakula's typographic twin",
-                        "row": 0,
-                        "col": 0,
-                        "direction": "down",
-                        "number": 1,
-                        "display": "1-Down",
-						"related": []
-                    },
-                    {
-                        "word": "BOA",
-                        "clue": "Neck wrap, reptilian or feathery",
-                        "row": 3,
-                        "col": 1,
-                        "direction": "down",
-                        "number": 11,
-                        "display": "11-Down",
-						"related": []
-                    },
-                    {
-                        "word": "RECURS",
-                        "clue": "Over / and over",
-                        "row": 0,
-                        "col": 2,
-                        "direction": "down",
-                        "number": 2,
-                        "display": "2-Down",
-						"related": []
-                    },
-                    {
-                        "word": "ADA",
-                        "clue": "First name in programming history",
-                        "row": 0,
-                        "col": 3,
-                        "direction": "down",
-                        "number": 3,
-                        "display": "3-Down",
-						"related": []
-                    },
-                    {
-                        "word": "EAU",
-                        "clue": "A Parisians idea of rehydration",
-                        "row": 5,
-                        "col": 3,
-                        "direction": "down",
-                        "number": 16,
-                        "display": "16-Down",
-						"related": []
-                    },
-                    {
-                        "word": "BAL",
-                        "clue": "Upper-level seat, for short",
-                        "row": 0,
-                        "col": 4,
-                        "direction": "down",
-                        "number": 4,
-                        "display": "4-Down",
-						"related": []
-                    },
-                    {
-                        "word": "LBS",
-                        "clue": "What you gain after the Fourth, briefly",
-                        "row": 5,
-                        "col": 4,
-                        "direction": "down",
-                        "number": 17,
-                        "display": "17-Down",
-						"related": []
-                    },
-                    {
-                        "word": "INPSST",
-                        "clue": "Soft spot for a double S",
-                        "row": 2,
-                        "col": 5,
-                        "direction": "down",
-                        "number": 8,
-                        "display": "8-Down",
-						"related": []
-                    },
-                    {
-                        "word": "COR",
-                        "clue": "Where \"heart\" began",
-                        "row": 2,
-                        "col": 6,
-                        "direction": "down",
-                        "number": 9,
-                        "display": "9-Down",
-						"related": []
-                    },
-                    {
-                        "word": "ECONOMIC",
-                        "clue": "A state Jaden Smith is concerned about",
-                        "row": 0,
-                        "col": 7,
-                        "direction": "down",
-                        "number": 5,
-                        "display": "5-Down",
-						"related": []
-                    }
-                ]
-            }
-        };
+        // GitHub base URL for crossword puzzles
+        const GITHUB_CROSSWORDS_BASE = 'https://raw.githubusercontent.com/hat-im/hat-im.github.io/mini-crosswords/crosswords/';
 
-        async function loadPuzzleFromFile(filename) {
+        async function loadPuzzleFromFile(filename, shouldRestoreGrid = false) {
             try {
-                // First try embedded data for local testing
-                if (embeddedPuzzles[filename]) {
-                    crosswordData = embeddedPuzzles[filename];
-                } else {
-                    // Try to fetch from file
-                    const response = await fetch(`crosswords/${filename}`);
-                    if (!response.ok) {
-                        throw new Error(`Failed to load ${filename}`);
-                    }
-                    crosswordData = await response.json();
+                // Fetch puzzle from GitHub repository
+                const response = await fetch(`${GITHUB_CROSSWORDS_BASE}${filename}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${filename} from GitHub`);
                 }
+                crosswordData = await response.json();
                 
-                // Reset grid for new puzzle
-                userGrid = Array(crosswordData.size).fill(null).map(() => 
-                    Array(crosswordData.size).fill('')
-                );
+                // Reset grid for new puzzle only if not restoring
+                if (!shouldRestoreGrid) {
+                    userGrid = Array(crosswordData.size).fill(null).map(() => 
+                        Array(crosswordData.size).fill('')
+                    );
+                }
                 
                 // Clear and recreate UI
                 document.getElementById('game-content').innerHTML = '';
-                createGameInterface();
+                createGameInterface(shouldRestoreGrid);
                 
-                // Start timing this puzzle
-                puzzleStartTime = Date.now();
+                // Start timing this puzzle only if not restoring
+                if (!shouldRestoreGrid) {
+                    puzzleStartTime = Date.now();
+                }
                 
                 saveGameState();
             } catch (error) {
-                // Fall back to first embedded puzzle if all else fails
-                if (embeddedPuzzles['5_00.json']) {
-                    crosswordData = embeddedPuzzles['5_00.json'];
-                    createGameInterface();
-                    puzzleStartTime = Date.now();
-                    saveGameState();
-                }
+                console.error('Failed to load puzzle:', error);
+                showToast('Failed to load puzzle. Please check your internet connection.');
             }
         }
 
@@ -1774,16 +1483,16 @@
                 pauseBtn.style.visibility = 'hidden';
             }
             
-            document.getElementById('popup-title').textContent = "Session Complete!";
+            document.getElementById('popup-title').textContent = "Crosswords Complete!";
             
             // Create content with stats below subtitle
             const subtitleElement = document.getElementById('popup-subtitle');
             subtitleElement.innerHTML = `
-                Amazing work! Here are your stats:
+                Amazing work! You completed ${sessionPuzzleOrder.length} puzzles in this round. Here are your stats:
                 <div class="stats-table" style="margin-top: 30px;">
                     <div class="stats-row">
                         <span class="stats-label">Puzzles Completed</span>
-                        <span class="stats-value">${sessionStats.puzzlesCompleted}</span>
+                        <span class="stats-value">${sessionStats.puzzlesCompleted} of ${sessionPuzzleOrder.length}</span>
                     </div>
                     <div class="stats-row">
                         <span class="stats-label">Total Time</span>
@@ -1839,7 +1548,7 @@
                 };
                 
                 // Reset timer and pause state
-                timeLeft = 300;
+                timeLeft = defaultGameDuration;
                 isPaused = false;
                 if (timerInterval) clearInterval(timerInterval);
                 
@@ -1950,6 +1659,7 @@
                 }
                 updateClueVisibility(); // Show clues when resuming
                 updatePuzzleViewState(); // Update pause button and input state
+                startTimer(); // Restart the timer interval
                 saveGameState();
             }
         }
@@ -2038,28 +1748,38 @@
                 
                 loadPuzzleFromFile(previousFile);
                 
-                // Fill in all answers when going to a previous puzzle
-                setTimeout(() => {
-                    for (let word of crosswordData.words) {
-                        for (let i = 0; i < word.word.length; i++) {
-                            let row, col;
-                            if (word.direction === 'across') {
-                                row = word.row;
-                                col = word.col + i;
-                            } else {
-                                row = word.row + i;
-                                col = word.col;
-                            }
-                            
-                            const correctLetter = word.word[i];
-                            userGrid[row][col] = correctLetter;
-                            const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
-                            if (inputElement) {
-                                inputElement.value = correctLetter;
+                // Only fill in answers if the previous puzzle is completed
+                if (isPreviousCompleted) {
+                    setTimeout(() => {
+                        for (let word of crosswordData.words) {
+                            for (let i = 0; i < word.word.length; i++) {
+                                let row, col;
+                                if (word.direction === 'across') {
+                                    row = word.row;
+                                    col = word.col + i;
+                                } else {
+                                    row = word.row + i;
+                                    col = word.col;
+                                }
+                                
+                                const correctLetter = word.word[i];
+                                userGrid[row][col] = correctLetter;
+                                const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                                if (inputElement) {
+                                    inputElement.value = correctLetter;
+                                }
                             }
                         }
-                    }
-                }, 100); // Small delay to ensure DOM is ready
+                    }, 100); // Small delay to ensure DOM is ready
+                    
+                    // Clear any check feedback coloring for completed puzzles
+                    setTimeout(() => {
+                        const allInputs = document.querySelectorAll('.cell-input');
+                        allInputs.forEach(input => {
+                            input.classList.remove('correct', 'incorrect');
+                        });
+                    }, 150);
+                }
                 
                 updateNavigationButtons();
                 updateClueVisibility(); // Update clue visibility based on completed state
@@ -2096,6 +1816,40 @@
                 }
                 
                 loadPuzzleFromFile(nextFile);
+                
+                // Fill in answers if the next puzzle is completed
+                if (isNextCompleted) {
+                    setTimeout(() => {
+                        for (let word of crosswordData.words) {
+                            for (let i = 0; i < word.word.length; i++) {
+                                let row, col;
+                                if (word.direction === 'across') {
+                                    row = word.row;
+                                    col = word.col + i;
+                                } else {
+                                    row = word.row + i;
+                                    col = word.col;
+                                }
+                                
+                                const correctLetter = word.word[i];
+                                userGrid[row][col] = correctLetter;
+                                const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] input`);
+                                if (inputElement) {
+                                    inputElement.value = correctLetter;
+                                }
+                            }
+                        }
+                    }, 100); // Small delay to ensure DOM is ready
+                    
+                    // Clear any check feedback coloring for completed puzzles
+                    setTimeout(() => {
+                        const allInputs = document.querySelectorAll('.cell-input');
+                        allInputs.forEach(input => {
+                            input.classList.remove('correct', 'incorrect');
+                        });
+                    }, 150);
+                }
+                
                 updateNavigationButtons();
                 updateClueVisibility(); // Update clue visibility based on completed state
                 updatePuzzleViewState(); // Update pause button and input state
@@ -2132,7 +1886,7 @@
                 accuracy: 100,
                 totalMistakes: 0
             };
-            timeLeft = 300;
+            timeLeft = defaultGameDuration;
             isPaused = false;
             if (timerInterval) clearInterval(timerInterval);
             puzzlesBySize = {};
@@ -2167,6 +1921,11 @@
         }
 
         function startCooldown() {
+            // Stop the main timer and pause the game
+            if (timerInterval) clearInterval(timerInterval);
+            isPaused = true;
+            isManuallyPaused = false; // This is an automatic pause due to timeout
+            
             // Set cooldown end time (1 hour from now)
             cooldownEnd = new Date().getTime() + (60 * 60 * 1000); // 1 hour in milliseconds
             saveGameState();
@@ -2204,6 +1963,14 @@
                 // Cooldown finished
                 clearInterval(cooldownInterval);
                 cooldownEnd = null;
+                
+                // Reset timer to 5 minutes and resume game
+                timeLeft = defaultGameDuration;
+                isPaused = false;
+                isManuallyPaused = false;
+                updateTimerDisplay();
+                startTimer();
+                
                 saveGameState();
                 
                 // Reset popup to normal state
@@ -2230,7 +1997,7 @@
             localStorage.removeItem('crosswordGameState');
             
             // Reset the game
-            timeLeft = 300;
+            timeLeft = defaultGameDuration;
             isPaused = false;
             cooldownEnd = null;
             
@@ -2258,6 +2025,7 @@
             
             // Set initial state
             setCurrentWord(crosswordData.words[0]);
+            selectCell(crosswordData.words[0].row, crosswordData.words[0].col);
             
             // Reset popup to normal state
             const popup = document.querySelector('.popup');
@@ -2268,339 +2036,29 @@
         }
 
         // Load crossword data based on selected file
-        function loadCrosswordData() {
-            // Crossword data based on selected file
-            const crosswordFiles = {
-                '5_00.json': {
-                    "size": 5,
-                    "grid": [
-                        ["T", "H", "A", "I", "S"],
-                        [".", "O", ".", "N", "."],
-                        ["B", "R", "I", "C", "K"],
-                        ["I", "D", "A", "H", "O"],
-                        ["G", "E", "M", ".", "I"]
-                    ],
-                    "words": [
-                        {
-                            "word": "THAIS",
-                            "clue": "People behind orange iced-tea",
-                            "row": 0,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 1,
-                            "display": "1-Across",
-						"related": []
-                        },
-                        {
-                            "word": "BRICK",
-                            "clue": "When update foundations go wrong",
-                            "row": 2,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 4,
-                            "display": "4-Across",
-						"related": []
-                        },
-                        {
-                            "word": "IDAHO",
-                            "clue": "8 across on the US map",
-                            "row": 3,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 7,
-                            "display": "7-Across",
-						"related": []
-                        },
-                        {
-                            "word": "GEM",
-                            "clue": "An opal, or a rare find",
-                            "row": 4,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 8,
-                            "display": "8-Across",
-						"related": []
-                        },
-                        {
-                            "word": "BIG",
-                            "clue": "What 8-down isn't",
-                            "row": 2,
-                            "col": 0,
-                            "direction": "down",
-                            "number": 4,
-                            "display": "4-Down",
-						"related": []
-                        },
-                        {
-                            "word": "HORDE",
-                            "clue": "Mob that sounds like stash",
-                            "row": 0,
-                            "col": 1,
-                            "direction": "down",
-                            "number": 2,
-                            "display": "2-Down",
-						"related": []
-                        },
-                        {
-                            "word": "IAM",
-                            "clue": "Descartes's conclusion",
-                            "row": 2,
-                            "col": 2,
-                            "direction": "down",
-                            "number": 5,
-                            "display": "5-Down",
-						"related": []
-                        },
-                        {
-                            "word": "INCH",
-                            "clue": "Scale of imperial progression",
-                            "row": 0,
-                            "col": 3,
-                            "direction": "down",
-                            "number": 3,
-                            "display": "3-Down",
-						"related": []
-                        },
-                        {
-                            "word": "KOI",
-                            "clue": "Carp that ate and served",
-                            "row": 2,
-                            "col": 4,
-                            "direction": "down",
-                            "number": 6,
-                            "display": "6-Down",
-						"related": []
-                        }
-                    ]
-                },
-                '8_00.json': {
-                    "size": 8,
-                    "grid": [
-                        ["S", "C", "R", "A", "B", "B", "L", "E"],
-                        ["A", ".", "E", "D", "A", ".", ".", "C"],
-                        ["H", ".", "C", "A", "L", "I", "C", "O"],
-                        ["A", "B", "U", ".", ".", "N", "O", "N"],
-                        ["D", "O", "R", ".", ".", "P", "R", "O"],
-                        ["E", "A", "S", "E", "L", "S", ".", "M"],
-                        ["V", ".", ".", "A", "B", "S", ".", "I"],
-                        ["A", "C", "O", "U", "S", "T", "I", "C"]
-                    ],
-                    "words": [
-                        {
-                            "word": "SCRABBLE",
-                            "clue": "Where qi comes in handy",
-                            "row": 0,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 1,
-                            "display": "1-Across",
-						"related": []
-                        },
-                        {
-                            "word": "EDA",
-                            "clue": "Name that's big in Turkey, bigger in data",
-                            "row": 1,
-                            "col": 2,
-                            "direction": "across",
-                            "number": 6,
-                            "display": "6-Across",
-						"related": []
-                        },
-                        {
-                            "word": "CALICO",
-                            "clue": "Haju's heritage of hues",
-                            "row": 2,
-                            "col": 2,
-                            "direction": "across",
-                            "number": 7,
-                            "display": "7-Across",
-						"related": []
-                        },
-                        {
-                            "word": "ABU",
-                            "clue": "UAE capital starter",
-                            "row": 3,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 10,
-                            "display": "10-Across",
-						"related": []
-                        },
-                        {
-                            "word": "NON",
-                            "clue": "Italian refusal",
-                            "row": 3,
-                            "col": 5,
-                            "direction": "across",
-                            "number": 12,
-                            "display": "12-Across",
-						"related": []
-                        },
-                        {
-                            "word": "DOR",
-                            "clue": "British burrowing beetle",
-                            "row": 4,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 13,
-                            "display": "13-Across",
-						"related": []
-                        },
-                        {
-                            "word": "PRO",
-                            "clue": "One who's in favor (and probably better at it)",
-                            "row": 4,
-                            "col": 5,
-                            "direction": "across",
-                            "number": 14,
-                            "display": "14-Across",
-						"related": []
-                        },
-                        {
-                            "word": "EASELS",
-                            "clue": "Stands for art",
-                            "row": 5,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 15,
-                            "display": "15-Across",
-						"related": []
-                        },
-                        {
-                            "word": "ABS",
-                            "clue": "Core focus at gym",
-                            "row": 6,
-                            "col": 3,
-                            "direction": "across",
-                            "number": 18,
-                            "display": "18-Across",
-						"related": []
-                        },
-                        {
-                            "word": "ACOUSTIC",
-                            "clue": "No-current music",
-                            "row": 7,
-                            "col": 0,
-                            "direction": "across",
-                            "number": 19,
-                            "display": "19-Across",
-						"related": []
-                        },
-                        {
-                            "word": "SAHADEVA",
-                            "clue": "Nakula's typographic twin",
-                            "row": 0,
-                            "col": 0,
-                            "direction": "down",
-                            "number": 1,
-                            "display": "1-Down",
-						"related": []
-                        },
-                        {
-                            "word": "BOA",
-                            "clue": "Neck wrap, reptilian or feathery",
-                            "row": 3,
-                            "col": 1,
-                            "direction": "down",
-                            "number": 11,
-                            "display": "11-Down",
-						"related": []
-                        },
-                        {
-                            "word": "RECURS",
-                            "clue": "Over / and over",
-                            "row": 0,
-                            "col": 2,
-                            "direction": "down",
-                            "number": 2,
-                            "display": "2-Down",
-						"related": []
-                        },
-                        {
-                            "word": "ADA",
-                            "clue": "First name in programming history",
-                            "row": 0,
-                            "col": 3,
-                            "direction": "down",
-                            "number": 3,
-                            "display": "3-Down",
-						"related": []
-                        },
-                        {
-                            "word": "EAU",
-                            "clue": "A Parisians idea of rehydration",
-                            "row": 5,
-                            "col": 3,
-                            "direction": "down",
-                            "number": 16,
-                            "display": "16-Down",
-						"related": []
-                        },
-                        {
-                            "word": "BAL",
-                            "clue": "Upper-level seat, for short",
-                            "row": 0,
-                            "col": 4,
-                            "direction": "down",
-                            "number": 4,
-                            "display": "4-Down",
-						"related": []
-                        },
-                        {
-                            "word": "LBS",
-                            "clue": "What you gain after the Fourth, briefly",
-                            "row": 5,
-                            "col": 4,
-                            "direction": "down",
-                            "number": 17,
-                            "display": "17-Down",
-						"related": []
-                        },
-                        {
-                            "word": "INPSST",
-                            "clue": "Soft spot for a double S",
-                            "row": 2,
-                            "col": 5,
-                            "direction": "down",
-                            "number": 8,
-                            "display": "8-Down",
-						"related": []
-                        },
-                        {
-                            "word": "COR",
-                            "clue": "Where \"heart\" began",
-                            "row": 2,
-                            "col": 6,
-                            "direction": "down",
-                            "number": 9,
-                            "display": "9-Down",
-						"related": []
-                        },
-                        {
-                            "word": "ECONOMIC",
-                            "clue": "A state Jaden Smith is concerned about",
-                            "row": 0,
-                            "col": 7,
-                            "direction": "down",
-                            "number": 5,
-                            "display": "5-Down",
-						"related": []
-                        }
-                    ]
+        async function loadCrosswordData() {
+            try {
+                // Fetch the specified crossword file from GitHub
+                const response = await fetch(`${GITHUB_CROSSWORDS_BASE}${CROSSWORD_FILE}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${CROSSWORD_FILE} from GitHub`);
                 }
-            };
-
-            // Get the selected crossword data
-            crosswordData = crosswordFiles[CROSSWORD_FILE];
-            
-            if (crosswordData) {
-                // Initialize the crossword game
-                initializeCrossword();
+                crosswordData = await response.json();
+                
+                if (crosswordData) {
+                    // Initialize the crossword game
+                    initializeCrossword();
+                } else {
+                    console.error('No crossword data found');
+                }
+            } catch (error) {
+                console.error('Failed to load crossword data:', error);
+                showToast('Failed to load crossword. Please check your internet connection.');
             }
         }
 
         // Create the game interface
-        function createGameInterface() {
+        function createGameInterface(shouldRestoreGrid = true) {
             // Create main content HTML
             const gameContent = document.getElementById('game-content');
             gameContent.innerHTML = `
@@ -2618,9 +2076,22 @@
                         </div>
                     </div>
                     <div class="controls-right">
-                        <button class="action-btn" id="reveal-letter-btn">Reveal Letter</button>
-                        <button class="action-btn" id="reveal-word-btn">Reveal Word</button>
-                        <button class="action-btn" id="reveal-puzzle-btn">Reveal Puzzle</button>
+                        <div class="dropdown">
+                            <button class="dropdown-btn" id="check-dropdown-btn">Check</button>
+                            <div class="dropdown-content" id="check-dropdown">
+                                <button class="dropdown-item" id="check-square-btn">Check Square</button>
+                                <button class="dropdown-item" id="check-word-btn">Check Word</button>
+                                <button class="dropdown-item" id="check-puzzle-btn">Check Puzzle</button>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <button class="dropdown-btn" id="reveal-dropdown-btn">Reveal</button>
+                            <div class="dropdown-content" id="reveal-dropdown">
+                                <button class="dropdown-item" id="reveal-letter-btn">Reveal Letter</button>
+                                <button class="dropdown-item" id="reveal-word-btn">Reveal Word</button>
+                                <button class="dropdown-item" id="reveal-puzzle-btn">Reveal Puzzle</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -2662,6 +2133,7 @@
             
             // Set initial state
             setCurrentWord(crosswordData.words[0]);
+            selectCell(crosswordData.words[0].row, crosswordData.words[0].col);
             
             // Start timing this puzzle if not already started
             if (!puzzleStartTime) {
@@ -2682,8 +2154,10 @@
             // Set initial clue visibility based on pause state
             updateClueVisibility();
             
-            // Restore user input after DOM elements are created
-            restoreUserGrid();
+            // Restore user input after DOM elements are created (only if requested)
+            if (shouldRestoreGrid) {
+                restoreUserGrid();
+            }
             
             // Update navigation button states
             updateNavigationButtons();
@@ -2701,6 +2175,17 @@
             const prevBtn = document.getElementById('previous-btn');
             const nextBtn = document.getElementById('next-btn');
             const restartBtn = document.getElementById('restart-btn');
+            
+            // Dropdown buttons
+            const checkDropdownBtn = document.getElementById('check-dropdown-btn');
+            const revealDropdownBtn = document.getElementById('reveal-dropdown-btn');
+            
+            // Check dropdown items
+            const checkSquareBtn = document.getElementById('check-square-btn');
+            const checkWordBtn = document.getElementById('check-word-btn');
+            const checkPuzzleBtn = document.getElementById('check-puzzle-btn');
+            
+            // Reveal dropdown items
             const revealLetterBtn = document.getElementById('reveal-letter-btn');
             const revealWordBtn = document.getElementById('reveal-word-btn');
             const revealPuzzleBtn = document.getElementById('reveal-puzzle-btn');
@@ -2720,6 +2205,45 @@
                     restartGame();
                 });
             }
+            // Dropdown functionality
+            if (checkDropdownBtn) {
+                checkDropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const dropdown = document.getElementById('check-dropdown');
+                    dropdown.classList.toggle('show');
+                    // Close other dropdown
+                    document.getElementById('reveal-dropdown').classList.remove('show');
+                });
+            }
+            
+            if (revealDropdownBtn) {
+                revealDropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const dropdown = document.getElementById('reveal-dropdown');
+                    dropdown.classList.toggle('show');
+                    // Close other dropdown
+                    document.getElementById('check-dropdown').classList.remove('show');
+                });
+            }
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function() {
+                document.getElementById('check-dropdown').classList.remove('show');
+                document.getElementById('reveal-dropdown').classList.remove('show');
+            });
+            
+            // Check dropdown items
+            if (checkSquareBtn) {
+                checkSquareBtn.addEventListener('click', checkSquare);
+            }
+            if (checkWordBtn) {
+                checkWordBtn.addEventListener('click', checkWord);
+            }
+            if (checkPuzzleBtn) {
+                checkPuzzleBtn.addEventListener('click', checkPuzzle);
+            }
+            
+            // Reveal dropdown items
             if (revealLetterBtn) {
                 revealLetterBtn.addEventListener('click', revealLetter);
             }
@@ -2830,7 +2354,11 @@
                 clueDiv.className = 'clue-item';
                 clueDiv.dataset.wordIndex = crosswordData.words.indexOf(word);
                 clueDiv.innerHTML = `<span class="clue-number">${word.number}</span>${word.clue}`;
-                clueDiv.addEventListener('click', () => setCurrentWord(word));
+                clueDiv.addEventListener('click', () => {
+                    setCurrentWord(word);
+                    const firstEmpty = findFirstEmptyCell(word);
+                    selectCell(firstEmpty.row, firstEmpty.col);
+                });
                 acrossClues.appendChild(clueDiv);
             });
             
@@ -2839,7 +2367,11 @@
                 clueDiv.className = 'clue-item';
                 clueDiv.dataset.wordIndex = crosswordData.words.indexOf(word);
                 clueDiv.innerHTML = `<span class="clue-number">${word.number}</span>${word.clue}`;
-                clueDiv.addEventListener('click', () => setCurrentWord(word));
+                clueDiv.addEventListener('click', () => {
+                    setCurrentWord(word);
+                    const firstEmpty = findFirstEmptyCell(word);
+                    selectCell(firstEmpty.row, firstEmpty.col);
+                });
                 downClues.appendChild(clueDiv);
             });
         }
@@ -2853,12 +2385,12 @@
             document.getElementById('current-clue').innerHTML = 
                 `<span class="clue-number">${word.number}${word.direction === 'across' ? 'A' : 'D'}</span> ${word.clue}`;
             
-            // Remove previous highlights
+            // Remove previous highlights (but preserve cell selection)
             document.querySelectorAll('.clue-item').forEach(item => {
                 item.classList.remove('active');
             });
             document.querySelectorAll('.grid-cell').forEach(cell => {
-                cell.classList.remove('highlighted', 'selected');
+                cell.classList.remove('highlighted');
             });
             
             // Highlight current clue
@@ -2866,12 +2398,6 @@
             
             // Highlight word cells
             highlightWord(word);
-            
-            // Select first cell of word
-            const firstCell = document.querySelector(`[data-row="${word.row}"][data-col="${word.col}"]`);
-            if (firstCell && !firstCell.disabled) {
-                selectCell(word.row, word.col);
-            }
         }
 
         // Helper function to find word by shortened reference (e.g., '3D' -> number: 3, direction: 'down')
@@ -2926,8 +2452,8 @@
             }
         }
 
-        // Select a specific cell
-        function selectCell(row, col) {
+        // Select a specific cell and determine which word to make current
+        function selectCell(row, col, forceDirection = null) {
             // Remove previous selection
             document.querySelectorAll('.grid-cell').forEach(cell => {
                 cell.classList.remove('selected');
@@ -2940,13 +2466,75 @@
                 if (input) {
                     input.focus();
                 }
+                // Check if this is the same cell that was already selected
+                const isSameCell = selectedCell && selectedCell.row === row && selectedCell.col === col;
+                
                 selectedCell = { row, col };
+                
+                // Determine which word should be current based on the clicked cell
+                selectWordForCell(row, col, forceDirection, isSameCell);
+            }
+        }
+        
+        // Helper function to select the appropriate word when a cell is clicked
+        function selectWordForCell(row, col, forceDirection = null, isSameCell = false) {
+            // Find all words that contain this cell
+            const acrossWord = crosswordData.words.find(w => 
+                w.direction === 'across' && 
+                w.row === row && 
+                col >= w.col && 
+                col < w.col + w.word.length
+            );
+            
+            const downWord = crosswordData.words.find(w => 
+                w.direction === 'down' && 
+                w.col === col && 
+                row >= w.row && 
+                row < w.row + w.word.length
+            );
+            
+            let wordToSelect = null;
+            
+            if (forceDirection) {
+                // If a specific direction is forced, use that
+                wordToSelect = forceDirection === 'across' ? acrossWord : downWord;
+            } else if (isSameCell && acrossWord && downWord) {
+                // If clicking the same cell and both directions available, toggle
+                if (currentWord === acrossWord) {
+                    wordToSelect = downWord;
+                } else {
+                    wordToSelect = acrossWord;
+                }
+            } else if (currentDirection === 'across' && acrossWord) {
+                // If currently working on across words, prefer across
+                wordToSelect = acrossWord;
+            } else if (currentDirection === 'down' && downWord) {
+                // If currently working on down words, prefer down
+                wordToSelect = downWord;
+            } else if (acrossWord && downWord) {
+                // If both directions available and no current preference, prefer the direction
+                // that's different from the current word's direction (for better UX)
+                if (currentWord && currentWord.direction === 'across') {
+                    wordToSelect = downWord;
+                } else {
+                    wordToSelect = acrossWord;
+                }
+            } else {
+                // Select whichever word is available
+                wordToSelect = acrossWord || downWord;
+            }
+            
+            // Change the current word if we found a word (even if it's the same, to ensure highlighting)
+            if (wordToSelect) {
+                setCurrentWord(wordToSelect);
             }
         }
 
         // Handle input in grid cells
         function handleInput(event, row, col) {
             const value = event.target.value.toUpperCase();
+            // Remove any check feedback styling
+            event.target.classList.remove('correct', 'incorrect');
             if (value.match(/[A-Z]/)) {
                 userGrid[row][col] = value;
                 event.target.value = value;
@@ -3025,32 +2613,29 @@
             // Calculate and apply time bonuses
             let bonusTime = 0;
             
-            if (puzzleSize === 5) {
-                if (puzzleTime < 30000) { // Less than 30 seconds
-                    bonusTime = 45;
+            // Get bonus settings from config
+            const sizeConfig = puzzlesBySize[puzzleSize];
+            if (sizeConfig && sizeConfig.bonusSettings) {
+                const bonusSettings = sizeConfig.bonusSettings;
+                const thresholdMs = bonusSettings.fastCompletionThresholdSeconds * 1000;
+                
+                if (puzzleTime < thresholdMs) {
+                    bonusTime = bonusSettings.fastCompletionBonusSeconds;
                 } else {
-                    bonusTime = 30;
-                }
-            } else if (puzzleSize === 8) {
-                if (puzzleTime < 45000) { // Less than 45 seconds
-                    bonusTime = 60;
-                } else {
-                    bonusTime = 45;
+                    bonusTime = bonusSettings.normalCompletionBonusSeconds;
                 }
             }
             
-            timeLeft += bonusTime;
+            // Check if this is the final puzzle
+            const remainingPuzzles = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
             
-            // Store bonus info for next puzzle start (but not for final puzzle)
-            const remainingPuzzlesForBonus = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
-            if (remainingPuzzlesForBonus.length > 0) {
+            // Only apply time bonus if this is NOT the final puzzle
+            if (remainingPuzzles.length > 0) {
+                timeLeft += bonusTime;
                 localStorage.setItem('pendingBonus', `+${bonusTime} Seconds`);
             }
             
             saveGameState();
-            
-            // Check if this is the final puzzle
-            const remainingPuzzles = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
             
             if (remainingPuzzles.length === 0) {
                 // This was the final puzzle - go straight to final stats
@@ -3095,6 +2680,8 @@
         function handleKeydown(event, row, col) {
             // Handle letter replacement - clear field first if it's a letter
             if (event.key.match(/^[A-Za-z]$/)) {
+                // Remove any check feedback styling
+                event.target.classList.remove('correct', 'incorrect');
                 event.target.value = '';
                 userGrid[row][col] = '';
                 return; // Let the input event handle the new letter
@@ -3102,6 +2689,8 @@
             
             switch (event.key) {
                 case 'Backspace':
+                    // Remove any check feedback styling
+                    event.target.classList.remove('correct', 'incorrect');
                     if (event.target.value === '') {
                         // Move to previous cell and delete
                         moveToPreviousCell(row, col);
@@ -3138,34 +2727,26 @@
                     break;
                 case 'ArrowRight':
                     event.preventDefault();
-                    if (currentDirection === 'down') {
+                    if (!moveInDirection(row, col, 0, 1) && currentDirection === 'down') {
                         switchToAcrossDirection(row, col, true);
-                    } else {
-                        moveInDirection(row, col, 0, 1);
                     }
                     break;
                 case 'ArrowLeft':
                     event.preventDefault();
-                    if (currentDirection === 'down') {
+                    if (!moveInDirection(row, col, 0, -1) && currentDirection === 'down') {
                         switchToAcrossDirection(row, col, true);
-                    } else {
-                        moveInDirection(row, col, 0, -1);
                     }
                     break;
                 case 'ArrowDown':
                     event.preventDefault();
-                    if (currentDirection === 'across') {
+                    if (!moveInDirection(row, col, 1, 0) && currentDirection === 'across') {
                         switchToDownDirection(row, col, true);
-                    } else {
-                        moveInDirection(row, col, 1, 0);
                     }
                     break;
                 case 'ArrowUp':
                     event.preventDefault();
-                    if (currentDirection === 'across') {
+                    if (!moveInDirection(row, col, -1, 0) && currentDirection === 'across') {
                         switchToDownDirection(row, col, true);
-                    } else {
-                        moveInDirection(row, col, -1, 0);
                     }
                     break;
             }
@@ -3273,8 +2854,10 @@
                 const newCell = document.querySelector(`[data-row="${newRow}"][data-col="${newCol}"]`);
                 if (newCell && !newCell.classList.contains('black')) {
                     selectCell(newRow, newCol);
+                    return true;
                 }
             }
+            return false;
         }
 
         // Get words in current direction sorted by number
@@ -3647,6 +3230,122 @@
             } else {
                 // Not the final puzzle - show revealed popup
                 showPopup('revealed');
+            }
+        }
+
+        // Check puzzle function
+        function checkPuzzle() {
+            // Clear all previous feedback
+            const allInputs = document.querySelectorAll('.cell-input');
+            allInputs.forEach(input => {
+                input.classList.remove('correct', 'incorrect');
+            });
+
+            // Check each word in the puzzle
+            if (crosswordData && crosswordData.words) {
+                crosswordData.words.forEach(word => {
+                    const isAcross = word.direction === 'across';
+                    
+                    for (let i = 0; i < word.word.length; i++) {
+                        const row = isAcross ? word.row : word.row + i;
+                        const col = isAcross ? word.col + i : word.col;
+                        
+                        // Skip if out of bounds
+                        if (row >= crosswordData.size || col >= crosswordData.size) continue;
+                        
+                        const userLetter = userGrid[row][col];
+                        const correctLetter = word.word[i];
+                        
+                        // Only check cells that have user input (not empty)
+                        if (userLetter && userLetter !== '') {
+                            const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] .cell-input`);
+                            if (inputElement) {
+                                if (userLetter === correctLetter) {
+                                    inputElement.classList.add('correct');
+                                } else {
+                                    inputElement.classList.add('incorrect');
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Check Square function - checks only the currently selected cell
+        function checkSquare() {
+            if (!selectedCell || selectedCell.row === null || selectedCell.col === null) {
+                return; // No cell selected
+            }
+            
+            const row = selectedCell.row;
+            const col = selectedCell.col;
+            
+            // Clear previous feedback for this cell
+            const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] .cell-input`);
+            if (!inputElement) return;
+            
+            inputElement.classList.remove('correct', 'incorrect');
+            
+            // Only check if cell has user input
+            const userLetter = userGrid[row][col];
+            if (!userLetter || userLetter === '') return;
+            
+            // Find the correct letter for this cell
+            if (crosswordData && crosswordData.words) {
+                crosswordData.words.forEach(word => {
+                    const isAcross = word.direction === 'across';
+                    
+                    for (let i = 0; i < word.word.length; i++) {
+                        const wordRow = isAcross ? word.row : word.row + i;
+                        const wordCol = isAcross ? word.col + i : word.col;
+                        
+                        // Check if this word covers the selected cell
+                        if (wordRow === row && wordCol === col) {
+                            const correctLetter = word.word[i];
+                            
+                            if (userLetter === correctLetter) {
+                                inputElement.classList.add('correct');
+                            } else {
+                                inputElement.classList.add('incorrect');
+                            }
+                            return; // Found the cell, no need to continue
+                        }
+                    }
+                });
+            }
+        }
+
+        // Check Word function - checks all cells in the currently selected word
+        function checkWord() {
+            if (!selectedCell || !currentWord) return;
+            
+            const word = currentWord;
+            const isAcross = word.direction === 'across';
+            
+            // Clear previous feedback for all cells in this word
+            for (let i = 0; i < word.word.length; i++) {
+                const row = isAcross ? word.row : word.row + i;
+                const col = isAcross ? word.col + i : word.col;
+                
+                if (row >= crosswordData.size || col >= crosswordData.size) continue;
+                
+                const inputElement = document.querySelector(`[data-row="${row}"][data-col="${col}"] .cell-input`);
+                if (inputElement) {
+                    inputElement.classList.remove('correct', 'incorrect');
+                    
+                    // Only check cells that have user input
+                    const userLetter = userGrid[row][col];
+                    if (userLetter && userLetter !== '') {
+                        const correctLetter = word.word[i];
+                        
+                        if (userLetter === correctLetter) {
+                            inputElement.classList.add('correct');
+                        } else {
+                            inputElement.classList.add('incorrect');
+                        }
+                    }
+                }
             }
         }
 
