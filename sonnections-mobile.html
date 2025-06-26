@@ -270,6 +270,14 @@
             display: flex;
         }
 
+        .hidden-word {
+            display: none;
+        }
+
+        .show-play-buttons .play-button {
+            display: flex;
+        }
+
         .play-button:hover {
             background-color: rgba(18, 18, 18, 1);
         }
@@ -987,15 +995,72 @@
             popup.classList.remove('show');
         }
 
-        // Mobile audio handling (simplified)
-        function playAudio(word) {
-            const audioFile = gameState.wordToAudio.get(word);
-            if (!audioFile) return;
-            
-            // Simple audio play for mobile
-            const audio = new Audio(audioFile);
-            audio.volume = 0.7;
-            audio.play().catch(e => console.warn('Audio play failed:', e));
+        // Audio management (exact copy from desktop)
+        function playSound(word, audioFile) {
+            try {
+                // Stop any currently playing audio for this word
+                if (gameState.audioInstances.has(word)) {
+                    const existingAudio = gameState.audioInstances.get(word);
+                    existingAudio.pause();
+                    existingAudio.currentTime = 0;
+                }
+                
+                const audio = new Audio(audioFile);
+                audio.volume = 0.7;
+                
+                // Store the audio instance
+                gameState.audioInstances.set(word, audio);
+                
+                // Update button state when audio starts playing
+                audio.addEventListener('play', () => {
+                    updatePlayButtonState(word, 'playing');
+                });
+                
+                // Update button state when audio ends
+                audio.addEventListener('ended', () => {
+                    updatePlayButtonState(word, 'stopped');
+                    gameState.audioInstances.delete(word);
+                });
+                
+                // Update button state when audio is paused
+                audio.addEventListener('pause', () => {
+                    updatePlayButtonState(word, 'stopped');
+                });
+                
+                audio.play().catch(e => {
+                    console.warn('Could not play audio:', audioFile, e);
+                    updatePlayButtonState(word, 'stopped');
+                });
+            } catch (e) {
+                console.warn('Audio error:', e);
+            }
+        }
+        
+        function stopSound(word) {
+            if (gameState.audioInstances.has(word)) {
+                const audio = gameState.audioInstances.get(word);
+                audio.pause();
+                audio.currentTime = 0;
+                updatePlayButtonState(word, 'stopped');
+                gameState.audioInstances.delete(word);
+            }
+        }
+        
+        function updatePlayButtonState(word, state) {
+            const tiles = document.querySelectorAll('.word-tile');
+            tiles.forEach(tile => {
+                const hiddenWordEl = tile.querySelector('.hidden-word');
+                const playButton = tile.querySelector('.play-button');
+                if (hiddenWordEl && hiddenWordEl.textContent === word && playButton) {
+                    if (state === 'playing') {
+                        playButton.innerHTML = '⏸'; // Pause/stop symbol
+                        playButton.classList.add('playing');
+                    } else {
+                        playButton.innerHTML = '▶'; // Play symbol
+                        playButton.classList.remove('playing');
+                    }
+                }
+            });
         }
 
         // Initialize game (same as desktop but simplified)
@@ -1101,23 +1166,35 @@
                 fragment.appendChild(groupBlock);
             });
             
-            // Add remaining word tiles
+            // Add remaining word tiles (exact copy from desktop - NO TEXT SHOWN)
             remainingWords.forEach(word => {
                 const tile = document.createElement('div');
                 tile.className = `word-tile${selectedWordsSet.has(word) ? ' selected' : ''}`;
-                tile.textContent = word;
                 
-                // Add play button for mobile
+                // Create play button
                 const playButton = document.createElement('button');
-                playButton.className = `play-button${gameState.playButtonsShown ? ' show' : ''}`;
+                playButton.className = 'play-button';
                 playButton.innerHTML = '▶';
                 playButton.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    playAudio(word);
+                    if (gameState.audioInstances.has(word)) {
+                        // Audio is playing, stop it
+                        stopSound(word);
+                    } else {
+                        // Audio is not playing, start it
+                        playSound(word, gameState.wordToAudio.get(word));
+                    }
                 });
                 
+                // Create hidden word element for reference
+                const hiddenWord = document.createElement('span');
+                hiddenWord.className = 'hidden-word';
+                hiddenWord.textContent = word;
+                
                 tile.appendChild(playButton);
-                tile.addEventListener('click', () => selectWord(word));
+                tile.appendChild(hiddenWord);
+                tile.addEventListener('click', () => selectWord(word), { passive: true });
+                
                 fragment.appendChild(tile);
             });
             
@@ -1128,21 +1205,30 @@
         function selectWord(word) {
             if (gameState.gameOver) return;
             
-            if (!gameState.firstSelectionMade) {
-                gameState.firstSelectionMade = true;
-                gameState.playButtonsShown = true;
-                renderWordGrid();
-            }
-            
-            const isFound = gameState.foundGroups.some(group => group.words.includes(word));
+            // Check if word is already found
+            const isFound = gameState.foundGroups.some(group => 
+                group.words.includes(word)
+            );
             if (isFound) return;
 
             const index = gameState.selectedWords.indexOf(word);
             
             if (index > -1) {
+                // Deselect word
                 gameState.selectedWords.splice(index, 1);
             } else if (gameState.selectedWords.length < 4) {
+                // Select word and only play sound on very first selection
                 gameState.selectedWords.push(word);
+                if (!gameState.firstSelectionMade) {
+                    playSound(word, gameState.wordToAudio.get(word));
+                    gameState.firstSelectionMade = true;
+                }
+            }
+            
+            // Show play buttons when any word is selected for the first time
+            if (gameState.selectedWords.length > 0 && !gameState.playButtonsShown) {
+                wordGrid.classList.add('show-play-buttons');
+                gameState.playButtonsShown = true;
             }
             
             renderWordGrid();
