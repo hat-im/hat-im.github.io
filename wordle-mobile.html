@@ -23,19 +23,37 @@
     />
     <style>
       @font-face {
-        font-family: 'Karnak';
-        src: url('fonts/karnak/karnak-cond-normal.ttf') format('truetype');
-        font-weight: 400;
-        font-style: normal;
-      }
-      
-      @font-face {
-        font-family: 'Franklin';
-        src: url('fonts/franklin/franklin-normal-700.ttf') format('truetype');
+        font-family: "Franklin";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-700.ttf")
+          format("truetype");
         font-weight: 700;
         font-style: normal;
       }
-      
+
+      @font-face {
+        font-family: "Franklin";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-500.ttf")
+          format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Karnak";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-cond-normal.ttf")
+          format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "KarnakNormal";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-normal.woff")
+          format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+
       /* Mobile-First Dark Mode Wordle Color Scheme */
       :root {
         --color-correct: #538d4e;
@@ -97,7 +115,8 @@
       }
 
       h1 {
-        font-family: 'Karnak', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: "Karnak", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
         font-size: clamp(24px, 8vw, 40px);
         font-weight: 400;
         margin-bottom: min(2vw, 10px);
@@ -180,7 +199,8 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: "Franklin", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
         font-size: clamp(18px, 5vw, 24px);
         font-weight: 700;
         text-transform: uppercase;
@@ -326,7 +346,8 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: "Franklin", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
         font-size: clamp(18px, 5vw, 24px);
         font-weight: 700;
         text-transform: uppercase;
@@ -400,7 +421,6 @@
       }
 
       .title-s.shaking:hover {
-        color: var(--color-correct);
         transform: scale(1.1);
       }
 
@@ -744,14 +764,19 @@
       }
 
       .popup-title {
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
         font-size: clamp(1.2rem, 4vw, 1.5rem);
-        font-weight: bold;
+        font-weight: 700;
         margin-bottom: min(4vw, 15px);
         color: var(--color-text);
       }
 
       .popup-message {
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
         font-size: clamp(0.9rem, 3vw, 1rem);
+        font-weight: 500;
         margin-bottom: min(6vw, 25px);
         color: var(--color-text);
         line-height: 1.4;
@@ -769,8 +794,10 @@
         border: 2px solid var(--color-border-focus);
         background-color: var(--color-empty);
         color: var(--color-text);
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
         font-size: clamp(0.9rem, 3vw, 1rem);
-        font-weight: bold;
+        font-weight: 700;
         cursor: pointer;
         transition: all 0.2s ease;
         border-radius: min(2vw, 8px);
@@ -802,6 +829,8 @@
         background-color: var(--color-absent);
         color: white;
         padding: min(3vw, 12px) min(5vw, 20px);
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
         font-size: clamp(0.8rem, 2.5vw, 0.9rem);
         font-weight: 500;
         z-index: 9999;
@@ -893,7 +922,8 @@
         background-color: var(--color-empty);
         border: 1px solid var(--color-border);
         color: var(--color-text);
-        font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: "Franklin", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
         font-size: clamp(0.8rem, 2.5vw, 1rem);
         font-weight: 700;
         padding: min(3vw, 12px) min(2vw, 8px);
@@ -1143,70 +1173,77 @@
       // Game data embedded from Python
       const WORDS_DATA = [
         {
-          word: "ANGRY",
-          punctuation: "?",
-          length: 5,
-          guesses: 6,
-          max_score: 100,
+          word: "THE",
+          punctuation: "",
+          length: 3,
+          guesses: 10,
+          max_score: 90,
         },
         {
-          word: "MISSED",
+          word: "SNEAKY",
           punctuation: "",
           length: 6,
           guesses: 6,
           max_score: 90,
         },
         {
-          word: "YOU",
-          punctuation: "",
-          length: 3,
-          guesses: 10,
-          max_score: 90,
-        },
-        {
-          word: "TOO",
-          punctuation: ".",
-          length: 3,
-          guesses: 10,
-          max_score: 90,
-        },
-        {
-          word: "WORRY",
+          word: "WHITE",
           punctuation: "",
           length: 5,
           guesses: 6,
           max_score: 100,
         },
         {
-          word: "NOT",
-          punctuation: ",",
-          length: 3,
-          guesses: 10,
-          max_score: 90,
+          word: "GOOSE",
+          punctuation: "",
+          length: 5,
+          guesses: 6,
+          max_score: 100,
         },
         {
-          word: "CHOICE",
+          word: "BRAZENLY",
+          punctuation: "",
+          length: 8,
+          guesses: 5,
+          max_score: 80,
+        },
+        {
+          word: "JUMPED",
           punctuation: "",
           length: 6,
           guesses: 6,
           max_score: 90,
         },
         {
-          word: "LOOKS",
+          word: "OVER",
+          punctuation: "",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
+        },
+        {
+          word: "THE",
+          punctuation: "",
+          length: 3,
+          guesses: 10,
+          max_score: 90,
+        },
+        {
+          word: "QUICK",
           punctuation: "",
           length: 5,
           guesses: 6,
           max_score: 100,
         },
         {
-          word: "FUNNY",
+          word: "BROWN",
           punctuation: "",
           length: 5,
           guesses: 6,
           max_score: 100,
         },
         {
-          word: "NOW",
+          word: "FOX",
           punctuation: ".",
           length: 3,
           guesses: 10,
@@ -1301,10 +1338,28 @@
           try {
             const savedState = JSON.parse(savedGame);
             if (!savedState.isGameComplete) {
+              // Game in progress - show continue popup
               showContinueGamePopup();
             } else {
-              localStorage.removeItem("wordleGameState");
-              initGame();
+              // Game was complete - restore completed state and show results
+              loadGameProgress();
+              setupCurrentWord();
+              updateUI();
+              // Show the completion popup again
+              setTimeout(() => {
+                const completionRate = Math.round(
+                  (gameStats.wordsCompleted / WORDS_DATA.length) * 100
+                );
+                const avgGuesses =
+                  gameStats.totalGuesses /
+                  Math.max(gameStats.wordsCompleted, 1);
+                const accuracy = Math.round(
+                  (gameStats.wordsCompleted /
+                    (gameStats.wordsCompleted + gameStats.wordsFailed)) *
+                    100
+                );
+                showCongratulationsPopup(completionRate, avgGuesses, accuracy);
+              }, 100);
             }
           } catch (error) {
             localStorage.removeItem("wordleGameState");
@@ -2120,133 +2175,20 @@
       }
 
       async function validateGuessWithFallback(word) {
-        const commonWords = [
-          "THE",
-          "AND",
-          "FOR",
-          "ARE",
-          "BUT",
-          "NOT",
-          "YOU",
-          "ALL",
-          "CAN",
-          "HER",
-          "WAS",
-          "ONE",
-          "OUR",
-          "HAD",
-          "BY",
-          "HOT",
-          "WORD",
-          "WHAT",
-          "SOME",
-          "WE",
-          "IT",
-          "DO",
-          "OUT",
-          "OTHER",
-          "MANY",
-          "TIME",
-          "VERY",
-          "WHEN",
-          "COME",
-          "HERE",
-          "HOW",
-          "JUST",
-          "LIKE",
-          "LONG",
-          "MAKE",
-          "MUCH",
-          "OVER",
-          "SUCH",
-          "TAKE",
-          "THAN",
-          "THEM",
-          "WELL",
-          "WERE",
-          "WILL",
-          "WITH",
-          "HAVE",
-          "THIS",
-          "THAT",
-          "FROM",
-          "THEY",
-          "KNOW",
-          "WANT",
-          "BEEN",
-          "GOOD",
-          "SOME",
-          "TIME",
-          "VERY",
-          "WHEN",
-          "COME",
-          "HERE",
-          "HELLO",
-          "WORLD",
-          "HOUSE",
-          "WATER",
-          "LIGHT",
-          "RIGHT",
-          "MUSIC",
-          "PHONE",
-          "MONEY",
-          "STORY",
-          "HAPPY",
-          "PLACE",
-          "THINK",
-          "GREAT",
-          "WHERE",
-          "EVERY",
-          "STILL",
-          "SMALL",
-          "FOUND",
-          "THOSE",
-          "NEVER",
-          "UNDER",
-          "MIGHT",
-          "WHILE",
-          "SOUND",
-          "BELOW",
-          "SAW",
-          "SOMETHING",
-          "THOUGHT",
-          "BOTH",
-          "CAT",
-          "DOG",
-          "RUN",
-          "JUMP",
-          "TREE",
-          "BOOK",
-          "LOVE",
-          "HELP",
-          "WORK",
-          "PLAY",
-          "LOOK",
-          "TALK",
-          "WALK",
-          "READ",
-          "OPEN",
-          "CLOSE",
-          "START",
-          "STOP",
-          "END",
-          "BEGIN",
-          "NICE",
-          "COOL",
-          "WARM",
-          "COLD",
-          "TESTS",
-          "WORDS",
-          "GUESS",
-          "GAMES",
-          "LETTERS",
-          "TILES",
-          "VALID",
-          "WRONG",
-          "RIGHT",
-          "CHECK",
-        ];
-        if (commonWords.includes(word.toUpperCase())) {
+        // Comprehensive word lists organized by length for faster validation
+        const commonWordsByLength = {
+          3: ["THE", "AND", "FOR", "ARE", "BUT", "NOT", "YOU", "ALL", "CAN", "HER", "WAS", "ONE", "OUR", "HAD", "HOT", "CAT", "DOG", "RUN", "SAW", "END", "NEW", "OLD", "BIG", "BAD", "OWN", "TOP", "WAY", "USE", "MAN", "BOY", "DID", "GET", "HAS", "HIM", "HIS", "HOW", "ITS", "LET", "MAY", "PUT", "SAY", "SHE", "TOO", "TWO", "WHO", "OIL", "SIT", "SET", "CUT", "YES", "YET", "AGO", "OFF", "FAR", "OUT", "DAY", "GOT", "TRY", "ASK", "EYE", "JOB", "LOT", "FEW", "AGE", "SEE", "OWN", "BUY", "DIE", "LAY", "ARM", "EAR", "EGG", "FLY", "GUN", "HIT", "ICE", "KEY", "LEG", "LIE", "MAP", "MIX", "PAN", "PEN", "PIG", "ROW", "SKY", "SUN", "TEA", "TOY", "VAN", "WIN", "ZIP", "ACE", "AID", "AIR", "ART", "BAG", "BAR", "BAT", "BED", "BEE", "BOX", "BUS", "CAR", "COW", "CRY", "CUP", "DIG", "EAT", "ELF", "FAN", "FIX", "FOG", "FOX", "GAP", "GAS", "HAT", "HOP", "HUG", "JAR", "LAD", "LAP", "LOG", "MAD", "MOM", "MUD", "NET", "NUT", "OAK", "PET", "PIE", "RAG", "RAT", "RUG", "SAD", "SIP", "SIX", "TAX", "TEN", "TIE", "TIP", "TOP", "TUG", "WAR", "WET", "WIG", "ZOO", "ABS", "ACT", "ADD", "AIM", "APE", "ARC", "AWE", "AXE", "BAD", "BAN", "BAY", "BID", "BIT", "BOW", "BUG", "BUN", "BUT", "BUZ", "CAB", "CAD", "CAM", "CAP", "COB", "COD", "COG", "COT", "COX", "CUB", "CUD", "DAB", "DAD", "DAM", "DEN", "DEW", "DIM", "DIP", "DOC", "DOT", "DRY", "DUB", "DUD", "DUG", "DUN", "EAR", "ELF", "ELK", "ELM", "EMU", "ERA", "EVE", "FAD", "FAG", "FED", "FIG", "FIN", "FIR", "FIT", "FLU", "FOE", "FOR", "FRY", "FUR", "GAB", "GAG", "GEL", "GIG", "GNU", "GOD", "GOO", "GOT", "GUM", "GUT", "GUY", "GYM", "HAM", "HAS", "HAY", "HEN", "HEX", "HID", "HIP", "HIT", "HOB", "HOG", "HOP", "HOT", "HOW", "HUB", "HUE", "HUM", "HUT", "ICY", "ILL", "INK", "ION", "IRK", "ITS", "IVY", "JAB", "JAG", "JAM", "JAW", "JAY", "JET", "JIG", "JOB", "JOG", "JOT", "JOY", "JUG", "KID", "KIN", "KIT", "LAB", "LAC", "LAG", "LAP", "LAW", "LAX", "LAY", "LEA", "LED", "LEG", "LET", "LID", "LIE", "LIP", "LIT", "LOG", "LOT", "LOW", "MAD", "MAM", "MAN", "MAP", "MAT", "MAX", "MEN", "MET", "MID", "MIX", "MOB", "MOD", "MOM", "MOP", "MOW", "MUD", "MUG", "NAB", "NAG", "NAP", "NET", "NEW", "NIL", "NIT", "NOB", "NOD", "NOR", "NOT", "NOW", "NUN", "NUT", "OAK", "OAR", "ODD", "OFF", "OFT", "OIL", "OLD", "ONE", "OPT", "ORB", "ORE", "OUR", "OUT", "OWE", "OWL", "OWN", "PAD", "PAL", "PAN", "PAP", "PAR", "PAT", "PAW", "PAY", "PEA", "PEG", "PEN", "PEP", "PET", "PIE", "PIG", "PIN", "PIT", "PLY", "POD", "POP", "POT", "PRO", "PRY", "PUB", "PUN", "PUP", "PUT", "RAG", "RAM", "RAN", "RAP", "RAT", "RAW", "RAY", "RED", "REP", "RIB", "RID", "RIG", "RIM", "RIP", "ROB", "ROD", "ROT", "ROW", "RUB", "RUG", "RUM", "RUN", "RUT", "RYE", "SAC", "SAD", "SAG", "SAP", "SAT", "SAW", "SAY", "SEA", "SEE", "SET", "SEW", "SHE", "SHY", "SIN", "SIP", "SIR", "SIS", "SIT", "SIX", "SKI", "SKY", "SLY", "SOB", "SOD", "SON", "SOP", "SOT", "SOW", "SOY", "SPA", "SPY", "STY", "SUB", "SUM", "SUN", "SUP", "TAB", "TAD", "TAG", "TAN", "TAP", "TAR", "TAX", "TEA", "TEN", "THE", "TIE", "TIN", "TIP", "TOE", "TON", "TOO", "TOP", "TOT", "TOW", "TOY", "TRY", "TUB", "TUG", "TWO", "USE", "VAN", "VAT", "VIA", "VIE", "VOW", "WAD", "WAG", "WAR", "WAS", "WAX", "WAY", "WEB", "WED", "WET", "WHO", "WHY", "WIG", "WIN", "WIT", "WOE", "WOK", "WON", "WOO", "WOW", "YAK", "YAM", "YAP", "YAW", "YEA", "YEP", "YES", "YET", "YEW", "YIN", "YOU", "YOW", "ZAP", "ZED", "ZEE", "ZEN", "ZIP", "ZIT", "ZOO"],
+          4: ["WORD", "WHAT", "SOME", "COME", "HERE", "JUST", "LIKE", "LONG", "MAKE", "MUCH", "OVER", "SUCH", "TAKE", "THAN", "THEM", "WELL", "WERE", "WILL", "WITH", "HAVE", "THIS", "THAT", "FROM", "THEY", "KNOW", "WANT", "BEEN", "GOOD", "TIME", "VERY", "WHEN", "WENT", "WORK", "YOUR", "BACK", "CALL", "CAME", "EACH", "EVEN", "FIND", "GIVE", "HAND", "HELP", "HIGH", "KEEP", "KIND", "LAST", "LEFT", "LIFE", "LIVE", "LOOK", "MADE", "MANY", "MOVE", "MUST", "NAME", "NEED", "NEXT", "ONLY", "OPEN", "PART", "PLAY", "READ", "SAID", "SAME", "SEEM", "SHOW", "SIDE", "TELL", "TURN", "USED", "WANT", "WAYS", "WEEK", "WENT", "WERE", "YEAR", "ABLE", "ALSO", "AWAY", "BEST", "BOTH", "CAME", "EACH", "FACT", "FELT", "FIRST", "FOUR", "FULL", "GAVE", "GETS", "GOES", "GOOD", "HALF", "HEAD", "HELD", "HOME", "HOPE", "IDEA", "INTO", "KNEW", "LAND", "LATE", "LESS", "LIGHT", "LINE", "LIST", "LIVE", "LOST", "LOVE", "MAIN", "MIND", "MORE", "MOST", "NEAR", "ONCE", "ONLY", "PART", "PLAN", "REAL", "REST", "ROOM", "SEEN", "SEND", "SETS", "SOON", "STOP", "SURE", "TEAM", "TEST", "TOLD", "TOOK", "TREE", "TRUE", "TURN", "TYPE", "UPON", "USED", "WALK", "WALL", "WARM", "WASH", "WAYS", "WELL", "WENT", "WHAT", "WHEN", "WILL", "WISH", "WITH", "WORK", "YEAR", "AREA", "BOOK", "CARS", "CASE", "CLUB", "COST", "CUPS", "DATA", "DEAL", "DOGS", "DONE", "EASY", "FALL", "FAST", "FISH", "FIVE", "FOOD", "FORM", "GAME", "GIRL", "GOAL", "GUNS", "HEAT", "HELD", "HILL", "HOLD", "HOPE", "HOUR", "HURT", "ITEM", "JOBS", "KEEP", "KIDS", "KILL", "LAKE", "LAND", "LIFT", "LIVE", "LONG", "LOOK", "LOVE", "MAIL", "MEAN", "MEET", "MIND", "MOON", "MOVE", "NAME", "NEED", "NEWS", "NICE", "OPEN", "PAID", "PARK", "PASS", "PAST", "PATH", "PICK", "PLAN", "PLAY", "POOR", "PULL", "PUSH", "RAIN", "RATE", "READ", "REAL", "RISE", "ROAD", "ROCK", "ROLE", "ROOM", "RULE", "SAFE", "SAME", "SAVE", "SEAT", "SELL", "SEND", "SHIP", "SHOP", "SHOT", "SHOW", "SHUT", "SICK", "SIDE", "SIGN", "SING", "SIZE", "SIZE", "SKIN", "SLIP", "SLOW", "SNOW", "SOFT", "SOIL", "SOLD", "SOME", "SONG", "SORT", "SOUL", "SPIN", "SPOT", "STAR", "STAY", "STEP", "STOP", "TALK", "TALL", "TAPE", "TASK", "TEAM", "TELL", "TEST", "TEXT", "THAN", "THEM", "THEY", "THIN", "THIS", "THUS", "TIME", "TINY", "TOLD", "TONE", "TOOK", "TOOL", "TOUR", "TOWN", "TREE", "TRIP", "TRUE", "TURN", "UNIT", "USED", "USER", "VARY", "VAST", "VIEW", "VOTE", "WAIT", "WAKE", "WALK", "WALL", "WANT", "WARM", "WASH", "WAVE", "WAYS", "WEAR", "WEEK", "WELL", "WENT", "WERE", "WEST", "WHAT", "WHEN", "WHOM", "WIDE", "WIFE", "WILD", "WILL", "WIND", "WINE", "WIRE", "WISE", "WISH", "WITH", "WOOD", "WORD", "WORE", "WORK", "YARD", "YEAR", "ZERO", "ZONE"],
+          5: ["HELLO", "WORLD", "HOUSE", "WATER", "LIGHT", "RIGHT", "MUSIC", "PHONE", "MONEY", "STORY", "HAPPY", "PLACE", "THINK", "GREAT", "WHERE", "EVERY", "STILL", "SMALL", "FOUND", "THOSE", "NEVER", "UNDER", "MIGHT", "WHILE", "SOUND", "BELOW", "WOULD", "THERE", "THEIR", "COULD", "OTHER", "AFTER", "FIRST", "NEVER", "THESE", "THINK", "WHERE", "BEING", "EVERY", "GREAT", "MIGHT", "SHALL", "STILL", "THOSE", "UNDER", "WHILE", "ABOVE", "ABOUT", "AGAIN", "ALONG", "AMONG", "ASKED", "BASED", "BEING", "BLACK", "BRING", "BUILD", "CARRY", "CAUSE", "CHAIR", "CLEAN", "CLEAR", "CLOSE", "COUNT", "COVER", "DAILY", "DEATH", "DOING", "EARLY", "EARTH", "EMPTY", "EQUAL", "ERROR", "EXIST", "EXTRA", "FAITH", "FALSE", "FIELD", "FINAL", "FLOOR", "FORCE", "FRAME", "FRONT", "FRUIT", "FUNNY", "GIVEN", "GLASS", "GOING", "GRADE", "GRAND", "GRASS", "GREEN", "GROSS", "GROUP", "GROWN", "GUARD", "GUESS", "GUEST", "HAPPY", "HEARD", "HEART", "HEAVY", "HORSE", "HOTEL", "HOURS", "HUMAN", "IMAGE", "INDEX", "INNER", "INPUT", "ISSUE", "ITEMS", "JOINT", "JUDGE", "KNOWN", "LARGE", "LASER", "LATER", "LAUGH", "LAYER", "LEARN", "LEAST", "LEAVE", "LEGAL", "LEVEL", "LIGHT", "LIMIT", "LINES", "LIVED", "LOCAL", "LOOSE", "LOWER", "LUCKY", "LUNCH", "LYING", "MAGIC", "MAJOR", "MAKER", "MARCH", "MATCH", "MAYBE", "MAYOR", "MEANT", "MEDIA", "METAL", "MIGHT", "MINOR", "MINUS", "MIXED", "MODEL", "MONEY", "MONTH", "MORAL", "MOTOR", "MOUNT", "MOUSE", "MOUTH", "MOVED", "MOVIE", "MUSIC", "NEEDS", "NEVER", "NEWLY", "NIGHT", "NOISE", "NORTH", "NOTED", "NOVEL", "NURSE", "OCCUR", "OCEAN", "OFFER", "OFTEN", "ORDER", "OTHER", "OUGHT", "OWNER", "PAINT", "PANEL", "PAPER", "PARTS", "PARTY", "PEACE", "PHASE", "PHONE", "PHOTO", "PIANO", "PIECE", "PILOT", "PITCH", "PLACE", "PLAIN", "PLANE", "PLANT", "PLATE", "PLAZA", "POINT", "POUND", "POWER", "PRESS", "PRICE", "PRIDE", "PRIME", "PRINT", "PRIOR", "PRIZE", "PROOF", "PROUD", "PROVE", "QUEEN", "QUICK", "QUIET", "QUITE", "RADIO", "RAISE", "RANGE", "RAPID", "RATIO", "REACH", "READY", "REALM", "REBEL", "REFER", "RELAX", "RELAY", "REPLY", "RIDER", "RIDGE", "RIGHT", "RIGID", "RIVAL", "RIVER", "ROBOT", "ROMAN", "ROUGH", "ROUND", "ROUTE", "ROYAL", "RUGBY", "RULER", "RURAL", "SAFER", "SCALE", "SCARE", "SCENE", "SCOPE", "SCORE", "SCREW", "SCRUB", "SEARCH", "SENSE", "SERVE", "SEVEN", "SHADE", "SHAKE", "SHALL", "SHAME", "SHAPE", "SHARE", "SHARP", "SHEET", "SHELF", "SHELL", "SHIFT", "SHINE", "SHIRT", "SHOCK", "SHOOT", "SHORT", "SHOWN", "SHOWS", "SIDES", "SIGHT", "SILLY", "SINCE", "SIX", "SIXTH", "SIZED", "SKILL", "SKULL", "SLEEP", "SLIDE", "SMALL", "SMART", "SMILE", "SMOKE", "SNAKE", "SNOW", "SOLID", "SOLVE", "SORRY", "SOUND", "SOUTH", "SPACE", "SPARE", "SPEAK", "SPEED", "SPELL", "SPEND", "SPENT", "SPLIT", "SPOKE", "SPORT", "SQUAD", "STAFF", "STAGE", "STAKE", "STAND", "START", "STATE", "STAYS", "STEAM", "STEEL", "STEEP", "STICK", "STILL", "STOCK", "STONE", "STOOD", "STORE", "STORM", "STORY", "STRIP", "STUCK", "STUDY", "STUFF", "STYLE", "SUGAR", "SUPER", "SWEET", "SWIFT", "SWING", "TABLE", "TAKEN", "TALKS", "TASTE", "TAXES", "TEACH", "TEAMS", "TEARS", "TEETH", "TELLS", "TERMS", "TESTS", "THANK", "THEFT", "THEIR", "THEME", "THERE", "THESE", "THICK", "THING", "THINK", "THIRD", "THOSE", "THREE", "THREW", "THROW", "THUMB", "TIGHT", "TIMES", "TIRED", "TITLE", "TODAY", "TOKEN", "TOOLS", "TOOTH", "TOPIC", "TOTAL", "TOUCH", "TOUGH", "TOWER", "TRACK", "TRADE", "TRAIL", "TRAIN", "TRASH", "TREAT", "TREND", "TRIAL", "TRIBE", "TRICK", "TRIED", "TRIES", "TRIPS", "TRUCK", "TRULY", "TRUST", "TRUTH", "TURNS", "TWICE", "TWIST", "TYPED", "ULTRA", "UNCLE", "UNDER", "UNDUE", "UNION", "UNITY", "UNTIL", "UPPER", "UPSET", "URBAN", "URGED", "USAGE", "USERS", "USUAL", "VALID", "VALUE", "VIDEO", "VIEWS", "VIRAL", "VISIT", "VITAL", "VOICE", "WASTE", "WATCH", "WATER", "WAVES", "WAYS", "WEIRD", "WHEEL", "WHERE", "WHICH", "WHILE", "WHITE", "WHOLE", "WHOSE", "WIDER", "WIFE", "WINDS", "WING", "WIPES", "WIRED", "WOMAN", "WOMEN", "WORDS", "WORKS", "WORLD", "WORRY", "WORSE", "WORST", "WORTH", "WOULD", "WRITE", "WRONG", "WROTE", "YOUTH", "YOURS"],
+          6: ["MOTHER", "FATHER", "FRIEND", "FAMILY", "SCHOOL", "PEOPLE", "BEFORE", "CHANGE", "SHOULD", "LITTLE", "AROUND", "THOUGH", "REALLY", "PUBLIC", "FOLLOW", "SYSTEM", "CALLED", "TURNED", "ALWAYS", "ALMOST", "ACROSS", "ACTION", "ACTIVE", "ACTUAL", "AMOUNT", "ANIMAL", "ANSWER", "ANYONE", "AROUND", "ARRIVE", "ATTACK", "AUGUST", "AUTHOR", "BECAME", "BECOME", "BEFORE", "BETTER", "BEYOND", "BORDER", "BOTTLE", "BOTTOM", "BOUGHT", "BRANCH", "BREATH", "BRIDGE", "BRIGHT", "BROKEN", "BUDGET", "BURDEN", "BUTTON", "CALLED", "CAMERA", "CANCEL", "CANNOT", "CARBON", "CAREER", "CAUSED", "CENTER", "CENTRE", "CHANCE", "CHANGE", "CHARGE", "CHOICE", "CHOOSE", "CHOSEN", "CHURCH", "CIRCLE", "CITIZEN", "CITIES", "CLAIMS", "CLEAN", "CLOSED", "CLOSER", "COFFEE", "COLUMN", "COMBAT", "COMING", "COMMIT", "COMMON", "COPPER", "CORNER", "COURSE", "COVERS", "CREATE", "CRISIS", "CUSTOM", "DAMAGE", "DANGER", "DEBATE", "DECADE", "DECIDE", "DEGREE", "DEMAND", "DENIED", "DEPEND", "DEPUTY", "DESERT", "DESIGN", "DETAIL", "DEVICE", "DIFFER", "DINNER", "DIRECT", "DIVIDE", "DOCTOR", "DOLLAR", "DOMAIN", "DOUBLE", "DRAWER", "DRIVEN", "DRIVER", "DURING", "EASILY", "EATING", "EDITOR", "EFFECT", "EFFORT", "EIGHTH", "EITHER", "ELEVEN", "EMPIRE", "EMPLOY", "ENABLE", "ENDING", "ENERGY", "ENGINE", "ENOUGH", "ENSURE", "ENTIRE", "ENTITY", "EQUITY", "ESCAPE", "ESTATE", "ETHICS", "ETHNIC", "EUROPE", "EVENTS", "EVERY", "EXCEPT", "EXCUSE", "EXIST", "EXPAND", "EXPECT", "EXPERT", "EXPORT", "EXTEND", "EXTENT", "FABRIC", "FACIAL", "FACTOR", "FAILED", "FAIRLY", "FALLEN", "FAMILY", "FAMOUS", "FATHER", "FOUGHT", "FOURTH", "FRIDAY", "FRIEND", "FROZEN", "FRUIT", "FULLY", "FUTURE", "GAINED", "GALAXY", "GARDEN", "GENDER", "GENTLE", "GIVING", "GLOBAL", "GOLDEN", "GROUND", "GROWTH", "GUIDED", "HANDLE", "HANDED", "HAPPEN", "HARDLY", "HATRED", "HAVING", "HEADED", "HEALTH", "HEARTS", "HEAVEN", "HELPED", "HIDING", "HIGHER", "HIGHLY", "HOLDER", "HONEST", "HOPING", "HORROR", "HOUSED", "HUNTER", "IGNORE", "IMAGES", "IMPACT", "IMPORT", "INCOME", "INDEED", "INDOOR", "INFANT", "INFORM", "INJECT", "INJURY", "INSECT", "INSIDE", "INTENT", "INVEST", "ISLAND", "ITSELF", "JOINED", "JUNGLE", "JUNIOR", "KILLED", "LADIES", "LAPTOP", "LATELY", "LATTER", "LAUNCH", "LAWYER", "LEADER", "LEAGUE", "LEAVES", "LENGTH", "LESSON", "LETTER", "LIGHTS", "LIKELY", "LINKED", "LIQUID", "LISTEN", "LITTLE", "LIVING", "LOCKED", "LONDON", "LONGER", "LOOKED", "LUXURY", "MAKING", "MANAGE", "MANNER", "MARBLE", "MARKET", "MARKED", "MASTER", "MATTER", "MATURE", "MAXIMUM", "MEDIUM", "MEMBER", "MEMORY", "MENTAL", "MERELY", "METHOD", "MIDDLE", "MIGHTY", "MILLER", "MINING", "MINUTE", "MIRROR", "MOBILE", "MODERN", "MODEST", "MODULE", "MOMENT", "MONDAY", "MONTHS", "MOSTLY", "MOTHER", "MOTION", "MOVING", "MURDER", "MUSCLE", "MUTUAL", "MYSELF", "NARROW", "NATION", "NATIVE", "NATURE", "NEARLY", "NEEDED", "NEPHEW", "NEURAL", "NOBODY", "NORMAL", "NOTICE", "NOTION", "NOVEL", "NUMBER", "OBJECT", "OBTAIN", "OCCUPY", "OCCURS", "OFFICE", "OPENED", "OPPOSE", "OPTION", "ORANGE", "ORIGIN", "OUTPUT", "OXFORD", "PACKED", "PALACE", "PARENT", "PARTLY", "PASSED", "PASTOR", "PATENT", "PAYING", "PEACE", "PEOPLE", "PERIOD", "PERMIT", "PERSON", "PETROL", "PHRASE", "PICKED", "PIECES", "PLACED", "PLANET", "PLAYED", "PLAYER", "PLEASE", "PLENTY", "POCKET", "POETRY", "POLICE", "POLICY", "POLISH", "POORLY", "PORTAL", "POTATO", "POUNDS", "POWDER", "PREFER", "PRETTY", "PRIEST", "PRINCE", "PRISON", "PROFIT", "PROPER", "PROVEN", "PUBLIC", "PURELY", "PURPLE", "PUSHED", "PYTHON", "QUOTED", "RACING", "RADIUS", "RAISED", "RANDOM", "RARELY", "RATHER", "RATING", "READER", "REALLY", "REASON", "RECALL", "RECENT", "RECORD", "REDUCE", "REFORM", "REFUSE", "REGARD", "REGION", "RELATE", "REMAIN", "REMOTE", "REMOVE", "REPAIR", "REPEAT", "REPLY", "REPORT", "RESCUE", "RESULT", "RETAIL", "RETURN", "REVEAL", "REVIEW", "REWARD", "RIBBON", "RIDING", "RISING", "RITUAL", "ROBUST", "ROLLED", "RUBBER", "RULING", "RUSSIA", "SAFETY", "SALARY", "SAMPLE", "SAVING", "SAYING", "SCALES", "SCARED", "SCHEME", "SCHOOL", "SCREEN", "SCRIPT", "SEARCH", "SEASON", "SECOND", "SECRET", "SECTOR", "SECURE", "SEEING", "SELECT", "SELLER", "SENIOR", "SERIES", "SERVED", "SERVER", "SETTLE", "SEVERE", "SEXUAL", "SHADOW", "SHAPED", "SHARED", "SHIELD", "SHOULD", "SHOWED", "SHOWER", "SIGHTS", "SIGNED", "SILVER", "SIMPLE", "SIMPLY", "SINGLE", "SISTER", "SIXTHS", "SKILLS", "SMOOTH", "SOCCER", "SOCIAL", "SOCKET", "SODIUM", "SOLELY", "SOLVED", "SORTED", "SOURCE", "SOVIET", "SPEAKS", "SPIRAL", "SPIRIT", "SPOKEN", "SPORTS", "SPREAD", "SPRING", "SQUARE", "STABLE", "STAGES", "STANDS", "STARTS", "STAYED", "STEADY", "STOLEN", "STORED", "STORIES", "STORMS", "STRAIN", "STRAND", "STREAM", "STREET", "STRESS", "STRIKE", "STRING", "STRIPE", "STROKE", "STRONG", "STRUCK", "STUDIO", "STUPID", "SUBMIT", "SUBSET", "SUBTLE", "SUBWAY", "SUDDEN", "SUFFER", "SUMMER", "SUNDAY", "SUPPLY", "SURELY", "SURVEY", "SWITCH", "SYMBOL", "SYSTEM", "TAKING", "TALENT", "TALKED", "TARGET", "TAUGHT", "TEMPLE", "TENNIS", "THANKS", "THEORY", "THIRTY", "THOUGH", "THREAD", "THREAT", "THROWN", "THRUST", "THUMB", "TICKET", "TIMBER", "TIMING", "TISSUE", "TITLES", "TOMATO", "TONGUE", "TONIGHT", "TOPICS", "TOWARD", "TRACED", "TRACKS", "TRADER", "TRAINS", "TRAITS", "TRAVEL", "TREATY", "TRENDS", "TRIBAL", "TRICKS", "TROOPS", "TROPHY", "TRUCKS", "TRYING", "TUNNEL", "TURNED", "TWELVE", "TWENTY", "TYPING", "UNABLE", "UNIQUE", "UNITED", "UNLESS", "UNLIKE", "UNLOCK", "UNPACK", "UNSAFE", "UNUSED", "UPDATE", "UPLOAD", "UPWARD", "URGENT", "USEFUL", "VALLEY", "VALUED", "VALUES", "VARIED", "VECTOR", "VENDOR", "VERSUS", "VESSEL", "VICTIM", "VIDEOS", "VIEWED", "VIOLIN", "VIRTUE", "VISION", "VISUAL", "VOCALS", "VOLUME", "WAITED", "WALKED", "WANTED", "WARMED", "WARNED", "WARREN", "WASHED", "WEALTH", "WEAPON", "WEEKLY", "WEIGHT", "WHEELS", "WHILST", "WIDELY", "WIDGET", "WINDOW", "WINNER", "WINTER", "WISDOM", "WITHIN", "WONDER", "WOODEN", "WORKED", "WORKER", "WORLDS", "WORTHY", "WRITER", "WRITES", "YELLOW", "YIELDS"],
+          7: ["THROUGH", "ANOTHER", "BETWEEN", "WITHOUT", "BECAUSE", "AGAINST", "NOTHING", "SOMEONE", "GENERAL", "INCLUDE", "SEVERAL", "THOUSAND", "SPECIAL", "PICTURE", "CERTAIN", "PROBLEM", "PERHAPS", "POSSIBLE", "ABILITY", "ABSENCE", "ACADEMY", "ACCOUNT", "ACQUIRE", "ADDRESS", "ADVANCE", "ADVISOR", "AIRPORT", "ALREADY", "ANALYST", "ANCIENT", "ANIMALS", "ANOTHER", "ANXIETY", "ANYBODY", "ANYMORE", "ANYONE", "ANYWAY", "APPLIED", "APPOINT", "APPROVE", "ARCHIVE", "ARRANGE", "ARTICLE", "ARTIST", "ASLEEP", "ATHLETE", "ATTEMPT", "ATTRACT", "AUCTION", "AVERAGE", "BALANCE", "BANKING", "BATTERY", "BEDROOM", "BENEFIT", "BICYCLE", "BILLION", "BLANKET", "BROTHER", "BUILDER", "BURNING", "CABINET", "CALLING", "CAMPING", "CAPTAIN", "CAPTURE", "CAREFUL", "CARTOON", "CATALOG", "CEILING", "CENTRAL", "CENTURY", "CHAPTER", "CHARITY", "CLASSIC", "CLIMATE", "CLOTHES", "COATING", "COLLEGE", "COMBINE", "COMFORT", "COMMAND", "COMMENT", "COMPACT", "COMPANY", "COMPARE", "COMPETE", "COMPLEX", "CONCEPT", "CONCERN", "CONDUCT", "CONFIRM", "CONNECT", "CONSIST", "CONTACT", "CONTAIN", "CONTENT", "CONTEST", "CONTEXT", "CONTROL", "CONVERT", "CORRECT", "COUNTER", "COUNTRY", "COURAGE", "COVERED", "CREATOR", "CRUCIAL", "CRYSTAL", "CULTURE", "CURRENT", "CUSTODY", "CUTTING", "DANCING", "DEALING", "DECIMAL", "DEFAULT", "DELIVER", "DENSITY", "DEPOSIT", "DESERVE", "DESKTOP", "DESTROY", "DEVELOP", "DIAMOND", "DIGITAL", "DISEASE", "DISPLAY", "DISTANT", "DOLLARS", "DRAWING", "DRIVER", "DROPPED", "DYNASTY", "EARLIER", "EASTERN", "ECONOMY", "EDITION", "ELDERLY", "ELEMENT", "EMOTION", "EMPEROR", "ENABLED", "ENDLESS", "ENFORCE", "ENGLISH", "ENHANCE", "EVENING", "EXACTLY", "EXAMINE", "EXAMPLE", "EXCITED", "EXCLUDE", "EXECUTE", "EXHIBIT", "EXPLAIN", "EXPLORE", "EXPRESS", "EXTREME", "FACTORY", "FACULTY", "FAILURE", "FANTASY", "FASHION", "FEATURE", "FEDERAL", "FEELING", "FICTION", "FIFTEEN", "FINANCE", "FINDING", "FIREARM", "FISHING", "FITNESS", "FLIGHTS", "FLORIDA", "FOREIGN", "FOREVER", "FORMULA", "FORTUNE", "FORWARD", "FREEDOM", "FREIGHT", "FRIENDS", "FURTHER", "GALLERY", "GARBAGE", "GATEWAY", "GENUINE", "GETTING", "GLASSES", "GOODBYE", "GRAPHIC", "GREATER", "GROWING", "HABITAT", "HANDLER", "HANGING", "HARMONY", "HEADING", "HEALTHY", "HEARING", "HEATING", "HELPFUL", "HERSELF", "HIGHWAY", "HIMSELF", "HISTORY", "HOLDING", "HOLIDAY", "HORIZON", "HORRIBLE", "HOUSING", "HOWEVER", "HUNDRED", "HUSBAND", "IMAGERY", "IMAGINE", "IMPROVE", "INCLUDE", "INITIAL", "INQUIRY", "INSIGHT", "INSPIRE", "INSTALL", "INSTANT", "INSTEAD", "INTEGER", "INTENSE", "INTERIM", "INVOLVE", "ITALIAN", "JEWELRY", "JOINING", "JOURNAL", "JOURNEY", "JUSTICE", "JUSTIFY", "KEEPING", "KITCHEN", "KNOWING", "LACKING", "LANDING", "LARGELY", "LASTING", "LAUNDRY", "LAWSUIT", "LEADING", "LEARNED", "LEATHER", "LEAVING", "LECTURE", "LIBRARY", "LICENSE", "LIMITED", "LINKING", "LISTING", "LOADING", "LOCATED", "LOGICAL", "LOOKING", "LOYALTY", "MACHINE", "MANAGER", "MARRIED", "MASSAGE", "MASSIVE", "MATCHES", "MAXIMUM", "MEANING", "MEASURE", "MEDICAL", "MEETING", "MENTION", "MESSAGE", "MINIMUM", "MISSING", "MISSION", "MISTAKE", "MIXTURE", "MONITOR", "MORNING", "MUSICAL", "MYSTERY", "NATURAL", "NEITHER", "NETWORK", "NEUTRAL", "NOTHING", "NUCLEAR", "NURSERY", "NURSING", "OBVIOUS", "OCTOBER", "OFFENSE", "OFFICER", "OPENING", "OPERATE", "OPINION", "OPTICAL", "OPTIONS", "ORGANIC", "OUTDOOR", "OUTLINE", "OUTLOOK", "OUTPUT", "OUTSIDE", "OVERALL", "OVERLAY", "PACKAGE", "PACKETS", "PADDING", "PAINTED", "PAINTER", "PARKING", "PARTIAL", "PARTIES", "PARTNER", "PASSAGE", "PASSING", "PASSION", "PASSIVE", "PATIENT", "PATTERN", "PAYMENT", "PENALTY", "PERFECT", "PERFORM", "PERHAPS", "PERSIST", "PHYSICS", "PICTURE", "PIONEER", "PLASTIC", "PLEASED", "PLUMBER", "POINTER", "POPULAR", "PORTION", "POTTERY", "POVERTY", "PRECISE", "PREDICT", "PREMIER", "PREMIUM", "PREPARE", "PRESENT", "PREVENT", "PRIMARY", "PRINTER", "PRIVACY", "PRIVATE", "PROBLEM", "PROCESS", "PRODUCE", "PRODUCT", "PROFILE", "PROGRAM", "PROJECT", "PROMISE", "PROMOTE", "PROTECT", "PROTEST", "PROVIDE", "PURPOSE", "PUSHING", "QUALITY", "QUARTER", "QUICKLY", "RADICAL", "RAILWAY", "RAINBOW", "RANDOM", "RAPIDLY", "REACHED", "READING", "REALITY", "RECEIPT", "RECEIVE", "RECORDS", "RECOVER", "REFLECT", "REGULAR", "RELATED", "RELEASE", "REMAINS", "REMOVAL", "REPLACE", "REPLIED", "REQUEST", "REQUIRE", "RESERVE", "RESPECT", "RESPOND", "RESTORE", "RETIRED", "RETURNS", "REVENUE", "REVERSE", "REVIEWS", "REVISED", "ROLLING", "ROUTINE", "RUNNING", "RUSSIAN", "SAMPLES", "SAVINGS", "SCANDAL", "SCIENCE", "SCRATCH", "SECTION", "SEEKING", "SELLING", "SEMINAR", "SENDING", "SERIOUS", "SERVICE", "SESSION", "SETTING", "SEVENTH", "SEVERAL", "SHARING", "SHELTER", "SHERIFF", "SHOWING", "SILICON", "SIMILAR", "SIXTEEN", "SMOKING", "SOCIETY", "SOMEHOW", "SOMEONE", "SOPRANO", "SORTING", "SPEAKER", "SPECIAL", "SPECIES", "SPONSOR", "STATION", "STORAGE", "STRANGE", "STRETCH", "STUDENT", "STUDIES", "SUBJECT", "SUCCESS", "SUFFICIENT", "SUGGEST", "SUMMARY", "SUPPORT", "SUPPOSE", "SUPREME", "SURFACE", "SURGERY", "SURPLUS", "SURVIVE", "SUSPECT", "SUSTAIN", "SWEATER", "SYMBOLS", "SYSTEMS", "TEACHER", "TELLING", "TENSION", "TERRAIN", "TESTING", "TEXTURE", "THEATER", "THERAPY", "THEREBY", "THICKNESS", "THROUGH", "TICKETS", "TONIGHT", "TOOLBAR", "TOTALLY", "TOUCHED", "TOWARDS", "TRACKED", "TRADING", "TRAFFIC", "TRAINED", "TRAINER", "TROUBLE", "TURNING", "TYPICAL", "UKRAINE", "UNIFORM", "UNKNOWN", "UNUSUAL", "UPDATED", "UPGRADE", "UTILITY", "VACANCY", "VACCINE", "VANILLA", "VARIETY", "VEHICLE", "VERSION", "VILLAGE", "VIOLENT", "VISIBLE", "VISITOR", "WAITING", "WALKING", "WARNING", "WEALTHY", "WEATHER", "WEBSITE", "WEDDING", "WEEKEND", "WELCOME", "WELFARE", "WESTERN", "WHEREAS", "WHETHER", "WINDOWS", "WINNING", "WITHOUT", "WITNESS", "WORKING", "WORSHIP", "WRITING", "WRITTEN", "YOUNGER"],
+          8: ["SOMETHING", "TOGETHER", "CHILDREN", "REMEMBER", "COMPLETE", "ALTHOUGH", "QUESTION", "BUILDING", "CONSIDER", "NATIONAL", "AMERICAN", "PROBABLY", "BUSINESS", "LANGUAGE", "COMPUTER", "DISTANCE", "ABSOLUTE", "ACADEMIC", "ACCEPTED", "ACCIDENT", "ACCURACY", "ACCURATE", "ACHIEVED", "ACTIVITY", "ACTUALLY", "ADDITION", "ADEQUATE", "ADJACENT", "ADVANCED", "ADVISORY", "AIRCRAFT", "ALTHOUGH", "ANALYSIS", "ANNOUNCE", "ANNUALLY", "ANYWHERE", "APPARENT", "APPEARED", "APPROACH", "APPROVAL", "APPROVED", "ARGUMENT", "ARRANGED", "ASSEMBLY", "ASSIGNED", "ASSUMING", "ATHLETIC", "ATTACHED", "ATTORNEY", "AUDIENCE", "AUTOMATIC", "BALANCED", "BASEBALL", "BATHROOM", "BEHAVIOR", "BELIEVED", "BIRTHDAY", "BOUNDARY", "BREAKFAST", "BUILDING", "BULLETIN", "BUSINESS", "CALENDAR", "CAMPAIGN", "CANADIAN", "CAPACITY", "CATEGORY", "CHAIRMAN", "CHAMPION", "CHANGING", "CHARGING", "CHEMICAL", "CHILDREN", "CHOOSING", "CLASSIFY", "CLEARING", "CLIMBING", "CLINICAL", "CLOTHING", "COACHING", "COLLAPSE", "COLONIAL", "COLORADO", "COMBINED", "COMMERCE", "COMMONLY", "COMMUNAL", "COMPARED", "COMPLETE", "COMPOSED", "COMPOUND", "COMPUTER", "CONCEPTS", "CONCRETE", "CONFUSED", "CONGRESS", "CONSIDER", "CONSTANT", "CONSUMER", "CONTACTS", "CONTAINS", "CONTINUE", "CONTRACT", "CONTRARY", "CONTRAST", "CONTROLS", "CONVINCE", "CORRIDOR", "COVERAGE", "COVERING", "CREATIVE", "CRIMINAL", "CRITICAL", "CROSSING", "CULTURAL", "CURRENCY", "CUSTOMER", "DATABASE", "DAUGHTER", "DECIDING", "DECISION", "DECREASE", "DEFENDER", "DELIVERY", "DEMOCRAT", "DENSER", "DESCRIBE", "DESIGNER", "DETAILED", "DIALOGUE", "DIAMETER", "DIAMONDS", "DIRECTLY", "DIRECTOR", "DISABLED", "DISASTER", "DISCOVER", "DISEASES", "DISGUISE", "DISTINCT", "DISTRICT", "DIVIDEND", "DIVORCED", "DOCTRINE", "DOCUMENT", "DOMESTIC", "DOMINANT", "DOWNTOWN", "DRAMATIC", "DRAWINGS", "DRINKING", "DROPPING", "DYNAMICS", "EARNINGS", "ECONOMIC", "EDUCATED", "EIGHTEEN", "ELECTION", "ELECTRIC", "ELEMENT", "ELIGIBLE", "EMERGING", "EMOTIONAL", "EMPLOYEE", "EMPLOYER", "ENABLING", "ENCLOSED", "ENCODING", "ENORMOUS", "ENTIRELY", "ENVELOPE", "EQUATION", "ESTIMATE", "EVALUATE", "EVENING", "EVERYONE", "EVIDENCE", "EXAMPLED", "EXCHANGE", "EXCITING", "EXCLUDED", "EXECUTIVE", "EXERCISE", "EXISTING", "EXPANDED", "EXPECTED", "EXPLICIT", "EXPORTED", "EXPOSURE", "EXTERNAL", "FACEBOOK", "FACILITY", "FAMILIES", "FAMILIAR", "FAMILIES", "FEATURED", "FEBRUARY", "FEEDBACK", "FESTIVAL", "FIGHTING", "FILENAME", "FILTERED", "FINALLY", "FINISHED", "FLOATING", "FOLLOWED", "FOOTBALL", "FORECAST", "FOREIGN", "FORMALLY", "FORMERLY", "FOURTEEN", "FRACKING", "FRANKLIN", "FREEDOM", "FREQUENT", "FRIENDLY", "FUNCTION", "FUNDING", "FURNITURE", "GAMEPLAY", "GATHERED", "GENERATE", "GENETICS", "GENOCIDE", "GEOMETRY", "GIGANTIC", "GOODNESS", "GOVERNOR", "GRADUATE", "GRAPHICS", "GREATEST", "GREETING", "GUARDIAN", "GUIDANCE", "HANDBOOK", "HANDLING", "HARDWARE", "HEADACHE", "HEADLINE", "HERITAGE", "HISTORIC", "HOLIDAYS", "HOMEWORK", "HORRIBLE", "HOSPITAL", "HUNDREDS", "IDENTITY", "IDEOLOGY", "IGNORANT", "ILLEGAL", "ILLNESS", "IMAGINE", "IMMORTAL", "IMMUNITY", "IMPERIAL", "IMPLICIT", "IMPORTED", "IMPOSED", "IMPROPER", "IMPROVE", "INCLUDED", "INCREASE", "INDICATE", "INDIRECT", "INDUSTRY", "INFERIOR", "INFORMAL", "INFORMED", "INHERITED", "INITIAL", "INJECTED", "INNOCENT", "INSISTED", "INSPIRED", "INSTANCE", "INSTEAD", "INSTINCT", "INTEGRAL", "INTENDED", "INTERACT", "INTEREST", "INTERNAL", "INTERNET", "INTERVAL", "INTIMATE", "INVASION", "INVERTED", "INVESTOR", "INVOLVED", "ISOLATED", "JUDGMENT", "JUDICIAL", "JUNCTION", "KEYBOARD", "LANGUAGE", "LAUNCHED", "LEARNING", "LECTURES", "LEFTOVER", "LEGALITY", "LEGALLY", "LIFETIME", "LIGHTING", "LIKEWISE", "LIMITING", "LITERARY", "LOCATION", "MAGNETIC", "MAINTAIN", "MAJORITY", "MANAGING", "MANIFEST", "MANKIND", "MARRIAGE", "MARTIAL", "MATERIAL", "MATERNAL", "MAXIMIZE", "MAXIMUM", "MEASURED", "MECHANISM", "MEDICINE", "MEDIEVAL", "MEMORIAL", "MENTIONS", "MERCHANT", "MESSAGES", "METALLIC", "METAPHOR", "MICHIGAN", "MILITARY", "MILLIONS", "MINIMIZE", "MINORITY", "MISTAKES", "MODERATE", "MODIFIED", "MOISTURE", "MOLECULE", "MONITORS", "MORTGAGE", "MOUNTAIN", "MOVEMENT", "MULTIPLE", "MUSICIAN", "NATIONAL", "NEGATIVE", "NEIGHBOR", "NEWSROOM", "NINETEEN", "NOTATION", "NOTEBOOK", "NOVEMBER", "NUMEROUS", "OBSERVED", "OBSERVER", "OBTAINED", "OCCASION", "OCCURRED", "OFFERING", "OFFICIAL", "OFFSHORE", "OPERATOR", "OPPONENT", "OPPOSITE", "OPTIONAL", "ORDINARY", "ORGANISM", "ORGANIZE", "ORIGINAL", "OUTBREAK", "OUTDATED", "OUTLINED", "OVERHEAD", "OVERLAP", "OVERSEAS", "OVERVIEW", "PAINTING", "PARALLEL", "PARENTAL", "PARTICLE", "PARTISAN", "PARTNERS", "PASSWORD", "PATIENCE", "PATTERNS", "PEACEFUL", "PERIODIC", "PERSONAL", "Peterson", "PHYSICAL", "PICTURES", "PLATFORM", "PLEASANT", "POINTING", "POLICIES", "POLITICS", "POLLUTION", "POPULAR", "PORTRAIT", "POSITIVE", "POSSIBLE", "POWERFUL", "PRACTICE", "PREGNANT", "PRESENCE", "PRESERVE", "PRESSING", "PRESSURE", "PREVIOUS", "PRIMARILY", "PRINCESS", "PRINTING", "PRIORITY", "PROBABLY", "PROBLEMS", "PRODUCED", "PRODUCER", "PRODUCTS", "PROFOUND", "PROGRAMS", "PROMISED", "PROMOTED", "PROPERLY", "PROPERTY", "PROPOSAL", "PROPOSED", "PROSPECT", "PROTOCOL", "PROVIDER", "PROVINCE", "PUBLICLY", "PURCHASE", "PURPOSES", "QUESTION", "RATIONAL", "REACTION", "READING", "REASONED", "RECEIVED", "RECEPTOR", "RECORDED", "RECOVERY", "REDUCING", "REFERRED", "REGIONAL", "REGISTER", "REGULATE", "REJECTED", "RELATION", "RELATIVE", "RELAXING", "RELEVANT", "RELIABLE", "RELIGION", "REMEMBER", "REMOVING", "REPEATED", "REPLACED", "REPORTED", "REPORTER", "REPUBLIC", "RESEARCH", "RESERVED", "RESIDENT", "RESOLVED", "RESOURCE", "RESPOND", "RESPONSE", "RESTRICT", "RESULTED", "REVEALED", "REVIEWED", "REVISION", "RICHARD", "SECURITY", "SELECTED", "SEMESTER", "SENTENCE", "SEPARATE", "SEQUENCE", "SERGEANT", "SERVICES", "SESSIONS", "SETTINGS", "SETTLING", "SEVERELY", "SHOPPING", "SHOULDER", "SHUTDOWN", "SIBLINGS", "SIDEWALK", "SIMPLIFY", "SINGULAR", "SLIGHTLY", "SNAPSHOT", "SNOWBALL", "SNOWFALL", "SOFTWARE", "SOLDIERS", "SOLUTION", "SOMEBODY", "SOMEHOW", "SOUTHERN", "SPEAKING", "SPECIFIC", "SPELLING", "SPENDING", "SPINNING", "SPONSORS", "SPORTING", "STANDARD", "STANDING", "STARTING", "STATIONS", "STEALING", "STEPPING", "STRANGER", "STRATEGY", "STRENGTH", "STRICTLY", "STRIKING", "STRONGLY", "STRUGGLE", "STUDENTS", "STUDYING", "SUBGROUP", "SUBJECTS", "SUBURBAN", "SUDDENLY", "SUFFERED", "SUGGESTS", "SUITABLE", "SUPERIOR", "SUPPLIES", "SUPPORTS", "SUPPOSED", "SURFACES", "SURGICAL", "SURPRISE", "SURROUND", "SURVIVAL", "SWIMMING", "SWITCHES", "SYMBOLIC", "SYNDROME", "SYSTEMS", "TEACHING", "TEAMWORK", "TEENAGER", "TERRIBLE", "TERRIFIC", "TEXTBOOK", "THINKING", "THIRTEEN", "THOUSAND", "THROWING", "TOGETHER", "TOMORROW", "TOUCHING", "TOURNAMENT", "TRACKING", "TRAINING", "TRANSFER", "TREASURY", "TROUBLED", "TRUSTING", "UMBRELLA", "UNCOMMON", "UNIVERSE", "UNLIKELY", "UNSIGNED", "UPCOMING", "UPDATING", "UPGRADED", "VACATION", "VALIDATE", "VALUABLE", "VARIABLE", "VEHICLES", "VERTICAL", "VETERANS", "VICINITY", "VIRGINIA", "VISITING", "VOLCANIC", "VOLUMES", "WATCHING", "WEAKNESS", "WEAPONS", "WHENEVER", "WHEREVER", "WILDLIFE", "WIRELESS", "WITHDRAW", "WITHDREW", "WONDERED", "WOODLAND", "WORKSHOP", "YOURSELF"],
+          9: ["IMPORTANT", "COMMUNITY", "DIFFERENT", "EDUCATION", "KNOWLEDGE", "BEAUTIFUL", "WONDERFUL", "SOMETIMES", "EVERYBODY", "RECOGNIZE", "RECOMMEND", "STRUCTURE", "EFFECTIVE", "FOLLOWING", "CHARACTER", "ABILITIES", "ABANDONED", "ACCEPTANCE", "ACCESSING", "ACCESSORY", "ACCIDENTS", "ACCORDING", "ACCURATELY", "ACHIEVING", "ACQUIRING", "ADDRESSED", "ADVANTAGE", "ADVENTURE", "ADVERTISE", "AFTERNOON", "AGREEMENT", "ALGORITHM", "ALONGSIDE", "AMBITIOUS", "AMENDMENT", "AMUSEMENT", "ANALOGOUS", "ANALYZING", "ANNOUNCED", "ANSWERING", "APARTMENT", "APPEARING", "APPLIANCE", "APPOINTED", "ARCHITECT", "ARGUMENTS", "ARMSTRONG", "ARRANGING", "ASSERTING", "ASSESSING", "ASSIGNING", "ASSOCIATE", "ASSURANCE", "ATTACKING", "ATTACHING", "ATTEMPTED", "ATTENDING", "ATTENTION", "ATTITUDES", "ATTORNEYS", "ATTRACTED", "ATTRIBUTE", "AUDIENCES", "AUTHORITY", "AUTOMATIC", "AVAILABLE", "AWARENESS", "BANDWIDTH", "BANKRUPTCY", "BASICALLY", "BATTERIES", "BEGINNING", "BELONGING", "BENCHMARK", "BIOGRAPHY", "BLUETOOTH", "BREAKFAST", "BREATHING", "BRILLIANT", "BROADCAST", "BRUNSWICK", "BUILDINGS", "CAMBRIDGE", "CAMPAIGNS", "CANDIDATE", "CAPACITOR", "CAPTURING", "CATHEDRAL", "CELEBRATE", "CELEBRITIES", "CHALLENGE", "CHAMPAGNE", "CHAMPIONS", "CHAPTERS", "CHARACTER", "CHEMISTRY", "CHILDHOOD", "CHRISTMAS", "CHRONICLE", "CLASSROOM", "COASTLINE", "COLLEAGUE", "COLLECTING", "COLLISION", "COLUMBUS", "COMBINING", "COMMANDER", "COMMERCE", "COMMITTEE", "COMMODITY", "COMMUNIST", "COMMUNITY", "COMPANIES", "COMPARING", "COMPLAINT", "COMPLETES", "COMPLIANT", "COMPONENT", "COMPOSING", "COMPOUNDS", "COMPUTING", "CONCEIVED", "CONCLUDED", "CONDITION", "CONDUCTED", "CONFIRMED", "CONFLICTS", "CONFUSION", "CONNECTED", "CONSENSUS", "CONSTANTS", "CONSTRUCT", "CONSULTED", "CONTACTED", "CONTAINER", "CONTINUED", "CONTRACTS", "CONTRASTS", "CONVERTED", "CONVINCED", "CORRIDORS", "COSMETICS", "COUNSELOR", "COUNTRIES", "COURTYARDS", "CREATURES", "CRITICISM", "CROSSOVER", "CUSTOMARY", "CUSTOMERS", "DATABASES", "DAUGHTERS", "DEBUGGING", "DECISIONS", "DEDICATED", "DEFENDANT", "DEFENSIVE", "DEFINITE", "DEMOCRACY", "DEPARTURE", "DEPENDENT", "DEPENDING", "DESCRIBED", "DESCRIBES", "DETECTIVE", "DETERMINE", "DEVELOPED", "DEVELOPER", "DEVIATION", "DIAGNOSIS", "DIFFERENT", "DIFFICULT", "DIMENSION", "DINOSAURS", "DIRECTING", "DIRECTORS", "DIRECTORY", "DISCOVERY", "DISCUSSED", "DISGUISED", "DISPLAYED", "DISSOLVE", "DISTANCES", "DISTRICTS", "DISTURBED", "DIVISIONS", "DOCUMENTS", "DOMINATED", "DOMINATED", "DOWNLOADS", "DOWNRIGHT", "DOWNSTREAM", "DREAMLIKE", "DRESSING", "DRINKABLE", "DUPLICATE", "ECONOMICS", "ECONOMIES", "EDUCATION", "EFFECTIVE", "EFFICIENT", "ELABORATE", "ELECTIONS", "ELECTORAL", "ELECTRONS", "ELSEWHERE", "EMBRACING", "EMOTIONAL", "EMPLOYEES", "EMPLOYERS", "ENCOUNTER", "ENCOURAGE", "ENDURANCE", "ENGINEERS", "ENHANCING", "ENJOYABLE", "ENORMOUS", "ENSCONCED", "EQUIPMENT", "ERUPTIONS", "ESSENTIAL", "ESTABLISH", "ESTIMATED", "ESTIMATES", "EVERYBODY", "EVERLASTING", "EVOLUTION", "EXAMINING", "EXCELLENT", "EXCEPTION", "EXCHANGED", "EXCLUSIVE", "EXECUTIVE", "EXEMPLIFY", "EXERCISES", "EXPANSION", "EXPENSIVE", "EXPLORING", "EXPLOSIVE", "EXPRESSED", "EXTENDING", "EXTENSION", "EXTENSIVE", "EXTREMELY", "FANTASTIC", "FASCINATE", "FEATURING", "FINANCIAL", "FINGERTIP", "FINISHING", "FIREPLACE", "FIREWORKS", "FISHERMAN", "FOLLOWING", "FORBIDDEN", "FORGIVING", "FORGOTTEN", "FRAMEWORK", "FRANCHISE", "FREQUENTLY", "FRONTPAGE", "FUNCTIONS", "FURNITURE", "GALLERIES", "GATHERING", "GENERALLY", "GENERATING", "GENERATOR", "GENTLEMAN", "GEOGRAPHIC", "GERMANS", "GIVING", "GOVERNORS", "GRADUATES", "GRANDMOTHER", "GREATNESS", "GUARANTEE", "GUARDIANS", "GUITARIST", "HALLOWEEN", "HAPPINESS", "HARMONICA", "HEADLIGHT", "HEADLINES", "HEADPHONE", "HEARTBEAT", "HISTORIAN", "HOLLYWOOD", "HORSEBACK", "HOSPITALS", "HOUSEWORK", "HURRICANE", "IDENTICAL", "IMITATION", "IMMEDIATE", "IMMIGRANT", "IMPLEMENTING", "IMPORTANT", "IMPRESSED", "IMPROVING", "INCLUDING", "INCREASED", "INCREASES", "INCREMENT", "INDICATED", "INDICATES", "INDICATOR", "INDONESIA", "INEFFABLE", "INFECTION", "INFLATION", "INFLUENCE", "INFORMING", "INHABITED", "INITIALLY", "INJECTION", "INNOCENCE", "INQUIRIES", "INSISTENCE", "INSPECTOR", "INSPIRING", "INSTALLED", "INSTANTLY", "INSTITUTE", "INTEGRATE", "INTENSITY", "INTENTION", "INTERACTS", "INTERFACE", "INTERFERE", "INTERPRET", "INTERVIEW", "INTRODUCE", "INTUITION", "INVESTING", "INVISIBLE", "IRRITABLE", "ISLANDERS", "ISOLATION", "JACKETLESS", "JAPANESE", "JERUSALEM", "JUSTIFIED", "KEYBOARDS", "KNOWLEDGE", "LABELING", "LANDSCAPE", "LANGUAGES", "LAUGHTER", "LAUNCHING", "LAWSUIT", "LIBRARIAN", "LIGHTNING", "LIMESTONE", "LIQUIDITY", "LISTENING", "LITERALLY", "LIVESTOCK", "LOCATIONS", "LONGITUDE", "MAGNITUDE", "MAINTAINS", "MAJORITIES", "MALAYSIAN", "MANHATTAN", "MANIFESTO", "MANSFIELD", "MARKETING", "MATERIALS", "MEANWHILE", "MECHANISM", "MEDICINAL", "MENTIONED", "MERCHANTS", "MESSENGER", "METAPHORS", "METHODIST", "MICROSCOPE", "MIDDLEMAN", "MINNESOTA", "MOLECULAR", "MOMENTARY", "MONUMENTS", "MOVEMENTS", "MUNICIPAL", "MUSICIANS", "MYSTERIES", "NARRATIVE", "NATIONALS", "NECESSARY", "NECESSITY", "NEGOTIATE", "NEIGHBORS", "NEWCASTLE", "NIGHTMARE", "NOMINATED", "NORTHEAST", "NORTHWEST", "NOTEBOOKS", "NUTRITION", "OBJECTIVE", "OBLIGATED", "OBSERVING", "OBVIOUSLY", "OCCASIONS", "OCCURRING", "OFFENSIVE", "OFFICIALS", "OPERATION", "OPERATORS", "OPPONENTS", "OPPOSITES", "ORGANISMS", "ORGANIZED", "ORGANIZED", "ORIENTATE", "ORIGINALLY", "OURSELVES", "OUTERWEAR", "OUTGOING", "OUTLINED", "OUTRAGE", "OWNERSHIP", "PACKAGING", "PAINTINGS", "PALETTES", "PAPERBACK", "PARAGRAPH", "PARAMOUNT", "PARKLANDS", "PASSENGER", "PATIENCE", "PATRIOTS", "PATRONAGE", "PERFECTLY", "PERFORMED", "PERFORMER", "PERMITTED", "PERSONNEL", "PETROLEUM", "PHENOMENA", "PICTURING", "PLACEMENT", "PLAINNESS", "PLATELETS", "PLATFORMS", "PLAYBACKS", "POLISHING", "POLLUTION", "POPULATED", "PORTFOLIOS", "POTENTIAL", "PRACTICES", "PRECISELY", "PREDICTED", "PREFERRED", "PREFIX", "PRESENTED", "PRESENTER", "PRESERVED", "PRESIDENT", "PRESSURES", "PRINCETON", "PRINCIPLE", "PRIVILEGE", "PROCEDURE", "PROCESSES", "PROCLAIMED", "PROFUNDITY", "PROMINENT", "PROMISING", "PROMOTION", "PROPOSALS", "PROTECTED", "PROTOTYPE", "PROVISION", "PSYCHOLOGY", "PUBLISHED", "PUBLISHER", "PURCHASED", "QUADRATIC", "QUALIFIED", "QUALITIES", "QUANTITIES", "QUARTERLY", "QUESTIONS", "RAINWATER", "REACTIONS", "REALISTIC", "REASONING", "REBELLION", "RECEIVING", "RECEPTION", "RECOGNIZE", "RECOMMEND", "RECORDING", "RECOVERED", "RECTANGLE", "REDUCTION", "REFERENCE", "REFLECTED", "REGARDING", "REGISTERS", "REGULARLY", "REINFORCE", "REJECTION", "RELATIVES", "RELEVANCE", "RELIGIONS", "RELISHING", "REMAINING", "REMEMBERS", "REPAYMENT", "REPLACING", "REPRESENT", "REPUBLICS", "REQUESTED", "REQUIRING", "RESEMBLES", "RESERVOIR", "RESIDENCE", "RESIDENTS", "RESOURCES", "RESPECTFUL", "RESPONSES", "RESTORING", "RESTRICTS", "RESULTING", "RETURNING", "REVEALING", "REVISIONS", "REVOLVING", "RIVERSIDE", "SCHEDULES", "SCHOLARSHIP", "SEARCHING", "SECRETARY", "SEEMINGLY", "SELECTING", "SELECTION", "SENSITIVE", "SERIOUSLY", "SHORTCUTS", "SHOULDERS", "SIGNATURE", "SIMPLICITY", "SITUATION", "SKILLFUL", "SOMEWHERE", "SOUTHEAST", "SOUTHWEST", "SPECIALLY", "SPECIFIED", "SPECIMENS", "SPREADING", "STANDARDS", "STATEMENT", "STATIONS", "STATEWIDE", "STATIONED", "STATISTICS", "STEADFAST", "STRATEGIC", "STRUCTURE", "STUPIDITY", "SUBSTANCE", "SUBURBAN", "SUCCEEDED", "SUFFERING", "SUGGESTED", "SUMMARIZE", "SUNFLOWER", "SUPPORTED", "SUPPORTER", "SUPREMACY", "SURPRISED", "SURRENDER", "SUSPENDED", "SUSTAINED", "SWEETNESS", "SYMBOLISM", "SYNTHESIS", "SYSTEMTIC", "TECHNICAL", "TECHNIQUE", "TEENAGERS", "TELEPHONE", "TELESCOPE", "TEMPTABLE", "TERRITORY", "TERRORISM", "TERRORIST", "TESTIMONY", "THEATRICAL", "THEREFORE", "THICKNESS", "THOUSANDS", "THREATENS", "TODAY", "TOLERANCE", "TOUCHING", "TRADITION", "TRANSPORT", "TRAVELING", "TREASURES", "TREATMENT", "TREMBLING", "TRIGGERED", "TROUBLING", "TWENTIETH", "TYPICALLY", "ULTIMATUM", "UNCERTAIN", "UNDEFINED", "UNDERMINE", "UNDERTAKE", "UNIVERSAL", "UNLIMITED", "UNPOPULAR", "UNRELATED", "UNTOUCHED", "UNWILLING", "UPGRADING", "UTILIZING", "VACATIONS", "VALENTINE", "VARIABLES", "VARIATION", "VARIETIES", "VEHICULAR", "VENTURING", "VERSATILE", "VIBRATION", "VICTORIES", "VIEWPOINT", "VIRGINIAN", "VIRTUALLY", "WAREHOUSE", "WATERFALL", "WEDNESDAY", "WHOLESOME", "WILLINGLY", "WISCONSIN", "WONDERFUL", "WORKFORCE", "WORKPLACE", "WRESTLING", "YESTERDAY"],
+          10: ["EVERYTHING", "GOVERNMENT", "MANAGEMENT", "UNDERSTAND", "TECHNOLOGY", "INFORMATION", "GENERATION", "POPULATION", "PRODUCTION", "BACKGROUND", "TELEVISION", "WASHINGTON", "CALIFORNIA", "DEMOCRATIC", "ABANDONMENT", "ABDOMINALS", "ABDICATION", "ABERRATION", "ABHORRENCE", "ABOMINABLE", "ABORIGINAL", "ABSORPTION", "ABSTINENCE", "ABSTRACTION", "ACCELERATE", "ACCEPTABLE", "ACCEPTANCE", "ACCESSIBLE", "ACCIDENTAL", "ACCOMPLISH", "ACCORDANCE", "ACCOUNTANT", "ACCOUNTING", "ACCUMULATE", "ACCURATELY", "ACCUSATION", "ACCUSTOMED", "ACHIEVABLE", "ACTIVITIES", "ADAPTATION", "ADDITIONAL", "ADEQUATELY", "ADJECTIVES", "ADMIRATION", "ADOLESCENT", "ADVANTAGES", "ADVENTURES", "ADVERTISER", "AFICIONADO", "AFFECTEDLY", "AFFILIATES", "AFFORDABLE", "AFICIONADO", "AGGRANDIZE", "AGGRAVATED", "AGGRESSION", "AGGRESSIVE", "AGREEMENTS", "AGRICULTURE", "ALGORITHMS", "ALLEGIANCE", "ALLERGENIC", "ALLOCATION", "ALLUREMENT", "ALPHABETIC", "ALTOGETHER", "AMBASSADOR", "AMBULATORY", "AMENDMENTS", "AMMUNITION", "ANESTHESIA", "ANNOTATION", "ANNOUNCERS", "ANSWERABLE", "ANTARCTICA", "ANTIBIOTIC", "ANTICIPATE", "ANTIMATTER", "ANTISOCIAL", "APPEARANCE", "APPLICABLE", "APPLICATION", "APPOINTEES", "APPRECIATE", "APPROACHES", "ARCHBISHOP", "ARCHITECTS", "ARITHMETIC", "ARRANGEMENTS", "ARTIFICIAL", "ASSESSMENT", "ASSIGNMENT", "ASSISTANCE", "ASSOCIATES", "ASSUMPTION", "ASTRONOMER", "ATTACHMENT", "ATTENDANCE", "ATTRACTIVE", "ATTRIBUTED", "ATTRIBUTES", "AUDITORIUM", "AUSTRALIAN", "AUTHORIZED", "AUTOMOBILE", "AUTONOMOUS", "BACKGROUND", "BANKRUPTCY", "BASKETBALL", "BATTLEFIELD", "BEACHFRONT", "BEAUTICIAN", "BEFOREHAND", "BEGINNINGS", "BELIEVABLE", "BENEFICIAL", "BEWILDERED", "BIOLOGICAL", "BLACKBERRY", "BLUEBERRIES", "BOUNDARIES", "BRAINSTORM", "BREADBOARD", "BREADCRUMB", "BREAKFAST", "BREATHLESS", "BRIGHTNESS", "BROADSWORD", "BYSTANDERS", "CALIFORNIA", "CAMPAIGNS", "CANDIDATES", "CAPACITIES", "CAPITALISM", "CAPITALIZE", "CARDBOARD", "CARETAKERS", "CATEGORIES", "CELEBRATED", "CENSORSHIP", "CENTENNIAL", "CHALLENGES", "CHANCELLOR", "CHARACTERS", "CHARITABLE", "CHECKPOINT", "CHIMPANZEE", "CHOCOLATE", "CHROMOSOME", "CIGARETTES", "CINDERELLA", "CIRCULATED", "CLASSIFIED", "CLEANLINESS", "CLIMATIC", "CLUSTERING", "COINCIDENCE", "COLLABORATE", "COLLEAGUES", "COLLECTIVE", "COLLEGIATE", "COLLOQUIAL", "COLUMNIST", "COMBINATION", "COMMENTARY", "COMMERCIAL", "COMMISSION", "COMMITMENT", "COMMITTEES", "COMMONNESS", "COMMUNITIES", "COMPARABLE", "COMPARISON", "COMPATIBLE", "COMPENSATE", "COMPETENCE", "COMPETITOR", "COMPLEMENT", "COMPLETELY", "COMPLEXITY", "COMPLIANCE", "COMPONENTS", "COMPROMISE", "COMPULSIVE", "COMPULSORY", "CONCEPTION", "CONCERNING", "CONCLUSION", "CONCURRENT", "CONFERENCE", "CONFESSION", "CONFIDENCE", "CONFISCATE", "CONFLUENCE", "CONGREGATE", "CONGRESSES", "CONNECTING", "CONNECTION", "CONSCIENCE", "CONSEQUENT", "CONSIDERED", "CONSISTENT", "CONSOLIDATE", "CONSPIRACY", "CONSTITUTE", "CONSTRAINT", "CONSULTANT", "CONSULTING", "CONTAINERS", "CONTAINING", "CONTENTION", "CONTESTANT", "CONTINGENT", "CONTINUOUS", "CONTRACTOR", "CONTRIBUTE", "CONTROLLED", "CONTROLLER", "CONVERSION", "COORDINATE", "CORRECTION", "CORRECTIVE", "CORRESPOND", "CORRUPTION", "COUNSELING", "COUNTERACT", "COUNTRIES", "COURTHOUSE", "COWARDICE", "CRAFTINESS", "CREATIVITY", "CREDITABLE", "CULTURALLY", "CURRICULUM", "CYBERNETIC", "DAREDEVILS", "DAYLIGHT", "DEADLINES", "DEAFENING", "DECEPTION", "DECISIVELY", "DECORATION", "DEDICATION", "DEFENSIBLE", "DEFINITELY", "DEFINITION", "DELINQUENT", "DEMOCRATIC", "DEMOLITION", "DEPENDABLE", "DEPENDENCE", "DEPRESSING", "DEPRESSION", "DERIVATIVE", "DESCIPTION", "DESIGNATED", "DESIREABLE", "DEVELOPING", "DEVOTIONAL", "DICTIONARY", "DIFFERENCE", "DIFFICULTY", "DIMENSIONS", "DIPLOMATIC", "DIRECTIONS", "DIRECTNESS", "DISABILITY", "DISCLAIMER", "DISCOVERER", "DISCRETELY", "DISCUSSION", "DISHONESTY", "DISJOINTED", "DISMISSIVE", "DISPIRITED", "DISPOSABLE", "DISTRIBUTE", "DISTURBING", "DOCUMENTARY", "DOMINATION", "DOWNSTAIRS", "DOWNSTREAM", "DRAMATICAL", "DREADFULLY", "EARTHQUAKE", "ECONOMICAL", "EDITORIALS", "EDITORSHIP", "EDUCATION", "EFFECTIVE", "ELECTRONIC", "ELEMENTARY", "ELIMINATE", "EMPLOYMENT", "EMPOWERING", "ENCOUNTERS", "ENCOURAGE", "ENDANGERED", "ENERGIZING", "ENGAGEMENT", "ENGINEERING", "ENGROSSING", "ENLIVENING", "ENTERPRISE", "ENTHUSIASM", "ENTIRENESS", "ENTITLEMENT", "EQUIVALENT", "ESPECIALLY", "ESTIMATION", "EVALUATING", "EVERYTHING", "EVERYWHERE", "EXAGGERATE", "EXCELLENCE", "EXCEPTIONAL", "EXCITEMENT", "EXECUTABLE", "EXERCISING", "EXHIBITION", "EXPERIENCE", "EXPERIMENT", "EXPLICITLY", "EXPRESSION", "EXTENSIONS", "EXTERNALLY", "EXTRACTION", "FACILITIES", "FASCINATING", "FASHIONABLE", "FEDERATION", "FERTILIZER", "FIGURATION", "FINGERPRINT", "FIREFIGHTER", "FISHERMEN", "FLEXIBILITY", "FOOTBALLER", "FOREGROUND", "FORGETTING", "FORGIVENESS", "FOUNDATION", "FRAGMENTED", "FRAMEWORKS", "FRANCHISED", "FREQUENTLY", "FRIENDSHIP", "FUNCTIONAL", "FUNDRAISER", "FURNISHING", "FURTHEMORE", "GENERATION", "GENEROSITY", "GEOGRAPHIC", "GEOLOGICAL", "GIRLFRIEND", "GOALKEEPER", "GOVERNMENT", "GRANDCHILD", "GRANDIOSE", "GRANDPARENT", "GRASSHOPPER", "GREENHOUSE", "GROWNUPS", "GUARANTEED", "GUIDELINES", "GYMNASTICS", "HANDLEBARS", "HANDMAIDENS", "HARASSMENT", "HEALTHCARE", "HELICOPTER", "HEMISPHERE", "HIGHLIGHTS", "HINDRANCES", "HISTORICAL", "HOROSCOPE", "HORSEPOWER", "HOUSEBOUND", "HOUSEHOLDS", "HOUSEWIVES", "HUMANITIES", "HYPOTHESIS", "ILLITERACY", "ILLUMINATE", "ILLUSIONS", "IMAGINABLE", "IMMIGRANTS", "IMMUNOLOGY", "IMPRESSION", "IMPRESSIVE", "INCAPABLE", "INCREDIBLY", "INDEFINITE", "INDUSTRIAL", "INFECTIOUS", "INFINITELY", "INFINITIVES", "INFLEXIBLE", "INFLUENCES", "INFORMALLY", "INGREDIENT", "INHABITANT", "INITIATIVE", "INJECTIONS", "INNOVATIVE", "INSIGHTFUL", "INSPECTION", "INSPECTOR", "INSTALLING", "INSTANTLY", "INSTRUMENT", "INSUFFICIET", "INTEGRATED", "INTELLECTUAL", "INTERFACES", "INTERFERED", "INTERNALLY", "INTERNALLY", "INTOLERANT", "INTRODUCED", "INVALUABLE", "INVESTMENT", "INVITATION", "IRONICALLY", "JOURNALISM", "JOURNALIST", "JUDICIALLY", "JUICINESS", "JUSTIFYING", "KIDNAPPING", "KINDERGARD", "LABORATORY", "LACERATION", "LANDSCAPES", "LEADERSHIP", "LIBRARIANS", "LIKELIHOOD", "LIMITATION", "LITERATURE", "LOCOMOTIVE", "LONELINESS", "LOUDSPEAKER", "MAGNETISM", "MANAGEMENT", "MANUSCRIPT", "MARGINALLY", "MARKETING", "MARKETPLACE", "MASTERPIECE", "MEANWHILE", "MECHANICAL", "MEDITATION", "MEMBERSHIP", "MEMORIZING", "METABOLISM", "MICROSCOPE", "MILLENNIUM", "MINISTRIES", "MIRACULOUS", "MISCONDUCT", "MISFORTUNE", "MISGUIDED", "MISSIONARY", "MITTSVILLE", "MODERATELY", "MULTIMEDIA", "NATIONWIDE", "NATURALIST", "NAVIGATING", "NAVIGATION", "NEGOTIATED", "NEIGHBORS", "NEWSLETTER", "NEWSPAPERS", "NIGHTCLUBS", "NIGHTMARES", "NOMINATION", "NONFICTION", "NONPROFIT", "NOTEWORTHY", "NOURISHING", "OBEDIENCE", "OBLIGATION", "OBSERVABLE", "OBSERVANCE", "OCCURRENCE", "OPERATIONS", "OPPOSITION", "ORDINARILY", "ORGANIZATION", "ORIGINALLY", "OSTRICHES", "OVERCOMING", "OVERLOOKED", "OVERWHELM", "OWNERSHIP", "PAPERBOARD", "PAPERWORK", "PARAMEDICS", "PARENTHOOD", "PARLIAMENT", "PARTICULAR", "PARTNERSHIP", "PASSIONATE", "PERFECTION", "PERFORMING", "PERIPHERAL", "PERMANENCE", "PERMISSION", "PERSONALLY", "PHENOMENON", "PHILOSOPHY", "PHOTOGRAPH", "PHYSICIANS", "PILGRIMAGE", "PLAYWRIGHT", "PLAYGROUND", "PLEASANTLY", "POCKETBOOK", "POLITICIANS", "POPULARITY", "POPULATION", "POSITIVELY", "POSSESSION", "POTENTIALLY", "POWERFULLY", "PRESCRIBED", "PRESIDENCY", "PRESIDENTS", "PRESSURING", "PREVENTION", "PREVIOUSLY", "PRIVILEGES", "PROCEDURAL", "PROCEDURES", "PROCESSING", "PRODUCTION", "PROFESSION", "PROFITABLE", "PROGRAMMER", "PROJECTILE", "PROMINENCE", "PROPAGANDA", "PROPERTIES", "PROPORTION", "PROTECTION", "PSYCHOLOGY", "PUBLISHERS", "PUNISHMENT", "PURCHASING", "QUARANTINE", "QUANTITIES", "QUATERNARY", "QUESTIONED", "RAINFOREST", "REASONABLE", "REBELLIOUS", "REBUILDING", "RECIPIENTS", "RECOGNIZES", "RECONGNIZE", "RECOMMENDS", "RECORDINGS", "RECOVERING", "REFRESHING", "REGARDLESS", "REGULATION", "RELATIVELY", "RELEVANTLY", "REMARKABLE", "REMEMBERED", "RENOUNCING", "REPETITION", "REPEATEDLY", "REPRESENTS", "REPUBLICAN", "REPUTATION", "RESEARCHED", "RESEARCHER", "RESEMBLING", "RESOLUTION", "RESPONDING", "RESTAURANT", "RESTRAINED", "RESTRICTED", "RETREATING", "REVELATION", "REVOLUTION", "RIDICULOUS", "SACRIFICES", "SACRAMENTO", "SALESWOMAN", "SALESPEOPLE", "SANITATION", "SATELLITES", "SCHEDULING", "SCIENTIST", "SCREENPLAY", "SCULPTURES", "SEPARATELY", "SETTLEMENT", "SHAREHOLDERS", "SHORTENING", "SIMPLIFIED", "SKILLFULLY", "SMARTPHONE", "SNORKELING", "SOCIALITES", "SPACECRAFT", "SPECIALIST", "SPECIALIST", "SPIRITUALS", "STAGECOACH", "STAINLESS", "STATISTICS", "STEADINESS", "STEREOTYPE", "STOREHOUSE", "STRAWBERRY", "STRENGTHEN", "STRUCTURAL", "STRUGGLING", "SUBSEQUENT", "SUBSTITUTE", "SUBTRACTION", "SUCCESSFUL", "SUFFICIENT", "SUGGESTION", "SUPPLEMENT", "SUPPORTING", "SUPPOSEDLY", "SURPASSING", "SUSPICIOUS", "SUSTAINING", "SWITCHBOARD", "SYSTEMATIC", "TABLESPOON", "TECHNOLOGY", "TELEVISION", "TEMPTATION", "TENDERNESS", "THEMSELVES", "THERAPISTS", "THEREAFTER", "THOROUGHLY", "THREATENED", "THROUGHOUT", "THUMBNAIL", "TIMBERWOLF", "TOLERANCE", "TOURNAMENT", "TRADITIONS", "TRANSITION", "TRANSLATOR", "TRAVELING", "TREMENDOUS", "TRIANGULAR", "TRUCULENCE", "TURBULENCE", "ULTIMATELY", "UNEMPLOYED", "UNEXPECTED", "UNFRIENDLY", "UNFINISHED", "UNIVERSITY", "UNKNOWINGLY", "UNLEASHING", "UNOFFICIAL", "UNVEILING", "UPHOLSTERY", "UPPERCLASS", "USEFULNESS", "VALIDATION", "VEGETATION", "VENTILATOR", "VIEWFINDER", "VOCABULARY", "VULNERABLE", "WASHINGTON", "WATERMELON", "WAVELENGTH", "WEAPONLESS", "WHEELCHAIR", "WILDERNESS", "WITHDRAWAL", "WONDERLAND", "WORKAHOLIC", "WORKPLACE", "YESTERYEAR"],
+        };
+        // Check if the word exists in the appropriate length list
+        const wordsByLength = commonWordsByLength[word.length];
+        if (wordsByLength && wordsByLength.includes(word.toUpperCase())) {
           return true;
         }
 
@@ -2449,7 +2391,8 @@
 
         localStorage.setItem("wordle_completed", "true");
         showCongratulationsPopup(completionRate, avgGuesses, accuracy);
-        localStorage.removeItem("wordleGameState");
+        // Save the completed game state so it persists on refresh
+        saveGameProgress();
       }
 
       function startTitleShaking() {
@@ -2537,6 +2480,14 @@
                 savedState.revealedPunctuation || []
               );
               hasCompletedFirstWord = savedState.hasCompletedFirstWord || false;
+              
+              // Apply visual state for title "s" if first word was completed
+              if (hasCompletedFirstWord) {
+                const titleS = document.getElementById("title-s");
+                if (titleS) {
+                  titleS.classList.add("show");
+                }
+              }
 
               if (allWordsData.length === 0) {
                 for (let i = 0; i < WORDS_DATA.length; i++) {
@@ -2923,6 +2874,8 @@
 
         document.getElementById("play-again-btn").onclick = function () {
           popup.classList.add("hidden");
+          // Clear saved game state when explicitly choosing to play again
+          localStorage.removeItem("wordleGameState");
           location.reload();
         };
 
