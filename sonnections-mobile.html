@@ -853,30 +853,30 @@
         const gameData = {
             groups: [
                 {
-                    category: "SINNERS WHO WENT TOO FAR",
-                    words: ["MARY", "SAMMIE", "STACK", "CORNBREAD"],
-                    audioFiles: ["audio/mary.mp3", "audio/sammie.mp3", "audio/stack.mp3", "audio/cornbread.mp3"],
+                    category: "\"CAFE\" SPELLED MUSICALLY",
+                    words: ["GUITAR", "HARMONIUM", "ORCHESTRA", "PIANO"],
+                    audioFiles: ["audio/guitar.mp3", "audio/harmonium.mp3", "audio/orchestra.mp3", "audio/piano.mp3"],
                     color: "yellow",
                     difficulty: 1
                 },
                 {
-                    category: "TONES IN SONIC SPACES",
-                    words: ["TRAP", "BLUES", "ROCK", "CLUB"],
-                    audioFiles: ["audio/trap.mp3", "audio/blues.mp3", "audio/rock.mp3", "audio/club.mp3"],
+                    category: "WORKPLACE AMBIENCE",
+                    words: ["SLACK NOTIFICATION", "TYPING", "GOOGLE MEET", "MICROWAVE"],
+                    audioFiles: ["audio/slack.mp3", "audio/typing.mp3", "audio/gmeet.mp3", "audio/microwave.mp3"],
                     color: "green",
                     difficulty: 2
                 },
                 {
-                    category: "ELEMENTS THAT CLEANSE EVIL",
-                    words: ["SILVER", "SMOKE", "SUNLIGHT", "STAKE"],
-                    audioFiles: ["audio/silver.mp3", "audio/smoke.mp3", "audio/sunlight.mp3", "audio/stake.mp3"],
+                    category: "SOUNDS LIKE BANGALORE",
+                    words: ["NAMMA YATRI", "MONSOON", "AUTO RICKSHAW", "GPAY"],
+                    audioFiles: ["audio/namma-yatri.mp3", "audio/monsoon.mp3", "audio/auto.mp3", "audio/gpay.mp3"],
                     color: "blue",
                     difficulty: 3
                 },
                 {
-                    category: "WORDS THAT COME BEFORE \"GOOD\"",
-                    words: ["VERY", "SINNERS", "WAS", "GOOD"],
-                    audioFiles: ["audio/very.mp3", "audio/sinners.mp3", "audio/was.mp3", "audio/good.mp3"],
+                    category: "SOUNDS ALSO MADE BY GEESE",
+                    words: ["HONK", "HISS", "TRUMPET", "CHATTER"],
+                    audioFiles: ["audio/honk.mp3", "audio/hiss.mp3", "audio/trumpet.mp3", "audio/chatter.mp3"],
                     color: "purple",
                     difficulty: 4
                 }
@@ -887,7 +887,7 @@
         const NEXT_PUZZLES_ENABLED = false;
         
         // Cooldown duration in milliseconds
-        const COOLDOWN_DURATION = 60000;
+        const COOLDOWN_DURATION = 3600000; // 1 hour (3600000ms)
         
         // Game state (simplified for mobile)
         let gameState = {
@@ -1615,29 +1615,55 @@
             // Take the first half
             const selectedCells = shuffledCells.slice(0, halfCount);
             
+            // Pick one cell from selected cells to be the enhanced shaking cell
+            const enhancedShakeIndex = Math.floor(Math.random() * selectedCells.length);
+            
             // Add shake animation and click handlers to selected cells
             selectedCells.forEach((cell, index) => {
-                cell.classList.add('victory-shake');
+                cell.classList.add('shake-link');
+                
+                const isEnhancedCell = index === enhancedShakeIndex;
                 
                 // Randomly assign one of the shake animations (reusing existing ones)
                 const shakeAnimations = ['subtle-shake-1', 'subtle-shake-2', 'subtle-shake-3', 'subtle-shake-4'];
                 const randomAnimation = shakeAnimations[Math.floor(Math.random() * shakeAnimations.length)];
                 
-                // Add random duration between 1.5s and 2.5s for more variety
-                const randomDuration = (1.5 + Math.random()).toFixed(1);
-                
-                // Add random delay between 0 and 0.5s to stagger the animations
-                const randomDelay = (Math.random() * 0.5).toFixed(2);
+                // Enhanced cell gets more intense shaking
+                let randomDuration, randomDelay;
+                if (isEnhancedCell) {
+                    // Enhanced cell: faster, more intense shaking
+                    randomDuration = (0.8 + Math.random() * 0.4).toFixed(1); // 0.8-1.2s
+                    randomDelay = (Math.random() * 0.3).toFixed(2); // 0-0.3s delay
+                    cell.classList.add('victory-shake'); // Add special styling
+                } else {
+                    // Regular cells: normal shaking
+                    randomDuration = (1.5 + Math.random()).toFixed(1); // 1.5-2.5s
+                    randomDelay = (Math.random() * 0.5).toFixed(2); // 0-0.5s delay
+                }
                 
                 cell.style.animation = `${randomAnimation} ${randomDuration}s ease-in-out infinite`;
                 cell.style.animationDelay = `${randomDelay}s`;
                 cell.style.cursor = 'pointer';
                 
-                // Add click handler for toast message
-                cell.addEventListener('click', () => {
-                    const message = getRandomPlayfulMessage();
-                    showToast(message);
-                });
+                // Add click handler
+                if (isEnhancedCell) {
+                    // Enhanced cell: link or popup functionality
+                    cell.addEventListener('click', () => {
+                        if (!NEXT_PUZZLES_ENABLED) {
+                            showEarlyAccessPopup();
+                        } else {
+                            // Navigate to sinnections-mobile.html when enabled
+                            const link = 'sinnections-mobile.html';
+                            window.open(link, '_blank');
+                        }
+                    });
+                } else {
+                    // Regular cells: toast message
+                    cell.addEventListener('click', () => {
+                        const message = getRandomPlayfulMessage();
+                        showToast(message);
+                    });
+                }
             });
         }
 
