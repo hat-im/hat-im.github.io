@@ -1,0 +1,7225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="A mobile-optimized Wordle-style word guessing game"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <title>Wordle++</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/wordle-favicon.ico"
+    />
+    <style>
+      @font-face {
+        font-family: "Franklin";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-700.ttf")
+          format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Franklin";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-500.ttf")
+          format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Karnak";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-cond-normal.ttf")
+          format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "KarnakNormal";
+        src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-normal.woff")
+          format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /* Mobile-First Dark Mode Wordle Color Scheme */
+      :root {
+        --color-correct: #538d4e;
+        --color-present: #b59f3b;
+        --color-absent: #3a3a3c;
+        --color-empty: #121213;
+        --color-border: #3a3a3c;
+        --color-border-focus: #565758;
+        --color-text: #ffffff;
+        --color-bg: #121213;
+        --color-tile-text: #ffffff;
+        --animation-flip-duration: 0.4s;
+        --animation-flip-delay: 0.15s;
+        --animation-fade-duration: 0.3s;
+        --animation-bounce-duration: 0.5s;
+        --animation-slide-duration: 0.4s;
+        --animation-typing-duration: 0.6s;
+        --animation-collapse-duration: 0.6s;
+        --animation-expand-duration: 0.5s;
+        --animation-stack-duration: 1s;
+        --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+        --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --tile-size: min(14vw, 56px);
+        --tile-gap: min(1.5vw, 6px);
+        --container-padding: min(4vw, 16px);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+          sans-serif;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        line-height: 1.4;
+        padding: var(--container-padding);
+        min-height: 100vh;
+        min-height: 100svh;
+        overflow-x: hidden;
+        touch-action: manipulation;
+      }
+
+      .container {
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        overflow: visible;
+        padding: 0;
+      }
+
+      h1 {
+        font-family: "Karnak", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: clamp(24px, 8vw, 40px);
+        font-weight: 400;
+        margin-bottom: min(2vw, 10px);
+        letter-spacing: 0.1rem;
+        padding: 0 var(--container-padding);
+      }
+
+      .completed-words-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--tile-gap);
+        margin-bottom: 0;
+        width: 100%;
+      }
+
+      .completed-word-row {
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s var(--ease-in-out-cubic);
+        transform-origin: center;
+        width: 100%;
+        max-width: 100vw;
+      }
+
+      .completed-word-row:active {
+        filter: brightness(1.2);
+        transform: scale(0.98);
+      }
+
+      .completed-word-row.collapsing {
+        animation: collapseUp var(--animation-collapse-duration)
+          var(--ease-smooth) forwards;
+      }
+
+      .completed-word-row.moving-to-stack {
+        animation: moveToStack var(--animation-stack-duration)
+          var(--ease-smooth) forwards;
+      }
+
+      @keyframes collapseUp {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(
+            calc(-1 * (var(--tile-size) + var(--tile-gap)))
+          );
+        }
+      }
+
+      @keyframes moveToStack {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(
+            calc(-0.8 * (var(--tile-size) + var(--tile-gap)))
+          );
+        }
+      }
+
+      .completed-word-grid {
+        display: grid;
+        gap: var(--tile-gap);
+        justify-content: center;
+        width: 100%;
+      }
+
+      .completed-tile {
+        width: var(--tile-size);
+        height: var(--tile-size);
+        border: 2px solid var(--color-border);
+        background-color: var(--color-empty);
+        color: var(--color-tile-text);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Franklin", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: clamp(18px, 5vw, 24px);
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+        border-radius: min(1vw, 4px);
+      }
+
+      .completed-tile.correct {
+        background-color: var(--color-correct);
+        border-color: var(--color-correct);
+        color: white;
+      }
+
+      .completed-tile.present {
+        background-color: var(--color-present);
+        border-color: var(--color-present);
+        color: white;
+      }
+
+      .completed-tile.absent {
+        background-color: var(--color-absent);
+        border-color: var(--color-absent);
+        color: white;
+      }
+
+      .punctuation-tile {
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        color: var(--color-text);
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: var(--tile-size);
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: min(1vw, 4px);
+      }
+
+      .current-word-punctuation {
+        position: absolute;
+        left: calc(var(--tile-size) + var(--tile-gap));
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        color: var(--color-text);
+        font-weight: bold;
+        height: var(--tile-size);
+        display: flex;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .punctuation-tile.revealed {
+        opacity: 1;
+      }
+
+      .correct-row-clickable {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .correct-row-clickable:active {
+        filter: brightness(1.2);
+        transform: scale(0.98);
+      }
+
+      .drawer-row {
+        transition: transform 0.4s ease, height 0.4s ease, margin 0.4s ease;
+        overflow: hidden;
+      }
+
+      .completed-grid-wrapper.drawer-collapsed
+        .drawer-row:not([data-correct-row="true"]) {
+        height: 0px !important;
+        margin-bottom: 0px !important;
+        visibility: hidden !important;
+        z-index: -1 !important;
+        overflow: hidden !important;
+      }
+
+      .completed-grid-wrapper.drawer-collapsed {
+        gap: 0px !important;
+      }
+
+      .completed-word-container.drawer-collapsed .completed-grid-wrapper {
+        gap: 0px !important;
+      }
+
+      .completed-grid-wrapper {
+        transition: all 0.4s ease;
+      }
+
+      #game-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--tile-gap);
+        overflow: visible;
+        width: 100%;
+        padding: 0 var(--container-padding);
+      }
+
+      .current-word-container {
+        margin-top: 0;
+        margin-bottom: 0;
+        overflow: visible;
+        width: 100%;
+      }
+
+      .current-word-container.fade-in {
+        animation: fadeInSlideUp 0.5s ease forwards;
+      }
+
+      @keyframes fadeInSlideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(min(8vw, 30px));
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .game-grid {
+        display: grid;
+        gap: var(--tile-gap);
+        margin: 0 auto;
+        justify-content: center;
+        overflow: visible;
+        position: relative;
+        width: 100%;
+      }
+
+      .tile {
+        width: var(--tile-size);
+        height: var(--tile-size);
+        border: 2px solid var(--color-border);
+        background-color: var(--color-empty);
+        color: var(--color-tile-text);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Franklin", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: clamp(18px, 5vw, 24px);
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all 0.3s var(--ease-in-out-cubic);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        border-radius: min(1vw, 4px);
+        touch-action: manipulation;
+      }
+
+      .tile.filled {
+        border-color: var(--color-border-focus);
+      }
+
+      .tile.correct {
+        background-color: var(--color-correct);
+        border-color: var(--color-correct);
+        color: white;
+      }
+
+      .tile.present {
+        background-color: var(--color-present);
+        border-color: var(--color-present);
+        color: white;
+      }
+
+      .tile.absent {
+        background-color: var(--color-absent);
+        border-color: var(--color-absent);
+        color: white;
+      }
+
+      .tile.current {
+        border-color: var(--color-border-focus);
+        box-shadow: 0 0 0 2px var(--color-border-focus),
+          0 0 min(5vw, 20px) rgba(86, 87, 88, 0.3);
+        animation: currentGlow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes currentGlow {
+        0% {
+          box-shadow: 0 0 0 2px var(--color-border-focus),
+            0 0 min(2.5vw, 10px) rgba(86, 87, 88, 0.2);
+        }
+        100% {
+          box-shadow: 0 0 0 2px var(--color-border-focus),
+            0 0 min(6vw, 25px) rgba(86, 87, 88, 0.5);
+        }
+      }
+
+      .title-s {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.6) rotate(-10deg);
+        transition: all 1.2s var(--ease-bounce);
+        display: inline-block;
+      }
+
+      .title-s.show {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
+      }
+
+      .title-s.morphing {
+        animation: titleMorph 1.5s var(--ease-bounce) forwards;
+      }
+
+      .title-s.shaking {
+        animation: titleShake 0.8s ease-in-out infinite;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .title-s.shaking:hover {
+        transform: scale(1.1);
+      }
+
+      .title-s.shaking:active {
+        transform: scale(0.95);
+        color: var(--color-present);
+      }
+
+      @keyframes titleMorph {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px) scale(0.3) rotate(-45deg);
+          filter: blur(4px);
+        }
+        30% {
+          opacity: 0.3;
+          transform: translateY(-10px) scale(0.7) rotate(-15deg);
+          filter: blur(2px);
+        }
+        60% {
+          opacity: 0.8;
+          transform: translateY(5px) scale(1.1) rotate(5deg);
+          filter: blur(0px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(0deg);
+          filter: blur(0px);
+        }
+      }
+
+      @keyframes titleShake {
+        0%,
+        100% {
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        20% {
+          transform: translateX(2px) rotate(1deg);
+        }
+        30% {
+          transform: translateX(-3px) rotate(-2deg);
+        }
+        40% {
+          transform: translateX(3px) rotate(2deg);
+        }
+        50% {
+          transform: translateX(-2px) rotate(-1deg);
+        }
+        60% {
+          transform: translateX(2px) rotate(1deg);
+        }
+        70% {
+          transform: translateX(-1px) rotate(-0.5deg);
+        }
+        80% {
+          transform: translateX(1px) rotate(0.5deg);
+        }
+        90% {
+          transform: translateX(-0.5px) rotate(-0.25deg);
+        }
+      }
+
+      .status-message {
+        margin: min(5vw, 20px) 0;
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        font-weight: 600;
+        min-height: min(6vw, 25px);
+        padding: 0 var(--container-padding);
+      }
+
+      .success {
+        color: var(--color-correct);
+      }
+
+      .error {
+        color: #e53e3e;
+      }
+
+      .loading {
+        opacity: 0.7;
+        pointer-events: none;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .loading::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(5vw, 20px);
+        height: min(5vw, 20px);
+        margin: calc(-0.5 * min(5vw, 20px)) 0 0 calc(-0.5 * min(5vw, 20px));
+        border: 3px solid transparent;
+        border-top: 3px solid var(--color-correct);
+        border-right: 3px solid var(--color-present);
+        border-radius: 50%;
+        animation: spinColorful 1.2s ease-in-out infinite;
+      }
+
+      .title-header {
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 0.5em;
+        margin-bottom: 1em;
+      }
+
+      @keyframes spinColorful {
+        0% {
+          transform: rotate(0deg) scale(1);
+          border-top-color: var(--color-correct);
+          border-right-color: var(--color-present);
+        }
+        25% {
+          transform: rotate(90deg) scale(1.1);
+          border-top-color: var(--color-present);
+          border-right-color: var(--color-absent);
+        }
+        50% {
+          transform: rotate(180deg) scale(1);
+          border-top-color: var(--color-absent);
+          border-right-color: var(--color-correct);
+        }
+        75% {
+          transform: rotate(270deg) scale(1.1);
+          border-top-color: var(--color-correct);
+          border-right-color: var(--color-present);
+        }
+        100% {
+          transform: rotate(360deg) scale(1);
+          border-top-color: var(--color-present);
+          border-right-color: var(--color-absent);
+        }
+      }
+
+      .tile.flipping {
+        animation: flip3d var(--animation-flip-duration)
+          var(--ease-in-out-cubic) forwards;
+        transform-style: preserve-3d;
+      }
+
+      @keyframes flip3d {
+        0% {
+          transform: rotateX(0deg);
+        }
+        50% {
+          transform: rotateX(-90deg);
+        }
+        100% {
+          transform: rotateX(0deg);
+        }
+      }
+
+      .tile.shake {
+        animation: shake 0.5s ease-in-out;
+      }
+
+      @keyframes shake {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        10%,
+        30%,
+        50%,
+        70%,
+        90% {
+          transform: translateX(-3px);
+        }
+        20%,
+        40%,
+        60%,
+        80% {
+          transform: translateX(3px);
+        }
+      }
+
+      .tile.success {
+        animation: successBounce var(--animation-bounce-duration)
+          cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+
+      @keyframes successBounce {
+        0% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.1) rotate(2deg);
+        }
+        50% {
+          transform: scale(0.95) rotate(-1deg);
+        }
+        75% {
+          transform: scale(1.05) rotate(1deg);
+        }
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      .tile.typing {
+        background-color: #2d2d30;
+        border-color: var(--color-border-focus);
+        animation: typing-pulse var(--animation-typing-duration) ease-in-out
+          infinite alternate;
+      }
+
+      .timer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: var(--tile-gap);
+        margin-top: var(--tile-gap);
+        opacity: 0;
+        transform: translateY(min(5vw, 20px));
+        animation: timerFadeInSlideUp 0.5s ease forwards;
+        width: 100%;
+      }
+
+      .timer-container.hidden {
+        display: none;
+      }
+
+      .timer-digit {
+        width: var(--tile-size);
+        height: var(--tile-size);
+        border: 2px solid var(--color-border-focus);
+        background-color: var(--color-empty);
+        color: var(--color-tile-text);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: clamp(1.2rem, 4vw, 1.8rem);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s var(--ease-in-out-cubic);
+        transform: scale(1);
+        transform-style: preserve-3d;
+        border-radius: min(1vw, 4px);
+      }
+
+      .timer-digit.filled {
+        border-color: var(--color-border-focus);
+      }
+
+      .timer-digit.colon {
+        background-color: transparent;
+        border: none;
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
+      }
+
+      .timer-digit.flipping {
+        animation: flip3d var(--animation-flip-duration)
+          var(--ease-in-out-cubic) forwards;
+        transform-style: preserve-3d;
+      }
+
+      @keyframes timerFadeInSlideUp {
+        0% {
+          opacity: 0;
+          transform: translateY(min(5vw, 20px));
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes timerFadeOutSlideDown {
+        0% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(min(5vw, 20px));
+        }
+      }
+
+      @keyframes typing-pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 0 rgba(86, 87, 88, 0);
+        }
+        100% {
+          transform: scale(1.05);
+          box-shadow: 0 0 min(5vw, 20px) rgba(86, 87, 88, 0.4);
+        }
+      }
+
+      .status-message.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .status-message {
+        margin: min(5vw, 20px) 0;
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        font-weight: 600;
+        min-height: min(6vw, 25px);
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(min(2.5vw, 10px));
+        padding: 0 var(--container-padding);
+      }
+
+      .status-message.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .continue-game-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        height: 100svh;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+        padding: var(--container-padding);
+      }
+
+      .continue-game-popup.hidden {
+        display: none;
+      }
+
+      .popup-content {
+        background-color: var(--color-bg);
+        padding: min(8vw, 30px);
+        text-align: center;
+        max-width: 90vw;
+        width: 100%;
+        border-radius: min(3vw, 12px);
+        box-shadow: 0 min(2vw, 8px) min(8vw, 32px) rgba(0, 0, 0, 0.3);
+      }
+
+      .popup-title {
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        font-weight: 700;
+        margin-bottom: min(4vw, 15px);
+        color: var(--color-text);
+      }
+
+      .popup-message {
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        font-weight: 500;
+        margin-bottom: min(6vw, 25px);
+        color: var(--color-text);
+        line-height: 1.4;
+      }
+
+      .popup-buttons {
+        display: flex;
+        gap: min(4vw, 15px);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .popup-button {
+        padding: min(3vw, 12px) min(6vw, 24px);
+        border: 2px solid var(--color-border-focus);
+        background-color: var(--color-empty);
+        color: var(--color-text);
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
+        font-size: clamp(0.9rem, 3vw, 1rem);
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-radius: min(2vw, 8px);
+        touch-action: manipulation;
+        min-width: min(20vw, 80px);
+      }
+
+      .popup-button:active {
+        background-color: var(--color-border-focus);
+        transform: translateY(1px) scale(0.98);
+      }
+
+      .popup-button.primary {
+        background-color: var(--color-correct);
+        border-color: var(--color-correct);
+        color: white;
+      }
+
+      .popup-button.primary:active {
+        background-color: #4a7c59;
+        border-color: #4a7c59;
+      }
+
+      .toast {
+        position: fixed;
+        bottom: min(5vw, 20px);
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--color-absent);
+        color: white;
+        padding: min(3vw, 12px) min(5vw, 20px);
+        font-family: "Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          system-ui, sans-serif;
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        font-weight: 500;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+        border-radius: min(2vw, 8px);
+        max-width: 90vw;
+        text-align: center;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(min(-2.5vw, -10px));
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: min(2.5vw, 10px);
+        margin-top: min(5vw, 20px);
+        text-align: left;
+      }
+
+      .stats-label {
+        text-align: left;
+        font-weight: normal;
+      }
+
+      .stats-value {
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .star-rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: min(1.5vw, 5px);
+        margin: min(5vw, 20px) 0;
+        font-size: clamp(1.5rem, 5vw, 2rem);
+      }
+
+      .star {
+        color: #3a3a3c;
+        transition: color 0.3s ease;
+      }
+
+      .star.filled {
+        color: #ffd700;
+      }
+
+      .rating-text {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        font-weight: bold;
+        margin-top: min(2.5vw, 10px);
+      }
+
+      /* Mobile keyboard */
+      .mobile-keyboard {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--color-bg);
+        border-top: 1px solid var(--color-border);
+        padding: min(3vw, 12px) var(--container-padding);
+        z-index: 1000;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-keyboard.show {
+        transform: translateY(0);
+      }
+
+      .keyboard-row {
+        display: flex;
+        justify-content: center;
+        gap: min(1vw, 4px);
+        margin-bottom: min(2vw, 8px);
+      }
+
+      .keyboard-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .keyboard-key {
+        background-color: var(--color-empty);
+        border: 1px solid var(--color-border);
+        color: var(--color-text);
+        font-family: "Franklin", "nyt-franklin", "Helvetica Neue", Helvetica,
+          Arial, sans-serif;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        font-weight: 700;
+        padding: min(3vw, 12px) min(2vw, 8px);
+        border-radius: min(1.5vw, 6px);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        touch-action: manipulation;
+        min-width: min(8vw, 32px);
+        text-align: center;
+      }
+
+      .keyboard-key:active {
+        background-color: var(--color-border-focus);
+        transform: scale(0.95);
+      }
+
+      .keyboard-key.wide {
+        min-width: min(20vw, 80px);
+      }
+
+      /* Landscape orientation optimizations */
+      @media (orientation: landscape) and (max-height: 500px) {
+        :root {
+          --tile-size: min(12vw, 48px);
+          --container-padding: min(3vw, 12px);
+        }
+
+        h1 {
+          font-size: clamp(1.5rem, 5vw, 2rem);
+          margin-bottom: min(1vw, 5px);
+        }
+
+        .status-message {
+          margin: min(3vw, 12px) 0;
+          min-height: min(4vw, 20px);
+        }
+
+        .mobile-keyboard {
+          padding: min(2vw, 8px) var(--container-padding);
+        }
+
+        .keyboard-key {
+          padding: min(2vw, 8px) min(1.5vw, 6px);
+        }
+      }
+
+      /* Very small screens */
+      @media (max-width: 320px) {
+        :root {
+          --tile-size: min(15vw, 48px);
+          --container-padding: min(3vw, 10px);
+        }
+      }
+
+      /* Prevent zoom on double tap */
+      .tile,
+      .keyboard-key,
+      .popup-button {
+        touch-action: manipulation;
+      }
+
+      /* Hide scrollbars but maintain functionality */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+
+      body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Early Access Popup - Match mobile dark theme */
+      .early-access-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+      }
+      .early-access-popup.show {
+        display: flex;
+      }
+      .early-access-content {
+        background-color: var(--color-bg);
+        padding: 30px;
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+        border: 2px solid var(--color-border-focus);
+        border-radius: 8px;
+      }
+      .early-access-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        color: var(--color-text);
+      }
+      .early-access-message {
+        font-size: 1rem;
+        margin-bottom: 25px;
+        color: var(--color-text);
+        line-height: 1.4;
+      }
+      .early-access-close {
+        padding: 12px 24px;
+        border: 2px solid var(--color-correct);
+        background-color: var(--color-correct);
+        color: white;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-radius: 4px;
+      }
+      .early-access-close:hover {
+        background-color: #4a7c59;
+        border-color: #4a7c59;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main-title" class="title-header">
+        Wordle<span class="title-s" id="title-s">s</span>
+      </h1>
+      <div id="game-container">
+        <div id="completed-words-stack" class="completed-words-stack">
+          <!-- Completed words will stack here -->
+        </div>
+        <div id="current-word-container" class="current-word-container">
+          <div
+            class="word-grid-wrapper"
+            style="position: relative; width: 100%; margin: 0 auto"
+          >
+            <div class="game-grid" id="game-grid" style="position: relative">
+              <!-- Current word grid will be generated here -->
+            </div>
+            <div
+              id="punctuation-overlay"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+              "
+            >
+              <!-- Punctuation will be positioned here -->
+            </div>
+          </div>
+        </div>
+        <div id="timer-container" class="timer-container hidden">
+          <div class="timer-digit filled" id="timer-m1">0</div>
+          <div class="timer-digit filled" id="timer-m2">0</div>
+          <div class="timer-digit colon">:</div>
+          <div class="timer-digit filled" id="timer-s1">0</div>
+          <div class="timer-digit filled" id="timer-s2">0</div>
+        </div>
+      </div>
+      <div id="status-message" class="status-message"></div>
+    </div>
+
+    <!-- Mobile Keyboard -->
+    <div id="mobile-keyboard" class="mobile-keyboard">
+      <div class="keyboard-row">
+        <div class="keyboard-key" data-key="Q">Q</div>
+        <div class="keyboard-key" data-key="W">W</div>
+        <div class="keyboard-key" data-key="E">E</div>
+        <div class="keyboard-key" data-key="R">R</div>
+        <div class="keyboard-key" data-key="T">T</div>
+        <div class="keyboard-key" data-key="Y">Y</div>
+        <div class="keyboard-key" data-key="U">U</div>
+        <div class="keyboard-key" data-key="I">I</div>
+        <div class="keyboard-key" data-key="O">O</div>
+        <div class="keyboard-key" data-key="P">P</div>
+      </div>
+      <div class="keyboard-row">
+        <div class="keyboard-key" data-key="A">A</div>
+        <div class="keyboard-key" data-key="S">S</div>
+        <div class="keyboard-key" data-key="D">D</div>
+        <div class="keyboard-key" data-key="F">F</div>
+        <div class="keyboard-key" data-key="G">G</div>
+        <div class="keyboard-key" data-key="H">H</div>
+        <div class="keyboard-key" data-key="J">J</div>
+        <div class="keyboard-key" data-key="K">K</div>
+        <div class="keyboard-key" data-key="L">L</div>
+      </div>
+      <div class="keyboard-row">
+        <div class="keyboard-key wide" data-key="Enter">ENTER</div>
+        <div class="keyboard-key" data-key="Z">Z</div>
+        <div class="keyboard-key" data-key="X">X</div>
+        <div class="keyboard-key" data-key="C">C</div>
+        <div class="keyboard-key" data-key="V">V</div>
+        <div class="keyboard-key" data-key="B">B</div>
+        <div class="keyboard-key" data-key="N">N</div>
+        <div class="keyboard-key" data-key="M">M</div>
+        <div class="keyboard-key wide" data-key="Backspace">⌫</div>
+      </div>
+    </div>
+
+    <div id="continue-game-popup" class="continue-game-popup hidden">
+      <div class="popup-content">
+        <div class="popup-title">Hello again</div>
+        <div class="popup-message">
+          Do you want to start a new game, or continue where you left?
+        </div>
+        <div class="popup-buttons">
+          <button class="popup-button primary" id="continue-game-btn">
+            Continue
+          </button>
+          <button class="popup-button" id="new-game-btn">New Game</button>
+        </div>
+      </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="congratulations-popup" class="continue-game-popup hidden">
+      <div class="popup-content">
+        <div class="popup-title">Awesome!</div>
+        <div id="congratulations-message" class="popup-message"></div>
+        <div id="star-rating" class="star-rating">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+        <div id="rating-text" class="rating-text"></div>
+        <div id="stats-display" class="popup-message"></div>
+        <div class="popup-buttons">
+          <button class="popup-button primary" id="play-again-btn">
+            Play Again
+          </button>
+          <button class="popup-button" id="close-popup-btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Flag to control next puzzle access
+      const NEXT_PUZZLES_ENABLED = false; // Set to true to enable all next puzzles
+
+      // Game data embedded from Python
+      const WORDS_DATA = [
+        {
+          word: "ANGRY",
+          punctuation: "",
+          length: 5,
+          guesses: 6,
+          max_score: 100,
+        },
+        {
+          word: "FIRST",
+          punctuation: "",
+          length: 5,
+          guesses: 6,
+          max_score: 100,
+        },
+        {
+          word: "WORD",
+          punctuation: ",",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
+        },
+        { word: "NOW", punctuation: "", length: 3, guesses: 10, max_score: 90 },
+        {
+          word: "DESIGN",
+          punctuation: "",
+          length: 6,
+          guesses: 6,
+          max_score: 90,
+        },
+        {
+          word: "RETREAT",
+          punctuation: ".",
+          length: 7,
+          guesses: 5,
+          max_score: 100,
+        },
+        { word: "HOPE", punctuation: "", length: 4, guesses: 8, max_score: 90 },
+        { word: "YOU", punctuation: "", length: 3, guesses: 10, max_score: 90 },
+        { word: "ARE", punctuation: "", length: 3, guesses: 10, max_score: 90 },
+        {
+          word: "OKAY",
+          punctuation: ".",
+          length: 4,
+          guesses: 8,
+          max_score: 90,
+        },
+      ];
+
+      // Game state variables
+      let currentWordIndex = 0;
+      let currentGuessIndex = 0;
+      let currentLetterIndex = 0;
+      let gameGrid = [];
+      let gameState = [];
+      let allWordsData = [];
+      let usedGuesses = new Set();
+      let knownLetters = {};
+      let isWordComplete = false;
+      let isWordFailed = false;
+      let isGameComplete = false;
+      let cooldownActive = false;
+      let cooldownEndTime = 0;
+      let cooldownTimer = null;
+      let expandedWords = new Set();
+      let collapsedWords = new Set();
+      let revealedPunctuation = new Set();
+      let hasCompletedFirstWord = false;
+      let isAnimating = false;
+      let punctuationAnimated = false;
+      let showMobileKeyboard = false;
+      let gameStats = {
+        wordsCompleted: 0,
+        wordsFailed: 0,
+        totalGuesses: 0,
+        perfectWords: 0,
+        totalScore: 0,
+        maxPossibleScore: 0,
+      };
+
+      // Mobile keyboard setup
+      function setupMobileKeyboard() {
+        const keyboard = document.getElementById("mobile-keyboard");
+        const keys = keyboard.querySelectorAll(".keyboard-key");
+
+        keys.forEach((key) => {
+          key.addEventListener("touchstart", function (e) {
+            e.preventDefault();
+            this.style.transform = "scale(0.95)";
+          });
+
+          key.addEventListener("touchend", function (e) {
+            e.preventDefault();
+            this.style.transform = "";
+
+            const keyValue = this.dataset.key;
+            if (keyValue === "Enter") {
+              makeGuess();
+            } else if (keyValue === "Backspace") {
+              deleteLetter();
+            } else {
+              addLetter(keyValue);
+            }
+          });
+
+          key.addEventListener("touchcancel", function (e) {
+            e.preventDefault();
+            this.style.transform = "";
+          });
+        });
+      }
+
+      function toggleMobileKeyboard(show) {
+        const keyboard = document.getElementById("mobile-keyboard");
+        if (show && !showMobileKeyboard) {
+          keyboard.classList.add("show");
+          showMobileKeyboard = true;
+          // Adjust body padding to account for keyboard
+          document.body.style.paddingBottom = keyboard.offsetHeight + "px";
+        } else if (!show && showMobileKeyboard) {
+          keyboard.classList.remove("show");
+          showMobileKeyboard = false;
+          document.body.style.paddingBottom = "";
+        }
+      }
+
+      // Initialize the game when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        setupMobileKeyboard();
+
+        // Check if user wants to continue previous game
+        const savedGame = localStorage.getItem("wordleGameState");
+        if (savedGame) {
+          try {
+            const savedState = JSON.parse(savedGame);
+            if (!savedState.isGameComplete) {
+              // Game in progress - show continue popup
+              showContinueGamePopup();
+            } else {
+              // Game was complete - restore completed state and show results
+              loadGameProgress();
+              setupCurrentWord();
+              updateUI();
+              // Show the completion popup again
+              setTimeout(() => {
+                const completionRate = Math.round(
+                  (gameStats.wordsCompleted / WORDS_DATA.length) * 100
+                );
+                const avgGuesses =
+                  gameStats.totalGuesses /
+                  Math.max(gameStats.wordsCompleted, 1);
+                const accuracy = Math.round(
+                  (gameStats.wordsCompleted /
+                    (gameStats.wordsCompleted + gameStats.wordsFailed)) *
+                    100
+                );
+                showCongratulationsPopup(completionRate, avgGuesses, accuracy);
+              }, 100);
+            }
+          } catch (error) {
+            localStorage.removeItem("wordleGameState");
+            initGame();
+          }
+        } else {
+          initGame();
+        }
+      });
+
+      function initGame() {
+        if (WORDS_DATA.length === 0) {
+          animateInvalidWord(currentGuessIndex);
+          return;
+        }
+        clearGameState();
+        setupCurrentWord();
+        updateUI();
+        // Show mobile keyboard for current word input
+        toggleMobileKeyboard(true);
+      }
+
+      function clearGameState() {
+        currentWordIndex = 0;
+        currentGuessIndex = 0;
+        gameGrid = [];
+        gameState = [];
+        allWordsData = [];
+        usedGuesses.clear();
+        knownLetters = {};
+        isWordComplete = false;
+        isWordFailed = false;
+        isGameComplete = false;
+        cooldownActive = false;
+        cooldownEndTime = 0;
+        punctuationAnimated = false;
+        if (cooldownTimer) {
+          clearInterval(cooldownTimer);
+          cooldownTimer = null;
+        }
+        gameStats = {
+          wordsCompleted: 0,
+          wordsFailed: 0,
+          totalGuesses: 0,
+          perfectWords: 0,
+          totalScore: 0,
+          maxPossibleScore: 0,
+        };
+
+        for (let i = 0; i < WORDS_DATA.length; i++) {
+          allWordsData[i] = {
+            gameGrid: [],
+            gameState: [],
+            usedGuesses: [],
+            knownLetters: {},
+            isComplete: false,
+            isFailed: false,
+            guessCount: 0,
+            failedAttempts: 0,
+          };
+          gameStats.maxPossibleScore += WORDS_DATA[i].max_score;
+        }
+        localStorage.removeItem("wordleGameState");
+      }
+
+      function saveCurrentWordState() {
+        if (allWordsData[currentWordIndex]) {
+          allWordsData[currentWordIndex].gameGrid = JSON.parse(
+            JSON.stringify(gameGrid)
+          );
+          allWordsData[currentWordIndex].gameState = JSON.parse(
+            JSON.stringify(gameState)
+          );
+          allWordsData[currentWordIndex].usedGuesses = Array.from(usedGuesses);
+          allWordsData[currentWordIndex].knownLetters = JSON.parse(
+            JSON.stringify(knownLetters)
+          );
+          allWordsData[currentWordIndex].isComplete = isWordComplete;
+          allWordsData[currentWordIndex].isFailed = isWordFailed;
+          allWordsData[currentWordIndex].guessCount = currentGuessIndex;
+          allWordsData[currentWordIndex].currentLetterIndex =
+            currentLetterIndex;
+        }
+      }
+
+      function loadCurrentWordState() {
+        const wordData = allWordsData[currentWordIndex];
+        if (wordData) {
+          gameGrid = JSON.parse(JSON.stringify(wordData.gameGrid));
+          gameState = JSON.parse(JSON.stringify(wordData.gameState));
+          usedGuesses = new Set(wordData.usedGuesses);
+          knownLetters = JSON.parse(JSON.stringify(wordData.knownLetters));
+          isWordComplete = wordData.isComplete;
+          isWordFailed = wordData.isFailed || false;
+          currentGuessIndex = wordData.guessCount;
+          currentLetterIndex = wordData.currentLetterIndex || 0;
+        }
+      }
+
+      function setupCurrentWord() {
+        const currentWord = WORDS_DATA[currentWordIndex];
+        const wordLength = currentWord.length;
+        const maxGuesses = currentWord.guesses;
+
+        punctuationAnimated = false;
+
+        if (!allWordsData[currentWordIndex]) {
+          allWordsData[currentWordIndex] = {
+            gameGrid: [],
+            gameState: [],
+            usedGuesses: [],
+            knownLetters: {},
+            isComplete: false,
+            guessCount: 0,
+          };
+
+          for (let i = 0; i < maxGuesses; i++) {
+            allWordsData[currentWordIndex].gameGrid[i] = new Array(
+              wordLength
+            ).fill("");
+            allWordsData[currentWordIndex].gameState[i] = new Array(
+              wordLength
+            ).fill("");
+          }
+        }
+
+        loadCurrentWordState();
+
+        if (gameGrid.length === 0) {
+          gameGrid = [];
+          gameState = [];
+          for (let i = 0; i < maxGuesses; i++) {
+            gameGrid[i] = new Array(wordLength).fill("");
+            gameState[i] = new Array(wordLength).fill("");
+          }
+          currentGuessIndex = 0;
+          currentLetterIndex = 0;
+          usedGuesses.clear();
+          knownLetters = {};
+          isWordComplete = false;
+        }
+        renderGrid();
+      }
+
+      function startCooldown(durationSeconds) {
+        cooldownActive = true;
+        cooldownEndTime = Date.now() + durationSeconds * 1000;
+
+        // Hide mobile keyboard during cooldown
+        toggleMobileKeyboard(false);
+
+        renderGrid();
+        updateCooldownDisplay();
+        cooldownTimer = setInterval(() => {
+          updateCooldownDisplay();
+          if (Date.now() >= cooldownEndTime) {
+            endCooldown();
+          }
+        }, 1000);
+      }
+
+      async function endCooldown() {
+        cooldownActive = false;
+        cooldownEndTime = 0;
+        if (cooldownTimer) {
+          clearInterval(cooldownTimer);
+          cooldownTimer = null;
+        }
+
+        await resetCurrentWordForRetry();
+        renderGrid();
+        updateUI();
+
+        // Show mobile keyboard again after cooldown
+        toggleMobileKeyboard(true);
+      }
+
+      function updateCooldownDisplay() {
+        if (!cooldownActive) return;
+        const timeLeft = Math.max(
+          0,
+          Math.ceil((cooldownEndTime - Date.now()) / 1000)
+        );
+        if (timeLeft > 0) {
+          updateTimerDisplay();
+        }
+      }
+
+      async function resetCurrentWordForRetry() {
+        const currentWord = WORDS_DATA[currentWordIndex];
+        const wordLength = currentWord.length;
+        const maxGuesses = currentWord.guesses;
+
+        await animateGridClear();
+
+        currentGuessIndex = 0;
+        currentLetterIndex = 0;
+        gameGrid = [];
+        gameState = [];
+        usedGuesses.clear();
+        knownLetters = {};
+        isWordComplete = false;
+        isWordFailed = false;
+
+        for (let i = 0; i < maxGuesses; i++) {
+          gameGrid[i] = new Array(wordLength).fill("");
+          gameState[i] = new Array(wordLength).fill("");
+        }
+
+        if (allWordsData[currentWordIndex]) {
+          allWordsData[currentWordIndex].gameGrid = JSON.parse(
+            JSON.stringify(gameGrid)
+          );
+          allWordsData[currentWordIndex].gameState = JSON.parse(
+            JSON.stringify(gameState)
+          );
+          allWordsData[currentWordIndex].usedGuesses = [];
+          allWordsData[currentWordIndex].knownLetters = {};
+          allWordsData[currentWordIndex].isComplete = false;
+          allWordsData[currentWordIndex].isFailed = false;
+          allWordsData[currentWordIndex].guessCount = 0;
+        }
+      }
+
+      function calculateCooldownDuration(failedAttempts) {
+        return 10 * 60; // 10 minutes
+      }
+
+      function updateTitle() {
+        const titleElement = document.querySelector("h1");
+        if (hasCompletedFirstWord && titleElement.textContent === "Wordle") {
+          titleElement.textContent = "Wordles";
+          titleElement.style.transition = "all 0.5s ease";
+        }
+      }
+
+      function renderCompletedWordsStack() {
+        const stackContainer = document.getElementById("completed-words-stack");
+        stackContainer.innerHTML = "";
+
+        const endIndex = isWordComplete
+          ? currentWordIndex + 1
+          : currentWordIndex;
+        for (let i = 0; i < endIndex; i++) {
+          const wordData = allWordsData[i];
+          const wordInfo = WORDS_DATA[i];
+          if (wordData && wordData.isComplete) {
+            const wordRow = createCompletedWordRow(i, wordData, wordInfo);
+            stackContainer.appendChild(wordRow);
+
+            if (collapsedWords.has(i)) {
+              const container = document.getElementById(`completed-word-${i}`);
+              const gridWrapper = container?.querySelector(
+                ".completed-grid-wrapper"
+              );
+              if (container && gridWrapper) {
+                gridWrapper.classList.add("drawer-collapsed");
+                container.classList.add("drawer-collapsed");
+
+                const drawerRows = gridWrapper.querySelectorAll(".drawer-row");
+                const correctRow = gridWrapper.querySelector(
+                  '[data-correct-row="true"]'
+                );
+                if (correctRow) {
+                  const correctRowIndex = parseInt(correctRow.dataset.rowIndex);
+                  drawerRows.forEach((row) => {
+                    const rowIndex = parseInt(row.dataset.rowIndex);
+                    if (rowIndex !== correctRowIndex) {
+                      const isAbove = rowIndex < correctRowIndex;
+                      const distance =
+                        Math.abs(rowIndex - correctRowIndex) *
+                        (parseFloat(
+                          getComputedStyle(
+                            document.documentElement
+                          ).getPropertyValue("--tile-size")
+                        ) +
+                          parseFloat(
+                            getComputedStyle(
+                              document.documentElement
+                            ).getPropertyValue("--tile-gap")
+                          ));
+                      if (isAbove) {
+                        row.style.transform = `translateY(${distance}px)`;
+                      } else {
+                        row.style.transform = `translateY(-${distance}px)`;
+                      }
+                    }
+                  });
+                }
+                revealCompletedWordPunctuation(i);
+              }
+            }
+          }
+        }
+      }
+
+      function createCompletedWordRow(wordIndex, wordData, wordInfo) {
+        const wordContainer = document.createElement("div");
+        wordContainer.className = "completed-word-container";
+        wordContainer.id = `completed-word-${wordIndex}`;
+
+        const hasP = wordInfo.punctuation && wordInfo.punctuation.trim() !== "";
+        // Get computed tile size and gap from a temporary element
+        const tempTile = document.createElement("div");
+        tempTile.style.width = "var(--tile-size)";
+        tempTile.style.height = "var(--tile-size)";
+        tempTile.style.marginRight = "var(--tile-gap)";
+        tempTile.style.visibility = "hidden";
+        tempTile.style.position = "absolute";
+        document.body.appendChild(tempTile);
+        const computedStyle = getComputedStyle(tempTile);
+        const tileSize = parseFloat(computedStyle.width);
+        const tileGap = parseFloat(computedStyle.marginRight);
+        document.body.removeChild(tempTile);
+
+        const containerWidth = hasP
+          ? `${wordInfo.length * (tileSize + tileGap) + tileSize}px`
+          : `${wordInfo.length * (tileSize + tileGap) - tileGap}px`;
+        wordContainer.style.width = containerWidth;
+
+        const gridWrapper = document.createElement("div");
+        gridWrapper.className = "completed-grid-wrapper";
+        gridWrapper.style.position = "relative";
+        gridWrapper.style.display = "flex";
+        gridWrapper.style.flexDirection = "column";
+        gridWrapper.style.alignItems = "center";
+        gridWrapper.style.gap = "var(--tile-gap)";
+        gridWrapper.style.overflow = "hidden";
+        gridWrapper.style.width = containerWidth;
+
+        const correctRowIndex = wordData.guessCount - 1;
+        const maxGuesses = wordInfo.guesses;
+
+        for (let row = 0; row < maxGuesses; row++) {
+          const rowWrapper = document.createElement("div");
+          rowWrapper.className = "completed-word-grid drawer-row";
+          rowWrapper.dataset.rowIndex = row;
+          rowWrapper.dataset.correctRow = row === correctRowIndex;
+          rowWrapper.style.gridTemplateColumns = `repeat(${wordInfo.length}, var(--tile-size))`;
+
+          if (row === correctRowIndex && wordInfo.punctuation) {
+            rowWrapper.style.width = containerWidth;
+            rowWrapper.style.position = "relative";
+          }
+
+          rowWrapper.style.transition =
+            "transform 0.4s ease, height 0.4s ease, margin 0.4s ease";
+
+          if (row === correctRowIndex) {
+            rowWrapper.style.cursor = "pointer";
+            rowWrapper.onclick = () => toggleWordDrawer(wordIndex);
+            rowWrapper.classList.add("correct-row-clickable");
+            rowWrapper.style.zIndex = "10";
+            rowWrapper.style.position = "relative";
+          } else {
+            rowWrapper.style.zIndex = "1";
+            rowWrapper.style.position = "relative";
+          }
+
+          rowWrapper.style.height = "var(--tile-size)";
+          rowWrapper.style.visibility = "visible";
+
+          for (let col = 0; col < wordInfo.length; col++) {
+            const tile = document.createElement("div");
+            tile.className = "completed-tile";
+
+            const letter =
+              wordData.gameGrid[row] && wordData.gameGrid[row][col]
+                ? wordData.gameGrid[row][col]
+                : "";
+            const state =
+              wordData.gameState[row] && wordData.gameState[row][col]
+                ? wordData.gameState[row][col]
+                : "";
+
+            tile.textContent = letter;
+
+            if (state) {
+              tile.classList.add(state);
+            }
+            rowWrapper.appendChild(tile);
+          }
+
+          if (row === correctRowIndex && wordInfo.punctuation) {
+            const punctuationTile = document.createElement("div");
+            punctuationTile.className = "punctuation-tile";
+            punctuationTile.id = `completed-punctuation-${wordIndex}`;
+            punctuationTile.textContent = wordInfo.punctuation;
+            punctuationTile.style.position = "absolute";
+            punctuationTile.style.left = `${
+              wordInfo.length * (tileSize + tileGap)
+            }px`;
+            punctuationTile.style.top = "50%";
+            punctuationTile.style.transform = "translateY(-50%)";
+            punctuationTile.style.width = "var(--tile-size)";
+            punctuationTile.style.height = "var(--tile-size)";
+            punctuationTile.style.display = "flex";
+            punctuationTile.style.alignItems = "center";
+            punctuationTile.style.justifyContent = "center";
+            punctuationTile.style.fontSize = "clamp(1.2rem, 4vw, 1.8rem)";
+            punctuationTile.style.fontWeight = "bold";
+            punctuationTile.style.color = "var(--color-text)";
+
+            const isAlreadyRevealed = revealedPunctuation.has(wordIndex);
+            punctuationTile.style.opacity = isAlreadyRevealed ? "1" : "0";
+            punctuationTile.style.visibility = isAlreadyRevealed
+              ? "visible"
+              : "hidden";
+            punctuationTile.style.transition =
+              "opacity 0.5s ease, visibility 0.5s ease";
+            rowWrapper.appendChild(punctuationTile);
+          }
+
+          gridWrapper.appendChild(rowWrapper);
+        }
+
+        wordContainer.appendChild(gridWrapper);
+        return wordContainer;
+      }
+
+      function toggleWordDrawer(wordIndex) {
+        const wordContainer = document.getElementById(
+          `completed-word-${wordIndex}`
+        );
+        if (!wordContainer) return;
+
+        const gridWrapper = wordContainer.querySelector(
+          ".completed-grid-wrapper"
+        );
+        const drawerRows = gridWrapper.querySelectorAll(".drawer-row");
+        const correctRow = gridWrapper.querySelector(
+          '[data-correct-row="true"]'
+        );
+
+        if (!correctRow) return;
+
+        const correctRowIndex = parseInt(correctRow.dataset.rowIndex);
+        const isCurrentlyCollapsed =
+          gridWrapper.classList.contains("drawer-collapsed");
+
+        // Get computed tile size and gap from a temporary element
+        const tempTile = document.createElement("div");
+        tempTile.style.width = "var(--tile-size)";
+        tempTile.style.height = "var(--tile-size)";
+        tempTile.style.marginRight = "var(--tile-gap)";
+        tempTile.style.visibility = "hidden";
+        tempTile.style.position = "absolute";
+        document.body.appendChild(tempTile);
+        const computedStyle = getComputedStyle(tempTile);
+        const tileSize = parseFloat(computedStyle.width);
+        const tileGap = parseFloat(computedStyle.marginRight);
+        document.body.removeChild(tempTile);
+        const distance = tileSize + tileGap;
+
+        if (isCurrentlyCollapsed) {
+          gridWrapper.classList.remove("drawer-collapsed");
+          wordContainer.classList.remove("drawer-collapsed");
+          collapsedWords.delete(wordIndex);
+
+          drawerRows.forEach((row, index) => {
+            const rowIndex = parseInt(row.dataset.rowIndex);
+            if (rowIndex !== correctRowIndex) {
+              setTimeout(() => {
+                row.style.transform = "translateY(0)";
+              }, 50);
+            }
+          });
+
+          setTimeout(() => {
+            animateAdjacentWordles();
+          }, 450);
+        } else {
+          gridWrapper.classList.add("drawer-collapsed");
+          wordContainer.classList.add("drawer-collapsed");
+          collapsedWords.add(wordIndex);
+
+          drawerRows.forEach((row, index) => {
+            const rowIndex = parseInt(row.dataset.rowIndex);
+            if (rowIndex !== correctRowIndex) {
+              const isAbove = rowIndex < correctRowIndex;
+              const translateDistance =
+                Math.abs(rowIndex - correctRowIndex) * distance;
+              if (isAbove) {
+                row.style.transform = `translateY(${translateDistance}px)`;
+              } else {
+                row.style.transform = `translateY(-${translateDistance}px)`;
+              }
+
+              if (
+                rowIndex ===
+                Math.max(
+                  ...Array.from(drawerRows).map((r) =>
+                    parseInt(r.dataset.rowIndex)
+                  )
+                )
+              ) {
+                setTimeout(() => {
+                  animateAdjacentWordles();
+                  revealCompletedWordPunctuation(wordIndex);
+                }, 450);
+              }
+            }
+          });
+        }
+      }
+
+      function animateAdjacentWordles() {
+        const stackContainer = document.getElementById("completed-words-stack");
+        if (!stackContainer) return;
+
+        const completedWords = Array.from(
+          stackContainer.querySelectorAll(".completed-word-container")
+        );
+
+        completedWords.forEach((wordContainer) => {
+          wordContainer.style.transition = "transform 0.3s ease";
+        });
+
+        requestAnimationFrame(() => {
+          stackContainer.offsetHeight;
+          setTimeout(() => {
+            completedWords.forEach((wordContainer) => {
+              wordContainer.style.transition = "";
+            });
+          }, 300);
+        });
+      }
+
+      function revealCompletedWordPunctuation(wordIndex) {
+        const punctuationElement = document.getElementById(
+          `completed-punctuation-${wordIndex}`
+        );
+        if (punctuationElement) {
+          setTimeout(() => {
+            punctuationElement.style.opacity = "1";
+            punctuationElement.style.visibility = "visible";
+            punctuationElement.classList.add("revealed");
+            revealedPunctuation.add(wordIndex);
+          }, 50);
+        }
+      }
+
+      function renderCurrentWordGrid() {
+        const currentWord = WORDS_DATA[currentWordIndex];
+        const wordLength = currentWord.length;
+        const maxGuesses = currentWord.guesses;
+        const gridContainer = document.getElementById("game-grid");
+        gridContainer.innerHTML = "";
+        gridContainer.style.gridTemplateColumns = `repeat(${wordLength}, var(--tile-size))`;
+
+        for (let row = 0; row < maxGuesses; row++) {
+          for (let col = 0; col < wordLength; col++) {
+            const tile = document.createElement("div");
+            tile.className = "tile";
+            tile.id = `tile-${row}-${col}`;
+
+            const letter = gameGrid[row] ? gameGrid[row][col] : "";
+            tile.textContent = letter;
+            if (letter) {
+              tile.classList.add("filled");
+              const state = gameState[row] ? gameState[row][col] : "";
+              if (state) {
+                tile.classList.add(state);
+              }
+            }
+
+            if (
+              row === currentGuessIndex &&
+              col === currentLetterIndex &&
+              !isWordComplete &&
+              !isWordFailed &&
+              !cooldownActive
+            ) {
+              tile.classList.add("current");
+            }
+            gridContainer.appendChild(tile);
+          }
+        }
+
+        renderPunctuation();
+      }
+
+      function renderTimer() {
+        const timerContainer = document.getElementById("timer-container");
+
+        if (cooldownActive) {
+          timerContainer.classList.remove("hidden");
+          timerContainer.style.animation =
+            "timerFadeInSlideUp 0.5s ease forwards";
+          updateTimerDisplay();
+        } else {
+          timerContainer.classList.add("hidden");
+          timerContainer.style.animation = "";
+        }
+      }
+
+      function updateTimerDisplay() {
+        if (!cooldownActive) return;
+
+        const timeLeft = Math.max(
+          0,
+          Math.floor((cooldownEndTime - Date.now()) / 1000)
+        );
+
+        if (timeLeft <= 0) {
+          const timerContainer = document.getElementById("timer-container");
+          timerContainer.style.animation =
+            "timerFadeOutSlideDown 0.5s ease forwards";
+          return;
+        }
+
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+
+        updateTimerDigit("timer-m1", Math.floor(minutes / 10).toString());
+        updateTimerDigit("timer-m2", (minutes % 10).toString());
+        updateTimerDigit("timer-s1", Math.floor(seconds / 10).toString());
+        updateTimerDigit("timer-s2", (seconds % 10).toString());
+      }
+
+      function updateTimerDigit(digitId, newDigit) {
+        const digit = document.getElementById(digitId);
+        if (!digit) return;
+
+        const currentDigit = digit.textContent;
+        if (currentDigit !== newDigit) {
+          digit.style.willChange = "transform";
+          digit.classList.add("flipping");
+
+          setTimeout(() => {
+            digit.textContent = newDigit;
+          }, 200);
+
+          setTimeout(() => {
+            digit.classList.remove("flipping");
+            digit.style.willChange = "auto";
+          }, 400);
+        }
+      }
+
+      function renderPunctuation() {
+        const punctuationOverlay = document.getElementById(
+          "punctuation-overlay"
+        );
+        if (punctuationAnimated) {
+          return;
+        }
+
+        if (currentWordIndex >= WORDS_DATA.length) {
+          return;
+        }
+
+        if (!punctuationAnimated) {
+          punctuationOverlay.innerHTML = "";
+        }
+      }
+
+      function renderGrid() {
+        renderCompletedWordsStack();
+        renderCurrentWordGrid();
+        renderTimer();
+        updateTitle();
+      }
+
+      function addLetter(letter) {
+        const currentWord = WORDS_DATA[currentWordIndex];
+        if (isWordComplete || isWordFailed || cooldownActive || isAnimating) {
+          return;
+        }
+        if (currentLetterIndex < currentWord.length) {
+          gameGrid[currentGuessIndex][currentLetterIndex] = letter;
+          currentLetterIndex++;
+          renderGrid();
+        }
+      }
+
+      function deleteLetter() {
+        if (isWordComplete || isWordFailed || cooldownActive || isAnimating) {
+          return;
+        }
+        if (currentLetterIndex > 0) {
+          currentLetterIndex--;
+          gameGrid[currentGuessIndex][currentLetterIndex] = "";
+          renderGrid();
+        }
+      }
+
+      async function makeGuess() {
+        const currentWord = WORDS_DATA[currentWordIndex];
+
+        if (isAnimating || cooldownActive) {
+          updateCooldownDisplay();
+          return;
+        }
+
+        const guess = gameGrid[currentGuessIndex].join("");
+
+        if (guess.length !== currentWord.length) {
+          showToast("Not enough letters");
+          animateInvalidWord(currentGuessIndex);
+          return;
+        }
+
+        if (currentGuessIndex >= currentWord.guesses) {
+          return;
+        }
+
+        if (isWordComplete || isWordFailed) {
+          return;
+        }
+
+        if (usedGuesses.has(guess)) {
+          showToast("Already guessed");
+          animateInvalidWord(currentGuessIndex);
+          return;
+        }
+
+        const constraintError = validateGreenConstraints(guess);
+        if (constraintError) {
+          showToast(constraintError);
+          animateInvalidWord(currentGuessIndex);
+          return;
+        }
+
+        const isValidWord = await validateGuessWithFallback(guess);
+        if (!isValidWord) {
+          showToast("Word not in list");
+          animateInvalidWord(currentGuessIndex);
+          return;
+        }
+
+        usedGuesses.add(guess);
+
+        const results = checkWord(guess, currentGuessIndex);
+        await animateFlipTiles(currentGuessIndex, results);
+        currentGuessIndex++;
+        currentLetterIndex = 0;
+
+        if (guess === currentWord.word) {
+          isWordComplete = true;
+
+          if (currentWordIndex === 0 && !hasCompletedFirstWord) {
+            animateTitleChange();
+          }
+
+          const guessesLeft = currentWord.guesses - currentGuessIndex;
+          const wordScore = Math.round(
+            (currentWord.max_score * (guessesLeft + 1)) / currentWord.guesses
+          );
+          gameStats.totalScore += wordScore;
+
+          gameStats.wordsCompleted++;
+          gameStats.totalGuesses += currentGuessIndex;
+          if (currentGuessIndex === 1) gameStats.perfectWords++;
+
+          await animateGridTransition();
+
+          setTimeout(() => {
+            if (currentWordIndex < WORDS_DATA.length - 1) {
+              nextWord();
+            } else {
+              handleLastWordCompletion();
+            }
+          }, 500);
+        } else if (currentGuessIndex >= currentWord.guesses) {
+          gameStats.wordsFailed++;
+
+          if (!allWordsData[currentWordIndex].failedAttempts) {
+            allWordsData[currentWordIndex].failedAttempts = 0;
+          }
+          allWordsData[currentWordIndex].failedAttempts++;
+
+          const failedAttempts = allWordsData[currentWordIndex].failedAttempts;
+          const cooldownDuration = calculateCooldownDuration(failedAttempts);
+
+          startCooldown(cooldownDuration);
+        }
+        renderGrid();
+        saveCurrentWordState();
+        saveGameProgress();
+      }
+
+      function validateGreenConstraints(guess) {
+        // Check if guess respects known correct letter positions
+        for (let pos in knownLetters) {
+          if (guess[pos] !== knownLetters[pos]) {
+            const position = parseInt(pos) + 1; // Convert to 1-based position
+            const ordinal = getOrdinal(position);
+            return `${ordinal} letter must be ${knownLetters[pos]}`;
+          }
+        }
+        return null; // No constraint violations
+      }
+
+      function getOrdinal(num) {
+        const lastDigit = num % 10;
+        const lastTwoDigits = num % 100;
+
+        if (lastTwoDigits >= 11 && lastTwoDigits <= 13) {
+          return num + "th";
+        }
+
+        switch (lastDigit) {
+          case 1:
+            return num + "st";
+          case 2:
+            return num + "nd";
+          case 3:
+            return num + "rd";
+          default:
+            return num + "th";
+        }
+      }
+
+      async function validateGuessWithFallback(word) {
+        // Comprehensive word lists organized by length for faster validation
+        const commonWordsByLength = {
+          3: [
+            "THE",
+            "AND",
+            "FOR",
+            "ARE",
+            "BUT",
+            "NOT",
+            "YOU",
+            "ALL",
+            "CAN",
+            "HER",
+            "WAS",
+            "ONE",
+            "OUR",
+            "HAD",
+            "HOT",
+            "CAT",
+            "DOG",
+            "RUN",
+            "SAW",
+            "END",
+            "NEW",
+            "OLD",
+            "BIG",
+            "BAD",
+            "OWN",
+            "TOP",
+            "WAY",
+            "USE",
+            "MAN",
+            "BOY",
+            "DID",
+            "GET",
+            "HAS",
+            "HIM",
+            "HIS",
+            "HOW",
+            "ITS",
+            "LET",
+            "MAY",
+            "PUT",
+            "SAY",
+            "SHE",
+            "TOO",
+            "TWO",
+            "WHO",
+            "OIL",
+            "SIT",
+            "SET",
+            "CUT",
+            "YES",
+            "YET",
+            "AGO",
+            "OFF",
+            "FAR",
+            "OUT",
+            "DAY",
+            "GOT",
+            "TRY",
+            "ASK",
+            "EYE",
+            "JOB",
+            "LOT",
+            "FEW",
+            "AGE",
+            "SEE",
+            "OWN",
+            "BUY",
+            "DIE",
+            "LAY",
+            "ARM",
+            "EAR",
+            "EGG",
+            "FLY",
+            "GUN",
+            "HIT",
+            "ICE",
+            "KEY",
+            "LEG",
+            "LIE",
+            "MAP",
+            "MIX",
+            "PAN",
+            "PEN",
+            "PIG",
+            "ROW",
+            "SKY",
+            "SUN",
+            "TEA",
+            "TOY",
+            "VAN",
+            "WIN",
+            "ZIP",
+            "ACE",
+            "AID",
+            "AIR",
+            "ART",
+            "BAG",
+            "BAR",
+            "BAT",
+            "BED",
+            "BEE",
+            "BOX",
+            "BUS",
+            "CAR",
+            "COW",
+            "CRY",
+            "CUP",
+            "DIG",
+            "EAT",
+            "ELF",
+            "FAN",
+            "FIX",
+            "FOG",
+            "FOX",
+            "GAP",
+            "GAS",
+            "HAT",
+            "HOP",
+            "HUG",
+            "JAR",
+            "LAD",
+            "LAP",
+            "LOG",
+            "MAD",
+            "MOM",
+            "MUD",
+            "NET",
+            "NUT",
+            "OAK",
+            "PET",
+            "PIE",
+            "RAG",
+            "RAT",
+            "RUG",
+            "SAD",
+            "SIP",
+            "SIX",
+            "TAX",
+            "TEN",
+            "TIE",
+            "TIP",
+            "TOP",
+            "TUG",
+            "WAR",
+            "WET",
+            "WIG",
+            "ZOO",
+            "ABS",
+            "ACT",
+            "ADD",
+            "AIM",
+            "APE",
+            "ARC",
+            "AWE",
+            "AXE",
+            "BAD",
+            "BAN",
+            "BAY",
+            "BID",
+            "BIT",
+            "BOW",
+            "BUG",
+            "BUN",
+            "BUT",
+            "BUZ",
+            "CAB",
+            "CAD",
+            "CAM",
+            "CAP",
+            "COB",
+            "COD",
+            "COG",
+            "COT",
+            "COX",
+            "CUB",
+            "CUD",
+            "DAB",
+            "DAD",
+            "DAM",
+            "DEN",
+            "DEW",
+            "DIM",
+            "DIP",
+            "DOC",
+            "DOT",
+            "DRY",
+            "DUB",
+            "DUD",
+            "DUG",
+            "DUN",
+            "EAR",
+            "ELF",
+            "ELK",
+            "ELM",
+            "EMU",
+            "ERA",
+            "EVE",
+            "FAD",
+            "FAG",
+            "FED",
+            "FIG",
+            "FIN",
+            "FIR",
+            "FIT",
+            "FLU",
+            "FOE",
+            "FOR",
+            "FRY",
+            "FUR",
+            "GAB",
+            "GAG",
+            "GEL",
+            "GIG",
+            "GNU",
+            "GOD",
+            "GOO",
+            "GOT",
+            "GUM",
+            "GUT",
+            "GUY",
+            "GYM",
+            "HAM",
+            "HAS",
+            "HAY",
+            "HEN",
+            "HEX",
+            "HID",
+            "HIP",
+            "HIT",
+            "HOB",
+            "HOG",
+            "HOP",
+            "HOT",
+            "HOW",
+            "HUB",
+            "HUE",
+            "HUM",
+            "HUT",
+            "ICY",
+            "ILL",
+            "INK",
+            "ION",
+            "IRK",
+            "ITS",
+            "IVY",
+            "JAB",
+            "JAG",
+            "JAM",
+            "JAW",
+            "JAY",
+            "JET",
+            "JIG",
+            "JOB",
+            "JOG",
+            "JOT",
+            "JOY",
+            "JUG",
+            "KID",
+            "KIN",
+            "KIT",
+            "LAB",
+            "LAC",
+            "LAG",
+            "LAP",
+            "LAW",
+            "LAX",
+            "LAY",
+            "LEA",
+            "LED",
+            "LEG",
+            "LET",
+            "LID",
+            "LIE",
+            "LIP",
+            "LIT",
+            "LOG",
+            "LOT",
+            "LOW",
+            "MAD",
+            "MAM",
+            "MAN",
+            "MAP",
+            "MAT",
+            "MAX",
+            "MEN",
+            "MET",
+            "MID",
+            "MIX",
+            "MOB",
+            "MOD",
+            "MOM",
+            "MOP",
+            "MOW",
+            "MUD",
+            "MUG",
+            "NAB",
+            "NAG",
+            "NAP",
+            "NET",
+            "NEW",
+            "NIL",
+            "NIT",
+            "NOB",
+            "NOD",
+            "NOR",
+            "NOT",
+            "NOW",
+            "NUN",
+            "NUT",
+            "OAK",
+            "OAR",
+            "ODD",
+            "OFF",
+            "OFT",
+            "OIL",
+            "OLD",
+            "ONE",
+            "OPT",
+            "ORB",
+            "ORE",
+            "OUR",
+            "OUT",
+            "OWE",
+            "OWL",
+            "OWN",
+            "PAD",
+            "PAL",
+            "PAN",
+            "PAP",
+            "PAR",
+            "PAT",
+            "PAW",
+            "PAY",
+            "PEA",
+            "PEG",
+            "PEN",
+            "PEP",
+            "PET",
+            "PIE",
+            "PIG",
+            "PIN",
+            "PIT",
+            "PLY",
+            "POD",
+            "POP",
+            "POT",
+            "PRO",
+            "PRY",
+            "PUB",
+            "PUN",
+            "PUP",
+            "PUT",
+            "RAG",
+            "RAM",
+            "RAN",
+            "RAP",
+            "RAT",
+            "RAW",
+            "RAY",
+            "RED",
+            "REP",
+            "RIB",
+            "RID",
+            "RIG",
+            "RIM",
+            "RIP",
+            "ROB",
+            "ROD",
+            "ROT",
+            "ROW",
+            "RUB",
+            "RUG",
+            "RUM",
+            "RUN",
+            "RUT",
+            "RYE",
+            "SAC",
+            "SAD",
+            "SAG",
+            "SAP",
+            "SAT",
+            "SAW",
+            "SAY",
+            "SEA",
+            "SEE",
+            "SET",
+            "SEW",
+            "SHE",
+            "SHY",
+            "SIN",
+            "SIP",
+            "SIR",
+            "SIS",
+            "SIT",
+            "SIX",
+            "SKI",
+            "SKY",
+            "SLY",
+            "SOB",
+            "SOD",
+            "SON",
+            "SOP",
+            "SOT",
+            "SOW",
+            "SOY",
+            "SPA",
+            "SPY",
+            "STY",
+            "SUB",
+            "SUM",
+            "SUN",
+            "SUP",
+            "TAB",
+            "TAD",
+            "TAG",
+            "TAN",
+            "TAP",
+            "TAR",
+            "TAX",
+            "TEA",
+            "TEN",
+            "THE",
+            "TIE",
+            "TIN",
+            "TIP",
+            "TOE",
+            "TON",
+            "TOO",
+            "TOP",
+            "TOT",
+            "TOW",
+            "TOY",
+            "TRY",
+            "TUB",
+            "TUG",
+            "TWO",
+            "USE",
+            "VAN",
+            "VAT",
+            "VIA",
+            "VIE",
+            "VOW",
+            "WAD",
+            "WAG",
+            "WAR",
+            "WAS",
+            "WAX",
+            "WAY",
+            "WEB",
+            "WED",
+            "WET",
+            "WHO",
+            "WHY",
+            "WIG",
+            "WIN",
+            "WIT",
+            "WOE",
+            "WOK",
+            "WON",
+            "WOO",
+            "WOW",
+            "YAK",
+            "YAM",
+            "YAP",
+            "YAW",
+            "YEA",
+            "YEP",
+            "YES",
+            "YET",
+            "YEW",
+            "YIN",
+            "YOU",
+            "YOW",
+            "ZAP",
+            "ZED",
+            "ZEE",
+            "ZEN",
+            "ZIP",
+            "ZIT",
+            "ZOO",
+          ],
+          4: [
+            "WORD",
+            "WHAT",
+            "SOME",
+            "COME",
+            "HERE",
+            "JUST",
+            "LIKE",
+            "LONG",
+            "MAKE",
+            "MUCH",
+            "OVER",
+            "SUCH",
+            "TAKE",
+            "THAN",
+            "THEM",
+            "WELL",
+            "WERE",
+            "WILL",
+            "WITH",
+            "HAVE",
+            "THIS",
+            "THAT",
+            "FROM",
+            "THEY",
+            "KNOW",
+            "WANT",
+            "BEEN",
+            "GOOD",
+            "TIME",
+            "VERY",
+            "WHEN",
+            "WENT",
+            "WORK",
+            "YOUR",
+            "BACK",
+            "CALL",
+            "CAME",
+            "EACH",
+            "EVEN",
+            "FIND",
+            "GIVE",
+            "HAND",
+            "HELP",
+            "HIGH",
+            "KEEP",
+            "KIND",
+            "LAST",
+            "LEFT",
+            "LIFE",
+            "LIVE",
+            "LOOK",
+            "MADE",
+            "MANY",
+            "MOVE",
+            "MUST",
+            "NAME",
+            "NEED",
+            "NEXT",
+            "ONLY",
+            "OPEN",
+            "PART",
+            "PLAY",
+            "READ",
+            "SAID",
+            "SAME",
+            "SEEM",
+            "SHOW",
+            "SIDE",
+            "TELL",
+            "TURN",
+            "USED",
+            "WANT",
+            "WAYS",
+            "WEEK",
+            "WENT",
+            "WERE",
+            "YEAR",
+            "ABLE",
+            "ALSO",
+            "AWAY",
+            "BEST",
+            "BOTH",
+            "CAME",
+            "EACH",
+            "FACT",
+            "FELT",
+            "FIRST",
+            "FOUR",
+            "FULL",
+            "GAVE",
+            "GETS",
+            "GOES",
+            "GOOD",
+            "HALF",
+            "HEAD",
+            "HELD",
+            "HOME",
+            "HOPE",
+            "IDEA",
+            "INTO",
+            "KNEW",
+            "LAND",
+            "LATE",
+            "LESS",
+            "LIGHT",
+            "LINE",
+            "LIST",
+            "LIVE",
+            "LOST",
+            "LOVE",
+            "MAIN",
+            "MIND",
+            "MORE",
+            "MOST",
+            "NEAR",
+            "ONCE",
+            "ONLY",
+            "PART",
+            "PLAN",
+            "REAL",
+            "REST",
+            "ROOM",
+            "SEEN",
+            "SEND",
+            "SETS",
+            "SOON",
+            "STOP",
+            "SURE",
+            "TEAM",
+            "TEST",
+            "TOLD",
+            "TOOK",
+            "TREE",
+            "TRUE",
+            "TURN",
+            "TYPE",
+            "UPON",
+            "USED",
+            "WALK",
+            "WALL",
+            "WARM",
+            "WASH",
+            "WAYS",
+            "WELL",
+            "WENT",
+            "WHAT",
+            "WHEN",
+            "WILL",
+            "WISH",
+            "WITH",
+            "WORK",
+            "YEAR",
+            "AREA",
+            "BOOK",
+            "CARS",
+            "CASE",
+            "CLUB",
+            "COST",
+            "CUPS",
+            "DATA",
+            "DEAL",
+            "DOGS",
+            "DONE",
+            "EASY",
+            "FALL",
+            "FAST",
+            "FISH",
+            "FIVE",
+            "FOOD",
+            "FORM",
+            "GAME",
+            "GIRL",
+            "GOAL",
+            "GUNS",
+            "HEAT",
+            "HELD",
+            "HILL",
+            "HOLD",
+            "HOPE",
+            "HOUR",
+            "HURT",
+            "ITEM",
+            "JOBS",
+            "KEEP",
+            "KIDS",
+            "KILL",
+            "LAKE",
+            "LAND",
+            "LIFT",
+            "LIVE",
+            "LONG",
+            "LOOK",
+            "LOVE",
+            "MAIL",
+            "MEAN",
+            "MEET",
+            "MIND",
+            "MOON",
+            "MOVE",
+            "NAME",
+            "NEED",
+            "NEWS",
+            "NICE",
+            "OPEN",
+            "PAID",
+            "PARK",
+            "PASS",
+            "PAST",
+            "PATH",
+            "PICK",
+            "PLAN",
+            "PLAY",
+            "POOR",
+            "PULL",
+            "PUSH",
+            "RAIN",
+            "RATE",
+            "READ",
+            "REAL",
+            "RISE",
+            "ROAD",
+            "ROCK",
+            "ROLE",
+            "ROOM",
+            "RULE",
+            "SAFE",
+            "SAME",
+            "SAVE",
+            "SEAT",
+            "SELL",
+            "SEND",
+            "SHIP",
+            "SHOP",
+            "SHOT",
+            "SHOW",
+            "SHUT",
+            "SICK",
+            "SIDE",
+            "SIGN",
+            "SING",
+            "SIZE",
+            "SIZE",
+            "SKIN",
+            "SLIP",
+            "SLOW",
+            "SNOW",
+            "SOFT",
+            "SOIL",
+            "SOLD",
+            "SOME",
+            "SONG",
+            "SORT",
+            "SOUL",
+            "SPIN",
+            "SPOT",
+            "STAR",
+            "STAY",
+            "STEP",
+            "STOP",
+            "TALK",
+            "TALL",
+            "TAPE",
+            "TASK",
+            "TEAM",
+            "TELL",
+            "TEST",
+            "TEXT",
+            "THAN",
+            "THEM",
+            "THEY",
+            "THIN",
+            "THIS",
+            "THUS",
+            "TIME",
+            "TINY",
+            "TOLD",
+            "TONE",
+            "TOOK",
+            "TOOL",
+            "TOUR",
+            "TOWN",
+            "TREE",
+            "TRIP",
+            "TRUE",
+            "TURN",
+            "UNIT",
+            "USED",
+            "USER",
+            "VARY",
+            "VAST",
+            "VIEW",
+            "VOTE",
+            "WAIT",
+            "WAKE",
+            "WALK",
+            "WALL",
+            "WANT",
+            "WARM",
+            "WASH",
+            "WAVE",
+            "WAYS",
+            "WEAR",
+            "WEEK",
+            "WELL",
+            "WENT",
+            "WERE",
+            "WEST",
+            "WHAT",
+            "WHEN",
+            "WHOM",
+            "WIDE",
+            "WIFE",
+            "WILD",
+            "WILL",
+            "WIND",
+            "WINE",
+            "WIRE",
+            "WISE",
+            "WISH",
+            "WITH",
+            "WOOD",
+            "WORD",
+            "WORE",
+            "WORK",
+            "YARD",
+            "YEAR",
+            "ZERO",
+            "ZONE",
+          ],
+          5: [
+            "HELLO",
+            "WORLD",
+            "HOUSE",
+            "WATER",
+            "LIGHT",
+            "RIGHT",
+            "MUSIC",
+            "PHONE",
+            "MONEY",
+            "STORY",
+            "HAPPY",
+            "PLACE",
+            "THINK",
+            "GREAT",
+            "WHERE",
+            "EVERY",
+            "STILL",
+            "SMALL",
+            "FOUND",
+            "THOSE",
+            "NEVER",
+            "UNDER",
+            "MIGHT",
+            "WHILE",
+            "SOUND",
+            "BELOW",
+            "WOULD",
+            "THERE",
+            "THEIR",
+            "COULD",
+            "OTHER",
+            "AFTER",
+            "FIRST",
+            "NEVER",
+            "THESE",
+            "THINK",
+            "WHERE",
+            "BEING",
+            "EVERY",
+            "GREAT",
+            "MIGHT",
+            "SHALL",
+            "STILL",
+            "THOSE",
+            "UNDER",
+            "WHILE",
+            "ABOVE",
+            "ABOUT",
+            "AGAIN",
+            "ALONG",
+            "AMONG",
+            "ASKED",
+            "BASED",
+            "BEING",
+            "BLACK",
+            "BRING",
+            "BUILD",
+            "CARRY",
+            "CAUSE",
+            "CHAIR",
+            "CLEAN",
+            "CLEAR",
+            "CLOSE",
+            "COUNT",
+            "COVER",
+            "DAILY",
+            "DEATH",
+            "DOING",
+            "EARLY",
+            "EARTH",
+            "EMPTY",
+            "EQUAL",
+            "ERROR",
+            "EXIST",
+            "EXTRA",
+            "FAITH",
+            "FALSE",
+            "FIELD",
+            "FINAL",
+            "FLOOR",
+            "FORCE",
+            "FRAME",
+            "FRONT",
+            "FRUIT",
+            "FUNNY",
+            "GIVEN",
+            "GLASS",
+            "GOING",
+            "GRADE",
+            "GRAND",
+            "GRASS",
+            "GREEN",
+            "GROSS",
+            "GROUP",
+            "GROWN",
+            "GUARD",
+            "GUESS",
+            "GUEST",
+            "HAPPY",
+            "HEARD",
+            "HEART",
+            "HEAVY",
+            "HORSE",
+            "HOTEL",
+            "HOURS",
+            "HUMAN",
+            "IMAGE",
+            "INDEX",
+            "INNER",
+            "INPUT",
+            "ISSUE",
+            "ITEMS",
+            "JOINT",
+            "JUDGE",
+            "KNOWN",
+            "LARGE",
+            "LASER",
+            "LATER",
+            "LAUGH",
+            "LAYER",
+            "LEARN",
+            "LEAST",
+            "LEAVE",
+            "LEGAL",
+            "LEVEL",
+            "LIGHT",
+            "LIMIT",
+            "LINES",
+            "LIVED",
+            "LOCAL",
+            "LOOSE",
+            "LOWER",
+            "LUCKY",
+            "LUNCH",
+            "LYING",
+            "MAGIC",
+            "MAJOR",
+            "MAKER",
+            "MARCH",
+            "MATCH",
+            "MAYBE",
+            "MAYOR",
+            "MEANT",
+            "MEDIA",
+            "METAL",
+            "MIGHT",
+            "MINOR",
+            "MINUS",
+            "MIXED",
+            "MODEL",
+            "MONEY",
+            "MONTH",
+            "MORAL",
+            "MOTOR",
+            "MOUNT",
+            "MOUSE",
+            "MOUTH",
+            "MOVED",
+            "MOVIE",
+            "MUSIC",
+            "NEEDS",
+            "NEVER",
+            "NEWLY",
+            "NIGHT",
+            "NOISE",
+            "NORTH",
+            "NOTED",
+            "NOVEL",
+            "NURSE",
+            "OCCUR",
+            "OCEAN",
+            "OFFER",
+            "OFTEN",
+            "ORDER",
+            "OTHER",
+            "OUGHT",
+            "OWNER",
+            "PAINT",
+            "PANEL",
+            "PAPER",
+            "PARTS",
+            "PARTY",
+            "PEACE",
+            "PHASE",
+            "PHONE",
+            "PHOTO",
+            "PIANO",
+            "PIECE",
+            "PILOT",
+            "PITCH",
+            "PLACE",
+            "PLAIN",
+            "PLANE",
+            "PLANT",
+            "PLATE",
+            "PLAZA",
+            "POINT",
+            "POUND",
+            "POWER",
+            "PRESS",
+            "PRICE",
+            "PRIDE",
+            "PRIME",
+            "PRINT",
+            "PRIOR",
+            "PRIZE",
+            "PROOF",
+            "PROUD",
+            "PROVE",
+            "QUEEN",
+            "QUICK",
+            "QUIET",
+            "QUITE",
+            "RADIO",
+            "RAISE",
+            "RANGE",
+            "RAPID",
+            "RATIO",
+            "REACH",
+            "READY",
+            "REALM",
+            "REBEL",
+            "REFER",
+            "RELAX",
+            "RELAY",
+            "REPLY",
+            "RIDER",
+            "RIDGE",
+            "RIGHT",
+            "RIGID",
+            "RIVAL",
+            "RIVER",
+            "ROBOT",
+            "ROMAN",
+            "ROUGH",
+            "ROUND",
+            "ROUTE",
+            "ROYAL",
+            "RUGBY",
+            "RULER",
+            "RURAL",
+            "SAFER",
+            "SCALE",
+            "SCARE",
+            "SCENE",
+            "SCOPE",
+            "SCORE",
+            "SCREW",
+            "SCRUB",
+            "SEARCH",
+            "SENSE",
+            "SERVE",
+            "SEVEN",
+            "SHADE",
+            "SHAKE",
+            "SHALL",
+            "SHAME",
+            "SHAPE",
+            "SHARE",
+            "SHARP",
+            "SHEET",
+            "SHELF",
+            "SHELL",
+            "SHIFT",
+            "SHINE",
+            "SHIRT",
+            "SHOCK",
+            "SHOOT",
+            "SHORT",
+            "SHOWN",
+            "SHOWS",
+            "SIDES",
+            "SIGHT",
+            "SILLY",
+            "SINCE",
+            "SIX",
+            "SIXTH",
+            "SIZED",
+            "SKILL",
+            "SKULL",
+            "SLEEP",
+            "SLIDE",
+            "SMALL",
+            "SMART",
+            "SMILE",
+            "SMOKE",
+            "SNAKE",
+            "SNOW",
+            "SOLID",
+            "SOLVE",
+            "SORRY",
+            "SOUND",
+            "SOUTH",
+            "SPACE",
+            "SPARE",
+            "SPEAK",
+            "SPEED",
+            "SPELL",
+            "SPEND",
+            "SPENT",
+            "SPLIT",
+            "SPOKE",
+            "SPORT",
+            "SQUAD",
+            "STAFF",
+            "STAGE",
+            "STAKE",
+            "STAND",
+            "START",
+            "STATE",
+            "STAYS",
+            "STEAM",
+            "STEEL",
+            "STEEP",
+            "STICK",
+            "STILL",
+            "STOCK",
+            "STONE",
+            "STOOD",
+            "STORE",
+            "STORM",
+            "STORY",
+            "STRIP",
+            "STUCK",
+            "STUDY",
+            "STUFF",
+            "STYLE",
+            "SUGAR",
+            "SUPER",
+            "SWEET",
+            "SWIFT",
+            "SWING",
+            "TABLE",
+            "TAKEN",
+            "TALKS",
+            "TASTE",
+            "TAXES",
+            "TEACH",
+            "TEAMS",
+            "TEARS",
+            "TEETH",
+            "TELLS",
+            "TERMS",
+            "TESTS",
+            "THANK",
+            "THEFT",
+            "THEIR",
+            "THEME",
+            "THERE",
+            "THESE",
+            "THICK",
+            "THING",
+            "THINK",
+            "THIRD",
+            "THOSE",
+            "THREE",
+            "THREW",
+            "THROW",
+            "THUMB",
+            "TIGHT",
+            "TIMES",
+            "TIRED",
+            "TITLE",
+            "TODAY",
+            "TOKEN",
+            "TOOLS",
+            "TOOTH",
+            "TOPIC",
+            "TOTAL",
+            "TOUCH",
+            "TOUGH",
+            "TOWER",
+            "TRACK",
+            "TRADE",
+            "TRAIL",
+            "TRAIN",
+            "TRASH",
+            "TREAT",
+            "TREND",
+            "TRIAL",
+            "TRIBE",
+            "TRICK",
+            "TRIED",
+            "TRIES",
+            "TRIPS",
+            "TRUCK",
+            "TRULY",
+            "TRUST",
+            "TRUTH",
+            "TURNS",
+            "TWICE",
+            "TWIST",
+            "TYPED",
+            "ULTRA",
+            "UNCLE",
+            "UNDER",
+            "UNDUE",
+            "UNION",
+            "UNITY",
+            "UNTIL",
+            "UPPER",
+            "UPSET",
+            "URBAN",
+            "URGED",
+            "USAGE",
+            "USERS",
+            "USUAL",
+            "VALID",
+            "VALUE",
+            "VIDEO",
+            "VIEWS",
+            "VIRAL",
+            "VISIT",
+            "VITAL",
+            "VOICE",
+            "WASTE",
+            "WATCH",
+            "WATER",
+            "WAVES",
+            "WAYS",
+            "WEIRD",
+            "WHEEL",
+            "WHERE",
+            "WHICH",
+            "WHILE",
+            "WHITE",
+            "WHOLE",
+            "WHOSE",
+            "WIDER",
+            "WIFE",
+            "WINDS",
+            "WING",
+            "WIPES",
+            "WIRED",
+            "WOMAN",
+            "WOMEN",
+            "WORDS",
+            "WORKS",
+            "WORLD",
+            "WORRY",
+            "WORSE",
+            "WORST",
+            "WORTH",
+            "WOULD",
+            "WRITE",
+            "WRONG",
+            "WROTE",
+            "YOUTH",
+            "YOURS",
+          ],
+          6: [
+            "MOTHER",
+            "FATHER",
+            "FRIEND",
+            "FAMILY",
+            "SCHOOL",
+            "PEOPLE",
+            "BEFORE",
+            "CHANGE",
+            "SHOULD",
+            "LITTLE",
+            "AROUND",
+            "THOUGH",
+            "REALLY",
+            "PUBLIC",
+            "FOLLOW",
+            "SYSTEM",
+            "CALLED",
+            "TURNED",
+            "ALWAYS",
+            "ALMOST",
+            "ACROSS",
+            "ACTION",
+            "ACTIVE",
+            "ACTUAL",
+            "AMOUNT",
+            "ANIMAL",
+            "ANSWER",
+            "ANYONE",
+            "AROUND",
+            "ARRIVE",
+            "ATTACK",
+            "AUGUST",
+            "AUTHOR",
+            "BECAME",
+            "BECOME",
+            "BEFORE",
+            "BETTER",
+            "BEYOND",
+            "BORDER",
+            "BOTTLE",
+            "BOTTOM",
+            "BOUGHT",
+            "BRANCH",
+            "BREATH",
+            "BRIDGE",
+            "BRIGHT",
+            "BROKEN",
+            "BUDGET",
+            "BURDEN",
+            "BUTTON",
+            "CALLED",
+            "CAMERA",
+            "CANCEL",
+            "CANNOT",
+            "CARBON",
+            "CAREER",
+            "CAUSED",
+            "CENTER",
+            "CENTRE",
+            "CHANCE",
+            "CHANGE",
+            "CHARGE",
+            "CHOICE",
+            "CHOOSE",
+            "CHOSEN",
+            "CHURCH",
+            "CIRCLE",
+            "CITIZEN",
+            "CITIES",
+            "CLAIMS",
+            "CLEAN",
+            "CLOSED",
+            "CLOSER",
+            "COFFEE",
+            "COLUMN",
+            "COMBAT",
+            "COMING",
+            "COMMIT",
+            "COMMON",
+            "COPPER",
+            "CORNER",
+            "COURSE",
+            "COVERS",
+            "CREATE",
+            "CRISIS",
+            "CUSTOM",
+            "DAMAGE",
+            "DANGER",
+            "DEBATE",
+            "DECADE",
+            "DECIDE",
+            "DEGREE",
+            "DEMAND",
+            "DENIED",
+            "DEPEND",
+            "DEPUTY",
+            "DESERT",
+            "DESIGN",
+            "DETAIL",
+            "DEVICE",
+            "DIFFER",
+            "DINNER",
+            "DIRECT",
+            "DIVIDE",
+            "DOCTOR",
+            "DOLLAR",
+            "DOMAIN",
+            "DOUBLE",
+            "DRAWER",
+            "DRIVEN",
+            "DRIVER",
+            "DURING",
+            "EASILY",
+            "EATING",
+            "EDITOR",
+            "EFFECT",
+            "EFFORT",
+            "EIGHTH",
+            "EITHER",
+            "ELEVEN",
+            "EMPIRE",
+            "EMPLOY",
+            "ENABLE",
+            "ENDING",
+            "ENERGY",
+            "ENGINE",
+            "ENOUGH",
+            "ENSURE",
+            "ENTIRE",
+            "ENTITY",
+            "EQUITY",
+            "ESCAPE",
+            "ESTATE",
+            "ETHICS",
+            "ETHNIC",
+            "EUROPE",
+            "EVENTS",
+            "EVERY",
+            "EXCEPT",
+            "EXCUSE",
+            "EXIST",
+            "EXPAND",
+            "EXPECT",
+            "EXPERT",
+            "EXPORT",
+            "EXTEND",
+            "EXTENT",
+            "FABRIC",
+            "FACIAL",
+            "FACTOR",
+            "FAILED",
+            "FAIRLY",
+            "FALLEN",
+            "FAMILY",
+            "FAMOUS",
+            "FATHER",
+            "FOUGHT",
+            "FOURTH",
+            "FRIDAY",
+            "FRIEND",
+            "FROZEN",
+            "FRUIT",
+            "FULLY",
+            "FUTURE",
+            "GAINED",
+            "GALAXY",
+            "GARDEN",
+            "GENDER",
+            "GENTLE",
+            "GIVING",
+            "GLOBAL",
+            "GOLDEN",
+            "GROUND",
+            "GROWTH",
+            "GUIDED",
+            "HANDLE",
+            "HANDED",
+            "HAPPEN",
+            "HARDLY",
+            "HATRED",
+            "HAVING",
+            "HEADED",
+            "HEALTH",
+            "HEARTS",
+            "HEAVEN",
+            "HELPED",
+            "HIDING",
+            "HIGHER",
+            "HIGHLY",
+            "HOLDER",
+            "HONEST",
+            "HOPING",
+            "HORROR",
+            "HOUSED",
+            "HUNTER",
+            "IGNORE",
+            "IMAGES",
+            "IMPACT",
+            "IMPORT",
+            "INCOME",
+            "INDEED",
+            "INDOOR",
+            "INFANT",
+            "INFORM",
+            "INJECT",
+            "INJURY",
+            "INSECT",
+            "INSIDE",
+            "INTENT",
+            "INVEST",
+            "ISLAND",
+            "ITSELF",
+            "JOINED",
+            "JUNGLE",
+            "JUNIOR",
+            "KILLED",
+            "LADIES",
+            "LAPTOP",
+            "LATELY",
+            "LATTER",
+            "LAUNCH",
+            "LAWYER",
+            "LEADER",
+            "LEAGUE",
+            "LEAVES",
+            "LENGTH",
+            "LESSON",
+            "LETTER",
+            "LIGHTS",
+            "LIKELY",
+            "LINKED",
+            "LIQUID",
+            "LISTEN",
+            "LITTLE",
+            "LIVING",
+            "LOCKED",
+            "LONDON",
+            "LONGER",
+            "LOOKED",
+            "LUXURY",
+            "MAKING",
+            "MANAGE",
+            "MANNER",
+            "MARBLE",
+            "MARKET",
+            "MARKED",
+            "MASTER",
+            "MATTER",
+            "MATURE",
+            "MAXIMUM",
+            "MEDIUM",
+            "MEMBER",
+            "MEMORY",
+            "MENTAL",
+            "MERELY",
+            "METHOD",
+            "MIDDLE",
+            "MIGHTY",
+            "MILLER",
+            "MINING",
+            "MINUTE",
+            "MIRROR",
+            "MOBILE",
+            "MODERN",
+            "MODEST",
+            "MODULE",
+            "MOMENT",
+            "MONDAY",
+            "MONTHS",
+            "MOSTLY",
+            "MOTHER",
+            "MOTION",
+            "MOVING",
+            "MURDER",
+            "MUSCLE",
+            "MUTUAL",
+            "MYSELF",
+            "NARROW",
+            "NATION",
+            "NATIVE",
+            "NATURE",
+            "NEARLY",
+            "NEEDED",
+            "NEPHEW",
+            "NEURAL",
+            "NOBODY",
+            "NORMAL",
+            "NOTICE",
+            "NOTION",
+            "NOVEL",
+            "NUMBER",
+            "OBJECT",
+            "OBTAIN",
+            "OCCUPY",
+            "OCCURS",
+            "OFFICE",
+            "OPENED",
+            "OPPOSE",
+            "OPTION",
+            "ORANGE",
+            "ORIGIN",
+            "OUTPUT",
+            "OXFORD",
+            "PACKED",
+            "PALACE",
+            "PARENT",
+            "PARTLY",
+            "PASSED",
+            "PASTOR",
+            "PATENT",
+            "PAYING",
+            "PEACE",
+            "PEOPLE",
+            "PERIOD",
+            "PERMIT",
+            "PERSON",
+            "PETROL",
+            "PHRASE",
+            "PICKED",
+            "PIECES",
+            "PLACED",
+            "PLANET",
+            "PLAYED",
+            "PLAYER",
+            "PLEASE",
+            "PLENTY",
+            "POCKET",
+            "POETRY",
+            "POLICE",
+            "POLICY",
+            "POLISH",
+            "POORLY",
+            "PORTAL",
+            "POTATO",
+            "POUNDS",
+            "POWDER",
+            "PREFER",
+            "PRETTY",
+            "PRIEST",
+            "PRINCE",
+            "PRISON",
+            "PROFIT",
+            "PROPER",
+            "PROVEN",
+            "PUBLIC",
+            "PURELY",
+            "PURPLE",
+            "PUSHED",
+            "PYTHON",
+            "QUOTED",
+            "RACING",
+            "RADIUS",
+            "RAISED",
+            "RANDOM",
+            "RARELY",
+            "RATHER",
+            "RATING",
+            "READER",
+            "REALLY",
+            "REASON",
+            "RECALL",
+            "RECENT",
+            "RECORD",
+            "REDUCE",
+            "REFORM",
+            "REFUSE",
+            "REGARD",
+            "REGION",
+            "RELATE",
+            "REMAIN",
+            "REMOTE",
+            "REMOVE",
+            "REPAIR",
+            "REPEAT",
+            "REPLY",
+            "REPORT",
+            "RESCUE",
+            "RESULT",
+            "RETAIL",
+            "RETURN",
+            "REVEAL",
+            "REVIEW",
+            "REWARD",
+            "RIBBON",
+            "RIDING",
+            "RISING",
+            "RITUAL",
+            "ROBUST",
+            "ROLLED",
+            "RUBBER",
+            "RULING",
+            "RUSSIA",
+            "SAFETY",
+            "SALARY",
+            "SAMPLE",
+            "SAVING",
+            "SAYING",
+            "SCALES",
+            "SCARED",
+            "SCHEME",
+            "SCHOOL",
+            "SCREEN",
+            "SCRIPT",
+            "SEARCH",
+            "SEASON",
+            "SECOND",
+            "SECRET",
+            "SECTOR",
+            "SECURE",
+            "SEEING",
+            "SELECT",
+            "SELLER",
+            "SENIOR",
+            "SERIES",
+            "SERVED",
+            "SERVER",
+            "SETTLE",
+            "SEVERE",
+            "SEXUAL",
+            "SHADOW",
+            "SHAPED",
+            "SHARED",
+            "SHIELD",
+            "SHOULD",
+            "SHOWED",
+            "SHOWER",
+            "SIGHTS",
+            "SIGNED",
+            "SILVER",
+            "SIMPLE",
+            "SIMPLY",
+            "SINGLE",
+            "SISTER",
+            "SIXTHS",
+            "SKILLS",
+            "SMOOTH",
+            "SOCCER",
+            "SOCIAL",
+            "SOCKET",
+            "SODIUM",
+            "SOLELY",
+            "SOLVED",
+            "SORTED",
+            "SOURCE",
+            "SOVIET",
+            "SPEAKS",
+            "SPIRAL",
+            "SPIRIT",
+            "SPOKEN",
+            "SPORTS",
+            "SPREAD",
+            "SPRING",
+            "SQUARE",
+            "STABLE",
+            "STAGES",
+            "STANDS",
+            "STARTS",
+            "STAYED",
+            "STEADY",
+            "STOLEN",
+            "STORED",
+            "STORIES",
+            "STORMS",
+            "STRAIN",
+            "STRAND",
+            "STREAM",
+            "STREET",
+            "STRESS",
+            "STRIKE",
+            "STRING",
+            "STRIPE",
+            "STROKE",
+            "STRONG",
+            "STRUCK",
+            "STUDIO",
+            "STUPID",
+            "SUBMIT",
+            "SUBSET",
+            "SUBTLE",
+            "SUBWAY",
+            "SUDDEN",
+            "SUFFER",
+            "SUMMER",
+            "SUNDAY",
+            "SUPPLY",
+            "SURELY",
+            "SURVEY",
+            "SWITCH",
+            "SYMBOL",
+            "SYSTEM",
+            "TAKING",
+            "TALENT",
+            "TALKED",
+            "TARGET",
+            "TAUGHT",
+            "TEMPLE",
+            "TENNIS",
+            "THANKS",
+            "THEORY",
+            "THIRTY",
+            "THOUGH",
+            "THREAD",
+            "THREAT",
+            "THROWN",
+            "THRUST",
+            "THUMB",
+            "TICKET",
+            "TIMBER",
+            "TIMING",
+            "TISSUE",
+            "TITLES",
+            "TOMATO",
+            "TONGUE",
+            "TONIGHT",
+            "TOPICS",
+            "TOWARD",
+            "TRACED",
+            "TRACKS",
+            "TRADER",
+            "TRAINS",
+            "TRAITS",
+            "TRAVEL",
+            "TREATY",
+            "TRENDS",
+            "TRIBAL",
+            "TRICKS",
+            "TROOPS",
+            "TROPHY",
+            "TRUCKS",
+            "TRYING",
+            "TUNNEL",
+            "TURNED",
+            "TWELVE",
+            "TWENTY",
+            "TYPING",
+            "UNABLE",
+            "UNIQUE",
+            "UNITED",
+            "UNLESS",
+            "UNLIKE",
+            "UNLOCK",
+            "UNPACK",
+            "UNSAFE",
+            "UNUSED",
+            "UPDATE",
+            "UPLOAD",
+            "UPWARD",
+            "URGENT",
+            "USEFUL",
+            "VALLEY",
+            "VALUED",
+            "VALUES",
+            "VARIED",
+            "VECTOR",
+            "VENDOR",
+            "VERSUS",
+            "VESSEL",
+            "VICTIM",
+            "VIDEOS",
+            "VIEWED",
+            "VIOLIN",
+            "VIRTUE",
+            "VISION",
+            "VISUAL",
+            "VOCALS",
+            "VOLUME",
+            "WAITED",
+            "WALKED",
+            "WANTED",
+            "WARMED",
+            "WARNED",
+            "WARREN",
+            "WASHED",
+            "WEALTH",
+            "WEAPON",
+            "WEEKLY",
+            "WEIGHT",
+            "WHEELS",
+            "WHILST",
+            "WIDELY",
+            "WIDGET",
+            "WINDOW",
+            "WINNER",
+            "WINTER",
+            "WISDOM",
+            "WITHIN",
+            "WONDER",
+            "WOODEN",
+            "WORKED",
+            "WORKER",
+            "WORLDS",
+            "WORTHY",
+            "WRITER",
+            "WRITES",
+            "YELLOW",
+            "YIELDS",
+          ],
+          7: [
+            "THROUGH",
+            "ANOTHER",
+            "BETWEEN",
+            "WITHOUT",
+            "BECAUSE",
+            "AGAINST",
+            "NOTHING",
+            "SOMEONE",
+            "GENERAL",
+            "INCLUDE",
+            "SEVERAL",
+            "THOUSAND",
+            "SPECIAL",
+            "PICTURE",
+            "CERTAIN",
+            "PROBLEM",
+            "PERHAPS",
+            "POSSIBLE",
+            "ABILITY",
+            "ABSENCE",
+            "ACADEMY",
+            "ACCOUNT",
+            "ACQUIRE",
+            "ADDRESS",
+            "ADVANCE",
+            "ADVISOR",
+            "AIRPORT",
+            "ALREADY",
+            "ANALYST",
+            "ANCIENT",
+            "ANIMALS",
+            "ANOTHER",
+            "ANXIETY",
+            "ANYBODY",
+            "ANYMORE",
+            "ANYONE",
+            "ANYWAY",
+            "APPLIED",
+            "APPOINT",
+            "APPROVE",
+            "ARCHIVE",
+            "ARRANGE",
+            "ARTICLE",
+            "ARTIST",
+            "ASLEEP",
+            "ATHLETE",
+            "ATTEMPT",
+            "ATTRACT",
+            "AUCTION",
+            "AVERAGE",
+            "BALANCE",
+            "BANKING",
+            "BATTERY",
+            "BEDROOM",
+            "BENEFIT",
+            "BICYCLE",
+            "BILLION",
+            "BLANKET",
+            "BROTHER",
+            "BUILDER",
+            "BURNING",
+            "CABINET",
+            "CALLING",
+            "CAMPING",
+            "CAPTAIN",
+            "CAPTURE",
+            "CAREFUL",
+            "CARTOON",
+            "CATALOG",
+            "CEILING",
+            "CENTRAL",
+            "CENTURY",
+            "CHAPTER",
+            "CHARITY",
+            "CLASSIC",
+            "CLIMATE",
+            "CLOTHES",
+            "COATING",
+            "COLLEGE",
+            "COMBINE",
+            "COMFORT",
+            "COMMAND",
+            "COMMENT",
+            "COMPACT",
+            "COMPANY",
+            "COMPARE",
+            "COMPETE",
+            "COMPLEX",
+            "CONCEPT",
+            "CONCERN",
+            "CONDUCT",
+            "CONFIRM",
+            "CONNECT",
+            "CONSIST",
+            "CONTACT",
+            "CONTAIN",
+            "CONTENT",
+            "CONTEST",
+            "CONTEXT",
+            "CONTROL",
+            "CONVERT",
+            "CORRECT",
+            "COUNTER",
+            "COUNTRY",
+            "COURAGE",
+            "COVERED",
+            "CREATOR",
+            "CRUCIAL",
+            "CRYSTAL",
+            "CULTURE",
+            "CURRENT",
+            "CUSTODY",
+            "CUTTING",
+            "DANCING",
+            "DEALING",
+            "DECIMAL",
+            "DEFAULT",
+            "DELIVER",
+            "DENSITY",
+            "DEPOSIT",
+            "DESERVE",
+            "DESKTOP",
+            "DESTROY",
+            "DEVELOP",
+            "DIAMOND",
+            "DIGITAL",
+            "DISEASE",
+            "DISPLAY",
+            "DISTANT",
+            "DOLLARS",
+            "DRAWING",
+            "DRIVER",
+            "DROPPED",
+            "DYNASTY",
+            "EARLIER",
+            "EASTERN",
+            "ECONOMY",
+            "EDITION",
+            "ELDERLY",
+            "ELEMENT",
+            "EMOTION",
+            "EMPEROR",
+            "ENABLED",
+            "ENDLESS",
+            "ENFORCE",
+            "ENGLISH",
+            "ENHANCE",
+            "EVENING",
+            "EXACTLY",
+            "EXAMINE",
+            "EXAMPLE",
+            "EXCITED",
+            "EXCLUDE",
+            "EXECUTE",
+            "EXHIBIT",
+            "EXPLAIN",
+            "EXPLORE",
+            "EXPRESS",
+            "EXTREME",
+            "FACTORY",
+            "FACULTY",
+            "FAILURE",
+            "FANTASY",
+            "FASHION",
+            "FEATURE",
+            "FEDERAL",
+            "FEELING",
+            "FICTION",
+            "FIFTEEN",
+            "FINANCE",
+            "FINDING",
+            "FIREARM",
+            "FISHING",
+            "FITNESS",
+            "FLIGHTS",
+            "FLORIDA",
+            "FOREIGN",
+            "FOREVER",
+            "FORMULA",
+            "FORTUNE",
+            "FORWARD",
+            "FREEDOM",
+            "FREIGHT",
+            "FRIENDS",
+            "FURTHER",
+            "GALLERY",
+            "GARBAGE",
+            "GATEWAY",
+            "GENUINE",
+            "GETTING",
+            "GLASSES",
+            "GOODBYE",
+            "GRAPHIC",
+            "GREATER",
+            "GROWING",
+            "HABITAT",
+            "HANDLER",
+            "HANGING",
+            "HARMONY",
+            "HEADING",
+            "HEALTHY",
+            "HEARING",
+            "HEATING",
+            "HELPFUL",
+            "HERSELF",
+            "HIGHWAY",
+            "HIMSELF",
+            "HISTORY",
+            "HOLDING",
+            "HOLIDAY",
+            "HORIZON",
+            "HORRIBLE",
+            "HOUSING",
+            "HOWEVER",
+            "HUNDRED",
+            "HUSBAND",
+            "IMAGERY",
+            "IMAGINE",
+            "IMPROVE",
+            "INCLUDE",
+            "INITIAL",
+            "INQUIRY",
+            "INSIGHT",
+            "INSPIRE",
+            "INSTALL",
+            "INSTANT",
+            "INSTEAD",
+            "INTEGER",
+            "INTENSE",
+            "INTERIM",
+            "INVOLVE",
+            "ITALIAN",
+            "JEWELRY",
+            "JOINING",
+            "JOURNAL",
+            "JOURNEY",
+            "JUSTICE",
+            "JUSTIFY",
+            "KEEPING",
+            "KITCHEN",
+            "KNOWING",
+            "LACKING",
+            "LANDING",
+            "LARGELY",
+            "LASTING",
+            "LAUNDRY",
+            "LAWSUIT",
+            "LEADING",
+            "LEARNED",
+            "LEATHER",
+            "LEAVING",
+            "LECTURE",
+            "LIBRARY",
+            "LICENSE",
+            "LIMITED",
+            "LINKING",
+            "LISTING",
+            "LOADING",
+            "LOCATED",
+            "LOGICAL",
+            "LOOKING",
+            "LOYALTY",
+            "MACHINE",
+            "MANAGER",
+            "MARRIED",
+            "MASSAGE",
+            "MASSIVE",
+            "MATCHES",
+            "MAXIMUM",
+            "MEANING",
+            "MEASURE",
+            "MEDICAL",
+            "MEETING",
+            "MENTION",
+            "MESSAGE",
+            "MINIMUM",
+            "MISSING",
+            "MISSION",
+            "MISTAKE",
+            "MIXTURE",
+            "MONITOR",
+            "MORNING",
+            "MUSICAL",
+            "MYSTERY",
+            "NATURAL",
+            "NEITHER",
+            "NETWORK",
+            "NEUTRAL",
+            "NOTHING",
+            "NUCLEAR",
+            "NURSERY",
+            "NURSING",
+            "OBVIOUS",
+            "OCTOBER",
+            "OFFENSE",
+            "OFFICER",
+            "OPENING",
+            "OPERATE",
+            "OPINION",
+            "OPTICAL",
+            "OPTIONS",
+            "ORGANIC",
+            "OUTDOOR",
+            "OUTLINE",
+            "OUTLOOK",
+            "OUTPUT",
+            "OUTSIDE",
+            "OVERALL",
+            "OVERLAY",
+            "PACKAGE",
+            "PACKETS",
+            "PADDING",
+            "PAINTED",
+            "PAINTER",
+            "PARKING",
+            "PARTIAL",
+            "PARTIES",
+            "PARTNER",
+            "PASSAGE",
+            "PASSING",
+            "PASSION",
+            "PASSIVE",
+            "PATIENT",
+            "PATTERN",
+            "PAYMENT",
+            "PENALTY",
+            "PERFECT",
+            "PERFORM",
+            "PERHAPS",
+            "PERSIST",
+            "PHYSICS",
+            "PICTURE",
+            "PIONEER",
+            "PLASTIC",
+            "PLEASED",
+            "PLUMBER",
+            "POINTER",
+            "POPULAR",
+            "PORTION",
+            "POTTERY",
+            "POVERTY",
+            "PRECISE",
+            "PREDICT",
+            "PREMIER",
+            "PREMIUM",
+            "PREPARE",
+            "PRESENT",
+            "PREVENT",
+            "PRIMARY",
+            "PRINTER",
+            "PRIVACY",
+            "PRIVATE",
+            "PROBLEM",
+            "PROCESS",
+            "PRODUCE",
+            "PRODUCT",
+            "PROFILE",
+            "PROGRAM",
+            "PROJECT",
+            "PROMISE",
+            "PROMOTE",
+            "PROTECT",
+            "PROTEST",
+            "PROVIDE",
+            "PURPOSE",
+            "PUSHING",
+            "QUALITY",
+            "QUARTER",
+            "QUICKLY",
+            "RADICAL",
+            "RAILWAY",
+            "RAINBOW",
+            "RANDOM",
+            "RAPIDLY",
+            "REACHED",
+            "READING",
+            "REALITY",
+            "RECEIPT",
+            "RECEIVE",
+            "RECORDS",
+            "RECOVER",
+            "REFLECT",
+            "REGULAR",
+            "RELATED",
+            "RELEASE",
+            "REMAINS",
+            "REMOVAL",
+            "REPLACE",
+            "REPLIED",
+            "REQUEST",
+            "REQUIRE",
+            "RESERVE",
+            "RESPECT",
+            "RESPOND",
+            "RESTORE",
+            "RETIRED",
+            "RETURNS",
+            "REVENUE",
+            "REVERSE",
+            "REVIEWS",
+            "REVISED",
+            "ROLLING",
+            "ROUTINE",
+            "RUNNING",
+            "RUSSIAN",
+            "SAMPLES",
+            "SAVINGS",
+            "SCANDAL",
+            "SCIENCE",
+            "SCRATCH",
+            "SECTION",
+            "SEEKING",
+            "SELLING",
+            "SEMINAR",
+            "SENDING",
+            "SERIOUS",
+            "SERVICE",
+            "SESSION",
+            "SETTING",
+            "SEVENTH",
+            "SEVERAL",
+            "SHARING",
+            "SHELTER",
+            "SHERIFF",
+            "SHOWING",
+            "SILICON",
+            "SIMILAR",
+            "SIXTEEN",
+            "SMOKING",
+            "SOCIETY",
+            "SOMEHOW",
+            "SOMEONE",
+            "SOPRANO",
+            "SORTING",
+            "SPEAKER",
+            "SPECIAL",
+            "SPECIES",
+            "SPONSOR",
+            "STATION",
+            "STORAGE",
+            "STRANGE",
+            "STRETCH",
+            "STUDENT",
+            "STUDIES",
+            "SUBJECT",
+            "SUCCESS",
+            "SUFFICIENT",
+            "SUGGEST",
+            "SUMMARY",
+            "SUPPORT",
+            "SUPPOSE",
+            "SUPREME",
+            "SURFACE",
+            "SURGERY",
+            "SURPLUS",
+            "SURVIVE",
+            "SUSPECT",
+            "SUSTAIN",
+            "SWEATER",
+            "SYMBOLS",
+            "SYSTEMS",
+            "TEACHER",
+            "TELLING",
+            "TENSION",
+            "TERRAIN",
+            "TESTING",
+            "TEXTURE",
+            "THEATER",
+            "THERAPY",
+            "THEREBY",
+            "THICKNESS",
+            "THROUGH",
+            "TICKETS",
+            "TONIGHT",
+            "TOOLBAR",
+            "TOTALLY",
+            "TOUCHED",
+            "TOWARDS",
+            "TRACKED",
+            "TRADING",
+            "TRAFFIC",
+            "TRAINED",
+            "TRAINER",
+            "TROUBLE",
+            "TURNING",
+            "TYPICAL",
+            "UKRAINE",
+            "UNIFORM",
+            "UNKNOWN",
+            "UNUSUAL",
+            "UPDATED",
+            "UPGRADE",
+            "UTILITY",
+            "VACANCY",
+            "VACCINE",
+            "VANILLA",
+            "VARIETY",
+            "VEHICLE",
+            "VERSION",
+            "VILLAGE",
+            "VIOLENT",
+            "VISIBLE",
+            "VISITOR",
+            "WAITING",
+            "WALKING",
+            "WARNING",
+            "WEALTHY",
+            "WEATHER",
+            "WEBSITE",
+            "WEDDING",
+            "WEEKEND",
+            "WELCOME",
+            "WELFARE",
+            "WESTERN",
+            "WHEREAS",
+            "WHETHER",
+            "WINDOWS",
+            "WINNING",
+            "WITHOUT",
+            "WITNESS",
+            "WORKING",
+            "WORSHIP",
+            "WRITING",
+            "WRITTEN",
+            "YOUNGER",
+          ],
+          8: [
+            "SOMETHING",
+            "TOGETHER",
+            "CHILDREN",
+            "REMEMBER",
+            "COMPLETE",
+            "ALTHOUGH",
+            "QUESTION",
+            "BUILDING",
+            "CONSIDER",
+            "NATIONAL",
+            "AMERICAN",
+            "PROBABLY",
+            "BUSINESS",
+            "LANGUAGE",
+            "COMPUTER",
+            "DISTANCE",
+            "ABSOLUTE",
+            "ACADEMIC",
+            "ACCEPTED",
+            "ACCIDENT",
+            "ACCURACY",
+            "ACCURATE",
+            "ACHIEVED",
+            "ACTIVITY",
+            "ACTUALLY",
+            "ADDITION",
+            "ADEQUATE",
+            "ADJACENT",
+            "ADVANCED",
+            "ADVISORY",
+            "AIRCRAFT",
+            "ALTHOUGH",
+            "ANALYSIS",
+            "ANNOUNCE",
+            "ANNUALLY",
+            "ANYWHERE",
+            "APPARENT",
+            "APPEARED",
+            "APPROACH",
+            "APPROVAL",
+            "APPROVED",
+            "ARGUMENT",
+            "ARRANGED",
+            "ASSEMBLY",
+            "ASSIGNED",
+            "ASSUMING",
+            "ATHLETIC",
+            "ATTACHED",
+            "ATTORNEY",
+            "AUDIENCE",
+            "AUTOMATIC",
+            "BALANCED",
+            "BASEBALL",
+            "BATHROOM",
+            "BEHAVIOR",
+            "BELIEVED",
+            "BIRTHDAY",
+            "BOUNDARY",
+            "BREAKFAST",
+            "BUILDING",
+            "BULLETIN",
+            "BUSINESS",
+            "CALENDAR",
+            "CAMPAIGN",
+            "CANADIAN",
+            "CAPACITY",
+            "CATEGORY",
+            "CHAIRMAN",
+            "CHAMPION",
+            "CHANGING",
+            "CHARGING",
+            "CHEMICAL",
+            "CHILDREN",
+            "CHOOSING",
+            "CLASSIFY",
+            "CLEARING",
+            "CLIMBING",
+            "CLINICAL",
+            "CLOTHING",
+            "COACHING",
+            "COLLAPSE",
+            "COLONIAL",
+            "COLORADO",
+            "COMBINED",
+            "COMMERCE",
+            "COMMONLY",
+            "COMMUNAL",
+            "COMPARED",
+            "COMPLETE",
+            "COMPOSED",
+            "COMPOUND",
+            "COMPUTER",
+            "CONCEPTS",
+            "CONCRETE",
+            "CONFUSED",
+            "CONGRESS",
+            "CONSIDER",
+            "CONSTANT",
+            "CONSUMER",
+            "CONTACTS",
+            "CONTAINS",
+            "CONTINUE",
+            "CONTRACT",
+            "CONTRARY",
+            "CONTRAST",
+            "CONTROLS",
+            "CONVINCE",
+            "CORRIDOR",
+            "COVERAGE",
+            "COVERING",
+            "CREATIVE",
+            "CRIMINAL",
+            "CRITICAL",
+            "CROSSING",
+            "CULTURAL",
+            "CURRENCY",
+            "CUSTOMER",
+            "DATABASE",
+            "DAUGHTER",
+            "DECIDING",
+            "DECISION",
+            "DECREASE",
+            "DEFENDER",
+            "DELIVERY",
+            "DEMOCRAT",
+            "DENSER",
+            "DESCRIBE",
+            "DESIGNER",
+            "DETAILED",
+            "DIALOGUE",
+            "DIAMETER",
+            "DIAMONDS",
+            "DIRECTLY",
+            "DIRECTOR",
+            "DISABLED",
+            "DISASTER",
+            "DISCOVER",
+            "DISEASES",
+            "DISGUISE",
+            "DISTINCT",
+            "DISTRICT",
+            "DIVIDEND",
+            "DIVORCED",
+            "DOCTRINE",
+            "DOCUMENT",
+            "DOMESTIC",
+            "DOMINANT",
+            "DOWNTOWN",
+            "DRAMATIC",
+            "DRAWINGS",
+            "DRINKING",
+            "DROPPING",
+            "DYNAMICS",
+            "EARNINGS",
+            "ECONOMIC",
+            "EDUCATED",
+            "EIGHTEEN",
+            "ELECTION",
+            "ELECTRIC",
+            "ELEMENT",
+            "ELIGIBLE",
+            "EMERGING",
+            "EMOTIONAL",
+            "EMPLOYEE",
+            "EMPLOYER",
+            "ENABLING",
+            "ENCLOSED",
+            "ENCODING",
+            "ENORMOUS",
+            "ENTIRELY",
+            "ENVELOPE",
+            "EQUATION",
+            "ESTIMATE",
+            "EVALUATE",
+            "EVENING",
+            "EVERYONE",
+            "EVIDENCE",
+            "EXAMPLED",
+            "EXCHANGE",
+            "EXCITING",
+            "EXCLUDED",
+            "EXECUTIVE",
+            "EXERCISE",
+            "EXISTING",
+            "EXPANDED",
+            "EXPECTED",
+            "EXPLICIT",
+            "EXPORTED",
+            "EXPOSURE",
+            "EXTERNAL",
+            "FACEBOOK",
+            "FACILITY",
+            "FAMILIES",
+            "FAMILIAR",
+            "FAMILIES",
+            "FEATURED",
+            "FEBRUARY",
+            "FEEDBACK",
+            "FESTIVAL",
+            "FIGHTING",
+            "FILENAME",
+            "FILTERED",
+            "FINALLY",
+            "FINISHED",
+            "FLOATING",
+            "FOLLOWED",
+            "FOOTBALL",
+            "FORECAST",
+            "FOREIGN",
+            "FORMALLY",
+            "FORMERLY",
+            "FOURTEEN",
+            "FRACKING",
+            "FRANKLIN",
+            "FREEDOM",
+            "FREQUENT",
+            "FRIENDLY",
+            "FUNCTION",
+            "FUNDING",
+            "FURNITURE",
+            "GAMEPLAY",
+            "GATHERED",
+            "GENERATE",
+            "GENETICS",
+            "GENOCIDE",
+            "GEOMETRY",
+            "GIGANTIC",
+            "GOODNESS",
+            "GOVERNOR",
+            "GRADUATE",
+            "GRAPHICS",
+            "GREATEST",
+            "GREETING",
+            "GUARDIAN",
+            "GUIDANCE",
+            "HANDBOOK",
+            "HANDLING",
+            "HARDWARE",
+            "HEADACHE",
+            "HEADLINE",
+            "HERITAGE",
+            "HISTORIC",
+            "HOLIDAYS",
+            "HOMEWORK",
+            "HORRIBLE",
+            "HOSPITAL",
+            "HUNDREDS",
+            "IDENTITY",
+            "IDEOLOGY",
+            "IGNORANT",
+            "ILLEGAL",
+            "ILLNESS",
+            "IMAGINE",
+            "IMMORTAL",
+            "IMMUNITY",
+            "IMPERIAL",
+            "IMPLICIT",
+            "IMPORTED",
+            "IMPOSED",
+            "IMPROPER",
+            "IMPROVE",
+            "INCLUDED",
+            "INCREASE",
+            "INDICATE",
+            "INDIRECT",
+            "INDUSTRY",
+            "INFERIOR",
+            "INFORMAL",
+            "INFORMED",
+            "INHERITED",
+            "INITIAL",
+            "INJECTED",
+            "INNOCENT",
+            "INSISTED",
+            "INSPIRED",
+            "INSTANCE",
+            "INSTEAD",
+            "INSTINCT",
+            "INTEGRAL",
+            "INTENDED",
+            "INTERACT",
+            "INTEREST",
+            "INTERNAL",
+            "INTERNET",
+            "INTERVAL",
+            "INTIMATE",
+            "INVASION",
+            "INVERTED",
+            "INVESTOR",
+            "INVOLVED",
+            "ISOLATED",
+            "JUDGMENT",
+            "JUDICIAL",
+            "JUNCTION",
+            "KEYBOARD",
+            "LANGUAGE",
+            "LAUNCHED",
+            "LEARNING",
+            "LECTURES",
+            "LEFTOVER",
+            "LEGALITY",
+            "LEGALLY",
+            "LIFETIME",
+            "LIGHTING",
+            "LIKEWISE",
+            "LIMITING",
+            "LITERARY",
+            "LOCATION",
+            "MAGNETIC",
+            "MAINTAIN",
+            "MAJORITY",
+            "MANAGING",
+            "MANIFEST",
+            "MANKIND",
+            "MARRIAGE",
+            "MARTIAL",
+            "MATERIAL",
+            "MATERNAL",
+            "MAXIMIZE",
+            "MAXIMUM",
+            "MEASURED",
+            "MECHANISM",
+            "MEDICINE",
+            "MEDIEVAL",
+            "MEMORIAL",
+            "MENTIONS",
+            "MERCHANT",
+            "MESSAGES",
+            "METALLIC",
+            "METAPHOR",
+            "MICHIGAN",
+            "MILITARY",
+            "MILLIONS",
+            "MINIMIZE",
+            "MINORITY",
+            "MISTAKES",
+            "MODERATE",
+            "MODIFIED",
+            "MOISTURE",
+            "MOLECULE",
+            "MONITORS",
+            "MORTGAGE",
+            "MOUNTAIN",
+            "MOVEMENT",
+            "MULTIPLE",
+            "MUSICIAN",
+            "NATIONAL",
+            "NEGATIVE",
+            "NEIGHBOR",
+            "NEWSROOM",
+            "NINETEEN",
+            "NOTATION",
+            "NOTEBOOK",
+            "NOVEMBER",
+            "NUMEROUS",
+            "OBSERVED",
+            "OBSERVER",
+            "OBTAINED",
+            "OCCASION",
+            "OCCURRED",
+            "OFFERING",
+            "OFFICIAL",
+            "OFFSHORE",
+            "OPERATOR",
+            "OPPONENT",
+            "OPPOSITE",
+            "OPTIONAL",
+            "ORDINARY",
+            "ORGANISM",
+            "ORGANIZE",
+            "ORIGINAL",
+            "OUTBREAK",
+            "OUTDATED",
+            "OUTLINED",
+            "OVERHEAD",
+            "OVERLAP",
+            "OVERSEAS",
+            "OVERVIEW",
+            "PAINTING",
+            "PARALLEL",
+            "PARENTAL",
+            "PARTICLE",
+            "PARTISAN",
+            "PARTNERS",
+            "PASSWORD",
+            "PATIENCE",
+            "PATTERNS",
+            "PEACEFUL",
+            "PERIODIC",
+            "PERSONAL",
+            "Peterson",
+            "PHYSICAL",
+            "PICTURES",
+            "PLATFORM",
+            "PLEASANT",
+            "POINTING",
+            "POLICIES",
+            "POLITICS",
+            "POLLUTION",
+            "POPULAR",
+            "PORTRAIT",
+            "POSITIVE",
+            "POSSIBLE",
+            "POWERFUL",
+            "PRACTICE",
+            "PREGNANT",
+            "PRESENCE",
+            "PRESERVE",
+            "PRESSING",
+            "PRESSURE",
+            "PREVIOUS",
+            "PRIMARILY",
+            "PRINCESS",
+            "PRINTING",
+            "PRIORITY",
+            "PROBABLY",
+            "PROBLEMS",
+            "PRODUCED",
+            "PRODUCER",
+            "PRODUCTS",
+            "PROFOUND",
+            "PROGRAMS",
+            "PROMISED",
+            "PROMOTED",
+            "PROPERLY",
+            "PROPERTY",
+            "PROPOSAL",
+            "PROPOSED",
+            "PROSPECT",
+            "PROTOCOL",
+            "PROVIDER",
+            "PROVINCE",
+            "PUBLICLY",
+            "PURCHASE",
+            "PURPOSES",
+            "QUESTION",
+            "RATIONAL",
+            "REACTION",
+            "READING",
+            "REASONED",
+            "RECEIVED",
+            "RECEPTOR",
+            "RECORDED",
+            "RECOVERY",
+            "REDUCING",
+            "REFERRED",
+            "REGIONAL",
+            "REGISTER",
+            "REGULATE",
+            "REJECTED",
+            "RELATION",
+            "RELATIVE",
+            "RELAXING",
+            "RELEVANT",
+            "RELIABLE",
+            "RELIGION",
+            "REMEMBER",
+            "REMOVING",
+            "REPEATED",
+            "REPLACED",
+            "REPORTED",
+            "REPORTER",
+            "REPUBLIC",
+            "RESEARCH",
+            "RESERVED",
+            "RESIDENT",
+            "RESOLVED",
+            "RESOURCE",
+            "RESPOND",
+            "RESPONSE",
+            "RESTRICT",
+            "RESULTED",
+            "REVEALED",
+            "REVIEWED",
+            "REVISION",
+            "RICHARD",
+            "SECURITY",
+            "SELECTED",
+            "SEMESTER",
+            "SENTENCE",
+            "SEPARATE",
+            "SEQUENCE",
+            "SERGEANT",
+            "SERVICES",
+            "SESSIONS",
+            "SETTINGS",
+            "SETTLING",
+            "SEVERELY",
+            "SHOPPING",
+            "SHOULDER",
+            "SHUTDOWN",
+            "SIBLINGS",
+            "SIDEWALK",
+            "SIMPLIFY",
+            "SINGULAR",
+            "SLIGHTLY",
+            "SNAPSHOT",
+            "SNOWBALL",
+            "SNOWFALL",
+            "SOFTWARE",
+            "SOLDIERS",
+            "SOLUTION",
+            "SOMEBODY",
+            "SOMEHOW",
+            "SOUTHERN",
+            "SPEAKING",
+            "SPECIFIC",
+            "SPELLING",
+            "SPENDING",
+            "SPINNING",
+            "SPONSORS",
+            "SPORTING",
+            "STANDARD",
+            "STANDING",
+            "STARTING",
+            "STATIONS",
+            "STEALING",
+            "STEPPING",
+            "STRANGER",
+            "STRATEGY",
+            "STRENGTH",
+            "STRICTLY",
+            "STRIKING",
+            "STRONGLY",
+            "STRUGGLE",
+            "STUDENTS",
+            "STUDYING",
+            "SUBGROUP",
+            "SUBJECTS",
+            "SUBURBAN",
+            "SUDDENLY",
+            "SUFFERED",
+            "SUGGESTS",
+            "SUITABLE",
+            "SUPERIOR",
+            "SUPPLIES",
+            "SUPPORTS",
+            "SUPPOSED",
+            "SURFACES",
+            "SURGICAL",
+            "SURPRISE",
+            "SURROUND",
+            "SURVIVAL",
+            "SWIMMING",
+            "SWITCHES",
+            "SYMBOLIC",
+            "SYNDROME",
+            "SYSTEMS",
+            "TEACHING",
+            "TEAMWORK",
+            "TEENAGER",
+            "TERRIBLE",
+            "TERRIFIC",
+            "TEXTBOOK",
+            "THINKING",
+            "THIRTEEN",
+            "THOUSAND",
+            "THROWING",
+            "TOGETHER",
+            "TOMORROW",
+            "TOUCHING",
+            "TOURNAMENT",
+            "TRACKING",
+            "TRAINING",
+            "TRANSFER",
+            "TREASURY",
+            "TROUBLED",
+            "TRUSTING",
+            "UMBRELLA",
+            "UNCOMMON",
+            "UNIVERSE",
+            "UNLIKELY",
+            "UNSIGNED",
+            "UPCOMING",
+            "UPDATING",
+            "UPGRADED",
+            "VACATION",
+            "VALIDATE",
+            "VALUABLE",
+            "VARIABLE",
+            "VEHICLES",
+            "VERTICAL",
+            "VETERANS",
+            "VICINITY",
+            "VIRGINIA",
+            "VISITING",
+            "VOLCANIC",
+            "VOLUMES",
+            "WATCHING",
+            "WEAKNESS",
+            "WEAPONS",
+            "WHENEVER",
+            "WHEREVER",
+            "WILDLIFE",
+            "WIRELESS",
+            "WITHDRAW",
+            "WITHDREW",
+            "WONDERED",
+            "WOODLAND",
+            "WORKSHOP",
+            "YOURSELF",
+          ],
+          9: [
+            "IMPORTANT",
+            "COMMUNITY",
+            "DIFFERENT",
+            "EDUCATION",
+            "KNOWLEDGE",
+            "BEAUTIFUL",
+            "WONDERFUL",
+            "SOMETIMES",
+            "EVERYBODY",
+            "RECOGNIZE",
+            "RECOMMEND",
+            "STRUCTURE",
+            "EFFECTIVE",
+            "FOLLOWING",
+            "CHARACTER",
+            "ABILITIES",
+            "ABANDONED",
+            "ACCEPTANCE",
+            "ACCESSING",
+            "ACCESSORY",
+            "ACCIDENTS",
+            "ACCORDING",
+            "ACCURATELY",
+            "ACHIEVING",
+            "ACQUIRING",
+            "ADDRESSED",
+            "ADVANTAGE",
+            "ADVENTURE",
+            "ADVERTISE",
+            "AFTERNOON",
+            "AGREEMENT",
+            "ALGORITHM",
+            "ALONGSIDE",
+            "AMBITIOUS",
+            "AMENDMENT",
+            "AMUSEMENT",
+            "ANALOGOUS",
+            "ANALYZING",
+            "ANNOUNCED",
+            "ANSWERING",
+            "APARTMENT",
+            "APPEARING",
+            "APPLIANCE",
+            "APPOINTED",
+            "ARCHITECT",
+            "ARGUMENTS",
+            "ARMSTRONG",
+            "ARRANGING",
+            "ASSERTING",
+            "ASSESSING",
+            "ASSIGNING",
+            "ASSOCIATE",
+            "ASSURANCE",
+            "ATTACKING",
+            "ATTACHING",
+            "ATTEMPTED",
+            "ATTENDING",
+            "ATTENTION",
+            "ATTITUDES",
+            "ATTORNEYS",
+            "ATTRACTED",
+            "ATTRIBUTE",
+            "AUDIENCES",
+            "AUTHORITY",
+            "AUTOMATIC",
+            "AVAILABLE",
+            "AWARENESS",
+            "BANDWIDTH",
+            "BANKRUPTCY",
+            "BASICALLY",
+            "BATTERIES",
+            "BEGINNING",
+            "BELONGING",
+            "BENCHMARK",
+            "BIOGRAPHY",
+            "BLUETOOTH",
+            "BREAKFAST",
+            "BREATHING",
+            "BRILLIANT",
+            "BROADCAST",
+            "BRUNSWICK",
+            "BUILDINGS",
+            "CAMBRIDGE",
+            "CAMPAIGNS",
+            "CANDIDATE",
+            "CAPACITOR",
+            "CAPTURING",
+            "CATHEDRAL",
+            "CELEBRATE",
+            "CELEBRITIES",
+            "CHALLENGE",
+            "CHAMPAGNE",
+            "CHAMPIONS",
+            "CHAPTERS",
+            "CHARACTER",
+            "CHEMISTRY",
+            "CHILDHOOD",
+            "CHRISTMAS",
+            "CHRONICLE",
+            "CLASSROOM",
+            "COASTLINE",
+            "COLLEAGUE",
+            "COLLECTING",
+            "COLLISION",
+            "COLUMBUS",
+            "COMBINING",
+            "COMMANDER",
+            "COMMERCE",
+            "COMMITTEE",
+            "COMMODITY",
+            "COMMUNIST",
+            "COMMUNITY",
+            "COMPANIES",
+            "COMPARING",
+            "COMPLAINT",
+            "COMPLETES",
+            "COMPLIANT",
+            "COMPONENT",
+            "COMPOSING",
+            "COMPOUNDS",
+            "COMPUTING",
+            "CONCEIVED",
+            "CONCLUDED",
+            "CONDITION",
+            "CONDUCTED",
+            "CONFIRMED",
+            "CONFLICTS",
+            "CONFUSION",
+            "CONNECTED",
+            "CONSENSUS",
+            "CONSTANTS",
+            "CONSTRUCT",
+            "CONSULTED",
+            "CONTACTED",
+            "CONTAINER",
+            "CONTINUED",
+            "CONTRACTS",
+            "CONTRASTS",
+            "CONVERTED",
+            "CONVINCED",
+            "CORRIDORS",
+            "COSMETICS",
+            "COUNSELOR",
+            "COUNTRIES",
+            "COURTYARDS",
+            "CREATURES",
+            "CRITICISM",
+            "CROSSOVER",
+            "CUSTOMARY",
+            "CUSTOMERS",
+            "DATABASES",
+            "DAUGHTERS",
+            "DEBUGGING",
+            "DECISIONS",
+            "DEDICATED",
+            "DEFENDANT",
+            "DEFENSIVE",
+            "DEFINITE",
+            "DEMOCRACY",
+            "DEPARTURE",
+            "DEPENDENT",
+            "DEPENDING",
+            "DESCRIBED",
+            "DESCRIBES",
+            "DETECTIVE",
+            "DETERMINE",
+            "DEVELOPED",
+            "DEVELOPER",
+            "DEVIATION",
+            "DIAGNOSIS",
+            "DIFFERENT",
+            "DIFFICULT",
+            "DIMENSION",
+            "DINOSAURS",
+            "DIRECTING",
+            "DIRECTORS",
+            "DIRECTORY",
+            "DISCOVERY",
+            "DISCUSSED",
+            "DISGUISED",
+            "DISPLAYED",
+            "DISSOLVE",
+            "DISTANCES",
+            "DISTRICTS",
+            "DISTURBED",
+            "DIVISIONS",
+            "DOCUMENTS",
+            "DOMINATED",
+            "DOMINATED",
+            "DOWNLOADS",
+            "DOWNRIGHT",
+            "DOWNSTREAM",
+            "DREAMLIKE",
+            "DRESSING",
+            "DRINKABLE",
+            "DUPLICATE",
+            "ECONOMICS",
+            "ECONOMIES",
+            "EDUCATION",
+            "EFFECTIVE",
+            "EFFICIENT",
+            "ELABORATE",
+            "ELECTIONS",
+            "ELECTORAL",
+            "ELECTRONS",
+            "ELSEWHERE",
+            "EMBRACING",
+            "EMOTIONAL",
+            "EMPLOYEES",
+            "EMPLOYERS",
+            "ENCOUNTER",
+            "ENCOURAGE",
+            "ENDURANCE",
+            "ENGINEERS",
+            "ENHANCING",
+            "ENJOYABLE",
+            "ENORMOUS",
+            "ENSCONCED",
+            "EQUIPMENT",
+            "ERUPTIONS",
+            "ESSENTIAL",
+            "ESTABLISH",
+            "ESTIMATED",
+            "ESTIMATES",
+            "EVERYBODY",
+            "EVERLASTING",
+            "EVOLUTION",
+            "EXAMINING",
+            "EXCELLENT",
+            "EXCEPTION",
+            "EXCHANGED",
+            "EXCLUSIVE",
+            "EXECUTIVE",
+            "EXEMPLIFY",
+            "EXERCISES",
+            "EXPANSION",
+            "EXPENSIVE",
+            "EXPLORING",
+            "EXPLOSIVE",
+            "EXPRESSED",
+            "EXTENDING",
+            "EXTENSION",
+            "EXTENSIVE",
+            "EXTREMELY",
+            "FANTASTIC",
+            "FASCINATE",
+            "FEATURING",
+            "FINANCIAL",
+            "FINGERTIP",
+            "FINISHING",
+            "FIREPLACE",
+            "FIREWORKS",
+            "FISHERMAN",
+            "FOLLOWING",
+            "FORBIDDEN",
+            "FORGIVING",
+            "FORGOTTEN",
+            "FRAMEWORK",
+            "FRANCHISE",
+            "FREQUENTLY",
+            "FRONTPAGE",
+            "FUNCTIONS",
+            "FURNITURE",
+            "GALLERIES",
+            "GATHERING",
+            "GENERALLY",
+            "GENERATING",
+            "GENERATOR",
+            "GENTLEMAN",
+            "GEOGRAPHIC",
+            "GERMANS",
+            "GIVING",
+            "GOVERNORS",
+            "GRADUATES",
+            "GRANDMOTHER",
+            "GREATNESS",
+            "GUARANTEE",
+            "GUARDIANS",
+            "GUITARIST",
+            "HALLOWEEN",
+            "HAPPINESS",
+            "HARMONICA",
+            "HEADLIGHT",
+            "HEADLINES",
+            "HEADPHONE",
+            "HEARTBEAT",
+            "HISTORIAN",
+            "HOLLYWOOD",
+            "HORSEBACK",
+            "HOSPITALS",
+            "HOUSEWORK",
+            "HURRICANE",
+            "IDENTICAL",
+            "IMITATION",
+            "IMMEDIATE",
+            "IMMIGRANT",
+            "IMPLEMENTING",
+            "IMPORTANT",
+            "IMPRESSED",
+            "IMPROVING",
+            "INCLUDING",
+            "INCREASED",
+            "INCREASES",
+            "INCREMENT",
+            "INDICATED",
+            "INDICATES",
+            "INDICATOR",
+            "INDONESIA",
+            "INEFFABLE",
+            "INFECTION",
+            "INFLATION",
+            "INFLUENCE",
+            "INFORMING",
+            "INHABITED",
+            "INITIALLY",
+            "INJECTION",
+            "INNOCENCE",
+            "INQUIRIES",
+            "INSISTENCE",
+            "INSPECTOR",
+            "INSPIRING",
+            "INSTALLED",
+            "INSTANTLY",
+            "INSTITUTE",
+            "INTEGRATE",
+            "INTENSITY",
+            "INTENTION",
+            "INTERACTS",
+            "INTERFACE",
+            "INTERFERE",
+            "INTERPRET",
+            "INTERVIEW",
+            "INTRODUCE",
+            "INTUITION",
+            "INVESTING",
+            "INVISIBLE",
+            "IRRITABLE",
+            "ISLANDERS",
+            "ISOLATION",
+            "JACKETLESS",
+            "JAPANESE",
+            "JERUSALEM",
+            "JUSTIFIED",
+            "KEYBOARDS",
+            "KNOWLEDGE",
+            "LABELING",
+            "LANDSCAPE",
+            "LANGUAGES",
+            "LAUGHTER",
+            "LAUNCHING",
+            "LAWSUIT",
+            "LIBRARIAN",
+            "LIGHTNING",
+            "LIMESTONE",
+            "LIQUIDITY",
+            "LISTENING",
+            "LITERALLY",
+            "LIVESTOCK",
+            "LOCATIONS",
+            "LONGITUDE",
+            "MAGNITUDE",
+            "MAINTAINS",
+            "MAJORITIES",
+            "MALAYSIAN",
+            "MANHATTAN",
+            "MANIFESTO",
+            "MANSFIELD",
+            "MARKETING",
+            "MATERIALS",
+            "MEANWHILE",
+            "MECHANISM",
+            "MEDICINAL",
+            "MENTIONED",
+            "MERCHANTS",
+            "MESSENGER",
+            "METAPHORS",
+            "METHODIST",
+            "MICROSCOPE",
+            "MIDDLEMAN",
+            "MINNESOTA",
+            "MOLECULAR",
+            "MOMENTARY",
+            "MONUMENTS",
+            "MOVEMENTS",
+            "MUNICIPAL",
+            "MUSICIANS",
+            "MYSTERIES",
+            "NARRATIVE",
+            "NATIONALS",
+            "NECESSARY",
+            "NECESSITY",
+            "NEGOTIATE",
+            "NEIGHBORS",
+            "NEWCASTLE",
+            "NIGHTMARE",
+            "NOMINATED",
+            "NORTHEAST",
+            "NORTHWEST",
+            "NOTEBOOKS",
+            "NUTRITION",
+            "OBJECTIVE",
+            "OBLIGATED",
+            "OBSERVING",
+            "OBVIOUSLY",
+            "OCCASIONS",
+            "OCCURRING",
+            "OFFENSIVE",
+            "OFFICIALS",
+            "OPERATION",
+            "OPERATORS",
+            "OPPONENTS",
+            "OPPOSITES",
+            "ORGANISMS",
+            "ORGANIZED",
+            "ORGANIZED",
+            "ORIENTATE",
+            "ORIGINALLY",
+            "OURSELVES",
+            "OUTERWEAR",
+            "OUTGOING",
+            "OUTLINED",
+            "OUTRAGE",
+            "OWNERSHIP",
+            "PACKAGING",
+            "PAINTINGS",
+            "PALETTES",
+            "PAPERBACK",
+            "PARAGRAPH",
+            "PARAMOUNT",
+            "PARKLANDS",
+            "PASSENGER",
+            "PATIENCE",
+            "PATRIOTS",
+            "PATRONAGE",
+            "PERFECTLY",
+            "PERFORMED",
+            "PERFORMER",
+            "PERMITTED",
+            "PERSONNEL",
+            "PETROLEUM",
+            "PHENOMENA",
+            "PICTURING",
+            "PLACEMENT",
+            "PLAINNESS",
+            "PLATELETS",
+            "PLATFORMS",
+            "PLAYBACKS",
+            "POLISHING",
+            "POLLUTION",
+            "POPULATED",
+            "PORTFOLIOS",
+            "POTENTIAL",
+            "PRACTICES",
+            "PRECISELY",
+            "PREDICTED",
+            "PREFERRED",
+            "PREFIX",
+            "PRESENTED",
+            "PRESENTER",
+            "PRESERVED",
+            "PRESIDENT",
+            "PRESSURES",
+            "PRINCETON",
+            "PRINCIPLE",
+            "PRIVILEGE",
+            "PROCEDURE",
+            "PROCESSES",
+            "PROCLAIMED",
+            "PROFUNDITY",
+            "PROMINENT",
+            "PROMISING",
+            "PROMOTION",
+            "PROPOSALS",
+            "PROTECTED",
+            "PROTOTYPE",
+            "PROVISION",
+            "PSYCHOLOGY",
+            "PUBLISHED",
+            "PUBLISHER",
+            "PURCHASED",
+            "QUADRATIC",
+            "QUALIFIED",
+            "QUALITIES",
+            "QUANTITIES",
+            "QUARTERLY",
+            "QUESTIONS",
+            "RAINWATER",
+            "REACTIONS",
+            "REALISTIC",
+            "REASONING",
+            "REBELLION",
+            "RECEIVING",
+            "RECEPTION",
+            "RECOGNIZE",
+            "RECOMMEND",
+            "RECORDING",
+            "RECOVERED",
+            "RECTANGLE",
+            "REDUCTION",
+            "REFERENCE",
+            "REFLECTED",
+            "REGARDING",
+            "REGISTERS",
+            "REGULARLY",
+            "REINFORCE",
+            "REJECTION",
+            "RELATIVES",
+            "RELEVANCE",
+            "RELIGIONS",
+            "RELISHING",
+            "REMAINING",
+            "REMEMBERS",
+            "REPAYMENT",
+            "REPLACING",
+            "REPRESENT",
+            "REPUBLICS",
+            "REQUESTED",
+            "REQUIRING",
+            "RESEMBLES",
+            "RESERVOIR",
+            "RESIDENCE",
+            "RESIDENTS",
+            "RESOURCES",
+            "RESPECTFUL",
+            "RESPONSES",
+            "RESTORING",
+            "RESTRICTS",
+            "RESULTING",
+            "RETURNING",
+            "REVEALING",
+            "REVISIONS",
+            "REVOLVING",
+            "RIVERSIDE",
+            "SCHEDULES",
+            "SCHOLARSHIP",
+            "SEARCHING",
+            "SECRETARY",
+            "SEEMINGLY",
+            "SELECTING",
+            "SELECTION",
+            "SENSITIVE",
+            "SERIOUSLY",
+            "SHORTCUTS",
+            "SHOULDERS",
+            "SIGNATURE",
+            "SIMPLICITY",
+            "SITUATION",
+            "SKILLFUL",
+            "SOMEWHERE",
+            "SOUTHEAST",
+            "SOUTHWEST",
+            "SPECIALLY",
+            "SPECIFIED",
+            "SPECIMENS",
+            "SPREADING",
+            "STANDARDS",
+            "STATEMENT",
+            "STATIONS",
+            "STATEWIDE",
+            "STATIONED",
+            "STATISTICS",
+            "STEADFAST",
+            "STRATEGIC",
+            "STRUCTURE",
+            "STUPIDITY",
+            "SUBSTANCE",
+            "SUBURBAN",
+            "SUCCEEDED",
+            "SUFFERING",
+            "SUGGESTED",
+            "SUMMARIZE",
+            "SUNFLOWER",
+            "SUPPORTED",
+            "SUPPORTER",
+            "SUPREMACY",
+            "SURPRISED",
+            "SURRENDER",
+            "SUSPENDED",
+            "SUSTAINED",
+            "SWEETNESS",
+            "SYMBOLISM",
+            "SYNTHESIS",
+            "SYSTEMTIC",
+            "TECHNICAL",
+            "TECHNIQUE",
+            "TEENAGERS",
+            "TELEPHONE",
+            "TELESCOPE",
+            "TEMPTABLE",
+            "TERRITORY",
+            "TERRORISM",
+            "TERRORIST",
+            "TESTIMONY",
+            "THEATRICAL",
+            "THEREFORE",
+            "THICKNESS",
+            "THOUSANDS",
+            "THREATENS",
+            "TODAY",
+            "TOLERANCE",
+            "TOUCHING",
+            "TRADITION",
+            "TRANSPORT",
+            "TRAVELING",
+            "TREASURES",
+            "TREATMENT",
+            "TREMBLING",
+            "TRIGGERED",
+            "TROUBLING",
+            "TWENTIETH",
+            "TYPICALLY",
+            "ULTIMATUM",
+            "UNCERTAIN",
+            "UNDEFINED",
+            "UNDERMINE",
+            "UNDERTAKE",
+            "UNIVERSAL",
+            "UNLIMITED",
+            "UNPOPULAR",
+            "UNRELATED",
+            "UNTOUCHED",
+            "UNWILLING",
+            "UPGRADING",
+            "UTILIZING",
+            "VACATIONS",
+            "VALENTINE",
+            "VARIABLES",
+            "VARIATION",
+            "VARIETIES",
+            "VEHICULAR",
+            "VENTURING",
+            "VERSATILE",
+            "VIBRATION",
+            "VICTORIES",
+            "VIEWPOINT",
+            "VIRGINIAN",
+            "VIRTUALLY",
+            "WAREHOUSE",
+            "WATERFALL",
+            "WEDNESDAY",
+            "WHOLESOME",
+            "WILLINGLY",
+            "WISCONSIN",
+            "WONDERFUL",
+            "WORKFORCE",
+            "WORKPLACE",
+            "WRESTLING",
+            "YESTERDAY",
+          ],
+          10: [
+            "EVERYTHING",
+            "GOVERNMENT",
+            "MANAGEMENT",
+            "UNDERSTAND",
+            "TECHNOLOGY",
+            "INFORMATION",
+            "GENERATION",
+            "POPULATION",
+            "PRODUCTION",
+            "BACKGROUND",
+            "TELEVISION",
+            "WASHINGTON",
+            "CALIFORNIA",
+            "DEMOCRATIC",
+            "ABANDONMENT",
+            "ABDOMINALS",
+            "ABDICATION",
+            "ABERRATION",
+            "ABHORRENCE",
+            "ABOMINABLE",
+            "ABORIGINAL",
+            "ABSORPTION",
+            "ABSTINENCE",
+            "ABSTRACTION",
+            "ACCELERATE",
+            "ACCEPTABLE",
+            "ACCEPTANCE",
+            "ACCESSIBLE",
+            "ACCIDENTAL",
+            "ACCOMPLISH",
+            "ACCORDANCE",
+            "ACCOUNTANT",
+            "ACCOUNTING",
+            "ACCUMULATE",
+            "ACCURATELY",
+            "ACCUSATION",
+            "ACCUSTOMED",
+            "ACHIEVABLE",
+            "ACTIVITIES",
+            "ADAPTATION",
+            "ADDITIONAL",
+            "ADEQUATELY",
+            "ADJECTIVES",
+            "ADMIRATION",
+            "ADOLESCENT",
+            "ADVANTAGES",
+            "ADVENTURES",
+            "ADVERTISER",
+            "AFICIONADO",
+            "AFFECTEDLY",
+            "AFFILIATES",
+            "AFFORDABLE",
+            "AFICIONADO",
+            "AGGRANDIZE",
+            "AGGRAVATED",
+            "AGGRESSION",
+            "AGGRESSIVE",
+            "AGREEMENTS",
+            "AGRICULTURE",
+            "ALGORITHMS",
+            "ALLEGIANCE",
+            "ALLERGENIC",
+            "ALLOCATION",
+            "ALLUREMENT",
+            "ALPHABETIC",
+            "ALTOGETHER",
+            "AMBASSADOR",
+            "AMBULATORY",
+            "AMENDMENTS",
+            "AMMUNITION",
+            "ANESTHESIA",
+            "ANNOTATION",
+            "ANNOUNCERS",
+            "ANSWERABLE",
+            "ANTARCTICA",
+            "ANTIBIOTIC",
+            "ANTICIPATE",
+            "ANTIMATTER",
+            "ANTISOCIAL",
+            "APPEARANCE",
+            "APPLICABLE",
+            "APPLICATION",
+            "APPOINTEES",
+            "APPRECIATE",
+            "APPROACHES",
+            "ARCHBISHOP",
+            "ARCHITECTS",
+            "ARITHMETIC",
+            "ARRANGEMENTS",
+            "ARTIFICIAL",
+            "ASSESSMENT",
+            "ASSIGNMENT",
+            "ASSISTANCE",
+            "ASSOCIATES",
+            "ASSUMPTION",
+            "ASTRONOMER",
+            "ATTACHMENT",
+            "ATTENDANCE",
+            "ATTRACTIVE",
+            "ATTRIBUTED",
+            "ATTRIBUTES",
+            "AUDITORIUM",
+            "AUSTRALIAN",
+            "AUTHORIZED",
+            "AUTOMOBILE",
+            "AUTONOMOUS",
+            "BACKGROUND",
+            "BANKRUPTCY",
+            "BASKETBALL",
+            "BATTLEFIELD",
+            "BEACHFRONT",
+            "BEAUTICIAN",
+            "BEFOREHAND",
+            "BEGINNINGS",
+            "BELIEVABLE",
+            "BENEFICIAL",
+            "BEWILDERED",
+            "BIOLOGICAL",
+            "BLACKBERRY",
+            "BLUEBERRIES",
+            "BOUNDARIES",
+            "BRAINSTORM",
+            "BREADBOARD",
+            "BREADCRUMB",
+            "BREAKFAST",
+            "BREATHLESS",
+            "BRIGHTNESS",
+            "BROADSWORD",
+            "BYSTANDERS",
+            "CALIFORNIA",
+            "CAMPAIGNS",
+            "CANDIDATES",
+            "CAPACITIES",
+            "CAPITALISM",
+            "CAPITALIZE",
+            "CARDBOARD",
+            "CARETAKERS",
+            "CATEGORIES",
+            "CELEBRATED",
+            "CENSORSHIP",
+            "CENTENNIAL",
+            "CHALLENGES",
+            "CHANCELLOR",
+            "CHARACTERS",
+            "CHARITABLE",
+            "CHECKPOINT",
+            "CHIMPANZEE",
+            "CHOCOLATE",
+            "CHROMOSOME",
+            "CIGARETTES",
+            "CINDERELLA",
+            "CIRCULATED",
+            "CLASSIFIED",
+            "CLEANLINESS",
+            "CLIMATIC",
+            "CLUSTERING",
+            "COINCIDENCE",
+            "COLLABORATE",
+            "COLLEAGUES",
+            "COLLECTIVE",
+            "COLLEGIATE",
+            "COLLOQUIAL",
+            "COLUMNIST",
+            "COMBINATION",
+            "COMMENTARY",
+            "COMMERCIAL",
+            "COMMISSION",
+            "COMMITMENT",
+            "COMMITTEES",
+            "COMMONNESS",
+            "COMMUNITIES",
+            "COMPARABLE",
+            "COMPARISON",
+            "COMPATIBLE",
+            "COMPENSATE",
+            "COMPETENCE",
+            "COMPETITOR",
+            "COMPLEMENT",
+            "COMPLETELY",
+            "COMPLEXITY",
+            "COMPLIANCE",
+            "COMPONENTS",
+            "COMPROMISE",
+            "COMPULSIVE",
+            "COMPULSORY",
+            "CONCEPTION",
+            "CONCERNING",
+            "CONCLUSION",
+            "CONCURRENT",
+            "CONFERENCE",
+            "CONFESSION",
+            "CONFIDENCE",
+            "CONFISCATE",
+            "CONFLUENCE",
+            "CONGREGATE",
+            "CONGRESSES",
+            "CONNECTING",
+            "CONNECTION",
+            "CONSCIENCE",
+            "CONSEQUENT",
+            "CONSIDERED",
+            "CONSISTENT",
+            "CONSOLIDATE",
+            "CONSPIRACY",
+            "CONSTITUTE",
+            "CONSTRAINT",
+            "CONSULTANT",
+            "CONSULTING",
+            "CONTAINERS",
+            "CONTAINING",
+            "CONTENTION",
+            "CONTESTANT",
+            "CONTINGENT",
+            "CONTINUOUS",
+            "CONTRACTOR",
+            "CONTRIBUTE",
+            "CONTROLLED",
+            "CONTROLLER",
+            "CONVERSION",
+            "COORDINATE",
+            "CORRECTION",
+            "CORRECTIVE",
+            "CORRESPOND",
+            "CORRUPTION",
+            "COUNSELING",
+            "COUNTERACT",
+            "COUNTRIES",
+            "COURTHOUSE",
+            "COWARDICE",
+            "CRAFTINESS",
+            "CREATIVITY",
+            "CREDITABLE",
+            "CULTURALLY",
+            "CURRICULUM",
+            "CYBERNETIC",
+            "DAREDEVILS",
+            "DAYLIGHT",
+            "DEADLINES",
+            "DEAFENING",
+            "DECEPTION",
+            "DECISIVELY",
+            "DECORATION",
+            "DEDICATION",
+            "DEFENSIBLE",
+            "DEFINITELY",
+            "DEFINITION",
+            "DELINQUENT",
+            "DEMOCRATIC",
+            "DEMOLITION",
+            "DEPENDABLE",
+            "DEPENDENCE",
+            "DEPRESSING",
+            "DEPRESSION",
+            "DERIVATIVE",
+            "DESCIPTION",
+            "DESIGNATED",
+            "DESIREABLE",
+            "DEVELOPING",
+            "DEVOTIONAL",
+            "DICTIONARY",
+            "DIFFERENCE",
+            "DIFFICULTY",
+            "DIMENSIONS",
+            "DIPLOMATIC",
+            "DIRECTIONS",
+            "DIRECTNESS",
+            "DISABILITY",
+            "DISCLAIMER",
+            "DISCOVERER",
+            "DISCRETELY",
+            "DISCUSSION",
+            "DISHONESTY",
+            "DISJOINTED",
+            "DISMISSIVE",
+            "DISPIRITED",
+            "DISPOSABLE",
+            "DISTRIBUTE",
+            "DISTURBING",
+            "DOCUMENTARY",
+            "DOMINATION",
+            "DOWNSTAIRS",
+            "DOWNSTREAM",
+            "DRAMATICAL",
+            "DREADFULLY",
+            "EARTHQUAKE",
+            "ECONOMICAL",
+            "EDITORIALS",
+            "EDITORSHIP",
+            "EDUCATION",
+            "EFFECTIVE",
+            "ELECTRONIC",
+            "ELEMENTARY",
+            "ELIMINATE",
+            "EMPLOYMENT",
+            "EMPOWERING",
+            "ENCOUNTERS",
+            "ENCOURAGE",
+            "ENDANGERED",
+            "ENERGIZING",
+            "ENGAGEMENT",
+            "ENGINEERING",
+            "ENGROSSING",
+            "ENLIVENING",
+            "ENTERPRISE",
+            "ENTHUSIASM",
+            "ENTIRENESS",
+            "ENTITLEMENT",
+            "EQUIVALENT",
+            "ESPECIALLY",
+            "ESTIMATION",
+            "EVALUATING",
+            "EVERYTHING",
+            "EVERYWHERE",
+            "EXAGGERATE",
+            "EXCELLENCE",
+            "EXCEPTIONAL",
+            "EXCITEMENT",
+            "EXECUTABLE",
+            "EXERCISING",
+            "EXHIBITION",
+            "EXPERIENCE",
+            "EXPERIMENT",
+            "EXPLICITLY",
+            "EXPRESSION",
+            "EXTENSIONS",
+            "EXTERNALLY",
+            "EXTRACTION",
+            "FACILITIES",
+            "FASCINATING",
+            "FASHIONABLE",
+            "FEDERATION",
+            "FERTILIZER",
+            "FIGURATION",
+            "FINGERPRINT",
+            "FIREFIGHTER",
+            "FISHERMEN",
+            "FLEXIBILITY",
+            "FOOTBALLER",
+            "FOREGROUND",
+            "FORGETTING",
+            "FORGIVENESS",
+            "FOUNDATION",
+            "FRAGMENTED",
+            "FRAMEWORKS",
+            "FRANCHISED",
+            "FREQUENTLY",
+            "FRIENDSHIP",
+            "FUNCTIONAL",
+            "FUNDRAISER",
+            "FURNISHING",
+            "FURTHEMORE",
+            "GENERATION",
+            "GENEROSITY",
+            "GEOGRAPHIC",
+            "GEOLOGICAL",
+            "GIRLFRIEND",
+            "GOALKEEPER",
+            "GOVERNMENT",
+            "GRANDCHILD",
+            "GRANDIOSE",
+            "GRANDPARENT",
+            "GRASSHOPPER",
+            "GREENHOUSE",
+            "GROWNUPS",
+            "GUARANTEED",
+            "GUIDELINES",
+            "GYMNASTICS",
+            "HANDLEBARS",
+            "HANDMAIDENS",
+            "HARASSMENT",
+            "HEALTHCARE",
+            "HELICOPTER",
+            "HEMISPHERE",
+            "HIGHLIGHTS",
+            "HINDRANCES",
+            "HISTORICAL",
+            "HOROSCOPE",
+            "HORSEPOWER",
+            "HOUSEBOUND",
+            "HOUSEHOLDS",
+            "HOUSEWIVES",
+            "HUMANITIES",
+            "HYPOTHESIS",
+            "ILLITERACY",
+            "ILLUMINATE",
+            "ILLUSIONS",
+            "IMAGINABLE",
+            "IMMIGRANTS",
+            "IMMUNOLOGY",
+            "IMPRESSION",
+            "IMPRESSIVE",
+            "INCAPABLE",
+            "INCREDIBLY",
+            "INDEFINITE",
+            "INDUSTRIAL",
+            "INFECTIOUS",
+            "INFINITELY",
+            "INFINITIVES",
+            "INFLEXIBLE",
+            "INFLUENCES",
+            "INFORMALLY",
+            "INGREDIENT",
+            "INHABITANT",
+            "INITIATIVE",
+            "INJECTIONS",
+            "INNOVATIVE",
+            "INSIGHTFUL",
+            "INSPECTION",
+            "INSPECTOR",
+            "INSTALLING",
+            "INSTANTLY",
+            "INSTRUMENT",
+            "INSUFFICIET",
+            "INTEGRATED",
+            "INTELLECTUAL",
+            "INTERFACES",
+            "INTERFERED",
+            "INTERNALLY",
+            "INTERNALLY",
+            "INTOLERANT",
+            "INTRODUCED",
+            "INVALUABLE",
+            "INVESTMENT",
+            "INVITATION",
+            "IRONICALLY",
+            "JOURNALISM",
+            "JOURNALIST",
+            "JUDICIALLY",
+            "JUICINESS",
+            "JUSTIFYING",
+            "KIDNAPPING",
+            "KINDERGARD",
+            "LABORATORY",
+            "LACERATION",
+            "LANDSCAPES",
+            "LEADERSHIP",
+            "LIBRARIANS",
+            "LIKELIHOOD",
+            "LIMITATION",
+            "LITERATURE",
+            "LOCOMOTIVE",
+            "LONELINESS",
+            "LOUDSPEAKER",
+            "MAGNETISM",
+            "MANAGEMENT",
+            "MANUSCRIPT",
+            "MARGINALLY",
+            "MARKETING",
+            "MARKETPLACE",
+            "MASTERPIECE",
+            "MEANWHILE",
+            "MECHANICAL",
+            "MEDITATION",
+            "MEMBERSHIP",
+            "MEMORIZING",
+            "METABOLISM",
+            "MICROSCOPE",
+            "MILLENNIUM",
+            "MINISTRIES",
+            "MIRACULOUS",
+            "MISCONDUCT",
+            "MISFORTUNE",
+            "MISGUIDED",
+            "MISSIONARY",
+            "MITTSVILLE",
+            "MODERATELY",
+            "MULTIMEDIA",
+            "NATIONWIDE",
+            "NATURALIST",
+            "NAVIGATING",
+            "NAVIGATION",
+            "NEGOTIATED",
+            "NEIGHBORS",
+            "NEWSLETTER",
+            "NEWSPAPERS",
+            "NIGHTCLUBS",
+            "NIGHTMARES",
+            "NOMINATION",
+            "NONFICTION",
+            "NONPROFIT",
+            "NOTEWORTHY",
+            "NOURISHING",
+            "OBEDIENCE",
+            "OBLIGATION",
+            "OBSERVABLE",
+            "OBSERVANCE",
+            "OCCURRENCE",
+            "OPERATIONS",
+            "OPPOSITION",
+            "ORDINARILY",
+            "ORGANIZATION",
+            "ORIGINALLY",
+            "OSTRICHES",
+            "OVERCOMING",
+            "OVERLOOKED",
+            "OVERWHELM",
+            "OWNERSHIP",
+            "PAPERBOARD",
+            "PAPERWORK",
+            "PARAMEDICS",
+            "PARENTHOOD",
+            "PARLIAMENT",
+            "PARTICULAR",
+            "PARTNERSHIP",
+            "PASSIONATE",
+            "PERFECTION",
+            "PERFORMING",
+            "PERIPHERAL",
+            "PERMANENCE",
+            "PERMISSION",
+            "PERSONALLY",
+            "PHENOMENON",
+            "PHILOSOPHY",
+            "PHOTOGRAPH",
+            "PHYSICIANS",
+            "PILGRIMAGE",
+            "PLAYWRIGHT",
+            "PLAYGROUND",
+            "PLEASANTLY",
+            "POCKETBOOK",
+            "POLITICIANS",
+            "POPULARITY",
+            "POPULATION",
+            "POSITIVELY",
+            "POSSESSION",
+            "POTENTIALLY",
+            "POWERFULLY",
+            "PRESCRIBED",
+            "PRESIDENCY",
+            "PRESIDENTS",
+            "PRESSURING",
+            "PREVENTION",
+            "PREVIOUSLY",
+            "PRIVILEGES",
+            "PROCEDURAL",
+            "PROCEDURES",
+            "PROCESSING",
+            "PRODUCTION",
+            "PROFESSION",
+            "PROFITABLE",
+            "PROGRAMMER",
+            "PROJECTILE",
+            "PROMINENCE",
+            "PROPAGANDA",
+            "PROPERTIES",
+            "PROPORTION",
+            "PROTECTION",
+            "PSYCHOLOGY",
+            "PUBLISHERS",
+            "PUNISHMENT",
+            "PURCHASING",
+            "QUARANTINE",
+            "QUANTITIES",
+            "QUATERNARY",
+            "QUESTIONED",
+            "RAINFOREST",
+            "REASONABLE",
+            "REBELLIOUS",
+            "REBUILDING",
+            "RECIPIENTS",
+            "RECOGNIZES",
+            "RECONGNIZE",
+            "RECOMMENDS",
+            "RECORDINGS",
+            "RECOVERING",
+            "REFRESHING",
+            "REGARDLESS",
+            "REGULATION",
+            "RELATIVELY",
+            "RELEVANTLY",
+            "REMARKABLE",
+            "REMEMBERED",
+            "RENOUNCING",
+            "REPETITION",
+            "REPEATEDLY",
+            "REPRESENTS",
+            "REPUBLICAN",
+            "REPUTATION",
+            "RESEARCHED",
+            "RESEARCHER",
+            "RESEMBLING",
+            "RESOLUTION",
+            "RESPONDING",
+            "RESTAURANT",
+            "RESTRAINED",
+            "RESTRICTED",
+            "RETREATING",
+            "REVELATION",
+            "REVOLUTION",
+            "RIDICULOUS",
+            "SACRIFICES",
+            "SACRAMENTO",
+            "SALESWOMAN",
+            "SALESPEOPLE",
+            "SANITATION",
+            "SATELLITES",
+            "SCHEDULING",
+            "SCIENTIST",
+            "SCREENPLAY",
+            "SCULPTURES",
+            "SEPARATELY",
+            "SETTLEMENT",
+            "SHAREHOLDERS",
+            "SHORTENING",
+            "SIMPLIFIED",
+            "SKILLFULLY",
+            "SMARTPHONE",
+            "SNORKELING",
+            "SOCIALITES",
+            "SPACECRAFT",
+            "SPECIALIST",
+            "SPECIALIST",
+            "SPIRITUALS",
+            "STAGECOACH",
+            "STAINLESS",
+            "STATISTICS",
+            "STEADINESS",
+            "STEREOTYPE",
+            "STOREHOUSE",
+            "STRAWBERRY",
+            "STRENGTHEN",
+            "STRUCTURAL",
+            "STRUGGLING",
+            "SUBSEQUENT",
+            "SUBSTITUTE",
+            "SUBTRACTION",
+            "SUCCESSFUL",
+            "SUFFICIENT",
+            "SUGGESTION",
+            "SUPPLEMENT",
+            "SUPPORTING",
+            "SUPPOSEDLY",
+            "SURPASSING",
+            "SUSPICIOUS",
+            "SUSTAINING",
+            "SWITCHBOARD",
+            "SYSTEMATIC",
+            "TABLESPOON",
+            "TECHNOLOGY",
+            "TELEVISION",
+            "TEMPTATION",
+            "TENDERNESS",
+            "THEMSELVES",
+            "THERAPISTS",
+            "THEREAFTER",
+            "THOROUGHLY",
+            "THREATENED",
+            "THROUGHOUT",
+            "THUMBNAIL",
+            "TIMBERWOLF",
+            "TOLERANCE",
+            "TOURNAMENT",
+            "TRADITIONS",
+            "TRANSITION",
+            "TRANSLATOR",
+            "TRAVELING",
+            "TREMENDOUS",
+            "TRIANGULAR",
+            "TRUCULENCE",
+            "TURBULENCE",
+            "ULTIMATELY",
+            "UNEMPLOYED",
+            "UNEXPECTED",
+            "UNFRIENDLY",
+            "UNFINISHED",
+            "UNIVERSITY",
+            "UNKNOWINGLY",
+            "UNLEASHING",
+            "UNOFFICIAL",
+            "UNVEILING",
+            "UPHOLSTERY",
+            "UPPERCLASS",
+            "USEFULNESS",
+            "VALIDATION",
+            "VEGETATION",
+            "VENTILATOR",
+            "VIEWFINDER",
+            "VOCABULARY",
+            "VULNERABLE",
+            "WASHINGTON",
+            "WATERMELON",
+            "WAVELENGTH",
+            "WEAPONLESS",
+            "WHEELCHAIR",
+            "WILDERNESS",
+            "WITHDRAWAL",
+            "WONDERLAND",
+            "WORKAHOLIC",
+            "WORKPLACE",
+            "YESTERYEAR",
+          ],
+        };
+        // Check if the word exists in the appropriate length list
+        const wordsByLength = commonWordsByLength[word.length];
+        if (wordsByLength && wordsByLength.includes(word.toUpperCase())) {
+          return true;
+        }
+
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3000);
+          const response = await fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${word.toLowerCase()}`,
+            { signal: controller.signal }
+          );
+          clearTimeout(timeoutId);
+          if (response.ok) {
+            const data = await response.json();
+            if (Array.isArray(data) && data.length > 0) {
+              return true;
+            }
+          } else if (response.status === 404) {
+            return false;
+          }
+        } catch (error) {}
+
+        if (word.length < 2 || !/^[A-Z]+$/.test(word)) {
+          return false;
+        }
+
+        return true;
+      }
+
+      function checkWord(guess, rowIndex) {
+        const currentWord = WORDS_DATA[currentWordIndex];
+        const targetWord = currentWord.word;
+        const targetLetters = targetWord.split("");
+        const guessLetters = guess.split("");
+
+        const result = new Array(targetWord.length);
+        const targetLetterCounts = {};
+
+        for (let letter of targetLetters) {
+          targetLetterCounts[letter] = (targetLetterCounts[letter] || 0) + 1;
+        }
+
+        for (let i = 0; i < guessLetters.length; i++) {
+          if (guessLetters[i] === targetLetters[i]) {
+            result[i] = "correct";
+            targetLetterCounts[guessLetters[i]]--;
+            knownLetters[i] = guessLetters[i];
+          }
+        }
+
+        for (let i = 0; i < guessLetters.length; i++) {
+          if (result[i] === "correct") {
+            continue;
+          }
+          const letter = guessLetters[i];
+          if (targetLetterCounts[letter] > 0) {
+            result[i] = "present";
+            targetLetterCounts[letter]--;
+          } else {
+            result[i] = "absent";
+          }
+        }
+
+        for (let i = 0; i < result.length; i++) {
+          const tile = document.getElementById(`tile-${rowIndex}-${i}`);
+          const state = result[i];
+          tile.classList.remove("correct", "present", "absent");
+          tile.classList.add(state);
+          gameState[rowIndex][i] = state;
+        }
+
+        return result;
+      }
+
+      function handleLastWordCompletion() {
+        const lastWordIndex = currentWordIndex;
+        saveCurrentWordState();
+        punctuationAnimated = false;
+
+        const punctuationOverlay = document.getElementById(
+          "punctuation-overlay"
+        );
+        if (punctuationOverlay) {
+          punctuationOverlay.innerHTML = "";
+        }
+
+        currentWordIndex++;
+
+        const currentWordContainer = document.getElementById(
+          "current-word-container"
+        );
+        if (currentWordContainer) {
+          currentWordContainer.style.display = "none";
+        }
+
+        // Hide mobile keyboard
+        toggleMobileKeyboard(false);
+
+        renderCompletedWordsStack();
+        updateUI();
+
+        setTimeout(() => {
+          const completedWordContainer = document.getElementById(
+            `completed-word-${lastWordIndex}`
+          );
+          if (completedWordContainer) {
+            const gridWrapper = completedWordContainer.querySelector(
+              ".completed-grid-wrapper"
+            );
+            if (
+              gridWrapper &&
+              !gridWrapper.classList.contains("drawer-collapsed")
+            ) {
+              toggleWordDrawer(lastWordIndex);
+              setTimeout(() => {
+                revealCompletedWordPunctuation(lastWordIndex);
+              }, 450);
+            }
+          }
+        }, 200);
+
+        setTimeout(() => {
+          showGameComplete();
+        }, 700);
+      }
+
+      function nextWord() {
+        if (currentWordIndex < WORDS_DATA.length - 1) {
+          saveCurrentWordState();
+          const previousWordIndex = currentWordIndex;
+
+          punctuationAnimated = false;
+          const punctuationOverlay = document.getElementById(
+            "punctuation-overlay"
+          );
+          if (punctuationOverlay) {
+            punctuationOverlay.innerHTML = "";
+          }
+
+          currentWordIndex++;
+          setupCurrentWord();
+          updateUI();
+          saveGameProgress();
+
+          setTimeout(() => {
+            const completedWordContainer = document.getElementById(
+              `completed-word-${previousWordIndex}`
+            );
+            if (completedWordContainer) {
+              const gridWrapper = completedWordContainer.querySelector(
+                ".completed-grid-wrapper"
+              );
+              if (
+                gridWrapper &&
+                !gridWrapper.classList.contains("drawer-collapsed")
+              ) {
+                toggleWordDrawer(previousWordIndex);
+                setTimeout(() => {
+                  revealCompletedWordPunctuation(previousWordIndex);
+                }, 450);
+              }
+            }
+          }, 200);
+
+          const currentWordContainer = document.getElementById(
+            "current-word-container"
+          );
+          if (currentWordContainer) {
+            currentWordContainer.classList.add("fade-in");
+            setTimeout(() => {
+              currentWordContainer.classList.remove("fade-in");
+            }, 500);
+          }
+        }
+      }
+
+      function updateUI() {}
+
+      function showGameComplete() {
+        isGameComplete = true;
+
+        if (cooldownTimer) {
+          clearInterval(cooldownTimer);
+          cooldownTimer = null;
+        }
+        cooldownActive = false;
+
+        const completionRate = Math.round(
+          (gameStats.wordsCompleted / WORDS_DATA.length) * 100
+        );
+        const avgGuesses =
+          gameStats.totalGuesses / Math.max(gameStats.wordsCompleted, 1);
+        const accuracy = Math.round(
+          (gameStats.wordsCompleted /
+            (gameStats.wordsCompleted + gameStats.wordsFailed)) *
+            100
+        );
+
+        // Start shaking the 's' and make it clickable
+        startTitleShaking();
+
+        localStorage.setItem("wordle_completed", "true");
+        showCongratulationsPopup(completionRate, avgGuesses, accuracy);
+        // Save the completed game state so it persists on refresh
+        saveGameProgress();
+      }
+
+      function startTitleShaking() {
+        const titleS = document.getElementById("title-s");
+        if (titleS && hasCompletedFirstWord) {
+          titleS.classList.add("shaking");
+
+          // Add click/tap event listener for navigation
+          const handleNavigation = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            // Add a brief color change feedback
+            titleS.style.color = "var(--color-correct)";
+            setTimeout(() => {
+              titleS.style.color = "";
+              if (NEXT_PUZZLES_ENABLED) {
+                window.location.href = "connect1ons.html";
+              } else {
+                showEarlyAccessPopup();
+              }
+            }, 150);
+          };
+
+          // Remove any existing listeners first
+          titleS.removeEventListener("click", handleNavigation);
+          titleS.removeEventListener("touchend", handleNavigation);
+
+          // Add both click and touch events for cross-platform compatibility
+          titleS.addEventListener("click", handleNavigation);
+          titleS.addEventListener("touchend", handleNavigation);
+        }
+      }
+
+      function saveGameProgress() {
+        saveCurrentWordState();
+        const gameProgressState = {
+          currentWordIndex,
+          currentGuessIndex,
+          gameGrid,
+          gameState,
+          allWordsData,
+          gameStats,
+          usedGuesses: Array.from(usedGuesses),
+          knownLetters,
+          isWordComplete,
+          isWordFailed,
+          isGameComplete,
+          cooldownActive,
+          cooldownEndTime,
+          expandedWords: Array.from(expandedWords),
+          collapsedWords: Array.from(collapsedWords),
+          revealedPunctuation: Array.from(revealedPunctuation),
+          hasCompletedFirstWord,
+          timestamp: Date.now(),
+        };
+        localStorage.setItem(
+          "wordleGameState",
+          JSON.stringify(gameProgressState)
+        );
+      }
+
+      function loadGameProgress() {
+        const saved = localStorage.getItem("wordleGameState");
+        if (saved) {
+          try {
+            const savedState = JSON.parse(saved);
+            if (Date.now() - savedState.timestamp < 24 * 60 * 60 * 1000) {
+              currentWordIndex = savedState.currentWordIndex || 0;
+              currentGuessIndex = savedState.currentGuessIndex || 0;
+              gameGrid = savedState.gameGrid || [];
+              gameState = savedState.gameState || [];
+              allWordsData = savedState.allWordsData || [];
+              gameStats = savedState.gameStats || gameStats;
+              usedGuesses = new Set(savedState.usedGuesses || []);
+              knownLetters = savedState.knownLetters || {};
+              isWordComplete = savedState.isWordComplete || false;
+              isWordFailed = savedState.isWordFailed || false;
+              isGameComplete = savedState.isGameComplete || false;
+              cooldownActive = savedState.cooldownActive || false;
+              cooldownEndTime = savedState.cooldownEndTime || 0;
+              expandedWords = new Set(savedState.expandedWords || []);
+              collapsedWords = new Set(savedState.collapsedWords || []);
+              revealedPunctuation = new Set(
+                savedState.revealedPunctuation || []
+              );
+              hasCompletedFirstWord = savedState.hasCompletedFirstWord || false;
+
+              // Apply visual state for title "s" if first word was completed
+              if (hasCompletedFirstWord) {
+                const titleS = document.getElementById("title-s");
+                if (titleS) {
+                  titleS.classList.add("show");
+                }
+              }
+
+              if (allWordsData.length === 0) {
+                for (let i = 0; i < WORDS_DATA.length; i++) {
+                  allWordsData[i] = {
+                    gameGrid: [],
+                    gameState: [],
+                    usedGuesses: [],
+                    knownLetters: {},
+                    isComplete: false,
+                    guessCount: 0,
+                  };
+                }
+              }
+
+              if (cooldownActive && cooldownEndTime > Date.now()) {
+                renderGrid();
+                updateCooldownDisplay();
+                cooldownTimer = setInterval(() => {
+                  updateCooldownDisplay();
+                  if (Date.now() >= cooldownEndTime) {
+                    endCooldown();
+                  }
+                }, 1000);
+              } else if (cooldownActive) {
+                endCooldown();
+              }
+            } else {
+              localStorage.removeItem("wordleGameState");
+            }
+          } catch (error) {
+            console.error("Error loading game progress:", error);
+            localStorage.removeItem("wordleGameState");
+          }
+        }
+      }
+
+      // Physical keyboard handling
+      document.addEventListener("keydown", function (event) {
+        if (event.ctrlKey || event.metaKey || event.altKey) {
+          return;
+        }
+
+        if (isWordComplete || isWordFailed || cooldownActive) {
+          return;
+        }
+
+        const isLetter = /^[a-zA-Z]$/.test(event.key);
+
+        if (event.key === "Enter") {
+          event.preventDefault();
+          makeGuess();
+        } else if (event.key === "Backspace" || event.key === "Delete") {
+          event.preventDefault();
+          deleteLetter();
+        } else if (isLetter) {
+          event.preventDefault();
+          addLetter(event.key.toUpperCase());
+        }
+      });
+
+      function delay(ms) {
+        return new Promise((resolve) => setTimeout(resolve, ms));
+      }
+
+      async function animateFlipTiles(rowIndex, results) {
+        if (!results || !Array.isArray(results)) {
+          console.error("Invalid results passed to animateFlipTiles:", results);
+          isAnimating = false;
+          return;
+        }
+        isAnimating = true;
+        const currentWord = WORDS_DATA[currentWordIndex];
+
+        const rootStyles = getComputedStyle(document.documentElement);
+        const flipDurationStr = rootStyles
+          .getPropertyValue("--animation-flip-duration")
+          .trim();
+        const flipDelayStr = rootStyles
+          .getPropertyValue("--animation-flip-delay")
+          .trim();
+
+        const flipDuration =
+          parseFloat(flipDurationStr) *
+          (flipDurationStr.includes("ms") ? 1 : 1000);
+        const flipDelay =
+          parseFloat(flipDelayStr) * (flipDelayStr.includes("ms") ? 1 : 1000);
+        const halfFlip = flipDuration / 2;
+
+        const tilesToFlip = [];
+        for (let i = 0; i < currentWord.length; i++) {
+          const tile = document.getElementById(`tile-${rowIndex}-${i}`);
+          if (tile) {
+            tilesToFlip.push({ tile: tile, index: i, state: results[i] });
+          }
+        }
+
+        tilesToFlip.forEach((tileData) => {
+          const tile = tileData.tile;
+          tile.classList.remove("flipping", "correct", "present", "absent");
+        });
+
+        await new Promise((resolve) => setTimeout(resolve, 30));
+
+        const animationPromises = tilesToFlip.map((tileData) => {
+          const tile = tileData.tile;
+          const index = tileData.index;
+          const state = tileData.state;
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              requestAnimationFrame(() => {
+                tile.style.willChange = "transform";
+                tile.classList.add("flipping");
+
+                setTimeout(() => {
+                  tile.classList.add(state);
+                  gameState[rowIndex][index] = state;
+                }, flipDuration / 2);
+
+                setTimeout(() => {
+                  tile.classList.remove("flipping");
+                  tile.style.willChange = "auto";
+                  resolve();
+                }, flipDuration);
+              });
+            }, index * flipDelay);
+          });
+        });
+
+        await Promise.all(animationPromises);
+        isAnimating = false;
+      }
+
+      function animateInvalidWord(rowIndex) {
+        if (
+          currentWordIndex >= WORDS_DATA.length ||
+          !WORDS_DATA[currentWordIndex]
+        ) {
+          return;
+        }
+        const currentWord = WORDS_DATA[currentWordIndex];
+        for (let i = 0; i < currentWord.length; i++) {
+          const tile = document.getElementById(`tile-${rowIndex}-${i}`);
+          if (tile) tile.classList.add("shake");
+        }
+        setTimeout(() => {
+          for (let i = 0; i < currentWord.length; i++) {
+            const tile = document.getElementById(`tile-${rowIndex}-${i}`);
+            if (tile) tile.classList.remove("shake");
+          }
+        }, 500);
+      }
+
+      function animateTitleChange() {
+        if (!hasCompletedFirstWord) {
+          hasCompletedFirstWord = true;
+          const titleS = document.getElementById("title-s");
+          if (titleS) {
+            setTimeout(() => titleS.classList.add("show"), 500);
+          } else {
+            console.error('Element with id "title-s" not found');
+          }
+        }
+      }
+
+      async function animateGridTransition() {
+        isAnimating = true;
+        isAnimating = false;
+      }
+
+      async function animateGridClear() {
+        isAnimating = true;
+        const currentWord = WORDS_DATA[currentWordIndex];
+        const wordLength = currentWord.length;
+        const maxGuesses = currentWord.guesses;
+
+        const tilesToClear = [];
+        for (let row = 0; row < maxGuesses; row++) {
+          for (let col = 0; col < wordLength; col++) {
+            const tile = document.getElementById(`tile-${row}-${col}`);
+            if (tile && tile.textContent.trim() !== "") {
+              tilesToClear.push(tile);
+            }
+          }
+        }
+
+        if (tilesToClear.length === 0) {
+          isAnimating = false;
+          return;
+        }
+
+        const rootStyles = getComputedStyle(document.documentElement);
+        const flipDurationStr = rootStyles
+          .getPropertyValue("--animation-flip-duration")
+          .trim();
+        const flipDuration =
+          parseFloat(flipDurationStr) *
+          (flipDurationStr.includes("ms") ? 1 : 1000);
+
+        const flipDelayStr = rootStyles
+          .getPropertyValue("--animation-flip-delay")
+          .trim();
+        const flipDelay =
+          parseFloat(flipDelayStr) * (flipDelayStr.includes("ms") ? 1 : 1000);
+
+        const clearPromises = [];
+        for (let row = 0; row < maxGuesses; row++) {
+          for (let col = 0; col < wordLength; col++) {
+            const tile = document.getElementById(`tile-${row}-${col}`);
+            if (tile && tile.textContent.trim() !== "") {
+              const staggerIndex = row * wordLength + col;
+              const delay = staggerIndex * flipDelay;
+
+              const promise = new Promise((resolve) => {
+                setTimeout(() => {
+                  tile.style.willChange = "transform";
+                  tile.classList.add("flipping");
+
+                  setTimeout(() => {
+                    tile.textContent = "";
+                    tile.classList.remove(
+                      "correct",
+                      "present",
+                      "absent",
+                      "filled"
+                    );
+                  }, flipDuration / 2);
+
+                  setTimeout(() => {
+                    tile.classList.remove("flipping");
+                    tile.style.willChange = "auto";
+                    resolve();
+                  }, flipDuration);
+                }, delay);
+              });
+
+              clearPromises.push(promise);
+            }
+          }
+        }
+
+        await Promise.all(clearPromises);
+        isAnimating = false;
+      }
+
+      function cleanupAnimations() {
+        const allTiles = document.querySelectorAll(".tile, .completed-tile");
+        allTiles.forEach((tile) => {
+          tile.style.willChange = "auto";
+          tile.style.animation = "";
+          tile.style.animationDelay = "";
+        });
+
+        const containers = document.querySelectorAll(
+          ".current-word-container, .completed-words-stack"
+        );
+        containers.forEach((container) => {
+          container.style.willChange = "auto";
+        });
+
+        isAnimating = false;
+      }
+
+      function cleanupAllAnimationStyles() {
+        const allTiles = document.querySelectorAll(".tile, .completed-tile");
+        allTiles.forEach((tile) => {
+          tile.style.willChange = "auto";
+          tile.style.animation = "";
+          tile.style.animationDelay = "";
+          tile.style.zIndex = "";
+          tile.style.transform = "";
+          tile.style.opacity = "";
+          tile.style.transition = "";
+        });
+
+        const containers = document.querySelectorAll(
+          ".current-word-container, .completed-words-stack, .word-attempts"
+        );
+        containers.forEach((container) => {
+          container.style.willChange = "auto";
+          container.style.transform = "";
+          container.style.opacity = "";
+        });
+      }
+
+      window.addEventListener("beforeunload", cleanupAnimations);
+
+      function showContinueGamePopup() {
+        const popup = document.getElementById("continue-game-popup");
+        popup.classList.remove("hidden");
+
+        document.getElementById("continue-game-btn").onclick = function () {
+          popup.classList.add("hidden");
+          loadGameProgress();
+          setupCurrentWord();
+          updateUI();
+          toggleMobileKeyboard(true);
+        };
+
+        document.getElementById("new-game-btn").onclick = function () {
+          popup.classList.add("hidden");
+          localStorage.removeItem("wordleGameState");
+          initGame();
+        };
+      }
+
+      function showCongratulationsPopup(completionRate, avgGuesses, accuracy) {
+        const popup = document.getElementById("congratulations-popup");
+        const messageEl = document.getElementById("congratulations-message");
+        const statsEl = document.getElementById("stats-display");
+        const starRatingEl = document.getElementById("star-rating");
+        const ratingTextEl = document.getElementById("rating-text");
+
+        const scorePercentage =
+          (gameStats.totalScore / gameStats.maxPossibleScore) * 100;
+        let stars = 0;
+        let ratingText = "";
+
+        if (scorePercentage >= 85) {
+          stars = 3;
+          ratingText = "Exceptional Performance!";
+        } else if (scorePercentage >= 65) {
+          stars = 2;
+          ratingText = "Great Performance!";
+        } else if (scorePercentage >= 40) {
+          stars = 1;
+          ratingText = "Good Effort!";
+        } else {
+          stars = 0;
+          ratingText = "Keep Practicing!";
+        }
+
+        const starElements = starRatingEl.querySelectorAll(".star");
+        starElements.forEach((star, index) => {
+          if (index < stars) {
+            star.classList.add("filled");
+          } else {
+            star.classList.remove("filled");
+          }
+        });
+
+        ratingTextEl.textContent = ratingText;
+
+        let message = "";
+        if (accuracy === 100) {
+          if (gameStats.perfectWords === WORDS_DATA.length) {
+            message = "Perfect game! You solved every word on the first try!";
+          } else if (avgGuesses <= 2) {
+            message = "Holy shit! You got so many of them right! Suspicous...";
+          } else {
+            message = "You got 'em all! Amaaazing!";
+          }
+        } else if (accuracy >= 80) {
+          message = "Great job! You're a rising wordle-er!";
+        } else if (accuracy >= 60) {
+          message = "Nicee! You solved the words! (Most of them)";
+        } else {
+          message = "Maybe you would like to play again!";
+        }
+
+        const statsHTML = `
+          <strong>Game Statistics</strong>
+          <div class="stats-grid">
+            <div class="stats-label">Words Completed:</div>
+            <div class="stats-value">${gameStats.wordsCompleted}/${
+          WORDS_DATA.length
+        }</div>
+            <div class="stats-label">Accuracy:</div>
+            <div class="stats-value">${accuracy}%</div>
+            <div class="stats-label">Average Guesses:</div>
+            <div class="stats-value">${avgGuesses.toFixed(1)}</div>
+            <div class="stats-label">Score:</div>
+            <div class="stats-value">${gameStats.totalScore}/${
+          gameStats.maxPossibleScore
+        }</div>
+            <div class="stats-label">Perfect Words:</div>
+            <div class="stats-value">${gameStats.perfectWords}</div>
+          </div>
+        `;
+
+        messageEl.innerHTML = message;
+        statsEl.innerHTML = statsHTML;
+
+        popup.classList.remove("hidden");
+
+        document.getElementById("play-again-btn").onclick = function () {
+          popup.classList.add("hidden");
+          // Clear saved game state when explicitly choosing to play again
+          localStorage.removeItem("wordleGameState");
+          location.reload();
+        };
+
+        document.getElementById("close-popup-btn").onclick = function () {
+          popup.classList.add("hidden");
+        };
+
+        popup.onclick = function (e) {
+          if (e.target === popup) {
+            popup.classList.add("hidden");
+          }
+        };
+      }
+
+      function showToast(message) {
+        const toast = document.getElementById("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+
+        setTimeout(() => {
+          toast.classList.remove("show");
+        }, 2000);
+      }
+
+      // Show early access popup
+      function showEarlyAccessPopup() {
+        const popup = document.getElementById("early-access-popup");
+        popup.classList.add("show");
+      }
+
+      // Close early access popup
+      function closeEarlyAccessPopup() {
+        const popup = document.getElementById("early-access-popup");
+        popup.classList.remove("show");
+      }
+    </script>
+
+    <!-- Early Access Popup -->
+    <div class="early-access-popup" id="early-access-popup">
+      <div class="early-access-content">
+        <div class="early-access-title">Word Master!</div>
+        <div class="early-access-message">
+          Incredible! You've conquered every word puzzle!<br /><br />
+          You've reached the edge of what exists for now.<br /><br />
+          <em style="color: #999">The dictionary is still being written...</em>
+        </div>
+        <button class="early-access-close" onclick="closeEarlyAccessPopup()">
+          Roger that
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
