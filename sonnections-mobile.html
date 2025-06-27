@@ -895,7 +895,7 @@
         };
 
         // Flag to control next puzzle access
-        const NEXT_PUZZLES_ENABLED = false;
+        const NEXT_PUZZLES_ENABLED = true;
         
         // Cooldown duration in milliseconds
         const COOLDOWN_DURATION = 3600000; // 1 hour (3600000ms)
@@ -1741,8 +1741,8 @@
                         if (!NEXT_PUZZLES_ENABLED) {
                             showEarlyAccessPopup();
                         } else {
-                            // Navigate to sinnections-mobile.html when enabled
-                            const link = 'sinnections-mobile.html';
+                            // Navigate to wordle.html when enabled
+                            const link = 'wordle.html';
                             window.open(link, '_blank');
                         }
                     });
