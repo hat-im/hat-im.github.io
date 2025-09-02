@@ -1172,28 +1172,22 @@
 
       // Game data embedded from Python
       const WORDS_DATA = [
+        { word: "MORE", punctuation: "", length: 4, guesses: 8, max_score: 90 },
         {
-          word: "ANGRY",
+          word: "PUZZLES",
           punctuation: "",
+          length: 7,
+          guesses: 5,
+          max_score: 100,
+        },
+        {
+          word: "AHEAD",
+          punctuation: "!",
           length: 5,
           guesses: 6,
           max_score: 100,
         },
-        {
-          word: "FIRST",
-          punctuation: "",
-          length: 5,
-          guesses: 6,
-          max_score: 100,
-        },
-        {
-          word: "WORD",
-          punctuation: ",",
-          length: 4,
-          guesses: 8,
-          max_score: 90,
-        },
-        { word: "NOW", punctuation: "", length: 3, guesses: 10, max_score: 90 },
+        { word: "HOPE", punctuation: "", length: 4, guesses: 8, max_score: 90 },
         {
           word: "DESIGN",
           punctuation: "",
@@ -1203,17 +1197,15 @@
         },
         {
           word: "RETREAT",
-          punctuation: ".",
+          punctuation: "",
           length: 7,
           guesses: 5,
           max_score: 100,
         },
-        { word: "HOPE", punctuation: "", length: 4, guesses: 8, max_score: 90 },
-        { word: "YOU", punctuation: "", length: 3, guesses: 10, max_score: 90 },
-        { word: "ARE", punctuation: "", length: 3, guesses: 10, max_score: 90 },
+        { word: "GOES", punctuation: "", length: 4, guesses: 8, max_score: 90 },
         {
-          word: "OKAY",
-          punctuation: ".",
+          word: "WELL",
+          punctuation: "!",
           length: 4,
           guesses: 8,
           max_score: 90,
@@ -6704,7 +6696,7 @@
             setTimeout(() => {
               titleS.style.color = "";
               if (NEXT_PUZZLES_ENABLED) {
-                window.location.href = "connect1ons.html";
+                window.location.href = "number_bee.html";
               } else {
                 showEarlyAccessPopup();
               }
