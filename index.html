@@ -44,9 +44,14 @@
       let canvas = document.getElementById("canvas");
       let ctx = canvas.getContext("2d");
 
-      let cols, rows, grid = [], startTime = 0, lastFrame = 0;
+      let cols,
+        rows,
+        grid = [],
+        startTime = 0,
+        lastFrame = 0;
       let charWidth, charHeight;
-      let mouseX = -1000, mouseY = -1000;
+      let mouseX = -1000,
+        mouseY = -1000;
       let darkMode = false;
 
       function checkDarkMode() {
