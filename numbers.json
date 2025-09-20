@@ -1,0 +1,794 @@
+[
+  {
+    "number": "0",
+    "fact": "The lowest you can go (right?)"
+  },
+  {
+    "number": "1",
+    "fact": "The first number (?)"
+  },
+  {
+    "number": "2",
+    "fact": "An even prime? Showoff"
+  },
+  {
+    "number": "3",
+    "fact": "Good but imagine 7 times"
+  },
+  {
+    "number": "4",
+    "fact": "The first basic number"
+  },
+  {
+    "number": "5",
+    "fact": "High-five!"
+  },
+  {
+    "number": "6",
+    "fact": "Honeycomb"
+  },
+  {
+    "number": "7",
+    "fact": "I like this number"
+  },
+  {
+    "number": "10",
+    "fact": "October"
+  },
+  {
+    "number": "11",
+    "fact": "They're repeating themselves now"
+  },
+  {
+    "number": "12",
+    "fact": "Worth a dime"
+  },
+  {
+    "number": "17",
+    "fact": "Honestly I have nothing good to say about this one."
+  },
+  {
+    "number": "18",
+    "fact": "A good number in January"
+  },
+  {
+    "number": "21",
+    "fact": "The best number."
+  },
+  {
+    "number": "31",
+    "fact": "Of October?"
+  },
+  {
+    "number": "300",
+    "fact": "THIS IS SPARTA"
+  },
+  {
+    "number": "3110",
+    "fact": "When it started"
+  },
+  {
+    "number": "28169",
+    "fact": "The other half"
+  },
+  {
+    "number": "80744",
+    "fact": "Half of yours"
+  },
+  {
+    "number": "7442169",
+    "fact": "Your number without 8"
+  },
+  {
+    "number": "31102023",
+    "fact": "<3"
+  },
+  {
+    "number": "80728169",
+    "fact": "Two digits down and 4 what?"
+  },
+  {
+    "number": "804428169",
+    "fact": "I've got a 7 to spare"
+  },
+  {
+    "number": "807442816",
+    "fact": "No worries"
+  },
+  {
+    "number": "807442819",
+    "fact": "It's okay the 9 can flip into a 6"
+  },
+  {
+    "number": "807442869",
+    "fact": "Without the 1"
+  },
+  {
+    "number": "807448169",
+    "fact": "One way 2 get your phone number here"
+  },
+  {
+    "number": "874428169",
+    "fact": "Your number still adding up alright"
+  },
+  {
+    "number": "8971310948",
+    "fact": "Call me maybe"
+  },
+  {
+    "number": "8",
+    "fact": "Infinity took a nap"
+  },
+  {
+    "number": "9",
+    "fact": "Six went to yoga class"
+  },
+  {
+    "number": "13",
+    "fact": "Unlucky? I think knot!"
+  },
+  {
+    "number": "14",
+    "fact": "Two weeks in days... romantic!"
+  },
+  {
+    "number": "15",
+    "fact": "Fame comes in minutes"
+  },
+  {
+    "number": "16",
+    "fact": "Sweet and square"
+  },
+  {
+    "number": "19",
+    "fact": "Last teen standing"
+  },
+  {
+    "number": "20",
+    "fact": "Perfect vision... or hindsight?"
+  },
+  {
+    "number": "22",
+    "fact": "Catch-22: you're stuck with this number"
+  },
+  {
+    "number": "23",
+    "fact": "Michael Jordan's legacy"
+  },
+  {
+    "number": "24",
+    "fact": "Hours well spent"
+  },
+  {
+    "number": "25",
+    "fact": "Quarter century mark!"
+  },
+  {
+    "number": "26",
+    "fact": "Alphabet soup complete"
+  },
+  {
+    "number": "27",
+    "fact": "Cube root of perfection"
+  },
+  {
+    "number": "28",
+    "fact": "February's got you covered (sometimes)"
+  },
+  {
+    "number": "30",
+    "fact": "The new 20... allegedly"
+  },
+  {
+    "number": "32",
+    "fact": "Freezing point of... not caring"
+  },
+  {
+    "number": "33",
+    "fact": "Rolling Jesus"
+  },
+  {
+    "number": "34",
+    "fact": "Rule 34... never mind"
+  },
+  {
+    "number": "37",
+    "fact": "Normal body temperature, cool number"
+  },
+  {
+    "number": "40",
+    "fact": "Life begins here... or so they say"
+  },
+  {
+    "number": "42",
+    "fact": "The answer to everything"
+  },
+  {
+    "number": "50",
+    "fact": "Half a century... halfway there!"
+  },
+  {
+    "number": "60",
+    "fact": "Seconds in a minute, minutes in an hour... time flies!"
+  },
+  {
+    "number": "64",
+    "fact": "Chess squares, Nintendo bits"
+  },
+  {
+    "number": "69",
+    "fact": "Nice."
+  },
+  {
+    "number": "73",
+    "fact": "Sheldon's favorite prime"
+  },
+  {
+    "number": "77",
+    "fact": "Lucky sevens... double or nothing!"
+  },
+  {
+    "number": "80",
+    "fact": "Around the world in... no, that's different"
+  },
+  {
+    "number": "88",
+    "fact": "Piano keys or time travel speed"
+  },
+  {
+    "number": "90",
+    "fact": "Right angle to perfection"
+  },
+  {
+    "number": "99",
+    "fact": "Problems? I got 99... but this ain't one"
+  },
+  {
+    "number": "100",
+    "fact": "Century! Perfect score! Absolute unit!"
+  },
+  {
+    "number": "101",
+    "fact": "Dalmatians or basic course number"
+  },
+  {
+    "number": "111",
+    "fact": "Make a wish at 11:11!"
+  },
+  {
+    "number": "123",
+    "fact": "Easy as ABC... but with numbers"
+  },
+  {
+    "number": "144",
+    "fact": "A gross dozen"
+  },
+  {
+    "number": "180",
+    "fact": "Total u-turn degrees"
+  },
+  {
+    "number": "200",
+    "fact": "Double century, double trouble"
+  },
+  {
+    "number": "212",
+    "fact": "Water's boiling point (in freedom units)"
+  },
+  {
+    "number": "222",
+    "fact": "Deuces wild!"
+  },
+  {
+    "number": "256",
+    "fact": "2^8... computer nerds rejoice!"
+  },
+  {
+    "number": "360",
+    "fact": "Full circle, no scope needed"
+  },
+  {
+    "number": "404",
+    "fact": "Fact not found"
+  },
+  {
+    "number": "420",
+    "fact": "Blaze it... or don't, I'm not your mom"
+  },
+  {
+    "number": "451",
+    "fact": "Fahrenheit... the temperature books burn"
+  },
+  {
+    "number": "500",
+    "fact": "Internal server error... wait, wrong number"
+  },
+  {
+    "number": "666",
+    "fact": "The number of the... beast mode!"
+  },
+  {
+    "number": "777",
+    "fact": "Jackpot! Lucky lucky lucky!"
+  },
+  {
+    "number": "911",
+    "fact": "Emergency! This number needs help!"
+  },
+  {
+    "number": "1000",
+    "fact": "K... that's a lot of anything"
+  },
+  {
+    "number": "1024",
+    "fact": "True kilobyte (sorry marketing department)"
+  },
+  {
+    "number": "1337",
+    "fact": "L33t sp34k at its finest"
+  },
+  {
+    "number": "1701",
+    "fact": "Enterprise's registry... engage!"
+  },
+  {
+    "number": "1984",
+    "fact": "Big Brother is watching... your number choices"
+  },
+  {
+    "number": "2001",
+    "fact": "Space Odyssey year... HAL approves"
+  },
+  {
+    "number": "2012",
+    "fact": "The world didn't end... plot twist!"
+  },
+  {
+    "number": "3141",
+    "fact": "Pi's getting irrational again"
+  },
+  {
+    "number": "5280",
+    "fact": "Feet in a mile... why not 5000? Nobody knows"
+  },
+  {
+    "number": "8675309",
+    "fact": "Jenny's number... but don't call it"
+  },
+  {
+    "number": "1234567890",
+    "fact": "Counting has never been so satisfying"
+  },
+  {
+    "number": "234",
+    "fact": "Missing the 1"
+  },
+  {
+    "number": "345",
+    "fact": "Three-four-five... the middle children"
+  },
+  {
+    "number": "456",
+    "fact": "Four-five-six... pick up sticks!"
+  },
+  {
+    "number": "567",
+    "fact": "Five-six-seven... almost heaven"
+  },
+  {
+    "number": "678",
+    "fact": "Not be late!"
+  },
+  {
+    "number": "789",
+    "fact": "Seven did what?"
+  },
+  {
+    "number": "890",
+    "fact": "The grand finale"
+  },
+  {
+    "number": "1234",
+    "fact": "One-two-three-four... who could ask for more?"
+  },
+  {
+    "number": "2345",
+    "fact": "Climbing the ladder... step by step"
+  },
+  {
+    "number": "3456",
+    "fact": "Consecutive perfection... no skips allowed"
+  },
+  {
+    "number": "4567",
+    "fact": "Four-through-seven... numerical heaven"
+  },
+  {
+    "number": "5678",
+    "fact": "Five-six-seven-eight... now syncopate!"
+  },
+  {
+    "number": "6789",
+    "fact": "Six to nine... everything's fine"
+  },
+  {
+    "number": "7890",
+    "fact": "Lucky seven leads to zero... hero to zero!"
+  },
+  {
+    "number": "12345",
+    "fact": "One-two-three-four-five... keeping the dream alive"
+  },
+  {
+    "number": "23456",
+    "fact": "Missing the one... but still having fun"
+  },
+  {
+    "number": "34567",
+    "fact": "Three through seven... numerical heaven"
+  },
+  {
+    "number": "45678",
+    "fact": "Four-five-six-seven-eight... don't hesitate!"
+  },
+  {
+    "number": "56789",
+    "fact": "Five through nine... looking mighty fine"
+  },
+  {
+    "number": "67890",
+    "fact": "Six-seven-eight-nine-zero... numerical hero"
+  },
+  {
+    "number": "123456",
+    "fact": "Half the digits... twice the fun"
+  },
+  {
+    "number": "234567",
+    "fact": "Two through seven... counting heaven"
+  },
+  {
+    "number": "345678",
+    "fact": "Three through eight... absolutely great"
+  },
+  {
+    "number": "456789",
+    "fact": "Four through nine... simply divine"
+  },
+  {
+    "number": "567890",
+    "fact": "Five through zero... numerical hero"
+  },
+  {
+    "number": "1234567",
+    "fact": "Lucky seven digits... heaven's exhibit"
+  },
+  {
+    "number": "2345678",
+    "fact": "Two through eight... first rate!"
+  },
+  {
+    "number": "3456789",
+    "fact": "Three through nine... everything's fine"
+  },
+  {
+    "number": "4567890",
+    "fact": "Four through zero... what a hero!"
+  },
+  {
+    "number": "12345678",
+    "fact": "Eight in a row... steal the show"
+  },
+  {
+    "number": "23456789",
+    "fact": "Two through nine... looking mighty fine"
+  },
+  {
+    "number": "34567890",
+    "fact": "Three through zero... numerical hero"
+  },
+  {
+    "number": "123456789",
+    "fact": "Nine digits strong"
+  },
+  {
+    "number": "135",
+    "fact": "Odd ones out... no doubt!"
+  },
+  {
+    "number": "1357",
+    "fact": "Odds only... quite lonely"
+  },
+  {
+    "number": "13579",
+    "fact": "Against all odds"
+  },
+  {
+    "number": "246",
+    "fact": "Even trio... here we go!"
+  },
+  {
+    "number": "2468",
+    "fact": "All evens... counting heavens"
+  },
+  {
+    "number": "24680",
+    "fact": "Even sans nothing"
+  },
+  {
+    "number": "1357924680",
+    "fact": "Odds first, evens last"
+  },
+  {
+    "number": "987654321",
+    "fact": "Countdown complete... mission delete"
+  },
+  {
+    "number": "9876543210",
+    "fact": "Reverse psychology... counting apology"
+  },
+  {
+    "number": "1729",
+    "fact": "Hardy-Ramanujan number: 1³+12³ = 9³+10³"
+  },
+  {
+    "number": "153",
+    "fact": "Narcissistic: 1³+5³+3³ = 153"
+  },
+  {
+    "number": "6174",
+    "fact": "Kaprekar's constant for 4-digit numbers"
+  },
+  {
+    "number": "8128",
+    "fact": "Fourth perfect number"
+  },
+  {
+    "number": "142857",
+    "fact": "Cyclic number from 1/7"
+  },
+  {
+    "number": "496",
+    "fact": "Third perfect number"
+  },
+  {
+    "number": "220",
+    "fact": "Amicable with 284"
+  },
+  {
+    "number": "284",
+    "fact": "Amicable with 220"
+  },
+  {
+    "number": "127",
+    "fact": "Mersenne prime: 2⁷-1"
+  },
+  {
+    "number": "9801",
+    "fact": "Kaprekar: 98+01=99, 99²=9801"
+  },
+  {
+    "number": "371",
+    "fact": "Narcissistic: 3³+7³+1³ = 371"
+  },
+  {
+    "number": "407",
+    "fact": "Narcissistic: 4³+0³+7³ = 407"
+  },
+  {
+    "number": "2520",
+    "fact": "Smallest divisible by 1-10"
+  },
+  {
+    "number": "196884",
+    "fact": "Monstrous moonshine coefficient"
+  },
+  {
+    "number": "1001",
+    "fact": "7×11×13, useful for divisibility"
+  },
+  {
+    "number": "31415926",
+    "fact": "First 8 digits of π"
+  },
+  {
+    "number": "271828",
+    "fact": "First 6 digits of e"
+  },
+  {
+    "number": "161803",
+    "fact": "First 6 digits of φ (golden ratio)"
+  },
+  {
+    "number": "1618",
+    "fact": "Golden ratio × 1000, appears in nature"
+  },
+  {
+    "number": "577",
+    "fact": "Fibonacci prime: F₁₀"
+  },
+  {
+    "number": "1597",
+    "fact": "Fibonacci prime: F₁₇"
+  },
+  {
+    "number": "65537",
+    "fact": "Fermat prime: 2^(2^4) + 1"
+  },
+  {
+    "number": "257",
+    "fact": "Fermat prime: 2^(2^3) + 1"
+  },
+  {
+    "number": "2147483647",
+    "fact": "Largest 32-bit signed integer"
+  },
+  {
+    "number": "4294967295",
+    "fact": "Largest 32-bit unsigned integer"
+  },
+  {
+    "number": "9007199254740991",
+    "fact": "Largest safe JavaScript integer"
+  },
+  {
+    "number": "4398046511103",
+    "fact": "13th Fibonacci number"
+  },
+  {
+    "number": "97",
+    "fact": "Largest 2-digit prime"
+  },
+  {
+    "number": "131",
+    "fact": "Palindromic prime, reads same backwards"
+  },
+  {
+    "number": "1234321",
+    "fact": "11111² - perfect palindromic square"
+  },
+  {
+    "number": "12321",
+    "fact": "111² - palindromic square"
+  },
+  {
+    "number": "1331",
+    "fact": "11³ - palindromic cube"
+  },
+  {
+    "number": "78557",
+    "fact": "Smallest palindromic prime with 5 digits"
+  },
+  {
+    "number": "181",
+    "fact": "Palindromic prime"
+  },
+  {
+    "number": "6561",
+    "fact": "3⁸ = 81² = 9⁴ (multiple perfect powers)"
+  },
+  {
+    "number": "729",
+    "fact": "3⁶ = 9³ = 27² (triple perfect power)"
+  },
+  {
+    "number": "262144",
+    "fact": "2¹⁸ = 4⁹ = 8⁶ = 16⁴.⁵... wait"
+  },
+  {
+    "number": "1000000",
+    "fact": "10⁶ = 100³ = 1000² (million)"
+  },
+  {
+    "number": "169",
+    "fact": "13² and sum of first 13 integers"
+  },
+  {
+    "number": "561",
+    "fact": "Smallest Carmichael number (composite pseudoprime)"
+  },
+  {
+    "number": "1105",
+    "fact": "Second Carmichael number: 5×13×17"
+  },
+  {
+    "number": "6765",
+    "fact": "20th Fibonacci number"
+  },
+  {
+    "number": "2584",
+    "fact": "18th Fibonacci number"
+  },
+  {
+    "number": "610",
+    "fact": "15th Fibonacci number"
+  },
+  {
+    "number": "377",
+    "fact": "14th Fibonacci number"
+  },
+  {
+    "number": "89",
+    "fact": "11th Fibonacci number, also prime"
+  },
+  {
+    "number": "55",
+    "fact": "10th Fibonacci number"
+  },
+  {
+    "number": "8074428169",
+    "fact": "Your phone number!"
+  },
+  {
+    "number": "47",
+    "fact": "Not a fan of this one"
+  },
+  {
+    "number": "83",
+    "fact": "Oh great, another prime. Exciting."
+  },
+  {
+    "number": "256",
+    "fact": "Power of 2. Thrilling."
+  },
+  {
+    "number": "194",
+    "fact": "Pretty ordinary, honestly"
+  },
+  {
+    "number": "621",
+    "fact": "This number gives me bad vibes"
+  },
+  {
+    "number": "78",
+    "fact": "Forgettable. Like Tuesday."
+  },
+  {
+    "number": "356",
+    "fact": "About as exciting as watching paint dry"
+  },
+  {
+    "number": "49",
+    "fact": "Trying so hard to be 50"
+  },
+  {
+    "number": "175",
+    "fact": "Don't really care about this one"
+  },
+  {
+    "number": "92",
+    "fact": "What's the point of you?"
+  },
+  {
+    "number": "438",
+    "fact": "Trying its best, I guess"
+  },
+  {
+    "number": "67",
+    "fact": "Painfully average"
+  },
+  {
+    "number": "184",
+    "fact": "Another disappointment"
+  },
+  {
+    "number": "293",
+    "fact": "So proud to be prime, I'm sure"
+  },
+  {
+    "number": "156",
+    "fact": "Not even trying"
+  },
+  {
+    "number": "729",
+    "fact": "Showing off being 27³. How nice for you."
+  },
+  {
+    "number": "81",
+    "fact": "Perfect square? Well aren't you special."
+  },
+  {
+    "number": "419",
+    "fact": "Suspicious. Probably up to something."
+  }
+]

@@ -1,0 +1,2327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counting Bee</title>
+    <link rel="icon" type="image/svg+xml" href="number_bee.svg">
+    <style>
+      @font-face {
+        font-family: 'Franklin';
+        src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-700.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+      }
+      
+      @font-face {
+        font-family: 'Franklin';
+        src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/franklin-normal-500.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+      }
+      
+      @font-face {
+        font-family: 'Karnak';
+        src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-cond-normal.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      @font-face {
+        font-family: 'KarnakNormal';
+        src: url('https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/fonts/karnak-normal.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      :root {
+        /* Header dimensions */
+        --header-bar-height: 20px;
+        --title-padding: 20px;
+        --button-bar-height: 55px;
+        --header-borders: 3px; /* approximate total border thickness */
+        
+        /* Spacing */
+        --stats-margin: 20px;
+        --game-gap: 40px;
+        --label-space: 40px;
+        --label-offset: 5px;
+        --progress-value-offset: -1px;
+        --stats-padding: 20px;
+        --stats-width: min(514px, 40vw);
+        --min-content-width: 800px;
+        
+        /* Calculated values */
+        --title-font-size: 42px;
+        --total-header-height: calc(var(--header-bar-height) + var(--title-padding) * 2 + var(--button-bar-height) + var(--header-borders) + var(--title-font-size));
+        --stats-top: calc(var(--total-header-height) + var(--stats-margin) + var(--label-space));
+        --stats-height: calc(100vh - var(--total-header-height) - var(--stats-margin) * 2 - var(--label-space));
+        --main-height: calc(100vh - var(--total-header-height));
+      }
+      
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Franklin', Arial, sans-serif;
+        font-weight: 500;
+        background-color: white;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+
+
+      .main-container {
+        display: flex;
+        width: 100%;
+        min-width: var(--min-content-width);
+        height: var(--main-height);
+        position: absolute;
+        top: var(--total-header-height);
+        left: 0;
+      }
+
+      .game-section {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--game-gap);
+      }
+
+      .stats-container {
+        position: absolute;
+        width: var(--stats-width);
+        min-width: 300px;
+        height: 100%;
+        left: calc(50% + var(--stats-margin));
+        top: 0;
+      }
+
+      .input-text {
+        text-align: center;
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 32px;
+        color: #666;
+        min-height: 40px;
+        order: 1;
+        position: relative;
+      }
+
+      .stats-section {
+        width: 100%;
+        height: var(--stats-height);
+        background: white;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        padding: var(--stats-padding);
+        box-sizing: border-box;
+        overflow-y: auto;
+        position: absolute;
+        left: 0;
+        top: calc(var(--label-space) + var(--stats-margin));
+        bottom: var(--stats-margin);
+      }
+
+
+      .rank-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: calc(var(--stats-margin) + var(--label-offset));
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .beginner-label {
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: #121212;
+        flex-shrink: 0;
+        width: 80px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        overflow: hidden;
+        position: relative;
+      }
+
+      @keyframes rankSlideOut {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100%);
+          opacity: 1;
+        }
+      }
+
+      @keyframes rankSlideIn {
+        0% {
+          transform: translateY(100%);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .rank-slide-out {
+        animation: rankSlideOut 0.6s ease-in-out;
+      }
+
+      .rank-slide-in {
+        animation: rankSlideIn 0.6s ease-in-out;
+      }
+
+      .victory-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+      }
+
+      .victory-content {
+        background: white;
+        width: 500px;
+        height: 500px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+
+      .victory-title {
+        font-family: 'Karnak', Arial, sans-serif;
+        font-size: 50px;
+        font-weight: normal;
+        color: #121212;
+        text-align: center;
+        margin: 0;
+      }
+
+      .victory-subtitle {
+        font-family: 'KarnakNormal', Arial, sans-serif;
+        font-size: 34px;
+        font-weight: normal;
+        color: #121212;
+        text-align: center;
+        margin: 0;
+      }
+
+      .victory-buttons {
+        display: flex;
+        gap: 20px;
+      }
+
+      .victory-btn {
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #121212;
+        background: white;
+        border: 2px solid #121212;
+        border-radius: 50px;
+        padding: 12px 24px;
+        cursor: pointer;
+      }
+
+      .victory-btn.play-again {
+        background: #121212;
+        color: white;
+      }
+
+      .victory-btn:active {
+        transform: scale(0.95);
+      }
+
+      .sb-progress-bar {
+        position: relative;
+        flex: 1;
+        height: 20px;
+      }
+
+      .sb-progress-line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #e0e0e0;
+        transform: translateY(-50%);
+      }
+
+      .sb-progress-dots {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sb-progress-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background-color: #e0e0e0;
+      }
+
+      .sb-progress-dot:last-child {
+        border-radius: 0;
+      }
+
+      .sb-progress-marker {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #f7da21;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: left 0.5s ease-in-out;
+      }
+
+      .sb-progress-value {
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #121212;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(var(--progress-value-offset));
+      }
+
+      .words-found {
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #121212;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+      
+      .word-list-container {
+        margin-top: 20px;
+      }
+      
+      .word-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        columns: 2;
+        column-gap: 20px;
+      }
+      
+      .word-list li {
+        width: 170px;
+        height: 25px;
+        margin-bottom: 0;
+        break-inside: avoid;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+      }
+      
+      .sb-anagram {
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #121212;
+      }
+
+
+      .blinking-cursor {
+        display: inline-block;
+        background-color: #f7da21;
+        width: 2px;
+        height: 40px;
+        margin-left: 2px;
+        vertical-align: middle;
+        transform: translateY(-2px);
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        0%, 50% { opacity: 1; }
+        51%, 100% { opacity: 0; }
+      }
+      
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+      }
+      
+      @keyframes hexShake {
+        0% { transform: translate(0, 0); }
+        10% { transform: translate(-1px, -1px); }
+        20% { transform: translate(1px, 0px); }
+        30% { transform: translate(-1px, 1px); }
+        40% { transform: translate(1px, -1px); }
+        50% { transform: translate(-1px, 1px); }
+        60% { transform: translate(1px, 0px); }
+        70% { transform: translate(-1px, -1px); }
+        80% { transform: translate(1px, 1px); }
+        90% { transform: translate(-1px, 0px); }
+        100% { transform: translate(0, 0); }
+      }
+      
+      @keyframes centerShake {
+        0% { transform: translate(0, 0); }
+        10% { transform: translate(-2px, -2px); }
+        20% { transform: translate(2px, -1px); }
+        30% { transform: translate(-2px, 2px); }
+        40% { transform: translate(2px, -2px); }
+        50% { transform: translate(-3px, 1px); }
+        60% { transform: translate(3px, -1px); }
+        70% { transform: translate(-2px, -2px); }
+        80% { transform: translate(2px, 2px); }
+        90% { transform: translate(-3px, 0px); }
+        100% { transform: translate(0, 0); }
+      }
+      
+      .shake {
+        animation: shake 0.6s ease-in-out;
+      }
+      
+      .hex-shake {
+        animation: hexShake 0.8s ease-in-out infinite;
+      }
+      
+      .center-shake {
+        animation: centerShake 0.6s ease-in-out infinite;
+      }
+      
+      @keyframes dying {
+        0% { 
+          opacity: 1; 
+          transform: scale(1);
+          filter: brightness(1);
+        }
+        30% { 
+          opacity: 0.8; 
+          transform: scale(0.95);
+          filter: brightness(0.7);
+        }
+        60% { 
+          opacity: 0.4; 
+          transform: scale(0.85);
+          filter: brightness(0.4);
+        }
+        100% { 
+          opacity: 0; 
+          transform: scale(0.7);
+          filter: brightness(0);
+        }
+      }
+      
+      @keyframes resurrection {
+        0% { 
+          opacity: 0; 
+          transform: scale(1.3);
+          filter: brightness(2) blur(2px);
+        }
+        30% { 
+          opacity: 0.3; 
+          transform: scale(1.15);
+          filter: brightness(1.5) blur(1px);
+        }
+        70% { 
+          opacity: 0.8; 
+          transform: scale(1.05);
+          filter: brightness(1.2) blur(0px);
+        }
+        100% { 
+          opacity: 1; 
+          transform: scale(1);
+          filter: brightness(1) blur(0px);
+        }
+      }
+      
+      @keyframes textReverse {
+        0% { 
+          opacity: 1;
+          transform: scaleX(1);
+          transform-origin: 50% 50%;
+        }
+        50% { 
+          opacity: 0.3;
+          transform: scaleX(0);
+          transform-origin: 50% 50%;
+        }
+        100% { 
+          opacity: 1;
+          transform: scaleX(1);
+          transform-origin: 50% 50%;
+        }
+      }
+      
+      .text-reverse {
+        animation: textReverse 1s ease-in-out;
+        transform-origin: 50% 50%;
+      }
+      
+      .fade-out {
+        animation: dying 0.8s ease-in forwards !important;
+      }
+      
+      .fade-in {
+        animation: resurrection 0.6s ease-out forwards !important;
+      }
+      
+      @keyframes markerWinShake {
+        0%, 100% { transform: translate(-50%, -50%); }
+        10% { transform: translate(-52%, -48%); }
+        20% { transform: translate(-48%, -52%); }
+        30% { transform: translate(-52%, -48%); }
+        40% { transform: translate(-48%, -52%); }
+        50% { transform: translate(-52%, -48%); }
+        60% { transform: translate(-48%, -52%); }
+        70% { transform: translate(-52%, -48%); }
+        80% { transform: translate(-48%, -52%); }
+        90% { transform: translate(-52%, -48%); }
+      }
+      
+      .marker-win-shake {
+        animation: markerWinShake 0.8s ease-in-out infinite !important;
+      }
+      
+      /* Wait Popup - Match sinnections style */
+      .wait-popup {
+        text-align: center;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 1000;
+        width: 540px;
+        max-width: 90%;
+        display: none;
+      }
+      
+      .wait-popup.show {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .wait-popup h2 {
+        font-family: 'Karnak', Arial, sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 15px;
+        color: #333;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: textAppear 0.3s ease-out 0.2s forwards;
+      }
+      
+      .wait-popup p {
+        font-family: 'KarnakNormal', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #666;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(10px);
+        animation: textAppear 0.3s ease-out 0.3s forwards;
+      }
+      
+      .wait-popup .btn {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: textAppear 0.3s ease-out 0.4s forwards;
+      }
+      
+      .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        color: #999;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .close-btn:hover {
+        color: #333;
+      }
+      
+      @keyframes textAppear {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      
+      .toast {
+        position: fixed;
+        top: calc(var(--total-header-height) + var(--game-gap) * 1.5);
+        left: 25%;
+        transform: translateX(-50%);
+        background-color: #121212;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+        z-index: 100;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+      }
+      
+      .toast.show {
+        opacity: 1;
+      }
+
+      .header-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 10;
+        background: white;
+      }
+      
+      .header-bar-top {
+        height: var(--header-bar-height);
+        border-bottom: 1px solid #e0e0e0;
+      }
+      
+      .title {
+        font-family: 'Karnak', Arial, sans-serif;
+        font-size: var(--title-font-size);
+        font-weight: normal;
+        color: #121212;
+        text-align: center;
+        padding: var(--title-padding) 0;
+        margin: 0;
+      }
+      
+      .button-bar {
+        height: var(--button-bar-height);
+        border-top: 1px solid #e0e0e0;
+        border-bottom: 1px solid #e0e0e0;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 var(--stats-margin);
+      }
+
+      .restart-btn {
+        width: 55px;
+        height: 100%;
+        border: none;
+        background: transparent;
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        color: #121212;
+        cursor: pointer;
+        padding: 0;
+        margin: 0 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .restart-btn:hover {
+        background-color: #f0f0f0;
+      }
+
+      .restart-btn:active {
+        background-color: #e0e0e0;
+      }
+
+
+      .hexagon-grid {
+        width: 400px;
+        height: 300px;
+        order: 2;
+        position: relative;
+      }
+
+      .hive-cell {
+        position: absolute;
+        width: 104px;
+        height: 90px;
+        cursor: pointer;
+        transition: all 0.1s ease;
+      }
+
+      .hive-cell:active {
+        transform: scale(0.95);
+      }
+
+      .cell-fill {
+        fill: #e6e6e6;
+        transition: fill 0.1s ease;
+      }
+
+      .hive-cell.center .cell-fill {
+        fill: #f7da21;
+      }
+
+      .cell-letter {
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        fill: #121212;
+        text-anchor: middle;
+        dominant-baseline: central;
+        user-select: none;
+      }
+
+      /* Honeycomb positioning with visible, even gaps between all hexagons */
+      :root {
+        /* side length of your hexagon */
+        --s: 56px;
+        /* vertical distance between centres = √3 * s */
+        --hex-vertical: calc(var(--s) * 1.732);
+        /* horizontal distance between centres = 1.5 * s */
+        --hex-horizontal: calc(var(--s) * 1.5);
+        /* your chosen centre point in the container */
+        --center-x: 148px;
+        --center-y: 118px;
+      }
+
+      .hex {
+        position: absolute;
+        /* if your hexagons aren’t already centered on their anchor point,
+     add `transform: translate(-50%, -50%);` */
+      }
+
+      /* Top */
+      .hex-0 {
+        top: calc(var(--center-y) - var(--hex-vertical));
+        left: var(--center-x);
+      }
+
+      /* Top‑right */
+      .hex-1 {
+        top: calc(var(--center-y) - var(--hex-vertical) / 2);
+        left: calc(var(--center-x) + var(--hex-horizontal));
+      }
+
+      /* Bottom‑right */
+      .hex-2 {
+        top: calc(var(--center-y) + var(--hex-vertical) / 2);
+        left: calc(var(--center-x) + var(--hex-horizontal));
+      }
+
+      /* Bottom */
+      .hex-3 {
+        top: calc(var(--center-y) + var(--hex-vertical));
+        left: var(--center-x);
+      }
+
+      /* Bottom‑left */
+      .hex-4 {
+        top: calc(var(--center-y) + var(--hex-vertical) / 2);
+        left: calc(var(--center-x) - var(--hex-horizontal));
+      }
+
+      /* Top‑left */
+      .hex-5 {
+        top: calc(var(--center-y) - var(--hex-vertical) / 2);
+        left: calc(var(--center-x) - var(--hex-horizontal));
+      }
+
+      /* Centre */
+      .hex-6 {
+        top: var(--center-y);
+        left: var(--center-x);
+      }
+
+      .controls {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        order: 3;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        font-family: 'Franklin', Arial, sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        border: 1px solid #ccc;
+        background-color: white;
+        color: #121212;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+      
+      .btn.circular {
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn.circular svg {
+        transition: transform 0.3s ease;
+      }
+
+      .btn:active {
+        background-color: #f0f0f0;
+      }
+
+      .current-input {
+        margin-top: 20px;
+        font-size: 20px;
+        color: #121212;
+        min-height: 30px;
+        text-align: center;
+      }
+
+      @media (max-width: 1200px) {
+        :root {
+          --stats-width: min(400px, 35vw);
+        }
+      }
+
+      @media (max-width: 900px) {
+        :root {
+          --min-content-width: 700px;
+          --stats-width: min(350px, 40vw);
+        }
+        
+        .hexagon-grid {
+          transform: scale(0.9);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-container {
+          flex-direction: column;
+          min-width: auto;
+        }
+        
+        .game-section {
+          min-width: auto;
+          height: auto;
+          padding: var(--stats-margin);
+        }
+        
+        .stats-container {
+          width: 100%;
+          min-width: auto;
+          height: auto;
+          padding: var(--stats-margin);
+        }
+        
+        .stats-section {
+          position: relative;
+          top: auto;
+          bottom: auto;
+          height: 300px;
+        }
+        
+        .rank-container {
+          position: relative;
+          top: 0;
+          margin-bottom: var(--stats-margin);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hexagon-grid {
+          transform: scale(0.8);
+        }
+
+        .title {
+          font-size: 20px;
+        }
+
+        .beginner-label {
+          width: 60px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="header-bar-top"></div>
+      <div class="title">Counting Bee</div>
+      <div class="button-bar">
+        <button class="restart-btn" onclick="restartGame()">Restart</button>
+      </div>
+    </div>
+    
+    <div class="main-container">
+      <div class="game-section">
+        <div class="input-text" id="inputText">Type or click</div>
+        
+        <div class="hexagon-grid">
+      <svg
+        class="hive-cell hex-0"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="0"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+
+      <svg
+        class="hive-cell hex-1"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="1"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+
+      <svg
+        class="hive-cell hex-2"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="2"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+
+      <svg
+        class="hive-cell hex-3"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="3"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+
+      <svg
+        class="hive-cell hex-4"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="4"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+
+      <svg
+        class="hive-cell hex-5"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="5"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+
+      <svg
+        class="hive-cell hex-6 center"
+        viewBox="0 0 120 103.92304845413263"
+        data-index="6"
+      >
+        <polygon
+          class="cell-fill"
+          points="0,51.96152422706631 30,0 90,0 120,51.96152422706631 90,103.92304845413263 30,103.92304845413263"
+        ></polygon>
+        <text class="cell-letter" x="50%" y="50%"></text>
+      </svg>
+        </div>
+
+        <div class="controls">
+          <button class="btn" onclick="deleteChar()">Delete</button>
+          <button class="btn circular" onclick="shuffleNumbers()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 527 527">
+              <path fill="currentColor" fill-rule="evenodd" d="M140.5 50l18 31.3a210 210 0 0 1 286.6 287.5l-26-15a180 180 0 0 0-245.5-246.6h-.1l23.2 40.2-73-22.7L140.5 50zM81.7 368.3a210 210 0 0 1 .2-210.5l26 15A180 180 0 0 0 353.6 419l-22.3-38.5 73 22.7-16.8 74.6-19-32.8a210 210 0 0 1-286.8-76.9z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <button class="btn" onclick="submitInput()">Enter</button>
+        </div>
+      </div>
+      
+      <div class="stats-container">
+        <div class="rank-container">
+          <div class="beginner-label">Beginner</div>
+          <div class="sb-progress-bar">
+            <div class="sb-progress-line">
+              <div class="sb-progress-dots">
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+                <span class="sb-progress-dot"></span>
+              </div>
+            </div>
+            <div class="sb-progress-marker" style="left: 0%;">
+              <span class="sb-progress-value">0</span>
+            </div>
+          </div>
+        </div>
+        <div class="stats-section">
+          <div class="words-found" id="wordsFoundText">You have found 0 numbers</div>
+          
+          <div class="word-list-container">
+            <ul class="word-list" id="wordList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentInput = "";
+      let hexNumbers = [];
+      let foundWords = 0;
+      let hasStartedTyping = false;
+      let validDigitsAtEntry = []; // Track which digits were valid when entered
+      let currentInputUsage = {}; // Track how many times each digit is used in current input
+      let digitValidityAtEntry = []; // Track whether each position was valid when entered
+      let wasCenterAtEntry = []; // Track whether each position was center digit when entered
+      let digitUsages = []; // Track usage count for each position (5 uses each)
+      let digitCooldowns = {}; // Track cooldown for disappeared digits
+      let successfulTurns = 0; // Count successful submissions
+      let foundNumbers = new Set(); // Track already found numbers
+      let isNegativeMode = false; // Track if in negative mode
+      let totalScore = 0; // Track total score
+      let currentRankIndex = 0; // Track current rank index
+      let hasWon = false; // Track if victory popup has been shown
+      let factStreak = 0; // Track consecutive interesting numbers found
+      let toastQueue = []; // Queue for toast messages
+      let isShowingToast = false; // Track if a toast is currently showing
+      let digitsBeingReplaced = new Set(); // Track digits currently being replaced
+      
+      const NEXT_PUZZLES_ENABLED = false; // Enable next puzzle navigation
+      
+      // Game state management
+      function saveGameState() {
+        const gameState = {
+          hexNumbers: hexNumbers,
+          digitUsages: digitUsages,
+          foundNumbers: Array.from(foundNumbers),
+          foundWords: foundWords,
+          totalScore: totalScore,
+          currentRankIndex: currentRankIndex,
+          successfulTurns: successfulTurns,
+          digitCooldowns: digitCooldowns,
+          isNegativeMode: isNegativeMode,
+          hasWon: hasWon,
+          factStreak: factStreak
+        };
+        localStorage.setItem('numberBeeGameState', JSON.stringify(gameState));
+      }
+      
+      function loadGameState() {
+        const saved = localStorage.getItem('numberBeeGameState');
+        if (saved) {
+          try {
+            const gameState = JSON.parse(saved);
+            hexNumbers = gameState.hexNumbers || [];
+            digitUsages = gameState.digitUsages || [];
+            foundNumbers = new Set(gameState.foundNumbers || []);
+            foundWords = gameState.foundWords || 0;
+            totalScore = gameState.totalScore || 0;
+            currentRankIndex = gameState.currentRankIndex || 0;
+            successfulTurns = gameState.successfulTurns || 0;
+            digitCooldowns = gameState.digitCooldowns || {};
+            isNegativeMode = gameState.isNegativeMode || false;
+            hasWon = gameState.hasWon || false;
+            factStreak = gameState.factStreak || 0;
+            return true;
+          } catch (error) {
+            console.error('Error loading game state:', error);
+            return false;
+          }
+        }
+        return false;
+      }
+      
+      function clearGameState() {
+        localStorage.removeItem('numberBeeGameState');
+      }
+      
+      function restartGame() {
+        // Clear all saved data
+        clearGameState();
+        
+        // Reset all game variables to initial state
+        currentInput = "";
+        hexNumbers = [];
+        foundWords = 0;
+        hasStartedTyping = false;
+        digitUsages = [];
+        digitCooldowns = {};
+        successfulTurns = 0;
+        foundNumbers = new Set();
+        isNegativeMode = false;
+        totalScore = 0;
+        currentRankIndex = 0;
+        hasWon = false;
+        factStreak = 0;
+        validDigitsAtEntry = [];
+        digitValidityAtEntry = [];
+        wasCenterAtEntry = [];
+        currentInputUsage = {};
+        
+        // Reset progress bar elements
+        const progressMarker = document.querySelector('.sb-progress-marker');
+        const progressLine = document.querySelector('.sb-progress-line');
+        
+        if (progressMarker) {
+          progressMarker.classList.remove('marker-win-shake');
+          progressMarker.style.left = '0%';
+          progressMarker.style.cursor = 'default';
+          progressMarker.removeEventListener('click', handleMarkerClick);
+        }
+        
+        if (progressLine) {
+          progressLine.style.width = '100%';
+        }
+        
+        // Clear the word list display
+        const wordList = document.getElementById("wordList");
+        if (wordList) {
+          wordList.innerHTML = "";
+        }
+        
+        // Generate new game
+        generateRandomNumbers();
+        
+        // Update all displays
+        displayNumbers();
+        updateInputDisplay();
+        updateStatsDisplay();
+        updateProgressScore();
+      }
+      
+      function showVictoryPopup() {
+        const victoryMessages = [
+          "Outstanding!",
+          "Incredible!",
+          "Phenomenal!",
+          "Brilliant!",
+          "Magnificent!",
+          "Exceptional!",
+          "Spectacular!",
+          "Genius!",
+          "Amazing!",
+          "Perfect!"
+        ];
+        
+        const randomMessage = victoryMessages[Math.floor(Math.random() * victoryMessages.length)];
+        
+        const popup = document.createElement('div');
+        popup.className = 'victory-popup';
+        popup.innerHTML = `
+          <div class="victory-content">
+            <h1 class="victory-title">${randomMessage}</h1>
+            <p class="victory-subtitle">Perfect Score!</p>
+            <div class="victory-buttons">
+              <button class="victory-btn" onclick="admirepuzzle()">Admire Puzzle</button>
+              <button class="victory-btn play-again" onclick="playAgain()">Play Again</button>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(popup);
+      }
+      
+      function admirepuzzle() {
+        // Close the popup
+        const popup = document.querySelector('.victory-popup');
+        if (popup) {
+          popup.remove();
+        }
+        // Keep the marker shake going when admiring puzzle
+      }
+      
+      function playAgain() {
+        // Close the popup and restart the game
+        const popup = document.querySelector('.victory-popup');
+        if (popup) {
+          popup.remove();
+        }
+        restartGame();
+      }
+      
+      function handleMarkerClick() {
+        // Only allow clicking if the user has won
+        if (hasWon) {
+          if (NEXT_PUZZLES_ENABLED) {
+            window.location.href = 'scrabble_fight.html';
+          } else {
+            showWaitPopup();
+          }
+        }
+      }
+      
+      // Show wait popup
+      function showWaitPopup() {
+        const popup = document.getElementById('wait-popup');
+        popup.classList.add('show');
+      }
+      
+      // Close wait popup
+      function closeWaitPopup() {
+        const popup = document.getElementById('wait-popup');
+        popup.classList.remove('show');
+      }
+      
+      // Generic messages for when no fact is found
+      const genericMessages = [
+        "Keep going!",
+        "You're getting warmer!",
+        "Interesting guess!",
+        "Nice try!",
+        "Almost there!",
+        "Good thinking!",
+        "Keep exploring!",
+        "You're on the right track!",
+        "Creative approach!",
+        "Don't give up!"
+      ];
+      
+      // Messages for when number is too long
+      const tooLongMessages = [
+        "Too big!",
+        "Too many digits!",
+        "That's too long!",
+        "Shorter please!",
+        "Keep it smaller!",
+        "Not so many digits!",
+        "Way too big!",
+        "Dial it back!"
+      ];
+      
+      // Messages for when user tries to use decimal point
+      const decimalMessages = [
+        "Too real!",
+        "Stay whole!",
+        "No decimals!",
+        "Keep integer!",
+        "Whole numbers!",
+        "No fractions!",
+        "Integer only!",
+        "Stay natural!",
+        "Pure numbers!",
+        "No points!"
+      ];
+      
+      // Function to fetch number facts from the tree structure
+      // Cache for the numbers array
+      // GitHub base URL for crossword puzzles
+    const GITHUB_NUMBERS_BASE = 'https://raw.githubusercontent.com/hat-im/hat-im.github.io/number-bee/';
+      let numbersData = null;
+      
+      async function loadNumbersData() {
+        if (numbersData === null) {
+          try {
+                const response = await fetch(`${GITHUB_NUMBERS_BASE}numbers.json`);
+            if (response.ok) {
+              numbersData = await response.json();
+            } else {
+              numbersData = [];
+            }
+          } catch (error) {
+            console.error('Error loading numbers data:', error);
+            numbersData = [];
+          }
+        }
+        return numbersData;
+      }
+      
+      async function getNumberFact(numberString) {
+        try {
+          const data = await loadNumbersData();
+          const numberEntry = data.find(entry => entry.number === numberString);
+          return numberEntry ? numberEntry.fact : null;
+        } catch (error) {
+          console.error('Error fetching number fact:', error);
+          return null;
+        }
+      }
+      
+      // Function to get a random generic message
+      function getRandomGenericMessage() {
+        const randomIndex = Math.floor(Math.random() * genericMessages.length);
+        return genericMessages[randomIndex];
+      }
+      
+      // Function to get a random "too long" message
+      function getRandomTooLongMessage() {
+        const randomIndex = Math.floor(Math.random() * tooLongMessages.length);
+        return tooLongMessages[randomIndex];
+      }
+      
+      // Function to get a random decimal rejection message
+      function getRandomDecimalMessage() {
+        const randomIndex = Math.floor(Math.random() * decimalMessages.length);
+        return decimalMessages[randomIndex];
+      }
+      
+      // Function to reverse text
+      function reverseText(text) {
+        return text.split('').reverse().join('');
+      }
+      
+      // Function to toggle negative mode
+      function toggleNegativeMode() {
+        isNegativeMode = !isNegativeMode;
+        saveGameState(); // Save negative mode state
+        
+        // Get all text elements including hexagon numbers
+        const textElements = [
+          document.querySelector('.title'),
+          document.querySelector('.beginner-label'),
+          document.querySelector('.sb-progress-value'),
+          document.querySelector('#wordsFoundText'),
+          document.querySelector('#inputText'),
+          document.querySelector('.restart-btn'),
+          ...document.querySelectorAll('.sb-anagram'),
+          ...document.querySelectorAll('.cell-letter')
+        ].filter(el => el !== null);
+        
+        // Add animation class to all text elements
+        textElements.forEach(el => {
+          el.classList.add('text-reverse');
+          
+          // Store original text if not already stored
+          if (!el.dataset.originalText) {
+            el.dataset.originalText = el.textContent || el.innerHTML;
+          }
+          
+          // At the middle of the animation, change the text
+          setTimeout(() => {
+            if (isNegativeMode) {
+              if (el.textContent) {
+                el.textContent = reverseText(el.dataset.originalText);
+              } else {
+                el.innerHTML = reverseText(el.dataset.originalText);
+              }
+            } else {
+              if (el.textContent) {
+                el.textContent = el.dataset.originalText;
+              } else {
+                el.innerHTML = el.dataset.originalText;
+              }
+            }
+          }, 500); // Middle of 1s animation
+          
+          // Remove animation class after animation completes
+          setTimeout(() => {
+            el.classList.remove('text-reverse');
+          }, 1000);
+        });
+        
+        // Handle SVG rotation for circular button separately
+        const circularBtn = document.querySelector('.btn.circular');
+        if (circularBtn) {
+          const svg = circularBtn.querySelector('svg');
+          if (svg) {
+            // Ensure transition is applied
+            svg.style.transition = 'transform 0.3s ease';
+            if (isNegativeMode) {
+              svg.style.transform = 'rotate(180deg)';
+            } else {
+              svg.style.transform = 'rotate(0deg)';
+            }
+          }
+        }
+
+        // Handle button text separately - animate just the text content
+        const buttons = document.querySelectorAll('.btn:not(.circular)');
+        buttons.forEach(btn => {
+          
+          // Store original text if not already stored
+          if (!btn.dataset.originalText) {
+            btn.dataset.originalText = btn.textContent;
+          }
+          
+          // Create a temporary span to animate the text inside button
+          const textSpan = document.createElement('span');
+          textSpan.textContent = btn.textContent;
+          textSpan.classList.add('text-reverse');
+          textSpan.style.display = 'inline-block';
+          
+          // Replace button text with animated span
+          btn.innerHTML = '';
+          btn.appendChild(textSpan);
+          
+          // At the middle of the animation, change the text
+          setTimeout(() => {
+            if (isNegativeMode) {
+              textSpan.textContent = reverseText(btn.dataset.originalText);
+            } else {
+              textSpan.textContent = btn.dataset.originalText;
+            }
+          }, 500);
+          
+          // Remove animation class and clean up after animation
+          setTimeout(() => {
+            textSpan.classList.remove('text-reverse');
+            btn.innerHTML = textSpan.textContent;
+          }, 1000);
+        });
+        
+        // Update input display and stats to show negative versions
+        setTimeout(() => {
+          // Reverse the current input when toggling modes
+          if (currentInput.length > 0) {
+            currentInput = currentInput.split('').reverse().join('');
+            // Also reverse the tracking arrays to maintain consistency
+            validDigitsAtEntry.reverse();
+            digitValidityAtEntry.reverse();
+            wasCenterAtEntry.reverse();
+          }
+          
+          updateInputDisplay();
+          updateStatsDisplay();
+        }, 500);
+      }
+
+      function generateRandomNumbers() {
+        hexNumbers = [];
+        digitUsages = [];
+        const availableDigits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        
+        for (let i = 0; i < 7; i++) {
+          const randomIndex = Math.floor(Math.random() * availableDigits.length);
+          hexNumbers.push(availableDigits[randomIndex]);
+          digitUsages.push(i === 6 ? 12 : 6); // Center digit gets 12 uses, others get 6
+          availableDigits.splice(randomIndex, 1); // Remove used digit
+        }
+      }
+
+      function displayNumbers() {
+        const hexagons = document.querySelectorAll(".hive-cell");
+        hexagons.forEach((hex, index) => {
+          const textElement = hex.querySelector(".cell-letter");
+          
+          // Store original text for negative mode
+          textElement.dataset.originalText = hexNumbers[index].toString();
+          
+          // Display based on current negative mode state
+          if (isNegativeMode) {
+            textElement.textContent = reverseText(hexNumbers[index].toString());
+          } else {
+            textElement.textContent = hexNumbers[index];
+          }
+          
+          // Remove all shake classes, preserve fade animations
+          hex.classList.remove('hex-shake', 'center-shake');
+          
+          // Add appropriate shake based on position and usage
+          if (digitUsages[index] === 1) {
+            if (index === 6) {
+              // Center digit gets dramatic shake
+              hex.classList.add('center-shake');
+            } else {
+              // Other digits get regular shake
+              hex.classList.add('hex-shake');
+            }
+          }
+        });
+      }
+
+      function addToInput(number) {
+        // Check if adding this digit would exceed 21 characters
+        if (currentInput.length >= 21) {
+          showTooLongToast();
+          shakeInput();
+          return;
+        }
+        
+        // Find the index of this digit in the hexNumbers array
+        const digitIndex = hexNumbers.indexOf(number);
+        
+        // Check current usage of this digit in the input
+        const currentUsageCount = (currentInputUsage[number] || 0);
+        const availableUses = digitIndex !== -1 ? digitUsages[digitIndex] : 0;
+        
+        // Determine if this digit entry is valid and if it's the center digit
+        const isValidEntry = digitIndex !== -1 && availableUses > 0;
+        const isCenterDigit = number === hexNumbers[6];
+        
+        // In negative mode, prepend instead of append (reverse input order)
+        if (isNegativeMode) {
+          currentInput = number + currentInput;
+          validDigitsAtEntry.unshift(number); // Add to beginning for negative mode
+          digitValidityAtEntry.unshift(isValidEntry); // Track validity for this position
+          wasCenterAtEntry.unshift(isCenterDigit); // Track if was center when entered
+        } else {
+          currentInput += number;
+          validDigitsAtEntry.push(number); // Add to end for normal mode
+          digitValidityAtEntry.push(isValidEntry); // Track validity for this position
+          wasCenterAtEntry.push(isCenterDigit); // Track if was center when entered
+        }
+        
+        // Update current input usage
+        currentInputUsage[number] = currentUsageCount + 1;
+        
+        // Check if this digit should start shaking (when it reaches penultimate use)
+        if (digitIndex !== -1 && currentInputUsage[number] === availableUses - 1) {
+          updateDigitShakeStates();
+        }
+        
+        // If this is the final use, kill the digit immediately AFTER adding to input
+        if (digitIndex !== -1 && currentInputUsage[number] === availableUses) {
+          // Kill the digit immediately (set usage to 0 and replace)
+          digitUsages[digitIndex] = 0;
+          replaceDigit(digitIndex, true); // true = show death pun toast
+          
+          // Update progress score and save state
+          updateProgressScore();
+          saveGameState();
+        }
+        
+        updateInputDisplay();
+      }
+
+      function deleteChar() {
+        if (currentInput.length > 0) {
+          let removedDigit;
+          
+          // In negative mode, delete from the beginning (since we prepend)
+          if (isNegativeMode) {
+            removedDigit = parseInt(currentInput[0]);
+            currentInput = currentInput.slice(1);
+            validDigitsAtEntry.shift(); // Remove from beginning
+            digitValidityAtEntry.shift(); // Remove validity tracking
+            wasCenterAtEntry.shift(); // Remove center tracking
+          } else {
+            removedDigit = parseInt(currentInput[currentInput.length - 1]);
+            currentInput = currentInput.slice(0, -1);
+            validDigitsAtEntry.pop(); // Remove from end
+            digitValidityAtEntry.pop(); // Remove validity tracking
+            wasCenterAtEntry.pop(); // Remove center tracking
+          }
+          
+          // Update current input usage
+          if (currentInputUsage[removedDigit]) {
+            currentInputUsage[removedDigit]--;
+            if (currentInputUsage[removedDigit] === 0) {
+              delete currentInputUsage[removedDigit];
+            }
+          }
+          
+          // Update shake states
+          updateDigitShakeStates();
+          updateInputDisplay();
+        }
+      }
+      
+      function updateDigitShakeStates() {
+        const hexagons = document.querySelectorAll(".hive-cell");
+        hexagons.forEach((hex, index) => {
+          const digit = hexNumbers[index];
+          const currentUsageCount = currentInputUsage[digit] || 0;
+          const availableUses = digitUsages[index];
+          
+          // Remove existing shake classes
+          hex.classList.remove('hex-shake', 'center-shake');
+          
+          // Add shake if this digit is at penultimate use in current input
+          if (currentUsageCount === availableUses - 1 && availableUses > 1) {
+            if (index === 6) {
+              hex.classList.add('center-shake');
+            } else {
+              hex.classList.add('hex-shake');
+            }
+          }
+        });
+      }
+
+      function submitInput() {
+        if (currentInput.length > 0) {
+          // Remove leading zeros for comparison
+          const normalizedInput = currentInput.replace(/^0+/, '') || '0';
+          
+          // Check if already found (using normalized version)
+          if (foundNumbers.has(normalizedInput)) {
+            showAlreadyFoundToast();
+            shakeInput();
+            return;
+          }
+          
+          // Check if any digits were invalid when entered (using our validity tracking)
+          const hasInvalidDigits = digitValidityAtEntry.some(wasValid => !wasValid);
+          
+          // Check if any digit was center when entered OR current center digit is used
+          const currentCenterDigit = hexNumbers[6];
+          const hasOriginalCenter = wasCenterAtEntry.some(wasCenter => wasCenter);
+          const hasCurrentCenter = normalizedInput.includes(currentCenterDigit.toString());
+          const hasCenterDigit = hasOriginalCenter || hasCurrentCenter;
+          
+          if (hasInvalidDigits) {
+            showBadNumbersToast();
+            shakeInput();
+          } else if (!hasCenterDigit) {
+            showMissingMiddleToast();
+            shakeInput();
+          } else {
+            // Valid submission
+            foundWords++;
+            successfulTurns++;
+            foundNumbers.add(normalizedInput); // Add normalized version to found set
+            const willAnyDigitDie = decrementDigitUsages();
+            addToWordList(normalizedInput); // Add normalized version to word list
+            updateStatsDisplay();
+            
+            // Store the normalized number before clearing input
+            const submittedNumber = normalizedInput;
+            currentInput = "";
+            validDigitsAtEntry = []; // Clear the valid digits tracking
+            digitValidityAtEntry = []; // Clear validity tracking
+            wasCenterAtEntry = []; // Clear center tracking
+            currentInputUsage = {}; // Clear input usage tracking
+            updateInputDisplay();
+            
+            // Fetch and display number fact with slight delay, then calculate score
+            setTimeout(async () => {
+              // Only show regular toast if no digits will die (to avoid double toasts)
+              let hasFact = false;
+              if (!willAnyDigitDie) {
+                hasFact = await showNumberFactToast(submittedNumber);
+              }
+              
+              const points = calculateScore(submittedNumber, hasFact);
+              totalScore += points;
+              console.log(`Number: ${submittedNumber}, Points: ${points}, Total Score: ${totalScore}`);
+              
+              // Show combo toast if we have a streak
+              if (hasFact && factStreak > 1) {
+                showToast(`Combo x${Math.min(factStreak, 3)}!`);
+              }
+              
+              updateProgressScore();
+              saveGameState(); // Save after each successful submission
+              
+              // Check if player reached Genius level (score 100+) and hasn't won yet
+              if (totalScore >= 100 && !hasWon) {
+                hasWon = true;
+                // Mark game as completed in localStorage
+                localStorage.setItem('numberbee_completed', 'true');
+                
+                // Start marker shake animation immediately
+                const progressMarker = document.querySelector('.sb-progress-marker');
+                if (progressMarker) {
+                  progressMarker.classList.add('marker-win-shake');
+                  
+                  // Always make marker clickable when user wins
+                  progressMarker.style.cursor = 'pointer';
+                  progressMarker.addEventListener('click', handleMarkerClick);
+                }
+                
+                setTimeout(() => {
+                  showVictoryPopup();
+                }, 1000); // Delay to let rank animation complete
+              }
+            }, 100);
+          }
+        }
+      }
+      
+      function showBadNumbersToast() {
+        showToast('Bad numbers');
+      }
+      
+      function showMissingMiddleToast() {
+        showToast('Missing middle number');
+      }
+      
+      function showAlreadyFoundToast() {
+        showToast('Already found');
+      }
+      
+      function showTooLongToast() {
+        showToast(getRandomTooLongMessage());
+      }
+      
+      function showDecimalToast() {
+        showToast(getRandomDecimalMessage());
+      }
+      
+      async function showNumberFactToast(numberString) {
+        try {
+          const fact = await getNumberFact(numberString);
+          
+          if (fact) {
+            showToast(fact);
+            return true; // Has fact
+          } else {
+            showToast(getRandomGenericMessage());
+            return false; // No fact
+          }
+        } catch (error) {
+          console.error('Error showing number fact:', error);
+          showToast(getRandomGenericMessage());
+          return false; // No fact
+        }
+      }
+      
+      function calculateScore(numberString, hasFact) {
+        let score = 0;
+        
+        // Check if uses all digits
+        const usedDigits = new Set(numberString.split('').map(d => parseInt(d)));
+        const allDigits = new Set(hexNumbers);
+        const usesAllDigits = usedDigits.size === allDigits.size && 
+                             [...usedDigits].every(digit => allDigits.has(digit));
+        
+        if (usesAllDigits) {
+          score = 5; // 5 points for using every digit (pangram bonus)
+          factStreak = 0; // Reset streak for pangrams
+        } else if (hasFact) {
+          // Interesting numbers: length × multiplier (1x, 2x, or 3x based on streak)
+          factStreak++;
+          const multiplier = Math.min(factStreak, 3); // Cap at 3x
+          score = numberString.length * multiplier;
+        } else {
+          score = 1; // 1 point for regular numbers
+          factStreak = 0; // Reset streak for regular numbers
+        }
+        
+        return score;
+      }
+      
+      function updateProgressScore() {
+        const progressValue = document.querySelector('.sb-progress-value');
+        const progressMarker = document.querySelector('.sb-progress-marker');
+        const beginnerLabel = document.querySelector('.beginner-label');
+        const progressDots = document.querySelectorAll('.sb-progress-dot');
+        
+        // Define rank thresholds
+        const ranks = [
+          { name: 'Beginner', points: 0 },
+          { name: 'Good Start', points: 5 },
+          { name: 'Moving Up', points: 12 },
+          { name: 'Good', points: 22 },
+          { name: 'Solid', points: 35 },
+          { name: 'Nice', points: 50 },
+          { name: 'Great', points: 68 },
+          { name: 'Amazing', points: 85 },
+          { name: 'Genius', points: 100 }
+        ];
+        
+        // Find current rank (use display score capped at 100)
+        const displayScore = Math.min(totalScore, 100);
+        let currentRank = ranks[0];
+        let newRankIndex = 0;
+        for (let i = ranks.length - 1; i >= 0; i--) {
+          if (displayScore >= ranks[i].points) {
+            currentRank = ranks[i];
+            newRankIndex = i;
+            break;
+          }
+        }
+        
+        // Check if rank changed before updating
+        const rankChanged = newRankIndex !== currentRankIndex;
+        
+        // Calculate position based on rank dots (not exact score)
+        const dotPositions = [0, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100];
+        const markerPosition = dotPositions[newRankIndex] || 0;
+        
+        // Always update marker position and dots (needed for page reload)
+        // Always update marker position
+        if (progressMarker) {
+          progressMarker.style.left = `${markerPosition}%`;
+        }
+        
+        // Update progress dots - passed ranks become yellow circles
+        progressDots.forEach((dot, index) => {
+          if (index < newRankIndex) {
+            // Passed ranks: yellow circles
+            dot.style.backgroundColor = '#f7da21';
+          } else {
+            // Future ranks: grey circles
+            dot.style.backgroundColor = '#e0e0e0';
+          }
+        });
+        
+        // Update currentRankIndex after using it for comparison
+        currentRankIndex = newRankIndex;
+        
+        
+        // Update score display (cap at 50 for display purposes)
+        if (progressValue) {
+          if (isNegativeMode) {
+            progressValue.dataset.originalText = displayScore.toString();
+            progressValue.textContent = reverseText(displayScore.toString());
+          } else {
+            progressValue.textContent = displayScore.toString();
+          }
+        }
+        
+        // Update rank label with animation if rank changed
+        if (beginnerLabel && rankChanged) {
+          // Create temporary element for the old rank to slide out
+          const oldRankElement = document.createElement('div');
+          oldRankElement.style.position = 'absolute';
+          oldRankElement.style.width = '100%';
+          oldRankElement.style.height = '100%';
+          oldRankElement.style.display = 'flex';
+          oldRankElement.style.alignItems = 'center';
+          oldRankElement.style.justifyContent = 'center';
+          oldRankElement.style.fontFamily = 'Franklin, Arial, sans-serif';
+          oldRankElement.style.fontSize = '16px';
+          oldRankElement.style.fontWeight = '700';
+          oldRankElement.style.color = '#121212';
+          
+          if (isNegativeMode) {
+            oldRankElement.textContent = beginnerLabel.textContent;
+          } else {
+            oldRankElement.textContent = beginnerLabel.textContent;
+          }
+          
+          oldRankElement.classList.add('rank-slide-out');
+          beginnerLabel.appendChild(oldRankElement);
+          
+          // Create new rank element to slide in
+          const newRankElement = document.createElement('div');
+          newRankElement.style.position = 'absolute';
+          newRankElement.style.width = '100%';
+          newRankElement.style.height = '100%';
+          newRankElement.style.display = 'flex';
+          newRankElement.style.alignItems = 'center';
+          newRankElement.style.justifyContent = 'center';
+          newRankElement.style.fontFamily = 'Franklin, Arial, sans-serif';
+          newRankElement.style.fontSize = '16px';
+          newRankElement.style.fontWeight = '700';
+          newRankElement.style.color = '#121212';
+          
+          if (isNegativeMode) {
+            newRankElement.dataset.originalText = currentRank.name;
+            newRankElement.textContent = reverseText(currentRank.name);
+          } else {
+            newRankElement.textContent = currentRank.name;
+          }
+          
+          newRankElement.classList.add('rank-slide-in');
+          beginnerLabel.appendChild(newRankElement);
+          
+          // Clear original text during animation
+          beginnerLabel.childNodes.forEach(node => {
+            if (node.nodeType === Node.TEXT_NODE) {
+              node.textContent = '';
+            }
+          });
+          
+          // Clean up after animations
+          setTimeout(() => {
+            beginnerLabel.innerHTML = '';
+            if (isNegativeMode) {
+              beginnerLabel.dataset.originalText = currentRank.name;
+              beginnerLabel.textContent = reverseText(currentRank.name);
+            } else {
+              beginnerLabel.textContent = currentRank.name;
+            }
+          }, 600);
+        } else if (beginnerLabel) {
+          // Just update text if no rank change
+          if (isNegativeMode) {
+            beginnerLabel.dataset.originalText = currentRank.name;
+            beginnerLabel.textContent = reverseText(currentRank.name);
+          } else {
+            beginnerLabel.textContent = currentRank.name;
+          }
+        }
+      }
+      
+      function showToast(message) {
+        // Add message to queue
+        toastQueue.push(message);
+        
+        // Process queue if not already showing a toast
+        if (!isShowingToast) {
+          processToastQueue();
+        }
+      }
+      
+      function processToastQueue() {
+        if (toastQueue.length === 0) {
+          isShowingToast = false;
+          return;
+        }
+        
+        isShowingToast = true;
+        const message = toastQueue.shift();
+        
+        // Remove existing toast if any
+        const existingToast = document.querySelector('.toast');
+        if (existingToast) {
+          existingToast.remove();
+        }
+        
+        // Create and show toast
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        
+        // Show reversed message in negative mode
+        if (isNegativeMode) {
+          toast.textContent = reverseText(message);
+        } else {
+          toast.textContent = message;
+        }
+        
+        document.body.appendChild(toast);
+        
+        // Show toast
+        setTimeout(() => toast.classList.add('show'), 10);
+        
+        // Hide and remove toast after 2 seconds, then process next in queue
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => {
+            toast.remove();
+            // Process next toast in queue
+            processToastQueue();
+          }, 300);
+        }, 2000);
+      }
+      
+      function shakeInput() {
+        const inputText = document.getElementById("inputText");
+        inputText.classList.add('shake');
+        
+        // Remove shake class after animation
+        setTimeout(() => {
+          inputText.classList.remove('shake');
+        }, 600);
+      }
+
+      function shuffleNumbers() {
+        // Keep the center digit (index 6) fixed, shuffle only the outer 6
+        const centerDigit = hexNumbers[6];
+        const centerUsage = digitUsages[6];
+        const outerDigits = hexNumbers.slice(0, 6);
+        const outerUsages = digitUsages.slice(0, 6);
+        
+        // Fisher-Yates shuffle for the outer digits and their usages
+        for (let i = outerDigits.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [outerDigits[i], outerDigits[j]] = [outerDigits[j], outerDigits[i]];
+          [outerUsages[i], outerUsages[j]] = [outerUsages[j], outerUsages[i]];
+        }
+        
+        // Reconstruct the arrays with shuffled outer digits and fixed center
+        hexNumbers = [...outerDigits, centerDigit];
+        digitUsages = [...outerUsages, centerUsage];
+        
+        // Animate only the text elements
+        const textElements = document.querySelectorAll('.cell-letter');
+        textElements.forEach((textEl, index) => {
+          if (index !== 6) { // Don't animate center digit
+            textEl.style.transition = 'opacity 0.3s ease';
+            textEl.style.opacity = '0';
+            
+            setTimeout(() => {
+              textEl.textContent = hexNumbers[index];
+              textEl.style.opacity = '1';
+            }, 300);
+          }
+        });
+        
+        // Update shake states after animation
+        setTimeout(() => {
+          displayNumbers();
+          saveGameState(); // Save after shuffle
+        }, 600);
+      }
+
+      function updateInputDisplay() {
+        const inputText = document.getElementById("inputText");
+        
+        if (currentInput.length > 0) {
+          hasStartedTyping = true;
+          inputText.style.fontWeight = "700";
+          
+          // Color each digit based on whether it was valid when entered
+          let coloredInput = "";
+          const currentCenterDigit = hexNumbers[6]; // Current center digit
+          
+          // Build array of colored digits
+          const coloredDigits = [];
+          for (let i = 0; i < currentInput.length; i++) {
+            const digit = parseInt(currentInput[i]);
+            const wasValidWhenEntered = digitValidityAtEntry[i]; // Whether this position was valid when entered
+            const wasCenterWhenEntered = wasCenterAtEntry[i]; // Whether this position was center when entered
+            const isCurrentCenterDigit = digit === currentCenterDigit; // Whether this is the current center digit
+            
+            let color;
+            // Check if this digit was valid when entered
+            if (wasValidWhenEntered) {
+              // This digit was valid when entered, color based on center status (past or present)
+              if (wasCenterWhenEntered || isCurrentCenterDigit) {
+                color = "#f7da21"; // Yellow for digits that were center when entered OR are current center
+              } else {
+                color = "#121212"; // Black for other valid digits
+              }
+            } else {
+              // This digit was invalid when entered (dead or not in grid)
+              color = "#DFDFDF"; // Grey for invalid digits
+            }
+            
+            coloredDigits.push(`<span style="color: ${color}">${digit}</span>`);
+          }
+          
+          // Join the digits in their current order (addToInput already handles prepending in negative mode)
+          coloredInput = coloredDigits.join('');
+          
+          // In negative mode, cursor goes at the beginning since we prepend digits
+          if (isNegativeMode) {
+            inputText.innerHTML = '<span class="blinking-cursor"></span>' + coloredInput;
+          } else {
+            inputText.innerHTML = coloredInput + '<span class="blinking-cursor"></span>';
+          }
+        } else if (hasStartedTyping) {
+          // Keep showing just cursor after starting to type
+          inputText.style.fontWeight = "700";
+          inputText.innerHTML = '<span class="blinking-cursor"></span>';
+        } else {
+          // Initial state - show instructions with cursor at the beginning
+          inputText.style.fontWeight = "500";
+          inputText.style.color = "#666";
+          
+          const instructionText = "Type or click";
+          const displayText = isNegativeMode ? reverseText(instructionText) : instructionText;
+          
+          // Store original if not stored yet
+          if (!inputText.dataset.originalText) {
+            inputText.dataset.originalText = instructionText;
+          }
+          
+          // In negative mode, cursor stays at beginning for consistency with input
+          if (isNegativeMode) {
+            inputText.innerHTML = '<span class="blinking-cursor"></span>' + displayText;
+          } else {
+            inputText.innerHTML = '<span class="blinking-cursor"></span>' + displayText;
+          }
+        }
+      }
+
+      function updateStatsDisplay() {
+        const textElement = document.getElementById("wordsFoundText");
+        const text = `You have found ${foundWords} numbers`;
+        
+        if (isNegativeMode && !textElement.dataset.originalText) {
+          // Store original if not stored yet, then display reversed
+          textElement.dataset.originalText = text;
+          textElement.textContent = reverseText(text);
+        } else if (isNegativeMode) {
+          // Update original and display reversed
+          textElement.dataset.originalText = text;
+          textElement.textContent = reverseText(text);
+        } else {
+          // Normal mode
+          textElement.textContent = text;
+        }
+      }
+      
+      function decrementDigitUsages() {
+        let willAnyDigitDie = false;
+        const digitsToReplace = []; // Collect all digits that need replacement
+        
+        // Decrement usage for each digit used in the current input (skip already dead digits)
+        for (let i = 0; i < currentInput.length; i++) {
+          const digit = parseInt(currentInput[i]);
+          const digitIndex = hexNumbers.indexOf(digit);
+          
+          if (digitIndex !== -1 && digitUsages[digitIndex] > 0) {
+            digitUsages[digitIndex]--;
+            
+            // If digit runs out of uses, mark it for replacement
+            if (digitUsages[digitIndex] === 0) {
+              willAnyDigitDie = true;
+              digitsToReplace.push(digitIndex);
+            }
+          }
+        }
+        
+        // Replace all dead digits sequentially to avoid conflicts
+        digitsToReplace.forEach((digitIndex, replacementOrder) => {
+          // Add small delay between replacements to avoid conflicts
+          setTimeout(() => {
+            replaceDigit(digitIndex, true); // Show death toast for normal deaths
+          }, replacementOrder * 100); // 100ms delay between each replacement
+        });
+        
+        // Update display to show new shake states after all replacements are done
+        setTimeout(() => {
+          displayNumbers();
+        }, 50);
+        
+        return willAnyDigitDie;
+      }
+      
+      function replaceDigit(index, showDeathToast = false) {
+        const oldDigit = hexNumbers[index];
+        
+        // Funny pun messages for each digit when they die
+        const digitDeathPuns = {
+          0: ["This was nothing!", "Back to square zero!", "Oh no, zero to go!"],
+          1: ["Back to square one...", "Won and done!", "One last goodbye!"],
+          2: ["That's two bad!", "This is two much!", "Two-dally awesome while it lasted!"],
+          3: ["Three was a crowd!", "Three-mendous while it lasted!", "Third time's the harm!"],
+          4: ["Four-ever in our hearts!", "Four-get me not!", "What are friends four?"],
+          5: ["High five, goodbye!", "Five-nally, your time is up!", "Take five... forever!"],
+          6: ["Six feet under now!", "I was six-ational!", "Six and stones may break my bones!"],
+          7: ["Seven heaven awaits you!", "Lucky seven, unlucky now!", "Seven-ly missed!"],
+          8: ["It's my fate!", "Ate up all your chances!", "Figure-eight your way out!"],
+          9: ["Nine lives, all used up!", "Take me back to cloud nine", "Ninety nine problems, and they got me!"]
+        };
+        
+        // Add to cooldown
+        digitCooldowns[oldDigit] = successfulTurns + 3;
+        
+        // Get available digits (not in current grid, not in cooldown, not being replaced)
+        const usedDigits = new Set([...hexNumbers, ...digitsBeingReplaced]);
+        const availableDigits = [];
+        
+        for (let digit = 0; digit <= 9; digit++) {
+          if (!usedDigits.has(digit) && 
+              (!digitCooldowns[digit] || digitCooldowns[digit] <= successfulTurns)) {
+            availableDigits.push(digit);
+          }
+        }
+        
+        if (availableDigits.length > 0) {
+          // Select replacement digit and immediately mark it as being replaced
+          const randomIndex = Math.floor(Math.random() * availableDigits.length);
+          const newDigit = availableDigits[randomIndex];
+          digitsBeingReplaced.add(newDigit);
+          
+          // Also immediately update the hexNumbers array to prevent double-selection
+          const originalDigit = hexNumbers[index];
+          hexNumbers[index] = newDigit;
+          
+          const hexagon = document.querySelectorAll(".hive-cell")[index];
+          
+          // Stop shaking for 0.2s, then fade out
+          hexagon.classList.remove('hex-shake', 'center-shake');
+          
+          setTimeout(() => {
+            // Show emotional pun message when digit is about to die (only if requested)
+            if (showDeathToast) {
+              const puns = digitDeathPuns[oldDigit];
+              const randomPun = puns[Math.floor(Math.random() * puns.length)];
+              showToast(randomPun);
+            }
+            
+            // Start fade out
+            hexagon.classList.add('fade-out');
+            
+            setTimeout(() => {
+              // Reset usage count (digit already assigned above)
+              digitUsages[index] = 6; // Reset to 6 uses
+              
+              // Remove from being replaced set
+              digitsBeingReplaced.delete(newDigit);
+              
+              // Remove fade out and start resurrection
+              hexagon.classList.remove('fade-out');
+              hexagon.classList.add('fade-in');
+              
+              // Update display after starting resurrection animation
+              displayNumbers();
+              saveGameState(); // Save after digit replacement
+              
+              // Remove fade-in class after animation completes
+              setTimeout(() => {
+                hexagon.classList.remove('fade-in');
+              }, 600);
+            }, 800); // Wait for dying animation to complete
+          }, 200); // 0.2s pause after stopping shake
+        }
+      }
+      
+      function addToWordList(word) {
+        const wordList = document.getElementById("wordList");
+        const listItem = document.createElement("li");
+        const span = document.createElement("span");
+        span.className = "sb-anagram";
+        
+        if (isNegativeMode) {
+          span.dataset.originalText = word;
+          span.textContent = reverseText(word);
+        } else {
+          span.textContent = word;
+        }
+        
+        listItem.appendChild(span);
+        wordList.appendChild(listItem);
+      }
+
+      // Click handlers
+      document.querySelectorAll(".hive-cell").forEach((hex) => {
+        hex.addEventListener("click", function () {
+          const index = parseInt(this.dataset.index);
+          const number = hexNumbers[index];
+          addToInput(number);
+        });
+      });
+
+      // Keyboard support
+      document.addEventListener("keydown", function (event) {
+        if (event.key >= "0" && event.key <= "9") {
+          const digit = parseInt(event.key);
+          addToInput(digit);
+        } else if (event.key === "Backspace" || event.key === "Delete") {
+          deleteChar();
+        } else if (event.key === "Enter") {
+          submitInput();
+        } else if (event.key.toLowerCase() === "r") {
+          shuffleNumbers();
+        } else if (event.key === "-" || event.key === "_") {
+          toggleNegativeMode();
+        } else if (event.key === "." || event.key === ",") {
+          // Reject decimal points
+          showDecimalToast();
+          shakeInput();
+        }
+      });
+
+      // Initialize
+      function initializeGame() {
+        // Try to load saved state first
+        const loaded = loadGameState();
+        
+        if (!loaded) {
+          // No saved state, generate new game
+          generateRandomNumbers();
+        }
+        
+        // Update displays based on current state
+        displayNumbers();
+        updateInputDisplay();
+        updateStatsDisplay();
+        updateProgressScore();
+        
+        // Restore word list if we have found numbers
+        if (foundNumbers.size > 0) {
+          foundNumbers.forEach(number => {
+            addToWordList(number);
+          });
+        }
+        
+        // Apply negative mode if it was active
+        if (isNegativeMode) {
+          // Force update displays to show reversed text
+          setTimeout(() => {
+            updateInputDisplay();
+            updateStatsDisplay();
+            updateProgressScore();
+            
+            // Apply negative mode styling to all elements
+            const allTextElements = [
+              document.querySelector('.title'),
+              document.querySelector('.beginner-label'),
+              document.querySelector('.sb-progress-value'),
+              document.querySelector('#wordsFoundText'),
+              document.querySelector('#inputText'),
+              document.querySelector('.restart-btn'),
+              ...document.querySelectorAll('.sb-anagram'),
+              ...document.querySelectorAll('.btn:not(.circular)')
+            ].filter(el => el !== null);
+            
+            // Handle SVG rotation for circular button
+            const circularBtn = document.querySelector('.btn.circular');
+            if (circularBtn) {
+              const svg = circularBtn.querySelector('svg');
+              if (svg) {
+                svg.style.transition = 'transform 0.3s ease';
+                svg.style.transform = 'rotate(180deg)';
+              }
+            }
+            
+            allTextElements.forEach(el => {
+              if (el.textContent && !el.dataset.originalText) {
+                // Store and reverse text content
+                el.dataset.originalText = el.textContent;
+                el.textContent = reverseText(el.textContent);
+              }
+            });
+          }, 100);
+        }
+      }
+      
+      // Start the game
+      initializeGame();
+    </script>
+    
+    <!-- Wait Popup -->
+    <div class="wait-popup" id="wait-popup">
+      <button class="close-btn" onclick="closeWaitPopup()">✕</button>
+      <h2>Not Yet Available</h2>
+      <p>Impressive work reaching Genius level!<br><br>More puzzles are coming soon.</p>
+      <p style="font-style: italic; font-size: 1rem; color: #999;">The next challenge is still being prepared...</p>
+      <button class="victory-btn" onclick="closeWaitPopup()">Understood</button>
+    </div>
+  </body>
+</html>
