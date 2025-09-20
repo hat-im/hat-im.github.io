@@ -1,0 +1,220 @@
+{
+  "size": 6,
+  "grid": [
+    [
+      "S",
+      "H",
+      "Y",
+      ".",
+      "W",
+      "E"
+    ],
+    [
+      "T",
+      "B",
+      ".",
+      "H",
+      "A",
+      "T"
+    ],
+    [
+      "R",
+      ".",
+      "O",
+      "O",
+      "P",
+      "S"
+    ],
+    [
+      "I",
+      "N",
+      "T",
+      "O",
+      ".",
+      "Y"
+    ],
+    [
+      "N",
+      "E",
+      "C",
+      "K",
+      "S",
+      "."
+    ],
+    [
+      "G",
+      "O",
+      "O",
+      "S",
+      "E",
+      "."
+    ]
+  ],
+  "words": [
+    {
+      "word": "SHY",
+      "clue": "Three letters from almost.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "WE",
+      "clue": "Together, grammatically.",
+      "row": 0,
+      "col": 4,
+      "direction": "across",
+      "number": 3,
+      "display": "3-Across",
+      "related": []
+    },
+    {
+      "word": "TB",
+      "clue": "A disease once called consumption, in short.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    },
+    {
+      "word": "HAT",
+      "clue": "My alias that I never wore.",
+      "row": 1,
+      "col": 3,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "OOPS",
+      "clue": "Blunder\u2019s exclamations.",
+      "row": 2,
+      "col": 2,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "INTO",
+      "clue": "Preposition that follows 'lean' or 'look'.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "NECKS",
+      "clue": "They contain jugulars.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 10,
+      "display": "10-Across",
+      "related": []
+    },
+    {
+      "word": "GOOSE",
+      "clue": "Honker, stealer of bells, enemy of peace.",
+      "row": 5,
+      "col": 0,
+      "direction": "across",
+      "number": 12,
+      "display": "12-Across",
+      "related": []
+    },
+    {
+      "word": "STRING",
+      "clue": "It might be looped, knotted, or stitched, sometimes using 6-Down.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": ["6D"]
+    },
+    {
+      "word": "HB",
+      "clue": "Reason blood runs red: Abbreviated.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "NEO",
+      "clue": "Prefix that means new.",
+      "row": 3,
+      "col": 1,
+      "direction": "down",
+      "number": 9,
+      "display": "9-Down",
+      "related": []
+    },
+    {
+      "word": "OTCO",
+      "clue": "Sort-of reverse of \"octo\" (I know, I know).",
+      "row": 2,
+      "col": 2,
+      "direction": "down",
+      "number": 7,
+      "display": "7-Down",
+      "related": []
+    },
+    {
+      "word": "HOOKS",
+      "clue": "Tools that turn 1-Down into something warm.",
+      "row": 1,
+      "col": 3,
+      "direction": "down",
+      "number": 6,
+      "display": "6-Down",
+      "related": ["1D"]
+    },
+    {
+      "word": "WAP",
+      "clue": "2020 Cardi B hit, to Ben Shapiro's confusion.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "SE",
+      "clue": "This square's cardinal direction, abbreviated.",
+      "row": 4,
+      "col": 4,
+      "direction": "down",
+      "number": 11,
+      "display": "11-Down",
+      "related": []
+    },
+    {
+      "word": "ETSY",
+      "clue": "Handmade marketplace.",
+      "row": 0,
+      "col": 5,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 16,
+    "grid_size": "6x6"
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "size": 6,
+  "grid": [
+    [
+      "U",
+      "S",
+      "B",
+      ".",
+      ".",
+      "Y"
+    ],
+    [
+      ".",
+      "E",
+      ".",
+      "S",
+      "M",
+      "E"
+    ],
+    [
+      "A",
+      "L",
+      "O",
+      "H",
+      "A",
+      "S"
+    ],
+    [
+      "R",
+      "E",
+      "D",
+      "O",
+      "S",
+      "."
+    ],
+    [
+      "A",
+      "N",
+      "O",
+      "R",
+      "A",
+      "."
+    ],
+    [
+      "M",
+      "A",
+      "R",
+      "T",
+      "I",
+      "N"
+    ]
+  ],
+  "words": [
+    {
+      "word": "USB",
+      "clue": "Connector that never fits on the first try.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "SME",
+      "clue": "Expert who charges by the acronym.",
+      "row": 1,
+      "col": 3,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+      "related": []
+    },
+    {
+      "word": "ALOHAS",
+      "clue": "Arrivals and departures in Honolulu.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "REDOS",
+      "clue": "Makeover attempts.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "ANORA",
+      "clue": "Oscar dominator about a working girl's brief time with Russian nobility.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "MARTIN",
+      "clue": "Steve as Savage as Brazzos, who blacked out into the white room to the horror of 4-Down and 2-Down.",
+      "row": 5,
+      "col": 0,
+      "direction": "across",
+      "number": 10,
+      "display": "10-Across",
+      "related": ["2D", "4D"]
+    },
+    {
+      "word": "ARAM",
+      "clue": "Rest in Sanskrit.",
+      "row": 2,
+      "col": 0,
+      "direction": "down",
+      "number": 6,
+      "display": "6-Down",
+      "related": ["10A", "4D"]
+    },
+    {
+      "word": "SELENA",
+      "clue": "Witch turned singer-cum-actor as monotonous Mora with 10-Across and 4-Down.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "ODOR",
+      "clue": "A smell. The kind of smelly smell. The kind of smelly smell that smells... smelly.",
+      "row": 2,
+      "col": 2,
+      "direction": "down",
+      "number": 7,
+      "display": "7-Down",
+      "related": []
+    },
+    {
+      "word": "SHORT",
+      "clue": "Martin as Oliver spinning tall tales to 10-Across and 2-Down.",
+      "row": 1,
+      "col": 3,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": ["2D", "10A"]
+    },
+    {
+      "word": "MASAI",
+      "clue": "Jump-dancing tribe of warriors in Kenya.",
+      "row": 1,
+      "col": 4,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    },
+    {
+      "word": "YES",
+      "clue": "Word that can get you in a lot of trouble.",
+      "row": 0,
+      "col": 5,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 12,
+    "grid_size": "6x6"
+  }
+}

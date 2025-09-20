@@ -1,0 +1,190 @@
+{
+  "size": 6,
+  "grid": [
+    [
+      "Z",
+      "A",
+      "R",
+      "A",
+      "S",
+      "."
+    ],
+    [
+      "E",
+      "L",
+      "E",
+      "V",
+      "O",
+      "N"
+    ],
+    [
+      "B",
+      ".",
+      "V",
+      "A",
+      "D",
+      "A"
+    ],
+    [
+      "R",
+      ".",
+      "E",
+      "N",
+      ".",
+      "M"
+    ],
+    [
+      "A",
+      "O",
+      "R",
+      "T",
+      "A",
+      "E"
+    ],
+    [
+      "S",
+      ".",
+      "B",
+      "I",
+      "N",
+      "D"
+    ]
+  ],
+  "words": [
+    {
+      "word": "ZARAS",
+      "clue": "One-stop shops where one can find baggy pants and perfumes.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "ELEVON",
+      "clue": "The aeronautic child of an elevator and an aileron.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "VADA",
+      "clue": "What comes within pav.",
+      "row": 2,
+      "col": 2,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "EN",
+      "clue": "Prefix to entail, enclose and enter (wait-).",
+      "row": 3,
+      "col": 2,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "AORTAE",
+      "clue": "The biggest highways out of the heart.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 10,
+      "display": "10-Across",
+      "related": []
+    },
+    {
+      "word": "BIND",
+      "clue": "The art of stitching pages together.",
+      "row": 5,
+      "col": 2,
+      "direction": "across",
+      "number": 12,
+      "display": "12-Across",
+      "related": []
+    },
+    {
+      "word": "ZEBRAS",
+      "clue": "When you hear hoofbeats, think horses, not ______.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "AL",
+      "clue": "Elemental flyer: metal in planes.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "REVERB",
+      "clue": "To verb again?",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "AVANTI",
+      "clue": "In Italian, \"Forward\".",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    },
+    {
+      "word": "SOD",
+      "clue": "Earthy-sounding British insult.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    },
+    {
+      "word": "AN",
+      "clue": "Because clearly one indefinite article wasn’t enough.",
+      "row": 4,
+      "col": 4,
+      "direction": "down",
+      "number": 11,
+      "display": "11-Down",
+      "related": []
+    },
+    {
+      "word": "NAMED",
+      "clue": "Before being shamed.",
+      "row": 1,
+      "col": 5,
+      "direction": "down",
+      "number": 7,
+      "display": "7-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 13,
+    "grid_size": "6x6"
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "size": 8,
+  "grid": [
+    [
+      "A",
+      "L",
+      "I",
+      "A",
+      "S",
+      ".",
+      "R",
+      "."
+    ],
+    [
+      "T",
+      "O",
+      "O",
+      ".",
+      "P",
+      "O",
+      "O",
+      "P"
+    ],
+    [
+      ".",
+      "L",
+      "U",
+      "N",
+      "A",
+      ".",
+      "W",
+      "."
+    ],
+    [
+      "W",
+      ".",
+      ".",
+      ".",
+      "I",
+      "K",
+      "E",
+      "S"
+    ],
+    [
+      "I",
+      "B",
+      "M",
+      ".",
+      "L",
+      "E",
+      "N",
+      "A"
+    ],
+    [
+      "D",
+      "A",
+      "B",
+      "S",
+      ".",
+      "R",
+      "A",
+      "N"
+    ],
+    [
+      "O",
+      "R",
+      "P",
+      "H",
+      "A",
+      "N",
+      ".",
+      "S"
+    ],
+    [
+      "W",
+      "E",
+      "S",
+      "E",
+      ".",
+      "S",
+      ".",
+      "."
+    ]
+  ],
+  "words": [
+    {
+      "word": "ALIAS",
+      "clue": "Anti-smoothing onscreen letters.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "TOO",
+      "clue": "\"Excessively\" or \"also\".",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "POOP",
+      "clue": "Prime subject of our updates from the porcelain throne.",
+      "row": 1,
+      "col": 4,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "LUNA",
+      "clue": "Sushi's feline partner in crime.",
+      "row": 2,
+      "col": 1,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "IKES",
+      "clue": "Isaacs and Michaels, briefly.",
+      "row": 3,
+      "col": 4,
+      "direction": "across",
+      "number": 10,
+      "display": "10-Across",
+      "related": []
+    },
+    {
+      "word": "IBM",
+      "clue": "Corporation behind Plex and Courier.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 13,
+      "display": "13-Across",
+      "related": []
+    },
+    {
+      "word": "LENA",
+      "clue": "____-dena. (Hindi)",
+      "row": 4,
+      "col": 4,
+      "direction": "across",
+      "number": 16,
+      "display": "16-Across",
+      "related": []
+    },
+    {
+      "word": "DABS",
+      "clue": "The Fortnite salutes.",
+      "row": 5,
+      "col": 0,
+      "direction": "across",
+      "number": 17,
+      "display": "17-Across",
+      "related": []
+    },
+    {
+      "word": "RAN",
+      "clue": "First resort of a coward.",
+      "row": 5,
+      "col": 5,
+      "direction": "across",
+      "number": 19,
+      "display": "19-Across",
+      "related": []
+    },
+    {
+      "word": "ORPHAN",
+      "clue": "Alone at the end of a page.",
+      "row": 6,
+      "col": 0,
+      "direction": "across",
+      "number": 20,
+      "display": "20-Across",
+      "related": []
+    },
+    {
+      "word": "WESE",
+      "clue": "Kese hi? (Spelled badly I know)",
+      "row": 7,
+      "col": 0,
+      "direction": "across",
+      "number": 21,
+      "display": "21-Across",
+      "related": []
+    },
+    {
+      "word": "AT",
+      "clue": "The heart of an email address, symbolically.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "WIDOW",
+      "clue": "Pushed to a new page, all alone.",
+      "row": 3,
+      "col": 0,
+      "direction": "down",
+      "number": 9,
+      "display": "9-Down",
+      "related": []
+    },
+    {
+      "word": "LOL",
+      "clue": "Laughter in the digital age.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "BARE",
+      "clue": "Bear, but hardly the grizzly kind.",
+      "row": 4,
+      "col": 1,
+      "direction": "down",
+      "number": 14,
+      "display": "14-Down",
+      "related": []
+    },
+    {
+      "word": "IOU",
+      "clue": "Three-letter debt note.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "MBPS",
+      "clue": "Wi-Fi bragging units.",
+      "row": 4,
+      "col": 2,
+      "direction": "down",
+      "number": 15,
+      "display": "15-Down",
+      "related": []
+    },
+    {
+      "word": "SHE",
+      "clue": "Not he.",
+      "row": 5,
+      "col": 3,
+      "direction": "down",
+      "number": 18,
+      "display": "18-Down",
+      "related": []
+    },
+    {
+      "word": "SPAIL",
+      "clue": "A Scottish kind of spillage.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    },
+    {
+      "word": "KERNS",
+      "clue": "Spaces meant to avoid a designer's judgement.",
+      "row": 3,
+      "col": 5,
+      "direction": "down",
+      "number": 11,
+      "display": "11-Down",
+      "related": []
+    },
+    {
+      "word": "ROWENA",
+      "clue": "Founder behind Ravenclaw.",
+      "row": 0,
+      "col": 6,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    },
+    {
+      "word": "SANS",
+      "clue": "What Comic has that Serifs don't.",
+      "row": 3,
+      "col": 7,
+      "direction": "down",
+      "number": 12,
+      "display": "12-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 22,
+    "grid_size": "8x8"
+  }
+}

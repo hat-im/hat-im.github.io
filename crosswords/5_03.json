@@ -1,0 +1,147 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "C",
+      ".",
+      "G",
+      "E",
+      "G"
+    ],
+    [
+      "H",
+      "I",
+      "R",
+      "E",
+      "R"
+    ],
+    [
+      "A",
+      ".",
+      "I",
+      "R",
+      "E"
+    ],
+    [
+      "O",
+      "P",
+      "P",
+      "I",
+      "E"
+    ],
+    [
+      "S",
+      "P",
+      "E",
+      "E",
+      "D"
+    ]
+  ],
+  "words": [
+    {
+      "word": "GEG",
+      "clue": "Belfast laugh or breakfast that was scrambled?",
+      "row": 0,
+      "col": 2,
+      "direction": "across",
+      "number": 2,
+      "display": "2-Across",
+      "related": []
+    },
+    {
+      "word": "HIRER",
+      "clue": "Opposite of a firer.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    },
+    {
+      "word": "IRE",
+      "clue": "The heart of 5-Across.",
+      "row": 2,
+      "col": 2,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": ["5A"]
+    },
+    {
+      "word": "OPPIE",
+      "clue": "First film, first meeting, and the start of our chain reaction, briefly.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "SPEED",
+      "clue": "A Roy sibling and The One walk onto a bus...",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "CHAOS",
+      "clue": "The real dish in Overcooked 2.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "PP",
+      "clue": "To go #1, but twice.",
+      "row": 3,
+      "col": 1,
+      "direction": "down",
+      "number": 8,
+      "display": "8-Down",
+      "related": []
+    },
+    {
+      "word": "GRIPE",
+      "clue": "Minor issue that definitely didn't ruin the vibe.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "EERIE",
+      "clue": "The feeling when the goose stops honking.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "GREED",
+      "clue": "The type they warned about in the Bible.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 10,
+    "grid_size": "5x5"
+  }
+}

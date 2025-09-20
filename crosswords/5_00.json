@@ -1,0 +1,146 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "T",
+      "H",
+      "A",
+      "I",
+      "S"
+    ],
+    [
+      ".",
+      "O",
+      ".",
+      "N",
+      "."
+    ],
+    [
+      "B",
+      "R",
+      "I",
+      "C",
+      "K"
+    ],
+    [
+      "I",
+      "D",
+      "A",
+      "H",
+      "O"
+    ],
+    [
+      "G",
+      "E",
+      "M",
+      ".",
+      "I"
+    ]
+  ],
+  "words": [
+    {
+      "word": "THAIS",
+      "clue": "People behind orange iced tea.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+			"related": []
+
+    },
+    {
+      "word": "BRICK",
+      "clue": "Dead device, post-update. Also building block of a home.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+			"related": []
+
+    },
+    {
+      "word": "IDAHO",
+      "clue": "8-Across’s state, on the US map.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+			"related": ["8A"]
+
+    },
+    {
+      "word": "GEM",
+      "clue": "Opal, or a rare find at a bookstore.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+			"related": ["7A"]
+
+    },
+    {
+      "word": "BIG",
+      "clue": "What 3-Down is not.",
+      "row": 2,
+      "col": 0,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+			"related": ["3D"]
+
+    },
+    {
+      "word": "HORDE",
+      "clue": "Mob that sounds like it stores stuff.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+			"related": []
+
+    },
+    {
+      "word": "IAM",
+      "clue": "Descartes's conclusion (2,1).",
+      "row": 2,
+      "col": 2,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+			"related": []
+
+    },
+    {
+      "word": "INCH",
+      "clue": "Scale of American progression.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+			"related": ["4D"]
+
+    },
+    {
+      "word": "KOI",
+      "clue": "Carp that ate and serves.",
+      "row": 2,
+      "col": 4,
+      "direction": "down",
+      "number": 6,
+      "display": "6-Down",
+			"related": []
+
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 9,
+    "grid_size": "5x5"
+  }
+}

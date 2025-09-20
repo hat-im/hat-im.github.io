@@ -1,0 +1,190 @@
+{
+  "size": 6,
+  "grid": [
+    [
+      "A",
+      "B",
+      "A",
+      "M",
+      "P",
+      "."
+    ],
+    [
+      "B",
+      "E",
+      "L",
+      "E",
+      "A",
+      "F"
+    ],
+    [
+      "A",
+      "A",
+      ".",
+      "A",
+      "I",
+      "R"
+    ],
+    [
+      "S",
+      "U",
+      "N",
+      "D",
+      "R",
+      "Y"
+    ],
+    [
+      "E",
+      ".",
+      "A",
+      ".",
+      "E",
+      "."
+    ],
+    [
+      "D",
+      "O",
+      "P",
+      "E",
+      "R",
+      "S"
+    ]
+  ],
+  "words": [
+    {
+      "word": "ABAMP",
+      "clue": "Ten amps more than I can carry, but obsolete.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "BELEAF",
+      "clue": "To put your faith in photosynthesis.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "AA",
+      "clue": "Crunchy lava. Still moving, still fire, but messy.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "AIR",
+      "clue": "Together with 7-Down, makes healthy fries.",
+      "row": 2,
+      "col": 3,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": ["7D"]
+    },
+    {
+      "word": "SUNDRY",
+      "clue": "How we like our tomatoes pizza-prepped.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 10,
+      "display": "10-Across",
+      "related": []
+    },
+    {
+      "word": "DOPERS",
+      "clue": "Athletes juiced up on crime.",
+      "row": 5,
+      "col": 0,
+      "direction": "across",
+      "number": 12,
+      "display": "12-Across",
+      "related": []
+    },
+    {
+      "word": "ABASED",
+      "clue": "A-grounded?",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "BEAU",
+      "clue": "A suit without the spades, a suitor minus the drama.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "AL",
+      "clue": "Prefix with a promise in \"almost\".",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "NAP",
+      "clue": "Midday horizontal time.",
+      "row": 3,
+      "col": 2,
+      "direction": "down",
+      "number": 11,
+      "display": "11-Down",
+      "related": []
+    },
+    {
+      "word": "MEAD",
+      "clue": "Drink of choice in fantasy taverns.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    },
+    {
+      "word": "PAIRER",
+      "clue": "One who puts two together. Like socks. Or earrings.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    },
+    {
+      "word": "FRY",
+      "clue": "What hot 9-Across might do, to crisp results.",
+      "row": 1,
+      "col": 5,
+      "direction": "down",
+      "number": 7,
+      "display": "7-Down",
+      "related": ["9A"]
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 13,
+    "grid_size": "6x6"
+  }
+}

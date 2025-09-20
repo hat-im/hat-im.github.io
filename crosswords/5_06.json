@@ -1,0 +1,147 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "C",
+      "A",
+      "R",
+      "B",
+      "S"
+    ],
+    [
+      "O",
+      "T",
+      ".",
+      "R",
+      "O"
+    ],
+    [
+      "H",
+      "O",
+      "N",
+      "E",
+      "Y"
+    ],
+    [
+      "E",
+      "N",
+      ".",
+      "A",
+      "."
+    ],
+    [
+      "N",
+      "E",
+      "R",
+      "D",
+      "S"
+    ]
+  ],
+  "words": [
+    {
+      "word": "CARBS",
+      "clue": "What pasta, bread, and rice all contain, but nobody counts.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "OT",
+      "clue": "When work doesn't stay 9-to-5, abbreviated.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    },
+    {
+      "word": "RO",
+      "clue": "Water filtered by counter-direction semi-permeation.",
+      "row": 1,
+      "col": 3,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "HONEY",
+      "clue": "The best green tea sweetener.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "EN",
+      "clue": "After em and before oh.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "NERDS",
+      "clue": "You for typography. Me for fractals. Also a candy.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "COHEN",
+      "clue": "Last name. Leonard or Sacha Baron, take your pick.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "ATONE",
+      "clue": "The feeling that sounds like atonal.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "BREAD",
+      "clue": "Gotta load that dough.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "SOY",
+      "clue": "An underrated milk for matcha.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 10,
+    "grid_size": "5x5"
+  }
+}

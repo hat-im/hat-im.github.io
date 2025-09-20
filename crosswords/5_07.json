@@ -1,0 +1,127 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "H",
+      "A",
+      "J",
+      "U",
+      "."
+    ],
+    [
+      ".",
+      "T",
+      "U",
+      "N",
+      "A"
+    ],
+    [
+      "A",
+      "R",
+      "M",
+      "S",
+      "."
+    ],
+    [
+      ".",
+      "I",
+      "P",
+      "I",
+      "D"
+    ],
+    [
+      "L",
+      "A",
+      "S",
+      "T",
+      "."
+    ]
+  ],
+  "words": [
+    {
+      "word": "HAJU",
+      "clue": "Your concerned, cautious, confused, and completely irreplaceable calico.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "TUNA",
+      "clue": "Aquatic animal found in cans and sandwiches.",
+      "row": 1,
+      "col": 1,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    },
+    {
+      "word": "ARMS",
+      "clue": "They may be open or loaded.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "IPID",
+      "clue": "Fat lipo'd at the front?",
+      "row": 3,
+      "col": 1,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "LAST",
+      "clue": "Not the first, second or middle but a secret fourth thing.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": []
+    },
+    {
+      "word": "ATRIA",
+      "clue": "Blood-pumping twin chambers.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "JUMPS",
+      "clue": "What a quick fox does over a lazy dog.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "UNSIT",
+      "clue": "To tell someone who just sat down to not.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 8,
+    "grid_size": "5x5"
+  }
+}

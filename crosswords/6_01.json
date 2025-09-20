@@ -1,0 +1,190 @@
+{
+  "size": 6,
+  "grid": [
+    [
+      "A",
+      "L",
+      "K",
+      "A",
+      ".",
+      "D"
+    ],
+    [
+      "R",
+      "E",
+      "A",
+      "D",
+      ".",
+      "E"
+    ],
+    [
+      "R",
+      ".",
+      "B",
+      "O",
+      "Y",
+      "S"
+    ],
+    [
+      "E",
+      "L",
+      "A",
+      "P",
+      "S",
+      "E"
+    ],
+    [
+      "S",
+      "U",
+      "B",
+      "T",
+      "L",
+      "E"
+    ],
+    [
+      "T",
+      "O",
+      "S",
+      "S",
+      ".",
+      "D"
+    ]
+  ],
+  "words": [
+    {
+      "word": "ALKA",
+      "clue": "Your favorite Bombay design professor.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "READ",
+      "clue": "In present tense for books, past tense for texts.",
+      "row": 1,
+      "col": 0,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "BOYS",
+      "clue": "According to Calvin, they're made of snips, snails, and puppy dog tails.",
+      "row": 2,
+      "col": 2,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "ELAPSE",
+      "clue": "Go by, like time in quarantine.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 9,
+      "display": "9-Across",
+      "related": []
+    },
+    {
+      "word": "SUBTLE",
+      "clue": "What this clue is trying to be.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 11,
+      "display": "11-Across",
+      "related": []
+    },
+    {
+      "word": "TOSS",
+      "clue": "What to do with coins, salads, or aside.",
+      "row": 5,
+      "col": 0,
+      "direction": "across",
+      "number": 12,
+      "display": "12-Across",
+      "related": []
+    },
+    {
+      "word": "ARREST",
+      "clue": "\"Seize him!\"",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "LE",
+      "clue": "Found at the start of French nouns and at the end of 'male'.",
+      "row": 0,
+      "col": 1,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "LUO",
+      "clue": "Obama's paternal heritage (I know, \"Why would I know this?\")",
+      "row": 3,
+      "col": 1,
+      "direction": "down",
+      "number": 10,
+      "display": "10-Down",
+      "related": []
+    },
+    {
+      "word": "KABABS",
+      "clue": "Indian-style grilled meats, Mumbai-style spelling.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "ADOPTS",
+      "clue": "Takes in, as kittens.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    },
+    {
+      "word": "YSL",
+      "clue": "Most dripped-out designer at Dior's funeral.",
+      "row": 2,
+      "col": 4,
+      "direction": "down",
+      "number": 8,
+      "display": "8-Down",
+      "related": []
+    },
+    {
+      "word": "DESEED",
+      "clue": "Prep work for cooking dates.",
+      "row": 0,
+      "col": 5,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 13,
+    "grid_size": "6x6"
+  }
+}

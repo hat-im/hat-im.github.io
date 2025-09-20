@@ -1,0 +1,292 @@
+{
+  "size": 8,
+  "grid": [
+    [
+      "S",
+      "C",
+      "R",
+      "A",
+      "B",
+      "B",
+      "L",
+      "E"
+    ],
+    [
+      "A",
+      ".",
+      "E",
+      "D",
+      "A",
+      ".",
+      ".",
+      "C"
+    ],
+    [
+      "H",
+      ".",
+      "C",
+      "A",
+      "L",
+      "I",
+      "C",
+      "O"
+    ],
+    [
+      "A",
+      "B",
+      "U",
+      ".",
+      ".",
+      "N",
+      "O",
+      "N"
+    ],
+    [
+      "D",
+      "O",
+      "R",
+      ".",
+      ".",
+      "P",
+      "R",
+      "O"
+    ],
+    [
+      "E",
+      "A",
+      "S",
+      "E",
+      "L",
+      "S",
+      ".",
+      "M"
+    ],
+    [
+      "V",
+      ".",
+      ".",
+      "A",
+      "B",
+      "S",
+      ".",
+      "I"
+    ],
+    [
+      "A",
+      "C",
+      "O",
+      "U",
+      "S",
+      "T",
+      "I",
+      "C"
+    ]
+  ],
+  "words": [
+    {
+      "word": "SCRABBLE",
+      "clue": "Where qi comes most in handy for us.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "EDA",
+      "clue": "Name that's big in Turkey, bigger in data analysis.",
+      "row": 1,
+      "col": 2,
+      "direction": "across",
+      "number": 6,
+      "display": "6-Across",
+      "related": []
+    },
+    {
+      "word": "CALICO",
+      "clue": "What Haju's heritage of hues is called.",
+      "row": 2,
+      "col": 2,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": []
+    },
+    {
+      "word": "ABU",
+      "clue": "UAE capital starter.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 10,
+      "display": "10-Across",
+      "related": []
+    },
+    {
+      "word": "NON",
+      "clue": "Italians turning you down.",
+      "row": 3,
+      "col": 5,
+      "direction": "across",
+      "number": 12,
+      "display": "12-Across",
+      "related": []
+    },
+    {
+      "word": "DOR",
+      "clue": "British burrowing beetle.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 13,
+      "display": "13-Across",
+      "related": []
+    },
+    {
+      "word": "PRO",
+      "clue": "One who's in favor, and probably better at it.",
+      "row": 4,
+      "col": 5,
+      "direction": "across",
+      "number": 14,
+      "display": "14-Across",
+      "related": []
+    },
+    {
+      "word": "EASELS",
+      "clue": "Stands for art.",
+      "row": 5,
+      "col": 0,
+      "direction": "across",
+      "number": 15,
+      "display": "15-Across",
+      "related": []
+    },
+    {
+      "word": "ABS",
+      "clue": "Six core focuses at gym.",
+      "row": 6,
+      "col": 3,
+      "direction": "across",
+      "number": 18,
+      "display": "18-Across",
+      "related": []
+    },
+    {
+      "word": "ACOUSTIC",
+      "clue": "Music sans current.",
+      "row": 7,
+      "col": 0,
+      "direction": "across",
+      "number": 19,
+      "display": "19-Across",
+      "related": []
+    },
+    {
+      "word": "SAHADEVA",
+      "clue": "Nakula's typographic twin.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "BOA",
+      "clue": "Neck wrap, reptilian or feathery.",
+      "row": 3,
+      "col": 1,
+      "direction": "down",
+      "number": 11,
+      "display": "11-Down",
+      "related": []
+    },
+    {
+      "word": "RECURS",
+      "clue": "What happens over and over.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "ADA",
+      "clue": "First name in programming history.",
+      "row": 0,
+      "col": 3,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "EAU",
+      "clue": "A Parisian's idea of rehydration.",
+      "row": 5,
+      "col": 3,
+      "direction": "down",
+      "number": 16,
+      "display": "16-Down",
+      "related": []
+    },
+    {
+      "word": "BAL",
+      "clue": "Box seat's neighbor, briefly.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 4,
+      "display": "4-Down",
+      "related": []
+    },
+    {
+      "word": "LBS",
+      "clue": "What you gain after the Fourth of July, briefly.",
+      "row": 5,
+      "col": 4,
+      "direction": "down",
+      "number": 17,
+      "display": "17-Down",
+      "related": []
+    },
+    {
+      "word": "INPSST",
+      "clue": "Sound with a soft spot for double S (2,4).",
+      "row": 2,
+      "col": 5,
+      "direction": "down",
+      "number": 8,
+      "display": "8-Down",
+      "related": []
+    },
+    {
+      "word": "COR",
+      "clue": "Latin root at the heart of it all.",
+      "row": 2,
+      "col": 6,
+      "direction": "down",
+      "number": 9,
+      "display": "9-Down",
+      "related": []
+    },
+    {
+      "word": "ECONOMIC",
+      "clue": "A state Jaden Smith wants to talk about.",
+      "row": 0,
+      "col": 7,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 20,
+    "grid_size": "8x8"
+  }
+}

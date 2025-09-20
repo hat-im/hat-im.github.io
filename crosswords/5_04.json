@@ -1,0 +1,127 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "P",
+      ".",
+      ".",
+      ".",
+      "W"
+    ],
+    [
+      "E",
+      ".",
+      "R",
+      ".",
+      "H"
+    ],
+    [
+      "A",
+      "G",
+      "I",
+      "L",
+      "E"
+    ],
+    [
+      "C",
+      "O",
+      "Z",
+      "I",
+      "E"
+    ],
+    [
+      "H",
+      "A",
+      "Z",
+      "E",
+      "L"
+    ]
+  ],
+  "words": [
+    {
+      "word": "AGILE",
+      "clue": "8-Across attempts to be, even with one leg lagging behind.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+      "related": ["8A"]
+    },
+    {
+      "word": "COZIE",
+      "clue": "Old-school spelling for when 8-Across is curled near you.",
+      "row": 3,
+      "col": 0,
+      "direction": "across",
+      "number": 7,
+      "display": "7-Across",
+      "related": ["8A"]
+    },
+    {
+      "word": "HAZEL",
+      "clue": "A nut that disagrees with your stomach, and calico that agrees with your heart.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 8,
+      "display": "8-Across",
+      "related": ["7A", "4A"]
+    },
+    {
+      "word": "PEACH",
+      "clue": "Fruit with facial hair.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "GOA",
+      "clue": "Indian beach state. Overpriced.",
+      "row": 2,
+      "col": 1,
+      "direction": "down",
+      "number": 5,
+      "display": "5-Down",
+      "related": []
+    },
+    {
+      "word": "RIZZ",
+      "clue": "Modern charm, as the kids say.",
+      "row": 1,
+      "col": 2,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "LIE",
+      "clue": "What 8-Across would never do.",
+      "row": 2,
+      "col": 3,
+      "direction": "down",
+      "number": 6,
+      "display": "6-Down",
+      "related": ["8A"]
+    },
+    {
+      "word": "WHEEL",
+      "clue": "What one doesn't need to reinvent.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 8,
+    "grid_size": "5x5"
+  }
+}
