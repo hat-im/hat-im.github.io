@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Study Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbfaf6;
+    --surface:#ffffff;
+    --surface-2:#f2f0ea;
+    --border:#e8e5db;
+    --border-strong:#d8d4c6;
+    --text-primary:#2b2620;
+    --text-secondary:#6b6252;
+    --text-faint:#a89d87;
+    --flag:#b23b3b;
+    --flag-bg:#f7e7e5;
+    --focus:#3f6fae;
+    --hard-line:#4a463e;
+    --soft-line:#a89d87;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-primary);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  .tabular{font-variant-numeric:tabular-nums;}
+
+  .topbar{padding:22px 24px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
+  .topbar h1{margin:0 0 3px;font-size:20px;font-weight:700;}
+  .topbar .sub{margin:0;font-size:13px;color:var(--text-secondary);}
+
+  .reset-btn{
+    flex:none;
+    font-size:12px;font-weight:600;
+    padding:7px 12px;border-radius:6px;
+    border:1px solid var(--border-strong);
+    background:var(--surface);color:var(--text-secondary);
+    cursor:pointer;
+  }
+  .reset-btn:hover{background:var(--surface-2);color:var(--text-primary);}
+  .reset-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+
+  .modal-overlay{
+    display:none;
+    position:fixed;inset:0;
+    background:rgba(43,38,32,0.35);
+    z-index:100;
+    align-items:center;justify-content:center;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--surface);
+    border-radius:8px;
+    border:1px solid var(--border-strong);
+    padding:22px 24px;
+    width:320px;
+    box-shadow:0 12px 28px rgba(43,38,32,0.22);
+  }
+  .modal-box h2{margin:0 0 8px;font-size:16px;font-weight:700;}
+  .modal-box p{margin:0 0 18px;font-size:13px;color:var(--text-secondary);line-height:1.5;}
+  .modal-actions{display:flex;justify-content:flex-end;gap:8px;}
+  .modal-actions .btn.danger{background:var(--flag);border-color:var(--flag);color:var(--surface);}
+  .modal-actions .btn.danger:hover{background:#9a3232;}
+
+  .legend-line{display:flex;gap:18px;margin-top:10px;font-size:12px;color:var(--text-secondary);}
+  .legend-line .item{display:flex;align-items:center;gap:6px;}
+  .legend-line svg{display:block;}
+
+  .overall-progress{display:flex;align-items:center;gap:12px;margin-top:14px;max-width:480px;}
+  .overall-progress .track{flex:1;height:6px;background:var(--surface-2);border-radius:4px;position:relative;overflow:hidden;}
+  .overall-progress .fill{position:absolute;left:0;top:0;bottom:0;background:var(--text-primary);border-radius:4px;transition:width .25s ease;}
+  .overall-progress .count{font-size:12px;font-weight:600;min-width:110px;text-align:right;color:var(--text-secondary);}
+
+  .info-wrap{position:relative;flex:none;}
+  .info-btn{
+    width:16px;height:16px;border-radius:50%;
+    border:1px solid var(--border-strong);
+    background:var(--surface);color:var(--text-secondary);
+    font-size:10px;font-weight:700;line-height:1;
+    display:flex;align-items:center;justify-content:center;
+    padding:0;cursor:pointer;
+  }
+  .info-btn:hover{background:var(--surface-2);color:var(--text-primary);}
+  .info-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+  .info-popover{
+    display:none;
+    position:absolute;
+    top:calc(100% + 8px);
+    right:0;
+    width:260px;
+    background:var(--surface);
+    border:1px solid var(--border-strong);
+    border-radius:6px;
+    padding:12px 14px;
+    box-shadow:0 6px 16px rgba(60,50,30,0.14);
+    z-index:40;
+  }
+  .info-wrap:hover .info-popover, .info-wrap:focus-within .info-popover{display:block;}
+  .book-row{margin-bottom:10px;}
+  .book-row:last-child{margin-bottom:0;}
+  .book-row .b-name{display:block;font-size:11px;font-weight:600;color:var(--text-primary);margin-bottom:4px;}
+  .book-row .b-bar-line{display:flex;align-items:center;gap:8px;}
+  .book-row .b-track{flex:1;height:5px;background:var(--surface-2);border-radius:3px;overflow:hidden;}
+  .book-row .b-fill{height:100%;border-radius:3px;}
+  .book-row .b-frac{font-size:10.5px;color:var(--text-faint);flex:0 0 auto;}
+
+  .chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .chip{
+    position:relative;
+    display:flex;align-items:center;gap:7px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:6px 10px;
+    cursor:pointer;user-select:none;
+    font-size:12px;font-weight:600;color:var(--text-secondary);
+    background:var(--surface);
+  }
+  .chip .dot{width:8px;height:8px;border-radius:50%;flex:none;}
+  .chip.active{border-color:var(--border-strong);color:var(--text-primary);}
+  .chip.dim{opacity:.45;}
+  .chip:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+
+  .popover{
+    display:none;
+    position:absolute;
+    top:calc(100% + 6px);
+    left:0;
+    width:260px;
+    background:var(--surface);
+    border:1px solid var(--border-strong);
+    border-radius:8px;
+    padding:12px 14px;
+    box-shadow:0 6px 16px rgba(60,50,30,0.14);
+    z-index:20;
+    font-weight:400;
+    cursor:default;
+  }
+  .chip:hover .popover, .chip:focus-within .popover{display:block;}
+  .popover .p-title{font-size:13px;font-weight:700;margin:0 0 2px;}
+  .popover .p-authors{font-size:11px;color:var(--text-secondary);margin:0 0 8px;}
+  .popover .p-meta{font-size:11px;color:var(--text-faint);margin:0 0 8px;}
+  .popover .p-desc{font-size:12px;color:var(--text-primary);line-height:1.45;margin:0;}
+
+  .board-wrap{position:relative;overflow-x:auto;}
+  .board{display:flex;align-items:flex-start;position:relative;}
+  #strings{position:absolute;top:0;left:0;pointer-events:none;}
+
+  .column{
+    min-width:250px;flex:1 1 250px;
+    display:flex;flex-direction:column;
+    max-height:calc(100vh - 240px);
+    padding:6px 8px;
+    border-right:1px solid var(--border);
+  }
+  .column:last-child{border-right:none;}
+
+  .column-head{
+    padding:8px 6px 10px;
+    position:sticky;top:0;background:var(--bg);z-index:3;
+    display:flex;align-items:baseline;gap:6px;
+    border-bottom:1px solid var(--border);
+  }
+  .column-head .name{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text-primary);}
+  .column-head .num{font-size:12px;color:var(--text-faint);font-weight:600;}
+
+  .cardlist{padding:10px 4px 20px;display:flex;flex-direction:column;gap:10px;overflow-y:auto;overflow-x:visible;flex:1;}
+  .column.dragover{background:var(--surface-2);border-radius:8px;}
+
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid transparent;
+    border-radius:4px;
+    padding:11px 12px 10px;
+    cursor:grab;
+    position:relative;
+    z-index:1;
+  }
+  .card:hover, .card:focus-within{border-color:var(--border-strong);z-index:30;}
+  .card:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+  .card.locked{background:var(--surface-2);cursor:default;}
+  .card.locked:hover, .card.locked:focus-within{background:var(--surface);}
+  .card.locked .card-title, .card.locked .away-tag{color:var(--text-faint);}
+  .card.locked:hover .card-title, .card.locked:hover .away-tag,
+  .card.locked:focus-within .card-title, .card.locked:focus-within .away-tag{
+    color:var(--text-primary);
+  }
+  .card.dragging{opacity:.35;}
+
+  .card-top{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+  .num-badge{
+    width:24px;height:24px;border-radius:50%;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10.5px;font-weight:700;color:var(--bg);
+  }
+  .card-book{font-size:11px;font-weight:600;}
+
+  .card-title{font-size:14px;line-height:1.35;margin:0 0 8px;font-weight:600;}
+
+  .flag-badge{
+    display:inline-flex;align-items:center;gap:5px;
+    background:var(--flag-bg);color:var(--flag);
+    font-size:11px;font-weight:700;
+    padding:3px 8px;border-radius:5px;
+    margin-bottom:8px;
+  }
+
+  .waiting, .revisit{font-size:11.5px;color:var(--text-secondary);margin-bottom:8px;}
+  .waiting b, .revisit b{color:var(--text-primary);font-weight:600;}
+
+  .card-actions{display:flex;gap:6px;flex-wrap:wrap;}
+  .btn{
+    font-size:11.5px;font-weight:600;
+    padding:6px 10px;border-radius:6px;
+    border:1px solid var(--border-strong);
+    background:var(--surface);color:var(--text-primary);
+    cursor:pointer;
+  }
+  .btn:hover{background:var(--surface-2);}
+  .btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px;}
+  .btn.primary{background:var(--text-primary);border-color:var(--text-primary);color:var(--surface);}
+  .btn.primary:hover{background:#454038;}
+  .btn.secondary{background:var(--surface);color:var(--text-secondary);}
+
+  .card-popover{
+    display:none;
+    position:absolute;
+    top:calc(100% + 6px);
+    left:0;
+    width:250px;
+    background:var(--surface);
+    border:1px solid var(--border-strong);
+    border-radius:6px;
+    padding:10px 12px;
+    box-shadow:0 6px 16px rgba(60,50,30,0.14);
+    z-index:40;
+    font-weight:400;
+    cursor:default;
+  }
+  .card.locked:hover .card-popover, .card.locked:focus-within .card-popover{display:block;}
+  .card-popover .pop-label{font-size:11px;font-weight:700;color:var(--text-primary);margin:0 0 5px;}
+  .card-popover .pop-list{font-size:12px;color:var(--text-secondary);line-height:1.5;margin:0;}
+
+  .away-tag{font-size:11px;color:var(--text-faint);margin-bottom:2px;}
+
+  .empty-col{font-size:12px;color:var(--text-faint);padding:18px 8px;text-align:center;}
+
+  ::-webkit-scrollbar{width:8px;height:8px;}
+  ::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:8px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+
+  @media (max-width:700px){.column{min-width:80vw;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div>
+    <h1>Study board</h1>
+    <p class="sub">Chapters unlock as their prerequisites are finished.</p>
+    <div class="legend-line">
+      <span class="item"><svg width="20" height="8"><line x1="0" y1="4" x2="20" y2="4" stroke="#4a463e" stroke-width="2"/></svg> required</span>
+      <span class="item"><svg width="20" height="8"><line x1="0" y1="4" x2="20" y2="4" stroke="#a89d87" stroke-width="2" stroke-dasharray="3,3"/></svg> related</span>
+    </div>
+    <div class="overall-progress">
+      <div class="track"><div class="fill" id="overallFill"></div></div>
+      <div class="count tabular" id="overallCount">0 / 0 mastered</div>
+      <div class="info-wrap">
+        <button class="info-btn" type="button" aria-label="Progress by book">i</button>
+        <div class="info-popover" id="bookProgress"></div>
+      </div>
+    </div>
+    <div class="chiprow" id="chipRow"></div>
+  </div>
+  <button class="reset-btn" id="resetBtn">Reset progress</button>
+</div>
+
+<div class="board-wrap">
+  <div class="board" id="board"></div>
+</div>
+
+<div class="modal-overlay" id="resetOverlay">
+  <div class="modal-box">
+    <h2>Reset progress</h2>
+    <p>This clears all your progress. It can't be undone.</p>
+    <div class="modal-actions">
+      <button class="btn secondary" id="resetCancel">Cancel</button>
+      <button class="btn danger" id="resetConfirm">Reset everything</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+
+var BOOKS = {
+  A:{
+    name:'Aho, Lam, Sethi & Ullman', title:'Compilers: Principles, Techniques, and Tools', color:'#6b7fb0',
+    meta:'Pearson / Addison-Wesley &middot; 2nd edition, 2006',
+    desc:'Known as "the Dragon Book," this is the standard reference on how compilers are built, covering everything from lexical analysis through code generation and optimization.'
+  },
+  D:{
+    name:'Dirac', title:'The Principles of Quantum Mechanics', color:'#c1794f',
+    meta:'Oxford University Press (Clarendon Press) &middot; 4th edition, 1958',
+    desc:'A foundational, axiomatic treatment of quantum theory built around bra-ket notation, written by Nobel laureate Paul Dirac; long considered one of the classic texts in physics.'
+  },
+  K:{
+    name:'Knuth', title:'The Art of Computer Programming', color:'#8a8c4f',
+    meta:'Addison-Wesley &middot; Vols. 1-4, 1968-2022',
+    desc:'Donald Knuth\u2019s monumental, still-unfinished series analyzing algorithms and data structures with mathematical rigor; a cornerstone reference in computer science.'
+  },
+  B:{
+    name:'Majidy, Wilson & Laflamme', title:'Building Quantum Computers: A Practical Introduction', color:'#4f9c93',
+    meta:'Cambridge University Press &middot; 1st edition, 2024',
+    desc:'A hardware-focused textbook comparing the leading physical platforms for quantum computing: nuclear magnetic resonance, optics, trapped ions, and superconducting circuits.'
+  },
+  M:{
+    name:'Manenti & Motta', title:'Quantum Information Science', color:'#8f5fa8',
+    meta:'Oxford University Press &middot; 1st edition, 2023',
+    desc:'An introduction bridging the math, physics, and engineering of quantum computing, written by an industry quantum engineer and a research scientist for students starting graduate study.'
+  },
+  N:{
+    name:'Nielsen & Chuang', title:'Quantum Computation and Quantum Information', color:'#c15f82',
+    meta:'Cambridge University Press &middot; 10th anniversary edition, 2010',
+    desc:'One of the most cited books in physics and the standard reference for the field, covering quantum algorithms, error-correction, and quantum information theory.'
+  },
+  S:{
+    name:'Sakurai & Napolitano', title:'Modern Quantum Mechanics', color:'#b8923f',
+    meta:'Cambridge University Press &middot; 3rd edition, 2020',
+    desc:'A widely used graduate quantum mechanics text originally by J. J. Sakurai and completed after his death, later revised and extended by Jim Napolitano with modern applications.'
+  }
+};
+
+var BOOK_ORDER = ['A','D','K','B','M','N','S'];
+
+var CHAPTERS = [
+['D01','D','The Principle of Superposition',[],[]],
+['D02','D','Dynamical Variables and Observables',['D01'],[]],
+['D03','D','Representations',['D02'],[]],
+['D04','D','The Quantum Conditions',['D03'],[]],
+['D05','D','The Equations of Motion',['D04'],[]],
+['D06','D','Elementary Applications',['D05'],[]],
+['D07','D','Perturbation Theory',['D06'],[]],
+['D08','D','Collision Problems',['D07'],[]],
+['D09','D','Systems Containing Several Similar Particles',['D08'],[]],
+['D10','D','Theory of Radiation',['D09'],[]],
+['D11','D','Relativistic Theory of the Electron',['D10'],[]],
+['D12','D','Quantum Electrodynamics',['D11'],[]],
+['S01','S','Fundamental Concepts',['D01','D03'],[]],
+['S02','S','Quantum Dynamics',['S01','D05'],[]],
+['S03','S','Theory of Angular Momentum',['S02'],[]],
+['S04','S','Symmetry in Quantum Mechanics',['S03'],[]],
+['S05','S','Approximation Methods',['S04','D06','D07'],[]],
+['S06','S','Scattering Theory',['S05','D08'],[]],
+['S07','S','Identical Particles',['S06','D09'],[]],
+['S08','S','Relativistic Quantum Mechanics',['S07','D11'],[]],
+['M01','M','Mathematical Tools',['D01'],[]],
+['M02','M','Computational Models',['M01'],[]],
+['M03','M','Linear Algebra',['M02','D02'],[]],
+['M04','M','Quantum Mechanics (M&M)',['M03','S01','D05'],[]],
+['M05','M','Quantum Circuits (M&M)',['M04'],[]],
+['M06','M','Density Operators',['M05'],[]],
+['M07','M','Quantum Maps',['M06'],[]],
+['M08','M','Decoherence',['M07'],[]],
+['M09','M','Entanglement',['M08'],['B01']],
+['M10','M','Early Quantum Algorithms',['M09'],[]],
+['M11','M','Quantum Simulation of Hamiltonian Dynamics',['M10'],[]],
+['M12','M','Quantum Simulation of Hamiltonian Eigenstates',['M11'],[]],
+['M13','M','Microwave Resonators for Superconducting Devices',['M12'],['D10']],
+['M14','M','Superconducting Qubits (M&M)',['M13'],['D12']],
+['N01','N','Introduction and Overview',[],[]],
+['N02','N','Introduction to Quantum Mechanics (N&C)',['N01','M03','M04'],[]],
+['N03','N','Introduction to Computer Science',['N02'],[]],
+['N04','N','Quantum Circuits (N&C)',['N03','M05'],[]],
+['N05','N','Quantum Fourier Transform & its Applications',['N04','M10'],[]],
+['N06','N','Quantum Search Algorithms',['N05','M10'],[]],
+['N07','N','Quantum Computers: Physical Realization',['N06'],['S08']],
+['N08','N','Quantum Noise and Quantum Operations',['N07','M06','M07'],[]],
+['N09','N','Distance Measures for Quantum Information',['N08'],[]],
+['N10','N','Quantum Error-Correction',['N09'],['M12','M08']],
+['N11','N','Entropy and Information',['N10'],['N05']],
+['N12','N','Quantum Information Theory',['N11'],['N07']],
+['B01','B','Introduction to Quantum Computing',[],['N03']],
+['B02','B','Review of Quantum Mechanics for QC',['B01','S01','M04'],[]],
+['B03','B','Nuclear Magnetic Resonance',['B02','N10'],[]],
+['B04','B','Optics',['B03','N10'],[]],
+['B05','B','Trapped Ions',['B04','N10'],[]],
+['B06','B','Superconducting Circuits (BQC)',['B05','N10','M13'],[]],
+['B07','B','Benchmarking',['B06','M14'],[]],
+['K01','K','Basic Concepts (Vol.1)',[],['N03','M02']],
+['K02','K','Information Structures (Vol.1)',['K01'],[]],
+['K03','K','Random Numbers (Vol.2)',['K02'],[]],
+['K04','K','Arithmetic (Vol.2)',['K03'],[]],
+['K05','K','Sorting (Vol.3)',['K04'],[]],
+['K06','K','Searching (Vol.3)',['K05'],[]],
+['K07','K','Combinatorial Searching (Vol.4A/4B)',['K06'],[]],
+['K08','K','Recursion (Vol.4B)',['K07'],[]],
+['A01','A','Introduction',['K01'],['N03','M02']],
+['A02','A','A Simple Syntax-Directed Translator',['A01','K02'],[]],
+['A03','A','Lexical Analysis',['A02'],['K01']],
+['A04','A','Syntax Analysis',['A03'],['K06']],
+['A05','A','Syntax-Directed Translation',['A04'],[]],
+['A06','A','Intermediate-Code Generation',['A05'],['K04']],
+['A07','A','Run-Time Environments',['A06','K08'],[]],
+['A08','A','Code Generation',['A07'],[]],
+['A09','A','Machine-Independent Optimizations',['A08'],['K05','K06','K07','K03']],
+['A10','A','Instruction-Level Parallelism',['A09'],[]],
+['A11','A','Optimizing for Parallelism and Locality',['A10'],['K07']],
+['A12','A','Interprocedural Analysis',['A11'],[]]
+].map(function(r){return {code:r[0],book:r[1],title:r[2],hard:r[3],soft:r[4]};});
+
+var CH_BY_CODE = {};
+CHAPTERS.forEach(function(c){CH_BY_CODE[c.code]=c;});
+
+var STORAGE_KEY = 'chapter-status-v3';
+var manualStatus = {};
+var activeBooks = new Set(Object.keys(BOOKS));
+var unmetMemo = {};
+
+var COLUMNS = [
+  {id:'not-ready', label:'Not ready'},
+  {id:'ready', label:'Ready'},
+  {id:'studying', label:'Studying'},
+  {id:'done', label:'Done'}
+];
+
+function computeAll(){
+  var base = {};
+  CHAPTERS.forEach(function(c){
+    var m = manualStatus[c.code];
+    if(m){ base[c.code] = m.status; return; }
+    var ok = c.hard.every(function(p){ return base[p] === 'done'; });
+    base[c.code] = ok ? 'ready' : 'not-ready';
+  });
+
+  var display = {};
+  var needsRevision = {};
+  CHAPTERS.forEach(function(c){
+    var m = manualStatus[c.code];
+    if(m && m.status === 'done'){
+      var allSoftMet = c.soft.length ? c.soft.every(function(p){ return base[p] === 'done'; }) : false;
+      if(m.forceRevision || (allSoftMet && !m.softSeen)){
+        display[c.code] = 'ready';
+        needsRevision[c.code] = true;
+        return;
+      }
+    }
+    display[c.code] = base[c.code];
+  });
+  return {base:base, display:display, needsRevision:needsRevision};
+}
+
+async function loadData(){
+  try{
+    var res = await window.storage.get(STORAGE_KEY, false);
+    if(res && res.value){ manualStatus = JSON.parse(res.value); }
+  }catch(e){ manualStatus = {}; }
+  render();
+}
+
+async function saveData(){
+  try{ await window.storage.set(STORAGE_KEY, JSON.stringify(manualStatus), false); }catch(e){}
+}
+
+function setStatus(code, status, extra){
+  extra = extra || {};
+  if(status === 'ready'){
+    delete manualStatus[code];
+  }else{
+    manualStatus[code] = {
+      status:status,
+      softSeen: !!extra.softSeen,
+      forceRevision: !!extra.forceRevision,
+      revising: !!extra.revising
+    };
+  }
+  saveData();
+  render();
+}
+
+function unmetAncestors(code, base, memo){
+  if(memo[code]) return memo[code];
+  var result = new Set();
+  memo[code] = result; // guard against cycles while computing
+  var c = CH_BY_CODE[code];
+  c.hard.forEach(function(p){
+    if(base[p] !== 'done') result.add(p);
+    unmetAncestors(p, base, memo).forEach(function(x){ result.add(x); });
+  });
+  memo[code] = result;
+  return result;
+}
+
+function directUnmetHard(code, base){
+  var c = CH_BY_CODE[code];
+  return c.hard.filter(function(p){ return base[p] !== 'done'; });
+}
+
+function renderChips(base){
+  var row = document.getElementById('chipRow');
+  row.innerHTML = '';
+  Object.keys(BOOKS).sort(function(a,b){ return BOOK_ORDER.indexOf(a)-BOOK_ORDER.indexOf(b); }).forEach(function(key){
+    var b = BOOKS[key];
+    var chip = document.createElement('div');
+    chip.className = 'chip' + (activeBooks.has(key) ? ' active' : ' dim');
+    chip.tabIndex = 0;
+    chip.setAttribute('role','button');
+    chip.setAttribute('aria-pressed', activeBooks.has(key));
+    chip.innerHTML =
+      '<span class="dot" style="background:'+b.color+'"></span>'+
+      '<span>'+b.name+'</span>'+
+      '<div class="popover">'+
+        '<p class="p-title">'+b.title+'</p>'+
+        '<p class="p-authors">'+b.name+'</p>'+
+        '<p class="p-meta">'+b.meta+'</p>'+
+        '<p class="p-desc">'+b.desc+'</p>'+
+      '</div>';
+    chip.addEventListener('click', function(e){
+      if(e.target.closest('.popover')) return;
+      if(activeBooks.has(key)){
+        if(activeBooks.size===1){ activeBooks = new Set(Object.keys(BOOKS)); }
+        else{ activeBooks.delete(key); }
+      }else{
+        activeBooks.add(key);
+      }
+      render();
+    });
+    chip.addEventListener('keydown', function(e){
+      if(e.key==='Enter' || e.key===' '){ e.preventDefault(); chip.click(); }
+    });
+    row.appendChild(chip);
+  });
+}
+
+function renderOverall(base){
+  var total = CHAPTERS.length;
+  var mastered = CHAPTERS.filter(function(c){return base[c.code]==='done';}).length;
+  document.getElementById('overallFill').style.width = (total? (mastered/total*100) : 0) + '%';
+  document.getElementById('overallCount').textContent = mastered + ' / ' + total + ' mastered';
+
+  var popEl = document.getElementById('bookProgress');
+  popEl.innerHTML = BOOK_ORDER.map(function(key){
+    var b = BOOKS[key];
+    var chs = CHAPTERS.filter(function(c){return c.book===key;});
+    var done = chs.filter(function(c){return base[c.code]==='done';}).length;
+    var pct = chs.length ? (done/chs.length*100) : 0;
+    return '<div class="book-row">'+
+      '<span class="b-name">'+b.name+'</span>'+
+      '<span class="b-bar-line"><span class="b-track"><span class="b-fill" style="width:'+pct+'%;background:'+b.color+'"></span></span>'+
+      '<span class="b-frac tabular">'+done+'/'+chs.length+'</span></span>'+
+    '</div>';
+  }).join('');
+}
+
+function cardActions(c, col, flagged){
+  var b = [];
+  if(col==='ready'){
+    if(flagged){
+      b.push('<button class="btn primary" data-code="'+c.code+'" data-to="studying" data-revising="1">Revise</button>');
+    }else{
+      b.push('<button class="btn primary" data-code="'+c.code+'" data-to="studying" data-revising="0">Study</button>');
+    }
+  }else if(col==='studying'){
+    var revising = manualStatus[c.code] && manualStatus[c.code].revising;
+    b.push('<button class="btn primary" data-code="'+c.code+'" data-to="done" data-softseen="'+(revising?'1':'0')+'">Finish</button>');
+    b.push('<button class="btn secondary" data-code="'+c.code+'" data-to="ready">Pause</button>');
+  }else if(col==='done'){
+    b.push('<button class="btn secondary" data-code="'+c.code+'" data-to="done" data-force="1">Revisit</button>');
+    b.push('<button class="btn secondary" data-code="'+c.code+'" data-to="studying" data-revising="0">Restudy</button>');
+  }
+  return b.join('');
+}
+
+function chapterNum(code){
+  return code.replace(/^[A-Z]+/, '');
+}
+
+function renderCard(c, col, base, flagged){
+  var b = BOOKS[c.book];
+  var locked = col === 'not-ready';
+  var div = document.createElement('div');
+  div.className = 'card' + (locked ? ' locked' : '');
+  div.style.borderLeftColor = locked ? 'transparent' : b.color;
+  div.setAttribute('data-code', c.code);
+  div.draggable = !locked;
+  div.tabIndex = 0;
+  div.title = c.code + ' \u2014 ' + c.title;
+
+  var badge = '<span class="num-badge" style="background:'+b.color+'">'+chapterNum(c.code)+'</span>';
+
+  var body = '';
+
+  if(locked){
+    var missing = directUnmetHard(c.code, base);
+    var SHOW = 4;
+    var shown = missing.slice(0, SHOW).map(function(p){ return CH_BY_CODE[p].title; });
+    var extra = missing.length - shown.length;
+    var listText = shown.join(', ') + (extra > 0 ? ', and '+extra+' more' : '');
+    var away = unmetAncestors(c.code, base, unmetMemo).size;
+
+    body =
+      '<div class="card-top">'+badge+'<span class="card-book" style="color:'+b.color+'">'+b.name+'</span></div>'+
+      '<div class="card-title">'+c.title+'</div>'+
+      '<div class="away-tag">'+away+' chapter'+(away===1?'':'s')+' away from ready</div>'+
+      '<div class="card-popover"><p class="pop-label">Waiting on</p><p class="pop-list">'+listText+'</p></div>';
+  }else{
+    var extraNote = '';
+    if(col==='done' && c.soft.length){
+      var pendingSoft = c.soft.filter(function(p){ return base[p] !== 'done'; });
+      if(pendingSoft.length){
+        extraNote = '<div class="revisit">finish '+pendingSoft.map(function(p){return CH_BY_CODE[p].title;}).join(', ')+' next</div>';
+      }
+    }
+    var flagBadge = flagged ? '<div class="flag-badge">Needs revision</div>' : '';
+
+    body =
+      '<div class="card-top">'+badge+'<span class="card-book" style="color:'+b.color+'">'+b.name+'</span></div>'+
+      '<div class="card-title">'+c.title+'</div>'+
+      flagBadge+
+      extraNote+
+      '<div class="card-actions">'+cardActions(c, col, flagged)+'</div>';
+  }
+
+  div.innerHTML = body;
+
+  if(!locked){
+    div.addEventListener('dragstart', function(e){
+      div.classList.add('dragging');
+      e.dataTransfer.setData('text/plain', c.code);
+      e.dataTransfer.effectAllowed = 'move';
+    });
+    div.addEventListener('dragend', function(){ div.classList.remove('dragging'); });
+    div.addEventListener('mouseenter', function(){ drawStrings(c.code); });
+    div.addEventListener('mouseleave', clearStrings);
+    div.addEventListener('focus', function(){ drawStrings(c.code); });
+    div.addEventListener('blur', clearStrings);
+  }
+
+  div.querySelectorAll('button[data-to]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var code = btn.getAttribute('data-code');
+      var to = btn.getAttribute('data-to');
+      var extra = {
+        softSeen: btn.getAttribute('data-softseen') === '1',
+        forceRevision: btn.getAttribute('data-force') === '1',
+        revising: btn.getAttribute('data-revising') === '1'
+      };
+      setStatus(code, to, extra);
+    });
+  });
+
+  return div;
+}
+
+function render(){
+  var res = computeAll();
+  var base = res.base, display = res.display, needsRevision = res.needsRevision;
+
+  unmetMemo = {};
+
+  renderChips(base);
+  renderOverall(base);
+
+  var board = document.getElementById('board');
+  board.innerHTML = '<svg id="strings"></svg>';
+
+  var visible = CHAPTERS.filter(function(c){return activeBooks.has(c.book);});
+
+  COLUMNS.forEach(function(colDef){
+    var colChapters = visible.filter(function(c){return display[c.code] === colDef.id;});
+
+    colChapters.sort(function(x,y){
+      if(colDef.id === 'not-ready'){
+        var rx = unmetAncestors(x.code, base, unmetMemo).size, ry = unmetAncestors(y.code, base, unmetMemo).size;
+        if(rx !== ry) return rx - ry;
+      }
+      var bx = BOOK_ORDER.indexOf(x.book), by = BOOK_ORDER.indexOf(y.book);
+      if(bx !== by) return bx - by;
+      return CHAPTERS.indexOf(x) - CHAPTERS.indexOf(y);
+    });
+
+    var colEl = document.createElement('div');
+    colEl.className = 'column';
+    colEl.innerHTML =
+      '<div class="column-head"><span class="name">'+colDef.label+'</span><span class="num tabular">'+colChapters.length+'</span></div>'+
+      '<div class="cardlist"></div>';
+
+    var list = colEl.querySelector('.cardlist');
+    if(colChapters.length === 0){
+      var empty = document.createElement('div');
+      empty.className = 'empty-col';
+      empty.textContent = colDef.id === 'not-ready' ? 'Nothing waiting here yet' : 'No chapters here yet';
+      list.appendChild(empty);
+    }else{
+      colChapters.forEach(function(c){
+        list.appendChild(renderCard(c, colDef.id, base, !!needsRevision[c.code]));
+      });
+    }
+
+    if(colDef.id !== 'not-ready'){
+      colEl.addEventListener('dragover', function(e){ e.preventDefault(); colEl.classList.add('dragover'); });
+      colEl.addEventListener('dragleave', function(){ colEl.classList.remove('dragover'); });
+      colEl.addEventListener('drop', function(e){
+        e.preventDefault();
+        colEl.classList.remove('dragover');
+        var code = e.dataTransfer.getData('text/plain');
+        if(code) setStatus(code, colDef.id);
+      });
+    }
+
+    board.appendChild(colEl);
+  });
+
+  var svg = document.getElementById('strings');
+  svg.setAttribute('width', board.scrollWidth);
+  svg.setAttribute('height', board.scrollHeight);
+}
+
+function clearStrings(){
+  var svg = document.getElementById('strings');
+  if(svg) svg.innerHTML = '';
+}
+
+function drawStrings(code){
+  var svg = document.getElementById('strings');
+  var board = document.getElementById('board');
+  if(!svg || !board) return;
+  svg.innerHTML = '';
+  var c = CH_BY_CODE[code];
+  var srcEl = board.querySelector('.card[data-code="'+code+'"]');
+  if(!srcEl) return;
+  var boardRect = board.getBoundingClientRect();
+  var srcRect = srcEl.getBoundingClientRect();
+  var srcX = srcRect.left - boardRect.left + srcRect.width/2 + board.scrollLeft;
+  var srcY = srcRect.top - boardRect.top + srcRect.height/2 + board.scrollTop;
+
+  function link(otherCode, dashed){
+    var el = board.querySelector('.card[data-code="'+otherCode+'"]');
+    if(!el) return;
+    var r = el.getBoundingClientRect();
+    var x = r.left - boardRect.left + r.width/2 + board.scrollLeft;
+    var y = r.top - boardRect.top + r.height/2 + board.scrollTop;
+    var mx = (srcX+x)/2, my = Math.min(srcY,y) - 22;
+    var path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d','M'+srcX+','+srcY+' Q'+mx+','+my+' '+x+','+y);
+    path.setAttribute('stroke', dashed ? '#a89d87' : '#4a463e');
+    path.setAttribute('stroke-width', dashed ? '1.6' : '2');
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke-linecap','round');
+    if(dashed) path.setAttribute('stroke-dasharray','4,4');
+    svg.appendChild(path);
+  }
+
+  c.hard.forEach(function(p){ link(p, false); });
+  c.soft.forEach(function(p){ link(p, true); });
+  CHAPTERS.forEach(function(other){
+    if(other.hard.indexOf(code) !== -1) link(other.code, false);
+    if(other.soft.indexOf(code) !== -1) link(other.code, true);
+  });
+}
+
+document.getElementById('resetBtn').addEventListener('click', function(){
+  document.getElementById('resetOverlay').classList.add('open');
+});
+document.getElementById('resetCancel').addEventListener('click', function(){
+  document.getElementById('resetOverlay').classList.remove('open');
+});
+document.getElementById('resetOverlay').addEventListener('click', function(e){
+  if(e.target.id === 'resetOverlay') e.currentTarget.classList.remove('open');
+});
+document.getElementById('resetConfirm').addEventListener('click', function(){
+  manualStatus = {};
+  saveData();
+  render();
+  document.getElementById('resetOverlay').classList.remove('open');
+});
+
+loadData();
+
+})();
+</script>
+</body>
+</html>
