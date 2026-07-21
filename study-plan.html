@@ -455,16 +455,16 @@ function computeAll(){
   return {base:base, display:display, needsRevision:needsRevision};
 }
 
-async function loadData(){
+function loadData(){
   try{
-    var res = await window.storage.get(STORAGE_KEY, false);
-    if(res && res.value){ manualStatus = JSON.parse(res.value); }
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){ manualStatus = JSON.parse(raw); }
   }catch(e){ manualStatus = {}; }
   render();
 }
 
-async function saveData(){
-  try{ await window.storage.set(STORAGE_KEY, JSON.stringify(manualStatus), false); }catch(e){}
+function saveData(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(manualStatus)); }catch(e){}
 }
 
 function setStatus(code, status, extra){
