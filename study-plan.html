@@ -300,27 +300,27 @@
 
 var BOOKS = {
   A:{
-    name:'Aho, Lam, Sethi & Ullman', title:'Compilers: Principles, Techniques, and Tools', color:'#6b7fb0',
+    name:'Aho, Lam, Sethi & Ullman', title:'Compilers: Principles, Techniques, and Tools', color:'#5b84ad',
     meta:'Pearson / Addison-Wesley &middot; 2nd edition, 2006',
     desc:'Known as "the Dragon Book," this is the standard reference on how compilers are built, covering everything from lexical analysis through code generation and optimization.'
   },
   D:{
-    name:'Dirac', title:'The Principles of Quantum Mechanics', color:'#c1794f',
+    name:'Dirac', title:'The Principles of Quantum Mechanics', color:'#4f9c93',
     meta:'Oxford University Press (Clarendon Press) &middot; 4th edition, 1958',
     desc:'A foundational, axiomatic treatment of quantum theory built around bra-ket notation, written by Nobel laureate Paul Dirac; long considered one of the classic texts in physics.'
   },
   K:{
-    name:'Knuth', title:'The Art of Computer Programming', color:'#8a8c4f',
+    name:'Knuth', title:'The Art of Computer Programming', color:'#78a35a',
     meta:'Addison-Wesley &middot; Vols. 1-4, 1968-2022',
     desc:'Donald Knuth\u2019s monumental, still-unfinished series analyzing algorithms and data structures with mathematical rigor; a cornerstone reference in computer science.'
   },
   B:{
-    name:'Majidy, Wilson & Laflamme', title:'Building Quantum Computers: A Practical Introduction', color:'#4f9c93',
+    name:'Majidy, Wilson & Laflamme', title:'Building Quantum Computers: A Practical Introduction', color:'#c9a23c',
     meta:'Cambridge University Press &middot; 1st edition, 2024',
     desc:'A hardware-focused textbook comparing the leading physical platforms for quantum computing: nuclear magnetic resonance, optics, trapped ions, and superconducting circuits.'
   },
   M:{
-    name:'Manenti & Motta', title:'Quantum Information Science', color:'#8f5fa8',
+    name:'Manenti & Motta', title:'Quantum Information Science', color:'#c1794f',
     meta:'Oxford University Press &middot; 1st edition, 2023',
     desc:'An introduction bridging the math, physics, and engineering of quantum computing, written by an industry quantum engineer and a research scientist for students starting graduate study.'
   },
@@ -330,7 +330,7 @@ var BOOKS = {
     desc:'One of the most cited books in physics and the standard reference for the field, covering quantum algorithms, error-correction, and quantum information theory.'
   },
   S:{
-    name:'Sakurai & Napolitano', title:'Modern Quantum Mechanics', color:'#b8923f',
+    name:'Sakurai & Napolitano', title:'Modern Quantum Mechanics', color:'#8f5fa8',
     meta:'Cambridge University Press &middot; 3rd edition, 2020',
     desc:'A widely used graduate quantum mechanics text originally by J. J. Sakurai and completed after his death, later revised and extended by Jim Napolitano with modern applications.'
   }
@@ -455,16 +455,61 @@ function computeAll(){
   return {base:base, display:display, needsRevision:needsRevision};
 }
 
-function loadData(){
+function normalizeEntry(parsed){
+  if(parsed && typeof parsed === 'object' && 'data' in parsed && 'ts' in parsed) return parsed;
+  return {data: parsed || {}, ts: 0};
+}
+
+function readLocal(){
   try{
     var raw = localStorage.getItem(STORAGE_KEY);
-    if(raw){ manualStatus = JSON.parse(raw); }
-  }catch(e){ manualStatus = {}; }
+    if(raw) return normalizeEntry(JSON.parse(raw));
+  }catch(e){}
+  return null;
+}
+
+function writeLocal(entry){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(entry)); }catch(e){}
+}
+
+async function readRemote(){
+  try{
+    var res = await window.storage.get(STORAGE_KEY, false);
+    if(res && res.value) return normalizeEntry(JSON.parse(res.value));
+  }catch(e){}
+  return null;
+}
+
+async function writeRemote(entry){
+  try{ await window.storage.set(STORAGE_KEY, JSON.stringify(entry), false); }catch(e){}
+}
+
+async function loadData(){
+  var local = readLocal();
+  var remote = await readRemote();
+
+  var winner = null;
+  if(local && remote){
+    winner = (remote.ts >= local.ts) ? remote : local;
+  }else{
+    winner = local || remote;
+  }
+
+  manualStatus = winner ? (winner.data || {}) : {};
+
+  // resync whichever store is missing or behind the winning entry
+  if(winner){
+    if(!local || local.ts < winner.ts) writeLocal(winner);
+    if(!remote || remote.ts < winner.ts) writeRemote(winner);
+  }
+
   render();
 }
 
 function saveData(){
-  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(manualStatus)); }catch(e){}
+  var entry = {data: manualStatus, ts: Date.now()};
+  writeLocal(entry);
+  writeRemote(entry);
 }
 
 function setStatus(code, status, extra){
