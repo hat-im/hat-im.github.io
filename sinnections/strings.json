@@ -1,0 +1,25 @@
+{
+  "toast": {
+    "alreadyGuessed": "Already guessed",
+    "oneAway": "One away",
+    "notYetAvailable": "Not yet!"
+  },
+  "gameOver": {
+    "win": {
+      "title": "Congratulations!",
+      "message": "You found all the connections!"
+    },
+    "lose": {
+      "title": "Game Over",
+      "message": "Better luck next time!"
+    }
+  },
+  "cooldown": {
+    "readyText": "You can now play again!",
+    "waitingTemplate": "Next game available in: {h}:{m}:{s}"
+  },
+  "playAgainBtn": {
+    "ready": "Play Again",
+    "waiting": "Please Wait"
+  }
+}

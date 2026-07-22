@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "category": "FRIENDS-TO-VAMPIRES",
+      "words": ["CORNBREAD", "STACK", "MARY", "PEARLINE"],
+      "color": "yellow",
+      "difficulty": 1
+    },
+    {
+      "category": "SAMMIE'S SUMMONED SYMPHONIES",
+      "words": ["TRAP", "BLUES", "ROCK", "CLUB"],
+      "color": "green",
+      "difficulty": 2
+    },
+    {
+      "category": "VAMPIRE-SLAYERS",
+      "words": ["SMOKE", "SUNLIGHT", "SILVER", "STAKE"],
+      "color": "blue",
+      "difficulty": 3
+    },
+    {
+      "category": "MY THOUGHTS ON SINNERS",
+      "words": ["FIRE", "SMART", "SHARP", "FRESH"],
+      "color": "purple",
+      "difficulty": 4
+    }
+  ]
+}
