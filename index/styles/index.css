@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Next Mono";
+  src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/mono.woff")
+    format("woff");
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #fefefe;
+  color: #111;
+}
+canvas {
+  display: block;
+}

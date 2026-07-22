@@ -1,0 +1,9 @@
+{
+  "text": "EVENTUALLY THIS WILL BECOME SHAKESPEARE",
+  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ ",
+  "fontSize": 10,
+  "lineHeight": 1.2,
+  "fontFamily": "Next Mono",
+  "delay": 50,
+  "baseDecay": 0.0012
+}
