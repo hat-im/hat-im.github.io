@@ -1,0 +1,22 @@
+{
+  "popup": {
+    "solved": {
+      "title": "Puzzle Solved!",
+      "message": "Congratulations! You've decrypted the message.<br><br>Should you find it, there's a secret here, but you'll need to find it yourself.",
+      "hint": "<em>Look aHeader than usual.</em>",
+      "continueLabel": "Continue Exploring"
+    },
+    "returning": {
+      "title": "Welcome Back!",
+      "message": "You've already solved this cryptogram.<br><br>The message has been revealed for you.",
+      "hint": "<em>Feel free to explore or play again.</em>",
+      "continueLabel": "Continue Exploring"
+    },
+    "early": {
+      "title": "That Was Fast!",
+      "message": "Congratulations, cryptogram-annihilator!<br><br>You've found a door to a secret, but it's still closed, for now.",
+      "hint": "<em>Some doors open slower than others...</em>",
+      "buttonLabel": "I understand"
+    }
+  }
+}

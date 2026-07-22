@@ -1,0 +1,374 @@
+body {
+    font-family: 'Courier New', monospace;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    line-height: 1.2;
+    color: #000000;
+    min-height: 100vh;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-link {
+    pointer-events: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.header-link.enabled {
+    pointer-events: auto;
+    animation: subtle-shake 1s ease-in-out infinite;
+}
+
+.header img {
+    max-width: 100%;
+    height: auto;
+}
+
+.puzzle-container {
+    text-align: left;
+    margin: 30px 0;
+}
+
+.line {
+    margin-bottom: 15px;
+}
+
+.paragraph-break {
+    height: 15px;
+    width: 100%;
+}
+
+.word-group {
+    display: inline-block;
+    margin: 6px 10px 6px 0;
+    vertical-align: top;
+}
+
+.input-row {
+    display: flex;
+    margin-bottom: 6px;
+    align-items: center;
+}
+
+.encrypted-row {
+    display: flex;
+}
+
+.letter-input.error {
+    background-color: #ffcccc;
+    box-shadow: 0 0 0 1px #cc0000;
+    z-index: 1;
+}
+
+.letter-input {
+    width: 28px;
+    height: 28px;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: white;
+    font-family: 'Courier New', monospace;
+    outline: none;
+    padding: 0;
+    transition: opacity 1s ease-out;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Add right border to last letter in word */
+.letter-input.last-alpha {
+    border-right: 1px solid #000000;
+}
+
+.letter-input:focus {
+    background-color: #ffffcc;
+    box-shadow: 0 0 0 2px #0066cc;
+    z-index: 2;
+}
+
+.letter-input.highlighted {
+    background-color: #ffffcc;
+}
+
+.letter-input.selected {
+    background-color: #ffff99;
+}
+
+.letter-input.solved {
+    background: transparent;
+    color: #000000;
+    font-weight: bold;
+    cursor: default;
+    pointer-events: none;
+    /* Maintain borders */
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-right: none;
+}
+
+.letter-input.solved.last-alpha {
+    border-right: 1px solid #000000;
+}
+
+.punctuation-inline {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'Courier New', monospace;
+}
+
+.encrypted-letter {
+    width: 28px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    font-family: 'Courier New', monospace;
+    transition: opacity 1s ease-out;
+}
+
+.encrypted-letter.fade-out {
+    opacity: 0;
+}
+
+.empty-space {
+    width: 28px;
+    height: 22px;
+}
+
+.letters-remaining {
+    margin: 40px 0 20px 0;
+    text-align: left;
+}
+
+.letters-remaining h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.remaining-letters {
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    letter-spacing: 10px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+.footer-text {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.footer-text a {
+    color: #000000;
+    text-decoration: underline;
+}
+
+@keyframes subtle-shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+.solution {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+    display: none;
+    text-align: left;
+}
+
+.solution.show {
+    display: block;
+}
+
+.solution-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #ffffff;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.popup-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #8B2635;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.popup-message {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.popup-hint {
+    font-size: 14px;
+    font-style: italic;
+    color: #666666;
+    margin-bottom: 25px;
+    border-top: 1px solid #cccccc;
+    padding-top: 15px;
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.popup-close, .popup-restart {
+    background-color: #8B2635;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.popup-close:hover, .popup-restart:hover {
+    background-color: #a0303f;
+}
+
+.popup-restart {
+    background-color: #666666;
+}
+
+.popup-restart:hover {
+    background-color: #777777;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+        margin: 0;
+        max-width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+    
+    .puzzle-container {
+        margin: 20px 0;
+        max-width: calc(100vw - 20px);
+    }
+    
+    .line {
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .paragraph-break {
+        height: 10px;
+    }
+    
+    .word-group {
+        margin: 3px 6px 3px 0;
+    }
+    
+    .letter-input, .punctuation-inline {
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+    }
+    
+    .encrypted-letter, .empty-space {
+        width: 24px;
+        height: 18px;
+        font-size: 14px;
+    }
+    
+    .remaining-letters {
+        letter-spacing: 6px;
+        font-size: 14px;
+    }
+    
+    .footer-text {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+    
+    .letters-remaining {
+        margin: 30px 0 20px 0;
+    }
+    
+    .letters-remaining h3 {
+        font-size: 14px;
+    }
+    
+    .header {
+        margin-bottom: 20px;
+    }
+    
+    .popup-content {
+        margin: 10px;
+        max-width: calc(100vw - 20px);
+        padding: 20px;
+    }
+}
