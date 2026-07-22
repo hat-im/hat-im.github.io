@@ -1,0 +1,54 @@
+{
+  "bookOrder": ["A", "D", "K", "B", "M", "N", "S"],
+  "books": {
+    "A": {
+      "name": "Aho, Lam, Sethi & Ullman",
+      "title": "Compilers: Principles, Techniques, and Tools",
+      "color": "#5b84ad",
+      "meta": "Pearson / Addison-Wesley &middot; 2nd edition, 2006",
+      "desc": "Known as \"the Dragon Book,\" this is the standard reference on how compilers are built, covering everything from lexical analysis through code generation and optimization."
+    },
+    "D": {
+      "name": "Dirac",
+      "title": "The Principles of Quantum Mechanics",
+      "color": "#4f9c93",
+      "meta": "Oxford University Press (Clarendon Press) &middot; 4th edition, 1958",
+      "desc": "A foundational, axiomatic treatment of quantum theory built around bra-ket notation, written by Nobel laureate Paul Dirac; long considered one of the classic texts in physics."
+    },
+    "K": {
+      "name": "Knuth",
+      "title": "The Art of Computer Programming",
+      "color": "#78a35a",
+      "meta": "Addison-Wesley &middot; Vols. 1-4, 1968-2022",
+      "desc": "Donald Knuth’s monumental, still-unfinished series analyzing algorithms and data structures with mathematical rigor; a cornerstone reference in computer science."
+    },
+    "B": {
+      "name": "Majidy, Wilson & Laflamme",
+      "title": "Building Quantum Computers: A Practical Introduction",
+      "color": "#c9a23c",
+      "meta": "Cambridge University Press &middot; 1st edition, 2024",
+      "desc": "A hardware-focused textbook comparing the leading physical platforms for quantum computing: nuclear magnetic resonance, optics, trapped ions, and superconducting circuits."
+    },
+    "M": {
+      "name": "Manenti & Motta",
+      "title": "Quantum Information Science",
+      "color": "#c1794f",
+      "meta": "Oxford University Press &middot; 1st edition, 2023",
+      "desc": "An introduction bridging the math, physics, and engineering of quantum computing, written by an industry quantum engineer and a research scientist for students starting graduate study."
+    },
+    "N": {
+      "name": "Nielsen & Chuang",
+      "title": "Quantum Computation and Quantum Information",
+      "color": "#c15f82",
+      "meta": "Cambridge University Press &middot; 10th anniversary edition, 2010",
+      "desc": "One of the most cited books in physics and the standard reference for the field, covering quantum algorithms, error-correction, and quantum information theory."
+    },
+    "S": {
+      "name": "Sakurai & Napolitano",
+      "title": "Modern Quantum Mechanics",
+      "color": "#8f5fa8",
+      "meta": "Cambridge University Press &middot; 3rd edition, 2020",
+      "desc": "A widely used graduate quantum mechanics text originally by J. J. Sakurai and completed after his death, later revised and extended by Jim Napolitano with modern applications."
+    }
+  }
+}

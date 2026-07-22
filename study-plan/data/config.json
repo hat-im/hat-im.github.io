@@ -1,0 +1,4 @@
+{
+  "storageKey": "chapter-status-v3",
+  "columnOrder": ["not-ready", "ready", "studying", "done"]
+}

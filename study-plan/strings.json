@@ -1,0 +1,48 @@
+{
+  "pageTitle": "Study Board",
+  "heading": "Study board",
+  "subheading": "Chapters unlock as their prerequisites are finished.",
+  "legend": {
+    "required": "required",
+    "related": "related"
+  },
+  "progress": {
+    "infoButtonLabel": "Progress by book",
+    "countTemplate": "{done} / {total} mastered"
+  },
+  "resetButton": "Reset progress",
+  "resetModal": {
+    "title": "Reset progress",
+    "body": "This clears all your progress. It can't be undone.",
+    "cancel": "Cancel",
+    "confirm": "Reset everything"
+  },
+  "columns": {
+    "not-ready": "Not ready",
+    "ready": "Ready",
+    "studying": "Studying",
+    "done": "Done"
+  },
+  "emptyColumn": {
+    "not-ready": "Nothing waiting here yet",
+    "default": "No chapters here yet"
+  },
+  "card": {
+    "waitingOnLabel": "Waiting on",
+    "moreSuffixTemplate": ", and {n} more",
+    "awayTagTemplate": {
+      "singular": "{n} chapter away from ready",
+      "plural": "{n} chapters away from ready"
+    },
+    "revisitNoteTemplate": "finish {list} next",
+    "needsRevisionBadge": "Needs revision",
+    "actions": {
+      "study": "Study",
+      "revise": "Revise",
+      "finish": "Finish",
+      "pause": "Pause",
+      "revisit": "Revisit",
+      "restudy": "Restudy"
+    }
+  }
+}
