@@ -1,0 +1,45 @@
+{
+  "main": [
+    {
+      "id": "cryptogram",
+      "name": "Cryptogram",
+      "url": "ZGVhci1zYW0uaHRtbA==",
+      "storageKey": "cryptogram_completed"
+    },
+    {
+      "id": "sinnections",
+      "name": "Sinnections",
+      "url": "c2lubmVjdGlvbnMuaHRtbA==",
+      "storageKey": "sinnections_completed"
+    },
+    {
+      "id": "numberbee",
+      "name": "Number Bee",
+      "url": "bnVtYmVyX2JlZS5odG1s",
+      "storageKey": "numberbee_completed"
+    },
+    {
+      "id": "minicrossword",
+      "name": "Mini Crossword",
+      "url": "bWluaV9jcm9zc3dvcmQuaHRtbA==",
+      "storageKey": "sessionComplete"
+    },
+    {
+      "id": "sonnections",
+      "name": "Sonnections",
+      "url": "c29ubmVjdGlvbnMuaHRtbA==",
+      "storageKey": "sonnections_completed"
+    },
+    {
+      "id": "wordle",
+      "name": "Wordle",
+      "url": "d29yZGxlLmh0bWw=",
+      "storageKey": "wordle_completed"
+    }
+  ],
+  "finalUnlock": {
+    "id": "scrabblefight",
+    "name": "Scrabble Fight",
+    "url": "c2NyYWJibGUtZmlnaHQuaHRtbA=="
+  }
+}

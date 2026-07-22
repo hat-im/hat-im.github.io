@@ -1,0 +1,42 @@
+{
+  "pageTitle": "A Pocketful of Puzzle",
+  "heading": "A Pocketful of Puzzle",
+  "subheading": "An assortment of challenge and distraction",
+  "dedication": "from Hat, to Sam",
+  "welcomeMessage": "Check off your inventory before you start.",
+  "checklistTitle": "Ingredients for Success",
+  "instructions": [
+    "• Horizontal position (optimal for heavy thinking)",
+    "• A soft kitty to pet (or annoy)",
+    "• The \"Pop Goes Classical\" playlist",
+    "• A tall cup of hot chocolate (or coffee)",
+    "• A brain cell (borrow if unavailable)"
+  ],
+  "entryButton": {
+    "default": "Begin",
+    "starting": "Starting...",
+    "ready": "Begin!",
+    "excited": "Begin!!"
+  },
+  "countdown": {
+    "template": "Redirecting in <span id=\"timer\">{timer}</span> seconds...",
+    "stayHere": "Stay Here"
+  },
+  "footer": {
+    "initial": "Take your time with these.<div class=\"device-note\">For best results, open on laptop<br>Please puzzle responsibly.</div>",
+    "perfectTiming": "Perfect timing.",
+    "letsGetStarted": "Let's get started then.",
+    "notThatMuchTime": "Okay, maybe not <em>that</em> much time...",
+    "illRedirectYou": "Alright, I'll just redirect you myself.",
+    "aborted": "Take your time with these.<br>(Does asynchronous puzzle communication count as no contact?)"
+  },
+  "hiddenMessage": "Made with love.",
+  "puzzleCard": {
+    "title": "Puzzles",
+    "close": "&times;"
+  },
+  "surprise": {
+    "welcomeBack": "Welcome back, puzzle solver.",
+    "letsGo": "Let's gooooooo"
+  }
+}
