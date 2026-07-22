@@ -1,0 +1,59 @@
+{
+  "pageTitle": "Paper board",
+  "subheading": "Papers are linked automatically by shared keywords.",
+  "actionsButtonLabel": "Actions",
+  "dropdown": {
+    "restore": "Reset",
+    "clear": "Clear",
+    "returnToChat": "Return to chat"
+  },
+  "searchPlaceholder": "Search title, author, journal, keyword",
+  "progress": {
+    "countTemplate": "{read} read / {total} total",
+    "popoverTitle": "Read by keyword"
+  },
+  "columns": {
+    "to-read": "To read",
+    "suggested": "Suggested",
+    "reading": "Reading",
+    "read": "Read"
+  },
+  "emptyColumn": {
+    "to-read": "No papers yet.",
+    "suggested": "Nothing suggested yet.",
+    "reading": "Nothing here.",
+    "read": "Nothing here."
+  },
+  "sortOptions": [
+    {"value": "none", "label": "Sort: added"},
+    {"value": "author", "label": "Sort: first author"},
+    {"value": "year", "label": "Sort: year"},
+    {"value": "citations", "label": "Sort: citations"}
+  ],
+  "card": {
+    "actions": {
+      "start": "Start",
+      "finish": "Finish",
+      "open": "Open",
+      "reopen": "Reopen"
+    },
+    "citationsSuffixTemplate": "{n} citations"
+  },
+  "collapsibleRow": {
+    "seeMore": "See more",
+    "seeLess": "See less"
+  },
+  "modal": {
+    "cancel": "Cancel",
+    "clear": {
+      "title": "Clear the board",
+      "body": "This removes every paper you've added. This can't be undone.",
+      "confirm": "Clear"
+    },
+    "restore": {
+      "title": "Reset the board",
+      "body": "This replaces the board with the original papers and resets every status to to-read. This can’t be undone.",
+      "confirm": "Reset"
+    }
+  }
+}
