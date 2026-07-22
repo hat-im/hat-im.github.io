@@ -548,8 +548,7 @@
             loadPuzzleFromFile(puzzleFile);
         }
 
-        // GitHub base URL for crossword puzzles
-        const GITHUB_CROSSWORDS_BASE = 'https://raw.githubusercontent.com/hat-im/hat-im.github.io/mini-crosswords/crosswords/';
+        const GITHUB_CROSSWORDS_BASE = 'mini_crossword/data/crosswords/';
 
         async function loadPuzzleFromFile(filename, shouldRestoreGrid = false) {
             try {

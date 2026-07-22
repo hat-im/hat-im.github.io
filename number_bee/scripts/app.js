@@ -211,14 +211,13 @@ function closeWaitPopup() {
 
 // Function to fetch number facts from the tree structure
 // Cache for the numbers array
-// GitHub base URL for crossword puzzles
-const GITHUB_NUMBERS_BASE = 'https://raw.githubusercontent.com/hat-im/hat-im.github.io/number-bee/';
+const NUMBERS_DATA_URL = 'number_bee/data/numbers.json';
 let numbersData = null;
 
 async function loadNumbersData() {
   if (numbersData === null) {
     try {
-      const response = await fetch(`${GITHUB_NUMBERS_BASE}numbers.json`);
+      const response = await fetch(NUMBERS_DATA_URL);
       if (response.ok) {
         numbersData = await response.json();
       } else {
