@@ -1,0 +1,21 @@
+:root{
+  --bg:#fbfaf6;
+  --surface:#ffffff;
+  --border:#e8e5db;
+  --border-strong:#d8d4c6;
+  --accent:#3f6fae;
+  --danger:#b23b3b;
+}
+*{box-sizing:border-box;}
+html, body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text-primary);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+.tabular{font-variant-numeric:tabular-nums;}
+
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-thumb{background:var(--border-strong);border-radius:8px;}
+::-webkit-scrollbar-track{background:transparent;}
