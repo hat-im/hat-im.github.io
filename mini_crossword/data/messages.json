@@ -1,0 +1,41 @@
+{
+  "pause": [
+    { "title": "Game Paused", "subtitle": "Take a breather and come back!" },
+    { "title": "Timeout", "subtitle": "The best ideas come from relaxation." },
+    { "title": "Paused", "subtitle": "Your progress is saved. Take your time!" },
+    { "title": "Break Time", "subtitle": "Step away and let your mind wander." },
+    { "title": "Intermission", "subtitle": "Great puzzlers know when to pause." }
+  ],
+  "incorrect": [
+    { "title": "Not Quite Right", "subtitle": "Almost there. Keep going!" },
+    { "title": "Close!", "subtitle": "You're on the right track. Check your answers." },
+    { "title": "Almost There", "subtitle": "A few more corrections and you'll have it!" },
+    { "title": "Keep Trying", "subtitle": "The best puzzles are worth the challenge." },
+    { "title": "Try Again", "subtitle": "Success is just one more attempt away." }
+  ],
+  "correct": [
+    { "title": "Brilliant!", "subtitle": "You're mastery over crossword is remarkable!" },
+    { "title": "Excellent Work", "subtitle": "Your puzzle-solving skills are impressive!" },
+    { "title": "Congratulations!", "subtitle": "You've cracked every clue with finesse!" },
+    { "title": "Well Done!", "subtitle": "A true wordsmith at work!" },
+    { "title": "Perfect!", "subtitle": "You've conquered this crossword!" }
+  ],
+  "revealed": [
+    { "title": "Puzzle Revealed", "subtitle": "Sometimes we all need a little help!" },
+    { "title": "All Solved", "subtitle": "The full grid has been revealed." },
+    { "title": "Complete", "subtitle": "Every answer has been filled in for you." },
+    { "title": "Revealed", "subtitle": "No shame in checking the answers!" }
+  ],
+  "cooldown": [
+    { "title": "Time's Up!", "subtitle": "Take a break and come back refreshed!" },
+    { "title": "Timeout", "subtitle": "Great puzzlers know when to rest." },
+    { "title": "Cool Down", "subtitle": "Use this time to sharpen your wordplay!" },
+    { "title": "Intermission", "subtitle": "The best is yet to come!" },
+    { "title": "Recharge Time", "subtitle": "Every expert needs a breather." }
+  ],
+  "restart": [
+    { "title": "Restart Game?", "subtitle": "This will clear all progress and start fresh." },
+    { "title": "Start Over?", "subtitle": "All your progress will be lost. Are you sure?" },
+    { "title": "Fresh Start?", "subtitle": "This will reset everything and begin again." }
+  ]
+}
