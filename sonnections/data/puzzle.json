@@ -9,10 +9,10 @@
         "PIANO"
       ],
       "audioFiles": [
-        "audio/guitar.mp3",
-        "audio/harmonium.mp3",
-        "audio/orchestra.mp3",
-        "audio/piano.mp3"
+        "sonnections/audio/guitar.mp3",
+        "sonnections/audio/harmonium.mp3",
+        "sonnections/audio/orchestra.mp3",
+        "sonnections/audio/piano.mp3"
       ],
       "color": "yellow",
       "difficulty": 1
@@ -26,10 +26,10 @@
         "MICROWAVE"
       ],
       "audioFiles": [
-        "audio/slack.mp3",
-        "audio/typing.mp3",
-        "audio/gmeet.mp3",
-        "audio/microwave.mp3"
+        "sonnections/audio/slack.mp3",
+        "sonnections/audio/typing.mp3",
+        "sonnections/audio/gmeet.mp3",
+        "sonnections/audio/microwave.mp3"
       ],
       "color": "green",
       "difficulty": 2
@@ -43,10 +43,10 @@
         "GPAY"
       ],
       "audioFiles": [
-        "audio/namma-yatri.mp3",
-        "audio/monsoon.mp3",
-        "audio/auto.mp3",
-        "audio/gpay.mp3"
+        "sonnections/audio/namma-yatri.mp3",
+        "sonnections/audio/monsoon.mp3",
+        "sonnections/audio/auto.mp3",
+        "sonnections/audio/gpay.mp3"
       ],
       "color": "blue",
       "difficulty": 3
@@ -60,10 +60,10 @@
         "CHATTER"
       ],
       "audioFiles": [
-        "audio/honk.mp3",
-        "audio/hiss.mp3",
-        "audio/trumpet.mp3",
-        "audio/chatter.mp3"
+        "sonnections/audio/honk.mp3",
+        "sonnections/audio/hiss.mp3",
+        "sonnections/audio/trumpet.mp3",
+        "sonnections/audio/chatter.mp3"
       ],
       "color": "purple",
       "difficulty": 4
