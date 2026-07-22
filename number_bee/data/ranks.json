@@ -1,0 +1,11 @@
+[
+  { "name": "Beginner", "points": 0, "position": 0 },
+  { "name": "Good Start", "points": 5, "position": 12.5 },
+  { "name": "Moving Up", "points": 12, "position": 25 },
+  { "name": "Good", "points": 22, "position": 37.5 },
+  { "name": "Solid", "points": 35, "position": 50 },
+  { "name": "Nice", "points": 50, "position": 62.5 },
+  { "name": "Great", "points": 68, "position": 75 },
+  { "name": "Amazing", "points": 85, "position": 87.5 },
+  { "name": "Genius", "points": 100, "position": 100 }
+]

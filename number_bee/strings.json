@@ -1,0 +1,62 @@
+{
+  "pageTitle": "Counting Bee",
+  "inputPlaceholder": "Type or click",
+  "wordsFoundTemplate": "You have found {n} numbers",
+  "toasts": {
+    "badNumbers": "Bad numbers",
+    "missingMiddle": "Missing middle number",
+    "alreadyFound": "Already found",
+    "comboTemplate": "Combo x{n}!"
+  },
+  "genericMessages": [
+    "Keep going!",
+    "You're getting warmer!",
+    "Interesting guess!",
+    "Nice try!",
+    "Almost there!",
+    "Good thinking!",
+    "Keep exploring!",
+    "You're on the right track!",
+    "Creative approach!",
+    "Don't give up!"
+  ],
+  "tooLongMessages": [
+    "Too big!",
+    "Too many digits!",
+    "That's too long!",
+    "Shorter please!",
+    "Keep it smaller!",
+    "Not so many digits!",
+    "Way too big!",
+    "Dial it back!"
+  ],
+  "decimalMessages": [
+    "Too real!",
+    "Stay whole!",
+    "No decimals!",
+    "Keep integer!",
+    "Whole numbers!",
+    "No fractions!",
+    "Integer only!",
+    "Stay natural!",
+    "Pure numbers!",
+    "No points!"
+  ],
+  "victory": {
+    "messages": [
+      "Outstanding!",
+      "Incredible!",
+      "Phenomenal!",
+      "Brilliant!",
+      "Magnificent!",
+      "Exceptional!",
+      "Spectacular!",
+      "Genius!",
+      "Amazing!",
+      "Perfect!"
+    ],
+    "subtitle": "Perfect Score!",
+    "admireButton": "Admire Puzzle",
+    "playAgainButton": "Play Again"
+  }
+}
