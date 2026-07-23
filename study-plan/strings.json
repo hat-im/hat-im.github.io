@@ -11,6 +11,11 @@
     "countTemplate": "{done} / {total} mastered"
   },
   "resetButton": "Reset progress",
+  "graphFab": "Graph view",
+  "graph": {
+    "title": "Dependency graph",
+    "close": "Close"
+  },
   "resetModal": {
     "title": "Reset progress",
     "body": "This clears all your progress. It can't be undone.",

@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared/theme.css">
 <link rel="stylesheet" href="study-plan/styles/study-plan.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 </head>
 <body>
 
@@ -42,6 +43,24 @@
     <div class="modal-actions">
       <button class="btn secondary" id="resetCancel"></button>
       <button class="btn danger" id="resetConfirm"></button>
+    </div>
+  </div>
+</div>
+
+<button class="fab-btn" id="graphFab" type="button"></button>
+
+<div class="graph-overlay" id="graphOverlay">
+  <div class="graph-panel">
+    <div class="graph-header">
+      <span class="graph-title" id="graphTitle"></span>
+      <div class="legend-line" style="margin:0;">
+        <span class="item"><svg width="20" height="8"><line x1="0" y1="4" x2="20" y2="4" stroke="#4a463e" stroke-width="2"/></svg> <span id="graphLegendRequired"></span></span>
+        <span class="item"><svg width="20" height="8"><line x1="0" y1="4" x2="20" y2="4" stroke="#a89d87" stroke-width="2" stroke-dasharray="3,3"/></svg> <span id="graphLegendRelated"></span></span>
+      </div>
+      <button class="graph-close" id="graphClose" type="button"></button>
+    </div>
+    <div class="graph-canvas-wrap">
+      <svg id="graphSvg"></svg>
     </div>
   </div>
 </div>
