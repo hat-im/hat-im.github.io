@@ -16,6 +16,20 @@
     "title": "Dependency graph",
     "close": "Close"
   },
+  "toolbar": {
+    "searchPlaceholder": "Search chapters…",
+    "viewBoard": "Board",
+    "viewList": "List",
+    "criticalPath": "Critical path"
+  },
+  "suggestedNext": {
+    "label": "Suggested next",
+    "impact": {
+      "zero": "the best unblocked pick right now",
+      "singular": "unlocks {n} chapter",
+      "plural": "unlocks {n} chapters"
+    }
+  },
   "resetModal": {
     "title": "Reset progress",
     "body": "This clears all your progress. It can't be undone.",
@@ -41,6 +55,8 @@
     },
     "revisitNoteTemplate": "finish {list} next",
     "needsRevisionBadge": "Needs revision",
+    "unlocksLabel": "Finishing this unlocks",
+    "awayShort": "{n} away",
     "actions": {
       "study": "Study",
       "revise": "Revise",

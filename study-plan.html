@@ -32,8 +32,24 @@
   <button class="reset-btn" id="resetBtn"></button>
 </div>
 
-<div class="board-wrap">
+<div class="toolbar">
+  <input type="text" class="search-input" id="searchInput" autocomplete="off">
+  <div class="suggested-next" id="suggestedNext"></div>
+  <div class="toolbar-actions">
+    <div class="view-toggle" role="group">
+      <button class="view-btn active" id="viewBoardBtn" type="button"></button>
+      <button class="view-btn" id="viewListBtn" type="button"></button>
+    </div>
+    <button class="crit-btn" id="critPathBtn" type="button"></button>
+  </div>
+</div>
+
+<div class="board-wrap" id="boardWrap">
   <div class="board" id="board"></div>
+</div>
+
+<div class="list-wrap" id="listWrap">
+  <div class="list-view" id="listView"></div>
 </div>
 
 <div class="modal-overlay" id="resetOverlay">

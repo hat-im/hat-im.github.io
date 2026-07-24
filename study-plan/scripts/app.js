@@ -13,11 +13,18 @@ var COLUMN_ORDER = [];
 var STORAGE_KEY = 'chapter-status-v3';
 var CHAPTERS = [];
 var CH_BY_CODE = {};
+var DEPENDENTS = {};
+var CRITICAL_PATH = new Set();
 
 var manualStatus = {};
 var activeBooks = new Set();
 var unmetMemo = {};
 var store = null;
+
+var searchQuery = '';
+var viewMode = 'board';
+var showCriticalPath = false;
+var bookCollapseState = {};
 
 function fmt(template, vars){
   return template.replace(/\{(\w+)\}/g, function(_, key){ return vars[key]; });
@@ -93,6 +100,61 @@ function directUnmetHard(code, base){
   return c.hard.filter(function(p){ return base[p] !== 'done'; });
 }
 
+function buildDependents(){
+  var dep = {};
+  CHAPTERS.forEach(function(c){ dep[c.code] = []; });
+  CHAPTERS.forEach(function(c){
+    c.hard.forEach(function(p){ dep[p].push(c.code); });
+  });
+  return dep;
+}
+
+function computeCriticalPath(){
+  var memo = {};
+  function longest(code){
+    if(memo[code]) return memo[code];
+    var c = CH_BY_CODE[code];
+    var best = 0, bestPrev = null;
+    memo[code] = {len:1, prev:null}; // guard against cycles while computing
+    c.hard.forEach(function(p){
+      var pl = longest(p);
+      if(pl.len > best){ best = pl.len; bestPrev = p; }
+    });
+    var result = {len: best + 1, prev: bestPrev};
+    memo[code] = result;
+    return result;
+  }
+  var maxCode = null, maxLen = 0;
+  CHAPTERS.forEach(function(c){
+    var r = longest(c.code);
+    if(r.len > maxLen){ maxLen = r.len; maxCode = c.code; }
+  });
+  var path = new Set();
+  var cur = maxCode;
+  while(cur){
+    path.add(cur);
+    cur = memo[cur].prev;
+  }
+  return path;
+}
+
+function reachableCount(code, base){
+  var seen = new Set();
+  var stack = DEPENDENTS[code].slice();
+  while(stack.length){
+    var cur = stack.pop();
+    if(seen.has(cur) || base[cur] === 'done') continue;
+    seen.add(cur);
+    DEPENDENTS[cur].forEach(function(d){ stack.push(d); });
+  }
+  return seen.size;
+}
+
+function matchesSearch(c){
+  if(!searchQuery) return true;
+  return c.code.toLowerCase().indexOf(searchQuery) !== -1 || c.title.toLowerCase().indexOf(searchQuery) !== -1;
+}
+
 function renderStaticText(){
   document.title = STR.pageTitle;
   document.getElementById('pageHeading').textContent = STR.heading;
@@ -110,6 +172,10 @@ function renderStaticText(){
   document.getElementById('graphClose').textContent = STR.graph.close;
   document.getElementById('graphLegendRequired').textContent = STR.legend.required;
   document.getElementById('graphLegendRelated').textContent = STR.legend.related;
+  document.getElementById('searchInput').setAttribute('placeholder', STR.toolbar.searchPlaceholder);
+  document.getElementById('viewBoardBtn').textContent = STR.toolbar.viewBoard;
+  document.getElementById('viewListBtn').textContent = STR.toolbar.viewList;
+  document.getElementById('critPathBtn').textContent = STR.toolbar.criticalPath;
 }
 
 function renderChips(base){
@@ -192,11 +258,33 @@ function chapterNum(code){
   return code.replace(/^[A-Z]+/, '');
 }
 
+function unlocksPopoverHtml(c, base){
+  var deps = DEPENDENTS[c.code].filter(function(d){ return base[d] !== 'done'; });
+  if(!deps.length) return '';
+  var fully = [], partial = [];
+  deps.forEach(function(d){
+    var unmet = directUnmetHard(d, base);
+    if(unmet.length === 1 && unmet[0] === c.code) fully.push(CH_BY_CODE[d].title);
+    else partial.push(CH_BY_CODE[d].title);
+  });
+  var lines = '';
+  if(fully.length) lines += '<p class="pop-list">'+fully.join(', ')+'</p>';
+  if(partial.length) lines += '<p class="pop-list muted">'+partial.join(', ')+'</p>';
+  return '<div class="card-popover unlocks-popover"><p class="pop-label">'+STR.card.unlocksLabel+'</p>'+lines+'</div>';
+}
+
+function extraStateClasses(c){
+  var cls = '';
+  if(searchQuery) cls += matchesSearch(c) ? ' search-match' : ' search-dim';
+  if(showCriticalPath && CRITICAL_PATH.has(c.code)) cls += ' critical-path';
+  return cls;
+}
+
 function renderCard(c, col, base, flagged){
   var b = BOOKS[c.book];
   var locked = col === 'not-ready';
   var div = document.createElement('div');
-  div.className = 'card' + (locked ? ' locked' : '');
+  div.className = 'card' + (locked ? ' locked' : '') + extraStateClasses(c);
   div.style.borderLeftColor = locked ? 'transparent' : b.color;
   div.setAttribute('data-code', c.code);
   div.draggable = !locked;
@@ -231,13 +319,15 @@ function renderCard(c, col, base, flagged){
       }
     }
     var flagBadge = flagged ? '<div class="flag-badge">'+STR.card.needsRevisionBadge+'</div>' : '';
+    var unlocks = (col==='ready' || col==='studying') ? unlocksPopoverHtml(c, base) : '';
 
     body =
       '<div class="card-top">'+badge+'<span class="card-book" style="color:'+b.color+'">'+b.name+'</span></div>'+
       '<div class="card-title">'+c.title+'</div>'+
       flagBadge+
       extraNote+
-      '<div class="card-actions">'+cardActions(c, col, flagged)+'</div>';
+      '<div class="card-actions">'+cardActions(c, col, flagged)+'</div>'+
+      unlocks;
   }
 
   div.innerHTML = body;
@@ -255,7 +345,13 @@ function renderCard(c, col, base, flagged){
     div.addEventListener('blur', clearStrings);
   }
 
-  div.querySelectorAll('button[data-to]').forEach(function(btn){
+  bindActionButtons(div);
+
+  return div;
+}
+
+function bindActionButtons(el){
+  el.querySelectorAll('button[data-to]').forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.stopPropagation();
       var code = btn.getAttribute('data-code');
@@ -268,8 +364,6 @@ function renderCard(c, col, base, flagged){
       setStatus(code, to, extra);
     });
   });
-
-  return div;
 }
 
 function render(){
@@ -280,7 +374,49 @@ function render(){
 
   renderChips(base);
   renderOverall(base);
+  renderSuggestedNext(base);
 
+  document.getElementById('boardWrap').style.display = viewMode === 'board' ? '' : 'none';
+  document.getElementById('listWrap').style.display = viewMode === 'list' ? '' : 'none';
+
+  if(viewMode === 'list'){
+    renderListView(base, display, needsRevision);
+  }else{
+    renderBoard(base, display, needsRevision);
+  }
+}
+
+function renderSuggestedNext(base){
+  var el = document.getElementById('suggestedNext');
+  var candidates = CHAPTERS.filter(function(c){
+    return activeBooks.has(c.book) && base[c.code] === 'ready';
+  });
+  if(!candidates.length){
+    el.classList.remove('show');
+    el.innerHTML = '';
+    return;
+  }
+  var best = candidates[0], bestScore = reachableCount(best.code, base);
+  candidates.forEach(function(c){
+    var score = reachableCount(c.code, base);
+    if(score > bestScore){ bestScore = score; best = c; }
+  });
+  var impact = STR.suggestedNext.impact;
+  var impactText = bestScore === 0 ? impact.zero : fmt(bestScore === 1 ? impact.singular : impact.plural, {n:bestScore});
+  var bk = BOOKS[best.book];
+  el.classList.add('show');
+  el.innerHTML =
+    '<span class="sn-label">'+STR.suggestedNext.label+'</span>'+
+    '<span class="sn-dot" style="background:'+bk.color+'"></span>'+
+    '<span class="sn-title">'+best.title+'</span>'+
+    '<span class="sn-impact">'+impactText+'</span>'+
+    '<button class="btn primary sn-btn" type="button">'+STR.card.actions.study+'</button>';
+  el.querySelector('.sn-btn').addEventListener('click', function(){
+    setStatus(best.code, 'studying', {revising:false});
+  });
+}
+
+function renderBoard(base, display, needsRevision){
   var board = document.getElementById('board');
   board.innerHTML = '<svg id="strings"></svg>';
 
@@ -334,6 +470,84 @@ function render(){
   var svg = document.getElementById('strings');
   svg.setAttribute('width', board.scrollWidth);
   svg.setAttribute('height', board.scrollHeight);
+}
+
+function renderListView(base, display, needsRevision){
+  var listView = document.getElementById('listView');
+  listView.innerHTML = '';
+
+  var visible = CHAPTERS.filter(function(c){ return activeBooks.has(c.book); });
+  var forceOpen = !!searchQuery;
+
+  BOOK_ORDER.filter(function(key){ return activeBooks.has(key); }).forEach(function(key){
+    var chs = visible.filter(function(c){ return c.book === key; });
+    if(!chs.length) return;
+    var bk = BOOKS[key];
+    var done = chs.filter(function(c){ return base[c.code] === 'done'; }).length;
+
+    if(bookCollapseState[key] === undefined){
+      bookCollapseState[key] = done !== chs.length;
+    }
+
+    var group = document.createElement('details');
+    group.className = 'book-group';
+    group.open = forceOpen || bookCollapseState[key];
+
+    var summary = document.createElement('summary');
+    summary.innerHTML =
+      '<span class="bg-caret">&#9656;</span>'+
+      '<span class="bg-dot" style="background:'+bk.color+'"></span>'+
+      '<span class="bg-name">'+bk.name+'</span>'+
+      '<span class="bg-frac tabular">'+done+'/'+chs.length+'</span>';
+    group.appendChild(summary);
+    group.addEventListener('toggle', function(){ bookCollapseState[key] = group.open; });
+
+    chs.forEach(function(c){
+      group.appendChild(renderListRow(c, display[c.code], base, !!needsRevision[c.code]));
+    });
+
+    listView.appendChild(group);
+  });
+
+  if(!visible.length){
+    var empty = document.createElement('div');
+    empty.className = 'empty-list';
+    empty.textContent = STR.emptyColumn['default'];
+    listView.appendChild(empty);
+  }
+}
+
+function renderListRow(c, col, base, flagged){
+  var b = BOOKS[c.book];
+  var locked = col === 'not-ready';
+  var row = document.createElement('div');
+  row.className = 'list-row' + (locked ? ' locked' : '') + extraStateClasses(c);
+  row.setAttribute('data-code', c.code);
+  row.tabIndex = 0;
+  row.title = c.code + ' — ' + c.title;
+
+  var badge = '<span class="num-badge" style="background:'+b.color+'">'+chapterNum(c.code)+'</span>';
+  var body = badge + '<span class="list-title">'+c.title+'</span>';
+
+  if(locked){
+    var missing = directUnmetHard(c.code, base);
+    var SHOW = 4;
+    var shown = missing.slice(0, SHOW).map(function(p){ return CH_BY_CODE[p].title; });
+    var extra = missing.length - shown.length;
+    var listText = shown.join(', ') + (extra > 0 ? fmt(STR.card.moreSuffixTemplate, {n:extra}) : '');
+    var away = unmetAncestors(c.code, base, unmetMemo).size;
+    body +=
+      '<span class="list-tag">'+fmt(STR.card.awayShort, {n:away})+'</span>'+
+      '<div class="card-popover"><p class="pop-label">'+STR.card.waitingOnLabel+'</p><p class="pop-list">'+listText+'</p></div>';
+  }else{
+    var flagBadge = flagged ? '<span class="list-flag">'+STR.card.needsRevisionBadge+'</span>' : '';
+    var unlocks = (col==='ready' || col==='studying') ? unlocksPopoverHtml(c, base) : '';
+    body += flagBadge + '<div class="list-actions">'+cardActions(c, col, flagged)+'</div>' + unlocks;
+  }
+
+  row.innerHTML = body;
+  bindActionButtons(row);
+  return row;
 }
 
 function clearStrings(){
@@ -403,6 +617,35 @@ function bindStaticControls(){
   });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape') closeGraph();
+  });
+
+  var searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', function(){
+    searchQuery = searchInput.value.trim().toLowerCase();
+    render();
+  });
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key !== 'Enter') return;
+    var wrap = viewMode === 'list' ? document.getElementById('listView') : document.getElementById('board');
+    var match = wrap.querySelector('.search-match');
+    if(match) match.scrollIntoView({block:'center', behavior:'smooth'});
+  });
+
+  var boardBtn = document.getElementById('viewBoardBtn');
+  var listBtn = document.getElementById('viewListBtn');
+  function setView(mode){
+    viewMode = mode;
+    boardBtn.classList.toggle('active', mode==='board');
+    listBtn.classList.toggle('active', mode==='list');
+    render();
+  }
+  boardBtn.addEventListener('click', function(){ setView('board'); });
+  listBtn.addEventListener('click', function(){ setView('list'); });
+
+  document.getElementById('critPathBtn').addEventListener('click', function(){
+    showCriticalPath = !showCriticalPath;
+    this.classList.toggle('active', showCriticalPath);
+    render();
   });
 }
 
@@ -546,6 +789,8 @@ async function init(){
   CH_BY_CODE = {};
   CHAPTERS.forEach(function(c){ CH_BY_CODE[c.code] = c; });
   activeBooks = new Set(Object.keys(BOOKS));
+  DEPENDENTS = buildDependents();
+  CRITICAL_PATH = computeCriticalPath();
 
   renderStaticText();
   bindStaticControls();
