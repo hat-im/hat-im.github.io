@@ -190,7 +190,7 @@
 .column{
   min-width:250px;flex:1 1 250px;
   display:flex;flex-direction:column;
-  max-height:calc(100vh - 240px);
+  max-height:var(--column-max-height, calc(100vh - 240px));
   padding:6px 8px;
   border-right:1px solid var(--border);
 }

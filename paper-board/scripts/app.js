@@ -534,6 +534,7 @@
     renderChips();
     renderProgress();
     renderBoard();
+    updateColumnHeights();
   }
 
   // ---------- Static text ----------
@@ -674,9 +675,19 @@
     });
   }
 
+  // ---------- Column height sync ----------
+
+  function updateColumnHeights() {
+    var board = document.getElementById('board');
+    if (!board) return;
+    var top = board.getBoundingClientRect().top;
+    var maxHeight = Math.max(160, window.innerHeight - top - 24);
+    document.documentElement.style.setProperty('--column-max-height', maxHeight + 'px');
+  }
+
   // ---------- Window resize redraw ----------
 
-  window.addEventListener('resize', function () { drawThreads(); });
+  window.addEventListener('resize', function () { updateColumnHeights(); drawThreads(); });
   document.getElementById('boardScroll') && document.getElementById('boardScroll').addEventListener('scroll', function () { drawThreads(); });
 
   // ---------- Init ----------

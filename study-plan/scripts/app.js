@@ -384,7 +384,19 @@ function render(){
   }else{
     renderBoard(base, display, needsRevision);
   }
+
+  updateColumnHeights();
 }
+
+function updateColumnHeights(){
+  var board = document.getElementById('board');
+  if(!board) return;
+  var top = board.getBoundingClientRect().top;
+  var maxHeight = Math.max(160, window.innerHeight - top - 24);
+  document.documentElement.style.setProperty('--column-max-height', maxHeight + 'px');
+}
+
+window.addEventListener('resize', updateColumnHeights);
 
 function renderSuggestedNext(base){
   var el = document.getElementById('suggestedNext');
