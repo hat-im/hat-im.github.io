@@ -4914,6 +4914,29 @@
       ],
       "status": "to-read",
       "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2607-19591",
+      "doi": "10.48550/arXiv.2607.19591",
+      "title": "Examining QRMI as a Unified Interface for Quantum-HPC Integration",
+      "authors": [
+        "Badts, T.",
+        "Boyle, T.",
+        "Carvalho, C.",
+        "Córcoles, A.",
+        "Damin, A.",
+        "Elisseev, V.",
+        "et al."
+      ],
+      "year": 2026,
+      "journal": "arXiv preprint",
+      "keywords": [
+        "middleware",
+        "hpc integration",
+        "scheduling"
+      ],
+      "status": "to-read",
+      "citations": 0
     }
   ],
   "keywordColors": {
