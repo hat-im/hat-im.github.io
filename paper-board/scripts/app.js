@@ -30,7 +30,6 @@
   var AUTHOR_CHIP_MIN_COUNT = 3;
   var VENUE_CHIP_MIN_COUNT = 2;
   var STATUSES = ['to-read', 'suggested', 'reading', 'read'];
-  var MAX_SUGGESTIONS = 5;
 
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
 
@@ -102,6 +101,11 @@
 
   function keywordColor(kw) {
     return state.keywordColors[kw] || { bg: '#eeece3', text: '#5c594f' };
+  }
+
+  function passLevel(paper) {
+    if (typeof paper.pass === 'number') return paper.pass;
+    return paper.status === 'read' ? 3 : 0;
   }
 
   function matchesSearch(paper, term) {
@@ -322,6 +326,42 @@
     return [{ label: actions.reopen, next: 'reading', primary: false }];
   }
 
+  function updatePassTracker(wrap, paper) {
+    var level = passLevel(paper);
+    var dots = wrap.querySelectorAll('.pass-dot');
+    dots.forEach(function (dot, idx) {
+      var done = idx < level;
+      dot.classList.toggle('done', done);
+      dot.setAttribute('aria-pressed', done ? 'true' : 'false');
+    });
+  }
+
+  function buildPassTracker(paper) {
+    var wrap = document.createElement('div');
+    wrap.className = 'pass-tracker';
+    wrap.setAttribute('role', 'group');
+    wrap.setAttribute('aria-label', STR.passTracker.groupLabel);
+
+    STR.passTracker.passes.forEach(function (info, idx) {
+      var n = idx + 1;
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'pass-dot';
+      dot.title = info.title + ' · ' + info.time + ' — ' + info.body;
+      dot.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var current = passLevel(paper);
+        paper.pass = (current === n) ? n - 1 : n;
+        saveState();
+        updatePassTracker(wrap, paper);
+      });
+      wrap.appendChild(dot);
+    });
+
+    updatePassTracker(wrap, paper);
+    return wrap;
+  }
+
   function buildCard(paper) {
     var card = document.createElement('div');
     card.className = 'card';
@@ -344,6 +384,10 @@
     meta.textContent = metaParts.join(' · ');
     meta.title = metaParts.join(' · ');
     card.appendChild(meta);
+
+    if (paper.status === 'reading' || paper.status === 'read') {
+      card.appendChild(buildPassTracker(paper));
+    }
 
     var kwWrap = document.createElement('div');
     kwWrap.className = 'card-keywords';
@@ -517,10 +561,15 @@
     var candidates = relatedPapers(paper, state.papers).filter(function (rel) {
       return rel.paper.status === 'to-read';
     });
-    candidates.sort(function (a, b) { return (b.paper.citations || 0) - (a.paper.citations || 0); });
-    candidates.slice(0, MAX_SUGGESTIONS).forEach(function (rel) {
-      rel.paper.status = 'suggested';
-    });
+    if (candidates.length === 0) return;
+    var mostCited = candidates.reduce(function (best, rel) {
+      return (!best || (rel.paper.citations || 0) > (best.paper.citations || 0)) ? rel : best;
+    }, null);
+    var mostRecent = candidates.reduce(function (best, rel) {
+      return (!best || (rel.paper.year || 0) > (best.paper.year || 0)) ? rel : best;
+    }, null);
+    mostCited.paper.status = 'suggested';
+    if (mostRecent.paper.id !== mostCited.paper.id) mostRecent.paper.status = 'suggested';
   }
 
   function setStatus(id, status) {
@@ -678,6 +727,54 @@
     });
   }
 
+  // ---------- Three-pass method info modal ----------
+
+  function setupThreePassModal() {
+    var backdrop = document.getElementById('threePassBackdrop');
+    var btn = document.getElementById('threePassBtn');
+    var closeBtn = document.getElementById('threePassCloseBtn');
+    var list = document.getElementById('threePassList');
+
+    document.getElementById('threePassTitle').textContent = STR.threePassInfo.modalTitle;
+    document.getElementById('threePassIntro').textContent = STR.threePassInfo.intro;
+    closeBtn.textContent = STR.threePassInfo.close;
+    btn.setAttribute('aria-label', STR.threePassInfo.buttonLabel);
+
+    STR.passTracker.passes.forEach(function (info) {
+      var row = document.createElement('div');
+      row.className = 'three-pass-row';
+
+      var head = document.createElement('div');
+      head.className = 'three-pass-row-head';
+      var title = document.createElement('span');
+      title.className = 'three-pass-title';
+      title.textContent = info.title;
+      var time = document.createElement('span');
+      time.className = 'three-pass-time';
+      time.textContent = info.time;
+      head.appendChild(title);
+      head.appendChild(time);
+
+      var body = document.createElement('p');
+      body.className = 'three-pass-body';
+      body.textContent = info.body;
+
+      row.appendChild(head);
+      row.appendChild(body);
+      list.appendChild(row);
+    });
+
+    btn.addEventListener('click', function () {
+      backdrop.classList.add('open');
+    });
+    closeBtn.addEventListener('click', function () {
+      backdrop.classList.remove('open');
+    });
+    backdrop.addEventListener('click', function (e) {
+      if (e.target === backdrop) backdrop.classList.remove('open');
+    });
+  }
+
   // ---------- Column height sync ----------
 
   function updateColumnHeights() {
@@ -741,6 +838,7 @@
     setupDropZones();
     setupSearch();
     setupResetModal();
+    setupThreePassModal();
     setupSortSelects();
     setupActionsMenu();
     renderAll();

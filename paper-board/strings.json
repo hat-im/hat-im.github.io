@@ -43,6 +43,20 @@
     "seeMore": "See more",
     "seeLess": "See less"
   },
+  "passTracker": {
+    "groupLabel": "Reading passes",
+    "passes": [
+      {"title": "Pass 1 — get the gist", "time": "~5–10 min", "body": "Read the title, abstract, intro, section headings, and conclusion. Skim the references. Decide whether it's worth reading further."},
+      {"title": "Pass 2 — read with care", "time": "~1 hr", "body": "Read in order but skip proofs. Note key points, study the figures and diagrams, mark unread references worth following up."},
+      {"title": "Pass 3 — re-implement it", "time": "hours", "body": "Virtually re-implement the paper. Challenge every assumption, note weaknesses, imagine how you'd present the idea yourself."}
+    ]
+  },
+  "threePassInfo": {
+    "buttonLabel": "Three-pass method",
+    "modalTitle": "The three-pass method",
+    "intro": "A quick way to read a paper without getting lost in the details on the first pass, from S. Keshav's \"How to Read a Paper\".",
+    "close": "Close"
+  },
   "modal": {
     "cancel": "Cancel",
     "clear": {

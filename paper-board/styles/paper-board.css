@@ -26,6 +26,25 @@ h1.title { font-size: 21px; font-weight: 700; margin: 0 0 4px 0; letter-spacing:
 
 .actions-menu { position: relative; flex-shrink: 0; }
 
+button.pass-info-btn {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+button.pass-info-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+button.pass-info-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 button.reset-btn { display: inline-flex; align-items: center; gap: 6px; }
 .chevron-icon { width: 10px; height: 10px; color: var(--text-tertiary); transition: transform .12s ease; }
 .actions-menu[data-open="true"] .chevron-icon { transform: rotate(180deg); }
@@ -257,6 +276,21 @@ select.sort-select:focus-visible { outline: 2px solid var(--accent); outline-off
 
 .card-meta { font-size: 12px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+.pass-tracker { display: flex; gap: 5px; margin-bottom: 8px; }
+
+button.pass-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-strong);
+  background: transparent;
+  cursor: pointer;
+}
+button.pass-dot.done { background: var(--text-primary); border-color: var(--text-primary); }
+button.pass-dot:hover { border-color: var(--text-primary); }
+button.pass-dot:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 .card-keywords { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
 
 .kw-pill { font-size: 10.5px; font-weight: 500; padding: 2px 8px; border-radius: 999px; line-height: 1.5; white-space: nowrap; }
@@ -301,6 +335,14 @@ svg.thread-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 1
 .modal-title { font-size: 15px; font-weight: 700; margin: 0 0 8px 0; }
 .modal-body { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin: 0 0 18px 0; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
+
+.three-pass-modal { max-width: 420px; }
+.three-pass-row { margin-bottom: 14px; }
+.three-pass-row:last-child { margin-bottom: 18px; }
+.three-pass-row-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 3px; }
+.three-pass-title { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+.three-pass-time { font-size: 11.5px; color: var(--text-tertiary); flex-shrink: 0; }
+.three-pass-body { font-size: 12.5px; color: var(--text-secondary); line-height: 1.45; margin: 0; }
 
 button.modal-btn {
   font-family: inherit;
