@@ -4,15 +4,15 @@
       "id": "10-1145-3007651",
       "doi": "10.1145/3007651",
       "title": "High-Performance Computing with Quantum Processing Units",
-      "authors": [
-        "Britt, K.A.",
-        "Humble, T.S."
+      "authorIds": [
+        "a109",
+        "a335"
       ],
       "year": 2017,
-      "journal": "ACM Journal on Emerging Technologies in Computing Systems",
-      "keywords": [
+      "journalId": "j6",
+      "keywordIds": [
         "architecture",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 139
@@ -21,20 +21,20 @@
       "id": "10-5281-zenodo-5555959",
       "doi": "10.5281/zenodo.5555959",
       "title": "< QC | HPC >: Quantum for HPC",
-      "authors": [
-        "Bartsch, V.",
-        "Verdière, G.C.d.",
-        "Nominé, J.",
-        "Ottaviani, D.",
-        "Dragoni, D.",
-        "Bouazza, C.",
-        "et al."
+      "authorIds": [
+        "a54",
+        "a746",
+        "a563",
+        "a571",
+        "a207",
+        "a97",
+        "a827"
       ],
       "year": 2021,
-      "journal": "Zenodo",
-      "keywords": [
+      "journalId": "j96",
+      "keywordIds": [
         "vision",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 10
@@ -43,18 +43,18 @@
       "id": "10-1109-qce52317-2021-00047",
       "doi": "10.1109/QCE52317.2021.00047",
       "title": "Adaptive job and resource management for the growing quantum cloud",
-      "authors": [
-        "Ravi, G.S.",
-        "Smith, K.N.",
-        "Murali, P.",
-        "Chong, F.T."
+      "authorIds": [
+        "a614",
+        "a693",
+        "a544",
+        "a161"
       ],
       "year": 2021,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "scheduling",
-        "cloud computing",
-        "hpc integration"
+        "cloud-computing",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 29
@@ -63,19 +63,19 @@
       "id": "10-1109-mm-2021-3099140",
       "doi": "10.1109/MM.2021.3099140",
       "title": "Quantum Computers for High-performance Computing",
-      "authors": [
-        "Humble, T.S.",
-        "McCaskey, A.",
-        "Lyakh, D.I.",
-        "Gowrishankar, M.",
-        "Frisch, A.",
-        "Monz, T."
+      "authorIds": [
+        "a335",
+        "a508",
+        "a484",
+        "a285",
+        "a249",
+        "a534"
       ],
       "year": 2021,
-      "journal": "IEEE Micro",
-      "keywords": [
+      "journalId": "j33",
+      "keywordIds": [
         "vision",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 134
@@ -84,18 +84,18 @@
       "id": "10-5281-zenodo-5547407",
       "doi": "10.5281/zenodo.5547407",
       "title": "Quantum Computing – A European Perspective",
-      "authors": [
-        "Johansson, M.P.",
-        "Krishnasamy, E.",
-        "Meyer, N.",
-        "Piechurski, C."
+      "authorIds": [
+        "a367",
+        "a418",
+        "a519",
+        "a593"
       ],
       "year": 2021,
-      "journal": "PRACE-6IP TR",
-      "keywords": [
+      "journalId": "j68",
+      "keywordIds": [
         "vision",
         "survey",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 18
@@ -104,20 +104,20 @@
       "id": "10-1145-3483528",
       "doi": "10.1145/3483528",
       "title": "Quingo: A Programming Framework for Heterogeneous Quantum-Classical Computing with NISQ Features",
-      "authors": [
-        "Fu, X.",
-        "Yu, J.",
-        "Su, X.",
-        "Jiang, H.",
-        "Wu, H.",
-        "Cheng, F.",
-        "et al."
+      "authorIds": [
+        "a250",
+        "a802",
+        "a708",
+        "a362",
+        "a787",
+        "a153",
+        "a827"
       ],
       "year": 2021,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "architecture",
-        "quantum programming"
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 19
@@ -126,17 +126,17 @@
       "id": "10-1145-3511715",
       "doi": "10.1145/3511715",
       "title": "ArQTiC: A Full-stack Software Package for Simulating Materials on Quantum Computers",
-      "authors": [
-        "Oftelie, L.B.",
-        "Powers, C.",
-        "Jong, W.A.D."
+      "authorIds": [
+        "a569",
+        "a601",
+        "a372"
       ],
       "year": 2022,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "architecture",
-        "quantum simulation",
-        "quantum programming"
+        "quantum-simulation",
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 17
@@ -145,17 +145,17 @@
       "id": "10-48550-arxiv-2211-02350",
       "doi": "10.48550/arXiv.2211.02350",
       "title": "Tierkreis: A Dataflow Framework for Hybrid Quantum-Classical Computing",
-      "authors": [
-        "Sivarajah, S.",
-        "Heidemann, L.",
-        "Lawrence, A.",
-        "Duncan, R."
+      "authorIds": [
+        "a689",
+        "a311",
+        "a443",
+        "a210"
       ],
       "year": 2022,
-      "journal": "IEEE/ACM International Workshop on Quantum Computing Software",
-      "keywords": [
+      "journalId": "j43",
+      "keywordIds": [
         "architecture",
-        "quantum programming"
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 11
@@ -164,16 +164,16 @@
       "id": "10-1145-3491246",
       "doi": "10.1145/3491246",
       "title": "Tools for Quantum Computing Based on Decision Diagrams",
-      "authors": [
-        "Wille, R.",
-        "Hillmich, S.",
-        "Burgholzer, L."
+      "authorIds": [
+        "a777",
+        "a314",
+        "a115"
       ],
       "year": 2022,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "compilation",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 23
@@ -182,15 +182,15 @@
       "id": "www-eurohpc-ju-europa-eu-two-100-qubits-quantum-computers-pasqal-fzj-and-genci-b",
       "doi": "https://www.eurohpc-ju.europa.eu/two-100-qubits-quantum-computers-pasqal-fzj-and-genci-boost-hpcqs-pan-european-hybrid-hpcquantum-2022-05-30_en",
       "title": "With two 100 qubits quantum computers from PASQAL, FZJ and GENCI boost HPCQS, the pan-European hybrid HPC/quantum infrastructure",
-      "authors": [
-        "Undertaking, E.H.C.J."
+      "authorIds": [
+        "a743"
       ],
       "year": 2022,
-      "journal": "The European High Performance Computing Joint Undertaking",
-      "keywords": [
+      "journalId": "j87",
+      "keywordIds": [
         "infrastructure",
-        "qubit hardware",
-        "hpc integration"
+        "qubit-hardware",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 2
@@ -199,19 +199,19 @@
       "id": "10-1109-qce57702-2023-10304",
       "doi": "10.1109/qce57702.2023.10304",
       "title": "Challenges in HPCQC Integration",
-      "authors": [
-        "Elsharkawy, A.",
-        "To, X.M.",
-        "Seitz, P.",
-        "Chen, Y.",
-        "Stade, Y.",
-        "Geiger, M."
+      "authorIds": [
+        "a221",
+        "a729",
+        "a669",
+        "a152",
+        "a700",
+        "a263"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "infrastructure",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 17
@@ -220,19 +220,19 @@
       "id": "10-48550-arxiv-2309-06005",
       "doi": "10.48550/arXiv.2309.06005",
       "title": "NoTaDS: Distributed Scheduling of Quantum Circuits with Noise and Time Optimization",
-      "authors": [
-        "Bhoumik, D.",
-        "Majumdar, R.",
-        "Saha, A.",
-        "Sur-Kolay, S."
+      "authorIds": [
+        "a78",
+        "a490",
+        "a646",
+        "a714"
       ],
       "year": 2023,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "optimization algorithms",
+        "optimization-algorithms",
         "scheduling",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 20
@@ -241,19 +241,19 @@
       "id": "10-1109-qce57702-2023-00113",
       "doi": "10.1109/QCE57702.2023.00113",
       "title": "Parallelizing Quantum-Classical Workloads: Profiling the Impact of Splitting Techniques",
-      "authors": [
-        "Khare, T.",
-        "Majumdar, R.",
-        "Sangle, R.",
-        "Ray, A.",
-        "Seshadri, P.V.",
-        "Simmhan, Y."
+      "authorIds": [
+        "a397",
+        "a490",
+        "a652",
+        "a615",
+        "a673",
+        "a686"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "benchmarking",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 19
@@ -262,18 +262,18 @@
       "id": "10-1145-3688856",
       "doi": "10.1145/3688856",
       "title": "A Model-Driven Framework for Composition-Based Quantum Circuit Design",
-      "authors": [
-        "Gemeinhardt, F.",
-        "Garmendia, A.",
-        "Wimmer, M.",
-        "Wille, R."
+      "authorIds": [
+        "a264",
+        "a261",
+        "a782",
+        "a777"
       ],
       "year": 2024,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "architecture",
-        "quantum circuits",
-        "quantum programming"
+        "quantum-circuits",
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 7
@@ -282,16 +282,16 @@
       "id": "10-48550-arxiv-2407-05178",
       "doi": "10.48550/arXiv.2407.05178",
       "title": "A typology of quantum algorithms",
-      "authors": [
-        "Arnault, P.",
-        "Arrighi, P.",
-        "Herbert, S.",
-        "Kasnetsi, E.",
-        "Li, T."
+      "authorIds": [
+        "a33",
+        "a36",
+        "a313",
+        "a384",
+        "a455"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "survey"
       ],
@@ -302,17 +302,17 @@
       "id": "10-1109-mcse-2022-3221845",
       "doi": "10.1109/MCSE.2022.3221845",
       "title": "Accelerating HPC With Quantum Computing: It Is a Software Challenge Too",
-      "authors": [
-        "Schulz, M.",
-        "Ruefenacht, M.",
-        "Kranzlmüller, D.",
-        "Schulz, L.B."
+      "authorIds": [
+        "a668",
+        "a639",
+        "a417",
+        "a667"
       ],
       "year": 2024,
-      "journal": "Computing in Science & Engineering",
-      "keywords": [
+      "journalId": "j17",
+      "keywordIds": [
         "middleware",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 56
@@ -321,20 +321,20 @@
       "id": "10-48550-arxiv-2408-10484",
       "doi": "10.48550/arXiv.2408.10484",
       "title": "Dependable Classical-Quantum Computer Systems Engineering",
-      "authors": [
-        "Giusto, E.",
-        "Nuñez-Corrales, S.",
-        "Cao, P.",
-        "Cilardo, A.",
-        "Iyer, R.K.",
-        "Jiang, W.",
-        "et al."
+      "authorIds": [
+        "a272",
+        "a564",
+        "a127",
+        "a165",
+        "a350",
+        "a363",
+        "a827"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "architecture",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 5
@@ -343,17 +343,17 @@
       "id": "10-1109-cloud62652-2024-00060",
       "doi": "10.1109/CLOUD62652.2024.00060",
       "title": "DRLQ: A Deep Reinforcement Learning-based Task Placement for Quantum Cloud Computing",
-      "authors": [
-        "Nguyen, H.T.",
-        "Usman, M.",
-        "Buyya, R."
+      "authorIds": [
+        "a556",
+        "a744",
+        "a116"
       ],
       "year": 2024,
-      "journal": "IEEE International Conference on Cloud Computing",
-      "keywords": [
+      "journalId": "j26",
+      "keywordIds": [
         "scheduling",
-        "quantum machine learning",
-        "cloud computing"
+        "quantum-machine-learning",
+        "cloud-computing"
       ],
       "status": "to-read",
       "citations": 25
@@ -362,16 +362,16 @@
       "id": "10-1109-qce60285-2024-00097",
       "doi": "10.1109/QCE60285.2024.00097",
       "title": "Integration of Quantum Accelerators into HPC: Toward a Unified Quantum Platform",
-      "authors": [
-        "Elsharkawy, A.",
-        "Guo, X.",
-        "Schulz, M."
+      "authorIds": [
+        "a221",
+        "a295",
+        "a668"
       ],
       "year": 2024,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "architecture",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 32
@@ -380,17 +380,17 @@
       "id": "10-1002-spe-3331",
       "doi": "10.1002/spe.3331",
       "title": "iQuantum: A toolkit for modeling and simulation of quantum computing environments",
-      "authors": [
-        "Nguyen, H.T.",
-        "Usman, M.",
-        "Buyya, R."
+      "authorIds": [
+        "a556",
+        "a744",
+        "a116"
       ],
       "year": 2024,
-      "journal": "Software: Practice and Experience",
-      "keywords": [
+      "journalId": "j84",
+      "keywordIds": [
         "architecture",
         "scheduling",
-        "cloud computing"
+        "cloud-computing"
       ],
       "status": "to-read",
       "citations": 13
@@ -399,16 +399,16 @@
       "id": "10-23919-isc-2024-10528940",
       "doi": "10.23919/ISC.2024.10528940",
       "title": "Multithreaded parallelism for heterogeneous clusters of QPUs",
-      "authors": [
-        "Seitz, P.",
-        "Geiger, M.",
-        "Mendl, C.B."
+      "authorIds": [
+        "a669",
+        "a263",
+        "a514"
       ],
       "year": 2024,
-      "journal": "ISC High Performance",
-      "keywords": [
+      "journalId": "j46",
+      "keywordIds": [
         "algorithms",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 3
@@ -417,14 +417,14 @@
       "id": "eurohpc-ju-europa-eu-one-step-closer-european-quantum-computing-eurohpc-ju-signs",
       "doi": "https://eurohpc-ju.europa.eu/one-step-closer-european-quantum-computing-eurohpc-ju-signs-hosting-agreements-six-quantum-computers-2023-06-27_en",
       "title": "One step closer to European quantum computing: The EuroHPC JU signs hosting agreements for six quantum computers",
-      "authors": [
-        "Undertaking, E.H.C.J."
+      "authorIds": [
+        "a743"
       ],
       "year": 2024,
-      "journal": "The European High Performance Computing Joint Undertaking",
-      "keywords": [
+      "journalId": "j87",
+      "keywordIds": [
         "infrastructure",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 7
@@ -433,20 +433,20 @@
       "id": "10-1145-3678184",
       "doi": "10.1145/3678184",
       "title": "Optimization Applications as Quantum Performance Benchmarks",
-      "authors": [
-        "Lubinski, T.",
-        "Coffrin, C.",
-        "McGeoch, C.",
-        "Sathe, P.",
-        "Apanavicius, J.",
-        "Neira, D.B.",
-        "et al."
+      "authorIds": [
+        "a477",
+        "a172",
+        "a510",
+        "a657",
+        "a30",
+        "a554",
+        "a827"
       ],
       "year": 2024,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "benchmarking",
-        "optimization algorithms"
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 37
@@ -455,17 +455,17 @@
       "id": "10-1016-j-future-2024-04-030",
       "doi": "10.1016/j.future.2024.04.030",
       "title": "Paving the Way to Hybrid Quantum-Classical Scientific Workflows",
-      "authors": [
-        "Cranganore, S.S.",
-        "Maio, V.D.",
-        "Brandic, I.",
-        "Deelman, E."
+      "authorIds": [
+        "a177",
+        "a489",
+        "a104",
+        "a192"
       ],
       "year": 2024,
-      "journal": "Future Generation Computer Systems",
-      "keywords": [
-        "workflow orchestration",
-        "hpc integration"
+      "journalId": "j24",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 40
@@ -474,21 +474,21 @@
       "id": "10-1103-h4wk-v31j",
       "doi": "10.1103/h4wk-v31j",
       "title": "Scalable, High-Fidelity All-Electronic Control of Trapped-Ion Qubits",
-      "authors": [
-        "Löschnauer, C.M.",
-        "Toba, J.M.",
-        "Hughes, A.C.",
-        "King, S.A.",
-        "Weber, M.A.",
-        "Srinivas, R.",
-        "et al."
+      "authorIds": [
+        "a485",
+        "a730",
+        "a333",
+        "a406",
+        "a767",
+        "a698",
+        "a827"
       ],
       "year": 2024,
-      "journal": "PRX Quantum",
-      "keywords": [
+      "journalId": "j69",
+      "keywordIds": [
         "vision",
-        "trapped-ion qubits",
-        "qubit hardware"
+        "trapped-ion-qubits",
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 125
@@ -497,20 +497,20 @@
       "id": "10-1109-qce60285-2024-10294",
       "doi": "10.1109/QCE60285.2024.10294",
       "title": "SCIM MILQ: An HPC Quantum Scheduler",
-      "authors": [
-        "Seitz, P.",
-        "Geiger, M.",
-        "Ufrecht, C.",
-        "Plinge, A.",
-        "Mutschler, C.",
-        "Scherer, D.D.",
-        "et al."
+      "authorIds": [
+        "a669",
+        "a263",
+        "a742",
+        "a598",
+        "a545",
+        "a663",
+        "a827"
       ],
       "year": 2024,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "middleware",
-        "hpc integration",
+        "hpc-integration",
         "scheduling"
       ],
       "status": "to-read",
@@ -520,18 +520,18 @@
       "id": "10-1145-3731599-3767548",
       "doi": "10.1145/3731599.3767548",
       "title": "A Simulation Framework for Workload Management in Hybrid Quantum-HPC Cloud System",
-      "authors": [
-        "Luo, W.",
-        "Lu, C.",
-        "Zhan, T.",
-        "Guan, Q."
+      "authorIds": [
+        "a482",
+        "a476",
+        "a808",
+        "a292"
       ],
       "year": 2025,
-      "journal": "Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis",
-      "keywords": [
+      "journalId": "j95",
+      "keywordIds": [
         "scheduling",
-        "cloud computing",
-        "quantum simulation"
+        "cloud-computing",
+        "quantum-simulation"
       ],
       "status": "to-read",
       "citations": 3
@@ -540,16 +540,16 @@
       "id": "10-48550-arxiv-2507-03540",
       "doi": "10.48550/arXiv.2507.03540",
       "title": "A Survey on Integrating Quantum Computers into High Performance Computing Systems",
-      "authors": [
-        "Döbler, P.",
-        "Jattana, M.S."
+      "authorIds": [
+        "a212",
+        "a355"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "survey",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 0
@@ -558,14 +558,14 @@
       "id": "10-1109-dsn-w65791-2025-00059",
       "doi": "10.1109/DSN-W65791.2025.00059",
       "title": "Assessing the Elephant in the Room in Scheduling for Current Hybrid HPC-QC Clusters",
-      "authors": [
-        "Cipollini, P.V.R.R.M.B.G.B.E.B.M."
+      "authorIds": [
+        "a168"
       ],
       "year": 2025,
-      "journal": "IEEE/IFIP International Conference on Dependable Systems and Networks Workshops",
-      "keywords": [
+      "journalId": "j45",
+      "keywordIds": [
         "scheduling",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 8
@@ -574,20 +574,20 @@
       "id": "10-1016-j-future-2025-107980",
       "doi": "10.1016/j.future.2025.107980",
       "title": "Bridging Paradigms: Designing for HPC-Quantum Convergence",
-      "authors": [
-        "Shehata, A.",
-        "Groszkowski, P.",
-        "Naughton, T.",
-        "Meena, M.G.",
-        "Wong, E.",
-        "Claudino, D.",
-        "et al."
+      "authorIds": [
+        "a677",
+        "a290",
+        "a551",
+        "a512",
+        "a784",
+        "a170",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Future Generation Computer Systems",
-      "keywords": [
+      "journalId": "j24",
+      "keywordIds": [
         "architecture",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 28
@@ -596,20 +596,20 @@
       "id": "10-48550-arxiv-2503-01787",
       "doi": "10.48550/arXiv.2503.01787",
       "title": "Building a Software Stack for Quantum-HPC Integration",
-      "authors": [
-        "Shehata, A.",
-        "Groszkowski, P.",
-        "Naughton, T.",
-        "Meena, M.G.",
-        "Wong, E.",
-        "Claudino, D.",
-        "et al."
+      "authorIds": [
+        "a677",
+        "a290",
+        "a551",
+        "a512",
+        "a784",
+        "a170",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv e-prints",
-      "keywords": [
+      "journalId": "j97",
+      "keywordIds": [
         "middleware",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 12
@@ -618,17 +618,17 @@
       "id": "10-1109-ipdpsw66978-2025-00181",
       "doi": "10.1109/IPDPSW66978.2025.00181",
       "title": "Compositional Execution Motifs for Quantum-HPC Systems",
-      "authors": [
-        "Saurabh, N.",
-        "Mantha, P.",
-        "Jha, S.",
-        "Luckow, A."
+      "authorIds": [
+        "a659",
+        "a491",
+        "a360",
+        "a479"
       ],
       "year": 2025,
-      "journal": "IEEE International Symposium on Parallel and Distributed Processing",
-      "keywords": [
+      "journalId": "j32",
+      "keywordIds": [
         "architecture",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 1
@@ -637,17 +637,17 @@
       "id": "10-48550-arxiv-2512-06157",
       "doi": "10.48550/arXiv.2512.06157",
       "title": "Deadline-Aware Scheduling of Distributed Quantum Circuits in Near-Term Quantum Cloud",
-      "authors": [
-        "Dehaini, N.",
-        "Chahoud, C.",
-        "Chehimi, M."
+      "authorIds": [
+        "a193",
+        "a140",
+        "a147"
       ],
       "year": 2025,
-      "journal": "International Conference on Quantum Communications, Networking, and Computing",
-      "keywords": [
+      "journalId": "j51",
+      "keywordIds": [
         "scheduling",
-        "cloud computing",
-        "quantum circuits"
+        "cloud-computing",
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 1
@@ -656,21 +656,21 @@
       "id": "10-1145-3743149",
       "doi": "10.1145/3743149",
       "title": "Integration of Quantum Accelerators with High Performance Computing—A Review of Quantum Programming Tools",
-      "authors": [
-        "Elsharkawy, A.",
-        "To, X.M.",
-        "Seitz, P.",
-        "Chen, Y.",
-        "Stade, Y.",
-        "Geiger, M.",
-        "et al."
+      "authorIds": [
+        "a221",
+        "a729",
+        "a669",
+        "a152",
+        "a700",
+        "a263",
+        "a827"
       ],
       "year": 2025,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "middleware",
         "survey",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 57
@@ -679,20 +679,20 @@
       "id": "10-48550-arxiv-2512-05484",
       "doi": "10.48550/arXiv.2512.05484",
       "title": "Observability Architecture for Quantum-Centric Supercomputing Workflows",
-      "authors": [
-        "Kanazawa, N.",
-        "Morohoshi, Y.",
-        "Takahashi, H.",
-        "Kawashima, Y.",
-        "Horii, H.",
-        "Nakajima, K."
+      "authorIds": [
+        "a380",
+        "a538",
+        "a719",
+        "a389",
+        "a323",
+        "a548"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "architecture",
-        "workflow orchestration",
-        "hpc integration"
+        "workflow-orchestration",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 1
@@ -701,18 +701,18 @@
       "id": "10-1109-icse55347-2025-00196",
       "doi": "10.1109/ICSE55347.2025.00196",
       "title": "Pattern-based Generation and Adaptation of Quantum Workflows",
-      "authors": [
-        "Beisel, M.",
-        "Barzen, J.",
-        "Stiliadou, F.L.L.",
-        "Vietz, D.",
-        "Weder, B."
+      "authorIds": [
+        "a64",
+        "a55",
+        "a703",
+        "a748",
+        "a768"
       ],
       "year": 2025,
-      "journal": "IEEE/ACM International Conference on Software Engineering",
-      "keywords": [
-        "workflow orchestration",
-        "quantum programming"
+      "journalId": "j40",
+      "keywordIds": [
+        "workflow-orchestration",
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 3
@@ -721,18 +721,18 @@
       "id": "10-48550-arxiv-2412-18519",
       "doi": "10.48550/arXiv.2412.18519",
       "title": "Pilot-Quantum: A Quantum-HPC Middleware for Resource, Workload and Task Management",
-      "authors": [
-        "Mantha, P.",
-        "Kiwit, F.J.",
-        "Saurabh, N.",
-        "Jha, S.",
-        "Luckow, A."
+      "authorIds": [
+        "a491",
+        "a408",
+        "a659",
+        "a360",
+        "a479"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "middleware",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 16
@@ -741,20 +741,20 @@
       "id": "10-48550-arxiv-2505-19267",
       "doi": "10.48550/arXiv.2505.19267",
       "title": "QMIO: A tightly integrated hybrid HPCQC system",
-      "authors": [
-        "Cacheiro, J.",
-        "Sánchez, Á.C.",
-        "Rundle, R.",
-        "Long, G.B.",
-        "Dold, G.",
-        "Friel, J.",
-        "et al."
+      "authorIds": [
+        "a118",
+        "a718",
+        "a641",
+        "a471",
+        "a204",
+        "a248",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "architecture",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 2
@@ -763,15 +763,15 @@
       "id": "10-48550-arxiv-2502-17296",
       "doi": "10.48550/arXiv.2502.17296",
       "title": "Qoala: an Application Execution Environment for Quantum Internet Nodes",
-      "authors": [
-        "Vecht, B.v.d.",
-        "Yücel, A.T.",
-        "Jirovská, H.",
-        "Wehner, S."
+      "authorIds": [
+        "a745",
+        "a804",
+        "a365",
+        "a769"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "architecture",
         "scheduling",
         "compilation"
@@ -783,19 +783,19 @@
       "id": "10-1145-3712285-3759785",
       "doi": "10.1145/3712285.3759785",
       "title": "Qonductor: A Cloud Orchestrator for Quantum Computing",
-      "authors": [
-        "Giortamis, E.",
-        "Romao, F.",
-        "Tornow, N.",
-        "Lugovoy, D.",
-        "Bhatotia, P."
+      "authorIds": [
+        "a270",
+        "a633",
+        "a732",
+        "a480",
+        "a77"
       ],
       "year": 2025,
-      "journal": "International Conference for High Performance Computing, Networking, Storage, and Analysis",
-      "keywords": [
+      "journalId": "j49",
+      "keywordIds": [
         "middleware",
-        "cloud computing",
-        "hpc integration"
+        "cloud-computing",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 2
@@ -804,18 +804,18 @@
       "id": "10-1017-9781009639651",
       "doi": "10.1017/9781009639651",
       "title": "Quantum algorithms: A survey of applications and end-to-end complexities",
-      "authors": [
-        "Dalzell, A.M.",
-        "McArdle, S.",
-        "Berta, M.",
-        "Bienias, P.",
-        "Chen, C.",
-        "Gilyén, A.",
-        "et al."
+      "authorIds": [
+        "a183",
+        "a507",
+        "a72",
+        "a82",
+        "a148",
+        "a269",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "survey"
       ],
@@ -826,20 +826,20 @@
       "id": "10-48550-arxiv-2510-09508",
       "doi": "10.48550/arXiv.2510.09508",
       "title": "Subspace Leakage Error Randomized Benchmarking of Mølmer-Sørensen Gates",
-      "authors": [
-        "Sutherland, R.T.",
-        "Hughes, A.C.",
-        "Marceaux, J.P.",
-        "Knaack, H.M.",
-        "Löschnauer, C.M.",
-        "Srinivas, R."
+      "authorIds": [
+        "a715",
+        "a333",
+        "a493",
+        "a410",
+        "a485",
+        "a698"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "benchmarking",
-        "trapped-ion qubits",
-        "qubit hardware"
+        "trapped-ion-qubits",
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -848,17 +848,17 @@
       "id": "10-1145-3731599-3767549",
       "doi": "10.1145/3731599.3767549",
       "title": "Towards a user-centric HPC-QC environment",
-      "authors": [
-        "Wennersteen, A.",
-        "Moreau, M.",
-        "Nober, A.",
-        "Beji, M."
+      "authorIds": [
+        "a774",
+        "a535",
+        "a562",
+        "a65"
       ],
       "year": 2025,
-      "journal": "Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis",
-      "keywords": [
+      "journalId": "j95",
+      "keywordIds": [
         "middleware",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 5
@@ -867,20 +867,20 @@
       "id": "10-1145-3678185",
       "doi": "10.1145/3678185",
       "title": "Utilizing classical programming principles in the Intel Quantum SDK: implementation of quantum lattice Boltzmann method",
-      "authors": [
-        "Shinde, T.",
-        "Budinski, L.",
-        "Niemimäki, O.",
-        "Lahtinen, V.",
-        "Liebelt, H.",
-        "Li, R."
+      "authorIds": [
+        "a679",
+        "a113",
+        "a558",
+        "a431",
+        "a461",
+        "a454"
       ],
       "year": 2025,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "applications",
-        "quantum programming",
-        "quantum simulation"
+        "quantum-programming",
+        "quantum-simulation"
       ],
       "status": "to-read",
       "citations": 6
@@ -889,15 +889,15 @@
       "id": "10-1140-epjqt-s40507-026-00483-1",
       "doi": "10.1140/epjqt/s40507-026-00483-1",
       "title": "Circuit-based vs. measurement-based quantum computing: a comparative analysis, layered metrics, and decision flow for approach selection",
-      "authors": [
-        "Larasati, H.T.",
-        "Choi, B."
+      "authorIds": [
+        "a436",
+        "a159"
       ],
       "year": 2026,
-      "journal": "EPJ Quantum Technology",
-      "keywords": [
+      "journalId": "j19",
+      "keywordIds": [
         "architecture",
-        "quantum circuits",
+        "quantum-circuits",
         "vision"
       ],
       "status": "to-read",
@@ -907,22 +907,22 @@
       "id": "10-48550-arxiv-2603-12411",
       "doi": "10.48550/arXiv.2603.12411",
       "title": "Distributed Quantum Computing via Adaptive Circuit Knitting",
-      "authors": [
-        "Johnson, K.G.",
-        "Esposito, A.",
-        "Gyawali, G.",
-        "Zhan, X.",
-        "Ganti, R.",
-        "Anand, N.",
-        "et al."
+      "authorIds": [
+        "a368",
+        "a224",
+        "a297",
+        "a809",
+        "a256",
+        "a27",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum circuits",
-        "hpc integration",
-        "gpu acceleration"
+        "quantum-circuits",
+        "hpc-integration",
+        "gpu-acceleration"
       ],
       "status": "to-read",
       "citations": 0
@@ -931,21 +931,21 @@
       "id": "10-48550-arxiv-2411-10406",
       "doi": "10.48550/arXiv.2411.10406",
       "title": "How to Build a Quantum Supercomputer: Scaling from Hundreds to Millions of Qubits",
-      "authors": [
-        "Mohseni, M.",
-        "Scherer, A.",
-        "Johnson, K.G.",
-        "Wertheim, O.",
-        "Otten, M.",
-        "Anand, N.",
-        "et al."
+      "authorIds": [
+        "a529",
+        "a662",
+        "a368",
+        "a775",
+        "a572",
+        "a27",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
-        "hpc integration",
-        "qubit hardware",
+        "hpc-integration",
+        "qubit-hardware",
         "survey"
       ],
       "status": "to-read",
@@ -955,18 +955,18 @@
       "id": "10-48550-arxiv-2604-03445",
       "doi": "10.48550/arXiv.2604.03445",
       "title": "Hybrid Quantum-HPC Middleware Systems for Adaptive Resource, Workload and Task Management",
-      "authors": [
-        "Mantha, P.",
-        "Kiwit, F.J.",
-        "Saurabh, N.",
-        "Jha, S.",
-        "Luckow, A."
+      "authorIds": [
+        "a491",
+        "a408",
+        "a659",
+        "a360",
+        "a479"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "middleware",
-        "hpc integration",
+        "hpc-integration",
         "scheduling"
       ],
       "status": "to-read",
@@ -976,18 +976,18 @@
       "id": "10-48550-arxiv-2604-11781",
       "doi": "10.48550/arXiv.2604.11781",
       "title": "Measuring what matters: A scalable framework for application-level quantum benchmarking",
-      "authors": [
-        "Aboumrad, W.",
-        "Girotto, C.",
-        "Goings, J.",
-        "Zhao, L.",
-        "Lopez-Ruiz, M.A.",
-        "Zhu, D.",
-        "et al."
+      "authorIds": [
+        "a2",
+        "a271",
+        "a276",
+        "a813",
+        "a473",
+        "a820",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "benchmarking",
         "scalability"
       ],
@@ -998,20 +998,20 @@
       "id": "10-48550-arxiv-2603-13093",
       "doi": "10.48550/arXiv.2603.13093",
       "title": "Partially Fault-Tolerant Quantum Computation for Megaquop Applications",
-      "authors": [
-        "Chung, M.",
-        "Kavaki, A.H.Z.",
-        "Scherer, A.",
-        "Khalid, A.",
-        "Kong, X.",
-        "Kawakubo, T.",
-        "et al."
+      "authorIds": [
+        "a163",
+        "a387",
+        "a662",
+        "a394",
+        "a415",
+        "a388",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "scalability",
-        "fault tolerance",
+        "fault-tolerance",
         "architecture"
       ],
       "status": "to-read",
@@ -1021,17 +1021,17 @@
       "id": "10-1145-3799898",
       "doi": "10.1145/3799898",
       "title": "QFOR: A Fidelity-aware Orchestrator for Quantum Computing Environments using Deep Reinforcement Learning",
-      "authors": [
-        "Nguyen, H.",
-        "Usman, M.",
-        "Buyya, R."
+      "authorIds": [
+        "a555",
+        "a744",
+        "a116"
       ],
       "year": 2026,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "scheduling",
-        "quantum machine learning",
-        "hpc integration"
+        "quantum-machine-learning",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 4
@@ -1040,18 +1040,18 @@
       "id": "10-48550-arxiv-2604-19814",
       "doi": "10.48550/arXiv.2604.19814",
       "title": "Quantum Integrated High-Performance Computing: Foundations, Architectural Elements and Future Directions",
-      "authors": [
-        "Raj, S.",
-        "Sai, S.",
-        "Simmhan, Y.",
-        "Chard, K.",
-        "Buyya, R."
+      "authorIds": [
+        "a610",
+        "a647",
+        "a686",
+        "a144",
+        "a116"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "architecture",
-        "hpc integration",
+        "hpc-integration",
         "vision"
       ],
       "status": "to-read",
@@ -1061,20 +1061,20 @@
       "id": "10-48550-arxiv-2602-10092",
       "doi": "10.48550/arXiv.2602.10092",
       "title": "Quantum-Audit: Evaluating the Reasoning Limits of LLMs on Quantum Computing",
-      "authors": [
-        "Afane, M.",
-        "Laufer, K.",
-        "Wei, W.",
-        "Mao, Y.",
-        "Farooq, J.",
-        "Wang, Y.",
-        "et al."
+      "authorIds": [
+        "a8",
+        "a441",
+        "a771",
+        "a492",
+        "a230",
+        "a763",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "benchmarking",
-        "quantum machine learning"
+        "quantum-machine-learning"
       ],
       "status": "to-read",
       "citations": 0
@@ -1083,21 +1083,21 @@
       "id": "10-48550-arxiv-2604-20912",
       "doi": "10.48550/arXiv.2604.20912",
       "title": "Quantum-HPC Software Stacks and the openQSE Reference Architecture: A Survey",
-      "authors": [
-        "Shehata, A.",
-        "Austin, B.",
-        "Beck, T.",
-        "Burgholzer, L.",
-        "Chernoguzov, A.",
-        "Churchill, S.",
-        "et al."
+      "authorIds": [
+        "a677",
+        "a43",
+        "a63",
+        "a115",
+        "a155",
+        "a164",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "survey",
-        "hpc integration",
+        "hpc-integration",
         "architecture"
       ],
       "status": "to-read",
@@ -1107,18 +1107,18 @@
       "id": "10-48550-arxiv-2604-05505",
       "doi": "10.48550/arXiv.2604.05505",
       "title": "Qurator: Scheduling Hybrid Quantum-Classical Workflows Across Heterogeneous Cloud Providers",
-      "authors": [
-        "Pehlivanoglu, S.",
-        "Muelenaere, U.d.",
-        "Kogge, P.",
-        "Sabry, A."
+      "authorIds": [
+        "a586",
+        "a543",
+        "a412",
+        "a644"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "scheduling",
-        "workflow orchestration",
-        "cloud computing"
+        "workflow-orchestration",
+        "cloud-computing"
       ],
       "status": "to-read",
       "citations": 0
@@ -1127,17 +1127,17 @@
       "id": "10-48550-arxiv-2602-14986",
       "doi": "10.48550/arXiv.2602.14986",
       "title": "Scaling QAOA: transferring optimal adiabatic schedules from small-scale to large-scale variational circuits",
-      "authors": [
-        "Nzongani, U.",
-        "Mermoud, D.L.",
-        "Braida, A."
+      "authorIds": [
+        "a565",
+        "a516",
+        "a101"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "scalability",
-        "variational algorithms",
-        "quantum optimization"
+        "variational-algorithms",
+        "quantum-optimization"
       ],
       "status": "to-read",
       "citations": 1
@@ -1146,21 +1146,21 @@
       "id": "10-48550-arxiv-2508-11765",
       "doi": "10.48550/arXiv.2508.11765",
       "title": "The Role of Quantum Computing in Advancing Scientific High-Performance Computing: A perspective from the ADAC Institute",
-      "authors": [
-        "Buchs, G.",
-        "Beck, T.",
-        "Bennink, R.",
-        "Claudino, D.",
-        "Delgado, A.",
-        "Fadel, N.A.",
-        "et al."
+      "authorIds": [
+        "a112",
+        "a63",
+        "a69",
+        "a170",
+        "a195",
+        "a227",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "survey",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 12
@@ -1169,20 +1169,20 @@
       "id": "10-48550-arxiv-2604-14955",
       "doi": "10.48550/arXiv.2604.14955",
       "title": "Three ways to share a QPU: Scheduling strategies for hybrid Quantum-HPC applications",
-      "authors": [
-        "Cipollini, M.",
-        "Rizzo, S.",
-        "Iserte, S.",
-        "Viviani, P.",
-        "Vitali, G.",
-        "Barbieri, M.",
-        "et al."
+      "authorIds": [
+        "a167",
+        "a626",
+        "a345",
+        "a752",
+        "a751",
+        "a52",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "scheduling",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 0
@@ -1191,17 +1191,17 @@
       "id": "10-1145-3725843-3756129",
       "doi": "10.1145/3725843.3756129",
       "title": "MUSS-TI: Multi-level Shuttle Scheduling for Large-Scale Entanglement Module Linked Trapped-Ion",
-      "authors": [
-        "Wu, X.",
-        "Zhu, C.",
-        "Wang, J.",
-        "Wang, X."
+      "authorIds": [
+        "a790",
+        "a819",
+        "a758",
+        "a762"
       ],
       "year": 2025,
-      "journal": "IEEE/ACM International Symposium on Microarchitecture",
-      "keywords": [
+      "journalId": "j42",
+      "keywordIds": [
         "scheduling",
-        "trapped-ion qubits",
+        "trapped-ion-qubits",
         "compilation"
       ],
       "status": "to-read",
@@ -1211,22 +1211,22 @@
       "id": "10-48550-arxiv-2601-10144",
       "doi": "10.48550/arXiv.2601.10144",
       "title": "Bridging Superconducting and Neutral-Atom Platforms for Efficient Fault-Tolerant Quantum Architectures",
-      "authors": [
-        "Fang, X.",
-        "Ruan, J.",
-        "Prabhu, S.",
-        "Li, A.",
-        "Humble, T.",
-        "Tullsen, D.",
-        "et al."
+      "authorIds": [
+        "a229",
+        "a638",
+        "a602",
+        "a450",
+        "a334",
+        "a738",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
-        "superconducting qubits",
-        "neutral-atom qubits",
-        "fault tolerance"
+        "superconducting-qubits",
+        "neutral-atom-qubits",
+        "fault-tolerance"
       ],
       "status": "to-read",
       "citations": 1
@@ -1235,18 +1235,18 @@
       "id": "10-48550-arxiv-2605-21045",
       "doi": "10.48550/arXiv.2605.21045",
       "title": "Towards transistor-based quantum computing",
-      "authors": [
-        "Liu, Y.",
-        "Xu, X.",
-        "Wang, Q.",
-        "Wang, D."
+      "authorIds": [
+        "a467",
+        "a794",
+        "a759",
+        "a757"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
-        "qubit hardware",
-        "fault tolerance"
+        "qubit-hardware",
+        "fault-tolerance"
       ],
       "status": "to-read",
       "citations": 1
@@ -1255,14 +1255,14 @@
       "id": "10-3390-e25040694",
       "doi": "10.3390/e25040694",
       "title": "Programming Quantum Neural Networks on NISQ Systems: An Overview of Technologies and Methodologies",
-      "authors": [
-        "Markidis, S."
+      "authorIds": [
+        "a495"
       ],
       "year": 2023,
-      "journal": "Entropy",
-      "keywords": [
+      "journalId": "j20",
+      "keywordIds": [
         "vision",
-        "quantum machine learning",
+        "quantum-machine-learning",
         "survey"
       ],
       "status": "to-read",
@@ -1272,17 +1272,17 @@
       "id": "10-1109-qce57702-2023-10191",
       "doi": "10.1109/QCE57702.2023.10191",
       "title": "Toward a Unified Hybrid HPCQC Toolchain",
-      "authors": [
-        "Seitz, P.",
-        "Elsharkawy, A.",
-        "To, X.M.",
-        "Schulz, M."
+      "authorIds": [
+        "a669",
+        "a221",
+        "a729",
+        "a668"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "vision",
-        "hpc integration"
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 9
@@ -1291,20 +1291,20 @@
       "id": "10-1007-978-3-031-64136-7-7",
       "doi": "10.1007/978-3-031-64136-7_7",
       "title": "Quantum Software Ecosystem Design",
-      "authors": [
-        "Basermann, A.",
-        "Epping, M.",
-        "Fauseweh, B.",
-        "Felderer, M.",
-        "Lobe, E.",
-        "Röhrig-Zöllner, M.",
-        "et al."
+      "authorIds": [
+        "a56",
+        "a223",
+        "a233",
+        "a235",
+        "a468",
+        "a642",
+        "a827"
       ],
       "year": 2024,
-      "journal": "Quantum Software",
-      "keywords": [
+      "journalId": "j78",
+      "keywordIds": [
         "vision",
-        "quantum programming"
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 2
@@ -1313,21 +1313,21 @@
       "id": "10-1038-s41586-026-10676-4",
       "doi": "10.1038/s41586-026-10676-4",
       "title": "A 98-qubit trapped-ion quantum computer with all-to-all connectivity",
-      "authors": [
-        "Ransford, A.",
-        "Allman, M.S.",
-        "Arkinstall, J.",
-        "III, J.P.C.",
-        "Cooper, S.F.",
-        "Delaney, R.D.",
-        "et al."
+      "authorIds": [
+        "a612",
+        "a18",
+        "a32",
+        "a339",
+        "a176",
+        "a194",
+        "a827"
       ],
       "year": 2026,
-      "journal": "Nature",
-      "keywords": [
+      "journalId": "j64",
+      "keywordIds": [
         "architecture",
-        "trapped-ion qubits",
-        "qubit hardware"
+        "trapped-ion-qubits",
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 1
@@ -1336,16 +1336,16 @@
       "id": "10-1109-ipdps-2000-845974",
       "doi": "10.1109/IPDPS.2000.845974",
       "title": "Scheduling with Advanced Reservations",
-      "authors": [
-        "Smith, W.",
-        "Foster, I.",
-        "Taylor, V."
+      "authorIds": [
+        "a694",
+        "a246",
+        "a724"
       ],
       "year": 2000,
-      "journal": "International Parallel and Distributed Processing Symposium",
-      "keywords": [
+      "journalId": "j54",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 438
@@ -1354,16 +1354,16 @@
       "id": "10-1109-71-993206",
       "doi": "10.1109/71.993206",
       "title": "Performance-effective and low-complexity task scheduling for heterogeneous computing",
-      "authors": [
-        "Topcuoglu, H.",
-        "Hariri, S.",
-        "Wu, M."
+      "authorIds": [
+        "a731",
+        "a306",
+        "a788"
       ],
       "year": 2002,
-      "journal": "IEEE Transactions on Parallel and Distributed Systems",
-      "keywords": [
+      "journalId": "j37",
+      "keywordIds": [
         "algorithms",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 4691
@@ -1372,17 +1372,17 @@
       "id": "10-1007-10968987-1",
       "doi": "10.1007/10968987_1",
       "title": "Scheduling in HPC Resource Management Systems: Queuing vs. Planning",
-      "authors": [
-        "Hovestadt, M.",
-        "Kao, O.",
-        "Keller, A.",
-        "Streit, A."
+      "authorIds": [
+        "a324",
+        "a381",
+        "a391",
+        "a705"
       ],
       "year": 2003,
-      "journal": "Workshop on Job Scheduling Strategies for Parallel Processing",
-      "keywords": [
+      "journalId": "j92",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 245
@@ -1391,15 +1391,15 @@
       "id": "10-1007-978-3-540-45209-6-28",
       "doi": "10.1007/978-3-540-45209-6_28",
       "title": "An Experimental Investigation into the Rank Function of the Heterogeneous Earliest Finish Time Scheduling Algorithm",
-      "authors": [
-        "Zhao, H.",
-        "Sakellariou, R."
+      "authorIds": [
+        "a812",
+        "a648"
       ],
       "year": 2003,
-      "journal": "Euro-Par 2003 Parallel Processing",
-      "keywords": [
+      "journalId": "j21",
+      "keywordIds": [
         "algorithms",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 195
@@ -1408,16 +1408,16 @@
       "id": "10-1109-pdp-2010-56",
       "doi": "10.1109/PDP.2010.56",
       "title": "DAG Scheduling Using a Lookahead Variant of the Heterogeneous Earliest Finish Time Algorithm",
-      "authors": [
-        "Bittencourt, L.F.",
-        "Sakellariou, R.",
-        "Madeira, E.R.M."
+      "authorIds": [
+        "a86",
+        "a648",
+        "a488"
       ],
       "year": 2010,
-      "journal": "Euromicro International Conference on Parallel, Distributed and Network-Based Processing",
-      "keywords": [
+      "journalId": "j22",
+      "keywordIds": [
         "algorithms",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 350
@@ -1426,17 +1426,17 @@
       "id": "10-1145-2501654-2501664",
       "doi": "10.1145/2501654.2501664",
       "title": "A Survey of Pipelined Workflow Scheduling: Models and Algorithms",
-      "authors": [
-        "Benoit, A.",
-        "Çatalyürek, Ü.V.",
-        "Robert, Y.",
-        "Saule, E."
+      "authorIds": [
+        "a70",
+        "a828",
+        "a628",
+        "a658"
       ],
       "year": 2013,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "algorithms",
-        "workflow orchestration",
+        "workflow-orchestration",
         "survey"
       ],
       "status": "to-read",
@@ -1446,15 +1446,15 @@
       "id": "10-1109-tpds-2013-57",
       "doi": "10.1109/TPDS.2013.57",
       "title": "List Scheduling Algorithm for Heterogeneous Systems by an Optimistic Cost Table",
-      "authors": [
-        "Arabnejad, H.",
-        "Barbosa, J.G."
+      "authorIds": [
+        "a31",
+        "a53"
       ],
       "year": 2014,
-      "journal": "IEEE Transactions on Parallel and Distributed Systems",
-      "keywords": [
+      "journalId": "j37",
+      "keywordIds": [
         "algorithms",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 824
@@ -1463,16 +1463,16 @@
       "id": "10-1145-2788396",
       "doi": "10.1145/2788396",
       "title": "A Survey of CPU-GPU Heterogeneous Computing Techniques",
-      "authors": [
-        "Mittal, S.",
-        "Vetter, J.S."
+      "authorIds": [
+        "a527",
+        "a747"
       ],
       "year": 2015,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "architecture",
         "survey",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 829
@@ -1481,16 +1481,16 @@
       "id": "10-1016-j-procs-2015-11-075",
       "doi": "10.1016/j.procs.2015.11.075",
       "title": "Introducing New Backfill-based Scheduler for SLURM Resource Manager",
-      "authors": [
-        "Leonenkov",
-        "Sergei",
-        "Zhumatiy, S."
+      "authorIds": [
+        "a447",
+        "a670",
+        "a823"
       ],
       "year": 2015,
-      "journal": "Procedia computer science",
-      "keywords": [
+      "journalId": "j71",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 20
@@ -1499,17 +1499,17 @@
       "id": "10-48550-arxiv-1508-04180",
       "doi": "10.48550/arXiv.1508.04180",
       "title": "A Comprehensive Perspective on Pilot-Job Systems",
-      "authors": [
-        "Turilli, M.",
-        "Santcroos, M.",
-        "Jha, S."
+      "authorIds": [
+        "a739",
+        "a653",
+        "a360"
       ],
       "year": 2016,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "middleware",
         "survey",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 110
@@ -1518,17 +1518,17 @@
       "id": "10-1145-3325097",
       "doi": "10.1145/3325097",
       "title": "A Survey on Scheduling Strategies for Workflows in Cloud Environment and Emerging Trends",
-      "authors": [
-        "Adhikari, M.",
-        "Amgoth, T.",
-        "Srirama, S.N."
+      "authorIds": [
+        "a6",
+        "a23",
+        "a699"
       ],
       "year": 2019,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "scheduling",
-        "workflow orchestration",
-        "cloud computing",
+        "workflow-orchestration",
+        "cloud-computing",
         "survey"
       ],
       "status": "to-read",
@@ -1538,20 +1538,20 @@
       "id": "10-1177-1094342019841681",
       "doi": "10.1177/1094342019841681",
       "title": "On-the-fly scheduling versus reservation-based scheduling for unpredictable workflows",
-      "authors": [
-        "Gainaru, A.",
-        "Sun, H.",
-        "Aupy, G.",
-        "Huo, Y.",
-        "Landman, B.A.",
-        "Raghavan, P."
+      "authorIds": [
+        "a253",
+        "a711",
+        "a42",
+        "a336",
+        "a433",
+        "a608"
       ],
       "year": 2019,
-      "journal": "The International Journal of High Performance Computing Applications",
-      "keywords": [
+      "journalId": "j88",
+      "keywordIds": [
         "scheduling",
-        "workflow orchestration",
-        "hpc scheduling"
+        "workflow-orchestration",
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 11
@@ -1560,21 +1560,21 @@
       "id": "10-1145-3387110",
       "doi": "10.1145/3387110",
       "title": "Scheduling on Two Types of Resources: A Survey",
-      "authors": [
-        "Beaumont, O.",
-        "Canon, L.",
-        "Eyraud-Dubois, L.",
-        "Lucarelli, G.",
-        "Marchal, L.",
-        "Mommessin, C.",
-        "et al."
+      "authorIds": [
+        "a62",
+        "a125",
+        "a226",
+        "a478",
+        "a494",
+        "a531",
+        "a827"
       ],
       "year": 2020,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "algorithms",
         "survey",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 38
@@ -1583,17 +1583,17 @@
       "id": "10-1145-3368036",
       "doi": "10.1145/3368036",
       "title": "Multiple Workflows Scheduling in Multi-tenant Distributed Systems: A Taxonomy and Future Directions",
-      "authors": [
-        "Hilman, M.H.",
-        "Rodriguez, M.A.",
-        "Buyya, R."
+      "authorIds": [
+        "a315",
+        "a630",
+        "a116"
       ],
       "year": 2020,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "scheduling",
-        "workflow orchestration",
-        "hpc scheduling"
+        "workflow-orchestration",
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 96
@@ -1602,17 +1602,17 @@
       "id": "10-1109-cluster49012-2020-00064",
       "doi": "10.1109/CLUSTER49012.2020.00064",
       "title": "Towards workload-adaptive scheduling for HPC clusters",
-      "authors": [
-        "Goponenko, A.V.",
-        "Izadpanah, R.",
-        "Brandt, J.M.",
-        "Dechev, D."
+      "authorIds": [
+        "a282",
+        "a351",
+        "a105",
+        "a191"
       ],
       "year": 2020,
-      "journal": "IEEE International Conference on Cluster Computing",
-      "keywords": [
+      "journalId": "j27",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 8
@@ -1621,20 +1621,20 @@
       "id": "10-1145-3369583-3392683",
       "doi": "10.1145/3369583.3392683",
       "title": "funcX: A Federated Function Serving Fabric for Science",
-      "authors": [
-        "Chard, R.",
-        "Babuji, Y.",
-        "Li, Z.",
-        "Skluzacek, T.",
-        "Woodard, A.",
-        "Blaiszik, B.",
-        "et al."
+      "authorIds": [
+        "a145",
+        "a47",
+        "a457",
+        "a690",
+        "a785",
+        "a87",
+        "a827"
       ],
       "year": 2020,
-      "journal": "International Symposium on High-Performance Parallel and Distributed Computing",
-      "keywords": [
+      "journalId": "j55",
+      "keywordIds": [
         "middleware",
-        "cloud computing"
+        "cloud-computing"
       ],
       "status": "to-read",
       "citations": 281
@@ -1643,17 +1643,17 @@
       "id": "10-1109-tpds-2020-3039728",
       "doi": "10.1109/TPDS.2020.3039728",
       "title": "Profiles of Upcoming HPC Applications and Their Impact on Reservation Strategies",
-      "authors": [
-        "Gainaru, A.",
-        "Goglin, B.",
-        "Honoré, V.",
-        "Pallez, G."
+      "authorIds": [
+        "a253",
+        "a275",
+        "a321",
+        "a576"
       ],
       "year": 2021,
-      "journal": "IEEE Transactions on Parallel and Distributed Systems",
-      "keywords": [
+      "journalId": "j37",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 10
@@ -1662,15 +1662,15 @@
       "id": "10-1007-s11227-023-05806-y",
       "doi": "10.1007/s11227-023-05806-y",
       "title": "A survey study on task scheduling schemes for workflow executions in cloud computing environment: classification and challenges",
-      "authors": [
-        "Shirvani, M.H."
+      "authorIds": [
+        "a682"
       ],
       "year": 2023,
-      "journal": "The Journal of Supercomputing",
-      "keywords": [
+      "journalId": "j89",
+      "keywordIds": [
         "scheduling",
-        "workflow orchestration",
-        "cloud computing",
+        "workflow-orchestration",
+        "cloud-computing",
         "survey"
       ],
       "status": "to-read",
@@ -1680,15 +1680,15 @@
       "id": "10-1007-978-3-031-43943-8-1",
       "doi": "10.1007/978-3-031-43943-8_1",
       "title": "Architecture of the Slurm Workload Manager",
-      "authors": [
-        "Jette, M.A.",
-        "Wickberg, T."
+      "authorIds": [
+        "a359",
+        "a776"
       ],
       "year": 2023,
-      "journal": "Job Scheduling Strategies for Parallel Processing",
-      "keywords": [
+      "journalId": "j59",
+      "keywordIds": [
         "middleware",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 137
@@ -1697,21 +1697,21 @@
       "id": "10-1145-3638757",
       "doi": "10.1145/3638757",
       "title": "Deep Learning Workload Scheduling in GPU Datacenters: A Survey",
-      "authors": [
-        "Ye, Z.",
-        "Gao, W.",
-        "Hu, Q.",
-        "Sun, P.",
-        "Wang, X.",
-        "Luo, Y.",
-        "et al."
+      "authorIds": [
+        "a799",
+        "a257",
+        "a327",
+        "a712",
+        "a762",
+        "a483",
+        "a827"
       ],
       "year": 2024,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "scheduling",
         "survey",
-        "gpu acceleration"
+        "gpu-acceleration"
       ],
       "status": "to-read",
       "citations": 161
@@ -1720,16 +1720,16 @@
       "id": "10-1145-3766543",
       "doi": "10.1145/3766543",
       "title": "A Survey of Fundamental Principles and Analysis for Job Scheduling on Warehouse-Scale Computers",
-      "authors": [
-        "Exton, K.",
-        "Read, M.R."
+      "authorIds": [
+        "a225",
+        "a617"
       ],
       "year": 2025,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "scheduling",
         "survey",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 0
@@ -1738,20 +1738,20 @@
       "id": "10-48550-arxiv-2603-22542",
       "doi": "10.48550/arXiv.2603.22542",
       "title": "Interactive and Urgent HPC: State of the Research",
-      "authors": [
-        "Reuther, A.",
-        "Arndt, W.",
-        "Blaschke, J.",
-        "Boehme, C.",
-        "Brown, N.",
-        "Chazapis, A.",
-        "et al."
+      "authorIds": [
+        "a622",
+        "a34",
+        "a88",
+        "a91",
+        "a111",
+        "a146",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 0
@@ -1760,19 +1760,19 @@
       "id": "10-1109-ipdps49936-2021-00090",
       "doi": "10.1109/IPDPS49936.2021.00090",
       "title": "Deep Reinforcement Agent for Scheduling in HPC",
-      "authors": [
-        "Fan, Y.",
-        "Lan, Z.",
-        "Childers, T.",
-        "Rich, P.",
-        "Allcock, W.",
-        "Papka, M.E."
+      "authorIds": [
+        "a228",
+        "a432",
+        "a156",
+        "a624",
+        "a17",
+        "a578"
       ],
       "year": 2021,
-      "journal": "IEEE International Parallel and Distributed Processing Symposium",
-      "keywords": [
+      "journalId": "j29",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 47
@@ -1781,20 +1781,20 @@
       "id": "10-1109-cluster51413-2022-00020",
       "doi": "10.1109/CLUSTER51413.2022.00020",
       "title": "MRSch: Multi-Resource Scheduling for HPC",
-      "authors": [
-        "Li, B.",
-        "Fan, Y.",
-        "Dearing, M.",
-        "Lan, Z.",
-        "Rich, P.",
-        "Allcock, W.",
-        "et al."
+      "authorIds": [
+        "a451",
+        "a228",
+        "a190",
+        "a432",
+        "a624",
+        "a17",
+        "a827"
       ],
       "year": 2022,
-      "journal": "IEEE International Conference on Cluster Computing",
-      "keywords": [
+      "journalId": "j27",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 14
@@ -1803,18 +1803,18 @@
       "id": "10-1109-tc-2020-3023169",
       "doi": "10.1109/TC.2020.3023169",
       "title": "The HPC-DAG Task Model for Heterogeneous Real-Time Systems",
-      "authors": [
-        "Zahaf, H.",
-        "Capodieci, N.",
-        "Cavicchioli, R.",
-        "Lipari, G.",
-        "Bertogna, M."
+      "authorIds": [
+        "a805",
+        "a130",
+        "a135",
+        "a463",
+        "a74"
       ],
       "year": 2020,
-      "journal": "IEEE Transactions on Computers",
-      "keywords": [
+      "journalId": "j36",
+      "keywordIds": [
         "algorithms",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 30
@@ -1823,16 +1823,16 @@
       "id": "10-1145-3485126",
       "doi": "10.1145/3485126",
       "title": "Query Processing on Heterogeneous CPU/GPU Systems",
-      "authors": [
-        "Rosenfeld, V.",
-        "Breß, S.",
-        "Markl, V."
+      "authorIds": [
+        "a635",
+        "a108",
+        "a496"
       ],
       "year": 2022,
-      "journal": "ACM Computing Surveys",
-      "keywords": [
+      "journalId": "j1",
+      "keywordIds": [
         "survey",
-        "gpu acceleration"
+        "gpu-acceleration"
       ],
       "status": "to-read",
       "citations": 49
@@ -1841,20 +1841,20 @@
       "id": "10-1145-3610300",
       "doi": "10.1145/3610300",
       "title": "Multi-agent Reinforcement Learning-based Adaptive Heterogeneous DAG Scheduling",
-      "authors": [
-        "Zhadan, A.",
-        "Allahverdyan, A.",
-        "Kondratov, I.",
-        "Mikheev, V.",
-        "Petrosian, O.",
-        "Romanovskii, A.",
-        "et al."
+      "authorIds": [
+        "a807",
+        "a16",
+        "a414",
+        "a520",
+        "a590",
+        "a632",
+        "a827"
       ],
       "year": 2023,
-      "journal": "ACM Transactions on Intelligent Systems and Technology",
-      "keywords": [
+      "journalId": "j9",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling"
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 8
@@ -1863,19 +1863,19 @@
       "id": "dl-acm-org-doi-10-5555-3488766-3488793",
       "doi": "https://dl.acm.org/doi/10.5555/3488766.3488793",
       "title": "Heterogeneity-Aware Cluster Scheduling Policies for Deep Learning Workloads",
-      "authors": [
-        "Narayanan, D.",
-        "Santhanam, K.",
-        "Kazhamiaka, F.",
-        "Phanishayee, A.",
-        "Zaharia, M."
+      "authorIds": [
+        "a549",
+        "a654",
+        "a390",
+        "a591",
+        "a806"
       ],
       "year": 2020,
-      "journal": "USENIX Symposium on Operating Systems Design and Implementation",
-      "keywords": [
+      "journalId": "j91",
+      "keywordIds": [
         "scheduling",
-        "hpc scheduling",
-        "gpu acceleration"
+        "hpc-scheduling",
+        "gpu-acceleration"
       ],
       "status": "to-read",
       "citations": 400
@@ -1884,20 +1884,20 @@
       "id": "10-1145-3784828-3785162",
       "doi": "10.1145/3784828.3785162",
       "title": "Quantifying the Economic Potential of Energy-Aware Scheduling in HPC",
-      "authors": [
-        "Menear, K.",
-        "Donson, J.",
-        "DiMont, S.",
-        "Strelka, J.",
-        "Clark, S.",
-        "Slovensky, M."
+      "authorIds": [
+        "a515",
+        "a206",
+        "a199",
+        "a706",
+        "a169",
+        "a691"
       ],
       "year": 2026,
-      "journal": "Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
-      "keywords": [
+      "journalId": "j86",
+      "keywordIds": [
         "scheduling",
-        "finance applications",
-        "hpc scheduling"
+        "finance-applications",
+        "hpc-scheduling"
       ],
       "status": "to-read",
       "citations": 0
@@ -1906,14 +1906,14 @@
       "id": "10-48550-arxiv-quant-ph-9605043",
       "doi": "10.48550/arXiv.quant-ph/9605043",
       "title": "A fast quantum mechanical algorithm for database search",
-      "authors": [
-        "Grover, L.K."
+      "authorIds": [
+        "a291"
       ],
       "year": 1996,
-      "journal": "Proceedings of the twenty-eighth annual ACM symposium on Theory of computing",
-      "keywords": [
+      "journalId": "j72",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 15506
@@ -1922,15 +1922,15 @@
       "id": "10-1137-s0097539795293172",
       "doi": "10.1137/S0097539795293172",
       "title": "Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer",
-      "authors": [
-        "Shor, P.W."
+      "authorIds": [
+        "a683"
       ],
       "year": 1997,
-      "journal": "SIAM Journal on Computing",
-      "keywords": [
+      "journalId": "j80",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 20117
@@ -1939,17 +1939,17 @@
       "id": "10-1007-bfb0054319",
       "doi": "10.1007/BFb0054319",
       "title": "Quantum cryptanalysis of hash and claw-free functions",
-      "authors": [
-        "Brassard, G.",
-        "Høyer, P.",
-        "Tapp, A."
+      "authorIds": [
+        "a106",
+        "a338",
+        "a722"
       ],
       "year": 1998,
-      "journal": "Latin American symposium on Theoretical Informatics",
-      "keywords": [
+      "journalId": "j62",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 396
@@ -1958,15 +1958,15 @@
       "id": "10-1145-1206035-1206039",
       "doi": "10.1145/1206035.1206039",
       "title": "Polynomial-time quantum algorithms for Pell's equation and the principal ideal problem",
-      "authors": [
-        "Hallgren, S."
+      "authorIds": [
+        "a303"
       ],
       "year": 2002,
-      "journal": "ACM Symposium on Theory of Computing",
-      "keywords": [
+      "journalId": "j8",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 442
@@ -1975,15 +1975,15 @@
       "id": "10-48550-arxiv-quant-ph-0207131",
       "doi": "10.48550/arXiv.quant-ph/0207131",
       "title": "Efficient Quantum Algorithms for Estimating Gauss Sums",
-      "authors": [
-        "Dam, W.v.",
-        "Seroussi, G."
+      "authorIds": [
+        "a184",
+        "a671"
       ],
       "year": 2002,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 64
@@ -1992,14 +1992,14 @@
       "id": "10-1145-992287-992296",
       "doi": "10.1145/992287.992296",
       "title": "Quantum search algorithms",
-      "authors": [
-        "Ambainis, A."
+      "authorIds": [
+        "a22"
       ],
       "year": 2004,
-      "journal": "ACM SIGACT News",
-      "keywords": [
+      "journalId": "j7",
+      "keywordIds": [
         "vision",
-        "quantum algorithms",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2009,14 +2009,14 @@
       "id": "10-1109-focs-2004-53",
       "doi": "10.1109/FOCS.2004.53",
       "title": "Quantum speed-up of Markov chain based algorithms",
-      "authors": [
-        "Szegedy, M."
+      "authorIds": [
+        "a717"
       ],
       "year": 2004,
-      "journal": "IEEE Symposium on Foundations of Computer Science",
-      "keywords": [
+      "journalId": "j34",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 945
@@ -2025,15 +2025,15 @@
       "id": "10-1145-1060590-1060660",
       "doi": "10.1145/1060590.1060660",
       "title": "Fast quantum algorithms for computing the unit group and class group of a number field",
-      "authors": [
-        "Hallgren, S."
+      "authorIds": [
+        "a303"
       ],
       "year": 2005,
-      "journal": "ACM Symposium on Theory of Computing",
-      "keywords": [
+      "journalId": "j8",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 132
@@ -2042,17 +2042,17 @@
       "id": "10-1145-1273496-1273497",
       "doi": "10.1145/1273496.1273497",
       "title": "Quantum clustering algorithms",
-      "authors": [
-        "Aïmeur, E.",
-        "Brassard, G.",
-        "Gambs, S."
+      "authorIds": [
+        "a44",
+        "a106",
+        "a254"
       ],
       "year": 2007,
-      "journal": "International conference on Machine learning",
-      "keywords": [
+      "journalId": "j58",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum machine learning"
+        "quantum-algorithms",
+        "quantum-machine-learning"
       ],
       "status": "to-read",
       "citations": 70
@@ -2061,15 +2061,15 @@
       "id": "10-48550-arxiv-0804-1109",
       "doi": "10.48550/arXiv.0804.1109",
       "title": "Classical and Quantum Algorithms for Exponential Congruences",
-      "authors": [
-        "Dam, W.v.",
-        "Shparlinski, I.E."
+      "authorIds": [
+        "a184",
+        "a684"
       ],
       "year": 2008,
-      "journal": "Workshop on Quantum Computation, Communication, and Cryptography",
-      "keywords": [
+      "journalId": "j93",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 32
@@ -2078,15 +2078,15 @@
       "id": "www-hyperelliptic-org-tanja-sharcs-record2-pdf-page-113",
       "doi": "https://www.hyperelliptic.org/tanja/SHARCS/record2.pdf#page=113",
       "title": "Cost analysis of hash collisions: Will quantum computers make SHARCS obsolete?",
-      "authors": [
-        "Bernstein, D.J."
+      "authorIds": [
+        "a71"
       ],
       "year": 2009,
-      "journal": "Workshop on Special-purpose Hardware for Attacking Cryptographic Systems",
-      "keywords": [
+      "journalId": "j94",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 160
@@ -2095,16 +2095,16 @@
       "id": "10-1109-isit-2010-5513654",
       "doi": "10.1109/ISIT.2010.5513654",
       "title": "Quantum distinguisher between the 3-round Feistel cipher and the random permutation",
-      "authors": [
-        "Kuwakado, H.",
-        "Morii, M."
+      "authorIds": [
+        "a425",
+        "a537"
       ],
       "year": 2010,
-      "journal": "IEEE International Symposium on Information Theory",
-      "keywords": [
+      "journalId": "j31",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 329
@@ -2113,16 +2113,16 @@
       "id": "ieeexplore-ieee-org-abstract-document-6400943",
       "doi": "https://ieeexplore.ieee.org/abstract/document/6400943",
       "title": "Security on the quantum-type Even-Mansour cipher",
-      "authors": [
-        "Kuwakado, H.",
-        "Morii, M."
+      "authorIds": [
+        "a425",
+        "a537"
       ],
       "year": 2012,
-      "journal": "International Symposium on Information Theory and its Applications",
-      "keywords": [
+      "journalId": "j56",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 299
@@ -2131,18 +2131,18 @@
       "id": "10-1007-978-3-642-38616-9-2",
       "doi": "10.1007/978-3-642-38616-9_2",
       "title": "Quantum Algorithms for the Subset-Sum Problem",
-      "authors": [
-        "Bernstein, D.J.",
-        "Jeffery, S.",
-        "Lange, T.",
-        "Meurer, A."
+      "authorIds": [
+        "a71",
+        "a358",
+        "a434",
+        "a517"
       ],
       "year": 2013,
-      "journal": "International Workshop on Post-Quantum Cryptography",
-      "keywords": [
+      "journalId": "j57",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 124
@@ -2151,17 +2151,17 @@
       "id": "10-48550-arxiv-1301-6176",
       "doi": "10.48550/arXiv.1301.6176",
       "title": "Solving the Shortest Vector Problem in Lattices Faster Using Quantum Search",
-      "authors": [
-        "Laarhoven, T.",
-        "Mosca, M.",
-        "Pol, J.v.d."
+      "authorIds": [
+        "a430",
+        "a539",
+        "a600"
       ],
       "year": 2013,
-      "journal": "International Workshop on Post-Quantum Cryptography",
-      "keywords": [
+      "journalId": "j57",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 63
@@ -2170,15 +2170,15 @@
       "id": "10-1007-s11128-015-1003-3",
       "doi": "10.1007/s11128-015-1003-3",
       "title": "A quantum algorithm for Viterbi decoding of classical convolutional codes",
-      "authors": [
-        "Grice, J.R.",
-        "Meyer, D.A."
+      "authorIds": [
+        "a287",
+        "a518"
       ],
       "year": 2015,
-      "journal": "Quantum Information Processing",
-      "keywords": [
+      "journalId": "j74",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 6
@@ -2187,16 +2187,16 @@
       "id": "10-48550-arxiv-1306-2301",
       "doi": "10.48550/arXiv.1306.2301",
       "title": "A note on quantum related-key attacks",
-      "authors": [
-        "Roetteler, M.",
-        "Steinwandt, R."
+      "authorIds": [
+        "a631",
+        "a702"
       ],
       "year": 2015,
-      "journal": "Information Processing Letters",
-      "keywords": [
+      "journalId": "j47",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 82
@@ -2205,18 +2205,18 @@
       "id": "10-48550-arxiv-1510-05836",
       "doi": "10.48550/arXiv.1510.05836",
       "title": "Quantum Differential and Linear Cryptanalysis",
-      "authors": [
-        "Kaplan, M.",
-        "Leurent, G.",
-        "Leverrier, A.",
-        "Naya-Plasencia, M."
+      "authorIds": [
+        "a382",
+        "a448",
+        "a449",
+        "a552"
       ],
       "year": 2015,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 218
@@ -2225,15 +2225,15 @@
       "id": "10-48550-arxiv-1410-1434",
       "doi": "10.48550/arXiv.1410.1434",
       "title": "Quantum attacks against iterated block ciphers",
-      "authors": [
-        "Kaplan, M."
+      "authorIds": [
+        "a382"
       ],
       "year": 2015,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 45
@@ -2242,15 +2242,15 @@
       "id": "eprint-iacr-org-2015-676",
       "doi": "https://eprint.iacr.org/2015/676",
       "title": "Quantum Cryptanalysis of NTRU",
-      "authors": [
-        "Fluhrer, S."
+      "authorIds": [
+        "a244"
       ],
       "year": 2015,
-      "journal": "Cryptology ePrint Archive",
-      "keywords": [
+      "journalId": "j18",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 23
@@ -2259,18 +2259,18 @@
       "id": "10-1088-1367-2630-18-2-023023",
       "doi": "10.1088/1367-2630/18/2/023023",
       "title": "The Theory of Variational Hybrid Quantum-Classical Algorithms",
-      "authors": [
-        "McClean, J.",
-        "Romero, J.",
-        "Babbush, R.",
-        "Aspuru-Guzik, A."
+      "authorIds": [
+        "a509",
+        "a634",
+        "a45",
+        "a39"
       ],
       "year": 2016,
-      "journal": "New Journal of Physics",
-      "keywords": [
+      "journalId": "j67",
+      "keywordIds": [
         "algorithms",
-        "variational algorithms",
-        "quantum algorithms"
+        "variational-algorithms",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 3305
@@ -2279,18 +2279,18 @@
       "id": "10-48550-arxiv-1512-04965",
       "doi": "10.48550/arXiv.1512.04965",
       "title": "Applying Grover's algorithm to AES: quantum resource estimates",
-      "authors": [
-        "Grassl, M.",
-        "Langenberg, B.",
-        "Roetteler, M.",
-        "Steinwandt, R."
+      "authorIds": [
+        "a286",
+        "a435",
+        "a631",
+        "a702"
       ],
       "year": 2016,
-      "journal": "International Workshop on Post-Quantum Cryptography",
-      "keywords": [
+      "journalId": "j57",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 582
@@ -2299,20 +2299,20 @@
       "id": "10-48550-arxiv-1603-09383",
       "doi": "10.48550/arXiv.1603.09383",
       "title": "Estimating the cost of generic quantum pre-image attacks on SHA-2 and SHA-3",
-      "authors": [
-        "Amy, M.",
-        "Matteo, O.D.",
-        "Gheorghiu, V.",
-        "Mosca, M.",
-        "Parent, A.",
-        "Schanck, J."
+      "authorIds": [
+        "a25",
+        "a503",
+        "a266",
+        "a539",
+        "a579",
+        "a661"
       ],
       "year": 2016,
-      "journal": "International Conference on Selected Areas in Cryptography",
-      "keywords": [
-        "quantum algorithms",
-        "quantum cryptanalysis",
-        "fault tolerance"
+      "journalId": "j52",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-cryptanalysis",
+        "fault-tolerance"
       ],
       "status": "to-read",
       "citations": 214
@@ -2321,15 +2321,15 @@
       "id": "10-48550-arxiv-1711-02616",
       "doi": "10.48550/arXiv.1711.02616",
       "title": "A quantum primality test with order finding",
-      "authors": [
-        "Donis-Vela, A.",
-        "Garcia-Escartin, J.C."
+      "authorIds": [
+        "a205",
+        "a258"
       ],
       "year": 2017,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 9
@@ -2338,16 +2338,16 @@
       "id": "10-48550-arxiv-1603-07856",
       "doi": "10.48550/arXiv.1603.07856",
       "title": "Using Simon's Algorithm to Attack Symmetric-Key Cryptographic Primitives",
-      "authors": [
-        "Santoli, T.",
-        "Schaffner, C."
+      "authorIds": [
+        "a655",
+        "a660"
       ],
       "year": 2017,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum cryptanalysis",
-        "quantum algorithms"
+        "quantum-cryptanalysis",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 152
@@ -2356,18 +2356,18 @@
       "id": "10-1007-s11128-018-1864-3",
       "doi": "10.1007/s11128-018-1864-3",
       "title": "Quantum reversible circuit of AES-128",
-      "authors": [
-        "Almazrooie, M.",
-        "Samsudin, A.",
-        "Mutter, R.A.K.N."
+      "authorIds": [
+        "a19",
+        "a650",
+        "a546"
       ],
       "year": 2018,
-      "journal": "Quantum Information Processing",
-      "keywords": [
+      "journalId": "j74",
+      "keywordIds": [
         "algorithms",
-        "quantum circuits",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-circuits",
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 70
@@ -2376,17 +2376,17 @@
       "id": "10-48550-arxiv-1012-4019",
       "doi": "10.48550/arXiv.1012.4019",
       "title": "Constructing elliptic curve isogenies in quantum subexponential time",
-      "authors": [
-        "Childs, A.M.",
-        "Jao, D.",
-        "Soukharev, V."
+      "authorIds": [
+        "a157",
+        "a354",
+        "a697"
       ],
       "year": 2018,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 484
@@ -2395,18 +2395,18 @@
       "id": "10-48550-arxiv-1907-02085",
       "doi": "10.48550/arXiv.1907.02085",
       "title": "Data re-uploading for a universal quantum classifier",
-      "authors": [
-        "Pérez-Salinas, A.",
-        "Cervera-Lierta, A.",
-        "Gil-Fuster, E.",
-        "Latorre, J.I."
+      "authorIds": [
+        "a604",
+        "a138",
+        "a268",
+        "a439"
       ],
       "year": 2020,
-      "journal": "Quantum",
-      "keywords": [
+      "journalId": "j73",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum machine learning"
+        "quantum-algorithms",
+        "quantum-machine-learning"
       ],
       "status": "to-read",
       "citations": 1122
@@ -2415,21 +2415,21 @@
       "id": "10-1038-s42254-021-00348-9",
       "doi": "10.1038/s42254-021-00348-9",
       "title": "Variational Quantum Algorithms",
-      "authors": [
-        "Cerezo, M.",
-        "Arrasmith, A.",
-        "Babbush, R.",
-        "Benjamin, S.C.",
-        "Endo, S.",
-        "Fujii, K.",
-        "et al."
+      "authorIds": [
+        "a137",
+        "a35",
+        "a45",
+        "a68",
+        "a222",
+        "a251",
+        "a827"
       ],
       "year": 2021,
-      "journal": "Nature Reviews Physics",
-      "keywords": [
+      "journalId": "j66",
+      "keywordIds": [
         "algorithms",
-        "variational algorithms",
-        "quantum algorithms",
+        "variational-algorithms",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2439,18 +2439,18 @@
       "id": "10-48550-arxiv-2101-07755",
       "doi": "10.48550/arXiv.2101.07755",
       "title": "Quantum Permutation Synchronization",
-      "authors": [
-        "Birdal, T.",
-        "Golyanik, V.",
-        "Theobalt, C.",
-        "Guibas, L."
+      "authorIds": [
+        "a83",
+        "a281",
+        "a726",
+        "a293"
       ],
       "year": 2021,
-      "journal": "IEEE/CVF conference on computer vision and pattern recognition",
-      "keywords": [
+      "journalId": "j44",
+      "keywordIds": [
         "applications",
-        "quantum algorithms",
-        "optimization algorithms"
+        "quantum-algorithms",
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 59
@@ -2459,16 +2459,16 @@
       "id": "10-48550-arxiv-2105-05608",
       "doi": "10.48550/arXiv.2105.05608",
       "title": "Lattice sieving via quantum random walks",
-      "authors": [
-        "Chailloux, A.",
-        "Loyer, J."
+      "authorIds": [
+        "a141",
+        "a475"
       ],
       "year": 2021,
-      "journal": "International Conference on the Theory and Application of Cryptology and Information Security",
-      "keywords": [
+      "journalId": "j53",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 91
@@ -2477,20 +2477,20 @@
       "id": "10-1016-j-physrep-2022-08-003",
       "doi": "10.1016/j.physrep.2022.08.003",
       "title": "The Variational Quantum Eigensolver: A review of methods and best practices",
-      "authors": [
-        "Tilly, J.",
-        "Chen, H.",
-        "Cao, S.",
-        "Picozzi, D.",
-        "Setia, K.",
-        "Li, Y.",
-        "et al."
+      "authorIds": [
+        "a728",
+        "a149",
+        "a128",
+        "a592",
+        "a674",
+        "a456",
+        "a827"
       ],
       "year": 2022,
-      "journal": "Physics Reports",
-      "keywords": [
+      "journalId": "j70",
+      "keywordIds": [
         "vision",
-        "variational algorithms",
+        "variational-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2500,18 +2500,18 @@
       "id": "10-1038-s41534-022-00611-6",
       "doi": "10.1038/s41534-022-00611-6",
       "title": "Variational quantum state eigensolver",
-      "authors": [
-        "Cerezo, M.",
-        "Sharma, K.",
-        "Arrasmith, A.",
-        "Coles, P.J."
+      "authorIds": [
+        "a137",
+        "a676",
+        "a35",
+        "a174"
       ],
       "year": 2022,
-      "journal": "npj Quantum Information",
-      "keywords": [
+      "journalId": "j101",
+      "keywordIds": [
         "algorithms",
-        "variational algorithms",
-        "quantum algorithms"
+        "variational-algorithms",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 121
@@ -2520,21 +2520,21 @@
       "id": "10-1038-s41586-022-04940-6",
       "doi": "10.1038/s41586-022-04940-6",
       "title": "Practical quantum advantage in quantum simulation",
-      "authors": [
-        "Daley, A.J.",
-        "Bloch, I.",
-        "Kokail, C.",
-        "Flannigan, S.",
-        "Pearson, N.",
-        "Troyer, M.",
-        "et al."
+      "authorIds": [
+        "a182",
+        "a90",
+        "a413",
+        "a242",
+        "a584",
+        "a736",
+        "a827"
       ],
       "year": 2022,
-      "journal": "Nature",
-      "keywords": [
+      "journalId": "j64",
+      "keywordIds": [
         "vision",
-        "quantum simulation",
-        "quantum algorithms"
+        "quantum-simulation",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 1152
@@ -2543,20 +2543,20 @@
       "id": "10-1103-revmodphys-94-015004",
       "doi": "10.1103/RevModPhys.94.015004",
       "title": "Noisy intermediate-scale quantum algorithms",
-      "authors": [
-        "Bharti, K.",
-        "Cervera-Lierta, A.",
-        "Kyaw, T.H.",
-        "Haug, T.",
-        "Alperin-Lea, S.",
-        "Anand, A.",
-        "et al."
+      "authorIds": [
+        "a76",
+        "a138",
+        "a427",
+        "a309",
+        "a21",
+        "a26",
+        "a827"
       ],
       "year": 2022,
-      "journal": "Reviews of Modern Physics",
-      "keywords": [
+      "journalId": "j79",
+      "keywordIds": [
         "vision",
-        "quantum algorithms",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2566,18 +2566,18 @@
       "id": "10-1007-s11467-021-1141-2",
       "doi": "10.1007/s11467-021-1141-2",
       "title": "A quantum circuit design of AES requiring fewer quantum qubits and gate operations",
-      "authors": [
-        "Wang, Z.",
-        "Wei, S.",
-        "Long, G."
+      "authorIds": [
+        "a764",
+        "a770",
+        "a470"
       ],
       "year": 2022,
-      "journal": "Frontiers of Physics",
-      "keywords": [
+      "journalId": "j23",
+      "keywordIds": [
         "algorithms",
-        "quantum circuits",
-        "qubit hardware",
-        "quantum cryptanalysis"
+        "quantum-circuits",
+        "qubit-hardware",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 0
@@ -2586,20 +2586,20 @@
       "id": "10-1038-s41598-023-29643-4",
       "doi": "10.1038/s41598-023-29643-4",
       "title": "Quantum algorithms for geologic fracture networks",
-      "authors": [
-        "Henderson, J.M.",
-        "Podzorova, M.",
-        "Cerezo, M.",
-        "Golden, J.K.",
-        "Gleyzer, L.",
-        "Viswanathan, H.S.",
-        "et al."
+      "authorIds": [
+        "a312",
+        "a599",
+        "a137",
+        "a280",
+        "a273",
+        "a750",
+        "a827"
       ],
       "year": 2023,
-      "journal": "Scientific Reports",
-      "keywords": [
+      "journalId": "j83",
+      "keywordIds": [
         "applications",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 9
@@ -2608,20 +2608,20 @@
       "id": "10-22331-q-2023-11-22-1188",
       "doi": "10.22331/q-2023-11-22-1188",
       "title": "Variational quantum linear solver",
-      "authors": [
-        "Bravo-Prieto, C.",
-        "LaRose, R.",
-        "Cerezo, M.",
-        "Subasi, Y.",
-        "Cincio, L.",
-        "Coles, P.J."
+      "authorIds": [
+        "a107",
+        "a429",
+        "a137",
+        "a709",
+        "a166",
+        "a174"
       ],
       "year": 2023,
-      "journal": "Quantum",
-      "keywords": [
+      "journalId": "j73",
+      "keywordIds": [
         "algorithms",
-        "variational algorithms",
-        "quantum algorithms"
+        "variational-algorithms",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 489
@@ -2630,20 +2630,20 @@
       "id": "10-1038-s41586-023-06095-4",
       "doi": "10.1038/s41586-023-06095-4",
       "title": "Quantum-enhanced Markov chain Monte Carlo",
-      "authors": [
-        "Layden, D.",
-        "Mazzola, G.",
-        "Mishmash, R.V.",
-        "Motta, M.",
-        "Wocjan, P.",
-        "Kim, J.",
-        "et al."
+      "authorIds": [
+        "a444",
+        "a506",
+        "a524",
+        "a540",
+        "a783",
+        "a402",
+        "a827"
       ],
       "year": 2023,
-      "journal": "Nature",
-      "keywords": [
+      "journalId": "j64",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 83
@@ -2652,20 +2652,20 @@
       "id": "10-1016-j-physrep-2024-03-002",
       "doi": "10.1016/j.physrep.2024.03.002",
       "title": "A review on Quantum Approximate Optimization Algorithm and its variants",
-      "authors": [
-        "Blekos, K.",
-        "Brand, D.",
-        "Ceschini, A.",
-        "Chou, C.",
-        "Li, R.",
-        "Pandya, K.",
-        "et al."
+      "authorIds": [
+        "a89",
+        "a102",
+        "a139",
+        "a162",
+        "a454",
+        "a577",
+        "a827"
       ],
       "year": 2024,
-      "journal": "Physics Reports",
-      "keywords": [
+      "journalId": "j70",
+      "keywordIds": [
         "vision",
-        "optimization algorithms",
+        "optimization-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2675,21 +2675,21 @@
       "id": "10-1038-s42254-024-00770-9",
       "doi": "10.1038/s42254-024-00770-9",
       "title": "Challenges and opportunities in quantum optimization",
-      "authors": [
-        "Abbas, A.",
-        "Ambainis, A.",
-        "Augustino, B.",
-        "Bärtschi, A.",
-        "Buhrman, H.",
-        "Coffrin, C.",
-        "et al."
+      "authorIds": [
+        "a1",
+        "a22",
+        "a41",
+        "a117",
+        "a114",
+        "a172",
+        "a827"
       ],
       "year": 2024,
-      "journal": "Nature Reviews Physics",
-      "keywords": [
+      "journalId": "j66",
+      "keywordIds": [
         "vision",
-        "optimization algorithms",
-        "quantum algorithms",
+        "optimization-algorithms",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2699,21 +2699,21 @@
       "id": "10-1103-prxquantum-5-037001",
       "doi": "10.1103/PRXQuantum.5.037001",
       "title": "Quantum Computing for High-Energy Physics: State of the Art and Challenges",
-      "authors": [
-        "Meglio, A.D.",
-        "Jansen, K.",
-        "Tavernelli, I.",
-        "Alexandrou, C.",
-        "Arunachalam, S.",
-        "Bauer, C.W.",
-        "et al."
+      "authorIds": [
+        "a513",
+        "a353",
+        "a723",
+        "a13",
+        "a37",
+        "a58",
+        "a827"
       ],
       "year": 2024,
-      "journal": "PRX Quantum",
-      "keywords": [
+      "journalId": "j69",
+      "keywordIds": [
         "vision",
-        "high-energy physics",
-        "quantum algorithms",
+        "high-energy-physics",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2723,15 +2723,15 @@
       "id": "10-1109-access-2024-3520364",
       "doi": "10.1109/ACCESS.2024.3520364",
       "title": "A Survey on the Quantum Security of Block Cipher-Based Cryptography",
-      "authors": [
-        "Bootsma, S.E.",
-        "Vries, M.D."
+      "authorIds": [
+        "a94",
+        "a753"
       ],
       "year": 2024,
-      "journal": "IEEE Access",
-      "keywords": [
+      "journalId": "j25",
+      "keywordIds": [
         "applications",
-        "quantum cryptanalysis",
+        "quantum-cryptanalysis",
         "survey"
       ],
       "status": "to-read",
@@ -2741,16 +2741,16 @@
       "id": "10-34133-icomputing-0097",
       "doi": "10.34133/icomputing.0097",
       "title": "Quantum Walk Computing: Theory, Implementation, and Application",
-      "authors": [
-        "Qiang, X.",
-        "Ma, S.",
-        "Song, H."
+      "authorIds": [
+        "a605",
+        "a487",
+        "a696"
       ],
       "year": 2024,
-      "journal": "Intelligent Computing",
-      "keywords": [
+      "journalId": "j48",
+      "keywordIds": [
         "vision",
-        "quantum algorithms",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2760,21 +2760,21 @@
       "id": "10-48550-arxiv-2408-13244",
       "doi": "10.48550/arXiv.2408.13244",
       "title": "Fullerene-encapsulated Cyclic Ozone for the Next Generation of Nano-sized Propellants via Quantum Computation",
-      "authors": [
-        "Watts, T.W.",
-        "Otten, M.",
-        "Necaise, J.T.",
-        "Nguyen, N.",
-        "Link, B.",
-        "Williams, K.S.",
-        "et al."
+      "authorIds": [
+        "a766",
+        "a572",
+        "a553",
+        "a557",
+        "a462",
+        "a779",
+        "a827"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum algorithms",
-        "quantum chemistry"
+        "quantum-algorithms",
+        "quantum-chemistry"
       ],
       "status": "to-read",
       "citations": 11
@@ -2783,21 +2783,21 @@
       "id": "10-48550-arxiv-2406-18744",
       "doi": "10.48550/arXiv.2406.18744",
       "title": "Quantum Resources Required for Binding Affinity Calculations of Amyloid beta",
-      "authors": [
-        "Otten, M.",
-        "Watts, T.W.",
-        "Johnson, S.D.",
-        "Sundareswara, R.",
-        "Wang, Z.",
-        "Hardikar, T.S.",
-        "et al."
+      "authorIds": [
+        "a572",
+        "a766",
+        "a370",
+        "a713",
+        "a764",
+        "a305",
+        "a827"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum algorithms",
-        "quantum chemistry"
+        "quantum-algorithms",
+        "quantum-chemistry"
       ],
       "status": "to-read",
       "citations": 9
@@ -2806,20 +2806,20 @@
       "id": "10-48550-arxiv-2406-18759",
       "doi": "10.48550/arXiv.2406.18759",
       "title": "Quantum computing for corrosion-resistant materials and anti-corrosive coatings design",
-      "authors": [
-        "Nguyen, N.",
-        "Watts, T.W.",
-        "Link, B.",
-        "Williams, K.S.",
-        "Sanders, Y.R.",
-        "Elman, S.J.",
-        "et al."
+      "authorIds": [
+        "a557",
+        "a766",
+        "a462",
+        "a779",
+        "a651",
+        "a220",
+        "a827"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 14
@@ -2828,17 +2828,17 @@
       "id": "10-48550-arxiv-2406-06281",
       "doi": "10.48550/arXiv.2406.06281",
       "title": "Applications and resource estimates for open system simulation on a quantum computer",
-      "authors": [
-        "Mozgunov, E.",
-        "Marshall, J.",
-        "Anand, N."
+      "authorIds": [
+        "a542",
+        "a497",
+        "a27"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum simulation",
-        "quantum algorithms"
+        "quantum-simulation",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 4
@@ -2847,21 +2847,21 @@
       "id": "10-48550-arxiv-2406-06511",
       "doi": "10.48550/arXiv.2406.06511",
       "title": "Quantifying fault tolerant simulation of strongly correlated systems using the Fermi-Hubbard model",
-      "authors": [
-        "Agrawal, A.A.",
-        "Job, J.",
-        "Wilson, T.L.",
-        "Saadatmand, S.N.",
-        "Hodson, M.J.",
-        "Mutus, J.Y.",
-        "et al."
+      "authorIds": [
+        "a9",
+        "a366",
+        "a781",
+        "a643",
+        "a317",
+        "a547",
+        "a827"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "fault tolerance",
-        "quantum simulation"
+        "fault-tolerance",
+        "quantum-simulation"
       ],
       "status": "to-read",
       "citations": 18
@@ -2870,21 +2870,21 @@
       "id": "10-48550-arxiv-2406-06335",
       "doi": "10.48550/arXiv.2406.06335",
       "title": "Feasibility of accelerating homogeneous catalyst discovery with fault-tolerant quantum computers",
-      "authors": [
-        "Bellonzi, N.",
-        "Kunitsa, A.",
-        "Cantin, J.T.",
-        "Campos-Gonzalez-Angulo, J.A.",
-        "Radin, M.D.",
-        "Zhou, Y.",
-        "et al."
+      "authorIds": [
+        "a67",
+        "a424",
+        "a126",
+        "a124",
+        "a607",
+        "a818",
+        "a827"
       ],
       "year": 2024,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "fault tolerance",
-        "quantum chemistry"
+        "fault-tolerance",
+        "quantum-chemistry"
       ],
       "status": "to-read",
       "citations": 16
@@ -2893,22 +2893,22 @@
       "id": "10-1021-acs-jctc-5c00114",
       "doi": "10.1021/acs.jctc.5c00114",
       "title": "Toward Quantum-Centric Simulations of Extended Molecules: Sample-Based Quantum Diagonalization Enhanced with Density Matrix Embedding Theory",
-      "authors": [
-        "Shajan, A.",
-        "Kaliakin, D.",
-        "Mitra, A.",
-        "Moreno, J.R.",
-        "Li, Z.",
-        "Motta, M.",
-        "et al."
+      "authorIds": [
+        "a675",
+        "a378",
+        "a526",
+        "a536",
+        "a457",
+        "a540",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Journal of Chemical Theory and Computation",
-      "keywords": [
+      "journalId": "j60",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
-        "quantum simulation",
-        "quantum diagonalization"
+        "quantum-chemistry",
+        "quantum-simulation",
+        "quantum-diagonalization"
       ],
       "status": "to-read",
       "citations": 75
@@ -2917,21 +2917,21 @@
       "id": "10-1038-s42254-025-00813-9",
       "doi": "10.1038/s42254-025-00813-9",
       "title": "Barren plateaus in variational quantum computing",
-      "authors": [
-        "Larocca, M.",
-        "Thanasilp, S.",
-        "Wang, S.",
-        "Sharma, K.",
-        "Biamonte, J.",
-        "Coles, P.J.",
-        "et al."
+      "authorIds": [
+        "a437",
+        "a725",
+        "a760",
+        "a676",
+        "a80",
+        "a174",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Nature Reviews Physics",
-      "keywords": [
+      "journalId": "j66",
+      "keywordIds": [
         "algorithms",
-        "variational algorithms",
-        "quantum algorithms",
+        "variational-algorithms",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -2941,21 +2941,21 @@
       "id": "10-1126-sciadv-adu9991",
       "doi": "10.1126/sciadv.adu9991",
       "title": "Chemistry beyond the scale of exact diagonalization on a quantum-centric supercomputer",
-      "authors": [
-        "Robledo-Moreno, J.",
-        "Motta, M.",
-        "Haas, H.",
-        "Javadi-Abhari, A.",
-        "Jurcevic, P.",
-        "Kirby, W.",
-        "et al."
+      "authorIds": [
+        "a629",
+        "a540",
+        "a300",
+        "a356",
+        "a375",
+        "a407",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Science Advances",
-      "keywords": [
-        "quantum chemistry",
-        "hpc integration",
-        "quantum diagonalization"
+      "journalId": "j82",
+      "keywordIds": [
+        "quantum-chemistry",
+        "hpc-integration",
+        "quantum-diagonalization"
       ],
       "status": "to-read",
       "citations": 80
@@ -2964,21 +2964,21 @@
       "id": "10-48550-arxiv-2511-00224",
       "doi": "10.48550/arXiv.2511.00224",
       "title": "Closed-loop calculations of electronic structure on a quantum processor and a classical supercomputer at full scale",
-      "authors": [
-        "Shirakawa, T.",
-        "Robledo-Moreno, J.",
-        "Itoko, T.",
-        "Tripathi, V.",
-        "Ueda, K.",
-        "Kawashima, Y.",
-        "et al."
+      "authorIds": [
+        "a680",
+        "a629",
+        "a348",
+        "a735",
+        "a741",
+        "a389",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "hpc integration",
-        "quantum algorithms",
-        "quantum chemistry"
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration",
+        "quantum-algorithms",
+        "quantum-chemistry"
       ],
       "status": "to-read",
       "citations": 21
@@ -2987,16 +2987,16 @@
       "id": "10-48550-arxiv-2511-15969",
       "doi": "10.48550/arXiv.2511.15969",
       "title": "A primer on quantum machine learning",
-      "authors": [
-        "Chang, S.Y.",
-        "Cerezo, M."
+      "authorIds": [
+        "a143",
+        "a137"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum machine learning",
-        "quantum algorithms",
+        "quantum-machine-learning",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -3006,17 +3006,17 @@
       "id": "10-48550-arxiv-2512-12753",
       "doi": "10.48550/arXiv.2512.12753",
       "title": "Basis Adaptive Algorithm for Quantum Many-Body Systems on Quantum Computers",
-      "authors": [
-        "Biswas, A.",
-        "Ghosh, S.",
-        "Majumdar, R.",
-        "Rahaman, M.",
-        "Kumar, M."
+      "authorIds": [
+        "a85",
+        "a267",
+        "a490",
+        "a609",
+        "a422"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum algorithms"
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3025,16 +3025,16 @@
       "id": "10-48550-arxiv-2510-02280",
       "doi": "10.48550/arXiv.2510.02280",
       "title": "An efficient quantum algorithm for computing S-units and its applications",
-      "authors": [
-        "Biasse, J.",
-        "Song, F."
+      "authorIds": [
+        "a81",
+        "a695"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum algorithms",
-        "quantum cryptanalysis"
+        "quantum-algorithms",
+        "quantum-cryptanalysis"
       ],
       "status": "to-read",
       "citations": 1
@@ -3043,15 +3043,15 @@
       "id": "10-1016-j-future-2024-107480",
       "doi": "10.1016/j.future.2024.107480",
       "title": "Quantum resource estimation for large scale quantum algorithms",
-      "authors": [
-        "Gheorghiu, V.",
-        "Mosca, M."
+      "authorIds": [
+        "a266",
+        "a539"
       ],
       "year": 2025,
-      "journal": "Future Generation Computer Systems",
-      "keywords": [
+      "journalId": "j24",
+      "keywordIds": [
         "scalability",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 23
@@ -3060,16 +3060,16 @@
       "id": "10-48550-arxiv-2509-21509",
       "doi": "10.48550/arXiv.2509.21509",
       "title": "Quantum algorithms for solving a drift-diffusion equation: analysing circuit depths",
-      "authors": [
-        "Devereux, E.",
-        "Datta, A."
+      "authorIds": [
+        "a197",
+        "a187"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum circuits",
-        "quantum algorithms"
+        "quantum-circuits",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3078,22 +3078,22 @@
       "id": "10-48550-arxiv-2506-22408",
       "doi": "10.48550/arXiv.2506.22408",
       "title": "Quantum-Classical Auxiliary Field Quantum Monte Carlo with Matchgate Shadows on Trapped Ion Quantum Computers",
-      "authors": [
-        "Zhao, L.",
-        "Goings, J.J.",
-        "Aboumrad, W.",
-        "Arrasmith, A.",
-        "Calderin, L.",
-        "Churchill, S.",
-        "et al."
+      "authorIds": [
+        "a813",
+        "a277",
+        "a2",
+        "a35",
+        "a120",
+        "a164",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "trapped-ion qubits",
-        "quantum algorithms",
-        "quantum chemistry"
+        "trapped-ion-qubits",
+        "quantum-algorithms",
+        "quantum-chemistry"
       ],
       "status": "to-read",
       "citations": 9
@@ -3102,21 +3102,21 @@
       "id": "10-1038-s44386-025-00033-2",
       "doi": "10.1038/s44386-025-00033-2",
       "title": "Quantum-machine-assisted drug discovery",
-      "authors": [
-        "Zhou, Y.",
-        "Chen, J.",
-        "Cheng, J.",
-        "Cao, X.",
-        "Zhang, Y.",
-        "Karemore, G.",
-        "et al."
+      "authorIds": [
+        "a818",
+        "a150",
+        "a154",
+        "a129",
+        "a811",
+        "a383",
+        "a827"
       ],
       "year": 2025,
-      "journal": "npj Drug Discovery",
-      "keywords": [
+      "journalId": "j99",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
-        "quantum algorithms"
+        "quantum-chemistry",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3125,22 +3125,22 @@
       "id": "10-1021-acs-jctc-5c01038",
       "doi": "10.1021/acs.jctc.5c01038",
       "title": "A Perspective on Quantum Computing Applications in Quantum Chemistry Using 25–100 Logical Qubits",
-      "authors": [
-        "Alexeev, Y.",
-        "Batista, V.S.",
-        "Bauman, N.",
-        "Bertels, L.",
-        "Claudino, D.",
-        "Dutta, R.",
-        "et al."
+      "authorIds": [
+        "a14",
+        "a57",
+        "a59",
+        "a73",
+        "a170",
+        "a211",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Journal of Chemical Theory and Computation",
-      "keywords": [
+      "journalId": "j60",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
+        "quantum-chemistry",
         "survey",
-        "qubit hardware"
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 8
@@ -3149,17 +3149,17 @@
       "id": "10-48550-arxiv-2406-09340",
       "doi": "10.48550/arXiv.2406.09340",
       "title": "Prospects for NMR Spectral Prediction on Fault-Tolerant Quantum Computers",
-      "authors": [
-        "Elenewski, J.E.",
-        "Camara, C.M.",
-        "Kalev, A."
+      "authorIds": [
+        "a218",
+        "a121",
+        "a377"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "fault tolerance",
-        "quantum algorithms"
+        "fault-tolerance",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 7
@@ -3168,20 +3168,20 @@
       "id": "10-48550-arxiv-2406-06323",
       "doi": "10.48550/arXiv.2406.06323",
       "title": "Detailed assessment of calculating drag force with quantum computers: Explicit time-evolution precludes exponential advantage for nonlinear differential equations",
-      "authors": [
-        "Penuel, J.",
-        "Katabarwa, A.",
-        "Johnson, P.D.",
-        "Kuklinski, P.",
-        "Rempfer, B.",
-        "Farquhar, C.",
-        "et al."
+      "authorIds": [
+        "a588",
+        "a385",
+        "a369",
+        "a421",
+        "a621",
+        "a231",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 6
@@ -3190,21 +3190,21 @@
       "id": "10-48550-arxiv-2501-09702",
       "doi": "10.48550/arXiv.2501.09702",
       "title": "Quantum-Centric Algorithm for Sample-Based Krylov Diagonalization",
-      "authors": [
-        "Yu, J.",
-        "Moreno, J.R.",
-        "Iosue, J.T.",
-        "Bertels, L.",
-        "Claudino, D.",
-        "Fuller, B.",
-        "et al."
+      "authorIds": [
+        "a802",
+        "a536",
+        "a344",
+        "a73",
+        "a170",
+        "a252",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum diagonalization",
-        "quantum algorithms"
+        "quantum-diagonalization",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 56
@@ -3213,20 +3213,20 @@
       "id": "arxiv-org-abs-2506-20825v1",
       "doi": "https://arxiv.org/abs/2506.20825v1",
       "title": "Quantum-Centric Alchemical Free Energy Calculations",
-      "authors": [
-        "Bazayeva, M.",
-        "Li, Z.",
-        "Kaliakin, D.",
-        "Liang, F.",
-        "Shajan, A.",
-        "Das, S.",
-        "et al."
+      "authorIds": [
+        "a60",
+        "a457",
+        "a378",
+        "a458",
+        "a675",
+        "a186",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Journal of Chemical Theory and Computation",
-      "keywords": [
+      "journalId": "j60",
+      "keywordIds": [
         "applications",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 5
@@ -3235,15 +3235,15 @@
       "id": "10-1088-2058-9565-ae2887",
       "doi": "10.1088/2058-9565/ae2887",
       "title": "Beyond asymptotic reasoning: the practicalities of a quantum ground state projector based on the wall-Chebyshev expansion",
-      "authors": [
-        "Filip, M.",
-        "Fitzpatrick, N."
+      "authorIds": [
+        "a239",
+        "a241"
       ],
       "year": 2025,
-      "journal": "Quantum Science and Technology",
-      "keywords": [
+      "journalId": "j77",
+      "keywordIds": [
         "benchmarking",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3252,20 +3252,20 @@
       "id": "10-1021-acsenergylett-5c04009",
       "doi": "10.1021/acsenergylett.5c04009",
       "title": "Harnessing Quantum Computing for Energy Materials: Opportunities and Challenges",
-      "authors": [
-        "Kim, S.",
-        "Suh, I.",
-        "Humble, T.S.",
-        "Beck, T.",
-        "Lee, E.",
-        "Luo, T."
+      "authorIds": [
+        "a403",
+        "a710",
+        "a335",
+        "a63",
+        "a445",
+        "a481"
       ],
       "year": 2026,
-      "journal": "ACS Energy Letters",
-      "keywords": [
+      "journalId": "j14",
+      "keywordIds": [
         "vision",
-        "energy materials",
-        "quantum algorithms"
+        "energy-materials",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 2
@@ -3274,22 +3274,22 @@
       "id": "10-48550-arxiv-2512-06858",
       "doi": "10.48550/arXiv.2512.06858",
       "title": "Physics Informed Generative Machine Learning for Accelerated Quantum-centric Supercomputing",
-      "authors": [
-        "Patra, C.",
-        "Mondal, D.",
-        "Halder, S.",
-        "Halder, D.",
-        "Laskar, M.R.",
-        "Goel, R.",
-        "et al."
+      "authorIds": [
+        "a581",
+        "a533",
+        "a302",
+        "a301",
+        "a438",
+        "a274",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum machine learning",
-        "hpc integration",
-        "quantum algorithms",
-        "quantum chemistry"
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "hpc-integration",
+        "quantum-algorithms",
+        "quantum-chemistry"
       ],
       "status": "to-read",
       "citations": 0
@@ -3298,21 +3298,21 @@
       "id": "10-48550-arxiv-2512-17130",
       "doi": "10.48550/arXiv.2512.17130",
       "title": "Molecular Quantum Computations on a Protein",
-      "authors": [
-        "Shajan, A.",
-        "Kaliakin, D.",
-        "Liang, F.",
-        "Pellegrini, T.",
-        "Doga, H.",
-        "Bhowmik, S.",
-        "et al."
+      "authorIds": [
+        "a675",
+        "a378",
+        "a458",
+        "a587",
+        "a202",
+        "a79",
+        "a827"
       ],
       "year": 2026,
-      "journal": "Journal of Chemical Theory and Computation",
-      "keywords": [
+      "journalId": "j60",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
-        "quantum algorithms"
+        "quantum-chemistry",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 6
@@ -3321,21 +3321,21 @@
       "id": "10-48550-arxiv-2601-16169",
       "doi": "10.48550/arXiv.2601.16169",
       "title": "Scaling Sample-Based Quantum Diagonalization on GPU-Accelerated Systems using OpenMP Offload",
-      "authors": [
-        "Walkup, R.",
-        "Jäykkä, J.",
-        "Pasichnyk, I.",
-        "Streeter, Z.",
-        "Świrydowicz, K.",
-        "Tukiainen, M.",
-        "et al."
+      "authorIds": [
+        "a755",
+        "a376",
+        "a580",
+        "a704",
+        "a829",
+        "a737",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "gpu acceleration",
-        "quantum diagonalization",
-        "quantum algorithms"
+      "journalId": "j98",
+      "keywordIds": [
+        "gpu-acceleration",
+        "quantum-diagonalization",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3344,19 +3344,19 @@
       "id": "10-48550-arxiv-2601-16637",
       "doi": "10.48550/arXiv.2601.16637",
       "title": "GPU-Accelerated Selected Basis Diagonalization with Thrust for SQD-based Algorithms",
-      "authors": [
-        "Doi, J.",
-        "Shirakawa, T.",
-        "Kawashima, Y.",
-        "Yunoki, S.",
-        "Horii, H."
+      "authorIds": [
+        "a203",
+        "a680",
+        "a389",
+        "a803",
+        "a323"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "gpu acceleration",
-        "quantum diagonalization",
-        "quantum algorithms"
+      "journalId": "j98",
+      "keywordIds": [
+        "gpu-acceleration",
+        "quantum-diagonalization",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3365,16 +3365,16 @@
       "id": "10-48550-arxiv-2602-01353",
       "doi": "10.48550/arXiv.2602.01353",
       "title": "Methods for non-variational heuristic quantum optimisation",
-      "authors": [
-        "Ferguson, S.",
-        "Wallden, P."
+      "authorIds": [
+        "a237",
+        "a756"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "variational algorithms",
-        "optimization algorithms"
+        "variational-algorithms",
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 1
@@ -3383,21 +3383,21 @@
       "id": "10-48550-arxiv-2602-06171",
       "doi": "10.48550/arXiv.2602.06171",
       "title": "Quantum-enhanced Markov Chain Monte Carlo for Combinatorial Optimization",
-      "authors": [
-        "Marshall, K.V.",
-        "Egger, D.J.",
-        "Garn, M.",
-        "Schiavello, F.",
-        "Brandhofer, S.",
-        "Zoufal, C.",
-        "et al."
+      "authorIds": [
+        "a498",
+        "a216",
+        "a262",
+        "a664",
+        "a103",
+        "a825",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "optimization algorithms",
-        "quantum algorithms"
+        "optimization-algorithms",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 3
@@ -3406,21 +3406,21 @@
       "id": "10-48550-arxiv-2605-01138",
       "doi": "10.48550/arXiv.2605.01138",
       "title": "Crossing the 12,000-atom barrier with heterogeneous quantum-classical supercomputing: quantum chemistry of protein-ligand complexes",
-      "authors": [
-        "Jr., K.M.M.",
-        "Shajan, A.",
-        "Kaliakin, D.",
-        "Liang, F.",
-        "Otsuka, Y.",
-        "Shirakawa, T.",
-        "et al."
+      "authorIds": [
+        "a374",
+        "a675",
+        "a378",
+        "a458",
+        "a570",
+        "a680",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
-        "hpc integration"
+        "quantum-chemistry",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 2
@@ -3429,15 +3429,15 @@
       "id": "10-48550-arxiv-2606-14822",
       "doi": "10.48550/arXiv.2606.14822",
       "title": "Quantum Machine Learning for Industrial Applications",
-      "authors": [
-        "Monbroussou, L."
+      "authorIds": [
+        "a532"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum machine learning",
-        "quantum algorithms"
+        "quantum-machine-learning",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3446,20 +3446,20 @@
       "id": "10-1038-s44310-026-00114-8",
       "doi": "10.1038/s44310-026-00114-8",
       "title": "Recent progress towards large-scale integrated photonic quantum computation",
-      "authors": [
-        "Zhu, H.",
-        "Chen, T.",
-        "Ma, H.",
-        "Zhao, Z.",
-        "Guo, J.",
-        "Liang, Q.",
-        "et al."
+      "authorIds": [
+        "a821",
+        "a151",
+        "a486",
+        "a815",
+        "a294",
+        "a460",
+        "a827"
       ],
       "year": 2026,
-      "journal": "npj Nanophotonics",
-      "keywords": [
+      "journalId": "j100",
+      "keywordIds": [
         "applications",
-        "photonic quantum computing",
+        "photonic-quantum-computing",
         "survey"
       ],
       "status": "to-read",
@@ -3469,20 +3469,20 @@
       "id": "10-1103-6r9l-lynr",
       "doi": "10.1103/6r9l-lynr",
       "title": "Grand Challenge of Quantum Applications",
-      "authors": [
-        "Babbush, R.",
-        "King, R.",
-        "Boixo, S.",
-        "Huggins, W.",
-        "Khattar, T.",
-        "Low, G.H.",
-        "et al."
+      "authorIds": [
+        "a45",
+        "a405",
+        "a92",
+        "a332",
+        "a398",
+        "a474",
+        "a827"
       ],
       "year": 2026,
-      "journal": "PRX Quantum",
-      "keywords": [
+      "journalId": "j69",
+      "keywordIds": [
         "vision",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 35
@@ -3491,16 +3491,16 @@
       "id": "10-1002-qute-70310",
       "doi": "10.1002/qute.70310",
       "title": "From Quantum Algorithm Primitives to Design Patterns: A Unified Framework for NISQ and Fault-Tolerant Regimes",
-      "authors": [
-        "Miriyala, S.",
-        "Chirra, V.R."
+      "authorIds": [
+        "a522",
+        "a158"
       ],
       "year": 2026,
-      "journal": "Advanced Quantum Technologies",
-      "keywords": [
+      "journalId": "j15",
+      "keywordIds": [
         "vision",
-        "fault tolerance",
-        "quantum algorithms",
+        "fault-tolerance",
+        "quantum-algorithms",
         "survey"
       ],
       "status": "to-read",
@@ -3510,16 +3510,16 @@
       "id": "10-48550-arxiv-2603-19081",
       "doi": "10.48550/arXiv.2603.19081",
       "title": "Utility-scale quantum computational chemistry",
-      "authors": [
-        "Castaldo, D.",
-        "Reiher, M."
+      "authorIds": [
+        "a134",
+        "a618"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
-        "quantum algorithms"
+        "quantum-chemistry",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3528,17 +3528,17 @@
       "id": "10-3390-quantum8010026",
       "doi": "10.3390/quantum8010026",
       "title": "A Technical Review of Quantum Computing Use Cases for\nFinance and Economics",
-      "authors": [
-        "Hlatshwayo, M.Q.",
-        "Babel, M.",
-        "Islas-Sanchez, D.",
-        "Georgopoulos, K."
+      "authorIds": [
+        "a316",
+        "a46",
+        "a347",
+        "a265"
       ],
       "year": 2026,
-      "journal": "Quantum Reports",
-      "keywords": [
+      "journalId": "j76",
+      "keywordIds": [
         "applications",
-        "finance applications",
+        "finance-applications",
         "survey"
       ],
       "status": "to-read",
@@ -3548,21 +3548,21 @@
       "id": "10-48550-arxiv-2406-06015",
       "doi": "10.48550/arXiv.2406.06015",
       "title": "Superconducting qubits in the millions: the potential and limitations of modularity",
-      "authors": [
-        "Saadatmand, S.N.",
-        "Wilson, T.L.",
-        "Hodson, M.J.",
-        "Field, M.",
-        "Devitt, S.J.",
-        "Vijayan, M.K.",
-        "et al."
+      "authorIds": [
+        "a643",
+        "a781",
+        "a317",
+        "a238",
+        "a198",
+        "a749",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "superconducting qubits",
-        "qubit hardware"
+        "superconducting-qubits",
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 4
@@ -3571,20 +3571,20 @@
       "id": "10-48550-arxiv-2406-06625",
       "doi": "10.48550/arXiv.2406.06625",
       "title": "Potential Applications of Quantum Computing at Los Alamos National Laboratory",
-      "authors": [
-        "Bärtschi, A.",
-        "Caravelli, F.",
-        "Coffrin, C.",
-        "Colina, J.",
-        "Eidenbenz, S.",
-        "Jayakumar, A.",
-        "et al."
+      "authorIds": [
+        "a117",
+        "a131",
+        "a172",
+        "a175",
+        "a217",
+        "a357",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum algorithms",
+        "quantum-algorithms",
         "vision"
       ],
       "status": "to-read",
@@ -3594,22 +3594,22 @@
       "id": "10-48550-arxiv-2602-23976",
       "doi": "10.48550/arXiv.2602.23976",
       "title": "Large-scale portfolio optimization on a trapped-ion quantum computer",
-      "authors": [
-        "Cadavid, A.G.",
-        "Kaushik, A.",
-        "Chandarana, P.",
-        "Lopez-Ruiz, M.A.",
-        "Dev, G.",
-        "Aboumrad, W.",
-        "et al."
+      "authorIds": [
+        "a119",
+        "a386",
+        "a142",
+        "a473",
+        "a196",
+        "a2",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "trapped-ion qubits",
-        "finance applications",
-        "optimization algorithms"
+        "trapped-ion-qubits",
+        "finance-applications",
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 1
@@ -3618,15 +3618,15 @@
       "id": "10-1109-qcnc69040-2026-00163",
       "doi": "10.1109/QCNC69040.2026.00163",
       "title": "Active Sampling Sample-Based Quantum Diagonalization from Finite-Shot Measurements",
-      "authors": [
-        "Miura, R."
+      "authorIds": [
+        "a528"
       ],
       "year": 2026,
-      "journal": "International Conference on Quantum Communications, Networking, and Computing",
-      "keywords": [
+      "journalId": "j51",
+      "keywordIds": [
         "applications",
-        "quantum diagonalization",
-        "quantum algorithms"
+        "quantum-diagonalization",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3635,17 +3635,17 @@
       "id": "10-48550-arxiv-2605-29521",
       "doi": "10.48550/arXiv.2605.29521",
       "title": "Ground-state estimation of the Heisenberg model on frustrated lattices with Sample-based Krylov Quantum Diagonalization",
-      "authors": [
-        "Brooks, C.",
-        "Zou, H.",
-        "Rhone, T.D."
+      "authorIds": [
+        "a110",
+        "a824",
+        "a623"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "algorithms",
-        "quantum diagonalization",
-        "quantum algorithms"
+        "quantum-diagonalization",
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3654,17 +3654,17 @@
       "id": "10-2139-ssrn-6391500",
       "doi": "10.2139/ssrn.6391500",
       "title": "Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows on Cloud Quantum Simulators",
-      "authors": [
-        "Ganguly, K."
+      "authorIds": [
+        "a255"
       ],
       "year": 2026,
-      "journal": "SSRN",
-      "keywords": [
+      "journalId": "j81",
+      "keywordIds": [
         "scheduling",
-        "workflow orchestration",
-        "cloud computing",
-        "finance applications",
-        "optimization algorithms"
+        "workflow-orchestration",
+        "cloud-computing",
+        "finance-applications",
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3673,18 +3673,18 @@
       "id": "10-48550-arxiv-2602-11384",
       "doi": "10.48550/arXiv.2602.11384",
       "title": "Recent Developments in VQE: Survey and Benchmarking",
-      "authors": [
-        "Harville, T.",
-        "Khurana, R.",
-        "Grizzi, V.F.",
-        "Liu, C."
+      "authorIds": [
+        "a307",
+        "a399",
+        "a288",
+        "a464"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "survey",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 1
@@ -3693,16 +3693,16 @@
       "id": "10-48550-arxiv-2603-08395",
       "doi": "10.48550/arXiv.2603.08395",
       "title": "Experimental Realization of the Markov Chain Monte Carlo Algorithm on a Quantum Computer",
-      "authors": [
-        "Claudon, B.",
-        "Ramos-Calderer, S.",
-        "Piquemal, J."
+      "authorIds": [
+        "a171",
+        "a611",
+        "a597"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "benchmarking",
-        "quantum algorithms"
+        "quantum-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3711,22 +3711,22 @@
       "id": "10-48550-arxiv-2603-17790",
       "doi": "10.48550/arXiv.2603.17790",
       "title": "The Convergence Frontier: Integrating Machine Learning and High Performance Quantum Computing for Next-Generation Drug Discovery",
-      "authors": [
-        "Ansari, N.",
-        "Feniou, C.",
-        "Gouraud, N.",
-        "Loco, D.",
-        "Badreddine, S.",
-        "Claudon, B.",
-        "et al."
+      "authorIds": [
+        "a29",
+        "a236",
+        "a283",
+        "a469",
+        "a49",
+        "a171",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "applications",
-        "quantum chemistry",
-        "quantum machine learning",
-        "hpc integration"
+        "quantum-chemistry",
+        "quantum-machine-learning",
+        "hpc-integration"
       ],
       "status": "to-read",
       "citations": 0
@@ -3735,17 +3735,17 @@
       "id": "10-48550-arxiv-2604-08674",
       "doi": "10.48550/arXiv.2604.08674",
       "title": "The MQT Compiler Collection: A Blueprint for a Future-Proof Quantum-Classical Compilation Framework",
-      "authors": [
-        "Burgholzer, L.",
-        "Haag, D.",
-        "Stade, Y.",
-        "Rovara, D.",
-        "Hopf, P.",
-        "Wille, R."
+      "authorIds": [
+        "a115",
+        "a299",
+        "a700",
+        "a636",
+        "a322",
+        "a777"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
         "compilation"
       ],
@@ -3756,21 +3756,21 @@
       "id": "10-1145-3505636",
       "doi": "10.1145/3505636",
       "title": "OpenQASM 3: A Broader and Deeper Quantum Assembly Language",
-      "authors": [
-        "Cross, A.",
-        "Javadi-Abhari, A.",
-        "Alexander, T.",
-        "Beaudrap, N.D.",
-        "Bishop, L.S.",
-        "Heidel, S.",
-        "et al."
+      "authorIds": [
+        "a178",
+        "a356",
+        "a12",
+        "a61",
+        "a84",
+        "a310",
+        "a827"
       ],
       "year": 2022,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
+      "journalId": "j11",
+      "keywordIds": [
         "architecture",
         "compilation",
-        "quantum programming"
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 208
@@ -3779,18 +3779,18 @@
       "id": "lian-remme-alexander-weinert-andre-waschk-lukas-burgholzer-robert-wille",
       "doi": "Lian Remme, Alexander Weinert, Andre Waschk, Lukas Burgholzer, Robert Wille",
       "title": "Automatic De-Quantization of Quantum Programs Using Constant Propagation",
-      "authors": [
-        "Remme, L.",
-        "Weinert, A.",
-        "Waschk, A.",
-        "Burgholzer, L.",
-        "Wille, R."
+      "authorIds": [
+        "a620",
+        "a773",
+        "a765",
+        "a115",
+        "a777"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "compilation",
-        "optimization algorithms"
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -3799,18 +3799,18 @@
       "id": "10-11578-dc-20210603-2",
       "doi": "10.11578/dc.20210603.2",
       "title": "Berkeley Quantum Synthesis Toolkit (BQSKit) v1",
-      "authors": [
-        "Younis, E.",
-        "Iancu, C.C.",
-        "Lavrijsen, W.",
-        "Davis, M.",
-        "Smith, E."
+      "authorIds": [
+        "a801",
+        "a341",
+        "a442",
+        "a189",
+        "a692"
       ],
       "year": 2021,
-      "journal": "USDOE",
-      "keywords": [
+      "journalId": "j90",
+      "keywordIds": [
         "compilation",
-        "quantum programming"
+        "quantum-programming"
       ],
       "status": "to-read",
       "citations": 102
@@ -3819,21 +3819,21 @@
       "id": "10-1038-s43588-025-00792-y",
       "doi": "10.1038/s43588-025-00792-y",
       "title": "Benchmarking the performance of quantum computing software for quantum circuit creation, manipulation and compilation",
-      "authors": [
-        "Nation, P.D.",
-        "Saki, A.A.",
-        "Brandhofer, S.",
-        "Bello, L.",
-        "Garion, S.",
-        "Treinish, M.",
-        "et al."
+      "authorIds": [
+        "a550",
+        "a649",
+        "a103",
+        "a66",
+        "a260",
+        "a733",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Nature Computational Science",
-      "keywords": [
+      "journalId": "j65",
+      "keywordIds": [
         "benchmarking",
         "compilation",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 26
@@ -3842,17 +3842,17 @@
       "id": "10-1109-qce53715-2022-00068",
       "doi": "10.1109/QCE53715.2022.00068",
       "title": "Quantum Circuit Optimization and Transpilation via Parameterized Circuit Instantiation",
-      "authors": [
-        "Younis, E.",
-        "Iancu, C."
+      "authorIds": [
+        "a801",
+        "a340"
       ],
       "year": 2022,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "architecture",
         "compilation",
-        "optimization algorithms",
-        "quantum circuits"
+        "optimization-algorithms",
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 40
@@ -3861,19 +3861,19 @@
       "id": "10-1109-qce57702-2023-00116",
       "doi": "10.1109/QCE57702.2023.00116",
       "title": "Superstaq: Deep Optimization of Quantum Programs",
-      "authors": [
-        "Campbell, C.",
-        "Chong, F.T.",
-        "Dahl, D.",
-        "Frederick, P.",
-        "Goiporia, P.",
-        "Gokhale, P."
+      "authorIds": [
+        "a122",
+        "a161",
+        "a181",
+        "a247",
+        "a278",
+        "a279"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "middleware",
-        "optimization algorithms",
+        "optimization-algorithms",
         "compilation"
       ],
       "status": "to-read",
@@ -3883,17 +3883,17 @@
       "id": "10-1109-isca59077-2024-00029",
       "doi": "10.1109/ISCA59077.2024.00029",
       "title": "Tetris: A Compilation Framework for VQA Applications in Quantum Computing",
-      "authors": [
-        "Jin, Y.",
-        "Li, Z.",
-        "Hua, F.",
-        "Hao, T.",
-        "Zhou, H.",
-        "Huang, Y."
+      "authorIds": [
+        "a364",
+        "a457",
+        "a328",
+        "a304",
+        "a817",
+        "a330"
       ],
       "year": 2024,
-      "journal": "ACM/IEEE Annual International Symposium on Computer Architecture",
-      "keywords": [
+      "journalId": "j13",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -3903,19 +3903,19 @@
       "id": "10-1109-qce57702-2023-00090",
       "doi": "10.1109/QCE57702.2023.00090",
       "title": "Tackling the Qubit Mapping Problem with Permutation-Aware Synthesis",
-      "authors": [
-        "Liu, J.",
-        "Younis, E.",
-        "Weiden, M.",
-        "Hovland, P.",
-        "Kubiatowicz, J.",
-        "Iancu, C."
+      "authorIds": [
+        "a466",
+        "a801",
+        "a772",
+        "a325",
+        "a419",
+        "a340"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "compilation",
-        "qubit hardware"
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -3924,19 +3924,19 @@
       "id": "10-1145-3695053-3731020",
       "doi": "10.1145/3695053.3731020",
       "title": "QR-Map: A Map-Based Approach to Quantum Circuit Abstraction for Qubit Reuse Optimization",
-      "authors": [
-        "Kim, H.",
-        "Jang, E.",
-        "Choi, S.",
-        "Kim, Y.",
-        "Ro, W.W."
+      "authorIds": [
+        "a401",
+        "a352",
+        "a160",
+        "a404",
+        "a627"
       ],
       "year": 2025,
-      "journal": "ACM International Symposium on Computer Architecture",
-      "keywords": [
-        "optimization algorithms",
-        "quantum circuits",
-        "qubit hardware"
+      "journalId": "j4",
+      "keywordIds": [
+        "optimization-algorithms",
+        "quantum-circuits",
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -3945,15 +3945,15 @@
       "id": "10-21105-joss-07478",
       "doi": "10.21105/joss.07478",
       "title": "MQT Core: The Backbone of the Munich Quantum\nToolkit (MQT)",
-      "authors": [
-        "Burgholzer, L.",
-        "Stade, Y.",
-        "Peham, T.",
-        "Wille, R."
+      "authorIds": [
+        "a115",
+        "a700",
+        "a585",
+        "a777"
       ],
       "year": 2025,
-      "journal": "Journal of Open Source Software",
-      "keywords": [
+      "journalId": "j61",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -3963,20 +3963,20 @@
       "id": "10-1145-3656019-3676899",
       "doi": "10.1145/3656019.3676899",
       "title": "Recompiling QAOA Circuits on Various Rotational Directions",
-      "authors": [
-        "Jang, E.",
-        "Ha, D.",
-        "Choi, S.",
-        "Kim, Y.",
-        "Kwon, J.",
-        "Lee, Y.",
-        "et al."
+      "authorIds": [
+        "a352",
+        "a298",
+        "a160",
+        "a404",
+        "a426",
+        "a446",
+        "a827"
       ],
       "year": 2024,
-      "journal": "International Conference on Parallel Architectures and Compilation Techniques",
-      "keywords": [
+      "journalId": "j50",
+      "keywordIds": [
         "compilation",
-        "quantum optimization"
+        "quantum-optimization"
       ],
       "status": "to-read",
       "citations": 0
@@ -3985,16 +3985,16 @@
       "id": "10-1109-qce60285-2024-00117",
       "doi": "10.1109/QCE60285.2024.00117",
       "title": "An Abstraction Hierarchy Toward Productive Quantum Programming",
-      "authors": [
-        "Matteo, O.D.",
-        "Núñez-Corrales, S.",
-        "Stęchły, M.",
-        "Reinhardt, S.P.",
-        "Mattson, T."
+      "authorIds": [
+        "a503",
+        "a566",
+        "a707",
+        "a619",
+        "a505"
       ],
       "year": 2024,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4004,19 +4004,19 @@
       "id": "10-1109-qce57702-2023-00093",
       "doi": "10.1109/QCE57702.2023.00093",
       "title": "Improving Quantum Circuit Synthesis with Machine Learning",
-      "authors": [
-        "Weiden, M.",
-        "Younis, E.",
-        "Kalloor, J.",
-        "Kubiatowicz, J.",
-        "Iancu, C."
+      "authorIds": [
+        "a772",
+        "a801",
+        "a379",
+        "a419",
+        "a340"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
-        "quantum machine learning",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-machine-learning",
         "compilation",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4025,15 +4025,15 @@
       "id": "10-3390-e26121129",
       "doi": "10.3390/e26121129",
       "title": "Transpiling Quantum Assembly Language Circuits to a Qudit Form",
-      "authors": [
-        "Drozhzhin, D.A.",
-        "Nikolaeva, A.S.",
-        "Kiktenko, E.O.",
-        "Fedorov, A.K."
+      "authorIds": [
+        "a208",
+        "a559",
+        "a400",
+        "a234"
       ],
       "year": 2024,
-      "journal": "Entropy",
-      "keywords": [
+      "journalId": "j20",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4043,17 +4043,17 @@
       "id": "10-1145-3779212-3790208",
       "doi": "10.1145/3779212.3790208",
       "title": "Reconfigurable Quantum Instruction Set Computers for High Performance Attainable on Hardware",
-      "authors": [
-        "Yang, Z.",
-        "Ding, D.",
-        "Ye, Q.",
-        "Huang, C.",
-        "Chen, J.",
-        "Xie, Y."
+      "authorIds": [
+        "a796",
+        "a200",
+        "a798",
+        "a329",
+        "a150",
+        "a791"
       ],
       "year": 2026,
-      "journal": "ACM International Conference on Architectural Support for Programming Languages and Operating Systems",
-      "keywords": [
+      "journalId": "j3",
+      "keywordIds": [
         "compilation",
         "architecture"
       ],
@@ -4064,16 +4064,16 @@
       "id": "10-1109-qce57702-2023-00096",
       "doi": "10.1109/QCE57702.2023.00096",
       "title": "QFactor: A Domain-Specific Optimizer for Quantum Circuit Instantiation",
-      "authors": [
-        "Kukliansky, A.",
-        "Younis, E.",
-        "Cincio, L.",
-        "Iancu, C."
+      "authorIds": [
+        "a420",
+        "a801",
+        "a166",
+        "a340"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
-        "quantum circuits",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-circuits",
         "compilation"
       ],
       "status": "to-read",
@@ -4083,16 +4083,16 @@
       "id": "10-1109-hpca57654-2024-00060",
       "doi": "10.1109/HPCA57654.2024.00060",
       "title": "MIRAGE: Quantum Circuit Decomposition and Routing Collaborative Design Using Mirror Gates",
-      "authors": [
-        "McKinney, E.",
-        "Hatridge, M.",
-        "Jones, A.K."
+      "authorIds": [
+        "a511",
+        "a308",
+        "a371"
       ],
       "year": 2024,
-      "journal": "IEEE International Symposium on High-Performance Computer Architecture",
-      "keywords": [
+      "journalId": "j30",
+      "keywordIds": [
         "compilation",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4101,19 +4101,19 @@
       "id": "10-48550-arxiv-2504-03429",
       "doi": "10.48550/arXiv.2504.03429",
       "title": "Optimizing Quantum Circuits via ZX Diagrams using Reinforcement Learning and Graph Neural Networks",
-      "authors": [
-        "Mattick, A.",
-        "Periyasamy, M.",
-        "Ufrecht, C.",
-        "Dubey, A.Y.",
-        "Mutschler, C.",
-        "Plinge, A.",
-        "et al."
+      "authorIds": [
+        "a504",
+        "a589",
+        "a742",
+        "a209",
+        "a545",
+        "a598",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum machine learning",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-machine-learning",
         "compilation"
       ],
       "status": "to-read",
@@ -4123,18 +4123,18 @@
       "id": "10-48550-arxiv-2509-20663",
       "doi": "10.48550/arXiv.2509.20663",
       "title": "A Review on Quantum Circuit Optimization using ZX-Calculus",
-      "authors": [
-        "Fischbach, T.",
-        "Talbot, P.",
-        "Bouvry, P."
+      "authorIds": [
+        "a240",
+        "a720",
+        "a98"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "compilation",
-        "optimization algorithms",
+        "optimization-algorithms",
         "survey",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4143,21 +4143,21 @@
       "id": "10-48550-arxiv-2601-21629",
       "doi": "10.48550/arXiv.2601.21629",
       "title": "Reinforcement Learning for Adaptive Composition of Quantum Circuit Optimisation Passes",
-      "authors": [
-        "Mills, D.",
-        "Williams, I.",
-        "Swain, J.",
-        "Matos, G.",
-        "Rinaldi, E.",
-        "Koziell-Pipe, A."
+      "authorIds": [
+        "a521",
+        "a778",
+        "a716",
+        "a501",
+        "a625",
+        "a416"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum machine learning",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-machine-learning",
         "compilation",
-        "optimization algorithms",
-        "quantum circuits"
+        "optimization-algorithms",
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4166,15 +4166,15 @@
       "id": "10-48550-arxiv-2501-12470",
       "doi": "10.48550/arXiv.2501.12470",
       "title": "Efficient Compilation for Shuttling Trapped-Ion Machines via the Position Graph Architectural Abstraction",
-      "authors": [
-        "Bach, B.",
-        "Safro, I.",
-        "Younis, E."
+      "authorIds": [
+        "a48",
+        "a645",
+        "a801"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "trapped-ion qubits",
+      "journalId": "j98",
+      "keywordIds": [
+        "trapped-ion-qubits",
         "compilation"
       ],
       "status": "to-read",
@@ -4184,21 +4184,21 @@
       "id": "10-48550-arxiv-2505-16891",
       "doi": "10.48550/arXiv.2505.16891",
       "title": "Quantum Compiler Design for Qubit Mapping and Routing: A Cross-Architectural Survey of Superconducting, Trapped-Ion, and Neutral Atom Systems",
-      "authors": [
-        "Zhu, C.",
-        "Wu, X.",
-        "Yang, Z.",
-        "Wang, J.",
-        "Wu, A.",
-        "Zheng, S.",
-        "et al."
+      "authorIds": [
+        "a819",
+        "a790",
+        "a796",
+        "a758",
+        "a786",
+        "a816",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "trapped-ion qubits",
-        "superconducting qubits",
-        "neutral-atom qubits",
+      "journalId": "j98",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "superconducting-qubits",
+        "neutral-atom-qubits",
         "compilation",
         "survey"
       ],
@@ -4209,17 +4209,17 @@
       "id": "10-1109-tqe-2026-3696707",
       "doi": "10.1109/TQE.2026.3696707",
       "title": "ZAP: Zoned Architecture and Performant Compiler for Field-Programmable Atom Array",
-      "authors": [
-        "Huang, C.",
-        "Zhao, X.",
-        "Xu, H.",
-        "Zhuang, W.",
-        "Hu, M.",
-        "Liu, D.E."
+      "authorIds": [
+        "a329",
+        "a814",
+        "a793",
+        "a822",
+        "a326",
+        "a465"
       ],
       "year": 2026,
-      "journal": "IEEE Transactions on Quantum Engineering",
-      "keywords": [
+      "journalId": "j38",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4229,18 +4229,18 @@
       "id": "10-1145-3776720",
       "doi": "10.1145/3776720",
       "title": "Generating Compilers for Qubit Mapping and Routing",
-      "authors": [
-        "Molavi, A.",
-        "Xu, A.",
-        "Cecchetti, E.",
-        "Tannu, S.",
-        "Albarghouthi, A."
+      "authorIds": [
+        "a530",
+        "a792",
+        "a136",
+        "a721",
+        "a11"
       ],
       "year": 2026,
-      "journal": "ACM Transactions on Programming Languages",
-      "keywords": [
+      "journalId": "j10",
+      "keywordIds": [
         "compilation",
-        "qubit hardware"
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -4249,21 +4249,21 @@
       "id": "10-48550-arxiv-2504-17886",
       "doi": "10.48550/arXiv.2504.17886",
       "title": "TrapSIMD: SIMD-Aware Compiler Optimization for 2D Trapped-Ion Quantum Machines",
-      "authors": [
-        "Ruan, J.",
-        "Zhang, H.",
-        "Fang, X.",
-        "Li, A.",
-        "Campbell, W.C.",
-        "Hudson, E.",
-        "et al."
+      "authorIds": [
+        "a638",
+        "a810",
+        "a229",
+        "a450",
+        "a123",
+        "a331",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "trapped-ion qubits",
+      "journalId": "j98",
+      "keywordIds": [
+        "trapped-ion-qubits",
         "compilation",
-        "optimization algorithms"
+        "optimization-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -4272,14 +4272,14 @@
       "id": "10-48550-arxiv-2602-05166",
       "doi": "10.48550/arXiv.2602.05166",
       "title": "Quantum Sequential Circuits",
-      "authors": [
-        "Wang, D."
+      "authorIds": [
+        "a757"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "architecture",
-        "qubit hardware"
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -4288,18 +4288,18 @@
       "id": "10-1145-3773656-3773658",
       "doi": "10.1145/3773656.3773658",
       "title": "Integrating Quantum Software Tools with(in) MLIR",
-      "authors": [
-        "Hopf, P.",
-        "Ochoa, E.",
-        "Stade, Y.",
-        "Rovara, D.",
-        "Quetschlich, N.",
-        "Florea, I.A.",
-        "et al."
+      "authorIds": [
+        "a322",
+        "a568",
+        "a700",
+        "a636",
+        "a606",
+        "a243",
+        "a827"
       ],
       "year": 2026,
-      "journal": "Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region",
-      "keywords": [
+      "journalId": "j85",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4309,15 +4309,15 @@
       "id": "10-1109-qce65121-2025-00049",
       "doi": "10.1109/QCE65121.2025.00049",
       "title": "Is Circuit Depth Accurate for Comparing Quantum Circuit Runtimes?",
-      "authors": [
-        "Tremba, M.",
-        "Hovland, P.",
-        "Liu, J."
+      "authorIds": [
+        "a734",
+        "a325",
+        "a466"
       ],
       "year": 2025,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
-        "quantum circuits",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-circuits",
         "compilation"
       ],
       "status": "to-read",
@@ -4327,16 +4327,16 @@
       "id": "10-48550-arxiv-2603-19969",
       "doi": "10.48550/arXiv.2603.19969",
       "title": "Adaptive Parallelism-Aware Qubit Routing for Ion Trap QCCD Architectures",
-      "authors": [
-        "Ovide, A.",
-        "Angles-Castillo, A.",
-        "Almudever, C.G."
+      "authorIds": [
+        "a573",
+        "a28",
+        "a20"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "compilation",
-        "qubit hardware"
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -4345,13 +4345,13 @@
       "id": "10-1145-3764386-3779585",
       "doi": "10.1145/3764386.3779585",
       "title": "An Improved Ion-Shuttling Approach for QCCD Architectures",
-      "authors": [
-        "Wu, T.",
-        "Wang, T."
+      "authorIds": [
+        "a789",
+        "a761"
       ],
       "year": 2026,
-      "journal": "ACM International Symposium on Physical Design",
-      "keywords": [
+      "journalId": "j5",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4361,17 +4361,17 @@
       "id": "10-48550-arxiv-2601-19738",
       "doi": "10.48550/arXiv.2601.19738",
       "title": "Quantum Circuit Pre-Synthesis: Learning Local Edits to Reduce T-count",
-      "authors": [
-        "Bosco, D.L.",
-        "Cincio, L.",
-        "Serra, G.",
-        "Cerezo, M."
+      "authorIds": [
+        "a96",
+        "a166",
+        "a672",
+        "a137"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "compilation",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4380,16 +4380,16 @@
       "id": "10-48550-arxiv-2602-05425",
       "doi": "10.48550/arXiv.2602.05425",
       "title": "Matchgate synthesis via Clifford matchgates and T-gates",
-      "authors": [
-        "Casas, B.",
-        "Braccia, P.",
-        "Gouzien, É.",
-        "Cerezo, M.",
-        "García-Martín, D."
+      "authorIds": [
+        "a133",
+        "a100",
+        "a284",
+        "a137",
+        "a259"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4399,20 +4399,20 @@
       "id": "10-48550-arxiv-2202-11142",
       "doi": "10.48550/arXiv.2202.11142",
       "title": "An LLVM-based C++ Compiler Toolchain for Variational Hybrid Quantum-Classical Algorithms and Quantum Accelerators",
-      "authors": [
-        "Khalate, P.",
-        "Wu, X.",
-        "Premaratne, S.",
-        "Hogaboam, J.",
-        "Holmes, A.",
-        "Schmitz, A.",
-        "et al."
+      "authorIds": [
+        "a393",
+        "a790",
+        "a603",
+        "a319",
+        "a320",
+        "a665",
+        "a827"
       ],
       "year": 2022,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "compilation",
-        "variational algorithms"
+        "variational-algorithms"
       ],
       "status": "to-read",
       "citations": 0
@@ -4421,19 +4421,19 @@
       "id": "10-1109-qce57702-2023-00087",
       "doi": "10.1109/QCE57702.2023.00087",
       "title": "PCOAST: A Pauli-Based Quantum Circuit Optimization Framework",
-      "authors": [
-        "Paykin, J.",
-        "Schmitz, A.T.",
-        "Ibrahim, M.",
-        "Wu, X.",
-        "Matsuura, A.Y."
+      "authorIds": [
+        "a582",
+        "a666",
+        "a342",
+        "a790",
+        "a502"
       ],
       "year": 2023,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "compilation",
-        "optimization algorithms",
-        "quantum circuits"
+        "optimization-algorithms",
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4442,20 +4442,20 @@
       "id": "10-3390-a18040178",
       "doi": "10.3390/a18040178",
       "title": "Quantum Circuit Synthesis Using Fuzzy-Logic-Assisted Genetic Algorithms",
-      "authors": [
-        "Islam, I.",
-        "Jha, V.",
-        "Thomas, S.",
-        "Egan, K.F.",
-        "Nobel, A.",
-        "Kim, S.",
-        "et al."
+      "authorIds": [
+        "a346",
+        "a361",
+        "a727",
+        "a215",
+        "a561",
+        "a403",
+        "a827"
       ],
       "year": 2025,
-      "journal": "Algorithms",
-      "keywords": [
+      "journalId": "j16",
+      "keywordIds": [
         "compilation",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4464,18 +4464,18 @@
       "id": "10-1088-1367-2630-ae5a54",
       "doi": "10.1088/1367-2630/ae5a54",
       "title": "YAQQ: yet another quantum quantizer design space exploration of quantum gate sets using novelty search",
-      "authors": [
-        "Sarkar, A.",
-        "Kundu, A.",
-        "Steinberg, M.",
-        "Mishra, S.",
-        "Fauquenot, S.",
-        "Acharya, T.",
-        "et al."
+      "authorIds": [
+        "a656",
+        "a423",
+        "a701",
+        "a525",
+        "a232",
+        "a4",
+        "a827"
       ],
       "year": 2026,
-      "journal": "New Journal of Physics",
-      "keywords": [
+      "journalId": "j67",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4485,18 +4485,18 @@
       "id": "10-1109-qce65121-2025-00070",
       "doi": "10.1109/QCE65121.2025.00070",
       "title": "Quantum Circuit Optimization for the Fault-Tolerance Era: Do We Have to Start from Scratch?",
-      "authors": [
-        "Forster, T.V.",
-        "Quetschlich, N.",
-        "Wille, R."
+      "authorIds": [
+        "a245",
+        "a606",
+        "a777"
       ],
       "year": 2025,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
-        "fault tolerance",
+      "journalId": "j28",
+      "keywordIds": [
+        "fault-tolerance",
         "compilation",
-        "optimization algorithms",
-        "quantum circuits"
+        "optimization-algorithms",
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4505,16 +4505,16 @@
       "id": "10-1109-qce65121-2025-10360",
       "doi": "10.1109/QCE65121.2025.10360",
       "title": "Dynamic Circuit Compilation for Sparse Qubit Connectivity",
-      "authors": [
-        "Shirgure, S.",
-        "Niu, S."
+      "authorIds": [
+        "a681",
+        "a560"
       ],
       "year": 2025,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
+      "journalId": "j28",
+      "keywordIds": [
         "compilation",
-        "quantum circuits",
-        "qubit hardware"
+        "quantum-circuits",
+        "qubit-hardware"
       ],
       "status": "to-read",
       "citations": 0
@@ -4523,13 +4523,13 @@
       "id": "10-1109-cgo-2004-1281665",
       "doi": "10.1109/CGO.2004.1281665",
       "title": "LLVM: a compilation framework for lifelong program analysis & transformation",
-      "authors": [
-        "Lattner, C.",
-        "Adve, V."
+      "authorIds": [
+        "a440",
+        "a7"
       ],
       "year": 2004,
-      "journal": "IEEE/ACM International Symposium on Code Generation and Optimization",
-      "keywords": [
+      "journalId": "j41",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4539,17 +4539,17 @@
       "id": "10-1109-cgo51591-2021-9370308",
       "doi": "10.1109/CGO51591.2021.9370308",
       "title": "MLIR: Scaling Compiler Infrastructure for Domain Specific Computation",
-      "authors": [
-        "Lattner, C.",
-        "Amini, M.",
-        "Bondhugula, U.",
-        "Cohen, A.",
-        "Davis, A.",
-        "Pienaar, J."
+      "authorIds": [
+        "a440",
+        "a24",
+        "a93",
+        "a173",
+        "a188",
+        "a594"
       ],
       "year": 2021,
-      "journal": "IEEE/ACM International Symposium on Code Generation and Optimization",
-      "keywords": [
+      "journalId": "j41",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4559,19 +4559,19 @@
       "id": "10-21105-joss-06720",
       "doi": "10.21105/joss.06720",
       "title": "Catalyst: a Python JIT compiler for auto-differentiable hybrid quantum programs",
-      "authors": [
-        "Ittah, D.",
-        "Asadi, A.",
-        "Lopez, E.O.",
-        "Mironov, S.",
-        "Banning, S.",
-        "Moyard, R.",
-        "et al."
+      "authorIds": [
+        "a349",
+        "a38",
+        "a472",
+        "a523",
+        "a51",
+        "a541",
+        "a827"
       ],
       "year": 2024,
-      "journal": "Journal of Open Source Software",
-      "keywords": [
-        "quantum programming",
+      "journalId": "j61",
+      "keywordIds": [
+        "quantum-programming",
         "compilation"
       ],
       "status": "to-read",
@@ -4581,16 +4581,16 @@
       "id": "10-1145-3491247",
       "doi": "10.1145/3491247",
       "title": "QIRO: A Static Single Assignment-based Quantum Program Representation for Optimization",
-      "authors": [
-        "Ittah, D.",
-        "Häner, T.",
-        "Kliuchnikov, V.",
-        "Hoefler, T."
+      "authorIds": [
+        "a349",
+        "a337",
+        "a409",
+        "a318"
       ],
       "year": 2022,
-      "journal": "ACM Transactions on Quantum Computing",
-      "keywords": [
-        "optimization algorithms",
+      "journalId": "j11",
+      "keywordIds": [
+        "optimization-algorithms",
         "compilation"
       ],
       "status": "to-read",
@@ -4600,19 +4600,19 @@
       "id": "10-48550-arxiv-2510-11420",
       "doi": "10.48550/arXiv.2510.11420",
       "title": "HUGR: A Quantum-Classical Intermediate Representation",
-      "authors": [
-        "Koch, M.",
-        "Borgna, A.",
-        "Sivarajah, S.",
-        "Lawrence, A.",
-        "Edgington, A.",
-        "Wilson, D.",
-        "et al."
+      "authorIds": [
+        "a411",
+        "a95",
+        "a689",
+        "a443",
+        "a214",
+        "a780",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "intermediate representation",
+      "journalId": "j98",
+      "keywordIds": [
+        "intermediate-representation",
         "compilation"
       ],
       "status": "to-read",
@@ -4622,20 +4622,20 @@
       "id": "10-48550-arxiv-2606-26254",
       "doi": "10.48550/arXiv.2606.26254",
       "title": "A Survey of Quantum Programming Languages",
-      "authors": [
-        "Do, Q.",
-        "Gupta, H.",
-        "Cao, X.",
-        "Pabla, A.",
-        "Singamsetty, P.",
-        "O'Grady, E.",
-        "et al."
+      "authorIds": [
+        "a201",
+        "a296",
+        "a129",
+        "a574",
+        "a687",
+        "a567",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "vision",
-        "quantum programming",
+        "quantum-programming",
         "survey"
       ],
       "status": "to-read",
@@ -4645,17 +4645,17 @@
       "id": "10-48550-arxiv-2510-12582",
       "doi": "10.48550/arXiv.2510.12582",
       "title": "GUPPY: Pythonic Quantum-Classical Programming",
-      "authors": [
-        "Koch, M.",
-        "Lawrence, A.",
-        "Singhal, K.",
-        "Sivarajah, S.",
-        "Duncan, R."
+      "authorIds": [
+        "a411",
+        "a443",
+        "a688",
+        "a689",
+        "a210"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum programming",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming",
         "compilation"
       ],
       "status": "to-read",
@@ -4665,14 +4665,14 @@
       "id": "10-1109-iccad57390-2023-10323946",
       "doi": "10.1109/ICCAD57390.2023.10323946",
       "title": "Introduction to Hybrid Quantum-Classical Programming Using C++ Quantum Extension",
-      "authors": [
-        "Wu, X.",
-        "Premaratne, S.",
-        "Rasch, K."
+      "authorIds": [
+        "a790",
+        "a603",
+        "a613"
       ],
       "year": 2023,
-      "journal": "IEEE/ACM International Conference on Computer Aided Design",
-      "keywords": [
+      "journalId": "j39",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4682,19 +4682,19 @@
       "id": "10-48550-arxiv-2604-03360",
       "doi": "10.48550/arXiv.2604.03360",
       "title": "Characterizing and Benchmarking Dynamic Quantum Circuits",
-      "authors": [
-        "Shirgure, S.",
-        "Kökcü, E.",
-        "Mitra, A.",
-        "Jong, W.A.d.",
-        "Iancu, C.",
-        "Niu, S."
+      "authorIds": [
+        "a681",
+        "a428",
+        "a526",
+        "a373",
+        "a340",
+        "a560"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "benchmarking",
-        "quantum circuits"
+        "quantum-circuits"
       ],
       "status": "to-read",
       "citations": 0
@@ -4703,18 +4703,18 @@
       "id": "10-1109-qce65121-2025-00093",
       "doi": "10.1109/QCE65121.2025.00093",
       "title": "Qwerty: A Basis-Oriented Quantum Programming Language",
-      "authors": [
-        "Adams, A.J.",
-        "Khan, S.",
-        "Bhamra, A.S.",
-        "Abusaada, R.R.",
-        "Humble, T.S.",
-        "Young, J.S."
+      "authorIds": [
+        "a5",
+        "a396",
+        "a75",
+        "a3",
+        "a335",
+        "a800"
       ],
       "year": 2025,
-      "journal": "IEEE International Conference on Quantum Computing and Engineering",
-      "keywords": [
-        "quantum programming",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-programming",
         "compilation"
       ],
       "status": "to-read",
@@ -4724,18 +4724,18 @@
       "id": "10-1145-3803018",
       "doi": "10.1145/3803018",
       "title": "C2|Q>: A Robust Framework for Bridging Classical and Quantum Software Development",
-      "authors": [
-        "Ye, B.",
-        "Khan, A.A.",
-        "Pihkakoski, T.",
-        "Liang, P.",
-        "Akbar, M.A.",
-        "Silveri, M.",
-        "et al."
+      "authorIds": [
+        "a797",
+        "a395",
+        "a596",
+        "a459",
+        "a10",
+        "a685",
+        "a827"
       ],
       "year": 2026,
-      "journal": "ACM Transactions on Software Engineering and Methodology",
-      "keywords": [
+      "journalId": "j12",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4745,14 +4745,14 @@
       "id": "10-1007-978-3-031-74776-2-1",
       "doi": "10.1007/978-3-031-74776-2_1",
       "title": "Static Analysis of Quantum Programs",
-      "authors": [
-        "Assolini, N.",
-        "Pierro, A.D.",
-        "Mastroeni, I."
+      "authorIds": [
+        "a40",
+        "a595",
+        "a499"
       ],
       "year": 2025,
-      "journal": "Lecture Notes in Computer Science",
-      "keywords": [
+      "journalId": "j63",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4762,18 +4762,18 @@
       "id": "10-1007-s42484-026-00403-7",
       "doi": "10.1007/s42484-026-00403-7",
       "title": "StateQ: A novel framework for intuitive and accessible quantum programming",
-      "authors": [
-        "Li, J.",
-        "Li, D.",
-        "Wang, Z.",
-        "Sun, H.",
-        "Chen, H.",
-        "Cui, T.",
-        "et al."
+      "authorIds": [
+        "a453",
+        "a452",
+        "a764",
+        "a711",
+        "a149",
+        "a179",
+        "a827"
       ],
       "year": 2026,
-      "journal": "Quantum Machine Intelligence",
-      "keywords": [
+      "journalId": "j75",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4783,14 +4783,14 @@
       "id": "10-48550-arxiv-2605-16595",
       "doi": "10.48550/arXiv.2605.16595",
       "title": "qstack: Compositional End-to-End Compilation for Fault-Tolerant Quantum Programs",
-      "authors": [
-        "Paz, A.",
-        "Grossman, D."
+      "authorIds": [
+        "a583",
+        "a289"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "fault tolerance",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
         "compilation"
       ],
       "status": "to-read",
@@ -4800,19 +4800,19 @@
       "id": "10-48550-arxiv-2510-13082",
       "doi": "10.48550/arXiv.2510.13082",
       "title": "Imperative Quantum Programming with Ownership and Borrowing in Guppy",
-      "authors": [
-        "Koch, M.",
-        "Borgna, A.",
-        "Roy, C.",
-        "Lawrence, A.",
-        "Singhal, K.",
-        "Sivarajah, S.",
-        "et al."
+      "authorIds": [
+        "a411",
+        "a95",
+        "a637",
+        "a443",
+        "a688",
+        "a689",
+        "a827"
       ],
       "year": 2025,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum programming",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming",
         "compilation"
       ],
       "status": "to-read",
@@ -4822,15 +4822,15 @@
       "id": "10-1145-3731599-3767546",
       "doi": "10.1145/3731599.3767546",
       "title": "Towards Supporting QIR: Steps for Adopting the Quantum Intermediate Representation",
-      "authors": [
-        "Stade, Y.",
-        "Burgholzer, L.",
-        "Wille, R."
+      "authorIds": [
+        "a700",
+        "a115",
+        "a777"
       ],
       "year": 2025,
-      "journal": "ACM International Conference for High Performance Computing, Networking, Storage and Analysis",
-      "keywords": [
-        "intermediate representation",
+      "journalId": "j2",
+      "keywordIds": [
+        "intermediate-representation",
         "compilation"
       ],
       "status": "to-read",
@@ -4840,14 +4840,14 @@
       "id": "10-1109-tcad-2018-2846658",
       "doi": "10.1109/TCAD.2018.2846658",
       "title": "An Efficient Methodology for Mapping Quantum Circuits to the IBM QX Architectures",
-      "authors": [
-        "Zulehner, A.",
-        "Paler, A.",
-        "Wille, R."
+      "authorIds": [
+        "a826",
+        "a575",
+        "a777"
       ],
       "year": 2019,
-      "journal": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
-      "keywords": [
+      "journalId": "j35",
+      "keywordIds": [
         "compilation"
       ],
       "status": "to-read",
@@ -4857,14 +4857,14 @@
       "id": "10-1145-3569052-3578928",
       "doi": "10.1145/3569052.3578928",
       "title": "MQT QMAP: Efficient Quantum Circuit Mapping",
-      "authors": [
-        "Wille, R.",
-        "Burgholzer, L."
+      "authorIds": [
+        "a777",
+        "a115"
       ],
       "year": 2023,
-      "journal": "ACM International Symposium on Physical Design",
-      "keywords": [
-        "quantum circuits",
+      "journalId": "j5",
+      "keywordIds": [
+        "quantum-circuits",
         "compilation"
       ],
       "status": "to-read",
@@ -4874,20 +4874,20 @@
       "id": "10-48550-arxiv-2602-10695",
       "doi": "10.48550/arXiv.2602.10695",
       "title": "Experimental demonstration that qubits can be cloned at will, if encrypted with a single-use decryption key",
-      "authors": [
-        "Yamaguchi, K.",
-        "Rullkötter, L.",
-        "Shehzad, I.",
-        "Wagner, S.J.",
-        "Tutschku, C.",
-        "Kempf, A."
+      "authorIds": [
+        "a795",
+        "a640",
+        "a678",
+        "a754",
+        "a740",
+        "a392"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "superconducting qubits",
-        "qubit hardware",
-        "quantum cloning"
+      "journalId": "j98",
+      "keywordIds": [
+        "superconducting-qubits",
+        "qubit-hardware",
+        "quantum-cloning"
       ],
       "status": "to-read",
       "citations": 0
@@ -4896,20 +4896,20 @@
       "id": "10-48550-arxiv-2602-18080",
       "doi": "10.48550/arXiv.2602.18080",
       "title": "Observation of Robust and Coherent Non-Abelian Hadron Dynamics on Noisy Quantum Processors",
-      "authors": [
-        "Ilčić, F.",
-        "Majumdar, R.",
-        "Mathew, E.",
-        "Ali, M.O.",
-        "Earnest-Noble, N.",
-        "Raychowdhury, I."
+      "authorIds": [
+        "a343",
+        "a490",
+        "a500",
+        "a15",
+        "a213",
+        "a616"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
-        "quantum simulation",
-        "superconducting qubits",
-        "high-energy physics",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation",
+        "superconducting-qubits",
+        "high-energy-physics",
         "benchmarking"
       ],
       "status": "to-read",
@@ -4919,178 +4919,42 @@
       "id": "10-48550-arxiv-2607-19591",
       "doi": "10.48550/arXiv.2607.19591",
       "title": "Examining QRMI as a Unified Interface for Quantum-HPC Integration",
-      "authors": [
-        "Badts, T.",
-        "Boyle, T.",
-        "Carvalho, C.",
-        "Córcoles, A.",
-        "Damin, A.",
-        "Elisseev, V.",
-        "et al."
+      "authorIds": [
+        "a50",
+        "a99",
+        "a132",
+        "a180",
+        "a185",
+        "a219",
+        "a827"
       ],
       "year": 2026,
-      "journal": "arXiv preprint",
-      "keywords": [
+      "journalId": "j98",
+      "keywordIds": [
         "middleware",
-        "hpc integration",
+        "hpc-integration",
         "scheduling"
       ],
       "status": "to-read",
       "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2406-01705",
+      "doi": "10.48550/arXiv.2406.01705",
+      "title": "Dark Matter",
+      "authorIds": [
+        "a830",
+        "a831",
+        "a832"
+      ],
+      "year": 2024,
+      "journalId": "j98",
+      "keywordIds": [
+        "high-energy-physics",
+        "survey"
+      ],
+      "status": "to-read",
+      "citations": 0
     }
-  ],
-  "keywordColors": {
-    "algorithms": {
-      "bg": "#dbdcf0",
-      "text": "#262a73"
-    },
-    "applications": {
-      "bg": "#dbe2f0",
-      "text": "#264173"
-    },
-    "architecture": {
-      "bg": "#f0e3db",
-      "text": "#734426"
-    },
-    "benchmarking": {
-      "bg": "#e4dbf0",
-      "text": "#472673"
-    },
-    "cloud computing": {
-      "bg": "#dfdbf0",
-      "text": "#3c2d76"
-    },
-    "compilation": {
-      "bg": "#ecdbf0",
-      "text": "#682d76"
-    },
-    "energy materials": {
-      "bg": "#f0e1db",
-      "text": "#76432d"
-    },
-    "fault tolerance": {
-      "bg": "#ecdbf0",
-      "text": "#682d76"
-    },
-    "finance applications": {
-      "bg": "#f0e8db",
-      "text": "#76592d"
-    },
-    "gpu acceleration": {
-      "bg": "#dbeaf0",
-      "text": "#2d6076"
-    },
-    "high-energy physics": {
-      "bg": "#e6f0db",
-      "text": "#52762d"
-    },
-    "hpc integration": {
-      "bg": "#f0eedb",
-      "text": "#766f2d"
-    },
-    "hpc scheduling": {
-      "bg": "#f0dbe8",
-      "text": "#762d59"
-    },
-    "infrastructure": {
-      "bg": "#dbeef0",
-      "text": "#266c73"
-    },
-    "intermediate representation": {
-      "bg": "#dbf0f0",
-      "text": "#2d7676"
-    },
-    "middleware": {
-      "bg": "#e8f0db",
-      "text": "#557326"
-    },
-    "neutral-atom qubits": {
-      "bg": "#dfdbf0",
-      "text": "#3c2d76"
-    },
-    "optimization algorithms": {
-      "bg": "#ecf0db",
-      "text": "#68762d"
-    },
-    "photonic quantum computing": {
-      "bg": "#ecdbf0",
-      "text": "#682d76"
-    },
-    "quantum algorithms": {
-      "bg": "#dbeaf0",
-      "text": "#2d6076"
-    },
-    "quantum chemistry": {
-      "bg": "#dbf0ea",
-      "text": "#2d7660"
-    },
-    "quantum circuits": {
-      "bg": "#f0dbe8",
-      "text": "#762d59"
-    },
-    "quantum cryptanalysis": {
-      "bg": "#dbf0ea",
-      "text": "#2d7660"
-    },
-    "quantum diagonalization": {
-      "bg": "#e6dbf0",
-      "text": "#522d76"
-    },
-    "quantum machine learning": {
-      "bg": "#dbf0f0",
-      "text": "#2d7676"
-    },
-    "quantum optimization": {
-      "bg": "#dbf0dd",
-      "text": "#2d7634"
-    },
-    "quantum programming": {
-      "bg": "#e6dbf0",
-      "text": "#522d76"
-    },
-    "quantum simulation": {
-      "bg": "#dbeaf0",
-      "text": "#2d6076"
-    },
-    "qubit hardware": {
-      "bg": "#f0dbee",
-      "text": "#762d6f"
-    },
-    "scalability": {
-      "bg": "#dbe8f0",
-      "text": "#265573"
-    },
-    "scheduling": {
-      "bg": "#f0f0db",
-      "text": "#707326"
-    },
-    "superconducting qubits": {
-      "bg": "#e6dbf0",
-      "text": "#522d76"
-    },
-    "survey": {
-      "bg": "#e6f0db",
-      "text": "#52762d"
-    },
-    "trapped-ion qubits": {
-      "bg": "#dbf0f0",
-      "text": "#2d7676"
-    },
-    "variational algorithms": {
-      "bg": "#dbf0e3",
-      "text": "#2d764a"
-    },
-    "vision": {
-      "bg": "#f0dbdb",
-      "text": "#732629"
-    },
-    "workflow orchestration": {
-      "bg": "#f0eadb",
-      "text": "#735e26"
-    },
-    "quantum cloning": {
-      "bg": "#dfdbf0",
-      "text": "#3c2d76"
-    }
-  }
+  ]
 }

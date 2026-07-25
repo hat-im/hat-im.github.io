@@ -4,6 +4,9 @@
   var BASE = 'paper-board/';
   var STRINGS_URL = BASE + 'strings.json';
   var SEED_URL = BASE + 'data/seed.json';
+  var JOURNALS_URL = BASE + 'data/journals.json';
+  var AUTHORS_URL = BASE + 'data/authors.json';
+  var KEYWORDS_URL = BASE + 'data/keywords.json';
 
   var STR = {};
   var SEED = null;
@@ -697,10 +700,40 @@
     return res.json();
   }
 
+  function expandSeed(rawSeed, journals, authors, keywords) {
+    var keywordColors = {};
+    Object.keys(keywords).forEach(function (id) {
+      var kw = keywords[id];
+      keywordColors[kw.label] = { bg: kw.bg, text: kw.text };
+    });
+
+    var papers = rawSeed.papers.map(function (p) {
+      return {
+        id: p.id,
+        doi: p.doi,
+        title: p.title,
+        authors: p.authorIds.map(function (id) { return authors[id]; }),
+        year: p.year,
+        journal: p.journalId ? journals[p.journalId] : '',
+        keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
+        status: p.status,
+        citations: p.citations
+      };
+    });
+
+    return { papers: papers, keywordColors: keywordColors };
+  }
+
   async function init() {
-    var results = await Promise.all([fetchJson(STRINGS_URL), fetchJson(SEED_URL)]);
+    var results = await Promise.all([
+      fetchJson(STRINGS_URL),
+      fetchJson(SEED_URL),
+      fetchJson(JOURNALS_URL),
+      fetchJson(AUTHORS_URL),
+      fetchJson(KEYWORDS_URL)
+    ]);
     STR = results[0];
-    SEED = results[1];
+    SEED = expandSeed(results[1], results[2], results[3], results[4]);
     store = DualStore.create(STORAGE_KEY);
 
     renderStaticText();

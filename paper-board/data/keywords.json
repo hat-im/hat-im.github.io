@@ -1,0 +1,192 @@
+{
+  "algorithms": {
+    "label": "algorithms",
+    "bg": "#dbdcf0",
+    "text": "#262a73"
+  },
+  "applications": {
+    "label": "applications",
+    "bg": "#dbe2f0",
+    "text": "#264173"
+  },
+  "architecture": {
+    "label": "architecture",
+    "bg": "#f0e3db",
+    "text": "#734426"
+  },
+  "benchmarking": {
+    "label": "benchmarking",
+    "bg": "#e4dbf0",
+    "text": "#472673"
+  },
+  "cloud-computing": {
+    "label": "cloud computing",
+    "bg": "#dfdbf0",
+    "text": "#3c2d76"
+  },
+  "compilation": {
+    "label": "compilation",
+    "bg": "#ecdbf0",
+    "text": "#682d76"
+  },
+  "energy-materials": {
+    "label": "energy materials",
+    "bg": "#f0e1db",
+    "text": "#76432d"
+  },
+  "fault-tolerance": {
+    "label": "fault tolerance",
+    "bg": "#ecdbf0",
+    "text": "#682d76"
+  },
+  "finance-applications": {
+    "label": "finance applications",
+    "bg": "#f0e8db",
+    "text": "#76592d"
+  },
+  "gpu-acceleration": {
+    "label": "gpu acceleration",
+    "bg": "#dbeaf0",
+    "text": "#2d6076"
+  },
+  "high-energy-physics": {
+    "label": "high-energy physics",
+    "bg": "#e6f0db",
+    "text": "#52762d"
+  },
+  "hpc-integration": {
+    "label": "hpc integration",
+    "bg": "#f0eedb",
+    "text": "#766f2d"
+  },
+  "hpc-scheduling": {
+    "label": "hpc scheduling",
+    "bg": "#f0dbe8",
+    "text": "#762d59"
+  },
+  "infrastructure": {
+    "label": "infrastructure",
+    "bg": "#dbeef0",
+    "text": "#266c73"
+  },
+  "intermediate-representation": {
+    "label": "intermediate representation",
+    "bg": "#dbf0f0",
+    "text": "#2d7676"
+  },
+  "middleware": {
+    "label": "middleware",
+    "bg": "#e8f0db",
+    "text": "#557326"
+  },
+  "neutral-atom-qubits": {
+    "label": "neutral-atom qubits",
+    "bg": "#dfdbf0",
+    "text": "#3c2d76"
+  },
+  "optimization-algorithms": {
+    "label": "optimization algorithms",
+    "bg": "#ecf0db",
+    "text": "#68762d"
+  },
+  "photonic-quantum-computing": {
+    "label": "photonic quantum computing",
+    "bg": "#ecdbf0",
+    "text": "#682d76"
+  },
+  "quantum-algorithms": {
+    "label": "quantum algorithms",
+    "bg": "#dbeaf0",
+    "text": "#2d6076"
+  },
+  "quantum-chemistry": {
+    "label": "quantum chemistry",
+    "bg": "#dbf0ea",
+    "text": "#2d7660"
+  },
+  "quantum-circuits": {
+    "label": "quantum circuits",
+    "bg": "#f0dbe8",
+    "text": "#762d59"
+  },
+  "quantum-cloning": {
+    "label": "quantum cloning",
+    "bg": "#dfdbf0",
+    "text": "#3c2d76"
+  },
+  "quantum-cryptanalysis": {
+    "label": "quantum cryptanalysis",
+    "bg": "#dbf0ea",
+    "text": "#2d7660"
+  },
+  "quantum-diagonalization": {
+    "label": "quantum diagonalization",
+    "bg": "#e6dbf0",
+    "text": "#522d76"
+  },
+  "quantum-machine-learning": {
+    "label": "quantum machine learning",
+    "bg": "#dbf0f0",
+    "text": "#2d7676"
+  },
+  "quantum-optimization": {
+    "label": "quantum optimization",
+    "bg": "#dbf0dd",
+    "text": "#2d7634"
+  },
+  "quantum-programming": {
+    "label": "quantum programming",
+    "bg": "#e6dbf0",
+    "text": "#522d76"
+  },
+  "quantum-simulation": {
+    "label": "quantum simulation",
+    "bg": "#dbeaf0",
+    "text": "#2d6076"
+  },
+  "qubit-hardware": {
+    "label": "qubit hardware",
+    "bg": "#f0dbee",
+    "text": "#762d6f"
+  },
+  "scalability": {
+    "label": "scalability",
+    "bg": "#dbe8f0",
+    "text": "#265573"
+  },
+  "scheduling": {
+    "label": "scheduling",
+    "bg": "#f0f0db",
+    "text": "#707326"
+  },
+  "superconducting-qubits": {
+    "label": "superconducting qubits",
+    "bg": "#e6dbf0",
+    "text": "#522d76"
+  },
+  "survey": {
+    "label": "survey",
+    "bg": "#e6f0db",
+    "text": "#52762d"
+  },
+  "trapped-ion-qubits": {
+    "label": "trapped-ion qubits",
+    "bg": "#dbf0f0",
+    "text": "#2d7676"
+  },
+  "variational-algorithms": {
+    "label": "variational algorithms",
+    "bg": "#dbf0e3",
+    "text": "#2d764a"
+  },
+  "vision": {
+    "label": "vision",
+    "bg": "#f0dbdb",
+    "text": "#732629"
+  },
+  "workflow-orchestration": {
+    "label": "workflow orchestration",
+    "bg": "#f0eadb",
+    "text": "#735e26"
+  }
+}
