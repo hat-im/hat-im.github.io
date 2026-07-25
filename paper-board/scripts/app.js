@@ -3,7 +3,7 @@
 
   var BASE = 'paper-board/';
   var STRINGS_URL = BASE + 'strings.json';
-  var SEED_URL = BASE + 'data/seed.json';
+  var SEED_URL = BASE + 'data/papers.json';
   var JOURNALS_URL = BASE + 'data/journals.json';
   var AUTHORS_URL = BASE + 'data/authors.json';
   var KEYWORDS_URL = BASE + 'data/keywords.json';
@@ -716,7 +716,7 @@
         year: p.year,
         journal: p.journalId ? journals[p.journalId] : '',
         keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
-        status: p.status,
+        status: 'to-read',
         citations: p.citations
       };
     });
