@@ -258,6 +258,19 @@ function chapterNum(code){
   return code.replace(/^[A-Z]+/, '');
 }
 
+// Opens the popover upward instead of downward when it would otherwise
+// spill past the bottom of the scrollable column (e.g. the last card).
+function positionPopover(cardEl){
+  var pop = cardEl.querySelector('.card-popover');
+  if(!pop) return;
+  pop.classList.remove('flip-up');
+  var container = cardEl.closest('.cardlist') || document.documentElement;
+  var limit = Math.min(container.getBoundingClientRect().bottom, window.innerHeight);
+  if(pop.getBoundingClientRect().bottom > limit){
+    pop.classList.add('flip-up');
+  }
+}
+
 function unlocksPopoverHtml(c, base){
   var deps = DEPENDENTS[c.code].filter(function(d){ return base[d] !== 'done'; });
   if(!deps.length) return '';
@@ -331,6 +344,9 @@ function renderCard(c, col, base, flagged){
   }
 
   div.innerHTML = body;
+
+  div.addEventListener('mouseenter', function(){ positionPopover(div); });
+  div.addEventListener('focus', function(){ positionPopover(div); });
 
   if(!locked){
     div.addEventListener('dragstart', function(e){

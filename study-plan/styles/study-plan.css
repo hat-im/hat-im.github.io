@@ -279,6 +279,7 @@
   font-weight:400;
   cursor:default;
 }
+.card-popover.flip-up{top:auto;bottom:calc(100% + 6px);}
 .card.locked:hover .card-popover, .card.locked:focus-within .card-popover{display:block;}
 .card-popover .pop-label{font-size:11px;font-weight:700;color:var(--text-primary);margin:0 0 5px;}
 .card-popover .pop-list{font-size:12px;color:var(--text-secondary);line-height:1.5;margin:0 0 4px;}
