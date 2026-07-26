@@ -636,23 +636,6 @@
             transform: rotate(-45deg);
         }
 
-        .cooldown-timer {
-            font-family: 'KarnakNormal', Arial, sans-serif;
-            font-size: 30px;
-            font-weight: normal;
-            color: #000;
-            margin: 20px 0;
-            letter-spacing: 1px;
-        }
-
-        .popup.cooldown .popup-close {
-            display: none;
-        }
-
-        .popup.cooldown .popup-button {
-            display: none;
-        }
-
         /* Toast notification */
         .toast {
             position: fixed;

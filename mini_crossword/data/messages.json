@@ -26,13 +26,6 @@
     { "title": "Complete", "subtitle": "Every answer has been filled in for you." },
     { "title": "Revealed", "subtitle": "No shame in checking the answers!" }
   ],
-  "cooldown": [
-    { "title": "Time's Up!", "subtitle": "Take a break and come back refreshed!" },
-    { "title": "Timeout", "subtitle": "Great puzzlers know when to rest." },
-    { "title": "Cool Down", "subtitle": "Use this time to sharpen your wordplay!" },
-    { "title": "Intermission", "subtitle": "The best is yet to come!" },
-    { "title": "Recharge Time", "subtitle": "Every expert needs a breather." }
-  ],
   "restart": [
     { "title": "Restart Game?", "subtitle": "This will clear all progress and start fresh." },
     { "title": "Start Over?", "subtitle": "All your progress will be lost. Are you sure?" },

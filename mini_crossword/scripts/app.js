@@ -6,7 +6,6 @@
     // Clear all saved game data
     function clearAllSavedData() {
             localStorage.removeItem('crosswordGameState');
-            localStorage.removeItem('pendingBonus');
             localStorage.removeItem('sessionComplete');
         }
         
@@ -38,7 +37,6 @@
         };
         
         // Global variables
-        let maxPuzzlesPerSession = 20; // Default value, will be updated from config
         let crosswordData = null;
         let currentWord = null;
         let currentDirection = 'across';
@@ -46,14 +44,11 @@
         let selectedCell = null;
         
         // Timer variables
-        let defaultGameDuration = 300; // Default, will be updated from config
-        let timeLeft = defaultGameDuration; // Will be set from config
+        let elapsedTime = 0; // Seconds of active play time, counts up
         let timerInterval = null;
         let isPaused = false;
         let isManuallyPaused = false;
         let isViewingCompletedPuzzle = false; // Track when viewing completed puzzles
-        let cooldownEnd = null;
-        let cooldownInterval = null;
         
         // Puzzle progression variables
         let currentPuzzleIndex = 0;
@@ -69,6 +64,8 @@
             averageTime: 0,
             shortestTime: Infinity,
             longestTime: 0,
+            totalWords: 0,
+            averageTimePerWord: 0,
             accuracy: 100, // Will calculate based on mistakes
             totalMistakes: 0
         };
@@ -96,13 +93,7 @@
             
             // Normal initialization for non-completed sessions
             loadGameState();
-            
-            // Check if we're in cooldown after loading state
-            if (cooldownEnd && new Date().getTime() < cooldownEnd) {
-                // We're in cooldown, showCooldownPopup was already called in loadGameState
-                return; // Don't show session popup or continue initialization
-            }
-            
+
             // Check if there's an existing session
             const hasSavedState = localStorage.getItem('crosswordGameState');
             if (hasSavedState) {
@@ -125,10 +116,12 @@
                     averageTime: 0,
                     shortestTime: Infinity,
                     longestTime: 0,
+                    totalWords: 0,
+                    averageTimePerWord: 0,
                     accuracy: 100,
                     totalMistakes: 0
                 };
-                timeLeft = defaultGameDuration; // Will be updated from config
+                elapsedTime = 0;
                 isPaused = false;
                 if (timerInterval) clearInterval(timerInterval);
                 puzzlesBySize = {};
@@ -138,15 +131,10 @@
                 selectedCell = null;
                 puzzleStartTime = null;
             }
-            
+
             // Detect available puzzles
             await detectAvailablePuzzles();
-            
-            // Update timeLeft for fresh games with the loaded config
-            if (!hasSavedState) {
-                timeLeft = defaultGameDuration;
-            }
-            
+
             // Ensure we have a valid session order
             if (sessionPuzzleOrder.length === 0) {
                 generateSessionOrder();
@@ -170,24 +158,19 @@
         // Timer functions
         function startTimer() {
             if (timerInterval) clearInterval(timerInterval);
-            
+
             timerInterval = setInterval(() => {
-                if (!isPaused && timeLeft > 0) {
-                    timeLeft--;
+                if (!isPaused) {
+                    elapsedTime++;
                     updateTimerDisplay();
                     saveGameState();
-                    
-                    if (timeLeft === 0) {
-                        clearInterval(timerInterval);
-                        startCooldown();
-                    }
                 }
             }, 1000);
         }
-        
+
         function updateTimerDisplay() {
-            const minutes = Math.floor(timeLeft / 60);
-            const seconds = timeLeft % 60;
+            const minutes = Math.floor(elapsedTime / 60);
+            const seconds = elapsedTime % 60;
             const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
             document.getElementById('timer').textContent = display;
         }
@@ -270,13 +253,12 @@
             const gameState = {
                 crosswordFile: getCurrentPuzzleFile(),
                 userGrid: userGrid,
-                timeLeft: timeLeft,
+                elapsedTime: elapsedTime,
                 isPaused: isPaused,
                 isViewingCompletedPuzzle: isViewingCompletedPuzzle,
                 currentDirection: currentDirection,
                 selectedCell: selectedCell,
                 currentWord: currentWord,
-                cooldownEnd: cooldownEnd,
                 currentPuzzleIndex: currentPuzzleIndex,
                 actualCurrentPuzzleIndex: actualCurrentPuzzleIndex,
                 puzzlesBySize: puzzlesBySize,
@@ -294,13 +276,12 @@
             const saved = localStorage.getItem('crosswordGameState');
             if (saved) {
                 const gameState = JSON.parse(saved);
-                timeLeft = gameState.timeLeft || defaultGameDuration;
+                elapsedTime = gameState.elapsedTime || 0;
                 isPaused = gameState.isPaused || false;
                 isViewingCompletedPuzzle = gameState.isViewingCompletedPuzzle || false;
                 currentDirection = gameState.currentDirection || 'across';
                 selectedCell = gameState.selectedCell || null;
                 currentWord = gameState.currentWord || null;
-                cooldownEnd = gameState.cooldownEnd || null;
                 currentPuzzleIndex = gameState.currentPuzzleIndex || 0;
                 actualCurrentPuzzleIndex = gameState.actualCurrentPuzzleIndex || 0;
                 puzzlesBySize = gameState.puzzlesBySize || {};
@@ -314,6 +295,8 @@
                     averageTime: 0,
                     shortestTime: Infinity,
                     longestTime: 0,
+                    totalWords: 0,
+                    averageTimePerWord: 0,
                     accuracy: 100,
                     totalMistakes: 0
                 };
@@ -321,16 +304,6 @@
                 // Validate currentPuzzleIndex after loading
                 if (sessionPuzzleOrder.length > 0 && currentPuzzleIndex >= sessionPuzzleOrder.length) {
                     resetPuzzleIndex();
-                }
-                
-                // Check if we're still in cooldown
-                if (cooldownEnd && new Date().getTime() < cooldownEnd) {
-                    showCooldownPopup();
-                    return;
-                } else if (cooldownEnd) {
-                    // Cooldown has ended, clear it
-                    cooldownEnd = null;
-                    saveGameState();
                 }
                 // userGrid will be restored after crossword data loads
             } else {
@@ -384,18 +357,8 @@
                     const response = await fetch(`${GITHUB_CROSSWORDS_BASE}puzzles.json?t=${Date.now()}`);
                     if (response.ok) {
                         const puzzleDirectory = await response.json();
-                        
-                        // Extract game settings
-                        if (puzzleDirectory.globalSettings) {
-                            defaultGameDuration = puzzleDirectory.globalSettings.gameDurationSeconds;
-                            timeLeft = defaultGameDuration;
-                            
-                            if (puzzleDirectory.globalSettings.maxPuzzlesPerSession) {
-                                maxPuzzlesPerSession = puzzleDirectory.globalSettings.maxPuzzlesPerSession;
-                            }
-                        }
-                        
-                        // Extract puzzle lists and bonus settings
+
+                        // Extract puzzle lists
                         puzzlesBySize = {};
                         Object.keys(puzzleDirectory).forEach(key => {
                             if (key !== 'globalSettings') {
@@ -440,77 +403,47 @@
             }
         }
 
+        // Builds a deterministic play order covering every puzzle exactly once, staggered
+        // in growing waves of sizes: smallest alone, then smallest+next, then +next again,
+        // e.g. for sizes [5,6,8] the wave pattern is 5 | 5,6 | 5,6,8 | 5,6,8 | 5,6,8 ...
+        // (wave length keeps growing until it spans all sizes, then holds there, skipping
+        // any size once its puzzles run out) until every puzzle has been included.
         function generateSessionOrder() {
             sessionPuzzleOrder = [];
-            
-            const availableSizes = Object.keys(puzzlesBySize).filter(size => 
+
+            const availableSizes = Object.keys(puzzlesBySize).filter(size =>
                 puzzlesBySize[size] && puzzlesBySize[size].puzzles && puzzlesBySize[size].puzzles.length > 0
             ).map(size => parseInt(size)).sort((a, b) => a - b);
-            
+
             if (availableSizes.length === 0) {
                 return;
             }
-            
-            const shuffledBySize = {};
+
             const indexesBySize = {};
-            
-            availableSizes.forEach(size => {
-                shuffledBySize[size] = [...puzzlesBySize[size].puzzles];
-                shuffleArray(shuffledBySize[size]);
-                indexesBySize[size] = 0;
-            });
-            
+            availableSizes.forEach(size => { indexesBySize[size] = 0; });
+
             const totalPuzzles = availableSizes.reduce((sum, size) => {
-                return sum + (shuffledBySize[size]?.length || 0);
+                return sum + puzzlesBySize[size].puzzles.length;
             }, 0);
-            
-            if (totalPuzzles === 0) {
-                return;
-            }
-            
-            let sizeIndex = 0;
+
+            let waveLength = 1;
             let puzzlesAdded = 0;
-            
-            while (puzzlesAdded < totalPuzzles && puzzlesAdded < maxPuzzlesPerSession) {
-                const currentSize = availableSizes[sizeIndex % availableSizes.length];
-                
-                if (shuffledBySize[currentSize] && 
-                    indexesBySize[currentSize] < shuffledBySize[currentSize].length) {
-                    
-                    const puzzle = shuffledBySize[currentSize][indexesBySize[currentSize]];
-                    sessionPuzzleOrder.push(puzzle);
-                    indexesBySize[currentSize]++;
-                    puzzlesAdded++;
-                    
-                } else {
-                    let foundAlternative = false;
-                    
-                    for (const size of availableSizes) {
-                        if (shuffledBySize[size] && 
-                            indexesBySize[size] < shuffledBySize[size].length) {
-                            
-                            const puzzle = shuffledBySize[size][indexesBySize[size]];
-                            sessionPuzzleOrder.push(puzzle);
-                            indexesBySize[size]++;
-                            puzzlesAdded++;
-                            foundAlternative = true;
-                            break;
-                        }
-                    }
-                    
-                    if (!foundAlternative) {
-                        break;
+
+            while (puzzlesAdded < totalPuzzles) {
+                const sizesInWave = availableSizes.slice(0, Math.min(waveLength, availableSizes.length));
+
+                for (const size of sizesInWave) {
+                    const puzzles = puzzlesBySize[size].puzzles;
+                    if (indexesBySize[size] < puzzles.length) {
+                        sessionPuzzleOrder.push(puzzles[indexesBySize[size]]);
+                        indexesBySize[size]++;
+                        puzzlesAdded++;
                     }
                 }
-                
-                sizeIndex++;
-            }
-        }
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
+                if (waveLength < availableSizes.length) {
+                    waveLength++;
+                }
             }
         }
 
@@ -592,19 +525,22 @@
             }, 3000);
         }
 
-        function calculatePuzzleStats(puzzleTime, puzzleSize) {
+        function calculatePuzzleStats(puzzleTime, puzzleSize, wordCount) {
             const stats = {
                 time: puzzleTime,
                 size: puzzleSize,
+                words: wordCount,
                 completed: Date.now()
             };
-            
+
             puzzleStats.push(stats);
-            
+
             // Update session stats
             sessionStats.puzzlesCompleted++;
             sessionStats.totalTime += puzzleTime;
+            sessionStats.totalWords += wordCount;
             sessionStats.averageTime = sessionStats.totalTime / sessionStats.puzzlesCompleted;
+            sessionStats.averageTimePerWord = sessionStats.totalTime / sessionStats.totalWords;
             sessionStats.shortestTime = Math.min(sessionStats.shortestTime, puzzleTime);
             sessionStats.longestTime = Math.max(sessionStats.longestTime, puzzleTime);
             
@@ -645,8 +581,12 @@
                         <span class="stats-value">${formatTime(Math.floor(sessionStats.totalTime / 1000))}</span>
                     </div>
                     <div class="stats-row">
-                        <span class="stats-label">Average Time</span>
+                        <span class="stats-label">Average Time per Puzzle</span>
                         <span class="stats-value">${formatTime(Math.floor(sessionStats.averageTime / 1000))}</span>
+                    </div>
+                    <div class="stats-row">
+                        <span class="stats-label">Average Time per Word</span>
+                        <span class="stats-value">${formatTime(Math.floor(sessionStats.averageTimePerWord / 1000))}</span>
                     </div>
                     <div class="stats-row">
                         <span class="stats-label">Shortest Puzzle</span>
@@ -689,15 +629,17 @@
                     averageTime: 0,
                     shortestTime: Infinity,
                     longestTime: 0,
+                    totalWords: 0,
+                    averageTimePerWord: 0,
                     accuracy: 100,
                     totalMistakes: 0
                 };
-                
+
                 // Reset timer and pause state
-                timeLeft = defaultGameDuration;
+                elapsedTime = 0;
                 isPaused = false;
                 if (timerInterval) clearInterval(timerInterval);
-                
+
                 // Reset puzzle variables
                 puzzlesBySize = {};
                 sessionPuzzleOrder = [];
@@ -832,14 +774,7 @@
         async function continueToNextPuzzle() {
             closePopup();
             await loadNextPuzzle();
-            
-            // Show bonus toast if there's a pending bonus
-            const pendingBonus = localStorage.getItem('pendingBonus');
-            if (pendingBonus) {
-                showToast(pendingBonus);
-                localStorage.removeItem('pendingBonus');
-            }
-            
+
             // Resume timer for next puzzle
             isPaused = false;
             startTimer();
@@ -855,7 +790,7 @@
                 // Calculate puzzle completion stats
                 const puzzleTime = Date.now() - puzzleStartTime;
                 const puzzleSize = crosswordData.size;
-                calculatePuzzleStats(puzzleTime, puzzleSize);
+                calculatePuzzleStats(puzzleTime, puzzleSize, crosswordData.words.length);
             }
             
             // Pause the timer to allow admiring the completed puzzle
@@ -1029,10 +964,12 @@
                 averageTime: 0,
                 shortestTime: Infinity,
                 longestTime: 0,
+                totalWords: 0,
+                averageTimePerWord: 0,
                 accuracy: 100,
                 totalMistakes: 0
             };
-            timeLeft = defaultGameDuration;
+            elapsedTime = 0;
             isPaused = false;
             if (timerInterval) clearInterval(timerInterval);
             puzzlesBySize = {};
@@ -1065,80 +1002,6 @@
                 
             }
         }
-
-        function startCooldown() {
-            // Stop the main timer and pause the game
-            if (timerInterval) clearInterval(timerInterval);
-            isPaused = true;
-            isManuallyPaused = false; // This is an automatic pause due to timeout
-            
-            // Set cooldown end time (10 minutes from now)
-            cooldownEnd = new Date().getTime() + (10 * 60 * 1000); // 10 minutes in milliseconds
-            saveGameState();
-            showCooldownPopup();
-        }
-
-        function showCooldownPopup() {
-            // Select random cooldown message
-            const randomMessage = MESSAGES.cooldown[Math.floor(Math.random() * MESSAGES.cooldown.length)];
-            
-            // Update popup content
-            document.getElementById('popup-title').textContent = randomMessage.title;
-            document.getElementById('popup-subtitle').textContent = randomMessage.subtitle;
-            
-            // Add cooldown class and timer
-            const popup = document.querySelector('.popup');
-            const buttonsContainer = document.getElementById('popup-buttons');
-            
-            popup.classList.add('cooldown');
-            buttonsContainer.innerHTML = `<div class="cooldown-timer" id="cooldown-timer">60:00</div>`;
-            
-            // Show popup
-            document.getElementById('popup-overlay').classList.add('show');
-            
-            // Start cooldown timer
-            updateCooldownTimer();
-            cooldownInterval = setInterval(updateCooldownTimer, 1000);
-        }
-
-        function updateCooldownTimer() {
-            const now = new Date().getTime();
-            const timeRemaining = cooldownEnd - now;
-            
-            if (timeRemaining <= 0) {
-                // Cooldown finished
-                clearInterval(cooldownInterval);
-                cooldownEnd = null;
-                
-                // Reset timer to 5 minutes and resume game
-                timeLeft = defaultGameDuration;
-                isPaused = false;
-                isManuallyPaused = false;
-                updateTimerDisplay();
-                startTimer();
-                
-                saveGameState();
-                
-                // Reset popup to normal state
-                const popup = document.querySelector('.popup');
-                popup.classList.remove('cooldown');
-                closePopup();
-                
-                return;
-            }
-            
-            // Convert to MM:SS format
-            const minutes = Math.floor(timeRemaining / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-            
-            const timerElement = document.getElementById('cooldown-timer');
-            if (timerElement) {
-                timerElement.textContent = display;
-            }
-        }
-
-
 
         // Create the game interface
         function createGameInterface(shouldRestoreGrid = true) {
@@ -1684,38 +1547,16 @@
             // Calculate puzzle completion stats
             const puzzleTime = Date.now() - puzzleStartTime;
             const puzzleSize = crosswordData.size;
-            
-            calculatePuzzleStats(puzzleTime, puzzleSize);
+
+            calculatePuzzleStats(puzzleTime, puzzleSize, crosswordData.words.length);
             completedPuzzles.add(getCurrentPuzzleFile());
             
             // Update navigation buttons after completion
             updateNavigationButtons();
-            
-            // Calculate and apply time bonuses
-            let bonusTime = 0;
-            
-            // Get bonus settings from config
-            const sizeConfig = puzzlesBySize[puzzleSize];
-            if (sizeConfig && sizeConfig.bonusSettings) {
-                const bonusSettings = sizeConfig.bonusSettings;
-                const thresholdMs = bonusSettings.fastCompletionThresholdSeconds * 1000;
-                
-                if (puzzleTime < thresholdMs) {
-                    bonusTime = bonusSettings.fastCompletionBonusSeconds;
-                } else {
-                    bonusTime = bonusSettings.normalCompletionBonusSeconds;
-                }
-            }
-            
+
             // Check if this is the final puzzle
             const remainingPuzzles = sessionPuzzleOrder.filter(puzzle => !completedPuzzles.has(puzzle));
-            
-            // Only apply time bonus if this is NOT the final puzzle
-            if (remainingPuzzles.length > 0) {
-                timeLeft += bonusTime;
-                localStorage.setItem('pendingBonus', `+${bonusTime} Seconds`);
-            }
-            
+
             saveGameState();
             
             if (remainingPuzzles.length === 0) {
@@ -2179,13 +2020,6 @@
             }
         }
 
-        // Utility functions for reveal operations
-        function applyRevealPenalty(seconds) {
-            timeLeft = Math.max(0, timeLeft - seconds);
-            updateTimerDisplay();
-            showToast(`-${seconds} Seconds`);
-        }
-
         function calculateCellPosition(word, letterIndex) {
             if (word.direction === 'across') {
                 return { row: word.row, col: word.col + letterIndex };
@@ -2215,8 +2049,6 @@
                 return; // No cell selected
             }
 
-            applyRevealPenalty(5);
-
             // Find the correct letter for the selected cell
             const row = selectedCell.row;
             const col = selectedCell.col;
@@ -2245,7 +2077,6 @@
                 return; // No word selected
             }
 
-            applyRevealPenalty(15);
             fillWord(currentWord);
             saveGameState();
             checkPuzzleCompletion();
@@ -2257,8 +2088,6 @@
         }
 
         function revealPuzzle() {
-            applyRevealPenalty(30);
-            
             // Put user in admire mode (like viewing a completed puzzle)
             isPaused = true;
             isManuallyPaused = false;
@@ -2280,8 +2109,8 @@
             completedPuzzles.add(getCurrentPuzzleFile());
             const puzzleTime = Date.now() - puzzleStartTime;
             const puzzleSize = crosswordData.size;
-            calculatePuzzleStats(puzzleTime, puzzleSize);
-            
+            calculatePuzzleStats(puzzleTime, puzzleSize, crosswordData.words.length);
+
             // Update navigation buttons to enable next button
             updateNavigationButtons();
             
