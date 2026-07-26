@@ -4,12 +4,28 @@ var BASE = 'dear-sam/';
 var STRINGS_URL = BASE + 'strings.json';
 var PUZZLE_URL = BASE + 'data/puzzle.json';
 
+var COMPLETED_KEY = 'cryptogram_completed';
+var COMPLETED_HASH_KEY = 'cryptogram_completed_hash';
+
 var STR = {};
 var correctMapping = {};
 var NEXT_PUZZLES_ENABLED = true;
 var allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var currentSelected = null;
 var puzzleSolved = false;
+var currentPuzzleHash = '';
+
+// Small deterministic string hash (FNV-1a, 32-bit) used to fingerprint the puzzle message.
+// No cryptographic properties needed here -- it just has to change when the message does,
+// so a stale "already solved" completion in localStorage can be told apart from a current one.
+function hashMessage(str) {
+    var hash = 0x811c9dc5;
+    for (var i = 0; i < str.length; i++) {
+        hash ^= str.charCodeAt(i);
+        hash = Math.imul(hash, 0x01000193);
+    }
+    return (hash >>> 0).toString(16);
+}
 
 function getPreviousInput(currentInput) {
     const allInputs = Array.from(document.querySelectorAll('.letter-input'));
@@ -166,7 +182,8 @@ function revealCompletedMessage() {
 
 function restartGame() {
     // Clear completion state
-    localStorage.removeItem('cryptogram_completed');
+    localStorage.removeItem(COMPLETED_KEY);
+    localStorage.removeItem(COMPLETED_HASH_KEY);
 
     // Reset puzzle state
     puzzleSolved = false;
@@ -196,8 +213,27 @@ function restartGame() {
 }
 
 function initializePage() {
-    // Check if puzzle was already completed
-    const isCompleted = localStorage.getItem('cryptogram_completed') === 'true';
+    // Check if puzzle was already completed, and whether it was *this* puzzle. A stored
+    // completion whose hash doesn't match the current message means the message has since
+    // been refreshed, so the old "solved" state is stale and shouldn't carry over.
+    const completedFlag = localStorage.getItem(COMPLETED_KEY) === 'true';
+    const storedHash = localStorage.getItem(COMPLETED_HASH_KEY);
+
+    let isCompleted = false;
+
+    if (completedFlag) {
+        if (storedHash === null) {
+            // Legacy completion from before per-message hashing existed: grandfather it in
+            // for whatever puzzle is live now, and start tracking its hash going forward.
+            localStorage.setItem(COMPLETED_HASH_KEY, currentPuzzleHash);
+            isCompleted = true;
+        } else if (storedHash === currentPuzzleHash) {
+            isCompleted = true;
+        } else {
+            localStorage.removeItem(COMPLETED_KEY);
+            localStorage.removeItem(COMPLETED_HASH_KEY);
+        }
+    }
 
     if (isCompleted) {
         // Reveal the message immediately
@@ -293,8 +329,9 @@ function solvePuzzle() {
 
     puzzleSolved = true;
 
-    // Mark cryptogram as completed
-    localStorage.setItem('cryptogram_completed', 'true');
+    // Mark cryptogram as completed, tagged with a fingerprint of the message solved
+    localStorage.setItem(COMPLETED_KEY, 'true');
+    localStorage.setItem(COMPLETED_HASH_KEY, currentPuzzleHash);
 
     // Start the fade animation for encrypted letters
     document.querySelectorAll('.encrypted-letter').forEach(letter => {
@@ -489,14 +526,105 @@ async function fetchJson(url){
     return res.json();
 }
 
+// Builds the puzzle-container DOM from a plaintext message and a plain-letter -> encrypted-letter
+// cipher, mirroring the tile layout the puzzle previously had hardcoded into the HTML: each
+// word becomes a boxed row of letter-inputs (mirrored by a row of encrypted letters below), and
+// any non-letter characters in a word (commas, periods, apostrophes) are pulled out of the tile
+// sequence and rendered as trailing punctuation, since the tile grid only holds single letters.
+function buildPuzzle(message, mapping) {
+    var plainToEncrypted = {};
+    Object.keys(mapping).forEach(function(cipher) {
+        plainToEncrypted[mapping[cipher]] = cipher;
+    });
+
+    var container = document.getElementById('puzzle-container');
+    container.innerHTML = '';
+
+    var index = 0;
+
+    message.split('\n\n').forEach(function(paragraph, pIdx) {
+        if (pIdx > 0) {
+            var pBreak = document.createElement('div');
+            pBreak.className = 'paragraph-break';
+            container.appendChild(pBreak);
+        }
+
+        paragraph.split('\n').forEach(function(lineText) {
+            var lineEl = document.createElement('div');
+            lineEl.className = 'line';
+
+            lineText.split(' ').filter(function(word) { return word.length > 0; }).forEach(function(word) {
+                var letters = [];
+                var punctuation = [];
+                for (var i = 0; i < word.length; i++) {
+                    var ch = word[i];
+                    if (/[a-zA-Z]/.test(ch)) {
+                        letters.push(ch.toUpperCase());
+                    } else {
+                        punctuation.push(ch);
+                    }
+                }
+
+                var wordGroup = document.createElement('div');
+                wordGroup.className = 'word-group';
+
+                var inputRow = document.createElement('div');
+                inputRow.className = 'input-row';
+
+                var encryptedRow = document.createElement('div');
+                encryptedRow.className = 'encrypted-row';
+
+                letters.forEach(function(letter, i) {
+                    var encrypted = plainToEncrypted[letter];
+
+                    var input = document.createElement('input');
+                    input.type = 'text';
+                    input.maxLength = 1;
+                    input.className = 'letter-input' + (i === letters.length - 1 ? ' last-alpha' : '');
+                    input.autocomplete = 'off';
+                    input.dataset.encrypted = encrypted;
+                    input.dataset.index = index++;
+                    inputRow.appendChild(input);
+
+                    var encEl = document.createElement('div');
+                    encEl.className = 'encrypted-letter';
+                    encEl.textContent = encrypted;
+                    encryptedRow.appendChild(encEl);
+                });
+
+                punctuation.forEach(function(mark) {
+                    var punctEl = document.createElement('div');
+                    punctEl.className = 'punctuation-inline';
+                    punctEl.textContent = mark;
+                    inputRow.appendChild(punctEl);
+
+                    var spaceEl = document.createElement('div');
+                    spaceEl.className = 'empty-space';
+                    encryptedRow.appendChild(spaceEl);
+                });
+
+                wordGroup.appendChild(inputRow);
+                wordGroup.appendChild(encryptedRow);
+                lineEl.appendChild(wordGroup);
+            });
+
+            container.appendChild(lineEl);
+        });
+    });
+}
+
 async function init(){
     var results = await Promise.all([
         fetchJson(STRINGS_URL),
         fetchJson(PUZZLE_URL)
     ]);
     STR = results[0];
-    correctMapping = results[1].mapping;
-    NEXT_PUZZLES_ENABLED = results[1].nextPuzzlesEnabled;
+    var puzzle = results[1];
+    correctMapping = puzzle.mapping;
+    NEXT_PUZZLES_ENABLED = puzzle.nextPuzzlesEnabled;
+    currentPuzzleHash = hashMessage(puzzle.message);
+
+    buildPuzzle(puzzle.message, puzzle.mapping);
 
     bindStaticControls();
     bindLetterInputs();

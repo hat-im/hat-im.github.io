@@ -3,13 +3,13 @@
     "solved": {
       "title": "Puzzle Solved!",
       "message": "Congratulations! You've decrypted the message.<br><br>Should you find it, there's a secret here, but you'll need to find it yourself.",
-      "hint": "<em>Look aHeader than usual.</em>",
+      "hint": "<em>Look aHeader than usual. Also, I may refresh this message now and then, so it's worth checking back.</em>",
       "continueLabel": "Continue Exploring"
     },
     "returning": {
       "title": "Welcome Back!",
       "message": "You've already solved this cryptogram.<br><br>The message has been revealed for you.",
-      "hint": "<em>Feel free to explore or play again.</em>",
+      "hint": "<em>Feel free to explore or play again. I may refresh this message now and then, so it's worth checking back.</em>",
       "continueLabel": "Continue Exploring"
     },
     "early": {
