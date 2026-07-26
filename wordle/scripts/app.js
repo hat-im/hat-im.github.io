@@ -3,13 +3,36 @@
       let WORDS_DATA = [];
       let COMMON_WORDS_BY_LENGTH = {};
       let wordleDataLoaded = false;
+
+      // Derives per-word puzzle data (word, punctuation, length, guesses, max_score) from a
+      // plaintext message and a guesses/score table keyed by word length, instead of
+      // hand-authoring every word's stats. Trailing punctuation on a word (e.g. "well!") is
+      // split off into its own field since it's only for display, not part of the guessable word.
+      function buildWordsData(message, difficultyByLength) {
+        return message
+          .split(" ")
+          .filter((token) => token.length > 0)
+          .map((token) => {
+            const word = token.replace(/[^a-zA-Z]/g, "").toUpperCase();
+            const punctuation = token.replace(/[a-zA-Z]/g, "");
+            const difficulty = difficultyByLength[word.length];
+            return {
+              word: word,
+              punctuation: punctuation,
+              length: word.length,
+              guesses: difficulty.guesses,
+              max_score: difficulty.max_score,
+            };
+          });
+      }
+
       async function loadWordleData() {
         if (wordleDataLoaded) return;
-        const [wordsData, commonWords] = await Promise.all([
-          fetch(WORDLE_DATA_BASE + "words-data.json").then((r) => r.json()),
+        const [puzzle, commonWords] = await Promise.all([
+          fetch(WORDLE_DATA_BASE + "puzzle.json").then((r) => r.json()),
           fetch(WORDLE_DATA_BASE + "common-words.json").then((r) => r.json()),
         ]);
-        WORDS_DATA = wordsData;
+        WORDS_DATA = buildWordsData(puzzle.message, puzzle.difficultyByLength);
         COMMON_WORDS_BY_LENGTH = commonWords;
         wordleDataLoaded = true;
       }

@@ -1,0 +1,9 @@
+{
+  "message": "More puzzles ahead! Hope design retreat goes well!",
+  "difficultyByLength": {
+    "4": { "guesses": 8, "max_score": 90 },
+    "5": { "guesses": 6, "max_score": 100 },
+    "6": { "guesses": 6, "max_score": 90 },
+    "7": { "guesses": 5, "max_score": 100 }
+  }
+}
