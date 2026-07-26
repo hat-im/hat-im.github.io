@@ -40,7 +40,7 @@
   "words": [
     {
       "word": "DIARY",
-      "clue": "School-issued criminal record.",
+      "clue": "School-issued dossier of your daily doings.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -50,7 +50,7 @@
     },
     {
       "word": "INDIA",
-      "clue": "Land of chai.",
+      "clue": "Colorful, chai-loving country.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -60,7 +60,7 @@
     },
     {
       "word": "COUCH",
-      "clue": "J.D. Vance's most comfortable lay.",
+      "clue": "J.D. Vance's cushiest claim to fame.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -70,7 +70,7 @@
     },
     {
       "word": "LEO",
-      "clue": "Roaring star sign.",
+      "clue": "Roaring, regal star sign.",
       "row": 3,
       "col": 2,
       "direction": "across",
@@ -80,7 +80,7 @@
     },
     {
       "word": "YET",
-      "clue": "Still pending, somehow.",
+      "clue": "Stubbornly still pending.",
       "row": 4,
       "col": 0,
       "direction": "across",
@@ -90,7 +90,7 @@
     },
     {
       "word": "DICEY",
-      "clue": "Letting a rookie cube the onions.",
+      "clue": "Dangerous, letting a rookie cube the onions.",
       "row": 0,
       "col": 0,
       "direction": "down",
@@ -100,7 +100,7 @@
     },
     {
       "word": "INO",
-      "clue": "Mythic lifesaver, forgotten to all but crossworders.",
+      "clue": "Mythic mariner's savior, forgotten by all but crossworders.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -120,7 +120,7 @@
     },
     {
       "word": "RICE",
-      "clue": "Staple food and desperate phone cure.",
+      "clue": "Staple starch, and a desperate phone cure.",
       "row": 0,
       "col": 3,
       "direction": "down",

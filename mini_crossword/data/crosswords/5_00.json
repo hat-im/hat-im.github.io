@@ -40,7 +40,7 @@
   "words": [
     {
       "word": "THAIS",
-      "clue": "People behind orange iced tea.",
+      "clue": "Proud purveyors of that orange iced tea.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -51,7 +51,7 @@
     },
     {
       "word": "BRICK",
-      "clue": "Dead device, post-update. Also building block of a home.",
+      "clue": "A defunct device, post-update, or a builder's basic block.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -62,7 +62,7 @@
     },
     {
       "word": "IDAHO",
-      "clue": "8-Across’s state, on the US map.",
+      "clue": "8-Across's state, sitting squarely on the map.",
       "row": 3,
       "col": 0,
       "direction": "across",
@@ -73,7 +73,7 @@
     },
     {
       "word": "GEM",
-      "clue": "Opal, or a rare find at a bookstore.",
+      "clue": "Opal, or a bookstore's buried bounty.",
       "row": 4,
       "col": 0,
       "direction": "across",
@@ -95,7 +95,7 @@
     },
     {
       "word": "HORDE",
-      "clue": "Mob that sounds like it stores stuff.",
+      "clue": "Swarm that sounds like it stashes stuff.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -117,7 +117,7 @@
     },
     {
       "word": "INCH",
-      "clue": "Scale of American progression.",
+      "clue": "Customary unit, or how progress creeps and crawls.",
       "row": 0,
       "col": 3,
       "direction": "down",
@@ -128,7 +128,7 @@
     },
     {
       "word": "KOI",
-      "clue": "Carp that ate and serves.",
+      "clue": "Prized, patterned pond fish.",
       "row": 2,
       "col": 4,
       "direction": "down",

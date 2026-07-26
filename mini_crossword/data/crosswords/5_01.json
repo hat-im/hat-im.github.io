@@ -40,7 +40,7 @@
   "words": [
     {
       "word": "BEE",
-      "clue": "Second letter or stinging pollinator.",
+      "clue": "Second letter, or a buzzing black-and-yellow pollinator.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -70,7 +70,7 @@
     },
     {
       "word": "SEMI",
-      "clue": "Trailer type or half-circle, briefly.",
+      "clue": "Trailer-truck type, or a half-circle, briefly.",
       "row": 3,
       "col": 1,
       "direction": "across",
@@ -80,7 +80,7 @@
     },
     {
       "word": "SOX",
-      "clue": "Boston nine, in short (ugh, sports).",
+      "clue": "Beantown baseballers, briefly (ugh, sports).",
       "row": 4,
       "col": 2,
       "direction": "across",
@@ -100,7 +100,7 @@
     },
     {
       "word": "EROS",
-      "clue": "God of love, studio of Bhai.",
+      "clue": "God of love, and Bollywood Bhai's studio, briefly.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -110,7 +110,7 @@
     },
     {
       "word": "EAVES",
-      "clue": "Nosy listening, before dropping.",
+      "clue": "Nosy, noisy listening spot, before it drops.",
       "row": 0,
       "col": 2,
       "direction": "down",
@@ -130,7 +130,7 @@
     },
     {
       "word": "NIX",
-      "clue": "To put an X on it.",
+      "clue": "To cancel, cross out, or can it.",
       "row": 2,
       "col": 4,
       "direction": "down",

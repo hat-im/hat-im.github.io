@@ -50,7 +50,7 @@
     },
     {
       "word": "TUNA",
-      "clue": "Aquatic animal found in cans and sandwiches.",
+      "clue": "Sea swimmer, canned or in a sandwich.",
       "row": 1,
       "col": 1,
       "direction": "across",
@@ -80,7 +80,7 @@
     },
     {
       "word": "LAST",
-      "clue": "Not the first, second or middle but a secret fourth thing.",
+      "clue": "Not the first, second, or middle, but a secret fourth thing.",
       "row": 4,
       "col": 0,
       "direction": "across",

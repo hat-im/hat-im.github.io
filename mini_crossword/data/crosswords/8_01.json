@@ -85,7 +85,7 @@
   "words": [
     {
       "word": "ALIAS",
-      "clue": "Anti-smoothing onscreen letters.",
+      "clue": "The onscreen letter distortion that 'anti-' smooths out.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -155,7 +155,7 @@
     },
     {
       "word": "DABS",
-      "clue": "The Fortnite salutes.",
+      "clue": "The Fortnite elbow-sneeze dance move.",
       "row": 5,
       "col": 0,
       "direction": "across",
@@ -175,7 +175,7 @@
     },
     {
       "word": "ORPHAN",
-      "clue": "Alone at the end of a page.",
+      "clue": "A lonely line, left at the end of a page.",
       "row": 6,
       "col": 0,
       "direction": "across",
@@ -185,7 +185,7 @@
     },
     {
       "word": "WESE",
-      "clue": "Kese hi? (Spelled badly I know)",
+      "clue": "Kese hi? (Spelled badly, I know)",
       "row": 7,
       "col": 0,
       "direction": "across",
@@ -205,7 +205,7 @@
     },
     {
       "word": "WIDOW",
-      "clue": "Pushed to a new page, all alone.",
+      "clue": "Pushed to a new page, painfully alone.",
       "row": 3,
       "col": 0,
       "direction": "down",
@@ -215,7 +215,7 @@
     },
     {
       "word": "LOL",
-      "clue": "Laughter in the digital age.",
+      "clue": "Digitally downsized laughter.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -275,7 +275,7 @@
     },
     {
       "word": "KERNS",
-      "clue": "Spaces meant to avoid a designer's judgement.",
+      "clue": "Spaces adjusted to satisfy a designer's judgment.",
       "row": 3,
       "col": 5,
       "direction": "down",
@@ -285,7 +285,7 @@
     },
     {
       "word": "ROWENA",
-      "clue": "Founder behind Ravenclaw.",
+      "clue": "The wise witch who founded Ravenclaw.",
       "row": 0,
       "col": 6,
       "direction": "down",

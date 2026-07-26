@@ -63,7 +63,7 @@
     },
     {
       "word": "READ",
-      "clue": "In present tense for books, past tense for texts.",
+      "clue": "Present tense for a book, past tense for a text.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -83,7 +83,7 @@
     },
     {
       "word": "ELAPSE",
-      "clue": "Go by, like time in quarantine.",
+      "clue": "Slip by, slowly, like time in quarantine.",
       "row": 3,
       "col": 0,
       "direction": "across",
@@ -103,7 +103,7 @@
     },
     {
       "word": "TOSS",
-      "clue": "What to do with coins, salads, or aside.",
+      "clue": "What to do with coins, salads, or worries.",
       "row": 5,
       "col": 0,
       "direction": "across",
@@ -153,7 +153,7 @@
     },
     {
       "word": "ADOPTS",
-      "clue": "Takes in, as kittens.",
+      "clue": "Takes in, tenderly, as kittens.",
       "row": 0,
       "col": 3,
       "direction": "down",
@@ -173,7 +173,7 @@
     },
     {
       "word": "DESEED",
-      "clue": "Prep work for cooking dates.",
+      "clue": "Pit-pulling prep work for cooking dates.",
       "row": 0,
       "col": 5,
       "direction": "down",

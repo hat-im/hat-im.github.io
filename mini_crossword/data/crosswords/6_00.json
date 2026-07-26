@@ -53,7 +53,7 @@
   "words": [
     {
       "word": "USB",
-      "clue": "Connector that never fits on the first try.",
+      "clue": "Connector you flip, fumble, and finally fit.",
       "row": 0,
       "col": 0,
       "direction": "across",
@@ -73,7 +73,7 @@
     },
     {
       "word": "ALOHAS",
-      "clue": "Arrivals and departures in Honolulu.",
+      "clue": "Hellos and goodbyes, Honolulu-style.",
       "row": 2,
       "col": 0,
       "direction": "across",
@@ -163,7 +163,7 @@
     },
     {
       "word": "YES",
-      "clue": "Word that can get you in a lot of trouble.",
+      "clue": "Word that can cause a lot of commotion.",
       "row": 0,
       "col": 5,
       "direction": "down",

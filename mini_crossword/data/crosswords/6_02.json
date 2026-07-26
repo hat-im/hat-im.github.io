@@ -93,7 +93,7 @@
     },
     {
       "word": "OOPS",
-      "clue": "Blunder\u2019s exclamations.",
+      "clue": "The blurted exclamation after a blunder.",
       "row": 2,
       "col": 2,
       "direction": "across",
@@ -113,7 +113,7 @@
     },
     {
       "word": "NECKS",
-      "clue": "They contain jugulars.",
+      "clue": "They hoist your head and house your jugulars.",
       "row": 4,
       "col": 0,
       "direction": "across",
@@ -143,7 +143,7 @@
     },
     {
       "word": "HB",
-      "clue": "Reason blood runs red: Abbreviated.",
+      "clue": "Reason blood runs red, abbreviated.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -203,7 +203,7 @@
     },
     {
       "word": "ETSY",
-      "clue": "Handmade marketplace.",
+      "clue": "Marketplace for makers of handmade goods.",
       "row": 0,
       "col": 5,
       "direction": "down",

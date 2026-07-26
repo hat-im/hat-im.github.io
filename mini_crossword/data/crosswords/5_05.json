@@ -50,7 +50,7 @@
     },
     {
       "word": "GHOST",
-      "clue": "Didn’t text back, or returned with a sheet on.",
+      "clue": "Didn't text back, or returned with a sheet on.",
       "row": 1,
       "col": 0,
       "direction": "across",
@@ -80,7 +80,7 @@
     },
     {
       "word": "DROOL",
-      "clue": "Sofie's overflowing contribution to every outfit.",
+      "clue": "Sofie's slobbery, overflowing contribution to every outfit.",
       "row": 3,
       "col": 0,
       "direction": "across",
@@ -100,7 +100,7 @@
     },
     {
       "word": "AGODA",
-      "clue": "Travel site with good deals.",
+      "clue": "Travel site for deal-hunting, done right.",
       "row": 0,
       "col": 0,
       "direction": "down",
@@ -110,7 +110,7 @@
     },
     {
       "word": "THIRD",
-      "clue": "The wave of coffee we frequented.",
+      "clue": "The coffee wave we faithfully frequented.",
       "row": 0,
       "col": 1,
       "direction": "down",
@@ -120,7 +120,7 @@
     },
     {
       "word": "EO",
-      "clue": "Cinematic donkey who lost everything.",
+      "clue": "Cinematic donkey, doomed and dejected.",
       "row": 0,
       "col": 2,
       "direction": "down",
@@ -130,7 +130,7 @@
     },
     {
       "word": "OE",
-      "clue": "What's shared between \"foe\" and \"toe.\".",
+      "clue": "What's shared between \"foe\" and \"toe\".",
       "row": 3,
       "col": 2,
       "direction": "down",
@@ -150,7 +150,7 @@
     },
     {
       "word": "STOLE",
-      "clue": "Draped in autos, done to hearts.",
+      "clue": "Draped over shoulders, or swiped from a sweetheart.",
       "row": 0,
       "col": 4,
       "direction": "down",
