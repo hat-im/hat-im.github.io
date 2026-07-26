@@ -1,6 +1,8 @@
 {
-  "message": "More puzzles ahead! Hope design retreat goes well!",
+  "message": "Did you like the matcha? How is the crochet going?",
   "difficultyByLength": {
+    "2": { "guesses": 10, "max_score": 70 },
+    "3": { "guesses": 9, "max_score": 80 },
     "4": { "guesses": 8, "max_score": 90 },
     "5": { "guesses": 6, "max_score": 100 },
     "6": { "guesses": 6, "max_score": 90 },
