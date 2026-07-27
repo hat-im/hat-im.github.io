@@ -1,15 +1,15 @@
 {
-  "pageTitle": "A Pocketful of Puzzle",
-  "heading": "A Pocketful of Puzzle",
-  "subheading": "An assortment of challenge and distraction",
+  "pageTitle": "A Pocketful of Play",
+  "heading": "A Pocketful of Play",
+  "subheading": "A growing assortment of challenge and distraction",
   "dedication": "from Hat, to Sam",
-  "welcomeMessage": "Check off your inventory before you start.",
+  "welcomeMessage": "I know the pressure can get loud in there sometimes, not to mention the meetings that could've been messages, the never-ending to-dos to do, all of it. Sometimes you need five minutes away but you don't want to doom-scroll. This is where you can give yourself a refreshing lime soda or a relaxing hot chocolate, for the mind before your next meeting.",
   "checklistTitle": "Ingredients for Success",
   "instructions": [
-    "• Horizontal position (optimal for heavy thinking)",
+    "• A comfortable seat (optimal for heavy thinking)",
     "• A soft kitty to pet (or annoy)",
-    "• The \"Pop Goes Classical\" playlist",
-    "• A tall cup of hot chocolate (or coffee)",
+    "• The perfect playlist (in your ears or your head)",
+    "• A warm cup of matcha (or coffee)",
     "• A brain cell (borrow if unavailable)"
   ],
   "entryButton": {
@@ -23,20 +23,20 @@
     "stayHere": "Stay Here"
   },
   "footer": {
-    "initial": "Take your time with these.<div class=\"device-note\">For best results, open on laptop<br>Please puzzle responsibly.</div>",
+    "initial": "Take your time with these.<div class=\"device-note\">For best results, open on laptop<br>Please play responsibly.</div>",
     "perfectTiming": "Perfect timing.",
     "letsGetStarted": "Let's get started then.",
     "notThatMuchTime": "Okay, maybe not <em>that</em> much time...",
     "illRedirectYou": "Alright, I'll just redirect you myself.",
-    "aborted": "Take your time with these.<br>(Does asynchronous puzzle communication count as no contact?)"
+    "aborted": "Take your time with these, and yourself."
   },
-  "hiddenMessage": "Made with love.",
+  "hiddenMessage": "Made for Sam, with love and Sour Punk.",
   "puzzleCard": {
-    "title": "Puzzles",
+    "title": "Mini-Games",
     "close": "&times;"
   },
   "surprise": {
-    "welcomeBack": "Welcome back, puzzle solver.",
-    "letsGo": "Let's gooooooo"
+    "welcomeBack": "Welcome back. Needed another five minutes?",
+    "letsGo": "Let's gooooooooooooooooooooooooh, I'm blinded by the lights."
   }
 }

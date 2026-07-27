@@ -2,9 +2,11 @@
   var BASE = "hey/";
   var STRINGS_URL = BASE + "strings.json";
   var PUZZLES_URL = BASE + "data/puzzles.json";
+  var FACTS_URL = BASE + "data/funfacts.json";
 
   var STR = {};
   var PUZZLES = { main: [], finalUnlock: null };
+  var FACTS = { facts: [] };
 
   var countdownTimer;
   var timeLeft = 5;
@@ -47,6 +49,50 @@
 
     document.getElementById("puzzleCardTitle").textContent = STR.puzzleCard.title;
     document.getElementById("puzzleCardClose").innerHTML = STR.puzzleCard.close;
+  }
+
+  // Seeded PRNG (mulberry32) so the shuffle is stable for a given seed
+  function mulberry32(seed) {
+    return function () {
+      seed |= 0;
+      seed = (seed + 0x6d2b79f5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function dateSeed() {
+    var today = new Date();
+    var dateStr =
+      today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate();
+    var hash = 0;
+    for (var i = 0; i < dateStr.length; i++) {
+      hash = (hash * 31 + dateStr.charCodeAt(i)) | 0;
+    }
+    return hash;
+  }
+
+  function shuffleWithSeed(array, seed) {
+    var rand = mulberry32(seed);
+    var result = array.slice();
+    for (var i = result.length - 1; i > 0; i--) {
+      var j = Math.floor(rand() * (i + 1));
+      var tmp = result[i];
+      result[i] = result[j];
+      result[j] = tmp;
+    }
+    return result;
+  }
+
+  function renderFactTicker() {
+    if (!FACTS.facts || FACTS.facts.length === 0) return;
+
+    var shuffled = shuffleWithSeed(FACTS.facts, dateSeed());
+    var tickerText = shuffled.join("   •   ");
+
+    document.getElementById("factTickerContent").textContent = tickerText;
+    document.getElementById("factTickerContentDup").textContent = tickerText;
   }
 
   function animateFooterChange(newText, callback) {
@@ -438,11 +484,17 @@
   }
 
   async function init() {
-    const results = await Promise.all([fetchJson(STRINGS_URL), fetchJson(PUZZLES_URL)]);
+    const results = await Promise.all([
+      fetchJson(STRINGS_URL),
+      fetchJson(PUZZLES_URL),
+      fetchJson(FACTS_URL),
+    ]);
     STR = results[0];
     PUZZLES = results[1];
+    FACTS = results[2];
 
     renderStaticText();
+    renderFactTicker();
     bindEvents();
   }
 
