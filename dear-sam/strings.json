@@ -17,6 +17,11 @@
       "message": "Congratulations, cryptogram-annihilator!<br><br>You've found a door to a secret, but it's still closed, for now.",
       "hint": "<em>Some doors open slower than others...</em>",
       "buttonLabel": "I understand"
+    },
+    "poemSolved": {
+      "title": "Decrypted!",
+      "hint": "<em>Refresh anytime for another poem to decrypt.</em>",
+      "continueLabel": "Continue Exploring"
     }
   }
 }

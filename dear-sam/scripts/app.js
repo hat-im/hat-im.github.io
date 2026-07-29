@@ -3,9 +3,11 @@
 var BASE = 'dear-sam/';
 var STRINGS_URL = BASE + 'strings.json';
 var PUZZLE_URL = BASE + 'data/puzzle.json';
+var POEMS_URL = BASE + 'data/poems.json';
 
 var COMPLETED_KEY = 'cryptogram_completed';
 var COMPLETED_HASH_KEY = 'cryptogram_completed_hash';
+var EVER_SOLVED_KEY = 'cryptogram_ever_solved';
 
 var STR = {};
 var correctMapping = {};
@@ -14,6 +16,36 @@ var allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var currentSelected = null;
 var puzzleSolved = false;
 var currentPuzzleHash = '';
+var currentPoem = null; // set when the active puzzle is a poem rather than the base letter
+
+// Generates a random substitution cipher (26-letter derangement, no letter mapping to itself),
+// in the same {cipherLetter: plainLetter} shape as puzzle.json's mapping.
+function generateCipherMapping() {
+    var alphabet = allLetters.split('');
+    var shuffled;
+
+    do {
+        shuffled = alphabet.slice();
+        for (var i = shuffled.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = tmp;
+        }
+    } while (alphabet.some(function(letter, i) { return letter === shuffled[i]; }));
+
+    var mapping = {};
+    alphabet.forEach(function(letter, i) {
+        mapping[shuffled[i]] = letter;
+    });
+    return mapping;
+}
+
+function escapeHtml(str) {
+    var div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
 
 // Small deterministic string hash (FNV-1a, 32-bit) used to fingerprint the puzzle message.
 // No cryptographic properties needed here -- it just has to change when the message does,
@@ -113,7 +145,7 @@ function toggleHowToSolve() {
     }
 }
 
-function showPopup(isReturningUser = false) {
+function showPopup(mode) {
     const popup = document.getElementById('popup-overlay');
     const title = popup.querySelector('.popup-title');
     const message = popup.querySelector('.popup-message');
@@ -121,7 +153,16 @@ function showPopup(isReturningUser = false) {
     const continueBtn = popup.querySelector('.popup-close');
     const playAgainBtn = popup.querySelector('.popup-restart');
 
-    if (isReturningUser) {
+    if (mode === 'poem' && currentPoem) {
+        // A poem cryptogram was just decrypted (or was already solved on arrival) -- credit it
+        const s = STR.popup.poemSolved;
+        title.textContent = s.title;
+        message.innerHTML = "You've uncovered:<br><strong>" + escapeHtml(currentPoem.title) +
+            '</strong><br><em>' + escapeHtml(currentPoem.author) + '</em>';
+        hint.innerHTML = s.hint;
+        continueBtn.textContent = s.continueLabel;
+        playAgainBtn.style.display = 'inline-block';
+    } else if (mode === 'returning') {
         // Show different content for returning users
         const s = STR.popup.returning;
         title.textContent = s.title;
@@ -226,6 +267,7 @@ function initializePage() {
             // Legacy completion from before per-message hashing existed: grandfather it in
             // for whatever puzzle is live now, and start tracking its hash going forward.
             localStorage.setItem(COMPLETED_HASH_KEY, currentPuzzleHash);
+            localStorage.setItem(EVER_SOLVED_KEY, 'true');
             isCompleted = true;
         } else if (storedHash === currentPuzzleHash) {
             isCompleted = true;
@@ -241,7 +283,7 @@ function initializePage() {
 
         // Show the welcome back popup
         setTimeout(() => {
-            showPopup(true);
+            showPopup(currentPoem ? 'poem' : 'returning');
         }, 500);
     }
 }
@@ -332,6 +374,7 @@ function solvePuzzle() {
     // Mark cryptogram as completed, tagged with a fingerprint of the message solved
     localStorage.setItem(COMPLETED_KEY, 'true');
     localStorage.setItem(COMPLETED_HASH_KEY, currentPuzzleHash);
+    localStorage.setItem(EVER_SOLVED_KEY, 'true');
 
     // Start the fade animation for encrypted letters
     document.querySelectorAll('.encrypted-letter').forEach(letter => {
@@ -363,7 +406,7 @@ function solvePuzzle() {
 
         // Show the popup after a short delay
         setTimeout(() => {
-            showPopup();
+            showPopup(currentPoem ? 'poem' : 'solved');
         }, 500);
     }, 1000);
 }
@@ -528,9 +571,9 @@ async function fetchJson(url){
 
 // Builds the puzzle-container DOM from a plaintext message and a plain-letter -> encrypted-letter
 // cipher, mirroring the tile layout the puzzle previously had hardcoded into the HTML: each
-// word becomes a boxed row of letter-inputs (mirrored by a row of encrypted letters below), and
-// any non-letter characters in a word (commas, periods, apostrophes) are pulled out of the tile
-// sequence and rendered as trailing punctuation, since the tile grid only holds single letters.
+// word becomes a boxed row of letter-inputs (mirrored by a row of encrypted letters below), with
+// any non-letter characters (commas, apostrophes, dashes) rendered inline at their original
+// position, since the tile grid only holds single letters.
 function buildPuzzle(message, mapping) {
     var plainToEncrypted = {};
     Object.keys(mapping).forEach(function(cipher) {
@@ -554,17 +597,6 @@ function buildPuzzle(message, mapping) {
             lineEl.className = 'line';
 
             lineText.split(' ').filter(function(word) { return word.length > 0; }).forEach(function(word) {
-                var letters = [];
-                var punctuation = [];
-                for (var i = 0; i < word.length; i++) {
-                    var ch = word[i];
-                    if (/[a-zA-Z]/.test(ch)) {
-                        letters.push(ch.toUpperCase());
-                    } else {
-                        punctuation.push(ch);
-                    }
-                }
-
                 var wordGroup = document.createElement('div');
                 wordGroup.className = 'word-group';
 
@@ -574,34 +606,46 @@ function buildPuzzle(message, mapping) {
                 var encryptedRow = document.createElement('div');
                 encryptedRow.className = 'encrypted-row';
 
-                letters.forEach(function(letter, i) {
-                    var encrypted = plainToEncrypted[letter];
+                for (var i = 0; i < word.length; i++) {
+                    var ch = word[i];
 
-                    var input = document.createElement('input');
-                    input.type = 'text';
-                    input.maxLength = 1;
-                    input.className = 'letter-input' + (i === letters.length - 1 ? ' last-alpha' : '');
-                    input.autocomplete = 'off';
-                    input.dataset.encrypted = encrypted;
-                    input.dataset.index = index++;
-                    inputRow.appendChild(input);
+                    if (/[a-zA-Z]/.test(ch)) {
+                        var letter = ch.toUpperCase();
+                        var encrypted = plainToEncrypted[letter];
 
-                    var encEl = document.createElement('div');
-                    encEl.className = 'encrypted-letter';
-                    encEl.textContent = encrypted;
-                    encryptedRow.appendChild(encEl);
-                });
+                        var input = document.createElement('input');
+                        input.type = 'text';
+                        input.maxLength = 1;
+                        input.className = 'letter-input';
+                        input.autocomplete = 'off';
+                        input.dataset.encrypted = encrypted;
+                        input.dataset.index = index++;
 
-                punctuation.forEach(function(mark) {
-                    var punctEl = document.createElement('div');
-                    punctEl.className = 'punctuation-inline';
-                    punctEl.textContent = mark;
-                    inputRow.appendChild(punctEl);
+                        // Close the tile's box with a right border whenever the run of letters
+                        // ends here -- either the word ends, or the next character isn't a letter
+                        // (punctuation breaks the adjacent-tile border-sharing trick otherwise).
+                        var nextCh = word[i + 1];
+                        if (nextCh === undefined || !/[a-zA-Z]/.test(nextCh)) {
+                            input.classList.add('last-alpha');
+                        }
 
-                    var spaceEl = document.createElement('div');
-                    spaceEl.className = 'empty-space';
-                    encryptedRow.appendChild(spaceEl);
-                });
+                        inputRow.appendChild(input);
+
+                        var encEl = document.createElement('div');
+                        encEl.className = 'encrypted-letter';
+                        encEl.textContent = encrypted;
+                        encryptedRow.appendChild(encEl);
+                    } else {
+                        var punctEl = document.createElement('div');
+                        punctEl.className = 'punctuation-inline';
+                        punctEl.textContent = ch;
+                        inputRow.appendChild(punctEl);
+
+                        var spaceEl = document.createElement('div');
+                        spaceEl.className = 'empty-space';
+                        encryptedRow.appendChild(spaceEl);
+                    }
+                }
 
                 wordGroup.appendChild(inputRow);
                 wordGroup.appendChild(encryptedRow);
@@ -616,10 +660,29 @@ function buildPuzzle(message, mapping) {
 async function init(){
     var results = await Promise.all([
         fetchJson(STRINGS_URL),
-        fetchJson(PUZZLE_URL)
+        fetchJson(PUZZLE_URL),
+        fetchJson(POEMS_URL)
     ]);
     STR = results[0];
-    var puzzle = results[1];
+    var basePuzzle = results[1];
+    var poemsData = results[2];
+
+    var puzzle;
+    var everSolved = localStorage.getItem(EVER_SOLVED_KEY) === 'true';
+
+    if (everSolved && poemsData.poems && poemsData.poems.length > 0) {
+        // Once the base letter has ever been solved, every fresh visit decrypts a new poem
+        currentPoem = poemsData.poems[Math.floor(Math.random() * poemsData.poems.length)];
+        puzzle = {
+            message: currentPoem.text,
+            mapping: generateCipherMapping(),
+            nextPuzzlesEnabled: basePuzzle.nextPuzzlesEnabled
+        };
+    } else {
+        currentPoem = null;
+        puzzle = basePuzzle;
+    }
+
     correctMapping = puzzle.mapping;
     NEXT_PUZZLES_ENABLED = puzzle.nextPuzzlesEnabled;
     currentPuzzleHash = hashMessage(puzzle.message);

@@ -581,6 +581,56 @@ body {
   }
 }
 
+/* Fun Facts Ticker */
+.fact-ticker {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(212, 179, 150, 0.3);
+  flex-shrink: 0;
+}
+
+.fact-ticker-viewport {
+  flex: 1;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+
+.fact-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: factTickerScroll 70s linear infinite;
+}
+
+.fact-ticker-viewport:hover .fact-ticker-track {
+  animation-play-state: paused;
+}
+
+.fact-ticker-content {
+  white-space: nowrap;
+  padding-right: 48px;
+  font-size: 13px;
+  font-style: italic;
+  color: #705447;
+}
+
+@keyframes factTickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .fact-ticker-content {
+    font-size: 13px;
+  }
+}
+
 /* Puzzle Card Styles */
 .puzzle-card {
   position: fixed;
