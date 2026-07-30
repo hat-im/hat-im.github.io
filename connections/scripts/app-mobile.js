@@ -10,13 +10,16 @@
     // UI copy (loaded from strings.json)
     let STR = null;
 
-    // Ordered level ids (loaded from data/levels.json), e.g. ["sinnections", "hailnections"]
+    // Ordered levels (loaded from data/levels.json), e.g.
+    // [{ id: "sinnections", type: "text" }, { id: "sonnections", type: "audio" }]
+    // Each level's puzzle data lives at data/<type>/<id>.json, grouped by kind since
+    // there can be many levels of the same kind.
     let levels = [];
     let currentLevelIndex = 0;
     let completedLevels = new Set();
     let levelDataCache = {};
 
-    // Game data for the currently loaded level (from data/<levelId>.json)
+    // Game data for the currently loaded level (from data/<type>/<id>.json)
     let gameData = null;
 
     // How the current level's tiles are presented: 'text' | 'audio' | 'color' | 'image'
@@ -28,8 +31,12 @@
         return template.replace(/\{(\w+)\}/g, function(_, key){ return vars[key]; });
     }
 
-    function currentLevelId() {
+    function currentLevel() {
         return levels[currentLevelIndex];
+    }
+
+    function currentLevelId() {
+        return currentLevel().id;
     }
 
     // Namespaced localStorage key for the currently loaded level
@@ -615,13 +622,13 @@
 
     async function loadLevel(index) {
         currentLevelIndex = Math.max(0, Math.min(index, levels.length - 1));
-        const levelId = currentLevelId();
+        const level = currentLevel();
 
-        if (!levelDataCache[levelId]) {
-            levelDataCache[levelId] = await fetchJson(BASE + 'data/' + levelId + '.json');
+        if (!levelDataCache[level.id]) {
+            levelDataCache[level.id] = await fetchJson(BASE + 'data/' + level.type + '/' + level.id + '.json');
         }
-        gameData = levelDataCache[levelId];
-        tileType = gameData.tileType || 'text';
+        gameData = levelDataCache[level.id];
+        tileType = level.type;
         wordMedia = buildWordMedia();
 
         saveProgress();
@@ -982,7 +989,7 @@
             completedLevels.add(currentLevelId());
             saveProgress();
             updateNavButtons();
-            if (levels.every(id => completedLevels.has(id))) {
+            if (levels.every(l => completedLevels.has(l.id))) {
                 localStorage.setItem('connections_completed', 'true');
             }
         } else {

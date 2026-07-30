@@ -1,5 +1,5 @@
 [
-    "sinnections",
-    "sonnections",
-    "hailnections"
+    { "id": "sinnections", "type": "text" },
+    { "id": "sonnections", "type": "audio" },
+    { "id": "hailnections", "type": "text" }
 ]
