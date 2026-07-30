@@ -4710,6 +4710,50 @@
         "survey"
       ],
       "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-1304-03061",
+      "doi": "10.48550/arXiv.1304.3061",
+      "title": "A variational eigenvalue solver on a quantum processor",
+      "authorIds": [
+        "a833",
+        "a509",
+        "a834",
+        "a835",
+        "a836",
+        "a837",
+        "a827"
+      ],
+      "year": 2013,
+      "journalId": "j98",
+      "keywordIds": [
+        "algorithms",
+        "variational-algorithms",
+        "quantum-algorithms"
+      ],
+      "citations": 5054
+    },
+    {
+      "id": "10-48550-arxiv-2407-14431",
+      "doi": "10.48550/arXiv.2407.14431",
+      "title": "Diagonalization of large many-body Hamiltonians on a quantum processor",
+      "authorIds": [
+        "a838",
+        "a839",
+        "a407",
+        "a375",
+        "a840",
+        "a252",
+        "a827"
+      ],
+      "year": 2024,
+      "journalId": "j98",
+      "keywordIds": [
+        "algorithms",
+        "quantum-diagonalization",
+        "quantum-algorithms"
+      ],
+      "citations": 25
     }
   ]
 }
