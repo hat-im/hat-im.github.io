@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonnections</title>
+    <title>Connections</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/shared/connections-favicon.ico">
-    <link rel="stylesheet" href="sonnections/styles/sonnections.css">
+    <link rel="stylesheet" href="connections/styles/connections-mobile.css">
 </head>
 <body>
+    <script src="connections/scripts/mobile-redirect.js"></script>
+
     <header class="header">
         <div class="header-content">
         </div>
     </header>
-    
+
     <header class="header">
         <div class="header-content">
-            <h1 class="title">Sonnections</h1>
+            <h1 class="title">Connections</h1>
         </div>
     </header>
-    
+
     <header class="header help-header">
         <div class="header-content">
             <div class="help-bar">
@@ -54,13 +56,15 @@
             </div>
 
             <div class="controls">
+                <button class="btn" id="previousBtn">Previous</button>
                 <button class="btn" id="shuffleBtn">Shuffle</button>
                 <button class="btn" id="deselectBtn">Deselect All</button>
                 <button class="btn" id="submitBtn" disabled>Submit</button>
+                <button class="btn" id="nextBtn">Next</button>
             </div>
 
             <div class="game-over" id="gameOver">
-                <button class="close-btn" onclick="closeGameOverPopup()">✕</button>
+                <button class="close-btn" id="gameOverCloseBtn">✕</button>
                 <h2 id="gameOverTitle">Game Over!</h2>
                 <p id="gameOverMessage"></p>
                 <div class="cooldown-timer" id="cooldownTimer"></div>
@@ -69,41 +73,29 @@
         </div>
     </main>
 
-
-    <script src="sonnections/scripts/app.js"></script>
-    
-    <!-- Early Access Popup -->
-    <div class="early-access-popup" id="early-access-popup">
-        <button class="close-btn" onclick="closeEarlyAccessPopup()">✕</button>
-        <h2>You Found It!</h2>
-        <p>No harmony escapes you!<br><br>Your ears have led you to something still in harmony.</p>
-        <p style="font-style: italic; font-size: 1rem; color: #999;">The next movement hasn't been composed yet...</p>
-        <button class="btn" onclick="closeEarlyAccessPopup()">I hear you</button>
-    </div>
-    
     <!-- How to Play Popup -->
     <div class="how-to-play-popup" id="how-to-play-popup">
-        <button class="close-btn" onclick="closeHowToPlayPopup()">✕</button>
+        <button class="close-btn" id="howToPlayCloseBtn">✕</button>
         <h2>How to Play</h2>
         <p>Find groups of four items that share something in common.</p>
-        
+
         <ul>
             <li>Select four items and tap <strong>'Submit'</strong> to check if your guess is correct.</li>
             <li>Find the groups without making 4 mistakes!</li>
         </ul>
-        
+
         <h3>Category Examples</h3>
         <ul>
             <li><strong>FISH:</strong> Bass, Flounder, Salmon, Trout</li>
             <li><strong>FIRE ___:</strong> Ant, Drill, Island, Opal</li>
         </ul>
-        
+
         <p>Categories will always be more specific than "5-LETTER-WORDS," "NAMES" or "VERBS."</p>
-        
+
         <p>Each puzzle has exactly one solution. Watch out for words that seem to belong to multiple categories!</p>
-        
+
         <p>Each group is assigned a color, which will be revealed as you solve:</p>
-        
+
         <div class="difficulty-colors">
             <div class="difficulty-item">
                 <div class="color-box color-yellow"></div>
@@ -123,5 +115,7 @@
             </div>
         </div>
     </div>
+
+    <script src="connections/scripts/app-mobile.js"></script>
 </body>
 </html>

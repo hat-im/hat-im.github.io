@@ -1,4 +1,5 @@
 {
+  "tileType": "audio",
   "groups": [
     {
       "category": "\"CAFE\" SPELLED MUSICALLY",
@@ -9,10 +10,10 @@
         "PIANO"
       ],
       "audioFiles": [
-        "sonnections/audio/guitar.mp3",
-        "sonnections/audio/harmonium.mp3",
-        "sonnections/audio/orchestra.mp3",
-        "sonnections/audio/piano.mp3"
+        "connections/audio/guitar.mp3",
+        "connections/audio/harmonium.mp3",
+        "connections/audio/orchestra.mp3",
+        "connections/audio/piano.mp3"
       ],
       "color": "yellow",
       "difficulty": 1
@@ -26,10 +27,10 @@
         "MICROWAVE"
       ],
       "audioFiles": [
-        "sonnections/audio/slack.mp3",
-        "sonnections/audio/typing.mp3",
-        "sonnections/audio/gmeet.mp3",
-        "sonnections/audio/microwave.mp3"
+        "connections/audio/slack.mp3",
+        "connections/audio/typing.mp3",
+        "connections/audio/gmeet.mp3",
+        "connections/audio/microwave.mp3"
       ],
       "color": "green",
       "difficulty": 2
@@ -43,10 +44,10 @@
         "GPAY"
       ],
       "audioFiles": [
-        "sonnections/audio/namma-yatri.mp3",
-        "sonnections/audio/monsoon.mp3",
-        "sonnections/audio/auto.mp3",
-        "sonnections/audio/gpay.mp3"
+        "connections/audio/namma-yatri.mp3",
+        "connections/audio/monsoon.mp3",
+        "connections/audio/auto.mp3",
+        "connections/audio/gpay.mp3"
       ],
       "color": "blue",
       "difficulty": 3
@@ -60,10 +61,10 @@
         "CHATTER"
       ],
       "audioFiles": [
-        "sonnections/audio/honk.mp3",
-        "sonnections/audio/hiss.mp3",
-        "sonnections/audio/trumpet.mp3",
-        "sonnections/audio/chatter.mp3"
+        "connections/audio/honk.mp3",
+        "connections/audio/hiss.mp3",
+        "connections/audio/trumpet.mp3",
+        "connections/audio/chatter.mp3"
       ],
       "color": "purple",
       "difficulty": 4

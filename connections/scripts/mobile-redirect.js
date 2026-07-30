@@ -5,5 +5,5 @@ function isMobile() {
 }
 
 if (!isMobile()) {
-    window.location.href = 'sinnections.html';
+    window.location.href = 'connections.html';
 }

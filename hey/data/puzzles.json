@@ -7,10 +7,10 @@
       "storageKey": "cryptogram_ever_solved"
     },
     {
-      "id": "sinnections",
-      "name": "Sinnections",
-      "url": "c2lubmVjdGlvbnMuaHRtbA==",
-      "storageKey": "sinnections_completed"
+      "id": "connections",
+      "name": "Connections",
+      "url": "Y29ubmVjdGlvbnMuaHRtbA==",
+      "storageKey": "connections_completed"
     },
     {
       "id": "numberbee",
@@ -23,12 +23,6 @@
       "name": "Mini Crossword",
       "url": "bWluaV9jcm9zc3dvcmQuaHRtbA==",
       "storageKey": "sessionComplete"
-    },
-    {
-      "id": "sonnections",
-      "name": "Sonnections",
-      "url": "c29ubmVjdGlvbnMuaHRtbA==",
-      "storageKey": "sonnections_completed"
     },
     {
       "id": "wordle",
