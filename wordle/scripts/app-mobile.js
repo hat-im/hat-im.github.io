@@ -1169,7 +1169,6 @@
         // Start shaking the 's' and make it clickable
         startTitleShaking();
 
-        localStorage.setItem("wordle_completed", "true");
         showCongratulationsPopup(completionRate, avgGuesses, accuracy);
         // Save the completed game state so it persists on refresh
         saveGameProgress();

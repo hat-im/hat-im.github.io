@@ -1104,9 +1104,6 @@
             100
         );
 
-        // Set completion flag in localStorage (never cleared)
-        localStorage.setItem("wordle_completed", "true");
-
         // Start shaking the 's' and make it clickable
         startTitleShaking();
 

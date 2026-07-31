@@ -603,9 +603,7 @@ function submitInput() {
         // Check if player reached Genius level (score 100+) and hasn't won yet
         if (totalScore >= 100 && !hasWon) {
           hasWon = true;
-          // Mark game as completed in localStorage
-          localStorage.setItem('numberbee_completed', 'true');
-          
+
           // Start marker shake animation immediately
           const progressMarker = document.querySelector('.sb-progress-marker');
           if (progressMarker) {

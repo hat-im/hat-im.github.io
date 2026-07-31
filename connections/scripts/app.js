@@ -999,9 +999,6 @@
             completedLevels.add(currentLevelId());
             saveProgress();
             updateNavButtons();
-            if (levels.every(l => completedLevels.has(l.id))) {
-                localStorage.setItem('connections_completed', 'true');
-            }
         } else {
             gameOverTitle.textContent = STR.gameOver.lose.title;
             gameOverMessage.textContent = STR.gameOver.lose.message;
