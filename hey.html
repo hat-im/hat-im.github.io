@@ -71,8 +71,8 @@
     <!-- Hidden message - invisible to users but findable by developers -->
     <div class="hidden-message" id="hiddenMessage" aria-hidden="true"></div>
 
-    <!-- Puzzle Card Toggle Button -->
-    <button class="puzzle-card-toggle" id="puzzleToggle">
+    <!-- Game Card Toggle Button -->
+    <button class="game-card-toggle" id="gameToggle">
       <svg
         width="20"
         height="20"
@@ -87,17 +87,23 @@
       </svg>
     </button>
 
-    <!-- Puzzle Card -->
-    <div class="puzzle-card" id="puzzleCard">
-      <div class="puzzle-card-header">
-        <h3 class="puzzle-card-title" id="puzzleCardTitle"></h3>
-        <button class="puzzle-card-close" id="puzzleCardClose"></button>
+    <!-- Game Card -->
+    <div class="game-card" id="gameCard">
+      <div class="game-card-header">
+        <h3 class="game-card-title" id="gameCardTitle"></h3>
+        <button class="game-card-close" id="gameCardClose"></button>
       </div>
-      <div class="puzzle-grid" id="puzzleGrid">
-        <!-- Puzzle buttons will be dynamically added here -->
+      <div class="game-grid" id="gameGrid">
+        <!-- Game buttons will be dynamically added here -->
       </div>
     </div>
 
+    <script src="hey/scripts/state.js"></script>
+    <script src="hey/scripts/text.js"></script>
+    <script src="hey/scripts/entry-flow.js"></script>
+    <script src="hey/scripts/game-card.js"></script>
+    <script src="hey/scripts/typewriter.js"></script>
+    <script src="hey/scripts/surprise-messages.js"></script>
     <script src="hey/scripts/app.js"></script>
   </body>
 </html>

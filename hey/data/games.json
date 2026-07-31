@@ -1,0 +1,29 @@
+{
+  "main": [
+    {
+      "id": "cryptogram",
+      "name": "Cryptogram",
+      "url": "dear-sam.html"
+    },
+    {
+      "id": "connections",
+      "name": "Connections",
+      "url": "connections.html"
+    },
+    {
+      "id": "numberbee",
+      "name": "Number Bee",
+      "url": "number_bee.html"
+    },
+    {
+      "id": "minicrossword",
+      "name": "Mini Crossword",
+      "url": "mini_crossword.html"
+    },
+    {
+      "id": "wordle",
+      "name": "Wordle",
+      "url": "wordle.html"
+    }
+  ]
+}

@@ -593,6 +593,7 @@ body {
 
 .fact-ticker-viewport {
   flex: 1;
+  max-width: 420px;
   overflow: hidden;
   mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
@@ -601,6 +602,8 @@ body {
 .fact-ticker-track {
   display: flex;
   width: max-content;
+  /* duration is set per-render in text.js so scroll speed stays constant
+     regardless of fact length; this is just a fallback before that runs */
   animation: factTickerScroll 70s linear infinite;
 }
 
@@ -631,8 +634,8 @@ body {
   }
 }
 
-/* Puzzle Card Styles */
-.puzzle-card {
+/* Game Card Styles */
+.game-card {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -649,12 +652,12 @@ body {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.puzzle-card.show {
+.game-card.show {
   transform: translateX(0);
   opacity: 1;
 }
 
-.puzzle-card-header {
+.game-card-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -664,7 +667,7 @@ body {
   padding-right: 30px;
 }
 
-.puzzle-card-title {
+.game-card-title {
   font-family: "Playfair Display", serif;
   font-size: 18px;
   font-weight: 700;
@@ -673,7 +676,7 @@ body {
   text-align: center;
 }
 
-.puzzle-card-close {
+.game-card-close {
   background: none;
   border: none;
   font-size: 20px;
@@ -686,12 +689,12 @@ body {
   right: 0;
 }
 
-.puzzle-card-close:hover {
+.game-card-close:hover {
   background: #f1f5f9;
   color: #334155;
 }
 
-.puzzle-grid {
+.game-grid {
   display: grid;
   gap: 10px;
   margin-bottom: 16px;
@@ -700,7 +703,7 @@ body {
   margin-top: 8px;
 }
 
-.puzzle-button {
+.game-button {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: white;
   border: none;
@@ -721,54 +724,23 @@ body {
   box-sizing: border-box;
 }
 
-.puzzle-button:hover {
+.game-button:hover {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   transform: translateY(-1px);
 }
 
-.puzzle-button.disabled {
+.game-button.disabled {
   background: #e2e8f0;
   color: #94a3b8;
   cursor: not-allowed;
 }
 
-.puzzle-button.disabled:hover {
+.game-button.disabled:hover {
   transform: none;
   background: #e2e8f0;
 }
 
-.puzzle-button.final-unlock {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  color: #1f2937;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.puzzle-button.final-unlock::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  animation: shimmer 2s infinite;
-}
-
-.puzzle-button.final-unlock:hover {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(251, 191, 36, 0.4);
-}
-
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-.puzzle-card-toggle {
+.game-card-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -786,17 +758,17 @@ body {
   display: none;
 }
 
-.puzzle-card-toggle:hover {
+.game-card-toggle:hover {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
   transform: scale(1.05);
 }
 
-.puzzle-card-toggle.show {
+.game-card-toggle.show {
   display: block;
 }
 
 @media (max-width: 600px) {
-  .puzzle-card {
+  .game-card {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -805,26 +777,26 @@ body {
     padding: 12px;
   }
 
-  .puzzle-card-toggle {
+  .game-card-toggle {
     top: 10px;
     right: 10px;
   }
 
-  .puzzle-card-header {
+  .game-card-header {
     margin-bottom: 8px;
   }
 
-  .puzzle-card-title {
+  .game-card-title {
     font-size: 14px;
   }
 
-  .puzzle-grid {
+  .game-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 4px;
     margin-bottom: 8px;
   }
 
-  .puzzle-button {
+  .game-button {
     font-size: 9px;
     padding: 4px 2px;
     min-height: 28px;
@@ -832,7 +804,7 @@ body {
     border-radius: 4px;
   }
 
-  .puzzle-card-close {
+  .game-card-close {
     font-size: 16px;
     padding: 2px;
   }

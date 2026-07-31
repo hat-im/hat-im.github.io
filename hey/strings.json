@@ -1,15 +1,15 @@
 {
-  "pageTitle": "A Pocketful of Puzzle",
-  "heading": "A Pocketful of Puzzle",
-  "subheading": "An assortment of challenge and distraction",
+  "pageTitle": "A Pocketful of Play",
+  "heading": "A Pocketful of Play",
+  "subheading": "An assortment of distractions to pass time.",
   "dedication": "from Hat, to Sam",
   "welcomeMessage": "Check off your inventory before you start.",
   "checklistTitle": "Ingredients for Success",
   "instructions": [
-    "• Horizontal position (optimal for heavy thinking)",
-    "• A soft kitty to pet (or annoy)",
+    "• Comfortable position (optimal for brain-ing)",
+    "• A soft cat and a soft blanket",
     "• The \"Pop Goes Classical\" playlist",
-    "• A tall cup of hot chocolate (or coffee)",
+    "• Hot chocolate, or cold matcha",
     "• A brain cell (borrow if unavailable)"
   ],
   "entryButton": {
@@ -20,23 +20,41 @@
   },
   "countdown": {
     "template": "Redirecting in <span id=\"timer\">{timer}</span> seconds...",
-    "stayHere": "Stay Here"
+    "stayHere": "Stay Here."
   },
   "footer": {
-    "initial": "Take your time with these.<div class=\"device-note\">For best results, open on laptop<br>Please puzzle responsibly.</div>",
+    "initial": "Take your time with these.<div class=\"device-note\">For best results, open on laptop.<br>Please puzzle responsibly.</div>",
     "perfectTiming": "Perfect timing.",
     "letsGetStarted": "Let's get started then.",
     "notThatMuchTime": "Okay, maybe not <em>that</em> much time...",
-    "illRedirectYou": "Alright, I'll just redirect you myself.",
-    "aborted": "Take your time with these.<br>(Does asynchronous puzzle communication count as no contact?)"
+    "illRedirectYou": "Okay, it's time to go.",
+    "aborted": "Take your time with these."
   },
-  "hiddenMessage": "Made with love.",
-  "puzzleCard": {
-    "title": "Puzzles",
+  "hiddenMessage": "Made with <3.",
+  "gameCard": {
+    "title": "Games",
     "close": "&times;"
   },
   "surprise": {
-    "welcomeBack": "Welcome back, puzzle solver.",
-    "letsGo": "Let's gooooooo"
+    "welcomeBack": {
+      "steps": [
+        { "action": "type", "text": "Hello back.", "speed": 80 },
+        { "action": "pause", "duration": 1200 },
+        { "action": "delete", "speed": 50 },
+        { "action": "type", "text": "I mean, ", "speed": 80 },
+        { "action": "pause", "duration": 500 },
+        { "action": "type", "text": "welcome agai—", "speed": 80 },
+        { "action": "pause", "duration": 700 },
+        { "action": "type", "text": "shit.", "speed": 80 },
+        { "action": "pause", "duration": 1500 },
+        { "action": "delete", "speed": 50 },
+        { "action": "type", "text": "Hi!", "speed": 80}
+      ]
+    },
+    "letsGo": {
+      "steps": [
+        { "action": "type", "text": "Let's gooooooooooooooooooooooooooo", "speed": 100 }
+      ]
+    }
   }
 }
