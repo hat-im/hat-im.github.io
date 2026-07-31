@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dad Jokes — Dot Editor</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #222;
+        color: #eee;
+      }
+
+      .fields {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+
+      .fields label {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        gap: 4px;
+      }
+
+      .fields input {
+        padding: 6px 8px;
+        font-size: 14px;
+      }
+
+      #canvasWrap {
+        width: 1000px;
+        max-width: 100%;
+        aspect-ratio: 1000 / 600;
+        background: #f3ede1;
+        border: 1px solid #555;
+        margin-bottom: 12px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        cursor: crosshair;
+      }
+
+      .dot {
+        fill: #000;
+      }
+
+      .dot-number {
+        font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+        font-size: 10px;
+        fill: #000;
+        pointer-events: none;
+      }
+
+      .dot-segment {
+        stroke: #000;
+        stroke-width: 4;
+        stroke-linecap: round;
+      }
+
+      .controls {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      button {
+        padding: 8px 14px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      textarea {
+        width: 100%;
+        height: 240px;
+        font-family: monospace;
+        font-size: 13px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Dad Jokes — Dot Editor</h2>
+    <p>
+      Click the canvas to place numbered dots in order (retrace over an existing line instead of
+      lifting, for letters like T or i — there's no pen-lift concept in the game, it's one
+      unbroken sequence). Points are recorded in the same 1000×600 reference space the game uses,
+      so this is WYSIWYG.
+    </p>
+
+    <div class="fields">
+      <label
+        >id
+        <span style="display: flex; gap: 6px">
+          <input id="jokeId" placeholder="fish-no-eyes" />
+          <button id="generateIdBtn" type="button">Generate</button>
+        </span>
+      </label>
+      <label>setup <input id="jokeSetup" placeholder="Why did..." style="width: 320px" /></label>
+      <label
+        >punchline
+        <input id="jokePunchline" placeholder="Because..." style="width: 320px"
+      /></label>
+    </div>
+
+    <div class="controls">
+      <button id="undoBtn">Undo last dot</button>
+      <button id="clearBtn">Clear all</button>
+      <button id="exportBtn">Export JSON</button>
+      <label style="display: flex; align-items: center; gap: 4px">
+        <input type="checkbox" id="showLinesToggle" checked />
+        Show lines
+      </label>
+      <span id="count">0 dots</span>
+    </div>
+
+    <div id="canvasWrap">
+      <svg id="canvas" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+        <g id="linesLayer"></g>
+        <g id="dotsLayer"></g>
+      </svg>
+    </div>
+
+    <textarea id="output" placeholder="Exported JSON will appear here" readonly></textarea>
+
+    <script>
+      (function () {
+        var points = [];
+        var svg = document.getElementById("canvas");
+        var dotsLayer = document.getElementById("dotsLayer");
+        var linesLayer = document.getElementById("linesLayer");
+        var countEl = document.getElementById("count");
+        var showLinesToggle = document.getElementById("showLinesToggle");
+
+        function svgPoint(clientX, clientY) {
+          var pt = svg.createSVGPoint();
+          pt.x = clientX;
+          pt.y = clientY;
+          return pt.matrixTransform(svg.getScreenCTM().inverse());
+        }
+
+        function redraw() {
+          dotsLayer.innerHTML = "";
+          linesLayer.innerHTML = "";
+
+          points.forEach(function (p, i) {
+            if (i > 0 && showLinesToggle.checked) {
+              var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+              line.setAttribute("class", "dot-segment");
+              line.setAttribute("x1", points[i - 1].x);
+              line.setAttribute("y1", points[i - 1].y);
+              line.setAttribute("x2", p.x);
+              line.setAttribute("y2", p.y);
+              linesLayer.appendChild(line);
+            }
+
+            var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            circle.setAttribute("class", "dot");
+            circle.setAttribute("cx", p.x);
+            circle.setAttribute("cy", p.y);
+            circle.setAttribute("r", 3);
+            dotsLayer.appendChild(circle);
+
+            var label = document.createElementNS("http://www.w3.org/2000/svg", "text");
+            label.setAttribute("class", "dot-number");
+            label.setAttribute("x", p.x + 7);
+            label.setAttribute("y", p.y - 7);
+            label.setAttribute("text-anchor", "start");
+            label.textContent = i + 1;
+            dotsLayer.appendChild(label);
+          });
+
+          countEl.textContent = points.length + " dots";
+        }
+
+        svg.addEventListener("click", function (e) {
+          var p = svgPoint(e.clientX, e.clientY);
+          points.push({ x: Math.round(p.x), y: Math.round(p.y) });
+          redraw();
+        });
+
+        document.getElementById("undoBtn").addEventListener("click", function () {
+          points.pop();
+          redraw();
+        });
+
+        document.getElementById("clearBtn").addEventListener("click", function () {
+          points = [];
+          redraw();
+        });
+
+        showLinesToggle.addEventListener("change", redraw);
+
+        var ID_WORDS = [
+          "amber", "banjo", "cedar", "drizzle", "ember", "flannel", "gravel",
+          "harbor", "ivy", "jasper", "kettle", "lantern", "maple", "nectar",
+          "opal", "pebble", "quill", "ranch", "sable", "thistle", "umber",
+          "velvet", "willow", "xenon", "yonder", "zephyr", "biscuit", "clover",
+          "dusk", "ember", "fable", "granite", "hazel", "indigo", "juniper",
+          "knoll", "lichen", "meadow", "nimbus", "orchid",
+        ];
+
+        function generateId() {
+          var chosen = [];
+          while (chosen.length < 3) {
+            var word = ID_WORDS[Math.floor(Math.random() * ID_WORDS.length)];
+            if (chosen.indexOf(word) === -1) chosen.push(word);
+          }
+          return chosen.join("-");
+        }
+
+        document.getElementById("generateIdBtn").addEventListener("click", function () {
+          document.getElementById("jokeId").value = generateId();
+        });
+
+        document.getElementById("exportBtn").addEventListener("click", function () {
+          var joke = {
+            id: document.getElementById("jokeId").value || "untitled",
+            setup: document.getElementById("jokeSetup").value,
+            punchline: document.getElementById("jokePunchline").value,
+            dots: points,
+          };
+          document.getElementById("output").value = JSON.stringify(joke, null, 2);
+        });
+      })();
+    </script>
+  </body>
+</html>

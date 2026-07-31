@@ -24,6 +24,11 @@
       "id": "wordle",
       "name": "Wordle",
       "url": "wordle.html"
+    },
+    {
+      "id": "dadjokes",
+      "name": "Dad Jokes",
+      "url": "dad-jokes.html"
     }
   ]
 }

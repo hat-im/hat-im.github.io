@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="icon" type="image/svg+xml" href="dad-jokes/dad-jokes.svg" />
+    <link rel="stylesheet" href="dad-jokes/styles/dad-jokes.css" />
+  </head>
+  <body>
+    <div class="top-left">
+      <div class="setup-box" id="setupBox"></div>
+      <a class="next-link" id="nextLink" href="#"></a>
+    </div>
+
+    <svg
+      class="dots-canvas"
+      id="dotsCanvas"
+      viewBox="0 0 1000 600"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g id="linesLayer"></g>
+      <g id="dotsLayer"></g>
+    </svg>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <p class="modal-setup" id="modalSetup"></p>
+        <p class="modal-punchline" id="modalPunchline"></p>
+        <div class="modal-buttons">
+          <button class="modal-button secondary" id="modalBackButton"></button>
+          <button class="modal-button" id="modalNextButton"></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="dad-jokes/scripts/state.js"></script>
+    <script src="dad-jokes/scripts/text.js"></script>
+    <script src="dad-jokes/scripts/dots.js"></script>
+    <script src="dad-jokes/scripts/drawing.js"></script>
+    <script src="dad-jokes/scripts/modal.js"></script>
+    <script src="dad-jokes/scripts/app.js"></script>
+  </body>
+</html>

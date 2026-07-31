@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f3ede1;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.top-left {
+  position: fixed;
+  top: 56px;
+  left: 56px;
+  right: 56px;
+  z-index: 2;
+}
+
+.setup-box {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  line-height: 1.4;
+  color: #4a3b30;
+  transform-origin: left top;
+}
+
+.next-link {
+  display: none;
+  margin-top: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #8b5c44;
+  text-decoration: underline;
+  cursor: pointer;
+  transform-origin: left top;
+}
+
+.next-link.show {
+  display: inline-block;
+}
+
+.typing-cursor {
+  animation: typingBlink 1s infinite;
+}
+
+@keyframes typingBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.dots-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: crosshair;
+}
+
+.dot {
+  fill: #000;
+  stroke: none;
+  opacity: 0.35;
+  transition: opacity 0.15s ease;
+}
+
+.dot.next {
+  opacity: 1;
+}
+
+.dot.connected {
+  opacity: 0.35;
+}
+
+.dot-ping {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dot-ping.active {
+  animation: radarPing 1.1s ease-out infinite;
+}
+
+.dot-number {
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  fill: #000;
+  pointer-events: none;
+}
+
+.dot-stroke {
+  fill: none;
+  stroke: #000;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes radarPing {
+  0% {
+    r: 3;
+    opacity: 0.6;
+  }
+  100% {
+    r: 16;
+    opacity: 0;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(58, 43, 33, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal {
+  max-width: 420px;
+  margin: 20px;
+  padding: 36px 32px;
+  background: #f3ede1;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(58, 43, 33, 0.3);
+  text-align: center;
+}
+
+.modal-setup {
+  margin: 0 0 14px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #4a3b30;
+}
+
+.modal-punchline {
+  margin: 0 0 28px;
+  font-size: 18px;
+  color: #7a6553;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  background: #8b5c44;
+  color: #f3ede1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-button:hover {
+  background: #6b4a35;
+}
+
+.modal-button.secondary {
+  background: transparent;
+  color: #8b5c44;
+  box-shadow: inset 0 0 0 1.5px #8b5c44;
+}
+
+.modal-button.secondary:hover {
+  background: rgba(139, 92, 68, 0.1);
+}
