@@ -1,26 +1,26 @@
 {
   "groups": [
     {
-      "category": "TODO: CATEGORY 1 (yellow, easiest)",
-      "words": ["TODO1", "TODO2", "TODO3", "TODO4"],
-      "color": "yellow",
-      "difficulty": 1
-    },
-    {
-      "category": "TODO: CATEGORY 2 (green)",
-      "words": ["TODO5", "TODO6", "TODO7", "TODO8"],
+      "category": "Rocky's rejected voices",
+      "words": ["Streep", "Froberville", "Porter", "Huthart"],
       "color": "green",
       "difficulty": 2
     },
     {
-      "category": "TODO: CATEGORY 3 (blue)",
-      "words": ["TODO9", "TODO10", "TODO11", "TODO12"],
+      "category": "Greek roots",
+      "words": ["Taumoeba", "Astrophage", "Erid", "Xenonite"],
+      "color": "yellow",
+      "difficulty": 1
+    },
+    {
+      "category": "Characters with five appendages",
+      "words": ["Staryu", "Patrick", "Peach", "Thing"],
       "color": "blue",
       "difficulty": 3
     },
     {
-      "category": "TODO: CATEGORY 4 (purple, trickiest)",
-      "words": ["TODO13", "TODO14", "TODO15", "TODO16"],
+      "category": "Portrayed by puppets",
+      "words": ["Rocky", "TARS", "Cyclops", "Yoda"],
       "color": "purple",
       "difficulty": 4
     }

@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "category": "Shades of Shrek",
+      "words": ["Ogre Green", "Swamp Green", "Vest Brown", "Boot Tan"],
+      "swatches": ["#6B8E23", "#4A5D23", "#5C3A21", "#C19A6B"],
+      "color": "yellow",
+      "difficulty": 1
+    },
+    {
+      "category": "Finishes of Fireboy and Watergirl",
+      "words": ["Fire Red", "Water Blue", "Forest Green", "Crystal Purple"],
+      "swatches": ["#FF0A05", "#11B0F5", "#4CAB20", "#9E109F"],
+      "color": "green",
+      "difficulty": 2
+    },
+    {
+      "category": "Colours of Connections",
+      "words": ["Yellow", "Green", "Blue", "Purple"],
+      "swatches": ["#f9df84", "#a0c35a", "#b0c4ef", "#ba81c5"],
+      "color": "blue",
+      "difficulty": 3
+    },
+    {
+      "category": "Hues of Haju",
+      "words": ["White", "Black", "Orange", "Rust"],
+      "swatches": ["#F2E8D5", "#201C1A", "#CC7722", "#8B4513"],
+      "color": "purple",
+      "difficulty": 4
+    }
+  ]
+}

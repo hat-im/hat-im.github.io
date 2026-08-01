@@ -868,6 +868,22 @@
             color: #121212;
         }
 
+        .group-swatches {
+            display: flex;
+            gap: 6px;
+            margin-top: 6px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: textAppear 0.3s ease-out 0.35s forwards;
+        }
+
+        .group-swatch {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.8);
+        }
+
         @keyframes textAppear {
             to {
                 opacity: 0.9;

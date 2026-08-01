@@ -566,6 +566,24 @@
                     <div class="group-words">${group.words.join(', ')}</div>
                 `;
 
+                if (tileType === 'color') {
+                    // Swatches are stored against the group's full original word
+                    // list, so look each displayed word up there in case a
+                    // wordSubset narrowed which words actually got shown.
+                    const originalGroup = gameData.groups.find(g => g.category === group.category);
+                    const swatches = (originalGroup && originalGroup.swatches) || [];
+                    const swatchesRow = document.createElement('div');
+                    swatchesRow.className = 'group-swatches';
+                    group.words.forEach(word => {
+                        const wordIndex = originalGroup ? originalGroup.words.indexOf(word) : -1;
+                        const swatch = document.createElement('div');
+                        swatch.className = 'group-swatch';
+                        swatch.style.backgroundColor = swatches[wordIndex] || 'transparent';
+                        swatchesRow.appendChild(swatch);
+                    });
+                    groupBlock.appendChild(swatchesRow);
+                }
+
                 fragment.appendChild(groupBlock);
             });
 
