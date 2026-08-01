@@ -114,6 +114,7 @@
       <button id="undoBtn">Undo last dot</button>
       <button id="clearBtn">Clear all</button>
       <button id="exportBtn">Export JSON</button>
+      <button id="copyBtn">Copy to Clipboard</button>
       <label style="display: flex; align-items: center; gap: 4px">
         <input type="checkbox" id="showLinesToggle" checked />
         Show lines
@@ -228,6 +229,19 @@
             dots: points,
           };
           document.getElementById("output").value = JSON.stringify(joke, null, 2);
+        });
+
+        var copyBtn = document.getElementById("copyBtn");
+        copyBtn.addEventListener("click", function () {
+          var output = document.getElementById("output");
+          if (!output.value) return;
+          navigator.clipboard.writeText(output.value).then(function () {
+            var original = copyBtn.textContent;
+            copyBtn.textContent = "Copied!";
+            setTimeout(function () {
+              copyBtn.textContent = original;
+            }, 1200);
+          });
         });
       })();
     </script>
