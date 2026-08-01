@@ -1,4 +1,4 @@
-(function (DJ) {
+(function (PL) {
   // Seeded PRNG (mulberry32) so the joke-of-the-day pick is stable for a given seed
   function mulberry32(seed) {
     return function () {
@@ -21,7 +21,7 @@
     return hash;
   }
 
-  var SEEN_KEY = "dadJokes_seenIds";
+  var SEEN_KEY = "punchlines_seenIds";
 
   function getSeenIds() {
     try {
@@ -39,21 +39,21 @@
     }
   }
 
-  DJ.pickTodaysJoke = function () {
-    var jokes = DJ.state.DATA.jokes;
+  PL.pickTodaysJoke = function () {
+    var jokes = PL.state.DATA.jokes;
     var rand = mulberry32(dateSeed());
     var index = Math.floor(rand() * jokes.length);
-    DJ.state.joke = jokes[index];
-    markSeen(DJ.state.joke.id);
-    return DJ.state.joke;
+    PL.state.joke = jokes[index];
+    markSeen(PL.state.joke.id);
+    return PL.state.joke;
   };
 
   // Picks a joke that hasn't been shown yet this tab session (tracked in
   // sessionStorage, so it survives reloads within the tab but not across
   // tabs/new sessions). Once every joke has been seen, the pool resets and
   // starts over from a fresh random pick.
-  DJ.pickNextJoke = function () {
-    var jokes = DJ.state.DATA.jokes;
+  PL.pickNextJoke = function () {
+    var jokes = PL.state.DATA.jokes;
     var seen = getSeenIds();
     var unseen = jokes.filter(function (joke) {
       return seen.indexOf(joke.id) === -1;
@@ -65,9 +65,9 @@
     }
 
     var picked = unseen[Math.floor(Math.random() * unseen.length)];
-    DJ.state.joke = picked;
+    PL.state.joke = picked;
     markSeen(picked.id);
-    return DJ.state.joke;
+    return PL.state.joke;
   };
 
   function wait(ms) {
@@ -81,10 +81,10 @@
     el.style.transform = "rotate(" + angle + "deg)";
   }
 
-  DJ.typeSetup = async function () {
-    document.title = DJ.state.STR.pageTitle;
+  PL.typeSetup = async function () {
+    document.title = PL.state.STR.pageTitle;
 
-    var text = DJ.state.joke.setup;
+    var text = PL.state.joke.setup;
     var el = document.getElementById("setupBox");
     var buffer = "";
 
@@ -99,9 +99,9 @@
     el.innerHTML = buffer;
   };
 
-  DJ.renderNextLink = function () {
+  PL.renderNextLink = function () {
     var link = document.getElementById("nextLink");
-    link.textContent = DJ.state.STR.nextLink;
+    link.textContent = PL.state.STR.nextLink;
     applyRandomTilt(link);
   };
-})(window.DadJokes);
+})(window.Punchlines);
