@@ -193,6 +193,7 @@
         }
 
         .word-tile {
+            position: relative;
             background-color: #efefe6;
             border: none;
             border-radius: 6px;
@@ -261,6 +262,20 @@
 
         .show-play-buttons .play-button {
             display: flex;
+        }
+
+        .audio-emoji-hint {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: 18px;
+            line-height: 1;
+            display: none;
+            pointer-events: none;
+        }
+
+        .show-play-buttons .audio-emoji-hint {
+            display: block;
         }
 
         .color-swatch {
@@ -615,6 +630,11 @@
             opacity: 0;
             transform: translateY(10px);
             animation: textAppear 0.3s ease-out 0.4s forwards;
+        }
+
+        .resume-buttons {
+            display: flex;
+            gap: 12px;
         }
 
         /* Mobile users will be redirected to mobile version */

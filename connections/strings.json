@@ -14,6 +14,12 @@
       "message": "Better luck next time!"
     }
   },
+  "resume": {
+    "title": "Session In Progress",
+    "message": "You have an ongoing puzzle session. Your progress has been saved.",
+    "continueBtn": "Continue",
+    "startOverBtn": "Start Over"
+  },
   "cooldown": {
     "readyText": "You can now play again!",
     "waitingTemplate": "Next game available in: {h}:{m}:{s}"

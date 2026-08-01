@@ -14,6 +14,7 @@
         "connections/audio/orchestra.mp3",
         "connections/audio/piano.mp3"
       ],
+      "emojis": ["🎸", "🪗", "🎻", "🎹"],
       "color": "yellow",
       "difficulty": 1
     },
@@ -31,6 +32,7 @@
         "connections/audio/gmeet.mp3",
         "connections/audio/microwave.mp3"
       ],
+      "emojis": ["🔔", "⌨️", "📹", "🍽️"],
       "color": "green",
       "difficulty": 2
     },
@@ -48,6 +50,7 @@
         "connections/audio/auto.mp3",
         "connections/audio/gpay.mp3"
       ],
+      "emojis": ["📱", "🌧️", "🛺", "💳"],
       "color": "blue",
       "difficulty": 3
     },
@@ -65,6 +68,7 @@
         "connections/audio/trumpet.mp3",
         "connections/audio/chatter.mp3"
       ],
+      "emojis": ["📯", "🐍", "🎺", "🗣️"],
       "color": "purple",
       "difficulty": 4
     }

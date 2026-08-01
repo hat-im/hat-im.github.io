@@ -36,6 +36,9 @@
     let tileType = 'text';
     // Word -> media value for the current level (audio file path, swatch color, or image path)
     let wordMedia = {};
+    // Word -> hint emoji (audio levels only), so players don't have to keep
+    // replaying sounds to remember which tile was which
+    let wordEmoji = {};
 
     function fmt(template, vars){
         return template.replace(/\{(\w+)\}/g, function(_, key){ return vars[key]; });
@@ -88,6 +91,22 @@
             const mediaArr = group[mediaKey] || [];
             group.words.forEach((word, index) => {
                 map[word] = mediaArr[index];
+            });
+        });
+
+        return map;
+    }
+
+    // Build the word -> hint emoji map for audio levels (separate from
+    // wordMedia since audio tiles need both the sound file and a visual cue)
+    function buildWordEmoji() {
+        const map = {};
+        if (tileType !== 'audio') return map;
+
+        gameData.groups.forEach(group => {
+            const emojiArr = group.emojis || [];
+            group.words.forEach((word, index) => {
+                map[word] = emojiArr[index];
             });
         });
 
@@ -187,6 +206,13 @@
                 }
             });
             tile.appendChild(playButton);
+
+            if (wordEmoji[word]) {
+                const emojiHint = document.createElement('div');
+                emojiHint.className = 'audio-emoji-hint';
+                emojiHint.textContent = wordEmoji[word];
+                tile.appendChild(emojiHint);
+            }
         } else if (tileType === 'color') {
             const swatch = document.createElement('div');
             swatch.className = 'color-swatch';
@@ -217,9 +243,15 @@
     const submitBtn = document.getElementById('submitBtn');
     const previousBtn = document.getElementById('previousBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const skipBtn = document.getElementById('skipBtn');
     const gameOverEl = document.getElementById('gameOver');
     const gameOverTitle = document.getElementById('gameOverTitle');
     const gameOverMessage = document.getElementById('gameOverMessage');
+    const resumePopup = document.getElementById('resumePopup');
+    const resumeTitle = document.getElementById('resumeTitle');
+    const resumeMessage = document.getElementById('resumeMessage');
+    const resumeContinueBtn = document.getElementById('resumeContinueBtn');
+    const resumeStartOverBtn = document.getElementById('resumeStartOverBtn');
     const cooldownTimer = document.getElementById('cooldownTimer');
     const playAgainBtn = document.getElementById('playAgainBtn');
     const timerSection = document.getElementById('timerSection');
@@ -460,8 +492,27 @@
             gameState.wordSubsets = getWordSubsets();
             gameState.words = getGameWords();
             shuffleArray(gameState.words);
+            finishInitGame();
+            return;
         }
 
+        // A reload landed on a save with real progress (a found group or a
+        // mistake) that isn't already a finished win — ask before silently
+        // resuming, since the words being visibly re-shuffled would look like
+        // stumbling back into a game rather than a deliberate restart.
+        const isMidGame = gameState.foundGroups.length > 0 || gameState.mistakes > 0;
+        const isWon = gameState.foundGroups.length === 4;
+
+        if (isMidGame && !isWon) {
+            showResumePopup();
+            return;
+        }
+
+        finishInitGame();
+    }
+
+    // The rest of initGame, deferred until any resume-vs-restart choice is made
+    function finishInitGame() {
         const winPopupClosed = localStorage.getItem(levelKey('winPopupClosed'));
         const hasWon = gameState.foundGroups.length === 4;
 
@@ -479,6 +530,41 @@
                 showGameOverScreen(true);
             }
         }
+    }
+
+    function showResumePopup() {
+        resumeTitle.textContent = STR.resume.title;
+        resumeMessage.textContent = STR.resume.message;
+        resumeContinueBtn.textContent = STR.resume.continueBtn;
+        resumeStartOverBtn.textContent = STR.resume.startOverBtn;
+        resumePopup.classList.add('show');
+    }
+
+    function hideResumePopup() {
+        resumePopup.classList.remove('show');
+    }
+
+    function resumeGame() {
+        hideResumePopup();
+        finishInitGame();
+    }
+
+    function restartGame() {
+        hideResumePopup();
+        clearSavedGameState();
+        clearWordSubsets();
+
+        gameState.selectedWords = [];
+        gameState.foundGroups = [];
+        gameState.completionOrder = [];
+        gameState.mistakes = 0;
+        gameState.previousGuesses = new Set();
+        gameState.attempts = [];
+        gameState.wordSubsets = getWordSubsets();
+        gameState.words = getGameWords();
+        shuffleArray(gameState.words);
+
+        finishInitGame();
     }
 
     // Get or create word subsets for categories with more than 4 words
@@ -658,6 +744,7 @@
         gameData = levelDataCache[level.id];
         tileType = level.type;
         wordMedia = buildWordMedia();
+        wordEmoji = buildWordEmoji();
 
         saveProgress();
         initGame();
@@ -674,6 +761,22 @@
         if (currentLevelIndex > 0) {
             loadLevel(currentLevelIndex - 1);
         }
+    }
+
+    // Jumps to a different (randomly chosen) level regardless of completion
+    // state, then does a full page reload so everything — game state, audio,
+    // popups — starts completely fresh rather than switching in place.
+    function skipToRandomLevel() {
+        if (levels.length <= 1) return;
+
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * levels.length);
+        } while (randomIndex === currentLevelIndex);
+
+        currentLevelIndex = randomIndex;
+        saveProgress();
+        location.reload();
     }
 
     // Shuffle words with optimized performance
@@ -1225,6 +1328,10 @@
         submitBtn.addEventListener('click', submitGuess);
         if (previousBtn) previousBtn.addEventListener('click', goToPreviousLevel);
         if (nextBtn) nextBtn.addEventListener('click', goToNextLevel);
+        if (skipBtn) {
+            skipBtn.disabled = levels.length <= 1;
+            skipBtn.addEventListener('click', skipToRandomLevel);
+        }
         playAgainBtn.addEventListener('click', () => {
             if (!isInCooldown()) {
                 localStorage.removeItem('connections_lastAttemptTime');
@@ -1239,6 +1346,8 @@
         document.getElementById('helpIcon').addEventListener('click', showHowToPlayPopup);
         document.getElementById('gameOverCloseBtn').addEventListener('click', closeGameOverPopup);
         document.getElementById('howToPlayCloseBtn').addEventListener('click', closeHowToPlayPopup);
+        resumeContinueBtn.addEventListener('click', resumeGame);
+        resumeStartOverBtn.addEventListener('click', restartGame);
 
         // Load whichever level the user was on (or the first one)
         await loadLevel(currentLevelIndex);
