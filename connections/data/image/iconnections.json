@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "category": "TODO: CATEGORY 1 (yellow)",
+      "words": ["TODO1", "TODO2", "TODO3", "TODO4"],
+      "images": [
+        "connections/images/TODO1.jpg",
+        "connections/images/TODO2.jpg",
+        "connections/images/TODO3.jpg",
+        "connections/images/TODO4.jpg"
+      ],
+      "color": "yellow",
+      "difficulty": 1
+    },
+    {
+      "category": "TODO: CATEGORY 2 (green)",
+      "words": ["TODO5", "TODO6", "TODO7", "TODO8"],
+      "images": [
+        "connections/images/TODO5.jpg",
+        "connections/images/TODO6.jpg",
+        "connections/images/TODO7.jpg",
+        "connections/images/TODO8.jpg"
+      ],
+      "color": "green",
+      "difficulty": 2
+    },
+    {
+      "category": "TODO: CATEGORY 3 (blue)",
+      "words": ["TODO9", "TODO10", "TODO11", "TODO12"],
+      "images": [
+        "connections/images/TODO9.jpg",
+        "connections/images/TODO10.jpg",
+        "connections/images/TODO11.jpg",
+        "connections/images/TODO12.jpg"
+      ],
+      "color": "blue",
+      "difficulty": 3
+    },
+    {
+      "category": "TODO: CATEGORY 4 (purple)",
+      "words": ["TODO13", "TODO14", "TODO15", "TODO16"],
+      "images": [
+        "connections/images/TODO13.jpg",
+        "connections/images/TODO14.jpg",
+        "connections/images/TODO15.jpg",
+        "connections/images/TODO16.jpg"
+      ],
+      "color": "purple",
+      "difficulty": 4
+    }
+  ]
+}
