@@ -1129,7 +1129,7 @@
             setTimeout(() => {
               titleS.style.color = "";
               if (NEXT_PUZZLES_ENABLED) {
-                window.location.href = "number_bee.html";
+                window.location.href = "number-bee.html";
               } else {
                 showEarlyAccessPopup();
               }

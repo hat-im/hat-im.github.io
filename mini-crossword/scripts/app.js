@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var BASE = 'mini_crossword/';
+    var BASE = 'mini-crossword/';
 
     // Clear all saved game data
     function clearAllSavedData() {
@@ -481,7 +481,7 @@
             loadPuzzleFromFile(puzzleFile);
         }
 
-        const GITHUB_CROSSWORDS_BASE = 'mini_crossword/data/crosswords/';
+        const GITHUB_CROSSWORDS_BASE = 'mini-crossword/data/crosswords/';
 
         async function loadPuzzleFromFile(filename, shouldRestoreGrid = false) {
             try {
@@ -2256,7 +2256,7 @@
         }
 
         // Expose functions referenced from inline onclick="" attributes in
-        // mini_crossword.html and in dynamically-injected popup markup.
+        // mini-crossword.html and in dynamically-injected popup markup.
         window.closePopup = closePopup;
         window.startNewSession = startNewSession;
         window.continueToNextPuzzle = continueToNextPuzzle;

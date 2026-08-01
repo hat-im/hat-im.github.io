@@ -1,6 +1,6 @@
 (function(){
 
-var BASE = 'number_bee/';
+var BASE = 'number-bee/';
 var STRINGS_URL = BASE + 'strings.json';
 var RANKS_URL = BASE + 'data/ranks.json';
 var DIGIT_PUNS_URL = BASE + 'data/digit-puns.json';
@@ -211,7 +211,7 @@ function closeWaitPopup() {
 
 // Function to fetch number facts from the tree structure
 // Cache for the numbers array
-const NUMBERS_DATA_URL = 'number_bee/data/numbers.json';
+const NUMBERS_DATA_URL = 'number-bee/data/numbers.json';
 let numbersData = null;
 
 async function loadNumbersData() {
