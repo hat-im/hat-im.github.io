@@ -16,14 +16,14 @@
     },
     {
       "category": "Colours of Connections",
-      "words": ["Yellow", "Green", "Blue", "Purple"],
+      "words": ["Jasmine", "Bok Choy Green", "Uplifting Blue", "Rare Violet"],
       "swatches": ["#f9df84", "#a0c35a", "#b0c4ef", "#ba81c5"],
       "color": "blue",
       "difficulty": 3
     },
     {
       "category": "Hues of Haju",
-      "words": ["White", "Black", "Orange", "Rust"],
+      "words": ["Charming Cream", "Kālā Black", "Ochre", "Saddle Brown"],
       "swatches": ["#F2E8D5", "#201C1A", "#CC7722", "#8B4513"],
       "color": "purple",
       "difficulty": 4
