@@ -44,6 +44,17 @@
         return template.replace(/\{(\w+)\}/g, function(_, key){ return vars[key]; });
     }
 
+    // Picks black or white text — whichever is legible — against a hex swatch color
+    function contrastTextColor(hex) {
+        var clean = (hex || '').replace('#', '');
+        if (clean.length !== 6) return '#000000';
+        var r = parseInt(clean.substring(0, 2), 16);
+        var g = parseInt(clean.substring(2, 4), 16);
+        var b = parseInt(clean.substring(4, 6), 16);
+        var luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+        return luminance > 0.6 ? '#000000' : '#ffffff';
+    }
+
     function currentLevel() {
         return levels[currentLevelIndex];
     }
@@ -214,10 +225,18 @@
                 tile.appendChild(emojiHint);
             }
         } else if (tileType === 'color') {
+            const swatchColor = wordMedia[word] || 'transparent';
+
             const swatch = document.createElement('div');
             swatch.className = 'color-swatch';
-            swatch.style.backgroundColor = wordMedia[word] || 'transparent';
+            swatch.style.backgroundColor = swatchColor;
             tile.appendChild(swatch);
+
+            const nameLabel = document.createElement('div');
+            nameLabel.className = 'color-name-label';
+            nameLabel.textContent = word;
+            nameLabel.style.color = contrastTextColor(swatchColor);
+            tile.appendChild(nameLabel);
         } else if (tileType === 'image') {
             const img = document.createElement('img');
             img.className = 'tile-image';

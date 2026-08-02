@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "category": "Kiwi Banana Matcha Smoothie",
+      "words": ["Kiwi", "Banana", "Matcha", "Yogurt"],
+      "swatches": ["#61ab5a", "#FFE135", "#74A12E", "#fffbf3"],
+      "color": "yellow",
+      "difficulty": 1
+    },
+    {
+      "category": "Red, White & Royal Blue",
+      "words": ["Royal Blue", "Crimson Red", "Ivory White", "Rich Gold"],
+      "swatches": ["#1F4BA5", "#C62839", "#F8F6F2", "#D4AF37"],
+      "color": "green",
+      "difficulty": 2
+    },
+    {
+      "category": "Bluets by Maggie Nelson",
+      "words": ["International Klein Blue", "Ultramarine", "Lapis Lazuli", "Indigo Dye"],
+      "swatches": ["#002FA7", "#120A8F", "#26619C", "#091F92"],
+      "color": "blue",
+      "difficulty": 3
+    },
+    {
+      "category": "The Grand Budapest Hotel",
+      "words": ["Hotel Pink", "Royal Purple", "Warm Gold", "Cream"],
+      "swatches": ["#E8A3B5", "#6B4C9A", "#D4A24C", "#F7E8D0"],
+      "color": "purple",
+      "difficulty": 4
+    }
+  ]
+}

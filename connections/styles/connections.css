@@ -289,6 +289,32 @@
             outline-offset: -6px;
         }
 
+        .color-name-label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 6px;
+            box-sizing: border-box;
+            font-family: 'Franklin', 'nyt-franklin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.15s ease;
+        }
+
+        .word-tile:hover .color-name-label {
+            opacity: 1;
+        }
+
         .tile-image {
             max-width: 90%;
             max-height: 90%;
