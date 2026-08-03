@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Conway's Game of Life</title>
+  <link rel="stylesheet" href="game-of-life/styles/game-of-life.css">
+</head>
+<body>
+
+<div id="ui">
+  <div class="group">
+    <button id="start">Start</button>
+    <button id="step">Step</button>
+    <button id="random">Random</button>
+    <button id="clear">Clear</button>
+  </div>
+  <div class="group">
+    <label>Speed</label>
+    <input id="speed" type="range" min="1" max="30" value="12">
+    <span id="speed-label" style="min-width:24px; font-size:0.9rem;">12</span>
+  </div>
+  <div class="group">
+    <label>Paint RGB</label>
+    <div class="rgb-picker">
+      <span class="rgb-label">R</span>
+      <input type="number" id="r-input" min="0" max="255" value="255">
+      <span class="rgb-label">G</span>
+      <input type="number" id="g-input" min="0" max="255" value="60">
+      <span class="rgb-label">B</span>
+      <input type="number" id="b-input" min="0" max="255" value="60">
+      <span class="color-swatch" id="custom-swatch"></span>
+    </div>
+  </div>
+</div>
+
+<div id="canvas-container">
+  <canvas id="canvas"></canvas>
+</div>
+
+<div class="info">
+  <span>left click = paint</span>
+  <span>right click = erase</span>
+  <span style="color:#888;">|</span>
+  <span class="key">R</span> <span class="key">G</span> <span class="key">B</span>
+  <span>quick presets</span>
+</div>
+
+<script src="game-of-life/scripts/app.js"></script>
+</body>
+</html>

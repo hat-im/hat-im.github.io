@@ -29,6 +29,11 @@
       "id": "punchlines",
       "name": "Punchlines",
       "url": "punchlines.html"
+    },
+    {
+      "id": "gameoflife",
+      "name": "Game of Life",
+      "url": "game-of-life.html"
     }
   ]
 }
