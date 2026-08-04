@@ -1,0 +1,97 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "C",
+      "R",
+      "I",
+      "M",
+      "E"
+    ],
+    [
+      "A",
+      ".",
+      "S",
+      ".",
+      "D"
+    ],
+    [
+      "S",
+      ".",
+      "A",
+      ".",
+      "G"
+    ],
+    [
+      "I",
+      ".",
+      "A",
+      ".",
+      "A"
+    ],
+    [
+      "O",
+      "S",
+      "C",
+      "A",
+      "R"
+    ]
+  ],
+  "words": [
+    {
+      "word": "CRIME",
+      "clue": "Better left undone if you can't handle the sentence.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "CASIO",
+      "clue": "Watch brand where time stopped in the 90s.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "ISAAC",
+      "clue": "Newton, undone by an apple.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": ["4A"]
+    },
+    {
+      "word": "EDGAR",
+      "clue": "Baby Driver's director, Wright.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "OSCAR",
+      "clue": "Little gold trophy, or 2-Down's first name.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+      "related": ["2D"]
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 5,
+    "grid_size": "5x5"
+  }
+}
