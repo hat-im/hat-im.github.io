@@ -87,6 +87,12 @@
         background: #000;
       }
 
+      .cell.sym-warn {
+        outline: 3px solid #e33;
+        outline-offset: -3px;
+        z-index: 1;
+      }
+
       .cell input {
         width: 100%;
         height: 100%;
@@ -381,7 +387,51 @@
           return word.number + word.direction[0].toUpperCase();
         }
 
+        function isBlocked(r, c) {
+          return grid[r][c] === ".";
+        }
+
+        function checkSymmetry() {
+          var mismatches = { radial: [], horizontal: [], vertical: [] };
+
+          for (var r = 0; r < size; r++) {
+            for (var c = 0; c < size; c++) {
+              var blocked = isBlocked(r, c);
+              if (blocked !== isBlocked(size - 1 - r, size - 1 - c))
+                mismatches.radial.push({ r: r, c: c });
+              if (blocked !== isBlocked(size - 1 - r, c))
+                mismatches.horizontal.push({ r: r, c: c });
+              if (blocked !== isBlocked(r, size - 1 - c))
+                mismatches.vertical.push({ r: r, c: c });
+            }
+          }
+
+          return {
+            radial: mismatches.radial.length === 0,
+            horizontal: mismatches.horizontal.length === 0,
+            vertical: mismatches.vertical.length === 0,
+            mismatches: mismatches,
+          };
+        }
+
+        function clearSymmetryWarnings() {
+          for (var r = 0; r < size; r++) {
+            for (var c = 0; c < size; c++) {
+              var cellEl = document.getElementById("cell-" + r + "-" + c);
+              if (cellEl) cellEl.classList.remove("sym-warn");
+            }
+          }
+        }
+
+        function highlightCells(cells) {
+          cells.forEach(function (cell) {
+            var cellEl = document.getElementById("cell-" + cell.r + "-" + cell.c);
+            if (cellEl) cellEl.classList.add("sym-warn");
+          });
+        }
+
         function recompute() {
+          clearSymmetryWarnings();
           var result = computeWords();
 
           // Update the little number labels on the grid
@@ -457,6 +507,25 @@
         });
 
         document.getElementById("exportBtn").addEventListener("click", () => {
+          clearSymmetryWarnings();
+          var sym = checkSymmetry();
+
+          if (!sym.radial && !sym.horizontal && !sym.vertical) {
+            var best = "radial";
+            if (sym.mismatches.horizontal.length < sym.mismatches[best].length) best = "horizontal";
+            if (sym.mismatches.vertical.length < sym.mismatches[best].length) best = "vertical";
+
+            highlightCells(sym.mismatches[best]);
+            alert(
+              "Grid isn't symmetrical (radially, horizontally, or vertically). " +
+                sym.mismatches[best].length +
+                " cell(s) closest to " +
+                best +
+                " symmetry are highlighted in red — fix them before exporting."
+            );
+            return;
+          }
+
           var result = computeWords();
 
           var words = result.words.map((w) => {
