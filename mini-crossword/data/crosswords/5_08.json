@@ -1,0 +1,107 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "F",
+      "A",
+      "M",
+      ".",
+      "."
+    ],
+    [
+      "A",
+      ".",
+      "A",
+      ".",
+      "S"
+    ],
+    [
+      "R",
+      "O",
+      "M",
+      "A",
+      "N"
+    ],
+    [
+      "T",
+      ".",
+      "B",
+      ".",
+      "A"
+    ],
+    [
+      ".",
+      ".",
+      "O",
+      "R",
+      "G"
+    ]
+  ],
+  "words": [
+    {
+      "word": "FAM",
+      "clue": "\"In da clerb we all ___\" (viral meme caption)",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "FART",
+      "clue": "Toot that could clear an elevator",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "MAMBO",
+      "clue": "\"___ No. 5\" (1999 earworm)",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "SNAG",
+      "clue": "Hitch in an otherwise perfect plan",
+      "row": 1,
+      "col": 4,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "ROMAN",
+      "clue": "Toga-clad type, or a numeral system",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+      "related": []
+    },
+    {
+      "word": "ORG",
+      "clue": "Website suffix shared by Wikipedia and Greenpeace",
+      "row": 4,
+      "col": 2,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 6,
+    "grid_size": "5x5"
+  }
+}
