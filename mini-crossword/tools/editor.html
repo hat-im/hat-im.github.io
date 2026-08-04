@@ -85,6 +85,7 @@
 
       .cell.blocked {
         background: #000;
+        cursor: pointer;
       }
 
       .cell.sym-warn {
@@ -178,8 +179,9 @@
   <body>
     <h2>Mini Crossword — Grid Editor</h2>
     <p class="hint">
-      Type letters into open cells (auto-advances). Type <strong>.</strong> (period) in a
-      cell to toggle it blocked/open. Numbering and the across/down word list update live
+      A new grid starts fully blocked — click a black cell to open it up, then type letters
+      into open cells (auto-advances). Type <strong>.</strong> (period) in an open cell to
+      re-block it. Numbering and the across/down word list update live
       as you edit the grid. Clue text you've typed is preserved across grid edits as long
       as a word's number + direction stays the same.
     </p>
@@ -237,7 +239,7 @@
           grid = [];
           for (var r = 0; r < n; r++) {
             var row = [];
-            for (var c = 0; c < n; c++) row.push("");
+            for (var c = 0; c < n; c++) row.push(".");
             grid.push(row);
           }
           renderGrid();
@@ -261,17 +263,8 @@
                 cell.appendChild(num);
 
                 var input = document.createElement("input");
-                input.maxLength = 1;
                 input.id = "input-" + r + "-" + c;
                 input.value = grid[r][c] === "." ? "" : grid[r][c];
-
-                input.addEventListener("focus", function () {
-                  input.select();
-                });
-
-                input.addEventListener("click", function () {
-                  input.select();
-                });
 
                 input.addEventListener("keydown", function (e) {
                   if (e.key === "ArrowRight") focusCell(r, c + 1);
@@ -281,25 +274,46 @@
                   else if (e.key === "Backspace" && !input.value) focusCell(r, c - 1);
                 });
 
-                input.addEventListener("input", function () {
-                  var v = input.value.toUpperCase();
+                // Handle typing/deleting via beforeinput (rather than reading the
+                // post-edit value from "input") so a filled cell can always be
+                // retyped or cleared, regardless of native maxlength/selection state.
+                input.addEventListener("beforeinput", function (e) {
+                  var type = e.inputType || "";
 
-                  if (v === ".") {
-                    grid[r][c] = ".";
+                  if (type.indexOf("delete") === 0) {
+                    e.preventDefault();
+                    grid[r][c] = "";
                     input.value = "";
-                    cell.classList.add("blocked");
+                    cell.classList.remove("blocked");
                     recompute();
                     return;
                   }
 
-                  if (/^[A-Z]$/.test(v)) {
-                    grid[r][c] = v;
-                    input.value = v;
+                  if (type.indexOf("insert") === 0) {
+                    e.preventDefault();
+                    var char = (e.data || "").slice(-1).toUpperCase();
+
+                    if (char === ".") {
+                      grid[r][c] = ".";
+                      input.value = "";
+                      cell.classList.add("blocked");
+                      recompute();
+                    } else if (/^[A-Z]$/.test(char)) {
+                      grid[r][c] = char;
+                      input.value = char;
+                      cell.classList.remove("blocked");
+                      recompute();
+                      focusCell(r, c + 1);
+                    }
+                  }
+                });
+
+                cell.addEventListener("click", function () {
+                  if (grid[r][c] === ".") {
+                    grid[r][c] = "";
                     cell.classList.remove("blocked");
                     recompute();
-                    focusCell(r, c + 1);
-                  } else {
-                    input.value = grid[r][c] === "." ? "" : grid[r][c];
+                    focusCell(r, c);
                   }
                 });
 
