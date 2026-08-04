@@ -65,6 +65,16 @@
     updateGridLayout(games.length);
 
     games.forEach((game) => {
+      if (game.comingSoon) {
+        const dummy = document.createElement("div");
+        dummy.className = "game-button disabled";
+        dummy.id = game.id;
+        dummy.textContent = game.name;
+        if (game.hoverText) dummy.title = game.hoverText;
+        gameGrid.appendChild(dummy);
+        return;
+      }
+
       const link = document.createElement("a");
       link.href = game.url;
       link.className = "game-button";

@@ -34,6 +34,12 @@
       "id": "gameoflife",
       "name": "Game of Life",
       "url": "game-of-life.html"
+    },
+    {
+      "id": "comingsoon",
+      "name": "Coming Soon",
+      "comingSoon": true,
+      "hoverText": "Come back tomorrow"
     }
   ]
 }
