@@ -159,6 +159,19 @@
         flex: none;
       }
 
+      .clue-row-header {
+        margin-bottom: 4px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: #888;
+      }
+
+      .related-input.invalid {
+        border-color: #e33;
+        background: #3a1a1a;
+      }
+
       textarea {
         width: 100%;
         height: 260px;
@@ -184,7 +197,10 @@
       re-block it; an open cell left empty reverts to blocked on its own. Numbering and the
       across/down word list update live
       as you edit the grid. Clue text you've typed is preserved across grid edits as long
-      as a word's number + direction stays the same.
+      as a word's number + direction stays the same. Use each clue's "Linked clues" field to
+      reference other clues (comma-separated, e.g. <strong>8A, 3D</strong>) the same way the
+      exported JSON's <code>related</code> array does — an unrecognized reference is
+      highlighted in red.
     </p>
 
     <div class="row">
@@ -472,21 +488,46 @@
         }
 
         function renderClues(words) {
+          var validKeys = {};
+          words.forEach((w) => {
+            validKeys[clueKey(w)] = true;
+          });
+
           var across = words.filter((w) => w.direction === "across");
           var down = words.filter((w) => w.direction === "down");
 
           cluesContainer.innerHTML = "";
-          cluesContainer.appendChild(renderClueGroup("Across", across));
-          cluesContainer.appendChild(renderClueGroup("Down", down));
+          cluesContainer.appendChild(renderClueGroup("Across", across, validKeys));
+          cluesContainer.appendChild(renderClueGroup("Down", down, validKeys));
         }
 
-        function renderClueGroup(title, words) {
+        function renderClueGroup(title, words, validKeys) {
           var group = document.createElement("div");
           group.className = "clue-group";
 
           var h3 = document.createElement("h3");
           h3.textContent = title;
           group.appendChild(h3);
+
+          if (words.length) {
+            var headerRow = document.createElement("div");
+            headerRow.className = "clue-row clue-row-header";
+
+            var labelHeader = document.createElement("div");
+            labelHeader.className = "label";
+            headerRow.appendChild(labelHeader);
+
+            var clueHeader = document.createElement("div");
+            clueHeader.textContent = "Clue";
+            headerRow.appendChild(clueHeader);
+
+            var relatedHeader = document.createElement("div");
+            relatedHeader.className = "related-input";
+            relatedHeader.textContent = "Linked clues";
+            headerRow.appendChild(relatedHeader);
+
+            group.appendChild(headerRow);
+          }
 
           words.forEach((w) => {
             var key = clueKey(w);
@@ -512,11 +553,25 @@
             var relatedInput = document.createElement("input");
             relatedInput.type = "text";
             relatedInput.className = "related-input";
-            relatedInput.placeholder = "e.g. 8A";
+            relatedInput.placeholder = "e.g. 8A, 3D";
+            relatedInput.title =
+              "Comma-separated clue references (number + A/D) to link to this clue, e.g. \"8A, 3D\".";
             relatedInput.value = clueData[key].related;
+
+            function validateRelated() {
+              var tokens = relatedInput.value
+                .split(",")
+                .map((s) => s.trim().toUpperCase())
+                .filter(Boolean);
+              var allValid = tokens.every((t) => validKeys[t] && t !== key);
+              relatedInput.classList.toggle("invalid", tokens.length > 0 && !allValid);
+            }
+
             relatedInput.addEventListener("input", () => {
               clueData[key].related = relatedInput.value;
+              validateRelated();
             });
+            validateRelated();
             row.appendChild(relatedInput);
 
             group.appendChild(row);
