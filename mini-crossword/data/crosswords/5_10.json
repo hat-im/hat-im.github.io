@@ -1,0 +1,107 @@
+{
+  "size": 5,
+  "grid": [
+    [
+      "S",
+      "L",
+      "A",
+      "S",
+      "H"
+    ],
+    [
+      "T",
+      ".",
+      "N",
+      ".",
+      "A"
+    ],
+    [
+      "A",
+      "N",
+      "G",
+      "E",
+      "R"
+    ],
+    [
+      "M",
+      ".",
+      "L",
+      ".",
+      "P"
+    ],
+    [
+      "P",
+      "R",
+      "E",
+      "S",
+      "S"
+    ]
+  ],
+  "words": [
+    {
+      "word": "SLASH",
+      "clue": "The punctuation for 'and' or 'or'.",
+      "row": 0,
+      "col": 0,
+      "direction": "across",
+      "number": 1,
+      "display": "1-Across",
+      "related": []
+    },
+    {
+      "word": "STAMP",
+      "clue": "Lick before mailing.",
+      "row": 0,
+      "col": 0,
+      "direction": "down",
+      "number": 1,
+      "display": "1-Down",
+      "related": []
+    },
+    {
+      "word": "ANGLE",
+      "clue": "Under 90 degrees, a-cute one.",
+      "row": 0,
+      "col": 2,
+      "direction": "down",
+      "number": 2,
+      "display": "2-Down",
+      "related": []
+    },
+    {
+      "word": "HARPS",
+      "clue": "Angelic instruments, repeatedly.",
+      "row": 0,
+      "col": 4,
+      "direction": "down",
+      "number": 3,
+      "display": "3-Down",
+      "related": []
+    },
+    {
+      "word": "ANGER",
+      "clue": "When you see red.",
+      "row": 2,
+      "col": 0,
+      "direction": "across",
+      "number": 4,
+      "display": "4-Across",
+      "related": []
+    },
+    {
+      "word": "PRESS",
+      "clue": "Mass media.",
+      "row": 4,
+      "col": 0,
+      "direction": "across",
+      "number": 5,
+      "display": "5-Across",
+      "related": []
+    }
+  ],
+  "metadata": {
+    "created_by": "Interactive Grid Editor",
+    "word_count": 6,
+    "grid_size": "5x5"
+  }
+}
