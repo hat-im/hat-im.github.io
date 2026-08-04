@@ -1,0 +1,275 @@
+[
+  {
+    "id": "cougar",
+    "name": "Cougar",
+    "image": "to-cuddle-or-not-to-cuddle/images/cougar.jpg",
+    "altText": "A cougar standing in the snow at night",
+    "dangerLevel": "3",
+    "funFacts": [
+      "Cougars can't roar; they whistle, whine, and scream instead.",
+      "Cougars have the largest range of any wild land mammal in the Americas.",
+      "A cougar's spots fade completely by age two, at which point it legally becomes a mountain lion."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Cougar"
+  },
+  {
+    "id": "pygmy-hippo",
+    "name": "Pygmy Hippo",
+    "image": "to-cuddle-or-not-to-cuddle/images/pygmy-hippo.jpg",
+    "altText": "A pygmy hippopotamus",
+    "dangerLevel": "1",
+    "funFacts": [
+      "Folklore says pygmy hippos pack a diamond in their mouths to light the forest at night.",
+      "Pygmy hippos are solitary and nocturnal, unlike their highly social hippo cousins.",
+      "Pygmy hippos are the slipperiest land animals."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pygmy_hippopotamus"
+  },
+  {
+    "id": "polar-bear",
+    "name": "Polar Bear",
+    "image": "to-cuddle-or-not-to-cuddle/images/polar-bear.jpg",
+    "altText": "A polar bear on Arctic sea ice",
+    "dangerLevel": "3",
+    "funFacts": [
+      "Polar bears are the only bear species officially branded marine mammals.",
+      "A polar bear's skin is black, hidden under fur that only looks white.",
+      "Polar bears change colours with season."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Polar_bear"
+  },
+  {
+    "id": "arctic-fox",
+    "name": "Arctic Fox",
+    "image": "to-cuddle-or-not-to-cuddle/images/arctic-fox.jpg",
+    "altText": "An arctic fox family",
+    "dangerLevel": "1",
+    "funFacts": [
+      "Arctic foxes stay snug down to -70\u00b0C (-94\u00b0F) without a single shiver.",
+      "Arctic foxes change color with the seasons, brown in summer and white in winter.",
+      "Arctic foxes can change colour to match their environment at will."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Arctic_fox"
+  },
+  {
+    "id": "hilbert",
+    "name": "Hilbert",
+    "image": "to-cuddle-or-not-to-cuddle/images/hilbert.jpg",
+    "altText": "Hilbert the cat asleep in a storage bin",
+    "dangerLevel": "3",
+    "funFacts": [
+      "Hilbert has made several key contributions to this website.",
+      "Hilbert has a valid pilot's license.",
+      "Hilbert holds a black belt in a martial art he invented himself, called Cat-Fu."
+    ],
+    "wikipediaUrl": "to-cuddle-or-not-to-cuddle/wiki/hilbert.html"
+  },
+  {
+    "id": "long-tailed-tit",
+    "name": "Japanese Long-tailed Tit",
+    "image": "to-cuddle-or-not-to-cuddle/images/long-tailed-tit.jpg",
+    "altText": "A round, fluffy Japanese long-tailed tit perched on a branch",
+    "dangerLevel": "0",
+    "funFacts": [
+      "So round and fluffy, they're often mistaken for snowballs.",
+      "Long-tailed tits huddle together in a row on branches to keep warm.",
+      "A flock of long-tailed tits is called an avalanche."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Long-tailed_tit"
+  },
+  {
+    "id": "axolotl",
+    "name": "Axolotl",
+    "image": "to-cuddle-or-not-to-cuddle/images/axolotl.jpg",
+    "altText": "A pink leucistic axolotl in a tank",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Axolotls can regrow entire limbs, and even parts of their heart and brain, injuries most animals wouldn't survive.",
+      "Axolotls almost never leave the water, unlike most salamanders.",
+      "Axolotls are the only amphibians."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Axolotl"
+  },
+  {
+    "id": "platypus",
+    "name": "Platypus",
+    "image": "to-cuddle-or-not-to-cuddle/images/platypus.jpg",
+    "altText": "A platypus being held by a wildlife carer",
+    "dangerLevel": "2",
+    "funFacts": [
+      "Male platypuses pack venomous hind-leg spurs, rare among mammals.",
+      "Platypi hunt with their eyes, ears, and nose shut, using electroreception to find prey underwater.",
+      "The platypus was originally a committee compromise between three separate animal designs."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Platypus"
+  },
+  {
+    "id": "pangolin",
+    "name": "Pangolin",
+    "image": "to-cuddle-or-not-to-cuddle/images/pangolin.jpg",
+    "altText": "A pangolin standing among dry grass",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Pangolins are the only mammals covered in scales, made of keratin like fingernails.",
+      "Pangolins have no teeth and swallow stones to help grind food in their stomachs.",
+      "Pangolins are known for their politeness."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pangolin"
+  },
+  {
+    "id": "capybara",
+    "name": "Capybara",
+    "image": "to-cuddle-or-not-to-cuddle/images/capybara.jpg",
+    "altText": "A close-up of a capybara's face",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Capybaras are famously chill with almost every other species, from birds to caimans.",
+      "Capybaras are semi-aquatic and can hold their breath underwater for up to five minutes.",
+      "Capybaras were used as foot stools in the past."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Capybara"
+  },
+  {
+    "id": "quokka",
+    "name": "Quokka",
+    "image": "to-cuddle-or-not-to-cuddle/images/quokka.jpg",
+    "altText": "A quokka standing on its hind legs, smiling",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Quokkas' permanent smile are viral on Instagram.",
+      "Quokkas can climb trees, though they mostly stay on the ground.",
+      "Quokkas are the singler largest source of tourism."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Quokka"
+  },
+  {
+    "id": "ezo-flying-squirrel",
+    "name": "Ezo Flying Squirrel",
+    "image": "to-cuddle-or-not-to-cuddle/images/ezo-flying-squirrel.jpg",
+    "altText": "A Siberian flying squirrel with large dark eyes",
+    "dangerLevel": "0",
+    "funFacts": [
+      "A skin membrane called a patagium turns their falls into stylish, 100-meter glides between trees.",
+      "They're most active at dawn and dusk, and rarely seen during the day.",
+      "Ezo flying squirrels have been known to hitch rides on private jets."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Siberian_flying_squirrel"
+  },
+  {
+    "id": "red-panda",
+    "name": "Red Panda",
+    "image": "to-cuddle-or-not-to-cuddle/images/red-panda.jpg",
+    "altText": "A red panda standing upright in a defensive posture",
+    "dangerLevel": "1",
+    "funFacts": [
+      "When threatened, red pandas rear up and bare their claws, a jazzy attempt at looking intimidating.",
+      "Red pandas are more closely related to raccoons and weasels than to giant pandas.",
+      "Red pandas are skilled at Kung-Fu but also extremely judgemental."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Red_panda"
+  },
+  {
+    "id": "jaguar",
+    "name": "Jaguar",
+    "image": "to-cuddle-or-not-to-cuddle/images/jaguar.png",
+    "altText": "A close-up of a jaguar's face being touched on the chin",
+    "dangerLevel": "3",
+    "funFacts": [
+      "Jaguars have the strongest bite of any big cat, strong enough to crack turtle shells like pistachios.",
+      "Unlike most cats, jaguars are strong swimmers and often hunt in water.",
+      "Jaguars retire from hunting at age seven to pursue car design."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Jaguar"
+  },
+  {
+    "id": "sea-otter",
+    "name": "Sea Otter",
+    "image": "to-cuddle-or-not-to-cuddle/images/sea-otter.jpg",
+    "altText": "A sea otter floating on its back, covering its eyes with its paws",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Sea otters hold hands while snoozing so they don't drift apart.",
+      "Sea otters use rocks as tools to crack open shellfish.",
+      "Sea otters use rocks as a form of currency to purchase goods and services."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Sea_otter"
+  },
+  {
+    "id": "ground-squirrel",
+    "name": "Ground Squirrel",
+    "image": "to-cuddle-or-not-to-cuddle/images/ground-squirrel.jpg",
+    "altText": "A ground squirrel sitting up and looking at the camera",
+    "dangerLevel": "1",
+    "funFacts": [
+      "Grand Canyon ground squirrels bite more visitors than any other animal in the park.",
+      "Ground squirrels can slip into a light, hibernation-like torpor during cold snaps.",
+      "Grand Canyon ground squirrels are responsible for at least three missing tourists."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ground_squirrel"
+  },
+  {
+    "id": "elephant",
+    "name": "Elephant",
+    "image": "to-cuddle-or-not-to-cuddle/images/elephant.jpg",
+    "altText": "A baby elephant with its trunk raised, walking through tall grass",
+    "dangerLevel": "3",
+    "funFacts": [
+      "Baby elephants suck their trunks for comfort, like human babies suck their thumbs.",
+      "Elephants can recognize themselves in a mirror, a rare sign of self-awareness in animals.",
+      "Elephants never forget your birthday. Specifically yours."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Elephant"
+  },
+  {
+    "id": "swan",
+    "name": "Swan",
+    "image": "to-cuddle-or-not-to-cuddle/images/swan.jpg",
+    "altText": "Two swans forming a heart shape with their necks",
+    "dangerLevel": "2",
+    "funFacts": [
+      "Mute swans are surprisingly savage, capable of breaking bones with a wing strike.",
+      "A group of swans is called a 'bevy' on water and a 'wedge' in flight.",
+      "Swan recordings are used to scare pigeons away from airports."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Mute_swan"
+  },
+  {
+    "id": "raccoon",
+    "name": "Raccoon",
+    "image": "to-cuddle-or-not-to-cuddle/images/raccoon.jpg",
+    "altText": "A raccoon sitting on a wooden deck covered in leaves",
+    "dangerLevel": "2",
+    "funFacts": [
+      "Wetting enhances a raccoon's sense of touch, which is why they seem to 'wash' their food.",
+      "Raccoons can remember the solution to a puzzle for up to three years.",
+      "Raccoons can solve Sudoku."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Raccoon"
+  },
+  {
+    "id": "blue-ringed-octopus",
+    "name": "Blue-ringed Octopus",
+    "image": "to-cuddle-or-not-to-cuddle/images/blue-ringed-octopus.jpg",
+    "altText": "A blue-ringed octopus displaying its iridescent blue rings",
+    "dangerLevel": "2",
+    "funFacts": [
+      "Its venom can kill a person within minutes, and there is no antivenom.",
+      "Its blue rings flash brighter as a warning display right before it bites.",
+      "The blue-ringed octopus has the right of way on the high seas."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Blue-ringed_octopus"
+  },
+  {
+    "id": "pufferfish",
+    "name": "Pufferfish",
+    "image": "to-cuddle-or-not-to-cuddle/images/pufferfish.jpg",
+    "altText": "A baby pufferfish",
+    "dangerLevel": "2",
+    "funFacts": [
+      "Pufferfish contain tetrodotoxin, a poison deadlier than cyanide with no known antidote.",
+      "Pufferfish inflate by rapidly gulping water into a highly elastic stomach.",
+      "Pufferfish cannot un-puff once they have puffed."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pufferfish"
+  }
+]

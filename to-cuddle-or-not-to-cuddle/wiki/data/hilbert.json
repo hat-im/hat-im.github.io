@@ -1,0 +1,45 @@
+{
+  "title": "Hilbert (cat)",
+  "pageTitle": "Hilbert (cat) - Wikipedia",
+  "tagline": "From Wikipedia, the free-ish encyclopedia",
+  "image": "../images/hilbert.jpg",
+  "imageAlt": "Hilbert the cat asleep in a storage bin",
+  "imageCaption": "Hilbert, photographed mid-nap in his enclosure",
+  "infobox": [
+    {
+      "section": "Conservation status",
+      "rows": [{ "label": "Status", "value": "Least Concern" }]
+    },
+    {
+      "section": "Scientific classification",
+      "rows": [
+        { "label": "Kingdom", "value": "Animalia" },
+        { "label": "Phylum", "value": "Chordata" },
+        { "label": "Class", "value": "Mammalia" },
+        { "label": "Order", "value": "Carnivora" },
+        { "label": "Family", "value": "Felidae" },
+        { "label": "Species", "value": "F. catus", "italic": true }
+      ]
+    },
+    {
+      "section": "Biographical details",
+      "rows": [
+        { "label": "Age", "value": "~3 months (estimated)" },
+        { "label": "Origin", "value": "Manyata Tech Park, Bangalore" },
+        { "label": "Residence", "value": "Whitefield, Bangalore" }
+      ]
+    },
+    {
+      "section": "Notable classifications",
+      "rows": [
+        { "label": "Threat level", "value": "Extreme (disputed)", "class": "threat-extreme" },
+        { "label": "Known weaknesses", "value": "Sour cream, crunchy biscuits, creamy treats" }
+      ]
+    }
+  ],
+  "categories": [
+    { "label": "Cats", "href": "#" },
+    { "label": "Individual animals", "href": "#" },
+    { "label": "Apex predators (disputed)", "href": "#" }
+  ]
+}

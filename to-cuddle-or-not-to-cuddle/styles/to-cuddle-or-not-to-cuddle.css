@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f4e2;
+  color: #3a3b24;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.top-left {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  z-index: 2;
+}
+
+.stats {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #6b6b4a;
+}
+
+.game {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 180px;
+}
+
+.card-stage {
+  width: 100%;
+  max-width: 420px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid #3a3b24;
+  background: #ece9d2;
+  box-shadow: 0 10px 24px rgba(58, 59, 36, 0.12);
+  overflow: hidden;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Live readout of whichever danger level the slider currently sits on —
+   updates as the slider moves, background tinted with that level's color. */
+.level-readout {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border: 1px solid #3a3b24;
+  border-radius: 0;
+  background: #ece9d2;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #3a3b24;
+  transition: background 0.15s ease;
+}
+
+/* Danger slider — a fixed bar at the bottom of the page holding a native
+   range input (dragging, click-to-jump, and keyboard all work for free).
+   The handle moves along a fine-grained continuous scale so dragging feels
+   smooth, but the track itself is painted as hard-edged discrete sections
+   (via --track-gradient, computed in app.js from the current level count)
+   and the readout text only changes at those section boundaries. */
+.danger-slider-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: #eef2d4;
+  border-top: 1px solid #3a3b24;
+  padding: 22px 32px 18px;
+}
+
+.slider-label {
+  max-width: 640px;
+  margin: 0 auto 8px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #6b6b4a;
+}
+
+.danger-range {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  height: 24px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.danger-range:disabled {
+  cursor: default;
+}
+
+.danger-range::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 0;
+  background: var(--track-gradient);
+}
+
+.danger-range::-moz-range-track {
+  height: 6px;
+  border-radius: 0;
+  background: var(--track-gradient);
+}
+
+.danger-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  margin-top: -9px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #3a3b24;
+  box-shadow: 0 2px 6px rgba(58, 59, 36, 0.3);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.danger-range::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #3a3b24;
+  box-shadow: 0 2px 6px rgba(58, 59, 36, 0.3);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.danger-slider-bar[data-result="correct"] .danger-range::-webkit-slider-thumb {
+  background: #6b7a3a;
+}
+
+.danger-slider-bar[data-result="correct"] .danger-range::-moz-range-thumb {
+  background: #6b7a3a;
+}
+
+.danger-slider-bar[data-result="wrong"] .danger-range::-webkit-slider-thumb {
+  background: #b3503f;
+}
+
+.danger-slider-bar[data-result="wrong"] .danger-range::-moz-range-thumb {
+  background: #b3503f;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(58, 59, 36, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 20px;
+}
+
+.modal-overlay.show {
+  display: flex;
+}
+
+.modal {
+  max-width: 420px;
+  width: 100%;
+  padding: 36px 32px;
+  background: #f5f4e2;
+  border-radius: 0;
+  border: 1px solid #3a3b24;
+  box-shadow: 0 20px 45px rgba(58, 59, 36, 0.3);
+  text-align: center;
+}
+
+.modal-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #3a3b24;
+  margin-bottom: 20px;
+}
+
+.modal-result {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: #6b7a3a;
+}
+
+.modal-result.wrong {
+  color: #b3503f;
+}
+
+.modal-name {
+  margin: 0 0 14px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.modal-name a {
+  color: #3a3b24;
+  text-decoration: underline;
+  text-decoration-color: #cdd5a0;
+  text-underline-offset: 4px;
+}
+
+.modal-name a:hover {
+  color: #6b7a3a;
+}
+
+.modal-fact {
+  margin: 0 0 28px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b6b4a;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.modal-button {
+  border: 1px solid #3a3b24;
+  border-radius: 0;
+  padding: 12px 28px;
+  background: #6b7a3a;
+  color: #f5f4e2;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.modal-button:hover {
+  background: #55622c;
+}
+
+@media (max-width: 700px) {
+  .top-left {
+    top: 12px;
+    left: 14px;
+  }
+
+  .game {
+    padding: 56px 16px 170px;
+  }
+
+  .danger-slider-bar {
+    padding: 18px 18px 14px;
+  }
+
+  .level-readout {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .modal {
+    padding: 28px 22px;
+  }
+
+  .modal-name {
+    font-size: 22px;
+  }
+
+  .modal-fact {
+    font-size: 15px;
+  }
+}

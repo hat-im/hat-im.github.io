@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Cuddle or Not to Cuddle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="to-cuddle-or-not-to-cuddle/styles/to-cuddle-or-not-to-cuddle.css" />
+  </head>
+  <body>
+    <div class="top-left">
+      <div class="stats" id="stats">0/0</div>
+    </div>
+
+    <main class="game">
+      <div class="card-stage">
+        <div class="card" id="card">
+          <img class="card-image" id="cardImage" src="" alt="" />
+        </div>
+        <div class="level-readout" id="levelReadout"></div>
+      </div>
+    </main>
+
+    <div class="danger-slider-bar">
+      <div class="slider-label">Drag to measure danger</div>
+      <input type="range" class="danger-range" id="dangerRange" />
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <img class="modal-image" id="modalImage" src="" alt="" />
+        <p class="modal-result" id="modalResult"></p>
+        <h2 class="modal-name">
+          <a id="modalNameLink" target="_blank" rel="noopener"></a>
+        </h2>
+        <p class="modal-fact" id="modalFact"></p>
+        <div class="modal-buttons">
+          <button class="modal-button" id="modalNextButton">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="to-cuddle-or-not-to-cuddle/scripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading… - Wikipedia</title>
+    <link rel="stylesheet" href="styles/wiki.css" />
+  </head>
+  <body>
+    <div class="chrome">
+      <a href="#">Article</a>
+      <a href="#">Talk</a>
+      &nbsp;&nbsp;&nbsp;
+      <a href="#">Read</a>
+      <a href="#">View source</a>
+      <a href="#">View history</a>
+    </div>
+
+    <div class="page">
+      <div class="tagline" id="tagline"></div>
+      <h1 class="title" id="pageTitle"></h1>
+
+      <div class="content">
+        <div class="article" id="article"></div>
+        <div class="infobox" id="infobox"></div>
+      </div>
+    </div>
+
+    <script>
+      var WIKI_SLUG = "hilbert";
+    </script>
+    <script src="scripts/wiki-article.js"></script>
+  </body>
+</html>
