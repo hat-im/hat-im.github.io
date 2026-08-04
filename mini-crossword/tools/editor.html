@@ -181,7 +181,8 @@
     <p class="hint">
       A new grid starts fully blocked — click a black cell to open it up, then type letters
       into open cells (auto-advances). Type <strong>.</strong> (period) in an open cell to
-      re-block it. Numbering and the across/down word list update live
+      re-block it; an open cell left empty reverts to blocked on its own. Numbering and the
+      across/down word list update live
       as you edit the grid. Clue text you've typed is preserved across grid edits as long
       as a word's number + direction stays the same.
     </p>
@@ -305,6 +306,16 @@
                       recompute();
                       focusCell(r, c + 1);
                     }
+                  }
+                });
+
+                // An open cell that's left empty reverts to blocked — a cell only
+                // stays open (part of a word) once it actually has a letter.
+                input.addEventListener("blur", function () {
+                  if (grid[r][c] === "") {
+                    grid[r][c] = ".";
+                    cell.classList.add("blocked");
+                    recompute();
                   }
                 });
 
