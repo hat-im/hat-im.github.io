@@ -10,8 +10,9 @@
   }
 
   // Minimal markdown: paragraphs (blank-line separated), ## headings,
-  // **bold**, *italic*, and [text](url) links — the only syntax the mock
-  // wiki articles actually use, so no full markdown library is pulled in.
+  // "- " bullet lists, **bold**, *italic*, and [text](url) links — the only
+  // syntax the mock wiki articles actually use, so no full markdown library
+  // is pulled in.
   function renderInline(text) {
     text = escapeHtml(text);
     text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (match, label, href) {
@@ -29,6 +30,15 @@
       .map(function (block) {
         var heading = block.match(/^##\s+(.*)$/);
         if (heading) return "<h2>" + renderInline(heading[1]) + "</h2>";
+
+        var lines = block.split(/\n/);
+        if (lines.every((line) => /^-\s+/.test(line))) {
+          var items = lines
+            .map((line) => "<li>" + renderInline(line.replace(/^-\s+/, "")) + "</li>")
+            .join("");
+          return "<ul>" + items + "</ul>";
+        }
+
         return "<p>" + renderInline(block.replace(/\s*\n\s*/g, " ")) + "</p>";
       })
       .join("\n");

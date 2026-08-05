@@ -1,4 +1,4 @@
-**Senorita Hazelnut Icecream Tiramisu Sarkar** (b. c. 2024), known as **Hazel** and affectionately as **Haju** or **Coodly Shona**, is a domestic calico cat adopted from a foster home by Sam.
+**Senorita Hazelnut Icecream Tiramisu Sarkar** (b. c. 2024), known as **Hazel** and affectionately as **Haju** or **Coodly Shona**, is a domestic [calico cat](https://en.wikipedia.org/wiki/Calico_cat) adopted from a foster volunteer's home by Sam.
 
 ## Early life
 
@@ -6,7 +6,13 @@ Sam adopted Hazel from a foster volunteer and is said to have formed an immediat
 
 ## Etymology
 
-Her full name reflects a growing list of favorite desserts, each added because the previous name no longer felt like enough. Her initials happen to spell SHITS.
+Her full name reflects a growing list of favorite desserts, each added because the previous name no longer felt like enough:
+
+- [Hazelnut](https://en.wikipedia.org/wiki/Hazelnut)
+- [Icecream](https://en.wikipedia.org/wiki/Ice_cream)
+- [Tiramisu](https://en.wikipedia.org/wiki/Tiramisu)
+
+Her initials happen to spell SHITS.
 
 ## Physical description
 
@@ -20,7 +26,7 @@ Around people she knows well, this shyness disappears. She is notably vocal with
 
 ## Notable habits
 
-Hazel has a long-standing, unexplained habit of nipping at Sam's feet. She prefers cat biscuits, though she has recently started eating wet food after refusing it for some time. When petted while asleep, she purrs in a way described as unusually endearing.
+Hazel has a long-standing, unexplained habit of nipping at Sam's feet. She prefers cat biscuits, though she has recently started eating [wet food](https://en.wikipedia.org/wiki/Cat_food) after refusing it for some time. When petted while asleep, she [purrs](https://en.wikipedia.org/wiki/Purr) in a way described as unusually endearing.
 
 ## Classification and legacy
 

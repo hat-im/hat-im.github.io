@@ -73,6 +73,15 @@ h1.title {
   margin: 12px 0;
 }
 
+.article ul {
+  margin: 12px 0;
+  padding-left: 30px;
+}
+
+.article li {
+  margin: 4px 0;
+}
+
 .article a {
   color: #0645ad;
   text-decoration: none;
