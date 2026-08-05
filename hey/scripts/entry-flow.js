@@ -86,7 +86,7 @@
       if (Hey.state.timeLeft <= 0) {
         clearInterval(Hey.state.countdownTimer);
         if (!Hey.state.redirectAborted) {
-          window.location.href = "dear-sam.html";
+          window.location.href = Hey.randomGameUrl();
         }
       }
     }, 1000);

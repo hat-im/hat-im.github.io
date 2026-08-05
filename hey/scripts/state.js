@@ -31,4 +31,9 @@ window.Hey = window.Hey || {};
   Hey.wait = function (ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
+
+  Hey.randomGameUrl = function () {
+    var playable = Hey.state.GAMES.main.filter((game) => !game.comingSoon && game.url);
+    return playable[Math.floor(Math.random() * playable.length)].url;
+  };
 })(window.Hey);
