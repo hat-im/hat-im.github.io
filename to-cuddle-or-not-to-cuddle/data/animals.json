@@ -271,5 +271,57 @@
       "Pufferfish cannot un-puff once they have puffed."
     ],
     "wikipediaUrl": "https://en.wikipedia.org/wiki/Pufferfish"
+  },
+  {
+    "id": "penguin-chick",
+    "name": "Emperor Penguin Chick",
+    "image": "to-cuddle-or-not-to-cuddle/images/penguin-chicks.jpg",
+    "altText": "Three emperor penguin chicks huddled together",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Penguin chicks huddle together in large groups called creches to share warmth.",
+      "Male emperor penguins incubate the egg on their feet for about two months, without eating, through the Antarctic winter.",
+      "Penguin chicks must file a formal huddle request twenty-four hours in advance."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Emperor_penguin"
+  },
+  {
+    "id": "hedgehog",
+    "name": "Hedgehog",
+    "image": "to-cuddle-or-not-to-cuddle/images/hedgehog.png",
+    "altText": "A hedgehog wearing a tiny top hat and pink tie",
+    "dangerLevel": "1",
+    "funFacts": [
+      "A hedgehog's spines are made of keratin, the same protein as human hair and nails.",
+      "Hedgehogs 'self-anoint' by chewing unfamiliar scents into a foamy paste and licking it onto their spines.",
+      "This hedgehog's top hat and tie are required formal attire for all boardroom meetings."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Hedgehog"
+  },
+  {
+    "id": "sand-cat",
+    "name": "Sand Cat",
+    "image": "to-cuddle-or-not-to-cuddle/images/sand-cat.jpg",
+    "altText": "A sand cat sitting on desert sand",
+    "dangerLevel": "1",
+    "funFacts": [
+      "Sand cats are the only cat species found primarily in true desert.",
+      "Thick fur on their paw pads lets sand cats walk across scorching sand or icy nights without feeling it.",
+      "Sand cats are contractually the only feline permitted to complain about the heat."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Sand_cat"
+  },
+  {
+    "id": "hazel",
+    "name": "Hazel",
+    "image": "to-cuddle-or-not-to-cuddle/images/hazel.png",
+    "altText": "An illustrated portrait of Hazel, a calico cat with a bushy tail",
+    "dangerLevel": "1",
+    "funFacts": [
+      "Hazel prefers to observe the world from a safe distance before deciding to join in.",
+      "Despite a weaker hind leg, Hazel is fully capable of zoomies, jumps, and general cat mischief.",
+      "Hazel's full name takes eleven seconds to say out loud, on average."
+    ],
+    "wikipediaUrl": "to-cuddle-or-not-to-cuddle/wiki/hazel.html"
   }
 ]

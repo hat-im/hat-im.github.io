@@ -1,0 +1,46 @@
+{
+  "title": "Hazel (cat)",
+  "pageTitle": "Hazel (cat) - Wikipedia",
+  "tagline": "From Wikipedia, the free-ish encyclopedia",
+  "image": "../images/hazel.png",
+  "imageAlt": "An illustrated portrait of Hazel, a calico cat with a bushy tail",
+  "imageCaption": "Hazel, illustrated in her preferred sitting posture",
+  "infobox": [
+    {
+      "section": "Conservation status",
+      "rows": [{ "label": "Status", "value": "Least Concern" }]
+    },
+    {
+      "section": "Scientific classification",
+      "rows": [
+        { "label": "Kingdom", "value": "Animalia" },
+        { "label": "Phylum", "value": "Chordata" },
+        { "label": "Class", "value": "Mammalia" },
+        { "label": "Order", "value": "Carnivora" },
+        { "label": "Family", "value": "Felidae" },
+        { "label": "Species", "value": "F. catus", "italic": true }
+      ]
+    },
+    {
+      "section": "Biographical details",
+      "rows": [
+        { "label": "Full name", "value": "Senorita Hazelnut Icecream Tiramisu Sarkar" },
+        { "label": "Nicknames", "value": "Haju, Coodly Shona" },
+        { "label": "Age", "value": "2+ years" },
+        { "label": "Adopted by", "value": "Sam, from a foster home" }
+      ]
+    },
+    {
+      "section": "Notable classifications",
+      "rows": [
+        { "label": "Threat level", "value": "Cuddle with Caution", "class": "threat-extreme" },
+        { "label": "Known weakness", "value": "Cat biscuits" }
+      ]
+    }
+  ],
+  "categories": [
+    { "label": "Cats", "href": "#" },
+    { "label": "Individual animals", "href": "#" },
+    { "label": "Calicos", "href": "#" }
+  ]
+}
