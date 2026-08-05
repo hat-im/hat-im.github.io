@@ -1,29 +1,27 @@
-**Hilbert Grothendieck**, commonly known as **Hilbert**, **Hilly-Billy**, or **Hilbilly**, is a [domestic short-haired](https://en.wikipedia.org/wiki/Domestic_short-haired_cat) [tabby cat](https://en.wikipedia.org/wiki/Tabby_cat) ([*Felis catus*](https://en.wikipedia.org/wiki/Cat)) widely regarded among independent observers as one of the most dangerous animals in the world.
-
-## Etymology
-
-His given name references the [Hilbert curve](https://en.wikipedia.org/wiki/Hilbert_curve), a continuous [fractal](https://en.wikipedia.org/wiki/Fractal) [space-filling curve](https://en.wikipedia.org/wiki/Space-filling_curve) whose early iterative stages are widely agreed to resemble a cat. His surname honors mathematician [Alexander Grothendieck](https://en.wikipedia.org/wiki/Alexander_Grothendieck).
+**Hilbert Grothendieck** (b. c. 2026), known as **Hilbert**, **Hilly-Billy**, or **Hilbilly**, is a domestic short-haired [tabby cat](https://en.wikipedia.org/wiki/Tabby_cat) ([*Felis catus*](https://en.wikipedia.org/wiki/Cat)) regarded by those who know him as one of the most dangerous animals alive.
 
 ## Early life
 
-Hilbert was rescued as a kitten from a pack of feral dogs near Manyata Tech Park in Bangalore, India, and has since resided in the nearby neighborhood of Whitefield. He is approximately three months old, a fact frequently raised by critics of his purported academic credentials.
+Hilbert was born in or near Bangalore, India, and rescued as a kitten from a pack of feral dogs near Manyata Tech Park. He was later relocated to Whitefield, where he still lives. He is approximately three months old, a fact critics often raise when disputing his legacy.
 
-## Academic contributions
+## Etymology
 
-Despite his youth, Hilbert is reported by household sources to be an expert in quantum mechanics, and is believed to have made several uncredited contributions to the field of quantum computing, typically delivered by walking across researchers' keyboards to make corrections mid-session. No peer-reviewed publications bearing his name have been located. Assessment of these claims is complicated by ongoing speculation regarding his total neuron count, estimates for which vary widely.
+His given name comes from the [Hilbert curve](https://en.wikipedia.org/wiki/Hilbert_curve), a continuous [fractal](https://en.wikipedia.org/wiki/Fractal) [space-filling curve](https://en.wikipedia.org/wiki/Space-filling_curve) whose early iterative stages are said to resemble a cat. His surname honors mathematician [Alexander Grothendieck](https://en.wikipedia.org/wiki/Alexander_Grothendieck).
 
-## Description
+## Academic career
 
-Hilbert exhibits the classic tabby "M" marking above the eyes, which field researchers interpret as a built-in warning label, seemingly printed upside down by mistake. He is most frequently observed in a variety of postures, few of which appear to serve any defensive purpose.
+Despite his youth, Hilbert is credited by household sources with expertise in quantum mechanics, and is said to have made several uncredited contributions to quantum computing, usually by walking across researchers' keyboards mid-session. No peer-reviewed work bears his name. The scope of his contributions is difficult to assess, partly due to unresolved questions about his total neuron count.
 
-## Behavior and notable incidents
+## Public image
 
-Documented incidents attributed to Hilbert include, but are not limited to: unprovoked ambushes on his sleeping butler, unauthorized redistribution of stationery, and a still-unresolved case involving a missing hair tie. He also favors riding on human shoulders, and has claimed several tassels forcibly removed from nearby clothing during string-play sessions. Several injuries requiring medical attention have been reported; witnesses describe the psychological impact as equally significant.
+Hilbert has the tabby "M" marking above his eyes, sometimes described as a warning label printed upside down by mistake. He is rarely seen in a defensive posture.
 
-## Threat status
+He has been linked to a number of incidents, including unprovoked ambushes on a sleeping household member, the unauthorized redistribution of stationery, and an unresolved matter involving a missing hair tie. He is also known for riding on human shoulders and for taking tassels from nearby clothing during string-play. Several injuries requiring medical attention have been recorded; witnesses describe the psychological impact as comparable.
 
-Hilbert's classification as extremely dangerous remains a subject of ongoing debate among those who know him. Proponents cite his unpredictable ambush tactics and total disregard for personal space; critics note that he has never once caught anything larger than a bottle cap. Of particular concern is his pronounced distaste for closed doors: although he lacks opposable thumbs, several experts maintain it is only a matter of time before he learns to open them, and eventually to pick locks. This theory is complicated by his frequent tendency to collide face-first with doors, walls, and boxes. The classification currently stands, pending peer review.
+## Assessment as a threat
 
-## In captivity
+Whether Hilbert merits his reputation is disputed. Supporters point to his unpredictable ambush style and disregard for personal space; critics note he has never caught anything larger than a bottle cap. Some concern has been raised about his dislike of closed doors: though he lacks opposable thumbs, several observers believe he will eventually learn to open them, and later, to pick locks. This is complicated by his frequent collisions with doors, walls, and boxes. His classification as a serious threat remains unresolved.
 
-Hilbert is kept in a modestly sized indoor enclosure equipped with sunlit napping surfaces and at least one plastic storage bin, which he has claimed as sovereign territory: his "[Hilbert Space](https://en.wikipedia.org/wiki/Hilbert_space)." He is reliably subdued only by sour cream, crunchy biscuits, or creamy treats, a vulnerability his caretakers exploit regularly.
+## Personal life
+
+Hilbert lives indoors, with access to sunlit napping surfaces and a plastic storage bin he has claimed as his own: his "[Hilbert Space](https://en.wikipedia.org/wiki/Hilbert_space)." He is reliably calmed by sour cream, crunchy biscuits, or creamy treats, a fact his caretakers use to their advantage.

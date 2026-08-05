@@ -1,23 +1,27 @@
-**Senorita Hazelnut Icecream Tiramisu Sarkar**, known to most simply as **Hazel** (and affectionately as **Haju** or **Coodly Shona**), is a domestic calico cat adopted from a foster home by Sam, who is reported to have fallen for her instantly.
+**Senorita Hazelnut Icecream Tiramisu Sarkar** (b. c. 2024), known as **Hazel** and affectionately as **Haju** or **Coodly Shona**, is a domestic calico cat adopted from a foster home by Sam.
+
+## Early life
+
+Sam adopted Hazel from a foster volunteer and is said to have formed an immediate attachment to her. She is over two years old.
 
 ## Etymology
 
-Hazel's full name is understood to reflect an escalating list of favorite desserts, each added, according to family lore, because none of the previous names felt sufficient on their own. Taken together, the initials abbreviate to SHITS.
+Her full name reflects a growing list of favorite desserts, each added because the previous name no longer felt like enough. Her initials happen to spell SHITS.
 
-## Description
+## Physical description
 
-Hazel has an unusually bushy tail, a rarity among cats of her coloring. She also has a weaker hind leg, which has not been observed to slow her down during zoomies, jumps, or any other feat of cat athletics.
+Hazel has an unusually bushy tail, uncommon among cats of her coloring. A weakness in one hind leg has not affected her ability to zoom, jump, or otherwise get into things.
 
-## Temperament
+## Temperament and public conduct
 
-Hazel has a shy disposition and prefers to observe household activity from a safe distance before deciding whether to participate. Her preferred vantage points include the space beneath Sam's legs and the interior of a blanket fort maintained for this purpose.
+Hazel is shy by nature and prefers to watch household activity from a safe distance, usually from beneath Sam's legs or inside a blanket fort, before joining in. She can also often be found asleep in a bed crocheted for her by Sam.
 
-Around companions she knows well, however, Hazel becomes notably vocal, frequently engaging in long conversations and issuing loud, unambiguous demands for food.
+Around people she knows well, this shyness disappears. She is notably vocal with familiar company, often engaging in long exchanges and making loud demands for food.
 
-## Behavior and notable habits
+## Notable habits
 
-Despite her reserved nature, Hazel has a documented habit of nipping at Sam's feet, for reasons that remain undisclosed. She is partial to cat biscuits, and has recently begun eating wet food after a long period of principled refusal. When petted while asleep, she produces what witnesses describe as an unusually adorable purr.
+Hazel has a long-standing, unexplained habit of nipping at Sam's feet. She prefers cat biscuits, though she has recently started eating wet food after refusing it for some time. When petted while asleep, she purrs in a way described as unusually endearing.
 
-## Threat status
+## Classification and legacy
 
-Hazel is officially classified as Cuddle with Caution, a rating attributed almost entirely to the aforementioned foot-nipping rather than any broader concern for safety.
+Hazel is classified as Cuddle with Caution, a rating due mainly to her foot-nipping rather than any real safety concern.
