@@ -56,6 +56,7 @@
       Hey.fetchJson(Hey.STRINGS_URL),
       Hey.fetchJson(Hey.GAMES_URL),
       Hey.fetchJson(Hey.FACTS_URL),
+      Hey.fetchJson(Hey.LAST_UPDATED_URL),
     ]);
     Hey.state.STR = results[0];
     Hey.state.GAMES = results[1];
@@ -63,6 +64,7 @@
 
     Hey.renderStaticText();
     Hey.renderFactTicker();
+    Hey.renderLastUpdated(results[3]);
     bindEvents();
   }
 

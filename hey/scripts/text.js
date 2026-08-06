@@ -62,6 +62,17 @@
     document.getElementById("gameCardClose").innerHTML = STR.gameCard.close;
   };
 
+  Hey.renderLastUpdated = function (lastUpdated) {
+    var el = document.getElementById("lastUpdated");
+    if (!el || !lastUpdated || !lastUpdated.timestamp) return;
+    var date = new Date(lastUpdated.timestamp);
+    var formatted = date.toLocaleString("en-US", {
+      dateStyle: "long",
+      timeStyle: "short",
+    });
+    el.textContent = "Last updated " + formatted;
+  };
+
   // Constant scroll speed regardless of how long the facts are, so the
   // ticker doesn't crawl for short text or zip by for long text.
   var FACT_TICKER_SPEED_PX_PER_SEC = 60;

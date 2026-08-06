@@ -5,6 +5,7 @@ window.Hey = window.Hey || {};
   Hey.STRINGS_URL = Hey.BASE + "strings.json";
   Hey.GAMES_URL = Hey.BASE + "data/games.json";
   Hey.FACTS_URL = Hey.BASE + "data/funfacts.json";
+  Hey.LAST_UPDATED_URL = "shared/last-updated.json";
 
   Hey.state = {
     STR: {},
