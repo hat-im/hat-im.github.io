@@ -323,5 +323,44 @@
       "Hazel's full name takes eleven seconds to say out loud, on average."
     ],
     "wikipediaUrl": "to-cuddle-or-not-to-cuddle/wiki/hazel.html"
+  },
+  {
+    "id": "bee-fly",
+    "name": "Japanese Bee Fly",
+    "image": "to-cuddle-or-not-to-cuddle/images/bee-fly.jpg",
+    "altText": "A fluffy bee fly hovering with its long, needle-like proboscis extended",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Bee flies mimic bumblebees for protection, but they have no stinger and can't bite.",
+      "They hover with an odd spinning wobble called 'yawing,' and scientists still aren't sure why.",
+      "The proboscis changes colours with seasons."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Bombylius_major"
+  },
+  {
+    "id": "pomeranian",
+    "name": "Teacup Pomeranian",
+    "image": "to-cuddle-or-not-to-cuddle/images/pomeranian.jpg",
+    "altText": "A round, fluffy white teacup Pomeranian puppy being gently touched on the chin",
+    "dangerLevel": "0",
+    "funFacts": [
+      "Pomeranians are shrunk-down descendants of large Arctic sled dogs like the Samoyed and Alaskan Malamute.",
+      "Queen Victoria fell for an undersized Pomeranian in Italy and spent decades breeding down the tiny version we know today.",
+      "They are so dense that if they were the size of an elephant, they would collapse into a black hole."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Pomeranian_dog"
+  },
+  {
+    "id": "german-shepherd",
+    "name": "German Shepherd",
+    "image": "to-cuddle-or-not-to-cuddle/images/german-shepherd.jpg",
+    "altText": "A German Shepherd puppy in a K-9 unit training harness, held up by its handler",
+    "dangerLevel": "2",
+    "funFacts": [
+      "German Shepherds were bred in 1899 to be the ideal all-purpose working dog, and they still top the charts for police and military service today.",
+      "Their sense of smell is so precise that trained German Shepherds can detect certain cancers and drops in blood sugar in humans.",
+      "This one is already cleared for airport duty, despite still working on stairs."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/German_Shepherd"
   }
 ]
