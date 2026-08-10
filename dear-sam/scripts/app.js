@@ -8,6 +8,7 @@ var POEMS_URL = BASE + 'data/poems.json';
 var COMPLETED_KEY = 'cryptogram_completed';
 var COMPLETED_HASH_KEY = 'cryptogram_completed_hash';
 var EVER_SOLVED_KEY = 'cryptogram_ever_solved';
+var LAST_POEM_KEY = 'cryptogram_last_poem_title';
 
 var STR = {};
 var correctMapping = {};
@@ -156,8 +157,8 @@ function showPopup(mode) {
     const poemCard = document.getElementById('popup-poem-card');
 
     if (mode === 'poem' && currentPoem) {
-        // A poem cryptogram was just decrypted (or was already solved on arrival) -- credit it
-        // with a card styled after a poetry-blog blockquote rather than the plain message text.
+        // A poem cryptogram was just decrypted (or was already solved on arrival) -- show it
+        // in a card styled after a poetry-blog blockquote rather than the plain message text.
         const s = STR.popup.poemSolved;
         title.textContent = s.title;
         title.style.display = 'none';
@@ -235,35 +236,10 @@ function revealCompletedMessage() {
 }
 
 function restartGame() {
-    // Clear completion state
+    // Clear completion state, then reload so init() picks a fresh (different) poem
     localStorage.removeItem(COMPLETED_KEY);
     localStorage.removeItem(COMPLETED_HASH_KEY);
-
-    // Reset puzzle state
-    puzzleSolved = false;
-    currentSelected = null;
-
-    // Clear all inputs
-    document.querySelectorAll('.letter-input').forEach(input => {
-        input.value = '';
-        input.classList.remove('solved', 'error', 'highlighted', 'selected');
-    });
-
-    // Show encrypted letters again
-    document.querySelectorAll('.encrypted-letter').forEach(letter => {
-        letter.classList.remove('fade-out');
-        letter.style.visibility = 'visible';
-    });
-
-    // Disable header link
-    const headerLink = document.querySelector('.header-link');
-    headerLink.classList.remove('enabled');
-
-    // Update remaining letters
-    updateRemainingLetters();
-
-    // Close popup
-    closePopup();
+    location.reload();
 }
 
 function initializePage() {
@@ -689,8 +665,14 @@ async function init(){
     var enabledPoems = (poemsData.poems || []).filter(function(poem) { return poem.enabled !== false; });
 
     if (everSolved && enabledPoems.length > 0) {
-        // Once the base letter has ever been solved, every fresh visit decrypts a new poem
-        currentPoem = enabledPoems[Math.floor(Math.random() * enabledPoems.length)];
+        // Once the base letter has ever been solved, every fresh visit decrypts a new poem.
+        // Exclude the last poem shown so "Play Again" doesn't just repeat the same one.
+        var lastPoemTitle = localStorage.getItem(LAST_POEM_KEY);
+        var poemCandidates = enabledPoems.length > 1
+            ? enabledPoems.filter(function(poem) { return poem.title !== lastPoemTitle; })
+            : enabledPoems;
+        currentPoem = poemCandidates[Math.floor(Math.random() * poemCandidates.length)];
+        localStorage.setItem(LAST_POEM_KEY, currentPoem.title);
         puzzle = {
             message: currentPoem.text,
             mapping: generateCipherMapping(),

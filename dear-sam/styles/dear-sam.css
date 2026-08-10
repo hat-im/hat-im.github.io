@@ -270,21 +270,11 @@ body {
 }
 
 .popup-poem-card {
-    background-color: #f3f2e6;
+    background-color: transparent;
     border-left: 4px solid #ddd;
     padding: 20px 22px;
     margin-bottom: 20px;
     text-align: left;
-}
-
-.popup-poem-label {
-    font-family: 'Libre Franklin', sans-serif;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    color: #8B2635;
-    margin-bottom: 10px;
 }
 
 .popup-poem-title {
