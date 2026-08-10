@@ -16,6 +16,7 @@ var allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var currentSelected = null;
 var puzzleSolved = false;
 var currentPuzzleHash = '';
+var puzzleLetters = []; // distinct letters actually used in the current puzzle's plaintext
 var currentPoem = null; // set when the active puzzle is a poem rather than the base letter
 
 // Generates a random substitution cipher (26-letter derangement, no letter mapping to itself),
@@ -364,7 +365,7 @@ function updateRemainingLetters() {
         }
     });
 
-    const remaining = allLetters.split('').filter(letter => !usedLetters.has(letter));
+    const remaining = puzzleLetters.filter(letter => !usedLetters.has(letter));
     document.getElementById('remaining-letters').textContent = remaining.join(' ');
 }
 
@@ -703,6 +704,7 @@ async function init(){
     correctMapping = puzzle.mapping;
     NEXT_PUZZLES_ENABLED = puzzle.nextPuzzlesEnabled;
     currentPuzzleHash = hashMessage(puzzle.message);
+    puzzleLetters = Array.from(new Set(puzzle.message.toUpperCase().match(/[A-Z]/g) || [])).sort();
 
     buildPuzzle(puzzle.message, puzzle.mapping);
 
