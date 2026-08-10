@@ -231,6 +231,9 @@ function revealCompletedMessage() {
     // Update remaining letters
     updateRemainingLetters();
 
+    // Hide the hint button -- nothing left to hint at
+    document.getElementById('hint-button').style.display = 'none';
+
     // Set puzzle as solved
     puzzleSolved = true;
 }
@@ -359,6 +362,68 @@ function highlightSameLetters(encrypted) {
     }
 }
 
+function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+}
+
+function smoothScrollTo(targetY, duration) {
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    const startTime = performance.now();
+
+    function step(now) {
+        const t = Math.min((now - startTime) / duration, 1);
+        window.scrollTo(0, startY + distance * easeInOutQuad(t));
+        if (t < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
+
+function useHint() {
+    if (puzzleSolved) return;
+
+    // Count remaining (unsolved) tiles per encrypted letter, then reveal whichever
+    // encrypted letter occurs least often -- the easiest one to have deduced next.
+    const counts = {};
+    document.querySelectorAll('.letter-input').forEach(input => {
+        const encrypted = input.dataset.encrypted;
+        if (input.value.toUpperCase() === correctMapping[encrypted]) return;
+        counts[encrypted] = (counts[encrypted] || 0) + 1;
+    });
+
+    const unsolvedLetters = Object.keys(counts);
+    if (unsolvedLetters.length === 0) return;
+
+    const target = unsolvedLetters.reduce((least, letter) =>
+        counts[letter] < counts[least] ? letter : least
+    );
+
+    const targetTiles = document.querySelectorAll(`[data-encrypted="${target}"]`);
+    targetTiles.forEach(input => {
+        input.value = correctMapping[target];
+    });
+
+    // Scroll to the letter's first occurrence so the reveal is visible even off-screen
+    const firstTile = targetTiles[0];
+    if (firstTile) {
+        const rect = firstTile.getBoundingClientRect();
+        const targetY = window.scrollY + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        smoothScrollTo(Math.max(0, targetY), 400);
+    }
+
+    updateRemainingLetters();
+    checkForDuplicates();
+
+    const allInputs = document.querySelectorAll('.letter-input');
+    const allCorrect = Array.from(allInputs).every(input =>
+        input.value.toUpperCase() === correctMapping[input.dataset.encrypted]
+    );
+    if (allCorrect) {
+        solvePuzzle();
+    }
+}
+
 function solvePuzzle() {
     if (puzzleSolved) return;
 
@@ -368,6 +433,9 @@ function solvePuzzle() {
     localStorage.setItem(COMPLETED_KEY, 'true');
     localStorage.setItem(COMPLETED_HASH_KEY, currentPuzzleHash);
     localStorage.setItem(EVER_SOLVED_KEY, 'true');
+
+    // Hide the hint button -- nothing left to hint at
+    document.getElementById('hint-button').style.display = 'none';
 
     // Start the fade animation for encrypted letters
     document.querySelectorAll('.encrypted-letter').forEach(letter => {
@@ -421,6 +489,7 @@ function bindStaticControls() {
 
     document.querySelector('.popup-close').addEventListener('click', closePopup);
     document.querySelector('.popup-restart').addEventListener('click', restartGame);
+    document.getElementById('hint-button').addEventListener('click', useHint);
 }
 
 function bindLetterInputs() {

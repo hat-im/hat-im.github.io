@@ -310,7 +310,7 @@ body {
     justify-content: center;
 }
 
-.popup-close, .popup-restart {
+.popup-close, .popup-restart, .hint-button {
     background-color: #8B2635;
     color: white;
     border: none;
@@ -325,7 +325,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.popup-close:hover, .popup-restart:hover {
+.popup-close:hover, .popup-restart:hover, .hint-button:hover {
     background-color: #a0303f;
 }
 
@@ -335,6 +335,14 @@ body {
 
 .popup-restart:hover {
     background-color: #777777;
+}
+
+.hint-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px) {
@@ -396,7 +404,14 @@ body {
     .letters-remaining h3 {
         font-size: 14px;
     }
-    
+
+    .hint-button {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+
     .header {
         margin-bottom: 20px;
     }
