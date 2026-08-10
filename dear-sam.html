@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Escape the Crypt! A cryptopoet.</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/dear-sam/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Vollkorn:ital@0;1&family=Libre+Franklin:wght@600&display=swap">
     <link rel="stylesheet" href="dear-sam/styles/dear-sam.css">
 </head>
 <body>
@@ -45,6 +48,12 @@
     <div class="popup-overlay" id="popup-overlay">
         <div class="popup-content">
             <div class="popup-title">Puzzle Solved!</div>
+            <div class="popup-poem-card" id="popup-poem-card" style="display: none;">
+                <div class="popup-poem-label">You've uncovered</div>
+                <h5 class="popup-poem-title"></h5>
+                <div class="popup-poem-author"></div>
+                <div class="popup-poem-text"></div>
+            </div>
             <div class="popup-message">
                 Congratulations! You've decrypted the message.<br><br>
                 Should you find it, there's a secret here, but you'll need to find it yourself.

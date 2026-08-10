@@ -152,13 +152,19 @@ function showPopup(mode) {
     const hint = popup.querySelector('.popup-hint');
     const continueBtn = popup.querySelector('.popup-close');
     const playAgainBtn = popup.querySelector('.popup-restart');
+    const poemCard = document.getElementById('popup-poem-card');
 
     if (mode === 'poem' && currentPoem) {
         // A poem cryptogram was just decrypted (or was already solved on arrival) -- credit it
+        // with a card styled after a poetry-blog blockquote rather than the plain message text.
         const s = STR.popup.poemSolved;
         title.textContent = s.title;
-        message.innerHTML = "You've uncovered:<br><strong>" + escapeHtml(currentPoem.title) +
-            '</strong><br><em>' + escapeHtml(currentPoem.author) + '</em>';
+        title.style.display = 'none';
+        poemCard.querySelector('.popup-poem-title').textContent = currentPoem.title;
+        poemCard.querySelector('.popup-poem-author').textContent = currentPoem.author;
+        poemCard.querySelector('.popup-poem-text').textContent = currentPoem.text;
+        poemCard.style.display = 'block';
+        message.style.display = 'none';
         hint.innerHTML = s.hint;
         continueBtn.textContent = s.continueLabel;
         playAgainBtn.style.display = 'inline-block';
@@ -166,6 +172,9 @@ function showPopup(mode) {
         // Show different content for returning users
         const s = STR.popup.returning;
         title.textContent = s.title;
+        title.style.display = 'block';
+        poemCard.style.display = 'none';
+        message.style.display = 'block';
         message.innerHTML = s.message;
         hint.innerHTML = s.hint;
         continueBtn.textContent = s.continueLabel;
@@ -174,6 +183,9 @@ function showPopup(mode) {
         // Original completion content
         const s = STR.popup.solved;
         title.textContent = s.title;
+        title.style.display = 'block';
+        poemCard.style.display = 'none';
+        message.style.display = 'block';
         message.innerHTML = s.message;
         hint.innerHTML = s.hint;
         continueBtn.textContent = s.continueLabel;
@@ -294,10 +306,14 @@ function showEarlyPopup() {
     const message = popup.querySelector('.popup-message');
     const hint = popup.querySelector('.popup-hint');
     const button = popup.querySelector('.popup-close');
+    const poemCard = document.getElementById('popup-poem-card');
 
     // Update popup content
     const s = STR.popup.early;
     title.textContent = s.title;
+    title.style.display = 'block';
+    poemCard.style.display = 'none';
+    message.style.display = 'block';
     message.innerHTML = s.message;
     hint.innerHTML = s.hint;
     button.textContent = s.buttonLabel;
@@ -669,10 +685,11 @@ async function init(){
 
     var puzzle;
     var everSolved = localStorage.getItem(EVER_SOLVED_KEY) === 'true';
+    var enabledPoems = (poemsData.poems || []).filter(function(poem) { return poem.enabled !== false; });
 
-    if (everSolved && poemsData.poems && poemsData.poems.length > 0) {
+    if (everSolved && enabledPoems.length > 0) {
         // Once the base letter has ever been solved, every fresh visit decrypts a new poem
-        currentPoem = poemsData.poems[Math.floor(Math.random() * poemsData.poems.length)];
+        currentPoem = enabledPoems[Math.floor(Math.random() * enabledPoems.length)];
         puzzle = {
             message: currentPoem.text,
             mapping: generateCipherMapping(),
