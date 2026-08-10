@@ -1,9 +1,17 @@
 {
-  "text": "EVENTUALLY THIS WILL BECOME SHAKESPEARE",
-  "alphabet": "ABCDEFGHIJKLMNOPQRSTUVWXYZ ",
+  "text": "",
+  "alphabet": "01",
   "fontSize": 10,
   "lineHeight": 1.2,
   "fontFamily": "Next Mono",
   "delay": 50,
-  "baseDecay": 0.0012
+  "baseDecay": 0.0012,
+  "revealDurationMs": 2000,
+  "rampDurationMs": 20000,
+  "rampExponent": 10,
+  "mouseFalloff": 0.02,
+  "mouseBoost": 35,
+  "reduceFactor": 0.3,
+  "darkModeStartCron": "0 18 * * *",
+  "darkModeEndCron": "0 6 * * *"
 }

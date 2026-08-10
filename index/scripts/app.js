@@ -1,5 +1,24 @@
 (function(){
 
+var CRON_FIELDS = ["minute", "hour", "dayOfMonth", "month", "dayOfWeek"];
+
+// Parses a standard 5-field cron expression ("m h dom month dow") into named fields,
+// with "*" read as null (wildcard/unconstrained).
+function parseCron(expr) {
+  var values = expr.trim().split(/\s+/);
+  var parsed = {};
+  CRON_FIELDS.forEach(function(field, i) {
+    var value = values[i];
+    parsed[field] = value === "*" ? null : parseInt(value, 10);
+  });
+  return parsed;
+}
+
+function cronMinutesOfDay(expr) {
+  var fields = parseCron(expr);
+  return fields.hour * 60 + fields.minute;
+}
+
 async function init(){
   var res = await fetch('index/data/config.json');
   var cfg = await res.json();
@@ -11,6 +30,14 @@ async function init(){
   var fontFamily = cfg.fontFamily;
   var delay = cfg.delay;
   var baseDecay = cfg.baseDecay;
+  var revealDurationMs = cfg.revealDurationMs;
+  var rampDurationMs = cfg.rampDurationMs;
+  var rampExponent = cfg.rampExponent;
+  var mouseFalloff = cfg.mouseFalloff;
+  var mouseBoost = cfg.mouseBoost;
+  var reduceFactor = cfg.reduceFactor;
+  var darkModeStartCron = cfg.darkModeStartCron;
+  var darkModeEndCron = cfg.darkModeEndCron;
 
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
@@ -18,13 +45,18 @@ async function init(){
   var cols, rows, grid = [], textIndices = [], startTime = 0, lastFrame = 0;
   var charWidth, charHeight;
   var mouseX = -1000, mouseY = -1000;
-  var darkMode = false;
+  var canvasTextColor = "";
 
   function checkDarkMode() {
-    var hour = new Date().getHours();
-    darkMode = hour >= 18 || hour < 6;
-    document.body.style.background = darkMode ? "#111" : "#fefefe";
-    document.body.style.color = darkMode ? "#fefefe" : "#111";
+    var now = new Date();
+    var nowMinutes = now.getHours() * 60 + now.getMinutes();
+    var startMinutes = cronMinutesOfDay(darkModeStartCron);
+    var endMinutes = cronMinutesOfDay(darkModeEndCron);
+    var darkMode = startMinutes <= endMinutes
+      ? nowMinutes >= startMinutes && nowMinutes < endMinutes
+      : nowMinutes >= startMinutes || nowMinutes < endMinutes;
+    document.documentElement.classList.toggle("dark", darkMode);
+    canvasTextColor = getComputedStyle(document.documentElement).getPropertyValue("--canvas-text").trim();
   }
 
   window.addEventListener("mousemove", function(e){
@@ -73,7 +105,7 @@ async function init(){
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = darkMode ? "#fefefe" : "#333";
+    ctx.fillStyle = canvasTextColor;
     ctx.font = fontSize + "px " + fontFamily;
     ctx.textBaseline = "top";
 
@@ -93,9 +125,9 @@ async function init(){
     if (t - lastFrame < delay) return;
 
     var elapsed = t - startTime;
-    var T = elapsed / 2000;
-    var progress = Math.max(0, (elapsed - 2000) / 20000);
-    var decayRate = Math.pow(Math.min(progress, 1), 10) * baseDecay;
+    var T = elapsed / revealDurationMs;
+    var progress = Math.max(0, (elapsed - revealDurationMs) / rampDurationMs);
+    var decayRate = Math.pow(Math.min(progress, 1), rampExponent) * baseDecay;
     var changed = false;
 
     if (T < 1) {
@@ -119,8 +151,8 @@ async function init(){
         var dx = cx - mouseX;
         var dy = cy - mouseY;
         var dist = Math.sqrt(dx * dx + dy * dy);
-        var boost = Math.exp(-dist * 0.02);
-        var decay = decayRate * (1 + 35 * boost);
+        var boost = Math.exp(-dist * mouseFalloff);
+        var decay = decayRate * (1 + mouseBoost * boost);
         var chance = 1 - Math.exp(-decay * (t - lastFrame));
 
         if (g.x === " ") {
@@ -130,7 +162,7 @@ async function init(){
             changed = true;
           }
         } else {
-          var reduceChance = 1 - Math.exp(-decay * (t - lastFrame) * 0.3);
+          var reduceChance = 1 - Math.exp(-decay * (t - lastFrame) * reduceFactor);
           if (Math.random() < reduceChance) {
             g.x = alphabet[Math.floor(Math.random() * alphabet.length)];
             g.z = t;

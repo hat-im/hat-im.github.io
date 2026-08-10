@@ -3,6 +3,16 @@
   src: url("https://raw.githubusercontent.com/hat-im/hat-im.github.io/main/index/mono.woff")
     format("woff");
 }
+:root {
+  --bg: #fefefe;
+  --text: #111;
+  --canvas-text: #333;
+}
+:root.dark {
+  --bg: #111;
+  --text: #fefefe;
+  --canvas-text: #fefefe;
+}
 html,
 body {
   margin: 0;
@@ -10,8 +20,8 @@ body {
   overflow: hidden;
   width: 100vw;
   height: 100vh;
-  background: #fefefe;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
 }
 canvas {
   display: block;
