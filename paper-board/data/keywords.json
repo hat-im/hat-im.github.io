@@ -39,6 +39,11 @@
     "bg": "#ecdbf0",
     "text": "#682d76"
   },
+  "federated-learning": {
+    "label": "federated learning",
+    "bg": "#dbe6f0",
+    "text": "#2d5876"
+  },
   "finance-applications": {
     "label": "finance applications",
     "bg": "#f0e8db",

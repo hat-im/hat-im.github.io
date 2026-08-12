@@ -3453,24 +3453,6 @@
       "citations": 0
     },
     {
-      "id": "10-48550-arxiv-2605-29521",
-      "doi": "10.48550/arXiv.2605.29521",
-      "title": "Ground-state estimation of the Heisenberg model on frustrated lattices with Sample-based Krylov Quantum Diagonalization",
-      "authorIds": [
-        "a110",
-        "a824",
-        "a623"
-      ],
-      "year": 2026,
-      "journalId": "j98",
-      "keywordIds": [
-        "algorithms",
-        "quantum-diagonalization",
-        "quantum-algorithms"
-      ],
-      "citations": 0
-    },
-    {
       "id": "10-2139-ssrn-6391500",
       "doi": "10.2139/ssrn.6391500",
       "title": "Autonomous Quantum Agents for Portfolio Optimization: Orchestrating QAOA Workflows on Cloud Quantum Simulators",
@@ -4673,28 +4655,6 @@
       "citations": 0
     },
     {
-      "id": "10-48550-arxiv-2607-19591",
-      "doi": "10.48550/arXiv.2607.19591",
-      "title": "Examining QRMI as a Unified Interface for Quantum-HPC Integration",
-      "authorIds": [
-        "a50",
-        "a99",
-        "a132",
-        "a180",
-        "a185",
-        "a219",
-        "a827"
-      ],
-      "year": 2026,
-      "journalId": "j98",
-      "keywordIds": [
-        "middleware",
-        "hpc-integration",
-        "scheduling"
-      ],
-      "citations": 0
-    },
-    {
       "id": "10-48550-arxiv-2406-01705",
       "doi": "10.48550/arXiv.2406.01705",
       "title": "Dark Matter",
@@ -5202,6 +5162,210 @@
         "quantum-simulation"
       ],
       "citations": 115
+    },
+    {
+      "id": "10-48550-arxiv-2607-09151",
+      "doi": "10.48550/arXiv.2607.09151",
+      "title": "MQSS Client: Interface for Decoupling Quantum Programming Interfaces",
+      "authorIds": [
+        "a1116",
+        "a1117",
+        "a163",
+        "a1118",
+        "a668",
+        "a1119"
+      ],
+      "year": 2026,
+      "journalId": "j98",
+      "keywordIds": [
+        "middleware",
+        "quantum-programming",
+        "hpc-integration"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2607-28563",
+      "doi": "10.48550/arXiv.2607.28563",
+      "title": "Hybrid Quantum and Classical Workload Management with Graph-based Scheduling",
+      "authorIds": [
+        "a856",
+        "a847"
+      ],
+      "year": 2026,
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-integration",
+        "cloud-computing"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-1109-ispdc69862-2026-00012",
+      "doi": "10.1109/ISPDC69862.2026.00012",
+      "title": "Pooling HPC Resources Across Organizations and Reducing Carbon Emissions with Transparent, User-Centric Meta-Scheduling",
+      "authorIds": [
+        "a1120",
+        "a1121",
+        "a1122"
+      ],
+      "year": 2026,
+      "journalId": "j105",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling",
+        "infrastructure"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2603-19544",
+      "doi": "10.48550/arXiv.2603.19544",
+      "title": "Scalable Cross-Facility Federated Learning for Scientific Foundation Models on Multiple Supercomputers",
+      "authorIds": [
+        "a456",
+        "a457",
+        "a144",
+        "a246",
+        "a1123",
+        "a1124",
+        "a827"
+      ],
+      "year": 2026,
+      "journalId": "j98",
+      "keywordIds": [
+        "federated-learning",
+        "hpc-scheduling",
+        "scalability"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2503-11011",
+      "doi": "10.48550/arXiv.2503.11011",
+      "title": "Power-Aware Scheduling for Multi-Center HPC Electricity Cost Optimization",
+      "authorIds": [
+        "a1125",
+        "a1126",
+        "a1127",
+        "a1128"
+      ],
+      "year": 2025,
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "finance-applications",
+        "hpc-scheduling"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2510-13724",
+      "doi": "10.48550/arXiv.2510.13724",
+      "title": "FIRST: Federated Inference Resource Scheduling Toolkit for Scientific AI Model Access",
+      "authorIds": [
+        "a1129",
+        "a1130",
+        "a1131",
+        "a1132",
+        "a1133",
+        "a145",
+        "a827"
+      ],
+      "year": 2025,
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling",
+        "middleware"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-1145-3731599-3767474",
+      "doi": "10.1145/3731599.3767474",
+      "title": "Evaluating HPC Scheduling Strategies for Urgent Workloads",
+      "authorIds": [
+        "a1134",
+        "a1135",
+        "a1136",
+        "a1137",
+        "a1138",
+        "a1139",
+        "a827"
+      ],
+      "year": 2025,
+      "journalId": "j95",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling",
+        "workflow-orchestration"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2501-15504",
+      "doi": "10.48550/arXiv.2501.15504",
+      "title": "Task Scheduling in Geo-Distributed Computing: A Survey",
+      "authorIds": [
+        "a1140",
+        "a1141",
+        "a1142",
+        "a1143",
+        "a1144",
+        "a1145",
+        "a827"
+      ],
+      "year": 2025,
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling",
+        "survey"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2511-19479",
+      "doi": "10.48550/arXiv.2511.19479",
+      "title": "Federated Learning Framework for Scalable AI in Heterogeneous HPC and Cloud Environments",
+      "authorIds": [
+        "a1146",
+        "a1147",
+        "a1148",
+        "a1149",
+        "a1150",
+        "a1151",
+        "a827"
+      ],
+      "year": 2025,
+      "journalId": "j98",
+      "keywordIds": [
+        "federated-learning",
+        "cloud-computing",
+        "scheduling"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-1109-access-2025-3626730",
+      "doi": "10.1109/ACCESS.2025.3626730",
+      "title": "Efficient Multi-Cluster Scheduling for Heterogeneous Workloads",
+      "authorIds": [
+        "a762",
+        "a1152",
+        "a1153",
+        "a1154"
+      ],
+      "year": 2025,
+      "journalId": "j25",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing",
+        "scalability"
+      ],
+      "citations": 0
     }
   ]
 }
