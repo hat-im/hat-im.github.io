@@ -27,7 +27,7 @@
   "sortOptions": [
     {"value": "none", "label": "Sort: added"},
     {"value": "author", "label": "Sort: first author"},
-    {"value": "year", "label": "Sort: year"},
+    {"value": "year", "label": "Sort: date"},
     {"value": "citations", "label": "Sort: citations"}
   ],
   "card": {

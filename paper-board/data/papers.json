@@ -8,7 +8,7 @@
         "a109",
         "a335"
       ],
-      "year": 2017,
+      "date": "2017-03",
       "journalId": "j6",
       "keywordIds": [
         "architecture",
@@ -29,7 +29,7 @@
         "a97",
         "a827"
       ],
-      "year": 2021,
+      "date": "2021-10",
       "journalId": "j96",
       "keywordIds": [
         "vision",
@@ -47,7 +47,7 @@
         "a544",
         "a161"
       ],
-      "year": 2021,
+      "date": "2021-10",
       "journalId": "j28",
       "keywordIds": [
         "scheduling",
@@ -68,7 +68,7 @@
         "a249",
         "a534"
       ],
-      "year": 2021,
+      "date": "2021-09",
       "journalId": "j33",
       "keywordIds": [
         "vision",
@@ -86,7 +86,7 @@
         "a519",
         "a593"
       ],
-      "year": 2021,
+      "date": "2021-09",
       "journalId": "j68",
       "keywordIds": [
         "vision",
@@ -108,7 +108,7 @@
         "a153",
         "a827"
       ],
-      "year": 2021,
+      "date": "2021-12",
       "journalId": "j11",
       "keywordIds": [
         "architecture",
@@ -125,7 +125,7 @@
         "a601",
         "a372"
       ],
-      "year": 2022,
+      "date": "2022-06",
       "journalId": "j11",
       "keywordIds": [
         "architecture",
@@ -144,7 +144,7 @@
         "a443",
         "a210"
       ],
-      "year": 2022,
+      "date": "2022-11",
       "journalId": "j43",
       "keywordIds": [
         "architecture",
@@ -161,7 +161,7 @@
         "a314",
         "a115"
       ],
-      "year": 2022,
+      "date": "2022-06",
       "journalId": "j11",
       "keywordIds": [
         "compilation",
@@ -176,7 +176,7 @@
       "authorIds": [
         "a743"
       ],
-      "year": 2022,
+      "date": "2022-05",
       "journalId": "j87",
       "keywordIds": [
         "infrastructure",
@@ -197,7 +197,7 @@
         "a700",
         "a263"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "infrastructure",
@@ -215,7 +215,7 @@
         "a646",
         "a714"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -237,7 +237,7 @@
         "a673",
         "a686"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "benchmarking",
@@ -255,7 +255,7 @@
         "a782",
         "a777"
       ],
-      "year": 2024,
+      "date": "2024-10",
       "journalId": "j11",
       "keywordIds": [
         "architecture",
@@ -275,7 +275,7 @@
         "a384",
         "a455"
       ],
-      "year": 2024,
+      "date": "2024-07",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -293,7 +293,7 @@
         "a417",
         "a667"
       ],
-      "year": 2024,
+      "date": "2022-07",
       "journalId": "j17",
       "keywordIds": [
         "middleware",
@@ -314,7 +314,7 @@
         "a363",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-08",
       "journalId": "j98",
       "keywordIds": [
         "architecture",
@@ -331,7 +331,7 @@
         "a744",
         "a116"
       ],
-      "year": 2024,
+      "date": "2024-07",
       "journalId": "j26",
       "keywordIds": [
         "scheduling",
@@ -349,7 +349,7 @@
         "a295",
         "a668"
       ],
-      "year": 2024,
+      "date": "2024-09",
       "journalId": "j28",
       "keywordIds": [
         "architecture",
@@ -366,7 +366,7 @@
         "a744",
         "a116"
       ],
-      "year": 2024,
+      "date": "2024-03",
       "journalId": "j84",
       "keywordIds": [
         "architecture",
@@ -384,7 +384,7 @@
         "a263",
         "a514"
       ],
-      "year": 2024,
+      "date": "2024-05",
       "journalId": "j46",
       "keywordIds": [
         "algorithms",
@@ -399,7 +399,7 @@
       "authorIds": [
         "a743"
       ],
-      "year": 2024,
+      "date": "2023-06",
       "journalId": "j87",
       "keywordIds": [
         "infrastructure",
@@ -420,7 +420,7 @@
         "a554",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-08",
       "journalId": "j11",
       "keywordIds": [
         "benchmarking",
@@ -438,7 +438,7 @@
         "a104",
         "a192"
       ],
-      "year": 2024,
+      "date": "2024-09",
       "journalId": "j24",
       "keywordIds": [
         "workflow-orchestration",
@@ -459,7 +459,7 @@
         "a698",
         "a827"
       ],
-      "year": 2024,
+      "date": "2025-10",
       "journalId": "j69",
       "keywordIds": [
         "vision",
@@ -481,7 +481,7 @@
         "a663",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-09",
       "journalId": "j28",
       "keywordIds": [
         "middleware",
@@ -500,7 +500,7 @@
         "a808",
         "a292"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j95",
       "keywordIds": [
         "scheduling",
@@ -517,7 +517,7 @@
         "a212",
         "a355"
       ],
-      "year": 2025,
+      "date": "2025-07",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -533,7 +533,7 @@
       "authorIds": [
         "a168"
       ],
-      "year": 2025,
+      "date": "2025-06",
       "journalId": "j45",
       "keywordIds": [
         "scheduling",
@@ -554,7 +554,7 @@
         "a170",
         "a827"
       ],
-      "year": 2025,
+      "date": "2026-01",
       "journalId": "j24",
       "keywordIds": [
         "architecture",
@@ -575,7 +575,7 @@
         "a170",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-03",
       "journalId": "j97",
       "keywordIds": [
         "middleware",
@@ -593,7 +593,7 @@
         "a360",
         "a479"
       ],
-      "year": 2025,
+      "date": "2025-06",
       "journalId": "j32",
       "keywordIds": [
         "architecture",
@@ -610,7 +610,7 @@
         "a140",
         "a147"
       ],
-      "year": 2025,
+      "date": "2025-12",
       "journalId": "j51",
       "keywordIds": [
         "scheduling",
@@ -632,7 +632,7 @@
         "a263",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-07",
       "journalId": "j11",
       "keywordIds": [
         "middleware",
@@ -653,7 +653,7 @@
         "a323",
         "a548"
       ],
-      "year": 2025,
+      "date": "2025-12",
       "journalId": "j98",
       "keywordIds": [
         "architecture",
@@ -673,7 +673,7 @@
         "a748",
         "a768"
       ],
-      "year": 2025,
+      "date": "2025-04",
       "journalId": "j40",
       "keywordIds": [
         "workflow-orchestration",
@@ -692,7 +692,7 @@
         "a360",
         "a479"
       ],
-      "year": 2025,
+      "date": "2024-12",
       "journalId": "j98",
       "keywordIds": [
         "middleware",
@@ -713,7 +713,7 @@
         "a248",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-05",
       "journalId": "j98",
       "keywordIds": [
         "architecture",
@@ -731,7 +731,7 @@
         "a365",
         "a769"
       ],
-      "year": 2025,
+      "date": "2025-02",
       "journalId": "j98",
       "keywordIds": [
         "architecture",
@@ -751,7 +751,7 @@
         "a480",
         "a77"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j49",
       "keywordIds": [
         "middleware",
@@ -773,7 +773,7 @@
         "a269",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-04",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -793,7 +793,7 @@
         "a485",
         "a698"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "benchmarking",
@@ -812,7 +812,7 @@
         "a562",
         "a65"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j95",
       "keywordIds": [
         "middleware",
@@ -832,7 +832,7 @@
         "a461",
         "a454"
       ],
-      "year": 2025,
+      "date": "2025-01",
       "journalId": "j11",
       "keywordIds": [
         "applications",
@@ -849,7 +849,7 @@
         "a436",
         "a159"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j19",
       "keywordIds": [
         "architecture",
@@ -871,7 +871,7 @@
         "a27",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -894,7 +894,7 @@
         "a27",
         "a827"
       ],
-      "year": 2026,
+      "date": "2024-11",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -915,7 +915,7 @@
         "a360",
         "a479"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "middleware",
@@ -937,7 +937,7 @@
         "a820",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "benchmarking",
@@ -958,7 +958,7 @@
         "a388",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "scalability",
@@ -976,7 +976,7 @@
         "a744",
         "a116"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j11",
       "keywordIds": [
         "scheduling",
@@ -996,7 +996,7 @@
         "a144",
         "a116"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "architecture",
@@ -1018,7 +1018,7 @@
         "a763",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "benchmarking",
@@ -1039,7 +1039,7 @@
         "a164",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -1059,7 +1059,7 @@
         "a412",
         "a644"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "scheduling",
@@ -1077,7 +1077,7 @@
         "a516",
         "a101"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "scalability",
@@ -1099,7 +1099,7 @@
         "a227",
         "a827"
       ],
-      "year": 2026,
+      "date": "2025-08",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -1121,7 +1121,7 @@
         "a52",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "scheduling",
@@ -1139,7 +1139,7 @@
         "a758",
         "a762"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j42",
       "keywordIds": [
         "scheduling",
@@ -1161,7 +1161,7 @@
         "a738",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -1181,7 +1181,7 @@
         "a759",
         "a757"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -1197,7 +1197,7 @@
       "authorIds": [
         "a495"
       ],
-      "year": 2023,
+      "date": "2023-04",
       "journalId": "j20",
       "keywordIds": [
         "vision",
@@ -1216,7 +1216,7 @@
         "a729",
         "a668"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "vision",
@@ -1237,7 +1237,7 @@
         "a642",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-08",
       "journalId": "j78",
       "keywordIds": [
         "vision",
@@ -1258,7 +1258,7 @@
         "a194",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-06",
       "journalId": "j64",
       "keywordIds": [
         "architecture",
@@ -1276,7 +1276,7 @@
         "a246",
         "a724"
       ],
-      "year": 2000,
+      "date": "2002-11",
       "journalId": "j54",
       "keywordIds": [
         "scheduling",
@@ -1293,7 +1293,7 @@
         "a306",
         "a788"
       ],
-      "year": 2002,
+      "date": "2002-03",
       "journalId": "j37",
       "keywordIds": [
         "algorithms",
@@ -1311,7 +1311,7 @@
         "a391",
         "a705"
       ],
-      "year": 2003,
+      "date": "2006-11",
       "journalId": "j92",
       "keywordIds": [
         "scheduling",
@@ -1327,7 +1327,7 @@
         "a812",
         "a648"
       ],
-      "year": 2003,
+      "date": "2004-06",
       "journalId": "j21",
       "keywordIds": [
         "algorithms",
@@ -1344,7 +1344,7 @@
         "a648",
         "a488"
       ],
-      "year": 2010,
+      "date": "2010-02",
       "journalId": "j22",
       "keywordIds": [
         "algorithms",
@@ -1362,7 +1362,7 @@
         "a628",
         "a658"
       ],
-      "year": 2013,
+      "date": "2013-08",
       "journalId": "j1",
       "keywordIds": [
         "algorithms",
@@ -1379,7 +1379,7 @@
         "a31",
         "a53"
       ],
-      "year": 2014,
+      "date": "2014-03",
       "journalId": "j37",
       "keywordIds": [
         "algorithms",
@@ -1395,7 +1395,7 @@
         "a527",
         "a747"
       ],
-      "year": 2015,
+      "date": "2015-07",
       "journalId": "j1",
       "keywordIds": [
         "architecture",
@@ -1413,7 +1413,7 @@
         "a670",
         "a823"
       ],
-      "year": 2015,
+      "date": "2015-11",
       "journalId": "j71",
       "keywordIds": [
         "scheduling",
@@ -1430,7 +1430,7 @@
         "a653",
         "a360"
       ],
-      "year": 2016,
+      "date": "2015-08",
       "journalId": "j1",
       "keywordIds": [
         "middleware",
@@ -1448,7 +1448,7 @@
         "a23",
         "a699"
       ],
-      "year": 2019,
+      "date": "2019-08",
       "journalId": "j1",
       "keywordIds": [
         "scheduling",
@@ -1470,7 +1470,7 @@
         "a433",
         "a608"
       ],
-      "year": 2019,
+      "date": "2019-04",
       "journalId": "j88",
       "keywordIds": [
         "scheduling",
@@ -1492,7 +1492,7 @@
         "a531",
         "a827"
       ],
-      "year": 2020,
+      "date": "2020-05",
       "journalId": "j1",
       "keywordIds": [
         "algorithms",
@@ -1510,7 +1510,7 @@
         "a630",
         "a116"
       ],
-      "year": 2020,
+      "date": "2020-02",
       "journalId": "j1",
       "keywordIds": [
         "scheduling",
@@ -1529,7 +1529,7 @@
         "a105",
         "a191"
       ],
-      "year": 2020,
+      "date": "2020-09",
       "journalId": "j27",
       "keywordIds": [
         "scheduling",
@@ -1550,7 +1550,7 @@
         "a87",
         "a827"
       ],
-      "year": 2020,
+      "date": "2020-06",
       "journalId": "j55",
       "keywordIds": [
         "middleware",
@@ -1568,7 +1568,7 @@
         "a321",
         "a576"
       ],
-      "year": 2021,
+      "date": "2021-05",
       "journalId": "j37",
       "keywordIds": [
         "scheduling",
@@ -1583,7 +1583,7 @@
       "authorIds": [
         "a682"
       ],
-      "year": 2023,
+      "date": "2023-12",
       "journalId": "j89",
       "keywordIds": [
         "scheduling",
@@ -1601,7 +1601,7 @@
         "a359",
         "a776"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j59",
       "keywordIds": [
         "middleware",
@@ -1622,7 +1622,7 @@
         "a483",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-01",
       "journalId": "j1",
       "keywordIds": [
         "scheduling",
@@ -1639,7 +1639,7 @@
         "a225",
         "a617"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j1",
       "keywordIds": [
         "scheduling",
@@ -1661,7 +1661,7 @@
         "a146",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -1681,7 +1681,7 @@
         "a17",
         "a578"
       ],
-      "year": 2021,
+      "date": "2021-05",
       "journalId": "j29",
       "keywordIds": [
         "scheduling",
@@ -1702,7 +1702,7 @@
         "a17",
         "a827"
       ],
-      "year": 2022,
+      "date": "2022-09",
       "journalId": "j27",
       "keywordIds": [
         "scheduling",
@@ -1721,7 +1721,7 @@
         "a463",
         "a74"
       ],
-      "year": 2020,
+      "date": "2020-09",
       "journalId": "j36",
       "keywordIds": [
         "algorithms",
@@ -1738,7 +1738,7 @@
         "a108",
         "a496"
       ],
-      "year": 2022,
+      "date": "2022-01",
       "journalId": "j1",
       "keywordIds": [
         "survey",
@@ -1759,7 +1759,7 @@
         "a632",
         "a827"
       ],
-      "year": 2023,
+      "date": "2023-10",
       "journalId": "j9",
       "keywordIds": [
         "scheduling",
@@ -1778,7 +1778,7 @@
         "a591",
         "a806"
       ],
-      "year": 2020,
+      "date": "2020-01",
       "journalId": "j91",
       "keywordIds": [
         "scheduling",
@@ -1799,7 +1799,7 @@
         "a169",
         "a691"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j86",
       "keywordIds": [
         "scheduling",
@@ -1815,7 +1815,7 @@
       "authorIds": [
         "a291"
       ],
-      "year": 1996,
+      "date": "1996-05",
       "journalId": "j72",
       "keywordIds": [
         "algorithms",
@@ -1830,7 +1830,7 @@
       "authorIds": [
         "a683"
       ],
-      "year": 1997,
+      "date": "1997-10",
       "journalId": "j80",
       "keywordIds": [
         "algorithms",
@@ -1848,7 +1848,7 @@
         "a338",
         "a722"
       ],
-      "year": 1998,
+      "date": "2006-05",
       "journalId": "j62",
       "keywordIds": [
         "algorithms",
@@ -1864,7 +1864,7 @@
       "authorIds": [
         "a303"
       ],
-      "year": 2002,
+      "date": "2007-03",
       "journalId": "j8",
       "keywordIds": [
         "algorithms",
@@ -1881,7 +1881,7 @@
         "a184",
         "a671"
       ],
-      "year": 2002,
+      "date": "2002-07",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -1896,7 +1896,7 @@
       "authorIds": [
         "a22"
       ],
-      "year": 2004,
+      "date": "2004-06",
       "journalId": "j7",
       "keywordIds": [
         "vision",
@@ -1912,7 +1912,7 @@
       "authorIds": [
         "a717"
       ],
-      "year": 2004,
+      "date": "2004-12",
       "journalId": "j34",
       "keywordIds": [
         "algorithms",
@@ -1927,7 +1927,7 @@
       "authorIds": [
         "a303"
       ],
-      "year": 2005,
+      "date": "2005-05",
       "journalId": "j8",
       "keywordIds": [
         "algorithms",
@@ -1945,7 +1945,7 @@
         "a106",
         "a254"
       ],
-      "year": 2007,
+      "date": "2007-06",
       "journalId": "j58",
       "keywordIds": [
         "algorithms",
@@ -1962,7 +1962,7 @@
         "a184",
         "a684"
       ],
-      "year": 2008,
+      "date": "2008-04",
       "journalId": "j93",
       "keywordIds": [
         "algorithms",
@@ -1977,7 +1977,7 @@
       "authorIds": [
         "a71"
       ],
-      "year": 2009,
+      "date": "2009-01",
       "journalId": "j94",
       "keywordIds": [
         "algorithms",
@@ -1994,7 +1994,7 @@
         "a425",
         "a537"
       ],
-      "year": 2010,
+      "date": "2010-06",
       "journalId": "j31",
       "keywordIds": [
         "algorithms",
@@ -2011,7 +2011,7 @@
         "a425",
         "a537"
       ],
-      "year": 2012,
+      "date": "2012-01",
       "journalId": "j56",
       "keywordIds": [
         "algorithms",
@@ -2030,7 +2030,7 @@
         "a434",
         "a517"
       ],
-      "year": 2013,
+      "date": "2013-06",
       "journalId": "j57",
       "keywordIds": [
         "algorithms",
@@ -2048,7 +2048,7 @@
         "a539",
         "a600"
       ],
-      "year": 2013,
+      "date": "2013-01",
       "journalId": "j57",
       "keywordIds": [
         "algorithms",
@@ -2065,7 +2065,7 @@
         "a287",
         "a518"
       ],
-      "year": 2015,
+      "date": "2015-05",
       "journalId": "j74",
       "keywordIds": [
         "algorithms",
@@ -2081,7 +2081,7 @@
         "a631",
         "a702"
       ],
-      "year": 2015,
+      "date": "2013-06",
       "journalId": "j47",
       "keywordIds": [
         "algorithms",
@@ -2100,7 +2100,7 @@
         "a449",
         "a552"
       ],
-      "year": 2015,
+      "date": "2015-10",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2116,7 +2116,7 @@
       "authorIds": [
         "a382"
       ],
-      "year": 2015,
+      "date": "2014-10",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2132,7 +2132,7 @@
       "authorIds": [
         "a244"
       ],
-      "year": 2015,
+      "date": "2015-01",
       "journalId": "j18",
       "keywordIds": [
         "algorithms",
@@ -2151,7 +2151,7 @@
         "a45",
         "a39"
       ],
-      "year": 2016,
+      "date": "2016-02",
       "journalId": "j67",
       "keywordIds": [
         "algorithms",
@@ -2170,7 +2170,7 @@
         "a631",
         "a702"
       ],
-      "year": 2016,
+      "date": "2015-12",
       "journalId": "j57",
       "keywordIds": [
         "algorithms",
@@ -2191,7 +2191,7 @@
         "a579",
         "a661"
       ],
-      "year": 2016,
+      "date": "2016-03",
       "journalId": "j52",
       "keywordIds": [
         "quantum-algorithms",
@@ -2208,7 +2208,7 @@
         "a205",
         "a258"
       ],
-      "year": 2017,
+      "date": "2017-11",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2224,7 +2224,7 @@
         "a655",
         "a660"
       ],
-      "year": 2017,
+      "date": "2016-03",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2242,7 +2242,7 @@
         "a650",
         "a546"
       ],
-      "year": 2018,
+      "date": "2018-03",
       "journalId": "j74",
       "keywordIds": [
         "algorithms",
@@ -2261,7 +2261,7 @@
         "a354",
         "a697"
       ],
-      "year": 2018,
+      "date": "2010-12",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2280,7 +2280,7 @@
         "a268",
         "a439"
       ],
-      "year": 2020,
+      "date": "2019-07",
       "journalId": "j73",
       "keywordIds": [
         "algorithms",
@@ -2302,7 +2302,7 @@
         "a251",
         "a827"
       ],
-      "year": 2021,
+      "date": "2021-08",
       "journalId": "j66",
       "keywordIds": [
         "algorithms",
@@ -2322,7 +2322,7 @@
         "a726",
         "a293"
       ],
-      "year": 2021,
+      "date": "2021-01",
       "journalId": "j44",
       "keywordIds": [
         "applications",
@@ -2339,7 +2339,7 @@
         "a141",
         "a475"
       ],
-      "year": 2021,
+      "date": "2021-05",
       "journalId": "j53",
       "keywordIds": [
         "algorithms",
@@ -2361,7 +2361,7 @@
         "a456",
         "a827"
       ],
-      "year": 2022,
+      "date": "2022-11",
       "journalId": "j70",
       "keywordIds": [
         "vision",
@@ -2380,7 +2380,7 @@
         "a35",
         "a174"
       ],
-      "year": 2022,
+      "date": "2022-09",
       "journalId": "j101",
       "keywordIds": [
         "algorithms",
@@ -2402,7 +2402,7 @@
         "a736",
         "a827"
       ],
-      "year": 2022,
+      "date": "2022-07",
       "journalId": "j64",
       "keywordIds": [
         "vision",
@@ -2424,7 +2424,7 @@
         "a26",
         "a827"
       ],
-      "year": 2022,
+      "date": "2022-02",
       "journalId": "j79",
       "keywordIds": [
         "vision",
@@ -2442,7 +2442,7 @@
         "a770",
         "a470"
       ],
-      "year": 2022,
+      "date": "2022-02",
       "journalId": "j23",
       "keywordIds": [
         "algorithms",
@@ -2465,7 +2465,7 @@
         "a750",
         "a827"
       ],
-      "year": 2023,
+      "date": "2023-02",
       "journalId": "j83",
       "keywordIds": [
         "applications",
@@ -2485,7 +2485,7 @@
         "a166",
         "a174"
       ],
-      "year": 2023,
+      "date": "2023-11",
       "journalId": "j73",
       "keywordIds": [
         "algorithms",
@@ -2507,7 +2507,7 @@
         "a402",
         "a827"
       ],
-      "year": 2023,
+      "date": "2023-07",
       "journalId": "j64",
       "keywordIds": [
         "algorithms",
@@ -2528,7 +2528,7 @@
         "a577",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j70",
       "keywordIds": [
         "vision",
@@ -2550,7 +2550,7 @@
         "a172",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-10",
       "journalId": "j66",
       "keywordIds": [
         "vision",
@@ -2573,7 +2573,7 @@
         "a58",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-08",
       "journalId": "j69",
       "keywordIds": [
         "vision",
@@ -2591,7 +2591,7 @@
         "a94",
         "a753"
       ],
-      "year": 2024,
+      "date": "2024-12",
       "journalId": "j25",
       "keywordIds": [
         "applications",
@@ -2609,7 +2609,7 @@
         "a487",
         "a696"
       ],
-      "year": 2024,
+      "date": "2024-01",
       "journalId": "j48",
       "keywordIds": [
         "vision",
@@ -2631,7 +2631,7 @@
         "a779",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-08",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2653,7 +2653,7 @@
         "a305",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2675,7 +2675,7 @@
         "a220",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2692,7 +2692,7 @@
         "a497",
         "a27"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2714,7 +2714,7 @@
         "a547",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2736,7 +2736,7 @@
         "a818",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2758,7 +2758,7 @@
         "a540",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-07",
       "journalId": "j60",
       "keywordIds": [
         "applications",
@@ -2781,7 +2781,7 @@
         "a174",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-03",
       "journalId": "j66",
       "keywordIds": [
         "algorithms",
@@ -2804,7 +2804,7 @@
         "a407",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-06",
       "journalId": "j82",
       "keywordIds": [
         "quantum-chemistry",
@@ -2826,7 +2826,7 @@
         "a389",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "hpc-integration",
@@ -2843,7 +2843,7 @@
         "a143",
         "a137"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2864,7 +2864,7 @@
         "a609",
         "a422"
       ],
-      "year": 2025,
+      "date": "2025-12",
       "journalId": "j98",
       "keywordIds": [
         "quantum-algorithms"
@@ -2879,7 +2879,7 @@
         "a81",
         "a695"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2896,7 +2896,7 @@
         "a266",
         "a539"
       ],
-      "year": 2025,
+      "date": "2025-01",
       "journalId": "j24",
       "keywordIds": [
         "scalability",
@@ -2912,7 +2912,7 @@
         "a197",
         "a187"
       ],
-      "year": 2025,
+      "date": "2025-09",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -2934,7 +2934,7 @@
         "a164",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -2957,7 +2957,7 @@
         "a383",
         "a827"
       ],
-      "year": 2025,
+      "date": "2026-01",
       "journalId": "j99",
       "keywordIds": [
         "applications",
@@ -2979,7 +2979,7 @@
         "a211",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j60",
       "keywordIds": [
         "applications",
@@ -2998,7 +2998,7 @@
         "a121",
         "a377"
       ],
-      "year": 2025,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3020,7 +3020,7 @@
         "a231",
         "a827"
       ],
-      "year": 2025,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3041,7 +3041,7 @@
         "a252",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-01",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -3051,8 +3051,8 @@
       "citations": 56
     },
     {
-      "id": "arxiv-org-abs-2506-20825v1",
-      "doi": "https://arxiv.org/abs/2506.20825v1",
+      "id": "10-48550-arxiv-2506-20825",
+      "doi": "10.48550/arXiv.2506.20825",
       "title": "Quantum-Centric Alchemical Free Energy Calculations",
       "authorIds": [
         "a60",
@@ -3063,7 +3063,7 @@
         "a186",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-06",
       "journalId": "j60",
       "keywordIds": [
         "applications",
@@ -3079,7 +3079,7 @@
         "a239",
         "a241"
       ],
-      "year": 2025,
+      "date": "2025-12",
       "journalId": "j77",
       "keywordIds": [
         "benchmarking",
@@ -3099,7 +3099,7 @@
         "a445",
         "a481"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j14",
       "keywordIds": [
         "vision",
@@ -3121,7 +3121,7 @@
         "a274",
         "a827"
       ],
-      "year": 2026,
+      "date": "2025-12",
       "journalId": "j98",
       "keywordIds": [
         "quantum-machine-learning",
@@ -3144,7 +3144,7 @@
         "a79",
         "a827"
       ],
-      "year": 2026,
+      "date": "2025-12",
       "journalId": "j60",
       "keywordIds": [
         "applications",
@@ -3166,7 +3166,7 @@
         "a737",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j98",
       "keywordIds": [
         "gpu-acceleration",
@@ -3186,7 +3186,7 @@
         "a803",
         "a323"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j98",
       "keywordIds": [
         "gpu-acceleration",
@@ -3203,7 +3203,7 @@
         "a237",
         "a756"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -3225,7 +3225,7 @@
         "a825",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -3247,7 +3247,7 @@
         "a680",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3263,7 +3263,7 @@
       "authorIds": [
         "a532"
       ],
-      "year": 2026,
+      "date": "2026-06",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -3285,7 +3285,7 @@
         "a460",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j100",
       "keywordIds": [
         "applications",
@@ -3307,7 +3307,7 @@
         "a474",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-06",
       "journalId": "j69",
       "keywordIds": [
         "vision",
@@ -3323,7 +3323,7 @@
         "a522",
         "a158"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j15",
       "keywordIds": [
         "vision",
@@ -3341,7 +3341,7 @@
         "a134",
         "a618"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3360,7 +3360,7 @@
         "a347",
         "a265"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j76",
       "keywordIds": [
         "applications",
@@ -3382,7 +3382,7 @@
         "a749",
         "a827"
       ],
-      "year": 2026,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3404,7 +3404,7 @@
         "a357",
         "a827"
       ],
-      "year": 2026,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3426,7 +3426,7 @@
         "a2",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3443,7 +3443,7 @@
       "authorIds": [
         "a528"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j51",
       "keywordIds": [
         "applications",
@@ -3459,7 +3459,7 @@
       "authorIds": [
         "a255"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j81",
       "keywordIds": [
         "scheduling",
@@ -3480,7 +3480,7 @@
         "a288",
         "a464"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -3498,7 +3498,7 @@
         "a611",
         "a597"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "benchmarking",
@@ -3519,7 +3519,7 @@
         "a171",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "applications",
@@ -3541,7 +3541,7 @@
         "a322",
         "a777"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -3562,7 +3562,7 @@
         "a310",
         "a827"
       ],
-      "year": 2022,
+      "date": "2022-09",
       "journalId": "j11",
       "keywordIds": [
         "architecture",
@@ -3572,8 +3572,8 @@
       "citations": 208
     },
     {
-      "id": "lian-remme-alexander-weinert-andre-waschk-lukas-burgholzer-robert-wille",
-      "doi": "Lian Remme, Alexander Weinert, Andre Waschk, Lukas Burgholzer, Robert Wille",
+      "id": "10-48550-arxiv-2605-22980",
+      "doi": "10.48550/arXiv.2605.22980",
       "title": "Automatic De-Quantization of Quantum Programs Using Constant Propagation",
       "authorIds": [
         "a620",
@@ -3582,7 +3582,7 @@
         "a115",
         "a777"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j98",
       "keywordIds": [
         "compilation",
@@ -3601,7 +3601,7 @@
         "a189",
         "a692"
       ],
-      "year": 2021,
+      "date": "2021-01",
       "journalId": "j90",
       "keywordIds": [
         "compilation",
@@ -3622,7 +3622,7 @@
         "a733",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-04",
       "journalId": "j65",
       "keywordIds": [
         "benchmarking",
@@ -3639,7 +3639,7 @@
         "a801",
         "a340"
       ],
-      "year": 2022,
+      "date": "2022-09",
       "journalId": "j28",
       "keywordIds": [
         "architecture",
@@ -3661,7 +3661,7 @@
         "a278",
         "a279"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "middleware",
@@ -3682,7 +3682,7 @@
         "a817",
         "a330"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j13",
       "keywordIds": [
         "compilation"
@@ -3701,7 +3701,7 @@
         "a419",
         "a340"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "compilation",
@@ -3720,7 +3720,7 @@
         "a404",
         "a627"
       ],
-      "year": 2025,
+      "date": "2025-06",
       "journalId": "j4",
       "keywordIds": [
         "optimization-algorithms",
@@ -3739,7 +3739,7 @@
         "a585",
         "a777"
       ],
-      "year": 2025,
+      "date": "2025-04",
       "journalId": "j61",
       "keywordIds": [
         "compilation"
@@ -3759,7 +3759,7 @@
         "a446",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-10",
       "journalId": "j50",
       "keywordIds": [
         "compilation",
@@ -3778,7 +3778,7 @@
         "a619",
         "a505"
       ],
-      "year": 2024,
+      "date": "2024-09",
       "journalId": "j28",
       "keywordIds": [
         "compilation"
@@ -3796,7 +3796,7 @@
         "a419",
         "a340"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "quantum-machine-learning",
@@ -3815,7 +3815,7 @@
         "a400",
         "a234"
       ],
-      "year": 2024,
+      "date": "2024-12",
       "journalId": "j20",
       "keywordIds": [
         "compilation"
@@ -3834,7 +3834,7 @@
         "a150",
         "a791"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j3",
       "keywordIds": [
         "compilation",
@@ -3852,7 +3852,7 @@
         "a166",
         "a340"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "quantum-circuits",
@@ -3869,7 +3869,7 @@
         "a308",
         "a371"
       ],
-      "year": 2024,
+      "date": "2024-03",
       "journalId": "j30",
       "keywordIds": [
         "compilation",
@@ -3890,7 +3890,7 @@
         "a598",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-04",
       "journalId": "j98",
       "keywordIds": [
         "quantum-machine-learning",
@@ -3907,7 +3907,7 @@
         "a720",
         "a98"
       ],
-      "year": 2026,
+      "date": "2025-09",
       "journalId": "j98",
       "keywordIds": [
         "compilation",
@@ -3929,7 +3929,7 @@
         "a625",
         "a416"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j98",
       "keywordIds": [
         "quantum-machine-learning",
@@ -3948,7 +3948,7 @@
         "a645",
         "a801"
       ],
-      "year": 2025,
+      "date": "2025-01",
       "journalId": "j98",
       "keywordIds": [
         "trapped-ion-qubits",
@@ -3969,7 +3969,7 @@
         "a816",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-05",
       "journalId": "j98",
       "keywordIds": [
         "trapped-ion-qubits",
@@ -3992,7 +3992,7 @@
         "a326",
         "a465"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j38",
       "keywordIds": [
         "compilation"
@@ -4010,7 +4010,7 @@
         "a721",
         "a11"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j10",
       "keywordIds": [
         "compilation",
@@ -4031,7 +4031,7 @@
         "a331",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-04",
       "journalId": "j98",
       "keywordIds": [
         "trapped-ion-qubits",
@@ -4047,7 +4047,7 @@
       "authorIds": [
         "a757"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "architecture",
@@ -4068,7 +4068,7 @@
         "a243",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j85",
       "keywordIds": [
         "compilation"
@@ -4084,7 +4084,7 @@
         "a325",
         "a466"
       ],
-      "year": 2025,
+      "date": "2025-08",
       "journalId": "j28",
       "keywordIds": [
         "quantum-circuits",
@@ -4101,7 +4101,7 @@
         "a28",
         "a20"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "compilation",
@@ -4117,7 +4117,7 @@
         "a789",
         "a761"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j5",
       "keywordIds": [
         "compilation"
@@ -4134,7 +4134,7 @@
         "a672",
         "a137"
       ],
-      "year": 2026,
+      "date": "2026-01",
       "journalId": "j98",
       "keywordIds": [
         "compilation",
@@ -4153,7 +4153,7 @@
         "a137",
         "a259"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "compilation"
@@ -4173,7 +4173,7 @@
         "a665",
         "a827"
       ],
-      "year": 2022,
+      "date": "2022-02",
       "journalId": "j98",
       "keywordIds": [
         "compilation",
@@ -4192,7 +4192,7 @@
         "a790",
         "a502"
       ],
-      "year": 2023,
+      "date": "2023-09",
       "journalId": "j28",
       "keywordIds": [
         "compilation",
@@ -4214,7 +4214,7 @@
         "a403",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-03",
       "journalId": "j16",
       "keywordIds": [
         "compilation",
@@ -4235,7 +4235,7 @@
         "a4",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j67",
       "keywordIds": [
         "compilation"
@@ -4251,7 +4251,7 @@
         "a606",
         "a777"
       ],
-      "year": 2025,
+      "date": "2025-08",
       "journalId": "j28",
       "keywordIds": [
         "fault-tolerance",
@@ -4269,7 +4269,7 @@
         "a681",
         "a560"
       ],
-      "year": 2025,
+      "date": "2025-08",
       "journalId": "j28",
       "keywordIds": [
         "compilation",
@@ -4286,7 +4286,7 @@
         "a440",
         "a7"
       ],
-      "year": 2004,
+      "date": "2004-06",
       "journalId": "j41",
       "keywordIds": [
         "compilation"
@@ -4305,7 +4305,7 @@
         "a188",
         "a594"
       ],
-      "year": 2021,
+      "date": "2021-02",
       "journalId": "j41",
       "keywordIds": [
         "compilation"
@@ -4325,7 +4325,7 @@
         "a541",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-07",
       "journalId": "j61",
       "keywordIds": [
         "quantum-programming",
@@ -4343,7 +4343,7 @@
         "a409",
         "a318"
       ],
-      "year": 2022,
+      "date": "2022-06",
       "journalId": "j11",
       "keywordIds": [
         "optimization-algorithms",
@@ -4364,7 +4364,7 @@
         "a780",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "intermediate-representation",
@@ -4385,7 +4385,7 @@
         "a567",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-06",
       "journalId": "j98",
       "keywordIds": [
         "vision",
@@ -4405,7 +4405,7 @@
         "a689",
         "a210"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "quantum-programming",
@@ -4422,7 +4422,7 @@
         "a603",
         "a613"
       ],
-      "year": 2023,
+      "date": "2023-10",
       "journalId": "j39",
       "keywordIds": [
         "compilation"
@@ -4441,7 +4441,7 @@
         "a340",
         "a560"
       ],
-      "year": 2026,
+      "date": "2026-04",
       "journalId": "j98",
       "keywordIds": [
         "benchmarking",
@@ -4461,7 +4461,7 @@
         "a335",
         "a800"
       ],
-      "year": 2025,
+      "date": "2025-08",
       "journalId": "j28",
       "keywordIds": [
         "quantum-programming",
@@ -4482,7 +4482,7 @@
         "a685",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j12",
       "keywordIds": [
         "compilation"
@@ -4498,7 +4498,7 @@
         "a595",
         "a499"
       ],
-      "year": 2025,
+      "date": "2025-01",
       "journalId": "j63",
       "keywordIds": [
         "compilation"
@@ -4518,7 +4518,7 @@
         "a179",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-06",
       "journalId": "j75",
       "keywordIds": [
         "compilation"
@@ -4533,7 +4533,7 @@
         "a583",
         "a289"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j98",
       "keywordIds": [
         "fault-tolerance",
@@ -4554,7 +4554,7 @@
         "a689",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "quantum-programming",
@@ -4571,7 +4571,7 @@
         "a115",
         "a777"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j2",
       "keywordIds": [
         "intermediate-representation",
@@ -4588,7 +4588,7 @@
         "a575",
         "a777"
       ],
-      "year": 2019,
+      "date": "2019-07",
       "journalId": "j35",
       "keywordIds": [
         "compilation"
@@ -4603,7 +4603,7 @@
         "a777",
         "a115"
       ],
-      "year": 2023,
+      "date": "2023-03",
       "journalId": "j5",
       "keywordIds": [
         "quantum-circuits",
@@ -4623,7 +4623,7 @@
         "a740",
         "a392"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "superconducting-qubits",
@@ -4644,7 +4644,7 @@
         "a213",
         "a616"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j98",
       "keywordIds": [
         "quantum-simulation",
@@ -4663,7 +4663,7 @@
         "a831",
         "a832"
       ],
-      "year": 2024,
+      "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
         "high-energy-physics",
@@ -4684,7 +4684,7 @@
         "a837",
         "a827"
       ],
-      "year": 2013,
+      "date": "2013-04",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -4706,7 +4706,7 @@
         "a252",
         "a827"
       ],
-      "year": 2024,
+      "date": "2024-07",
       "journalId": "j98",
       "keywordIds": [
         "algorithms",
@@ -4749,7 +4749,7 @@
         "a858",
         "a774"
       ],
-      "year": 2026,
+      "date": "2026-07",
       "journalId": "j98",
       "keywordIds": [
         "hpc-integration",
@@ -4767,7 +4767,7 @@
         "a824",
         "a623"
       ],
-      "year": 2026,
+      "date": "2026-05",
       "journalId": "j98",
       "keywordIds": [
         "quantum-diagonalization",
@@ -4784,7 +4784,7 @@
         "a860",
         "a861"
       ],
-      "year": 2021,
+      "date": "2021-08",
       "journalId": "j102",
       "keywordIds": [
         "survey",
@@ -4801,7 +4801,7 @@
         "a863",
         "a864"
       ],
-      "year": 2026,
+      "date": "2026-07",
       "journalId": "j98",
       "keywordIds": [
         "quantum-simulation",
@@ -4822,7 +4822,7 @@
         "a870",
         "a871"
       ],
-      "year": 2022,
+      "date": "2022-05",
       "journalId": "j69",
       "keywordIds": [
         "quantum-simulation",
@@ -5059,7 +5059,7 @@
         "a1084",
         "a1085"
       ],
-      "year": 2024,
+      "date": "2024-10",
       "journalId": "j98",
       "keywordIds": [
         "quantum-simulation",
@@ -5089,7 +5089,7 @@
         "a1095",
         "a723"
       ],
-      "year": 2025,
+      "date": "2025-08",
       "journalId": "j98",
       "keywordIds": [
         "quantum-chemistry",
@@ -5108,7 +5108,7 @@
         "a1099",
         "a1100"
       ],
-      "year": 2026,
+      "date": "2026-02",
       "journalId": "j103",
       "keywordIds": [
         "quantum-simulation",
@@ -5138,7 +5138,7 @@
         "a1113",
         "a1114"
       ],
-      "year": 2026,
+      "date": "2026-07",
       "journalId": "j98",
       "keywordIds": [
         "hpc-integration",
@@ -5155,7 +5155,7 @@
         "a616",
         "a1115"
       ],
-      "year": 2020,
+      "date": "2020-06",
       "journalId": "j104",
       "keywordIds": [
         "high-energy-physics",
@@ -5175,7 +5175,7 @@
         "a668",
         "a1119"
       ],
-      "year": 2026,
+      "date": "2026-07",
       "journalId": "j98",
       "keywordIds": [
         "middleware",
@@ -5192,7 +5192,7 @@
         "a856",
         "a847"
       ],
-      "year": 2026,
+      "date": "2026-07",
       "journalId": "j98",
       "keywordIds": [
         "scheduling",
@@ -5210,7 +5210,7 @@
         "a1121",
         "a1122"
       ],
-      "year": 2026,
+      "date": "2026-07",
       "journalId": "j105",
       "keywordIds": [
         "scheduling",
@@ -5232,7 +5232,7 @@
         "a1124",
         "a827"
       ],
-      "year": 2026,
+      "date": "2026-03",
       "journalId": "j98",
       "keywordIds": [
         "federated-learning",
@@ -5251,7 +5251,7 @@
         "a1127",
         "a1128"
       ],
-      "year": 2025,
+      "date": "2025-03",
       "journalId": "j98",
       "keywordIds": [
         "scheduling",
@@ -5273,7 +5273,7 @@
         "a145",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j98",
       "keywordIds": [
         "scheduling",
@@ -5295,7 +5295,7 @@
         "a1139",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j95",
       "keywordIds": [
         "scheduling",
@@ -5317,7 +5317,7 @@
         "a1145",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-01",
       "journalId": "j98",
       "keywordIds": [
         "scheduling",
@@ -5339,7 +5339,7 @@
         "a1151",
         "a827"
       ],
-      "year": 2025,
+      "date": "2025-11",
       "journalId": "j98",
       "keywordIds": [
         "federated-learning",
@@ -5358,7 +5358,7 @@
         "a1153",
         "a1154"
       ],
-      "year": 2025,
+      "date": "2025-10",
       "journalId": "j25",
       "keywordIds": [
         "scheduling",

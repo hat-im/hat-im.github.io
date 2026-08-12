@@ -154,6 +154,15 @@
     return authors.join(', ');
   }
 
+  var MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  function formatDate(dateStr) {
+    var m = /^(\d{4})-(\d{2})$/.exec(dateStr || '');
+    if (!m) return dateStr || '';
+    var month = parseInt(m[2], 10);
+    return (month >= 1 && month <= 12 ? MONTH_ABBR[month - 1] + ' ' : '') + m[1];
+  }
+
   function makeToggleChip(label, onClick) {
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -378,7 +387,7 @@
     meta.className = 'card-meta';
     var metaParts = [];
     if (paper.authors.length) metaParts.push(formatAuthors(paper.authors));
-    if (paper.year) metaParts.push(String(paper.year));
+    if (paper.date) metaParts.push(formatDate(paper.date));
     if (paper.journal) metaParts.push(paper.journal);
     if (typeof paper.citations === 'number') metaParts.push(fmt(STR.card.citationsSuffixTemplate, { n: paper.citations }));
     meta.textContent = metaParts.join(' · ');
@@ -454,7 +463,7 @@
     if (sortKey === 'author') {
       sorted.sort(function (a, b) { return firstAuthorSurname(a).localeCompare(firstAuthorSurname(b)); });
     } else if (sortKey === 'year') {
-      sorted.sort(function (a, b) { return (b.year || 0) - (a.year || 0); });
+      sorted.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
     } else if (sortKey === 'citations') {
       sorted.sort(function (a, b) { return (b.citations || 0) - (a.citations || 0); });
     }
@@ -518,7 +527,7 @@
       return (!best || (rel.paper.citations || 0) > (best.paper.citations || 0)) ? rel : best;
     }, null);
     var mostRecent = related.reduce(function (best, rel) {
-      return (!best || (rel.paper.year || 0) > (best.paper.year || 0)) ? rel : best;
+      return (!best || (rel.paper.date || '') > (best.paper.date || '')) ? rel : best;
     }, null);
 
     var links = [];
@@ -566,7 +575,7 @@
       return (!best || (rel.paper.citations || 0) > (best.paper.citations || 0)) ? rel : best;
     }, null);
     var mostRecent = candidates.reduce(function (best, rel) {
-      return (!best || (rel.paper.year || 0) > (best.paper.year || 0)) ? rel : best;
+      return (!best || (rel.paper.date || '') > (best.paper.date || '')) ? rel : best;
     }, null);
     mostCited.paper.status = 'suggested';
     if (mostRecent.paper.id !== mostCited.paper.id) mostRecent.paper.status = 'suggested';
@@ -810,7 +819,7 @@
         doi: p.doi,
         title: p.title,
         authors: p.authorIds.map(function (id) { return authors[id]; }),
-        year: p.year,
+        date: p.date,
         journal: p.journalId ? journals[p.journalId] : '',
         keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
         status: 'to-read',
