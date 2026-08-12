@@ -82,7 +82,6 @@ button.dropdown-item {
 }
 button.dropdown-item:hover { background: #f4f2ea; }
 button.dropdown-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.external-icon { width: 12px; height: 12px; color: var(--text-tertiary); flex-shrink: 0; }
 
 button.reset-btn {
   flex-shrink: 0;

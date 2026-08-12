@@ -4,8 +4,7 @@
   "actionsButtonLabel": "Actions",
   "dropdown": {
     "restore": "Reset",
-    "clear": "Clear",
-    "returnToChat": "Return to chat"
+    "clear": "Clear"
   },
   "searchPlaceholder": "Search title, author, journal, keyword",
   "progress": {

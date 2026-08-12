@@ -607,7 +607,6 @@
     document.getElementById('actionsBtnLabel').textContent = STR.actionsButtonLabel;
     document.getElementById('restoreBtn').textContent = STR.dropdown.restore;
     document.getElementById('resetBtn').textContent = STR.dropdown.clear;
-    document.getElementById('returnToChatLabel').textContent = STR.dropdown.returnToChat;
     document.getElementById('searchInput').setAttribute('placeholder', STR.searchPlaceholder);
     document.getElementById('popoverTitle').textContent = STR.progress.popoverTitle;
     document.getElementById('modalCancel').textContent = STR.modal.cancel;
@@ -648,9 +647,7 @@
     });
   }
 
-  // ---------- Actions dropdown (Reset / Clear / Return to chat) ----------
-
-  var RETURN_TO_CHAT_URL = 'https://claude.ai/chat/b51476f5-ba8c-473c-a1f5-ad5cb52f4032';
+  // ---------- Actions dropdown (Reset / Clear) ----------
 
   function closeActionsDropdown() {
     var menu = document.getElementById('actionsMenu');
@@ -678,11 +675,6 @@
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeActionsDropdown();
-    });
-
-    document.getElementById('returnToChatBtn').addEventListener('click', function () {
-      closeActionsDropdown();
-      window.open(RETURN_TO_CHAT_URL, '_blank', 'noopener');
     });
   }
 
