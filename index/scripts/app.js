@@ -99,7 +99,7 @@ async function init(){
           : " ";
       var isFinal = o !== " ";
       if (isFinal) textIndices.push(i);
-      grid.push({ x: " ", y: isFinal, z: 0, o: o });
+      grid.push({ x: null, y: isFinal, z: 0, o: o });
     }
   }
 
@@ -113,7 +113,7 @@ async function init(){
     for (var i = 0; i < grid.length; i++) {
       var col = i % cols;
       var row = Math.floor(i / cols);
-      var ch = grid[i].x;
+      var ch = grid[i].x === null ? " " : grid[i].x;
       var x = col * charWidth;
       var y = row * charHeight + topPadding;
       ctx.fillText(ch, x, y);
@@ -155,16 +155,18 @@ async function init(){
         var decay = decayRate * (1 + mouseBoost * boost);
         var chance = 1 - Math.exp(-decay * (t - lastFrame));
 
-        if (g.x === " ") {
+        if (g.x === null) {
           if (Math.random() < chance) {
-            g.x = alphabet[Math.floor(Math.random() * alphabet.length)];
+            g.n = 0;
+            g.x = alphabet[g.n];
             g.z = t;
             changed = true;
           }
         } else {
           var reduceChance = 1 - Math.exp(-decay * (t - lastFrame) * reduceFactor);
           if (Math.random() < reduceChance) {
-            g.x = alphabet[Math.floor(Math.random() * alphabet.length)];
+            g.n = (g.n + 1) % alphabet.length;
+            g.x = alphabet[g.n];
             g.z = t;
             changed = true;
           }
