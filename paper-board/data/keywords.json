@@ -193,5 +193,10 @@
     "label": "workflow orchestration",
     "bg": "#f0eadb",
     "text": "#735e26"
+  },
+  "meta-scheduling": {
+    "label": "meta scheduling",
+    "bg": "#e0f0db",
+    "text": "#3d762d"
   }
 }

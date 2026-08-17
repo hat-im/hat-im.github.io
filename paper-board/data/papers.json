@@ -5365,6 +5365,509 @@
         "cloud-computing",
         "scalability"
       ],
+      "citations": 4
+    },
+    {
+      "id": "10-1023-a-1015617019423",
+      "doi": "10.1023/A:1015617019423",
+      "title": "Condor-G: A Computation Management Agent for Multi-Institutional Grids",
+      "authorIds": [
+        "a1155",
+        "a1156",
+        "a1157",
+        "a246",
+        "a1158"
+      ],
+      "date": "2002-07",
+      "journalId": "j106",
+      "keywordIds": [
+        "meta-scheduling",
+        "hpc-scheduling",
+        "middleware"
+      ],
+      "citations": 785
+    },
+    {
+      "id": "10-1002-cpe-938",
+      "doi": "10.1002/cpe.938",
+      "title": "Distributed Computing in Practice: the Condor Experience",
+      "authorIds": [
+        "a1159",
+        "a1156",
+        "a1157"
+      ],
+      "date": "2005-02",
+      "journalId": "j107",
+      "keywordIds": [
+        "middleware",
+        "hpc-scheduling"
+      ],
+      "citations": 1908
+    },
+    {
+      "id": "10-1002-cpe-2971",
+      "doi": "10.1002/cpe.2971",
+      "title": "Interoperating Grid Infrastructures with the GridWay Metascheduler",
+      "authorIds": [
+        "a1160",
+        "a1161",
+        "a1162"
+      ],
+      "date": "2012-12",
+      "journalId": "j107",
+      "keywordIds": [
+        "meta-scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 9
+    },
+    {
+      "id": "10-1002-spe-584",
+      "doi": "10.1002/spe.584",
+      "title": "A Framework for Adaptive Execution in Grids",
+      "authorIds": [
+        "a1161",
+        "a1163",
+        "a1162"
+      ],
+      "date": "2004-03",
+      "journalId": "j84",
+      "keywordIds": [
+        "meta-scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 235
+    },
+    {
+      "id": "10-1016-j-future-2011-08-019",
+      "doi": "10.1016/j.future.2011.08.019",
+      "title": "A GridWay-based Autonomic Network-Aware Metascheduler",
+      "authorIds": [
+        "a1164",
+        "a1165",
+        "a1166",
+        "a1167",
+        "a1168"
+      ],
+      "date": "2011-11",
+      "journalId": "j24",
+      "keywordIds": [
+        "meta-scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 12
+    },
+    {
+      "id": "10-1016-j-future-2010-04-004",
+      "doi": "10.1016/j.future.2010.04.004",
+      "title": "Federation of TeraGrid, EGEE and OSG Infrastructures through a Metascheduler",
+      "authorIds": [
+        "a1169",
+        "a1161",
+        "a1163",
+        "a1162"
+      ],
+      "date": "2010-04",
+      "journalId": "j24",
+      "keywordIds": [
+        "meta-scheduling",
+        "hpc-scheduling",
+        "infrastructure"
+      ],
+      "citations": 14
+    },
+    {
+      "id": "10-1007-978-3-540-85451-7-49",
+      "doi": "10.1007/978-3-540-85451-7_49",
+      "title": "Integration of GRID Superscalar and GridWay Metascheduler with the DRMAA OGF Standard",
+      "authorIds": [
+        "a1170",
+        "a1171",
+        "a1161",
+        "a1172",
+        "a1162",
+        "a1163",
+        "a827"
+      ],
+      "date": "2008-08",
+      "journalId": "j63",
+      "keywordIds": [
+        "meta-scheduling",
+        "hpc-scheduling",
+        "middleware"
+      ],
+      "citations": 8
+    },
+    {
+      "id": "10-48550-arxiv-cs-0306060",
+      "doi": "10.48550/arXiv.cs/0306060",
+      "title": "DIRAC – Distributed Infrastructure with Remote Agent Control",
+      "authorIds": [
+        "a1173",
+        "a1174",
+        "a1175",
+        "a1176",
+        "a1177",
+        "a1178",
+        "a827"
+      ],
+      "date": "2003-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "meta-scheduling",
+        "infrastructure",
+        "high-energy-physics"
+      ],
+      "citations": 20
+    },
+    {
+      "id": "10-1007-s10723-010-9175-7",
+      "doi": "10.1007/s10723-010-9175-7",
+      "title": "Belle-DIRAC Setup for Using Amazon Elastic Compute Cloud",
+      "authorIds": [
+        "a1179",
+        "a1180",
+        "a1181",
+        "a1182",
+        "a1183"
+      ],
+      "date": "2011-01",
+      "journalId": "j108",
+      "keywordIds": [
+        "meta-scheduling",
+        "cloud-computing",
+        "high-energy-physics"
+      ],
+      "citations": 35
+    },
+    {
+      "id": "10-1016-j-future-2014-10-008",
+      "doi": "10.1016/j.future.2014.10.008",
+      "title": "Pegasus, a Workflow Management System for Science Automation",
+      "authorIds": [
+        "a1184",
+        "a1185",
+        "a1186",
+        "a1187",
+        "a1188",
+        "a1189",
+        "a827"
+      ],
+      "date": "2014-10",
+      "journalId": "j24",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-scheduling"
+      ],
+      "citations": 839
+    },
+    {
+      "id": "10-1109-ccgrid-2007-101",
+      "doi": "10.1109/CCGRID.2007.101",
+      "title": "Scheduling Data-Intensive Workflows onto Storage-Constrained Distributed Resources",
+      "authorIds": [
+        "a1190",
+        "a1191",
+        "a1192",
+        "a1184",
+        "a1193",
+        "a1185",
+        "a827"
+      ],
+      "date": "2007-05",
+      "journalId": "j109",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-scheduling"
+      ],
+      "citations": 129
+    },
+    {
+      "id": "10-1145-1341811-1341822",
+      "doi": "10.1145/1341811.1341822",
+      "title": "Workflow Task Clustering for Best Effort Systems with Pegasus",
+      "authorIds": [
+        "a1191",
+        "a1194",
+        "a1185",
+        "a1184",
+        "a1195",
+        "a1196",
+        "a827"
+      ],
+      "date": "2008-01",
+      "journalId": "j110",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-scheduling"
+      ],
+      "citations": 85
+    },
+    {
+      "id": "10-1145-3626203-3670606",
+      "doi": "10.1145/3626203.3670606",
+      "title": "Towards Cross-Facility Workflows Orchestration through Distributed Automation",
+      "authorIds": [
+        "a1197",
+        "a1198",
+        "a1199",
+        "a1200",
+        "a1201"
+      ],
+      "date": "2024-07",
+      "journalId": "j111",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 6
+    },
+    {
+      "id": "10-48550-arxiv-2509-09915",
+      "doi": "10.48550/arXiv.2509.09915",
+      "title": "The (R)evolution of Scientific Workflows in the Agentic AI Era: Towards Autonomous Science",
+      "authorIds": [
+        "a1202",
+        "a1198",
+        "a1203",
+        "a1200",
+        "a1204",
+        "a1205",
+        "a1201"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "vision"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2308-09004",
+      "doi": "10.48550/arXiv.2308.09004",
+      "title": "Towards Lightweight Data Integration using Multi-workflow Provenance and Data Observability",
+      "authorIds": [
+        "a1198",
+        "a1197",
+        "a1206",
+        "a1207",
+        "a1201"
+      ],
+      "date": "2023-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 1
+    },
+    {
+      "id": "10-48550-arxiv-2208-11745",
+      "doi": "10.48550/arXiv.2208.11745",
+      "title": "AI-coupled HPC Workflows",
+      "authorIds": [
+        "a1208",
+        "a1209",
+        "a1210"
+      ],
+      "date": "2022-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-1007-978-3-032-10507-3-1",
+      "doi": "10.1007/978-3-032-10507-3_1",
+      "title": "Power-Aware Scheduling for Multi-Center HPC Electricity Cost Optimization",
+      "authorIds": [
+        "a1211",
+        "a1212",
+        "a1213",
+        "a1214"
+      ],
+      "date": "2026-01",
+      "journalId": "j63",
+      "keywordIds": [
+        "scheduling",
+        "finance-applications",
+        "hpc-scheduling"
+      ],
+      "citations": 2
+    },
+    {
+      "id": "10-48550-arxiv-2605-25292",
+      "doi": "10.48550/arXiv.2605.25292",
+      "title": "DECICE: AI-Driven Scheduling and Digital Twin Integration for the Cloud-HPC-Edge Compute Continuum",
+      "authorIds": [
+        "a1215",
+        "a1216",
+        "a1217",
+        "a1218",
+        "a1219",
+        "a1220",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing",
+        "hpc-integration"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-1109-ipdps57955-2024-00069",
+      "doi": "10.1109/IPDPS57955.2024.00069",
+      "title": "Cross-System Analysis of Job Characterization and Scheduling in Large-Scale Computing Clusters",
+      "authorIds": [
+        "a1221",
+        "a1222",
+        "a1223",
+        "a1224",
+        "a1225"
+      ],
+      "date": "2024-05",
+      "journalId": "j29",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling",
+        "benchmarking"
+      ],
+      "citations": 2
+    },
+    {
+      "id": "10-48550-arxiv-2501-18191",
+      "doi": "10.48550/arXiv.2501.18191",
+      "title": "Scalable HPC Job Scheduling and Resource Management in SST",
+      "authorIds": [
+        "a1212",
+        "a1211",
+        "a1226",
+        "a1227",
+        "a1214"
+      ],
+      "date": "2025-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2505-11244",
+      "doi": "10.48550/arXiv.2505.11244",
+      "title": "A Review of Tools and Techniques for Optimization of Workload Mapping and Scheduling in Heterogeneous HPC System",
+      "authorIds": [
+        "a1215",
+        "a1228"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "survey",
+        "hpc-scheduling"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2211-02740",
+      "doi": "10.48550/arXiv.2211.02740",
+      "title": "Bridging HPC Communities through the Julia Programming Language",
+      "authorIds": [
+        "a1229",
+        "a1230",
+        "a1231",
+        "a1232",
+        "a1233",
+        "a1234",
+        "a827"
+      ],
+      "date": "2022-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "applications",
+        "hpc-integration"
+      ],
+      "citations": 19
+    },
+    {
+      "id": "10-48550-arxiv-2103-05809",
+      "doi": "10.48550/arXiv.2103.05809",
+      "title": "A Resourceful Coordination Approach for Multilevel Scheduling",
+      "authorIds": [
+        "a1235",
+        "a1236"
+      ],
+      "date": "2021-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2602-17318",
+      "doi": "10.48550/arXiv.2602.17318",
+      "title": "Evaluating Malleable Job Scheduling in HPC Clusters using Real-World Workloads",
+      "authorIds": [
+        "a1237",
+        "a1238",
+        "a1239"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling",
+        "benchmarking"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2308-08967",
+      "doi": "10.48550/arXiv.2308.08967",
+      "title": "Multi-FedLS: a Framework for Cross-Silo Federated Learning Applications on Multi-Cloud Environments",
+      "authorIds": [
+        "a1240",
+        "a1241",
+        "a1242",
+        "a1243",
+        "a1244"
+      ],
+      "date": "2023-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "federated-learning",
+        "cloud-computing"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2603-19431",
+      "doi": "10.48550/arXiv.2603.19431",
+      "title": "SWARM+: Scalable and Resilient Multi-Agent Consensus for Decentralized Data-Aware Workload Management",
+      "authorIds": [
+        "a1245",
+        "a1246",
+        "a1247",
+        "a1248",
+        "a1184"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "workflow-orchestration",
+        "meta-scheduling"
+      ],
       "citations": 0
     }
   ]
