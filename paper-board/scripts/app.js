@@ -45,6 +45,15 @@
     if (winner) {
       state.papers = winner.data.papers;
       state.keywordColors = winner.data.keywordColors || SEED.keywordColors;
+
+      var knownIds = {};
+      state.papers.forEach(function (p) { knownIds[p.id] = true; });
+      var newPapers = SEED.papers.filter(function (p) { return !knownIds[p.id]; });
+      if (newPapers.length) {
+        state.papers = state.papers.concat(clone(newPapers));
+        state.keywordColors = Object.assign({}, SEED.keywordColors, state.keywordColors);
+        await saveState();
+      }
       return;
     }
 
