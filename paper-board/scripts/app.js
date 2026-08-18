@@ -574,8 +574,6 @@
 
   function sortPapers(list, sortValue) {
     var sorted = list.slice();
-    if (sortValue === 'none') return sorted;
-
     var dash = sortValue.lastIndexOf('-');
     var key = sortValue.slice(0, dash);
     var dir = sortValue.slice(dash + 1);
