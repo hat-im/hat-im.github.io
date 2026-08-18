@@ -5161,26 +5161,6 @@
       "added": "2026-08-12"
     },
     {
-      "id": "10-48550-arxiv-2503-11011",
-      "doi": "10.48550/arXiv.2503.11011",
-      "title": "Power-Aware Scheduling for Multi-Center HPC Electricity Cost Optimization",
-      "authorIds": [
-        "a1125",
-        "a1126",
-        "a1127",
-        "a1128"
-      ],
-      "date": "2025-03",
-      "journalId": "j98",
-      "keywordIds": [
-        "scheduling",
-        "finance-applications",
-        "hpc-scheduling"
-      ],
-      "citations": 0,
-      "added": "2026-08-12"
-    },
-    {
       "id": "10-48550-arxiv-2510-13724",
       "doi": "10.48550/arXiv.2510.13724",
       "title": "FIRST: Federated Inference Resource Scheduling Toolkit for Scientific AI Model Access",
@@ -6116,27 +6096,6 @@
       "added": "2026-08-19"
     },
     {
-      "id": "10-1109-ccgrid64434-2025-00070",
-      "doi": "10.1109/CCGRID64434.2025.00070",
-      "title": "Pilot-Quantum: A Middleware for Quantum-HPC Resource, Workload and Task Management",
-      "authorIds": [
-        "a491",
-        "a408",
-        "a659",
-        "a1208",
-        "a479"
-      ],
-      "date": "2025-05",
-      "journalId": "j114",
-      "keywordIds": [
-        "middleware",
-        "hpc-integration",
-        "scheduling"
-      ],
-      "citations": 2,
-      "added": "2026-08-19"
-    },
-    {
       "id": "10-1016-j-future-2024-01-018",
       "doi": "10.1016/j.future.2024.01.018",
       "title": "QFaaS: A Serverless Function-as-a-Service framework for Quantum computing",
@@ -6525,28 +6484,6 @@
         "middleware"
       ],
       "citations": 0,
-      "added": "2026-08-19"
-    },
-    {
-      "id": "10-1109-tpds-2022-3208767",
-      "doi": "10.1109/TPDS.2022.3208767",
-      "title": "funcX: Federated Function as a Service for Science",
-      "authorIds": [
-        "a457",
-        "a145",
-        "a47",
-        "a1347",
-        "a1197",
-        "a827"
-      ],
-      "date": "2022-09",
-      "journalId": "j37",
-      "keywordIds": [
-        "cloud-computing",
-        "middleware",
-        "scalability"
-      ],
-      "citations": 32,
       "added": "2026-08-19"
     },
     {

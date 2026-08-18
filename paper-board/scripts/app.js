@@ -63,6 +63,13 @@
         }
       });
 
+      // Papers deleted from the seed should disappear from cached state too
+      var pruned = state.papers.filter(function (p) { return seedById[p.id]; });
+      if (pruned.length !== state.papers.length) {
+        state.papers = pruned;
+        dirty = true;
+      }
+
       var knownIds = {};
       state.papers.forEach(function (p) { knownIds[p.id] = true; });
       var newPapers = SEED.papers.filter(function (p) { return !knownIds[p.id]; });
