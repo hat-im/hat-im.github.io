@@ -46,14 +46,27 @@
       state.papers = winner.data.papers;
       state.keywordColors = winner.data.keywordColors || SEED.keywordColors;
 
+      var seedById = {};
+      SEED.papers.forEach(function (p) { seedById[p.id] = p; });
+
+      var dirty = false;
+      state.papers.forEach(function (p) {
+        var seed = seedById[p.id];
+        if (seed && seed.added && p.added !== seed.added) {
+          p.added = seed.added;
+          dirty = true;
+        }
+      });
+
       var knownIds = {};
       state.papers.forEach(function (p) { knownIds[p.id] = true; });
       var newPapers = SEED.papers.filter(function (p) { return !knownIds[p.id]; });
       if (newPapers.length) {
         state.papers = state.papers.concat(clone(newPapers));
         state.keywordColors = Object.assign({}, SEED.keywordColors, state.keywordColors);
-        await saveState();
+        dirty = true;
       }
+      if (dirty) await saveState();
       return;
     }
 
@@ -475,6 +488,8 @@
       sorted.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
     } else if (sortKey === 'citations') {
       sorted.sort(function (a, b) { return (b.citations || 0) - (a.citations || 0); });
+    } else if (sortKey === 'added') {
+      sorted.sort(function (a, b) { return (b.added || '').localeCompare(a.added || ''); });
     }
     return sorted;
   }
@@ -824,7 +839,8 @@
         journal: p.journalId ? journals[p.journalId] : '',
         keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
         status: 'to-read',
-        citations: p.citations
+        citations: p.citations,
+        added: p.added
       };
     });
 

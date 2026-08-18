@@ -24,7 +24,8 @@
     "read": "Nothing here."
   },
   "sortOptions": [
-    {"value": "none", "label": "Sort: added"},
+    {"value": "none", "label": "Sort: default"},
+    {"value": "added", "label": "Sort: date added"},
     {"value": "author", "label": "Sort: first author"},
     {"value": "year", "label": "Sort: date"},
     {"value": "citations", "label": "Sort: citations"}
