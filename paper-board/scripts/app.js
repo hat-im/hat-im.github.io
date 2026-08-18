@@ -218,15 +218,22 @@
     });
   }
 
-  function relatedPapers(paper, pool) {
-    return pool.filter(function (other) {
-      if (other.id === paper.id) return false;
-      var shared = other.keywords.filter(function (k) { return paper.keywords.indexOf(k) !== -1; });
-      return shared.length > 0;
-    }).map(function (other) {
-      var shared = other.keywords.filter(function (k) { return paper.keywords.indexOf(k) !== -1; });
-      return { paper: other, sharedCount: shared.length };
+  // For each real author of the paper (skipping the 'et al.' placeholder),
+  // their single most recent other paper — regardless of status, so a pick
+  // already in suggested/reading/read never causes a runner-up to be pulled.
+  function authorLatestPapers(paper, pool) {
+    var picks = {};
+    paper.authors.forEach(function (a) {
+      if (a === 'et al.') return;
+      var best = null;
+      pool.forEach(function (other) {
+        if (other.id === paper.id) return;
+        if (other.authors.indexOf(a) === -1) return;
+        if (!best || (other.date || '') > (best.date || '')) best = other;
+      });
+      if (best) picks[best.id] = best;
     });
+    return Object.keys(picks).map(function (id) { return picks[id]; });
   }
 
   // ---------- Rendering ----------
@@ -542,6 +549,12 @@
       card.classList.remove('dragging');
     });
 
+    // Selecting a card pulls each author's latest paper into suggested
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('button')) return;
+      selectPaper(paper);
+    });
+
     // Hover / focus thread lines
     card.addEventListener('mouseenter', function () { state.hoveredCardId = paper.id; drawThreads(); });
     card.addEventListener('mouseleave', function () { state.hoveredCardId = null; drawThreads(); });
@@ -630,19 +643,10 @@
     var hovered = pool.find(function (p) { return p.id === state.hoveredCardId; });
     if (!hovered) return;
 
-    var related = relatedPapers(hovered, pool);
-    if (related.length === 0) return;
-
-    var mostCited = related.reduce(function (best, rel) {
-      return (!best || (rel.paper.citations || 0) > (best.paper.citations || 0)) ? rel : best;
-    }, null);
-    var mostRecent = related.reduce(function (best, rel) {
-      return (!best || (rel.paper.date || '') > (best.paper.date || '')) ? rel : best;
-    }, null);
-
-    var links = [];
-    if (mostCited) links.push({ rel: mostCited, dashed: false });
-    if (mostRecent && mostRecent.paper.id !== mostCited.paper.id) links.push({ rel: mostRecent, dashed: true });
+    var links = authorLatestPapers(hovered, pool).map(function (p) {
+      return { paper: p, dashed: p.status !== 'suggested' };
+    });
+    if (links.length === 0) return;
 
     var scrollRect = document.getElementById('boardScroll').getBoundingClientRect();
     var hoveredEl = document.querySelector('.card[data-id="' + cssEscape(hovered.id) + '"]');
@@ -652,7 +656,7 @@
     var hy = hRect.top + hRect.height / 2 - scrollRect.top;
 
     links.forEach(function (link) {
-      var el = document.querySelector('.card[data-id="' + cssEscape(link.rel.paper.id) + '"]');
+      var el = document.querySelector('.card[data-id="' + cssEscape(link.paper.id) + '"]');
       if (!el) return;
       var r = el.getBoundingClientRect();
       var rx = r.left + r.width / 2 - scrollRect.left;
@@ -677,18 +681,20 @@
   }
 
   function applySuggestions(paper) {
-    var candidates = relatedPapers(paper, state.papers).filter(function (rel) {
-      return rel.paper.status === 'to-read';
+    var moved = false;
+    authorLatestPapers(paper, state.papers).forEach(function (p) {
+      if (p.status === 'to-read') {
+        p.status = 'suggested';
+        moved = true;
+      }
     });
-    if (candidates.length === 0) return;
-    var mostCited = candidates.reduce(function (best, rel) {
-      return (!best || (rel.paper.citations || 0) > (best.paper.citations || 0)) ? rel : best;
-    }, null);
-    var mostRecent = candidates.reduce(function (best, rel) {
-      return (!best || (rel.paper.date || '') > (best.paper.date || '')) ? rel : best;
-    }, null);
-    mostCited.paper.status = 'suggested';
-    if (mostRecent.paper.id !== mostCited.paper.id) mostRecent.paper.status = 'suggested';
+    return moved;
+  }
+
+  function selectPaper(paper) {
+    if (!applySuggestions(paper)) return;
+    saveState();
+    renderAll();
   }
 
   function setStatus(id, status) {
