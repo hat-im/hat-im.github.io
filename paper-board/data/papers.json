@@ -5869,6 +5869,40 @@
         "meta-scheduling"
       ],
       "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2607-15135",
+      "doi": "10.48550/arXiv.2607.15135",
+      "title": "Navigating the Socio-Technical Complexity Challenge in Quantum Software Ecosystems",
+      "authorIds": [
+        "a1249",
+        "a566",
+        "a1250"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "vision",
+        "quantum-programming"
+      ],
+      "citations": 0
+    },
+    {
+      "id": "10-48550-arxiv-2607-16089",
+      "doi": "10.48550/arXiv.2607.16089",
+      "title": "SQUIRO: A Framework for Security-Aware Quantum-Classical Scheduling on Kubernetes",
+      "authorIds": [
+        "a1251",
+        "a272"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing",
+        "hpc-integration"
+      ],
+      "citations": 0
     }
   ]
 }
