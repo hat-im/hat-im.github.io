@@ -1,0 +1,17 @@
+#!/bin/sh
+# Keeps shared/last-updated.json in sync with the commit being made.
+# Runs pre-commit (not pre-push) so the update is guaranteed to land in the
+# same commit object being created, rather than racing git push's already-
+# resolved object set.
+
+set -e
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+tz=$(date +%z)
+tz_colon=$(printf '%s' "$tz" | sed -E 's/([+-][0-9]{2})([0-9]{2})/\1:\2/')
+timestamp=$(date "+%Y-%m-%dT%H:%M:%S")$tz_colon
+
+printf '{"timestamp": "%s"}\n' "$timestamp" > shared/last-updated.json
+git add shared/last-updated.json
