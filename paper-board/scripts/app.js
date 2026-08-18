@@ -480,17 +480,24 @@
     return (comma === -1 ? first : first.slice(0, comma)).trim().toLowerCase();
   }
 
-  function sortPapers(list, sortKey) {
+  function sortPapers(list, sortValue) {
     var sorted = list.slice();
-    if (sortKey === 'author') {
+    if (sortValue === 'none') return sorted;
+
+    var dash = sortValue.lastIndexOf('-');
+    var key = sortValue.slice(0, dash);
+    var dir = sortValue.slice(dash + 1);
+
+    if (key === 'author') {
       sorted.sort(function (a, b) { return firstAuthorSurname(a).localeCompare(firstAuthorSurname(b)); });
-    } else if (sortKey === 'year') {
-      sorted.sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); });
-    } else if (sortKey === 'citations') {
-      sorted.sort(function (a, b) { return (b.citations || 0) - (a.citations || 0); });
-    } else if (sortKey === 'added') {
-      sorted.sort(function (a, b) { return (b.added || '').localeCompare(a.added || ''); });
+    } else if (key === 'year') {
+      sorted.sort(function (a, b) { return (a.date || '').localeCompare(b.date || ''); });
+    } else if (key === 'citations') {
+      sorted.sort(function (a, b) { return (a.citations || 0) - (b.citations || 0); });
+    } else if (key === 'added') {
+      sorted.sort(function (a, b) { return (a.added || '').localeCompare(b.added || ''); });
     }
+    if (dir === 'desc') sorted.reverse();
     return sorted;
   }
 

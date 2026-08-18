@@ -24,11 +24,15 @@
     "read": "Nothing here."
   },
   "sortOptions": [
-    {"value": "none", "label": "Sort: default"},
-    {"value": "added", "label": "Sort: date added"},
-    {"value": "author", "label": "Sort: first author"},
-    {"value": "year", "label": "Sort: date"},
-    {"value": "citations", "label": "Sort: citations"}
+    {"value": "none", "label": "default"},
+    {"value": "added-desc", "label": "added: newest to oldest"},
+    {"value": "added-asc", "label": "added: oldest to newest"},
+    {"value": "author-asc", "label": "author: A to Z"},
+    {"value": "author-desc", "label": "author: Z to A"},
+    {"value": "year-desc", "label": "published: newest to oldest"},
+    {"value": "year-asc", "label": "published: oldest to newest"},
+    {"value": "citations-desc", "label": "citations: most to least"},
+    {"value": "citations-asc", "label": "citations: least to most"}
   ],
   "card": {
     "actions": {
