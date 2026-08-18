@@ -153,6 +153,23 @@ button.chip.venue-chip.active {
   color: var(--text-primary);
   box-shadow: inset 0 0 0 1.5px var(--border-strong);
 }
+/* Author chips carry inline collaboration colours; ring in that colour when active */
+button.chip.author-chip.active { box-shadow: inset 0 0 0 1.5px currentColor; }
+
+/* Venue type colour coding: journals blue, conferences green, preprints purple, reports amber */
+button.chip.venue-chip.venue-type-journal { background: #e3ecf6; color: #30598a; border-color: transparent; }
+button.chip.venue-chip.venue-type-conference { background: #e1f0dc; color: #3c7630; border-color: transparent; }
+button.chip.venue-chip.venue-type-preprint { background: #ece3f6; color: #5d3f86; border-color: transparent; }
+button.chip.venue-chip.venue-type-report { background: #f6eedb; color: #8a6d2f; border-color: transparent; }
+button.chip.venue-chip.venue-type-journal.active,
+button.chip.venue-chip.venue-type-conference.active,
+button.chip.venue-chip.venue-type-preprint.active,
+button.chip.venue-chip.venue-type-report.active { box-shadow: inset 0 0 0 1.5px currentColor; }
+
+.card-meta .venue-type-journal { color: #30598a; }
+.card-meta .venue-type-conference { color: #3c7630; }
+.card-meta .venue-type-preprint { color: #5d3f86; }
+.card-meta .venue-type-report { color: #8a6d2f; }
 
 button.chip.toggle-chip {
   background: transparent;

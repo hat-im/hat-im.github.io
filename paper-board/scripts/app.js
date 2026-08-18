@@ -24,7 +24,7 @@
     keywordsExpanded: false,
     authorsExpanded: false,
     venuesExpanded: false,
-    sortBy: { 'to-read': 'none', suggested: 'none', reading: 'none', read: 'none' }
+    sortBy: { 'to-read': 'added-desc', suggested: 'added-desc', reading: 'added-desc', read: 'added-desc' }
   };
 
   var AUTHOR_CHIP_MIN_COUNT = 3;
@@ -52,8 +52,13 @@
       var dirty = false;
       state.papers.forEach(function (p) {
         var seed = seedById[p.id];
-        if (seed && seed.added && p.added !== seed.added) {
+        if (!seed) return;
+        if (seed.added && p.added !== seed.added) {
           p.added = seed.added;
+          dirty = true;
+        }
+        if (seed.journalType && p.journalType !== seed.journalType) {
+          p.journalType = seed.journalType;
           dirty = true;
         }
       });
@@ -123,6 +128,60 @@
 
   function keywordColor(kw) {
     return state.keywordColors[kw] || { bg: '#eeece3', text: '#5c594f' };
+  }
+
+  // Hue-code the author chips by collaboration: authors in the same
+  // co-authorship cluster get neighbouring hues, unrelated clusters sit
+  // further apart on the wheel.
+  function computeAuthorColors() {
+    var names = filterableAuthors();
+    var nameSet = new Set(names);
+    var adj = {};
+    names.forEach(function (n) { adj[n] = new Set(); });
+    state.papers.forEach(function (p) {
+      var as = p.authors.filter(function (a) { return a !== 'et al.' && nameSet.has(a); });
+      for (var i = 0; i < as.length; i++) {
+        for (var k = i + 1; k < as.length; k++) {
+          adj[as[i]].add(as[k]);
+          adj[as[k]].add(as[i]);
+        }
+      }
+    });
+
+    var seen = new Set();
+    var components = [];
+    names.forEach(function (n) {
+      if (seen.has(n)) return;
+      var queue = [n];
+      var comp = [];
+      seen.add(n);
+      while (queue.length) {
+        var cur = queue.shift();
+        comp.push(cur);
+        adj[cur].forEach(function (nb) {
+          if (!seen.has(nb)) { seen.add(nb); queue.push(nb); }
+        });
+      }
+      components.push(comp);
+    });
+    components.sort(function (a, b) { return b.length - a.length; });
+
+    var GAP = 2; // wheel units left empty between clusters
+    var totalUnits = names.length + GAP * Math.max(0, components.length - 1);
+    var colors = {};
+    var unit = 0;
+    components.forEach(function (comp, ci) {
+      if (ci > 0) unit += GAP;
+      comp.forEach(function (n) {
+        var hue = Math.round((unit / totalUnits) * 360) % 360;
+        colors[n] = {
+          bg: 'hsl(' + hue + ', 41%, 90%)',
+          text: 'hsl(' + hue + ', 45%, 32%)'
+        };
+        unit += 1;
+      });
+    });
+    return colors;
   }
 
   function passLevel(paper) {
@@ -258,10 +317,16 @@
 
     var authorContainer = document.getElementById('authorChips');
     var authors = filterableAuthors();
+    var authorColors = computeAuthorColors();
     var authorButtons = authors.map(function (a) {
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'chip author-chip' + (state.activeAuthors.has(a) ? ' active' : '');
+      var color = authorColors[a];
+      if (color) {
+        btn.style.background = color.bg;
+        btn.style.color = color.text;
+      }
       btn.textContent = a;
       btn.addEventListener('click', function () {
         if (state.activeAuthors.has(a)) state.activeAuthors.delete(a);
@@ -277,10 +342,14 @@
 
     var venueContainer = document.getElementById('venueChips');
     var venues = filterableVenues();
+    var typeByVenue = {};
+    state.papers.forEach(function (p) {
+      if (p.journal && p.journalType) typeByVenue[p.journal] = p.journalType;
+    });
     var venueButtons = venues.map(function (v) {
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'chip venue-chip' + (state.activeVenues.has(v) ? ' active' : '');
+      btn.className = 'chip venue-chip' + (typeByVenue[v] ? ' venue-type-' + typeByVenue[v] : '') + (state.activeVenues.has(v) ? ' active' : '');
       btn.textContent = v;
       btn.addEventListener('click', function () {
         if (state.activeVenues.has(v)) state.activeVenues.delete(v);
@@ -407,13 +476,23 @@
 
     var meta = document.createElement('div');
     meta.className = 'card-meta';
-    var metaParts = [];
-    if (paper.authors.length) metaParts.push(formatAuthors(paper.authors));
-    if (paper.date) metaParts.push(formatDate(paper.date));
-    if (paper.journal) metaParts.push(paper.journal);
-    if (typeof paper.citations === 'number') metaParts.push(fmt(STR.card.citationsSuffixTemplate, { n: paper.citations }));
-    meta.textContent = metaParts.join(' · ');
-    meta.title = metaParts.join(' · ');
+    var metaItems = [];
+    if (paper.authors.length) metaItems.push({ text: formatAuthors(paper.authors) });
+    if (paper.date) metaItems.push({ text: formatDate(paper.date) });
+    if (paper.journal) metaItems.push({ text: paper.journal, cls: 'venue' + (paper.journalType ? ' venue-type-' + paper.journalType : '') });
+    if (typeof paper.citations === 'number') metaItems.push({ text: fmt(STR.card.citationsSuffixTemplate, { n: paper.citations }) });
+    metaItems.forEach(function (item, i) {
+      if (i > 0) meta.appendChild(document.createTextNode(' · '));
+      if (item.cls) {
+        var span = document.createElement('span');
+        span.className = item.cls;
+        span.textContent = item.text;
+        meta.appendChild(span);
+      } else {
+        meta.appendChild(document.createTextNode(item.text));
+      }
+    });
+    meta.title = metaItems.map(function (item) { return item.text; }).join(' · ');
     card.appendChild(meta);
 
     if (paper.status === 'reading' || paper.status === 'read') {
@@ -843,7 +922,8 @@
         title: p.title,
         authors: p.authorIds.map(function (id) { return authors[id]; }),
         date: p.date,
-        journal: p.journalId ? journals[p.journalId] : '',
+        journal: p.journalId ? journals[p.journalId].name : '',
+        journalType: p.journalId ? journals[p.journalId].type : '',
         keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
         status: 'to-read',
         citations: p.citations,

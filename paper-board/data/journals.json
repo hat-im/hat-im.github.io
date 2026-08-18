@@ -1,117 +1,462 @@
 {
-  "j1": "ACM Computing Surveys",
-  "j2": "ACM International Conference for High Performance Computing, Networking, Storage and Analysis",
-  "j3": "ACM International Conference on Architectural Support for Programming Languages and Operating Systems",
-  "j4": "ACM International Symposium on Computer Architecture",
-  "j5": "ACM International Symposium on Physical Design",
-  "j6": "ACM Journal on Emerging Technologies in Computing Systems",
-  "j7": "ACM SIGACT News",
-  "j8": "ACM Symposium on Theory of Computing",
-  "j9": "ACM Transactions on Intelligent Systems and Technology",
-  "j10": "ACM Transactions on Programming Languages",
-  "j11": "ACM Transactions on Quantum Computing",
-  "j12": "ACM Transactions on Software Engineering and Methodology",
-  "j13": "ACM/IEEE Annual International Symposium on Computer Architecture",
-  "j14": "ACS Energy Letters",
-  "j15": "Advanced Quantum Technologies",
-  "j16": "Algorithms",
-  "j17": "Computing in Science & Engineering",
-  "j18": "Cryptology ePrint Archive",
-  "j19": "EPJ Quantum Technology",
-  "j20": "Entropy",
-  "j21": "Euro-Par 2003 Parallel Processing",
-  "j22": "Euromicro International Conference on Parallel, Distributed and Network-Based Processing",
-  "j23": "Frontiers of Physics",
-  "j24": "Future Generation Computer Systems",
-  "j25": "IEEE Access",
-  "j26": "IEEE International Conference on Cloud Computing",
-  "j27": "IEEE International Conference on Cluster Computing",
-  "j28": "IEEE International Conference on Quantum Computing and Engineering",
-  "j29": "IEEE International Parallel and Distributed Processing Symposium",
-  "j30": "IEEE International Symposium on High-Performance Computer Architecture",
-  "j31": "IEEE International Symposium on Information Theory",
-  "j32": "IEEE International Symposium on Parallel and Distributed Processing",
-  "j33": "IEEE Micro",
-  "j34": "IEEE Symposium on Foundations of Computer Science",
-  "j35": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
-  "j36": "IEEE Transactions on Computers",
-  "j37": "IEEE Transactions on Parallel and Distributed Systems",
-  "j38": "IEEE Transactions on Quantum Engineering",
-  "j39": "IEEE/ACM International Conference on Computer Aided Design",
-  "j40": "IEEE/ACM International Conference on Software Engineering",
-  "j41": "IEEE/ACM International Symposium on Code Generation and Optimization",
-  "j42": "IEEE/ACM International Symposium on Microarchitecture",
-  "j43": "IEEE/ACM International Workshop on Quantum Computing Software",
-  "j44": "IEEE/CVF conference on computer vision and pattern recognition",
-  "j45": "IEEE/IFIP International Conference on Dependable Systems and Networks Workshops",
-  "j46": "ISC High Performance",
-  "j47": "Information Processing Letters",
-  "j48": "Intelligent Computing",
-  "j49": "International Conference for High Performance Computing, Networking, Storage, and Analysis",
-  "j50": "International Conference on Parallel Architectures and Compilation Techniques",
-  "j51": "International Conference on Quantum Communications, Networking, and Computing",
-  "j52": "International Conference on Selected Areas in Cryptography",
-  "j53": "International Conference on the Theory and Application of Cryptology and Information Security",
-  "j54": "International Parallel and Distributed Processing Symposium",
-  "j55": "International Symposium on High-Performance Parallel and Distributed Computing",
-  "j56": "International Symposium on Information Theory and its Applications",
-  "j57": "International Workshop on Post-Quantum Cryptography",
-  "j58": "International conference on Machine learning",
-  "j59": "Job Scheduling Strategies for Parallel Processing",
-  "j60": "Journal of Chemical Theory and Computation",
-  "j61": "Journal of Open Source Software",
-  "j62": "Latin American symposium on Theoretical Informatics",
-  "j63": "Lecture Notes in Computer Science",
-  "j64": "Nature",
-  "j65": "Nature Computational Science",
-  "j66": "Nature Reviews Physics",
-  "j67": "New Journal of Physics",
-  "j68": "PRACE-6IP TR",
-  "j69": "PRX Quantum",
-  "j70": "Physics Reports",
-  "j71": "Procedia computer science",
-  "j72": "Proceedings of the twenty-eighth annual ACM symposium on Theory of computing",
-  "j73": "Quantum",
-  "j74": "Quantum Information Processing",
-  "j75": "Quantum Machine Intelligence",
-  "j76": "Quantum Reports",
-  "j77": "Quantum Science and Technology",
-  "j78": "Quantum Software",
-  "j79": "Reviews of Modern Physics",
-  "j80": "SIAM Journal on Computing",
-  "j81": "SSRN",
-  "j82": "Science Advances",
-  "j83": "Scientific Reports",
-  "j84": "Software: Practice and Experience",
-  "j85": "Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region",
-  "j86": "Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
-  "j87": "The European High Performance Computing Joint Undertaking",
-  "j88": "The International Journal of High Performance Computing Applications",
-  "j89": "The Journal of Supercomputing",
-  "j90": "USDOE",
-  "j91": "USENIX Symposium on Operating Systems Design and Implementation",
-  "j92": "Workshop on Job Scheduling Strategies for Parallel Processing",
-  "j93": "Workshop on Quantum Computation, Communication, and Cryptography",
-  "j94": "Workshop on Special-purpose Hardware for Attacking Cryptographic Systems",
-  "j95": "Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis",
-  "j96": "Zenodo",
-  "j97": "arXiv e-prints",
-  "j98": "arXiv preprint",
-  "j99": "npj Drug Discovery",
-  "j100": "npj Nanophotonics",
-  "j101": "npj Quantum Information",
-  "j102": "Journal of Statistical Mechanics: Theory and Experiment",
-  "j103": "Physical Review Letters",
-  "j104": "Physical Review D",
-  "j105": "International Symposium on Parallel and Distributed Computing",
-  "j106": "Cluster Computing",
-  "j107": "Concurrency and Computation: Practice and Experience",
-  "j108": "Journal of Grid Computing",
-  "j109": "IEEE International Symposium on Cluster Computing and the Grid",
-  "j110": "ACM Mardi Gras Conference",
-  "j111": "Practice and Experience in Advanced Research Computing",
-  "j112": "EPJ Web of Conferences",
-  "j113": "IEEE International Conference on Quantum Software",
-  "j114": "IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing",
-  "j115": "European Commission"
+  "j1": {
+    "name": "ACM Computing Surveys",
+    "type": "journal"
+  },
+  "j2": {
+    "name": "ACM International Conference for High Performance Computing, Networking, Storage and Analysis",
+    "type": "conference"
+  },
+  "j3": {
+    "name": "ACM International Conference on Architectural Support for Programming Languages and Operating Systems",
+    "type": "conference"
+  },
+  "j4": {
+    "name": "ACM International Symposium on Computer Architecture",
+    "type": "conference"
+  },
+  "j5": {
+    "name": "ACM International Symposium on Physical Design",
+    "type": "conference"
+  },
+  "j6": {
+    "name": "ACM Journal on Emerging Technologies in Computing Systems",
+    "type": "journal"
+  },
+  "j7": {
+    "name": "ACM SIGACT News",
+    "type": "journal"
+  },
+  "j8": {
+    "name": "ACM Symposium on Theory of Computing",
+    "type": "conference"
+  },
+  "j9": {
+    "name": "ACM Transactions on Intelligent Systems and Technology",
+    "type": "journal"
+  },
+  "j10": {
+    "name": "ACM Transactions on Programming Languages",
+    "type": "journal"
+  },
+  "j11": {
+    "name": "ACM Transactions on Quantum Computing",
+    "type": "journal"
+  },
+  "j12": {
+    "name": "ACM Transactions on Software Engineering and Methodology",
+    "type": "journal"
+  },
+  "j13": {
+    "name": "ACM/IEEE Annual International Symposium on Computer Architecture",
+    "type": "conference"
+  },
+  "j14": {
+    "name": "ACS Energy Letters",
+    "type": "journal"
+  },
+  "j15": {
+    "name": "Advanced Quantum Technologies",
+    "type": "journal"
+  },
+  "j16": {
+    "name": "Algorithms",
+    "type": "journal"
+  },
+  "j17": {
+    "name": "Computing in Science & Engineering",
+    "type": "journal"
+  },
+  "j18": {
+    "name": "Cryptology ePrint Archive",
+    "type": "preprint"
+  },
+  "j19": {
+    "name": "EPJ Quantum Technology",
+    "type": "journal"
+  },
+  "j20": {
+    "name": "Entropy",
+    "type": "journal"
+  },
+  "j21": {
+    "name": "Euro-Par 2003 Parallel Processing",
+    "type": "conference"
+  },
+  "j22": {
+    "name": "Euromicro International Conference on Parallel, Distributed and Network-Based Processing",
+    "type": "conference"
+  },
+  "j23": {
+    "name": "Frontiers of Physics",
+    "type": "journal"
+  },
+  "j24": {
+    "name": "Future Generation Computer Systems",
+    "type": "journal"
+  },
+  "j25": {
+    "name": "IEEE Access",
+    "type": "journal"
+  },
+  "j26": {
+    "name": "IEEE International Conference on Cloud Computing",
+    "type": "conference"
+  },
+  "j27": {
+    "name": "IEEE International Conference on Cluster Computing",
+    "type": "conference"
+  },
+  "j28": {
+    "name": "IEEE International Conference on Quantum Computing and Engineering",
+    "type": "conference"
+  },
+  "j29": {
+    "name": "IEEE International Parallel and Distributed Processing Symposium",
+    "type": "conference"
+  },
+  "j30": {
+    "name": "IEEE International Symposium on High-Performance Computer Architecture",
+    "type": "conference"
+  },
+  "j31": {
+    "name": "IEEE International Symposium on Information Theory",
+    "type": "conference"
+  },
+  "j32": {
+    "name": "IEEE International Symposium on Parallel and Distributed Processing",
+    "type": "conference"
+  },
+  "j33": {
+    "name": "IEEE Micro",
+    "type": "journal"
+  },
+  "j34": {
+    "name": "IEEE Symposium on Foundations of Computer Science",
+    "type": "conference"
+  },
+  "j35": {
+    "name": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+    "type": "journal"
+  },
+  "j36": {
+    "name": "IEEE Transactions on Computers",
+    "type": "journal"
+  },
+  "j37": {
+    "name": "IEEE Transactions on Parallel and Distributed Systems",
+    "type": "journal"
+  },
+  "j38": {
+    "name": "IEEE Transactions on Quantum Engineering",
+    "type": "journal"
+  },
+  "j39": {
+    "name": "IEEE/ACM International Conference on Computer Aided Design",
+    "type": "conference"
+  },
+  "j40": {
+    "name": "IEEE/ACM International Conference on Software Engineering",
+    "type": "conference"
+  },
+  "j41": {
+    "name": "IEEE/ACM International Symposium on Code Generation and Optimization",
+    "type": "conference"
+  },
+  "j42": {
+    "name": "IEEE/ACM International Symposium on Microarchitecture",
+    "type": "conference"
+  },
+  "j43": {
+    "name": "IEEE/ACM International Workshop on Quantum Computing Software",
+    "type": "conference"
+  },
+  "j44": {
+    "name": "IEEE/CVF conference on computer vision and pattern recognition",
+    "type": "conference"
+  },
+  "j45": {
+    "name": "IEEE/IFIP International Conference on Dependable Systems and Networks Workshops",
+    "type": "conference"
+  },
+  "j46": {
+    "name": "ISC High Performance",
+    "type": "conference"
+  },
+  "j47": {
+    "name": "Information Processing Letters",
+    "type": "journal"
+  },
+  "j48": {
+    "name": "Intelligent Computing",
+    "type": "journal"
+  },
+  "j49": {
+    "name": "International Conference for High Performance Computing, Networking, Storage, and Analysis",
+    "type": "conference"
+  },
+  "j50": {
+    "name": "International Conference on Parallel Architectures and Compilation Techniques",
+    "type": "conference"
+  },
+  "j51": {
+    "name": "International Conference on Quantum Communications, Networking, and Computing",
+    "type": "conference"
+  },
+  "j52": {
+    "name": "International Conference on Selected Areas in Cryptography",
+    "type": "conference"
+  },
+  "j53": {
+    "name": "International Conference on the Theory and Application of Cryptology and Information Security",
+    "type": "conference"
+  },
+  "j54": {
+    "name": "International Parallel and Distributed Processing Symposium",
+    "type": "conference"
+  },
+  "j55": {
+    "name": "International Symposium on High-Performance Parallel and Distributed Computing",
+    "type": "conference"
+  },
+  "j56": {
+    "name": "International Symposium on Information Theory and its Applications",
+    "type": "conference"
+  },
+  "j57": {
+    "name": "International Workshop on Post-Quantum Cryptography",
+    "type": "conference"
+  },
+  "j58": {
+    "name": "International conference on Machine learning",
+    "type": "conference"
+  },
+  "j59": {
+    "name": "Job Scheduling Strategies for Parallel Processing",
+    "type": "conference"
+  },
+  "j60": {
+    "name": "Journal of Chemical Theory and Computation",
+    "type": "journal"
+  },
+  "j61": {
+    "name": "Journal of Open Source Software",
+    "type": "journal"
+  },
+  "j62": {
+    "name": "Latin American symposium on Theoretical Informatics",
+    "type": "conference"
+  },
+  "j63": {
+    "name": "Lecture Notes in Computer Science",
+    "type": "conference"
+  },
+  "j64": {
+    "name": "Nature",
+    "type": "journal"
+  },
+  "j65": {
+    "name": "Nature Computational Science",
+    "type": "journal"
+  },
+  "j66": {
+    "name": "Nature Reviews Physics",
+    "type": "journal"
+  },
+  "j67": {
+    "name": "New Journal of Physics",
+    "type": "journal"
+  },
+  "j68": {
+    "name": "PRACE-6IP TR",
+    "type": "report"
+  },
+  "j69": {
+    "name": "PRX Quantum",
+    "type": "journal"
+  },
+  "j70": {
+    "name": "Physics Reports",
+    "type": "journal"
+  },
+  "j71": {
+    "name": "Procedia computer science",
+    "type": "conference"
+  },
+  "j72": {
+    "name": "Proceedings of the twenty-eighth annual ACM symposium on Theory of computing",
+    "type": "conference"
+  },
+  "j73": {
+    "name": "Quantum",
+    "type": "journal"
+  },
+  "j74": {
+    "name": "Quantum Information Processing",
+    "type": "journal"
+  },
+  "j75": {
+    "name": "Quantum Machine Intelligence",
+    "type": "journal"
+  },
+  "j76": {
+    "name": "Quantum Reports",
+    "type": "journal"
+  },
+  "j77": {
+    "name": "Quantum Science and Technology",
+    "type": "journal"
+  },
+  "j78": {
+    "name": "Quantum Software",
+    "type": "journal"
+  },
+  "j79": {
+    "name": "Reviews of Modern Physics",
+    "type": "journal"
+  },
+  "j80": {
+    "name": "SIAM Journal on Computing",
+    "type": "journal"
+  },
+  "j81": {
+    "name": "SSRN",
+    "type": "preprint"
+  },
+  "j82": {
+    "name": "Science Advances",
+    "type": "journal"
+  },
+  "j83": {
+    "name": "Scientific Reports",
+    "type": "journal"
+  },
+  "j84": {
+    "name": "Software: Practice and Experience",
+    "type": "journal"
+  },
+  "j85": {
+    "name": "Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region",
+    "type": "conference"
+  },
+  "j86": {
+    "name": "Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+    "type": "conference"
+  },
+  "j87": {
+    "name": "The European High Performance Computing Joint Undertaking",
+    "type": "report"
+  },
+  "j88": {
+    "name": "The International Journal of High Performance Computing Applications",
+    "type": "journal"
+  },
+  "j89": {
+    "name": "The Journal of Supercomputing",
+    "type": "journal"
+  },
+  "j90": {
+    "name": "USDOE",
+    "type": "report"
+  },
+  "j91": {
+    "name": "USENIX Symposium on Operating Systems Design and Implementation",
+    "type": "conference"
+  },
+  "j92": {
+    "name": "Workshop on Job Scheduling Strategies for Parallel Processing",
+    "type": "conference"
+  },
+  "j93": {
+    "name": "Workshop on Quantum Computation, Communication, and Cryptography",
+    "type": "conference"
+  },
+  "j94": {
+    "name": "Workshop on Special-purpose Hardware for Attacking Cryptographic Systems",
+    "type": "conference"
+  },
+  "j95": {
+    "name": "Workshops of the International Conference for High Performance Computing, Networking, Storage and Analysis",
+    "type": "conference"
+  },
+  "j96": {
+    "name": "Zenodo",
+    "type": "preprint"
+  },
+  "j97": {
+    "name": "arXiv e-prints",
+    "type": "preprint"
+  },
+  "j98": {
+    "name": "arXiv preprint",
+    "type": "preprint"
+  },
+  "j99": {
+    "name": "npj Drug Discovery",
+    "type": "journal"
+  },
+  "j100": {
+    "name": "npj Nanophotonics",
+    "type": "journal"
+  },
+  "j101": {
+    "name": "npj Quantum Information",
+    "type": "journal"
+  },
+  "j102": {
+    "name": "Journal of Statistical Mechanics: Theory and Experiment",
+    "type": "journal"
+  },
+  "j103": {
+    "name": "Physical Review Letters",
+    "type": "journal"
+  },
+  "j104": {
+    "name": "Physical Review D",
+    "type": "journal"
+  },
+  "j105": {
+    "name": "International Symposium on Parallel and Distributed Computing",
+    "type": "conference"
+  },
+  "j106": {
+    "name": "Cluster Computing",
+    "type": "journal"
+  },
+  "j107": {
+    "name": "Concurrency and Computation: Practice and Experience",
+    "type": "journal"
+  },
+  "j108": {
+    "name": "Journal of Grid Computing",
+    "type": "journal"
+  },
+  "j109": {
+    "name": "IEEE International Symposium on Cluster Computing and the Grid",
+    "type": "conference"
+  },
+  "j110": {
+    "name": "ACM Mardi Gras Conference",
+    "type": "conference"
+  },
+  "j111": {
+    "name": "Practice and Experience in Advanced Research Computing",
+    "type": "conference"
+  },
+  "j112": {
+    "name": "EPJ Web of Conferences",
+    "type": "conference"
+  },
+  "j113": {
+    "name": "IEEE International Conference on Quantum Software",
+    "type": "conference"
+  },
+  "j114": {
+    "name": "IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing",
+    "type": "conference"
+  },
+  "j115": {
+    "name": "European Commission",
+    "type": "report"
+  }
 }

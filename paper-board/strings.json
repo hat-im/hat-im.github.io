@@ -24,7 +24,7 @@
     "read": "Nothing here."
   },
   "sortOptions": [
-    {"value": "none", "label": "default"},
+    {"value": "none", "label": "unsorted"},
     {"value": "added-desc", "label": "added: newest to oldest"},
     {"value": "added-asc", "label": "added: oldest to newest"},
     {"value": "author-asc", "label": "author: A to Z"},
