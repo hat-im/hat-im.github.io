@@ -6506,6 +6506,708 @@
       ],
       "citations": 15,
       "added": "2026-08-19"
+    },
+    {
+      "id": "10-48550-arxiv-2604-12841",
+      "doi": "10.48550/arXiv.2604.12841",
+      "title": "Fast and accurate AI-based pre-decoders for surface codes",
+      "authorIds": [
+        "a1352",
+        "a1353",
+        "a1354",
+        "a1355",
+        "a1356"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-machine-learning"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1145-3797968",
+      "doi": "10.1145/3797968",
+      "title": "Benchmarking fault-tolerant quantum computing hardware via QLOPS",
+      "authorIds": [
+        "a1357",
+        "a1358",
+        "a150"
+      ],
+      "date": "2026-03",
+      "journalId": "j11",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance",
+        "qubit-hardware"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2607-25941",
+      "doi": "10.48550/arXiv.2607.25941",
+      "title": "Sampling hard circuits with verifiably high fidelity",
+      "authorIds": [
+        "a1359",
+        "a1360",
+        "a1361",
+        "a267",
+        "a1362",
+        "a827"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-ynxb-p2xq",
+      "doi": "10.1103/ynxb-p2xq",
+      "title": "Phase estimation with partially randomized time evolution",
+      "authorIds": [
+        "a1363",
+        "a1364",
+        "a1365",
+        "a1366",
+        "a1367",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j69",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-chemistry",
+        "quantum-simulation"
+      ],
+      "citations": 2,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1002-qua-26853",
+      "doi": "10.1002/qua.26853",
+      "title": "State preparation and evolution in quantum computing: a perspective from Hamiltonian moments",
+      "authorIds": [
+        "a1368",
+        "a1369",
+        "a1370"
+      ],
+      "date": "2021-09",
+      "journalId": "j116",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-simulation",
+        "survey"
+      ],
+      "citations": 26,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2607-08047",
+      "doi": "10.48550/arXiv.2607.08047",
+      "title": "Nuclear Many-Body Systems as Benchmarks for Quantum Computing",
+      "authorIds": [
+        "a1371",
+        "a1295",
+        "a1372",
+        "a1110"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-simulation",
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2603-22891",
+      "doi": "10.48550/arXiv.2603.22891",
+      "title": "STAR-Magic Mutation: Even More Efficient Analog Rotation Gates for Early Fault-Tolerant Quantum Computer",
+      "authorIds": [
+        "a1373",
+        "a1374",
+        "a1375",
+        "a1376",
+        "a1377",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2603-22778",
+      "doi": "10.48550/arXiv.2603.22778",
+      "title": "Enabling Chemically Accurate Quantum Phase Estimation in the Early Fault-Tolerant Regime",
+      "authorIds": [
+        "a1374",
+        "a1373",
+        "a1378",
+        "a1376"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry",
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2608-01769",
+      "doi": "10.48550/arXiv.2608.01769",
+      "title": "Quantum Simulation of Nuclear Shell Model Using GCM-Based Methods on NISQ Devices",
+      "authorIds": [
+        "a1379",
+        "a1380",
+        "a1381",
+        "a1382"
+      ],
+      "date": "2026-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2606-30551",
+      "doi": "10.48550/arXiv.2606.30551",
+      "title": "Bridging the NISQ and Fault-Tolerant Regimes: Generative-ML-Assisted Quantum Selected CI for Molecular Simulations",
+      "authorIds": [
+        "a1383"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-machine-learning",
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1088-2058-9565-abf602",
+      "doi": "10.1088/2058-9565/abf602",
+      "title": "Variational Quantum Eigensolver for Approximate Diagonalization of Downfolded Hamiltonians using Generalized Unitary Coupled Cluster Ansatz",
+      "authorIds": [
+        "a1384",
+        "a1385",
+        "a1386",
+        "a1387",
+        "a1388"
+      ],
+      "date": "2021-04",
+      "journalId": "j77",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 40,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1088-1367-2630-ab867b",
+      "doi": "10.1088/1367-2630/ab867b",
+      "title": "A Non-Orthogonal Variational Quantum Eigensolver",
+      "authorIds": [
+        "a962",
+        "a990",
+        "a1389",
+        "a1390",
+        "a1391"
+      ],
+      "date": "2020-04",
+      "journalId": "j67",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 146,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-physreva-105-022417",
+      "doi": "10.1103/PhysRevA.105.022417",
+      "title": "Quantum Krylov subspace algorithms for ground and excited state energy estimation",
+      "authorIds": [
+        "a1392",
+        "a1393"
+      ],
+      "date": "2022-02",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 112,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1016-j-physletb-2025-140042",
+      "doi": "10.1016/j.physletb.2025.140042",
+      "title": "Quasiparticle pairing encoding of atomic nuclei for quantum annealing",
+      "authorIds": [
+        "a1394",
+        "a1395",
+        "a1396",
+        "a1397",
+        "a1398",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j118",
+      "keywordIds": [
+        "quantum-optimization",
+        "quantum-simulation"
+      ],
+      "citations": 4,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-yl3n-3tbf",
+      "doi": "10.1103/yl3n-3tbf",
+      "title": "Improved quasiparticle nuclear Hamiltonians for quantum computing",
+      "authorIds": [
+        "a1394",
+        "a1396"
+      ],
+      "date": "2026-07",
+      "journalId": "j119",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1038-s41534-024-00916-8",
+      "doi": "10.1038/s41534-024-00916-8",
+      "title": "Unleashed from Constrained Optimization: Quantum Computing for Quantum Chemistry Employing Generator Coordinate Inspired Method",
+      "authorIds": [
+        "a1399",
+        "a1370",
+        "a450",
+        "a1400",
+        "a1388"
+      ],
+      "date": "2024-12",
+      "journalId": "j101",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry",
+        "quantum-optimization"
+      ],
+      "citations": 6,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jpca-5c04605",
+      "doi": "10.1021/acs.jpca.5c04605",
+      "title": "Parallelized Givens Ansatz for Molecular ground-states: Bridging Accuracy and Efficiency on NISQ Platforms",
+      "authorIds": [
+        "a1401",
+        "a1402",
+        "a1403",
+        "a1404"
+      ],
+      "date": "2025-11",
+      "journalId": "j120",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 1,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-6hpp-zl5h",
+      "doi": "10.1103/6hpp-zl5h",
+      "title": "Variational Quantum Subspace Construction via Symmetry-Preserving Cost Functions",
+      "authorIds": [
+        "a1405",
+        "a1406",
+        "a1407",
+        "a1408"
+      ],
+      "date": "2025-09",
+      "journalId": "j117",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jctc-1c00091",
+      "doi": "10.1021/acs.jctc.1c00091",
+      "title": "Improved accuracy on noisy devices by non-unitary Variational Quantum Eigensolver for chemistry applications",
+      "authorIds": [
+        "a1409",
+        "a506",
+        "a1410",
+        "a1411",
+        "a1412",
+        "a827"
+      ],
+      "date": "2021-06",
+      "journalId": "j60",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 1,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jctc-9b01125",
+      "doi": "10.1021/acs.jctc.9b01125",
+      "title": "A Multireference Quantum Krylov Algorithm for Strongly Correlated Electrons",
+      "authorIds": [
+        "a1413",
+        "a1414",
+        "a1415"
+      ],
+      "date": "2020-02",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 10,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-physrevresearch-5-023200",
+      "doi": "10.1103/PhysRevResearch.5.023200",
+      "title": "Quantum algorithms for generator coordinate methods",
+      "authorIds": [
+        "a1399",
+        "a1370",
+        "a1416",
+        "a450",
+        "a1400",
+        "a827"
+      ],
+      "date": "2023-06",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 8,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jctc-3c01378",
+      "doi": "10.1021/acs.jctc.3c01378",
+      "title": "Folded Spectrum VQE : A quantum computing method for the calculation of molecular excited states",
+      "authorIds": [
+        "a1417",
+        "a1418"
+      ],
+      "date": "2024-03",
+      "journalId": "j60",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 28,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-prxquantum-2-010333",
+      "doi": "10.1103/PRXQuantum.2.010333",
+      "title": "Quantum Power Method by a Superposition of Time-Evolved States",
+      "authorIds": [
+        "a1419",
+        "a803"
+      ],
+      "date": "2021-02",
+      "journalId": "j69",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 99,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1186-s41313-021-00032-6",
+      "doi": "10.1186/s41313-021-00032-6",
+      "title": "VQE Method: A Short Survey and Recent Developments",
+      "authorIds": [
+        "a1420",
+        "a1370",
+        "a1421",
+        "a14"
+      ],
+      "date": "2022-01",
+      "journalId": "j122",
+      "keywordIds": [
+        "survey",
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 229,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jctc-3c00068",
+      "doi": "10.1021/acs.jctc.3c00068",
+      "title": "Quantum circuit matrix product state ansatz for large-scale simulations of molecules",
+      "authorIds": [
+        "a228",
+        "a466",
+        "a457",
+        "a1422"
+      ],
+      "date": "2023-07",
+      "journalId": "j60",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry",
+        "quantum-circuits"
+      ],
+      "citations": 13,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1038-s41598-022-12324-z",
+      "doi": "10.1038/s41598-022-12324-z",
+      "title": "Chemistry beyond the Hartree-Fock limit via quantum computed moments",
+      "authorIds": [
+        "a1423",
+        "a1424",
+        "a1425",
+        "a1426"
+      ],
+      "date": "2022-05",
+      "journalId": "j83",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-algorithms"
+      ],
+      "citations": 23,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jctc-3c01325",
+      "doi": "10.1021/acs.jctc.3c01325",
+      "title": "Natural orbitals and sparsity of quantum mutual information",
+      "authorIds": [
+        "a1427",
+        "a1410",
+        "a1428"
+      ],
+      "date": "2024-04",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-algorithms"
+      ],
+      "citations": 12,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-prxquantum-2-020310",
+      "doi": "10.1103/PRXQuantum.2.020310",
+      "title": "qubit-ADAPT-VQE: An adaptive algorithm for constructing hardware-efficient ansatze on a quantum processor",
+      "authorIds": [
+        "a1429",
+        "a1430",
+        "a1431",
+        "a1432",
+        "a1433",
+        "a827"
+      ],
+      "date": "2021-04",
+      "journalId": "j69",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry",
+        "quantum-circuits"
+      ],
+      "citations": 394,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2406-11699",
+      "doi": "10.48550/arXiv.2406.11699",
+      "title": "Circuit-Efficient Qubit-Excitation-based Variational Quantum Eigensolver",
+      "authorIds": [
+        "a1434",
+        "a466",
+        "a457",
+        "a1422"
+      ],
+      "date": "2024-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-22331-q-2021-06-10-473",
+      "doi": "10.22331/q-2021-06-10-473",
+      "title": "Variational quantum solver employing the PDS energy functional",
+      "authorIds": [
+        "a1370",
+        "a1388"
+      ],
+      "date": "2021-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-algorithms"
+      ],
+      "citations": 16,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2509-04955",
+      "doi": "10.48550/arXiv.2509.04955",
+      "title": "Scalable parallel simulation of quantum circuits on CPU and GPU systems",
+      "authorIds": [
+        "a1435",
+        "a228",
+        "a457"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "gpu-acceleration",
+        "scalability",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1063-5-0030688",
+      "doi": "10.1063/5.0030688",
+      "title": "Quantum simulations employing connected moments expansions",
+      "authorIds": [
+        "a1388",
+        "a1370"
+      ],
+      "date": "2020-11",
+      "journalId": "j123",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 26,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-physrevapplied-16-034003",
+      "doi": "10.1103/PhysRevApplied.16.034003",
+      "title": "Preserving Symmetries for Variational Quantum Eigensolvers in the Presence of Noise",
+      "authorIds": [
+        "a1431",
+        "a1436",
+        "a1437",
+        "a1433",
+        "a1438",
+        "a827"
+      ],
+      "date": "2021-09",
+      "journalId": "j124",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 2,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jpclett-1c02153",
+      "doi": "10.1021/acs.jpclett.1c02153",
+      "title": "A Quantum Algorithm to Calculate Band Structure at the EOM Level of Theory",
+      "authorIds": [
+        "a228",
+        "a466",
+        "a457",
+        "a1422"
+      ],
+      "date": "2021-09",
+      "journalId": "j125",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 45,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1103-physreva-101-032311",
+      "doi": "10.1103/PhysRevA.101.032311",
+      "title": "Collective optimization for variational quantum eigensolvers",
+      "authorIds": [
+        "a1439",
+        "a1440"
+      ],
+      "date": "2020-03",
+      "journalId": "j117",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 22,
+      "added": "2026-08-29"
+    },
+    {
+      "id": "10-1021-acs-jctc-0c00666",
+      "doi": "10.1021/acs.jctc.0c00666",
+      "title": "Efficient step-merged quantum imaginary time evolution algorithm for quantum chemistry",
+      "authorIds": [
+        "a1441",
+        "a1358",
+        "a1442",
+        "a1443",
+        "a1444",
+        "a827"
+      ],
+      "date": "2020-09",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 80,
+      "added": "2026-08-29"
     }
   ]
 }

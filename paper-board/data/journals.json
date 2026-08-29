@@ -458,5 +458,45 @@
   "j115": {
     "name": "European Commission",
     "type": "report"
+  },
+  "j116": {
+    "name": "International Journal of Quantum Chemistry",
+    "type": "journal"
+  },
+  "j117": {
+    "name": "Physical Review A",
+    "type": "journal"
+  },
+  "j118": {
+    "name": "Physics Letters B",
+    "type": "journal"
+  },
+  "j119": {
+    "name": "Physical Review C",
+    "type": "journal"
+  },
+  "j120": {
+    "name": "The Journal of Physical Chemistry A",
+    "type": "journal"
+  },
+  "j121": {
+    "name": "Physical Review Research",
+    "type": "journal"
+  },
+  "j122": {
+    "name": "Materials Theory",
+    "type": "journal"
+  },
+  "j123": {
+    "name": "The Journal of Chemical Physics",
+    "type": "journal"
+  },
+  "j124": {
+    "name": "Physical Review Applied",
+    "type": "journal"
+  },
+  "j125": {
+    "name": "The Journal of Physical Chemistry Letters",
+    "type": "journal"
   }
 }
