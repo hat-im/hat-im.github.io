@@ -7208,6 +7208,27 @@
       ],
       "citations": 80,
       "added": "2026-08-29"
+    },
+    {
+      "id": "10-48550-arxiv-2507-12323",
+      "doi": "10.48550/arXiv.2507.12323",
+      "title": "Tailored Quantum Device Calibration with Statistical Model Checking",
+      "authorIds": [
+        "a1445",
+        "a1446",
+        "a1447",
+        "a802",
+        "a1448",
+        "a827"
+      ],
+      "date": "2025-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "qubit-hardware",
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
     }
   ]
 }
