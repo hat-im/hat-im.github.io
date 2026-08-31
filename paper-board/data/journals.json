@@ -510,5 +510,21 @@
   "j128": {
     "name": "Advances in Neural Information Processing Systems",
     "type": "conference"
+  },
+  "j129": {
+    "name": "KI - Künstliche Intelligenz",
+    "type": "journal"
+  },
+  "j130": {
+    "name": "Nature Physics",
+    "type": "journal"
+  },
+  "j131": {
+    "name": "Physical Review X",
+    "type": "journal"
+  },
+  "j132": {
+    "name": "International Journal of Quantum Information",
+    "type": "journal"
   }
 }

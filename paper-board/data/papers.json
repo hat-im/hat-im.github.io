@@ -7299,6 +7299,774 @@
       ],
       "citations": 0,
       "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2403-12205",
+      "doi": "10.48550/arXiv.2403.12205",
+      "title": "BACQ -- Application-oriented Benchmarks for Quantum Computing",
+      "authorIds": [
+        "a1461",
+        "a1462",
+        "a1463",
+        "a1464",
+        "a1465",
+        "a827"
+      ],
+      "date": "2024-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "vision",
+        "benchmarking"
+      ],
+      "citations": 1,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2402-08985",
+      "doi": "10.48550/arXiv.2402.08985",
+      "title": "Quantum Algorithm Exploration using Application-Oriented Performance Benchmarks",
+      "authorIds": [
+        "a477",
+        "a277",
+        "a1478",
+        "a1479",
+        "a1480",
+        "a827"
+      ],
+      "date": "2024-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-algorithms"
+      ],
+      "citations": 3,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2310-13637",
+      "doi": "10.48550/arXiv.2310.13637",
+      "title": "Application Performance Benchmarks for Quantum Computers",
+      "authorIds": [
+        "a1488",
+        "a1489",
+        "a1490",
+        "a1491",
+        "a1492"
+      ],
+      "date": "2023-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1103-physrevlett-129-150502",
+      "doi": "10.1103/PhysRevLett.129.150502",
+      "title": "Scalable Randomized Benchmarking of Quantum Computers Using Mirror Circuits",
+      "authorIds": [
+        "a1493",
+        "a1494",
+        "a1495",
+        "a1496",
+        "a1497",
+        "a827"
+      ],
+      "date": "2022-10",
+      "journalId": "j103",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 78,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1007-s11128-023-04154-3",
+      "doi": "10.1007/s11128-023-04154-3",
+      "title": "A user-centric quantum benchmarking test suite and evaluation framework",
+      "authorIds": [
+        "a995",
+        "a1204",
+        "a1499",
+        "a1500"
+      ],
+      "date": "2023-10",
+      "journalId": "j74",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce60285-2024-00113",
+      "doi": "10.1109/QCE60285.2024.00113",
+      "title": "Extending the Q-Score to an Application-Level Quantum Metric Framework",
+      "authorIds": [
+        "a1501",
+        "a1502",
+        "a1503",
+        "a1504",
+        "a1505"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 3,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2504-12575",
+      "doi": "10.48550/arXiv.2504.12575",
+      "title": "Featuremetric benchmarking: Quantum computer benchmarks based on circuit features",
+      "authorIds": [
+        "a1493",
+        "a1506",
+        "a1507",
+        "a1508",
+        "a1494",
+        "a827"
+      ],
+      "date": "2025-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1088-2058-9565-ae4269",
+      "doi": "10.1088/2058-9565/ae4269",
+      "title": "Benchmarking quantum computers: towards a standard performance evaluation approach",
+      "authorIds": [
+        "a1509",
+        "a1510",
+        "a1511",
+        "a1512"
+      ],
+      "date": "2026-02",
+      "journalId": "j77",
+      "keywordIds": [
+        "benchmarking",
+        "survey"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2508-05754",
+      "doi": "10.48550/arXiv.2508.05754",
+      "title": "Benchmarking quantum computers with any quantum algorithm",
+      "authorIds": [
+        "a1494",
+        "a1508",
+        "a1513",
+        "a1495",
+        "a1514",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "scalability"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qsw55613-2022-00017",
+      "doi": "10.1109/QSW55613.2022.00017",
+      "title": "Evaluating the Q-score of Quantum Annealers",
+      "authorIds": [
+        "a1501",
+        "a1516",
+        "a1502",
+        "a1503",
+        "a1504"
+      ],
+      "date": "2022-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 17,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1007-s13218-024-00864-7",
+      "doi": "10.1007/s13218-024-00864-7",
+      "title": "Benchmarking Quantum Generative Learning: A Study on Scalability and Noise Resilience using QUARK",
+      "authorIds": [
+        "a408",
+        "a1517",
+        "a1518",
+        "a1519",
+        "a1520",
+        "a827"
+      ],
+      "date": "2024-08",
+      "journalId": "j129",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-machine-learning"
+      ],
+      "citations": 9,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce57702-2023-00061",
+      "doi": "10.1109/QCE57702.2023.00061",
+      "title": "Application-Oriented Benchmarking of Quantum Generative Learning Using QUARK",
+      "authorIds": [
+        "a408",
+        "a1518",
+        "a1519",
+        "a1521",
+        "a1522",
+        "a827"
+      ],
+      "date": "2023-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-machine-learning"
+      ],
+      "citations": 6,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2511-02134",
+      "doi": "10.48550/arXiv.2511.02134",
+      "title": "Software for Creating Scalable Benchmarks from Quantum Algorithms",
+      "authorIds": [
+        "a1523",
+        "a1494",
+        "a1524",
+        "a560",
+        "a477",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "scalability"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-22331-q-2021-03-22-415",
+      "doi": "10.22331/Q-2021-03-22-415",
+      "title": "Application-Motivated, Holistic Benchmarking of a Full Quantum Computing Stack",
+      "authorIds": [
+        "a521",
+        "a689",
+        "a1525",
+        "a210"
+      ],
+      "date": "2021-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "benchmarking",
+        "compilation"
+      ],
+      "citations": 43,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1145-3550488",
+      "doi": "10.1145/3550488",
+      "title": "QASMBench: A Low-Level Quantum Benchmark Suite for NISQ Evaluation and Simulation",
+      "authorIds": [
+        "a450",
+        "a1526",
+        "a1527",
+        "a1528"
+      ],
+      "date": "2022-07",
+      "journalId": "j11",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-algorithms"
+      ],
+      "citations": 177,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1103-physreva-103-062412",
+      "doi": "10.1103/PhysRevA.103.062412",
+      "title": "Random circuit block-encoded matrix and a proposal of quantum LINPACK benchmark",
+      "authorIds": [
+        "a1529",
+        "a1530"
+      ],
+      "date": "2021-06",
+      "journalId": "j117",
+      "keywordIds": [
+        "benchmarking",
+        "hpc-integration"
+      ],
+      "citations": 35,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1007-s11128-023-04184-x",
+      "doi": "10.1007/s11128-023-04184-x",
+      "title": "Evaluating three levels of quantum metrics on quantum-inspire hardware",
+      "authorIds": [
+        "a1501",
+        "a1502",
+        "a1531",
+        "a1503",
+        "a1504"
+      ],
+      "date": "2023-12",
+      "journalId": "j74",
+      "keywordIds": [
+        "benchmarking",
+        "qubit-hardware"
+      ],
+      "citations": 5,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2503-04905",
+      "doi": "10.48550/arXiv.2503.04905",
+      "title": "Systematic benchmarking of quantum computers: status and recommendations",
+      "authorIds": [
+        "a1520",
+        "a534",
+        "a1532",
+        "a1533",
+        "a1477",
+        "a827"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "survey"
+      ],
+      "citations": 2,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-hpca53966-2022-00050",
+      "doi": "10.1109/HPCA53966.2022.00050",
+      "title": "SupermarQ: A Scalable Quantum Benchmark Suite",
+      "authorIds": [
+        "a1540",
+        "a279",
+        "a1541",
+        "a614",
+        "a693",
+        "a827"
+      ],
+      "date": "2022-04",
+      "journalId": "j30",
+      "keywordIds": [
+        "benchmarking",
+        "architecture"
+      ],
+      "citations": 137,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2103-17193",
+      "doi": "10.48550/arXiv.2103.17193",
+      "title": "QPack: Quantum Approximate Optimization Algorithms as universal benchmark for quantum computers",
+      "authorIds": [
+        "a1546",
+        "a1547",
+        "a1548"
+      ],
+      "date": "2021-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 1,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-3390-e24101467",
+      "doi": "10.3390/e24101467",
+      "title": "SoK: Benchmarking the Performance of a Quantum Computer",
+      "authorIds": [
+        "a758",
+        "a1549",
+        "a1550"
+      ],
+      "date": "2022-10",
+      "journalId": "j20",
+      "keywordIds": [
+        "benchmarking",
+        "survey"
+      ],
+      "citations": 24,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1038-s41567-021-01409-7",
+      "doi": "10.1038/s41567-021-01409-7",
+      "title": "Measuring the capabilities of quantum computers",
+      "authorIds": [
+        "a1493",
+        "a1495",
+        "a1498",
+        "a1496",
+        "a1497"
+      ],
+      "date": "2021-12",
+      "journalId": "j130",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 149,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2205-12142",
+      "doi": "10.48550/arXiv.2205.12142",
+      "title": "QPack Scores: Quantitative performance metrics for application-oriented quantum computer benchmarking",
+      "authorIds": [
+        "a1551",
+        "a1546",
+        "a1547",
+        "a1548"
+      ],
+      "date": "2022-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 6,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1103-prxquantum-5-030334",
+      "doi": "10.1103/PRXQuantum.5.030334",
+      "title": "Fully Scalable Randomized Benchmarking Without Motion Reversal",
+      "authorIds": [
+        "a1552",
+        "a1553",
+        "a1497",
+        "a1391",
+        "a1493"
+      ],
+      "date": "2024-08",
+      "journalId": "j69",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 12,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1103-qt55-7d6r",
+      "doi": "10.1103/qt55-7d6r",
+      "title": "AppQSim: Application-oriented benchmarks for Hamiltonian simulation on a quantum computer",
+      "authorIds": [
+        "a1554",
+        "a1555"
+      ],
+      "date": "2025-11",
+      "journalId": "j121",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-simulation"
+      ],
+      "citations": 4,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce53715-2022-00042",
+      "doi": "10.1109/QCE53715.2022.00042",
+      "title": "QUARK: A Framework for Quantum Computing Application Benchmarking",
+      "authorIds": [
+        "a1556",
+        "a1519",
+        "a1557",
+        "a1522",
+        "a479"
+      ],
+      "date": "2022-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 52,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce57702-2023-00084",
+      "doi": "10.1109/QCE57702.2023.00084",
+      "title": "Defining Best Practices for Quantum Benchmarks",
+      "authorIds": [
+        "a839",
+        "a810",
+        "a375",
+        "a84",
+        "a550",
+        "a827"
+      ],
+      "date": "2023-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "survey"
+      ],
+      "citations": 12,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1103-physrevx-13-041030",
+      "doi": "10.1103/PhysRevX.13.041030",
+      "title": "Demonstrating Scalable Randomized Benchmarking of Universal Gate Sets",
+      "authorIds": [
+        "a1552",
+        "a1560",
+        "a1561",
+        "a1562",
+        "a1563",
+        "a827"
+      ],
+      "date": "2023-11",
+      "journalId": "j131",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 21,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1038-s42254-024-00796-z",
+      "doi": "10.1038/s42254-024-00796-z",
+      "title": "Benchmarking quantum computers",
+      "authorIds": [
+        "a1493",
+        "a1498",
+        "a1515",
+        "a1497"
+      ],
+      "date": "2025-01",
+      "journalId": "j66",
+      "keywordIds": [
+        "benchmarking",
+        "survey"
+      ],
+      "citations": 64,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-08469",
+      "doi": "10.48550/arXiv.2510.08469",
+      "title": "Platform-Agnostic Modular Architecture for Quantum Benchmarking",
+      "authorIds": [
+        "a1524",
+        "a1568",
+        "a1569",
+        "a1523",
+        "a1570",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-programming"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-22331-q-2020-11-15-362",
+      "doi": "10.22331/q-2020-11-15-362",
+      "title": "A volumetric framework for quantum computer benchmarks",
+      "authorIds": [
+        "a1497",
+        "a1498"
+      ],
+      "date": "2020-11",
+      "journalId": "j73",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 83,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-22331-q-2025-09-05-1848",
+      "doi": "10.22331/q-2025-09-05-1848",
+      "title": "A Theory of Direct Randomized Benchmarking",
+      "authorIds": [
+        "a1571",
+        "a1572",
+        "a1552",
+        "a1497",
+        "a1498",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j73",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 3,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce60285-2024-00111",
+      "doi": "10.1109/QCE60285.2024.00111",
+      "title": "QuAS: Quantum Application Score for Benchmarking the Utility of Quantum Computers",
+      "authorIds": [
+        "a1573",
+        "a1501",
+        "a1548",
+        "a1503"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 4,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-tqe-2023-3253761",
+      "doi": "10.1109/TQE.2023.3253761",
+      "title": "Application-Oriented Performance Benchmarks for Quantum Computing",
+      "authorIds": [
+        "a477",
+        "a1479",
+        "a1574",
+        "a1575",
+        "a813",
+        "a827"
+      ],
+      "date": "2023-01",
+      "journalId": "j38",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-algorithms"
+      ],
+      "citations": 145,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2503-16383",
+      "doi": "10.48550/arXiv.2503.16383",
+      "title": "Quantum Characterization, Verification, and Validation",
+      "authorIds": [
+        "a1497",
+        "a1493",
+        "a1498"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "survey"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-tqe-2021-3090207",
+      "doi": "10.1109/TQE.2021.3090207",
+      "title": "Benchmarking Quantum Coprocessors in an Application-Centric, Hardware-Agnostic, and Scalable Way",
+      "authorIds": [
+        "a1359",
+        "a1576",
+        "a1577"
+      ],
+      "date": "2021-01",
+      "journalId": "j38",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-optimization"
+      ],
+      "citations": 50,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1142-s0219749924500011",
+      "doi": "10.1142/S0219749924500011",
+      "title": "Benchmarking a neutral-atom quantum computer",
+      "authorIds": [
+        "a1578",
+        "a1579",
+        "a1580",
+        "a1581"
+      ],
+      "date": "2024-01",
+      "journalId": "j132",
+      "keywordIds": [
+        "benchmarking",
+        "neutral-atom-qubits"
+      ],
+      "citations": 7,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2204-07568",
+      "doi": "10.48550/arXiv.2204.07568",
+      "title": "Establishing trust in quantum computations",
+      "authorIds": [
+        "a1493",
+        "a1494",
+        "a1496",
+        "a1495",
+        "a1498",
+        "a827"
+      ],
+      "date": "2022-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
+      "citations": 6,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-tqe-2024-3404502",
+      "doi": "10.1109/TQE.2024.3404502",
+      "title": "Scalable Full-Stack Benchmarks for Quantum Computers",
+      "authorIds": [
+        "a1552",
+        "a1493"
+      ],
+      "date": "2024-01",
+      "journalId": "j38",
+      "keywordIds": [
+        "benchmarking",
+        "compilation"
+      ],
+      "citations": 2,
+      "added": "2026-09-01"
     }
   ]
 }
