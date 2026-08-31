@@ -498,5 +498,17 @@
   "j125": {
     "name": "The Journal of Physical Chemistry Letters",
     "type": "journal"
+  },
+  "j126": {
+    "name": "Journal of Applied Probability",
+    "type": "journal"
+  },
+  "j127": {
+    "name": "Advances in Applied Probability",
+    "type": "journal"
+  },
+  "j128": {
+    "name": "Advances in Neural Information Processing Systems",
+    "type": "conference"
   }
 }

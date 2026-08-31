@@ -7229,6 +7229,76 @@
       ],
       "citations": 0,
       "added": "2026-09-01"
+    },
+    {
+      "id": "10-2307-3214163",
+      "doi": "10.2307/3214163",
+      "title": "Restless Bandits: Activity Allocation in a Changing World",
+      "authorIds": [
+        "a1450"
+      ],
+      "date": "1988-01",
+      "journalId": "j126",
+      "keywordIds": [
+        "scheduling"
+      ],
+      "citations": 1397,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-2307-3214547",
+      "doi": "10.2307/3214547",
+      "title": "On an Index Policy for Restless Bandits",
+      "authorIds": [
+        "a1451",
+        "a1452"
+      ],
+      "date": "1990-09",
+      "journalId": "j127",
+      "keywordIds": [
+        "scheduling"
+      ],
+      "citations": 580,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-13140-rg-2-1-2862-3844",
+      "doi": "10.13140/rg.2.1.2862.3844",
+      "title": "Stochastic Multi-Armed Bandit with Non-Stationary Rewards",
+      "authorIds": [
+        "a1453",
+        "a1454",
+        "a1455"
+      ],
+      "date": "2014-12",
+      "journalId": "j128",
+      "keywordIds": [
+        "scheduling",
+        "optimization-algorithms"
+      ],
+      "citations": 185,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2601-09943",
+      "doi": "10.48550/arXiv.2601.09943",
+      "title": "Three Months in the Life of Cloud Quantum Computing",
+      "authorIds": [
+        "a1456",
+        "a1457",
+        "a1458",
+        "a1459",
+        "a1460",
+        "a827"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "cloud-computing",
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
     }
   ]
 }
