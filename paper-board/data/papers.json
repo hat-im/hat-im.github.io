@@ -8067,6 +8067,250 @@
       ],
       "citations": 2,
       "added": "2026-09-01"
+    },
+    {
+      "id": "10-1103-prxquantum-4-010327",
+      "doi": "10.1103/PRXQuantum.4.010327",
+      "title": "Suppressing Quantum Circuit Errors Due to System Variability",
+      "authorIds": [
+        "a550",
+        "a733"
+      ],
+      "date": "2023-03",
+      "journalId": "j69",
+      "keywordIds": [
+        "compilation",
+        "qubit-hardware"
+      ],
+      "citations": 55,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2606-27508",
+      "doi": "10.48550/arXiv.2606.27508",
+      "title": "I-QMapper: Error-Aware Layout Optimization and Device Diagnostics for NISQ Hardware",
+      "authorIds": [
+        "a60",
+        "a1583"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "qubit-hardware"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce49297-2020-00050",
+      "doi": "10.1109/qce49297.2020.00050",
+      "title": "Just-in-time Quantum Circuit Transpilation Reduces Noise",
+      "authorIds": [
+        "a1584",
+        "a1585",
+        "a1299"
+      ],
+      "date": "2020-10",
+      "journalId": "j28",
+      "keywordIds": [
+        "compilation",
+        "qubit-hardware"
+      ],
+      "citations": 7,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2602-05154",
+      "doi": "10.48550/arXiv.2602.05154",
+      "title": "QASMTrans: An End-to-End QASM Compilation Framework with Pulse Generation for Near-Term Quantum Devices",
+      "authorIds": [
+        "a1586",
+        "a1587",
+        "a328",
+        "a1588",
+        "a464",
+        "a827"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "qubit-hardware"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-qce60285-2024-10411",
+      "doi": "10.1109/qce60285.2024.10411",
+      "title": "QDMI - Quantum Device Management Interface: Hardware-Software Interface for the Munich Quantum Software Stack",
+      "authorIds": [
+        "a777",
+        "a1294",
+        "a700",
+        "a1119",
+        "a668",
+        "a827"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "middleware",
+        "hpc-integration"
+      ],
+      "citations": 9,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-23476",
+      "doi": "10.48550/arXiv.2603.23476",
+      "title": "Index-Based Scheduling for a Resource-Constrained Quantum Switch",
+      "authorIds": [
+        "a1592",
+        "a1593",
+        "a1594"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "infrastructure"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-tcns-2017-2774046",
+      "doi": "10.1109/tcns.2017.2774046",
+      "title": "Opportunistic Scheduling as Restless Bandits",
+      "authorIds": [
+        "a1595",
+        "a1596",
+        "a1597",
+        "a1598"
+      ],
+      "date": "2017-11",
+      "journalId": "j133",
+      "keywordIds": [
+        "scheduling",
+        "optimization-algorithms"
+      ],
+      "citations": 3,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2506-18186",
+      "doi": "10.48550/arXiv.2506.18186",
+      "title": "Online Learning of Whittle Indices for Restless Bandits with Non-Stationary Transition Kernels",
+      "authorIds": [
+        "a1599",
+        "a735",
+        "a1600",
+        "a1601"
+      ],
+      "date": "2025-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "optimization-algorithms"
+      ],
+      "citations": 3,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-27540",
+      "doi": "10.48550/arXiv.2605.27540",
+      "title": "EFaaS: A Quantum-Classical Serverless Entangled Scheduler for Hybrid Variational Algorithms",
+      "authorIds": [
+        "a1602",
+        "a1603",
+        "a1604",
+        "a1605"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-icws62655-2024-00090",
+      "doi": "10.1109/ICWS62655.2024.00090",
+      "title": "Moirai: Optimizing Quantum Serverless Function Orchestration via Device Allocation and Circuit Deployment",
+      "authorIds": [
+        "a455",
+        "a815"
+      ],
+      "date": "2024-07",
+      "journalId": "j134",
+      "keywordIds": [
+        "workflow-orchestration",
+        "scheduling"
+      ],
+      "citations": 13,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2604-09202",
+      "doi": "10.48550/arXiv.2604.09202",
+      "title": "On the Role of DAG Topology in Energy-Aware Cloud Scheduling: A GNN-Based Deep Reinforcement Learning Approach",
+      "authorIds": [
+        "a1606",
+        "a1607",
+        "a1608",
+        "a1609"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1145-3477037",
+      "doi": "10.1145/3477037",
+      "title": "HMDS: A Makespan Minimizing DAG Scheduler for Heterogeneous Distributed Systems",
+      "authorIds": [
+        "a1610",
+        "a656",
+        "a1611"
+      ],
+      "date": "2021-09",
+      "journalId": "j135",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 29,
+      "added": "2026-09-01"
+    },
+    {
+      "id": "10-1109-e-science-2006-261173",
+      "doi": "10.1109/e-science.2006.261173",
+      "title": "DIANA Scheduling Hierarchies for Optimizing Bulk Job Scheduling",
+      "authorIds": [
+        "a1612",
+        "a1613",
+        "a1614",
+        "a1615",
+        "a1616",
+        "a827"
+      ],
+      "date": "2006-12",
+      "journalId": "j136",
+      "keywordIds": [
+        "scheduling",
+        "hpc-scheduling"
+      ],
+      "citations": 6,
+      "added": "2026-09-01"
     }
   ]
 }

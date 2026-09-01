@@ -526,5 +526,21 @@
   "j132": {
     "name": "International Journal of Quantum Information",
     "type": "journal"
+  },
+  "j133": {
+    "name": "IEEE Transactions on Control of Network Systems",
+    "type": "journal"
+  },
+  "j134": {
+    "name": "IEEE International Conference on Web Services",
+    "type": "conference"
+  },
+  "j135": {
+    "name": "ACM Transactions on Embedded Computing Systems",
+    "type": "journal"
+  },
+  "j136": {
+    "name": "IEEE International Conference on e-Science and Grid Computing",
+    "type": "conference"
   }
 }
