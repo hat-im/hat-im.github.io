@@ -1,5 +1,5 @@
 {
-  "bookOrder": ["A", "D", "K", "B", "M", "N", "S"],
+  "bookOrder": ["A", "D", "K", "B", "M", "N", "S", "H"],
   "books": {
     "A": {
       "name": "Aho, Lam, Sethi & Ullman",
@@ -49,6 +49,13 @@
       "color": "#8f5fa8",
       "meta": "Cambridge University Press &middot; 3rd edition, 2020",
       "desc": "A widely used graduate quantum mechanics text originally by J. J. Sakurai and completed after his death, later revised and extended by Jim Napolitano with modern applications."
+    },
+    "H": {
+      "name": "Hassani",
+      "title": "Mathematical Physics: A Modern Introduction to Its Foundations",
+      "color": "#a8524b",
+      "meta": "Springer &middot; 2nd edition, 2013",
+      "desc": "A comprehensive, self-contained tour of the mathematics underlying modern physics, from finite-dimensional vector spaces and complex analysis through group theory, tensors, Lie groups, and fiber bundles; built around the unifying theme of vector spaces."
     }
   }
 }
