@@ -8311,6 +8311,27 @@
       ],
       "citations": 6,
       "added": "2026-09-01"
+    },
+    {
+      "id": "10-48550-arxiv-2607-25998",
+      "doi": "10.48550/arXiv.2607.25998",
+      "title": "Observable Estimation in the Absence of Classical Verification",
+      "authorIds": [
+        "a1621",
+        "a1564",
+        "a735",
+        "a1622",
+        "a1623",
+        "a827"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-04"
     }
   ]
 }
