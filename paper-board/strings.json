@@ -1,27 +1,23 @@
 {
   "pageTitle": "Paper board",
-  "subheading": "Papers are linked automatically by shared keywords.",
-  "actionsButtonLabel": "Actions",
-  "dropdown": {
-    "restore": "Reset",
-    "clear": "Clear"
-  },
+  "subheading": "Move each paper through the three-pass reading method as you work through it.",
+  "resetButtonLabel": "Reset",
   "searchPlaceholder": "Search title, author, journal, keyword",
   "progress": {
     "countTemplate": "{read} read / {total} total",
     "popoverTitle": "Read by keyword"
   },
   "columns": {
-    "to-read": "To read",
-    "suggested": "Suggested",
-    "reading": "Reading",
-    "read": "Read"
+    "unread": "Unread",
+    "pass-1": "First Pass",
+    "pass-2": "Second Pass",
+    "pass-3": "Third Pass"
   },
   "emptyColumn": {
-    "to-read": "No papers yet.",
-    "suggested": "Nothing suggested yet.",
-    "reading": "Nothing here.",
-    "read": "Nothing here."
+    "unread": "No papers yet.",
+    "pass-1": "Nothing here.",
+    "pass-2": "Nothing here.",
+    "pass-3": "Nothing here."
   },
   "sortOptions": [
     {"value": "added-desc", "label": "added: newest to oldest"},
@@ -35,19 +31,25 @@
   ],
   "card": {
     "actions": {
-      "start": "Start",
-      "finish": "Finish",
+      "advanceVerbs": ["Skim", "Study", "Implement"],
       "open": "Open",
       "reopen": "Reopen"
     },
     "citationsSuffixTemplate": "{n} citations"
   },
+  "highlights": {
+    "staleTemplate": "In this pass {n}+ days"
+  },
   "collapsibleRow": {
-    "seeMore": "See more",
-    "seeLess": "See less"
+    "seeMoreTemplate": "More {label}",
+    "seeLessTemplate": "Fewer {label}",
+    "labels": {
+      "keywords": "keywords",
+      "authors": "authors",
+      "venues": "venues"
+    }
   },
   "passTracker": {
-    "groupLabel": "Reading passes",
     "passes": [
       {"title": "Pass 1 — get the gist", "time": "~5–10 min", "body": "Read the title, abstract, intro, section headings, and conclusion. Skim the references. Decide whether it's worth reading further."},
       {"title": "Pass 2 — read with care", "time": "~1 hr", "body": "Read in order but skip proofs. Note key points, study the figures and diagrams, mark unread references worth following up."},
@@ -62,14 +64,9 @@
   },
   "modal": {
     "cancel": "Cancel",
-    "clear": {
-      "title": "Clear the board",
-      "body": "This removes every paper you've added. This can't be undone.",
-      "confirm": "Clear"
-    },
     "restore": {
-      "title": "Reset the board",
-      "body": "This replaces the board with the original papers and resets every status to to-read. This can’t be undone.",
+      "title": "Reset the board?",
+      "body": "Every paper goes back to unread, replaced by the original list. This can’t be undone.",
       "confirm": "Reset"
     }
   }

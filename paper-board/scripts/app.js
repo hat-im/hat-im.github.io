@@ -20,18 +20,22 @@
     activeAuthors: new Set(),
     activeVenues: new Set(),
     searchTerm: '',
-    hoveredCardId: null,
     keywordsExpanded: false,
     authorsExpanded: false,
     venuesExpanded: false,
-    sortBy: { 'to-read': 'added-desc', suggested: 'added-desc', reading: 'added-desc', read: 'added-desc' }
+    sortBy: { unread: 'added-desc', 'pass-1': 'added-desc', 'pass-2': 'added-desc', 'pass-3': 'added-desc' }
   };
 
   var AUTHOR_CHIP_MIN_COUNT = 3;
   var VENUE_CHIP_MIN_COUNT = 2;
-  var STATUSES = ['to-read', 'suggested', 'reading', 'read'];
+  // One column per pass level (0-3): unread (nothing done yet) through
+  // pass-3 (fully read). Column index === pass level.
+  var PASS_COLUMNS = ['unread', 'pass-1', 'pass-2', 'pass-3'];
+  var PASS_COLUMN_LEVEL = { unread: 0, 'pass-1': 1, 'pass-2': 2, 'pass-3': 3 };
+  var STALE_MS = 14 * 24 * 60 * 60 * 1000;
 
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
+  function nowISO() { return new Date().toISOString(); }
 
   function fmt(template, vars) {
     return template.replace(/\{(\w+)\}/g, function (_, key) { return vars[key]; });
@@ -59,6 +63,20 @@
         }
         if (seed.journalType && p.journalType !== seed.journalType) {
           p.journalType = seed.journalType;
+          dirty = true;
+        }
+      });
+
+      // Migrate pre-pass-columns state: fold the old to-read/suggested/reading/read
+      // status into a pass level, then drop the field entirely.
+      state.papers.forEach(function (p) {
+        if ('status' in p) {
+          if (typeof p.pass !== 'number') p.pass = (p.status === 'read') ? 3 : 0;
+          delete p.status;
+          dirty = true;
+        }
+        if (!p.passEnteredAt) {
+          p.passEnteredAt = p.added || nowISO();
           dirty = true;
         }
       });
@@ -192,8 +210,25 @@
   }
 
   function passLevel(paper) {
-    if (typeof paper.pass === 'number') return paper.pass;
-    return paper.status === 'read' ? 3 : 0;
+    return typeof paper.pass === 'number' ? paper.pass : 0;
+  }
+
+  // Column index === pass level: unread (0), pass-1 (1), pass-2 (2), pass-3 (3).
+  function columnForPaper(paper) {
+    var lvl = Math.max(0, Math.min(3, passLevel(paper)));
+    return PASS_COLUMNS[lvl];
+  }
+
+  function isStale(paper) {
+    var lvl = passLevel(paper);
+    if (lvl >= 3) return false;
+    var since = paper.passEnteredAt ? new Date(paper.passEnteredAt).getTime() : 0;
+    return since > 0 && Date.now() - since > STALE_MS;
+  }
+
+  function daysSince(iso) {
+    if (!iso) return 0;
+    return Math.floor((Date.now() - new Date(iso).getTime()) / (24 * 60 * 60 * 1000));
   }
 
   function matchesSearch(paper, term) {
@@ -225,24 +260,6 @@
     });
   }
 
-  // For each real author of the paper (skipping the 'et al.' placeholder),
-  // their single most recent other paper — regardless of status, so a pick
-  // already in suggested/reading/read never causes a runner-up to be pulled.
-  function authorLatestPapers(paper, pool) {
-    var picks = {};
-    paper.authors.forEach(function (a) {
-      if (a === 'et al.') return;
-      var best = null;
-      pool.forEach(function (other) {
-        if (other.id === paper.id) return;
-        if (other.authors.indexOf(a) === -1) return;
-        if (!best || (other.date || '') > (best.date || '')) best = other;
-      });
-      if (best) picks[best.id] = best;
-    });
-    return Object.keys(picks).map(function (id) { return picks[id]; });
-  }
-
   // ---------- Rendering ----------
 
   function formatAuthors(authors) {
@@ -268,10 +285,10 @@
   }
 
   // Renders `buttons` into `container`. When collapsed, only as many buttons
-  // as fit on a single row are shown, followed by a "See more" toggle chip
-  // (also kept on that row). When expanded, all buttons are shown followed
-  // by a "See less" toggle chip.
-  function renderCollapsibleRow(container, buttons, expanded, onToggle) {
+  // as fit on a single row are shown, followed by a "More {label}" toggle
+  // chip (also kept on that row). When expanded, all buttons are shown
+  // followed by a "Fewer {label}" toggle chip.
+  function renderCollapsibleRow(container, buttons, expanded, label, onToggle) {
     container.innerHTML = '';
     container.style.flexWrap = 'wrap';
 
@@ -279,7 +296,7 @@
 
     if (expanded) {
       buttons.forEach(function (b) { container.appendChild(b); });
-      container.appendChild(makeToggleChip(STR.collapsibleRow.seeLess, onToggle));
+      container.appendChild(makeToggleChip(fmt(STR.collapsibleRow.seeLessTemplate, { label: label }), onToggle));
       return;
     }
 
@@ -295,7 +312,7 @@
       return;
     }
 
-    var toggle = makeToggleChip(STR.collapsibleRow.seeMore, onToggle);
+    var toggle = makeToggleChip(fmt(STR.collapsibleRow.seeMoreTemplate, { label: label }), onToggle);
     var keepCount = firstOverflowIndex;
     while (keepCount >= 0) {
       while (container.children.length > keepCount) container.removeChild(container.lastChild);
@@ -324,7 +341,7 @@
       });
       return btn;
     });
-    renderCollapsibleRow(kwContainer, kwButtons, state.keywordsExpanded, function () {
+    renderCollapsibleRow(kwContainer, kwButtons, state.keywordsExpanded, STR.collapsibleRow.labels.keywords, function () {
       state.keywordsExpanded = !state.keywordsExpanded;
       renderChips();
     });
@@ -349,7 +366,7 @@
       });
       return btn;
     });
-    renderCollapsibleRow(authorContainer, authorButtons, state.authorsExpanded, function () {
+    renderCollapsibleRow(authorContainer, authorButtons, state.authorsExpanded, STR.collapsibleRow.labels.authors, function () {
       state.authorsExpanded = !state.authorsExpanded;
       renderChips();
     });
@@ -372,7 +389,7 @@
       });
       return btn;
     });
-    renderCollapsibleRow(venueContainer, venueButtons, state.venuesExpanded, function () {
+    renderCollapsibleRow(venueContainer, venueButtons, state.venuesExpanded, STR.collapsibleRow.labels.venues, function () {
       state.venuesExpanded = !state.venuesExpanded;
       renderChips();
     });
@@ -380,7 +397,7 @@
 
   function renderProgress() {
     var total = state.papers.length;
-    var read = state.papers.filter(function (p) { return p.status === 'read'; }).length;
+    var read = state.papers.filter(function (p) { return passLevel(p) >= 3; }).length;
     document.getElementById('progressText').textContent = fmt(STR.progress.countTemplate, { read: read, total: total });
 
     var byKeyword = {};
@@ -388,7 +405,7 @@
       p.keywords.forEach(function (kw) {
         if (!byKeyword[kw]) byKeyword[kw] = { total: 0, read: 0 };
         byKeyword[kw].total++;
-        if (p.status === 'read') byKeyword[kw].read++;
+        if (passLevel(p) >= 3) byKeyword[kw].read++;
       });
     });
     var keys = Object.keys(byKeyword).sort(function (a, b) { return byKeyword[b].total - byKeyword[a].total; });
@@ -427,90 +444,82 @@
     return null;
   }
 
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
+  // Small external-link glyph: signals that the button navigates off-site.
+  function buildExternalIcon() {
+    var svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('class', 'ext-icon');
+    svg.setAttribute('viewBox', '0 0 12 12');
+    svg.setAttribute('fill', 'none');
+    var path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('d', 'M5 2H2.75A.75.75 0 0 0 2 2.75v6.5c0 .414.336.75.75.75h6.5A.75.75 0 0 0 10 9.25V7M7 2h3v3M10 2 5.5 6.5');
+    path.setAttribute('stroke', 'currentColor');
+    path.setAttribute('stroke-width', '1.2');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(path);
+    return svg;
+  }
+
+  // Secondary action(s) first, primary last — buttons group together on
+  // the right with the heaviest (primary) button rightmost.
   function actionButtonsFor(paper) {
     var actions = STR.card.actions;
-    if (paper.status === 'to-read' || paper.status === 'suggested') {
-      return [{ label: actions.start, next: 'reading', primary: true }];
+    var lvl = passLevel(paper);
+    var list = [];
+    if (getPaperUrl(paper)) list.push({ label: actions.open, type: 'open', primary: false });
+    if (lvl < 3) {
+      list.push({ label: actions.advanceVerbs[lvl], next: lvl + 1, primary: true });
+    } else {
+      list.push({ label: actions.reopen, next: 2, primary: false });
     }
-    if (paper.status === 'reading') {
-      var list = [{ label: actions.finish, next: 'read', primary: true }];
-      if (getPaperUrl(paper)) list.push({ label: actions.open, type: 'open', primary: false });
-      return list;
-    }
-    return [{ label: actions.reopen, next: 'reading', primary: false }];
+    return list;
   }
 
-  function updatePassTracker(wrap, paper) {
-    var level = passLevel(paper);
-    var dots = wrap.querySelectorAll('.pass-dot');
-    dots.forEach(function (dot, idx) {
-      var done = idx < level;
-      dot.classList.toggle('done', done);
-      dot.setAttribute('aria-pressed', done ? 'true' : 'false');
-    });
-  }
-
-  function buildPassTracker(paper) {
-    var wrap = document.createElement('div');
-    wrap.className = 'pass-tracker';
-    wrap.setAttribute('role', 'group');
-    wrap.setAttribute('aria-label', STR.passTracker.groupLabel);
-
-    STR.passTracker.passes.forEach(function (info, idx) {
-      var n = idx + 1;
-      var dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'pass-dot';
-      dot.title = info.title + ' · ' + info.time + ' — ' + info.body;
-      dot.addEventListener('click', function (e) {
-        e.stopPropagation();
-        var current = passLevel(paper);
-        paper.pass = (current === n) ? n - 1 : n;
-        saveState();
-        updatePassTracker(wrap, paper);
-      });
-      wrap.appendChild(dot);
-    });
-
-    updatePassTracker(wrap, paper);
-    return wrap;
-  }
+  var VENUE_TYPE_COLOR = {
+    journal: '#5484b8',
+    conference: '#62a350',
+    preprint: '#8b62b0',
+    report: '#b8933f'
+  };
+  var STALE_COLOR = '#b8863a';
 
   function buildCard(paper) {
     var card = document.createElement('div');
-    card.className = 'card';
+    var stale = isStale(paper);
+    card.className = 'card' + (stale ? ' card-stale' : '');
     card.setAttribute('draggable', 'true');
     card.setAttribute('tabindex', '0');
     card.dataset.id = paper.id;
+
+    // Left-edge accent: the stale warning takes priority over the paper's
+    // venue-type colour when both would apply.
+    var accentColor = stale ? STALE_COLOR : VENUE_TYPE_COLOR[paper.journalType];
+    if (accentColor) card.style.borderLeftColor = accentColor;
 
     var title = document.createElement('div');
     title.className = 'card-title';
     title.textContent = paper.title;
     card.appendChild(title);
 
-    var meta = document.createElement('div');
-    meta.className = 'card-meta';
-    var metaItems = [];
-    if (paper.authors.length) metaItems.push({ text: formatAuthors(paper.authors) });
-    if (paper.date) metaItems.push({ text: formatDate(paper.date) });
-    if (paper.journal) metaItems.push({ text: paper.journal, cls: 'venue' + (paper.journalType ? ' venue-type-' + paper.journalType : '') });
-    if (typeof paper.citations === 'number') metaItems.push({ text: fmt(STR.card.citationsSuffixTemplate, { n: paper.citations }) });
-    metaItems.forEach(function (item, i) {
-      if (i > 0) meta.appendChild(document.createTextNode(' · '));
-      if (item.cls) {
-        var span = document.createElement('span');
-        span.className = item.cls;
-        span.textContent = item.text;
-        meta.appendChild(span);
-      } else {
-        meta.appendChild(document.createTextNode(item.text));
-      }
-    });
-    meta.title = metaItems.map(function (item) { return item.text; }).join(' · ');
-    card.appendChild(meta);
+    var metaBits = [];
+    if (paper.authors.length) metaBits.push(formatAuthors(paper.authors));
+    if (paper.journal) metaBits.push(paper.journal);
+    if (paper.date) metaBits.push(formatDate(paper.date));
+    if (typeof paper.citations === 'number') metaBits.push(fmt(STR.card.citationsSuffixTemplate, { n: paper.citations }));
+    if (metaBits.length) {
+      var meta = document.createElement('div');
+      meta.className = 'card-meta';
+      meta.textContent = metaBits.join(' · ');
+      card.appendChild(meta);
+    }
 
-    if (paper.status === 'reading' || paper.status === 'read') {
-      card.appendChild(buildPassTracker(paper));
+    if (stale) {
+      var flag = document.createElement('span');
+      flag.className = 'card-flag flag-stale';
+      flag.textContent = fmt(STR.highlights.staleTemplate, { n: daysSince(paper.passEnteredAt) });
+      card.appendChild(flag);
     }
 
     var kwWrap = document.createElement('div');
@@ -532,7 +541,8 @@
       var btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'action-btn' + (a.primary ? ' primary' : '');
-      btn.textContent = a.label;
+      if (a.type === 'open') btn.appendChild(buildExternalIcon());
+      btn.appendChild(document.createTextNode(a.label));
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
         if (a.type === 'open') {
@@ -540,7 +550,7 @@
           if (url) window.open(url, '_blank', 'noopener');
           return;
         }
-        setStatus(paper.id, a.next);
+        setPass(paper.id, a.next);
       });
       actionsWrap.appendChild(btn);
     });
@@ -555,18 +565,6 @@
     card.addEventListener('dragend', function () {
       card.classList.remove('dragging');
     });
-
-    // Selecting a card pulls each author's latest paper into suggested
-    card.addEventListener('click', function (e) {
-      if (e.target.closest('button')) return;
-      selectPaper(paper);
-    });
-
-    // Hover / focus thread lines
-    card.addEventListener('mouseenter', function () { state.hoveredCardId = paper.id; drawThreads(); });
-    card.addEventListener('mouseleave', function () { state.hoveredCardId = null; drawThreads(); });
-    card.addEventListener('focus', function () { state.hoveredCardId = paper.id; drawThreads(); });
-    card.addEventListener('blur', function () { state.hoveredCardId = null; drawThreads(); });
 
     return card;
   }
@@ -599,8 +597,8 @@
   }
 
   function setupSortSelects() {
-    STATUSES.forEach(function (status) {
-      var select = document.getElementById('sort-' + status);
+    PASS_COLUMNS.forEach(function (col) {
+      var select = document.getElementById('sort-' + col);
       select.innerHTML = '';
       STR.sortOptions.forEach(function (opt) {
         var el = document.createElement('option');
@@ -608,9 +606,9 @@
         el.textContent = opt.label;
         select.appendChild(el);
       });
-      select.value = state.sortBy[status];
+      select.value = state.sortBy[col];
       select.addEventListener('change', function () {
-        state.sortBy[status] = select.value;
+        state.sortBy[col] = select.value;
         renderBoard();
       });
     });
@@ -618,96 +616,34 @@
 
   function renderBoard() {
     var pool = visiblePapers();
-    var byStatus = { 'to-read': [], suggested: [], reading: [], read: [] };
-    pool.forEach(function (p) { byStatus[p.status].push(p); });
+    var byColumn = { unread: [], 'pass-1': [], 'pass-2': [], 'pass-3': [] };
+    pool.forEach(function (p) { byColumn[columnForPaper(p)].push(p); });
 
-    STATUSES.forEach(function (status) {
-      var dropEl = document.getElementById('drop-' + status);
+    PASS_COLUMNS.forEach(function (col) {
+      var dropEl = document.getElementById('drop-' + col);
       dropEl.innerHTML = '';
-      var list = sortPapers(byStatus[status], state.sortBy[status]);
-      document.getElementById('count-' + status).textContent = list.length;
+      var list = sortPapers(byColumn[col], state.sortBy[col]);
+      document.getElementById('count-' + col).textContent = list.length;
       if (list.length === 0) {
         var empty = document.createElement('div');
         empty.className = 'empty-column';
-        empty.textContent = STR.emptyColumn[status];
+        empty.textContent = STR.emptyColumn[col];
         dropEl.appendChild(empty);
         return;
       }
       list.forEach(function (p) { dropEl.appendChild(buildCard(p)); });
     });
-
-    drawThreads();
   }
 
-  function drawThreads() {
-    var svg = document.getElementById('threadOverlay');
-    svg.innerHTML = '';
-    if (!state.hoveredCardId) return;
-
-    var pool = visiblePapers();
-    var hovered = pool.find(function (p) { return p.id === state.hoveredCardId; });
-    if (!hovered) return;
-
-    var links = authorLatestPapers(hovered, pool).map(function (p) {
-      return { paper: p, dashed: p.status !== 'suggested' };
-    });
-    if (links.length === 0) return;
-
-    var scrollRect = document.getElementById('boardScroll').getBoundingClientRect();
-    var hoveredEl = document.querySelector('.card[data-id="' + cssEscape(hovered.id) + '"]');
-    if (!hoveredEl) return;
-    var hRect = hoveredEl.getBoundingClientRect();
-    var hx = hRect.left + hRect.width / 2 - scrollRect.left;
-    var hy = hRect.top + hRect.height / 2 - scrollRect.top;
-
-    links.forEach(function (link) {
-      var el = document.querySelector('.card[data-id="' + cssEscape(link.paper.id) + '"]');
-      if (!el) return;
-      var r = el.getBoundingClientRect();
-      var rx = r.left + r.width / 2 - scrollRect.left;
-      var ry = r.top + r.height / 2 - scrollRect.top;
-      var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line.setAttribute('x1', hx);
-      line.setAttribute('y1', hy);
-      line.setAttribute('x2', rx);
-      line.setAttribute('y2', ry);
-      line.setAttribute('stroke', '#4a4842');
-      line.setAttribute('stroke-width', 2);
-      line.setAttribute('stroke-opacity', '0.55');
-      if (link.dashed) line.setAttribute('stroke-dasharray', '5 4');
-      svg.appendChild(line);
-    });
-  }
-
-  function cssEscape(s) {
-    return String(s).replace(/[^a-zA-Z0-9_-]/g, function (c) {
-      return '\\' + c;
-    });
-  }
-
-  function applySuggestions(paper) {
-    var moved = false;
-    authorLatestPapers(paper, state.papers).forEach(function (p) {
-      if (p.status === 'to-read') {
-        p.status = 'suggested';
-        moved = true;
-      }
-    });
-    return moved;
-  }
-
-  function selectPaper(paper) {
-    if (!applySuggestions(paper)) return;
-    saveState();
-    renderAll();
-  }
-
-  function setStatus(id, status) {
+  // Sets a paper's pass level (0-3) and bumps passEnteredAt so stale
+  // highlighting resets from the moment it last changed.
+  function setPass(id, level) {
     var paper = state.papers.find(function (p) { return p.id === id; });
     if (!paper) return;
-    var wasRead = paper.status === 'read';
-    paper.status = status;
-    if (status === 'read' && !wasRead) applySuggestions(paper);
+    var prev = passLevel(paper);
+    if (prev === level) return;
+    paper.pass = level;
+    paper.passEnteredAt = nowISO();
     saveState();
     renderAll();
   }
@@ -725,23 +661,21 @@
     document.title = STR.pageTitle;
     document.getElementById('pageTitle').textContent = STR.pageTitle;
     document.getElementById('pageSubtitle').textContent = STR.subheading;
-    document.getElementById('actionsBtnLabel').textContent = STR.actionsButtonLabel;
-    document.getElementById('restoreBtn').textContent = STR.dropdown.restore;
-    document.getElementById('resetBtn').textContent = STR.dropdown.clear;
+    document.getElementById('resetBtn').textContent = STR.resetButtonLabel;
     document.getElementById('searchInput').setAttribute('placeholder', STR.searchPlaceholder);
     document.getElementById('popoverTitle').textContent = STR.progress.popoverTitle;
     document.getElementById('modalCancel').textContent = STR.modal.cancel;
 
-    STATUSES.forEach(function (status) {
-      document.getElementById('columnTitle-' + status).textContent = STR.columns[status];
+    PASS_COLUMNS.forEach(function (col) {
+      document.getElementById('columnTitle-' + col).textContent = STR.columns[col];
     });
   }
 
   // ---------- Drop zones ----------
 
   function setupDropZones() {
-    STATUSES.forEach(function (status) {
-      var dropEl = document.getElementById('drop-' + status);
+    PASS_COLUMNS.forEach(function (col) {
+      var dropEl = document.getElementById('drop-' + col);
       dropEl.addEventListener('dragover', function (e) {
         e.preventDefault();
         dropEl.classList.add('drag-over');
@@ -753,7 +687,7 @@
         e.preventDefault();
         dropEl.classList.remove('drag-over');
         var id = e.dataTransfer.getData('text/plain');
-        setStatus(id, status);
+        setPass(id, PASS_COLUMN_LEVEL[col]);
       });
     });
   }
@@ -768,62 +702,45 @@
     });
   }
 
-  // ---------- Actions dropdown (Reset / Clear) ----------
+  // ---------- Progress popover (click "N read / M total" to see the breakdown) ----------
 
-  function closeActionsDropdown() {
-    var menu = document.getElementById('actionsMenu');
-    var dropdown = document.getElementById('actionsDropdown');
-    var btn = document.getElementById('actionsBtn');
-    dropdown.classList.remove('open');
-    menu.setAttribute('data-open', 'false');
-    btn.setAttribute('aria-expanded', 'false');
+  function closeProgressPopover() {
+    var toggle = document.getElementById('progressToggle');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
   }
 
-  function setupActionsMenu() {
-    var menu = document.getElementById('actionsMenu');
-    var btn = document.getElementById('actionsBtn');
-    var dropdown = document.getElementById('actionsDropdown');
+  function setupProgressPopover() {
+    var toggle = document.getElementById('progressToggle');
 
-    btn.addEventListener('click', function (e) {
+    toggle.addEventListener('click', function (e) {
       e.stopPropagation();
-      var isOpen = dropdown.classList.toggle('open');
-      menu.setAttribute('data-open', isOpen ? 'true' : 'false');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      var isOpen = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
     document.addEventListener('click', function (e) {
-      if (!menu.contains(e.target)) closeActionsDropdown();
+      if (!toggle.contains(e.target)) closeProgressPopover();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeActionsDropdown();
+      if (e.key === 'Escape') closeProgressPopover();
     });
   }
 
-  // ---------- Confirmation modal (Clear board / Restore seed papers) ----------
+  // ---------- Confirmation modal (Reset to seed papers) ----------
 
   function setupResetModal() {
     var backdrop = document.getElementById('modalBackdrop');
     var titleEl = document.getElementById('modalTitle');
     var bodyEl = document.getElementById('modalBody');
     var confirmBtn = document.getElementById('modalConfirm');
-    var pendingAction = 'clear';
 
-    function openModal(action) {
-      pendingAction = action;
-      var copy = STR.modal[action];
+    document.getElementById('resetBtn').addEventListener('click', function () {
+      var copy = STR.modal.restore;
       titleEl.textContent = copy.title;
       bodyEl.textContent = copy.body;
       confirmBtn.textContent = copy.confirm;
       backdrop.classList.add('open');
-    }
-
-    document.getElementById('resetBtn').addEventListener('click', function () {
-      closeActionsDropdown();
-      openModal('clear');
-    });
-    document.getElementById('restoreBtn').addEventListener('click', function () {
-      closeActionsDropdown();
-      openModal('restore');
     });
     document.getElementById('modalCancel').addEventListener('click', function () {
       backdrop.classList.remove('open');
@@ -832,12 +749,8 @@
       if (e.target === backdrop) backdrop.classList.remove('open');
     });
     confirmBtn.addEventListener('click', async function () {
-      if (pendingAction === 'restore') {
-        state.papers = clone(SEED.papers);
-        state.keywordColors = clone(SEED.keywordColors);
-      } else {
-        state.papers = [];
-      }
+      state.papers = clone(SEED.papers);
+      state.keywordColors = clone(SEED.keywordColors);
       state.activeKeywords = new Set();
       state.activeAuthors = new Set();
       state.activeVenues = new Set();
@@ -909,8 +822,7 @@
 
   // ---------- Window resize redraw ----------
 
-  window.addEventListener('resize', function () { updateColumnHeights(); drawThreads(); });
-  document.getElementById('boardScroll') && document.getElementById('boardScroll').addEventListener('scroll', function () { drawThreads(); });
+  window.addEventListener('resize', updateColumnHeights);
 
   // ---------- Init ----------
 
@@ -936,7 +848,8 @@
         journal: p.journalId ? journals[p.journalId].name : '',
         journalType: p.journalId ? journals[p.journalId].type : '',
         keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
-        status: 'to-read',
+        pass: 0,
+        passEnteredAt: p.added || nowISO(),
         citations: p.citations,
         added: p.added
       };
@@ -964,7 +877,7 @@
     setupResetModal();
     setupThreePassModal();
     setupSortSelects();
-    setupActionsMenu();
+    setupProgressPopover();
     renderAll();
   }
 

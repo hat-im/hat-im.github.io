@@ -17,78 +17,67 @@
         <h1 class="title" id="pageTitle"></h1>
         <p class="subtitle" id="pageSubtitle"></p>
       </div>
-      <button class="pass-info-btn" id="threePassBtn" type="button">i</button>
-      <div class="actions-menu" id="actionsMenu">
-        <button class="reset-btn" id="actionsBtn" type="button" aria-haspopup="true" aria-expanded="false">
-          <span id="actionsBtnLabel"></span>
-          <svg class="chevron-icon" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="actions-dropdown" id="actionsDropdown">
-          <button class="dropdown-item" id="restoreBtn" type="button"></button>
-          <button class="dropdown-item" id="resetBtn" type="button"></button>
-        </div>
-      </div>
+      <button class="pass-info-btn" id="threePassBtn" type="button">?</button>
+      <button class="reset-btn" id="resetBtn" type="button"></button>
     </div>
 
     <div class="controls">
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.6"/>
-          <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <input type="text" class="search-input" id="searchInput" placeholder="">
+      <div class="search-progress-row">
+        <div class="search-wrap">
+          <svg class="search-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="9" cy="9" r="6.5" stroke="currentColor" stroke-width="1.6"/>
+            <line x1="13.5" y1="13.5" x2="18" y2="18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="">
+        </div>
+
+        <div class="progress-line">
+          <button type="button" class="progress-toggle" id="progressToggle" aria-haspopup="true" aria-expanded="false">
+            <span id="progressText"></span>
+            <div class="popover" id="infoPopover">
+              <div class="popover-title" id="popoverTitle"></div>
+              <div class="popover-scroll" id="popoverBody"></div>
+            </div>
+          </button>
+        </div>
       </div>
 
       <div class="chip-row" id="keywordChips"></div>
       <div class="chip-row" id="authorChips"></div>
       <div class="chip-row" id="venueChips"></div>
-
-      <div class="progress-line">
-        <span id="progressText"></span>
-        <span class="info-btn" id="infoBtn" tabindex="0">
-          i
-          <div class="popover" id="infoPopover">
-            <div class="popover-title" id="popoverTitle"></div>
-            <div id="popoverBody"></div>
-          </div>
-        </span>
-      </div>
     </div>
 
     <div class="board-scroll" id="boardScroll">
       <div class="board" id="board">
-        <div class="column" data-status="to-read">
+        <div class="column" data-pass="unread">
           <div class="column-header">
-            <span class="column-title" id="columnTitle-to-read"></span><span class="column-count" id="count-to-read">0</span>
-            <select class="sort-select" id="sort-to-read" data-status="to-read"></select>
+            <span class="column-title" id="columnTitle-unread"></span><span class="column-count" id="count-unread">0</span>
+            <select class="sort-select" id="sort-unread" data-pass="unread"></select>
           </div>
-          <div class="column-drop" id="drop-to-read" data-status="to-read"></div>
+          <div class="column-drop" id="drop-unread" data-pass="unread"></div>
         </div>
-        <div class="column" data-status="suggested">
+        <div class="column" data-pass="pass-1">
           <div class="column-header">
-            <span class="column-title" id="columnTitle-suggested"></span><span class="column-count" id="count-suggested">0</span>
-            <select class="sort-select" id="sort-suggested" data-status="suggested"></select>
+            <span class="column-title" id="columnTitle-pass-1"></span><span class="column-count" id="count-pass-1">0</span>
+            <select class="sort-select" id="sort-pass-1" data-pass="pass-1"></select>
           </div>
-          <div class="column-drop" id="drop-suggested" data-status="suggested"></div>
+          <div class="column-drop" id="drop-pass-1" data-pass="pass-1"></div>
         </div>
-        <div class="column" data-status="reading">
+        <div class="column" data-pass="pass-2">
           <div class="column-header">
-            <span class="column-title" id="columnTitle-reading"></span><span class="column-count" id="count-reading">0</span>
-            <select class="sort-select" id="sort-reading" data-status="reading"></select>
+            <span class="column-title" id="columnTitle-pass-2"></span><span class="column-count" id="count-pass-2">0</span>
+            <select class="sort-select" id="sort-pass-2" data-pass="pass-2"></select>
           </div>
-          <div class="column-drop" id="drop-reading" data-status="reading"></div>
+          <div class="column-drop" id="drop-pass-2" data-pass="pass-2"></div>
         </div>
-        <div class="column" data-status="read">
+        <div class="column" data-pass="pass-3">
           <div class="column-header">
-            <span class="column-title" id="columnTitle-read"></span><span class="column-count" id="count-read">0</span>
-            <select class="sort-select" id="sort-read" data-status="read"></select>
+            <span class="column-title" id="columnTitle-pass-3"></span><span class="column-count" id="count-pass-3">0</span>
+            <select class="sort-select" id="sort-pass-3" data-pass="pass-3"></select>
           </div>
-          <div class="column-drop" id="drop-read" data-status="read"></div>
+          <div class="column-drop" id="drop-pass-3" data-pass="pass-3"></div>
         </div>
       </div>
-      <svg class="thread-overlay" id="threadOverlay"></svg>
     </div>
   </div>
 
