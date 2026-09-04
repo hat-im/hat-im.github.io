@@ -12,11 +12,11 @@ html, body{
   -webkit-font-smoothing:antialiased;
 }
 
-.app { max-width: 1400px; margin: 0 auto; padding: 28px 28px 60px; }
+.app { max-width: 1800px; margin: 0 auto; padding: clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 28px) 60px; }
 
 /* ---------- Top bar ---------- */
 
-.topbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 22px; }
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 22px; }
 
 .topbar-left { flex: 1; min-width: 0; }
 
@@ -237,7 +237,7 @@ button.chip.toggle-chip:hover { color: var(--text-primary); border-color: var(--
   min-width: 0;
   display: flex;
   flex-direction: column;
-  max-height: var(--column-max-height, calc(100vh - 300px));
+  max-height: var(--column-max-height, max(280px, calc(100vh - 300px)));
 }
 
 .column-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; padding: 0 2px; }
@@ -376,9 +376,16 @@ button.modal-btn:focus-visible { outline: 2px solid var(--accent); outline-offse
 
 .empty-state { text-align: center; padding: 60px 20px; color: var(--text-secondary); font-size: 13.5px; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
+  .board { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 900px) {
   .board { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 640px) {
+@media (max-width: 560px) {
   .board { grid-template-columns: 1fr; }
+  .app { padding-left: 14px; padding-right: 14px; }
+  .topbar { gap: 12px; }
+  .actions-menu { flex-basis: 100%; }
+  .actions-dropdown { right: auto; left: 0; }
 }

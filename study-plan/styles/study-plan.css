@@ -10,7 +10,7 @@
   --soft-line:#a89d87;
 }
 
-.topbar{padding:22px 24px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:20px;}
+.topbar{max-width:1800px;margin:0 auto;padding:22px clamp(16px, 2.5vw, 24px) 12px;display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:20px;}
 .topbar h1{margin:0 0 3px;font-size:20px;font-weight:700;}
 .topbar .sub{margin:0;font-size:13px;color:var(--text-secondary);}
 
@@ -127,8 +127,9 @@
 .popover .p-desc{font-size:12px;color:var(--text-primary);line-height:1.45;margin:0;}
 
 .toolbar{
+  max-width:1800px;margin:0 auto;
   display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-  padding:0 24px 14px;
+  padding:0 clamp(16px, 2.5vw, 24px) 14px;
 }
 .search-input{
   flex:0 1 220px;
@@ -183,14 +184,14 @@
 .card.search-match{box-shadow:0 0 0 2px var(--focus);}
 .card.critical-path{outline:2px dashed var(--danger);outline-offset:1px;}
 
-.board-wrap{position:relative;overflow-x:auto;}
-.board{display:flex;align-items:flex-start;position:relative;}
+.board-wrap{position:relative;overflow-x:auto;padding:0 clamp(8px, 1.5vw, 16px);}
+.board{display:flex;align-items:flex-start;position:relative;max-width:1800px;margin:0 auto;}
 #strings{position:absolute;top:0;left:0;pointer-events:none;}
 
 .column{
-  min-width:250px;flex:1 1 250px;
+  min-width:250px;max-width:340px;flex:1 1 250px;
   display:flex;flex-direction:column;
-  max-height:var(--column-max-height, calc(100vh - 240px));
+  max-height:var(--column-max-height, max(280px, calc(100vh - 240px)));
   padding:6px 8px;
   border-right:1px solid var(--border);
 }
@@ -293,6 +294,10 @@
 .empty-col{font-size:12px;color:var(--text-faint);padding:18px 8px;text-align:center;}
 
 @media (max-width:700px){.column{min-width:80vw;}}
+@media (max-width:560px){
+  .topbar{gap:12px;}
+  .reset-btn{flex-basis:100%;}
+}
 
 .fab-btn{
   position:fixed;right:22px;bottom:22px;z-index:60;
@@ -342,7 +347,7 @@
 .g-link{fill:none;transition:opacity .15s ease, stroke-width .15s ease;}
 .g-dim{opacity:.1;}
 
-.list-wrap{padding:0 24px 32px;}
+.list-wrap{max-width:1800px;margin:0 auto;padding:0 clamp(16px, 2.5vw, 24px) 32px;}
 .book-group{
   border:1px solid var(--border);
   border-radius:8px;
