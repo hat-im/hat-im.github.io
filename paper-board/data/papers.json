@@ -8332,6 +8332,703 @@
       ],
       "citations": 0,
       "added": "2026-09-04"
+    },
+    {
+      "id": "10-1109-qce65121-2025-10285",
+      "doi": "10.1109/QCE65121.2025.10285",
+      "title": "HPCQCMark: a New Modular HPC-QC Benchmarking Framework",
+      "authorIds": [
+        "a1624",
+        "a1625",
+        "a1626",
+        "a1627",
+        "a1628"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3368454",
+      "doi": "10.1145/3368454",
+      "title": "The rise of serverless computing",
+      "authorIds": [
+        "a1629",
+        "a1630",
+        "a1631",
+        "a1632"
+      ],
+      "date": "2019-11",
+      "journalId": "j137",
+      "keywordIds": [
+        "survey",
+        "cloud-computing"
+      ],
+      "citations": 342,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3510611",
+      "doi": "10.1145/3510611",
+      "title": "Serverless Computing: A Survey of Opportunities, Challenges, and Applications",
+      "authorIds": [
+        "a1633",
+        "a1634",
+        "a1635"
+      ],
+      "date": "2022-01",
+      "journalId": "j1",
+      "keywordIds": [
+        "survey",
+        "cloud-computing"
+      ],
+      "citations": 264,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3307681-3325400",
+      "doi": "10.1145/3307681.3325400",
+      "title": "Parsl",
+      "authorIds": [
+        "a47",
+        "a785",
+        "a457",
+        "a1636",
+        "a1637",
+        "a827"
+      ],
+      "date": "2019-06",
+      "journalId": "j55",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 259,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-tsc-2022-3166553",
+      "doi": "10.1109/tsc.2022.3166553",
+      "title": "Serverless Computing: State-of-the-Art, Challenges and Opportunities",
+      "authorIds": [
+        "a456",
+        "a1642",
+        "a763",
+        "a1643",
+        "a1644"
+      ],
+      "date": "2022-04",
+      "journalId": "j138",
+      "keywordIds": [
+        "survey",
+        "cloud-computing"
+      ],
+      "citations": 205,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3508360",
+      "doi": "10.1145/3508360",
+      "title": "The Serverless Computing Survey: A Technical Primer for Design Architecture",
+      "authorIds": [
+        "a457",
+        "a1645",
+        "a154",
+        "a1646",
+        "a1647",
+        "a827"
+      ],
+      "date": "2022-01",
+      "journalId": "j1",
+      "keywordIds": [
+        "survey",
+        "cloud-computing"
+      ],
+      "citations": 180,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3510412",
+      "doi": "10.1145/3510412",
+      "title": "A Holistic View on Resource Management in Serverless Computing Environments: Taxonomy and Future Directions",
+      "authorIds": [
+        "a1649",
+        "a1650",
+        "a116"
+      ],
+      "date": "2022-01",
+      "journalId": "j1",
+      "keywordIds": [
+        "survey",
+        "cloud-computing"
+      ],
+      "citations": 113,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3419111-3421286",
+      "doi": "10.1145/3419111.3421286",
+      "title": "Wukong",
+      "authorIds": [
+        "a1651",
+        "a1652",
+        "a1653",
+        "a1654",
+        "a1655",
+        "a827"
+      ],
+      "date": "2020-10",
+      "journalId": "j139",
+      "keywordIds": [
+        "cloud-computing",
+        "scalability"
+      ],
+      "citations": 100,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3423211-3425690",
+      "doi": "10.1145/3423211.3425690",
+      "title": "Xanadu",
+      "authorIds": [
+        "a1657",
+        "a1658",
+        "a1659"
+      ],
+      "date": "2020-12",
+      "journalId": "j140",
+      "keywordIds": [
+        "cloud-computing",
+        "scalability"
+      ],
+      "citations": 97,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-infocom41043-2020-9155363",
+      "doi": "10.1109/infocom41043.2020.9155363",
+      "title": "COSE: Configuring Serverless Functions using Statistical Learning",
+      "authorIds": [
+        "a1660",
+        "a1661",
+        "a1630",
+        "a1662"
+      ],
+      "date": "2020-07",
+      "journalId": "j141",
+      "keywordIds": [
+        "cloud-computing",
+        "optimization-algorithms"
+      ],
+      "citations": 96,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-escience-2016-7870901",
+      "doi": "10.1109/escience.2016.7870901",
+      "title": "Globus auth: A research identity and access management platform",
+      "authorIds": [
+        "a1158",
+        "a1663",
+        "a144",
+        "a1664",
+        "a1665",
+        "a827"
+      ],
+      "date": "2016-10",
+      "journalId": "j142",
+      "keywordIds": [
+        "infrastructure",
+        "cloud-computing"
+      ],
+      "citations": 90,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-mlhpc54614-2021-00007",
+      "doi": "10.1109/mlhpc54614.2021.00007",
+      "title": "Colmena: Scalable Machine-Learning-Based Steering of Ensemble Simulations for High Performance Computing",
+      "authorIds": [
+        "a1667",
+        "a1668",
+        "a1669",
+        "a47",
+        "a145",
+        "a827"
+      ],
+      "date": "2021-11",
+      "journalId": "j143",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 50,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1016-j-patter-2022-100606",
+      "doi": "10.1016/j.patter.2022.100606",
+      "title": "Linking scientific instruments and computation: Patterns, technologies, and experiences",
+      "authorIds": [
+        "a1675",
+        "a145",
+        "a1133",
+        "a87",
+        "a1676",
+        "a827"
+      ],
+      "date": "2022-10",
+      "journalId": "j144",
+      "keywordIds": [
+        "infrastructure",
+        "hpc-integration"
+      ],
+      "citations": 45,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-mcc-2014-52",
+      "doi": "10.1109/mcc.2014.52",
+      "title": "Efficient and Secure Transfer, Synchronization, and Sharing of Big Data",
+      "authorIds": [
+        "a144",
+        "a1158",
+        "a246"
+      ],
+      "date": "2014-09",
+      "journalId": "j145",
+      "keywordIds": [
+        "infrastructure",
+        "cloud-computing"
+      ],
+      "citations": 93,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3219104-3219127",
+      "doi": "10.1145/3219104.3219127",
+      "title": "Globus Platform Services for Data Publication",
+      "authorIds": [
+        "a1663",
+        "a87",
+        "a144",
+        "a145",
+        "a1665",
+        "a827"
+      ],
+      "date": "2018-07",
+      "journalId": "j111",
+      "keywordIds": [
+        "infrastructure",
+        "cloud-computing"
+      ],
+      "citations": 29,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-ipdpsw52791-2021-00018",
+      "doi": "10.1109/ipdpsw52791.2021.00018",
+      "title": "Coding the Computing Continuum: Fluid Function Execution in Heterogeneous Computing Environments",
+      "authorIds": [
+        "a1638",
+        "a1682",
+        "a145",
+        "a457",
+        "a47",
+        "a827"
+      ],
+      "date": "2021-06",
+      "journalId": "j146",
+      "keywordIds": [
+        "cloud-computing",
+        "hpc-integration"
+      ],
+      "citations": 27,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-tnsm-2023-3254437",
+      "doi": "10.1109/tnsm.2023.3254437",
+      "title": "Configuration and Placement of Serverless Applications Using Statistical Learning",
+      "authorIds": [
+        "a1661",
+        "a1660",
+        "a1683",
+        "a1662",
+        "a1684"
+      ],
+      "date": "2023-03",
+      "journalId": "j147",
+      "keywordIds": [
+        "cloud-computing",
+        "optimization-algorithms"
+      ],
+      "citations": 27,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1007-s11227-021-04057-z",
+      "doi": "10.1007/s11227-021-04057-z",
+      "title": "ETAS: predictive scheduling of functions on worker nodes of Apache OpenWhisk platform",
+      "authorIds": [
+        "a1685",
+        "a1686"
+      ],
+      "date": "2021-09",
+      "journalId": "j89",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 26,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3581784-3607047",
+      "doi": "10.1145/3581784.3607047",
+      "title": "Accelerating Communications in Federated Applications with Transparent Object Proxies",
+      "authorIds": [
+        "a1669",
+        "a1687",
+        "a1667",
+        "a1688",
+        "a1689",
+        "a827"
+      ],
+      "date": "2023-10",
+      "journalId": "j2",
+      "keywordIds": [
+        "cloud-computing",
+        "infrastructure"
+      ],
+      "citations": 18,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3624062-3624277",
+      "doi": "10.1145/3624062.3624277",
+      "title": "TaskVine: Managing In-Cluster Storage for High-Throughput Data Intensive Workflows",
+      "authorIds": [
+        "a1690",
+        "a1691",
+        "a1692",
+        "a1693",
+        "a1694",
+        "a827"
+      ],
+      "date": "2023-11",
+      "journalId": "j95",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 16,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1002-cpe-7743",
+      "doi": "10.1002/cpe.7743",
+      "title": "Workflow aware analytical model to predict performance and cost of serverless execution",
+      "authorIds": [
+        "a1696",
+        "a1697",
+        "a1698"
+      ],
+      "date": "2023-04",
+      "journalId": "j107",
+      "keywordIds": [
+        "workflow-orchestration",
+        "cloud-computing"
+      ],
+      "citations": 10,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3297280-3297292",
+      "doi": "10.1145/3297280.3297292",
+      "title": "A programming model and middleware for high throughput serverless computing applications",
+      "authorIds": [
+        "a1699",
+        "a1700",
+        "a1701",
+        "a1702"
+      ],
+      "date": "2019-04",
+      "journalId": "j148",
+      "keywordIds": [
+        "middleware",
+        "cloud-computing"
+      ],
+      "citations": 21,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-ipdpsw59300-2023-00018",
+      "doi": "10.1109/ipdpsw59300.2023.00018",
+      "title": "Cloud Services Enable Efficient AI-Guided Simulation Workflows across Heterogeneous Resources",
+      "authorIds": [
+        "a1667",
+        "a1669",
+        "a1687",
+        "a145",
+        "a47",
+        "a827"
+      ],
+      "date": "2023-05",
+      "journalId": "j146",
+      "keywordIds": [
+        "workflow-orchestration",
+        "cloud-computing"
+      ],
+      "citations": 11,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-ipdps57955-2024-00027",
+      "doi": "10.1109/ipdps57955.2024.00027",
+      "title": "UniFaaS: Programming across Distributed Cyberinfrastructure with Federated Function Serving",
+      "authorIds": [
+        "a456",
+        "a145",
+        "a47",
+        "a144",
+        "a246",
+        "a827"
+      ],
+      "date": "2024-05",
+      "journalId": "j29",
+      "keywordIds": [
+        "cloud-computing",
+        "workflow-orchestration"
+      ],
+      "citations": 5,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-scw63240-2024-00083",
+      "doi": "10.1109/scw63240.2024.00083",
+      "title": "Establishing a High-Performance and Productive Ecosystem for Distributed Execution of Python Functions Using Globus Compute",
+      "authorIds": [
+        "a1663",
+        "a47",
+        "a1704",
+        "a144",
+        "a145",
+        "a827"
+      ],
+      "date": "2024-11",
+      "journalId": "j95",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 3,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-ipdps-2019-00038",
+      "doi": "10.1109/ipdps.2019.00038",
+      "title": "DLHub: Model and Data Serving for Science",
+      "authorIds": [
+        "a145",
+        "a457",
+        "a144",
+        "a1667",
+        "a47",
+        "a827"
+      ],
+      "date": "2019-05",
+      "journalId": "j29",
+      "keywordIds": [
+        "infrastructure",
+        "cloud-computing"
+      ],
+      "citations": 4,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3526060-3535459",
+      "doi": "10.1145/3526060.3535459",
+      "title": "PONCHO",
+      "authorIds": [
+        "a1690",
+        "a1711",
+        "a1693",
+        "a1712",
+        "a1695",
+        "a827"
+      ],
+      "date": "2022-06",
+      "journalId": "j149",
+      "keywordIds": [
+        "workflow-orchestration",
+        "cloud-computing"
+      ],
+      "citations": 3,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-escience-2019-00056",
+      "doi": "10.1109/escience.2019.00056",
+      "title": "Serverless Science for Simple, Scalable, and Shareable Scholarship",
+      "authorIds": [
+        "a144",
+        "a246"
+      ],
+      "date": "2019-09",
+      "journalId": "j142",
+      "keywordIds": [
+        "cloud-computing",
+        "vision"
+      ],
+      "citations": 4,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-5070-sr31154815",
+      "doi": "10.5070/sr31154815",
+      "title": "SoK: Function-As-A-Service: From An Application Developer’s Perspective",
+      "authorIds": [
+        "a1661",
+        "a1662",
+        "a1660",
+        "a1713",
+        "a1683"
+      ],
+      "date": "2021-09",
+      "journalId": "j150",
+      "keywordIds": [
+        "survey",
+        "cloud-computing"
+      ],
+      "citations": 3,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1109-ic2e52221-2021-00028",
+      "doi": "10.1109/ic2e52221.2021.00028",
+      "title": "LIBRA: An Economical Hybrid Approach for Cloud Applications with Strict SLAs",
+      "authorIds": [
+        "a1661",
+        "a1714",
+        "a1660",
+        "a1683",
+        "a1662"
+      ],
+      "date": "2021-10",
+      "journalId": "j151",
+      "keywordIds": [
+        "cloud-computing",
+        "optimization-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3452413-3464790",
+      "doi": "10.1145/3452413.3464790",
+      "title": "Expanding Cost-Aware Function Execution with Multidimensional Notions of Cost",
+      "authorIds": [
+        "a1682",
+        "a1638",
+        "a246",
+        "a144"
+      ],
+      "date": "2020-06",
+      "journalId": "j149",
+      "keywordIds": [
+        "cloud-computing",
+        "optimization-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3452413-3464787",
+      "doi": "10.1145/3452413.3464787",
+      "title": "Towards a Serverless Bioinformatics Cyberinfrastructure Pipeline",
+      "authorIds": [
+        "a1715",
+        "a1716",
+        "a1717",
+        "a1718"
+      ],
+      "date": "2020-06",
+      "journalId": "j149",
+      "keywordIds": [
+        "workflow-orchestration",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-48550-arxiv-1908-04907",
+      "doi": "10.48550/arxiv.1908.04907",
+      "title": "Serverless Supercomputing: High Performance Function as a Service for Science",
+      "authorIds": [
+        "a145",
+        "a1197",
+        "a457",
+        "a47",
+        "a785",
+        "a827"
+      ],
+      "date": "2019-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration",
+        "cloud-computing"
+      ],
+      "citations": 14,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-48550-arxiv-2406-17710",
+      "doi": "10.48550/arxiv.2406.17710",
+      "title": "GreenFaaS: Maximizing Energy Efficiency of HPC Workloads with FaaS",
+      "authorIds": [
+        "a1719",
+        "a1687",
+        "a47",
+        "a1720",
+        "a1721",
+        "a827"
+      ],
+      "date": "2024-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "cloud-computing",
+        "hpc-integration"
+      ],
+      "citations": 1,
+      "added": "2026-09-07"
+    },
+    {
+      "id": "10-48550-arxiv-2208-09513",
+      "doi": "10.48550/arxiv.2208.09513",
+      "title": "Globus Automation Services: Research Process Automation Across the Space-Time Continuum",
+      "authorIds": [
+        "a1663",
+        "a1724",
+        "a1704",
+        "a144",
+        "a145",
+        "a827"
+      ],
+      "date": "2022-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "infrastructure"
+      ],
+      "citations": 0,
+      "added": "2026-09-07"
     }
   ]
 }

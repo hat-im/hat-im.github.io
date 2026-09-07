@@ -542,5 +542,65 @@
   "j136": {
     "name": "IEEE International Conference on e-Science and Grid Computing",
     "type": "conference"
+  },
+  "j137": {
+    "name": "Communications of the ACM",
+    "type": "journal"
+  },
+  "j138": {
+    "name": "IEEE Transactions on Services Computing",
+    "type": "journal"
+  },
+  "j139": {
+    "name": "ACM Symposium on Cloud Computing",
+    "type": "conference"
+  },
+  "j140": {
+    "name": "International Middleware Conference",
+    "type": "conference"
+  },
+  "j141": {
+    "name": "IEEE Conference on Computer Communications",
+    "type": "conference"
+  },
+  "j142": {
+    "name": "IEEE International Conference on eScience",
+    "type": "conference"
+  },
+  "j143": {
+    "name": "IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments",
+    "type": "conference"
+  },
+  "j144": {
+    "name": "Patterns",
+    "type": "journal"
+  },
+  "j145": {
+    "name": "IEEE Cloud Computing",
+    "type": "journal"
+  },
+  "j146": {
+    "name": "IEEE International Parallel and Distributed Processing Symposium Workshops",
+    "type": "conference"
+  },
+  "j147": {
+    "name": "IEEE Transactions on Network and Service Management",
+    "type": "journal"
+  },
+  "j148": {
+    "name": "ACM/SIGAPP Symposium on Applied Computing",
+    "type": "conference"
+  },
+  "j149": {
+    "name": "Workshop on High Performance Serverless Computing",
+    "type": "conference"
+  },
+  "j150": {
+    "name": "Journal of Systems Research",
+    "type": "journal"
+  },
+  "j151": {
+    "name": "IEEE International Conference on Cloud Engineering",
+    "type": "conference"
   }
 }
