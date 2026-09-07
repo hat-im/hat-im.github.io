@@ -8367,7 +8367,7 @@
       "journalId": "j137",
       "keywordIds": [
         "survey",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 342,
       "added": "2026-09-07"
@@ -8385,7 +8385,7 @@
       "journalId": "j1",
       "keywordIds": [
         "survey",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 264,
       "added": "2026-09-07"
@@ -8426,7 +8426,7 @@
       "journalId": "j138",
       "keywordIds": [
         "survey",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 205,
       "added": "2026-09-07"
@@ -8447,7 +8447,7 @@
       "journalId": "j1",
       "keywordIds": [
         "survey",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 180,
       "added": "2026-09-07"
@@ -8465,7 +8465,7 @@
       "journalId": "j1",
       "keywordIds": [
         "survey",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 113,
       "added": "2026-09-07"
@@ -8485,7 +8485,7 @@
       "date": "2020-10",
       "journalId": "j139",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "scalability"
       ],
       "citations": 100,
@@ -8503,7 +8503,7 @@
       "date": "2020-12",
       "journalId": "j140",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "scalability"
       ],
       "citations": 97,
@@ -8522,7 +8522,7 @@
       "date": "2020-07",
       "journalId": "j141",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "optimization-algorithms"
       ],
       "citations": 96,
@@ -8645,7 +8645,7 @@
       "date": "2021-06",
       "journalId": "j146",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "hpc-integration"
       ],
       "citations": 27,
@@ -8665,7 +8665,7 @@
       "date": "2023-03",
       "journalId": "j147",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "optimization-algorithms"
       ],
       "citations": 27,
@@ -8683,7 +8683,7 @@
       "journalId": "j89",
       "keywordIds": [
         "scheduling",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 26,
       "added": "2026-09-07"
@@ -8743,7 +8743,7 @@
       "journalId": "j107",
       "keywordIds": [
         "workflow-orchestration",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 10,
       "added": "2026-09-07"
@@ -8762,7 +8762,7 @@
       "journalId": "j148",
       "keywordIds": [
         "middleware",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 21,
       "added": "2026-09-07"
@@ -8803,7 +8803,7 @@
       "date": "2024-05",
       "journalId": "j29",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "workflow-orchestration"
       ],
       "citations": 5,
@@ -8825,7 +8825,7 @@
       "journalId": "j95",
       "keywordIds": [
         "workflow-orchestration",
-        "hpc-integration"
+        "serverless-computing"
       ],
       "citations": 3,
       "added": "2026-09-07"
@@ -8867,7 +8867,7 @@
       "journalId": "j149",
       "keywordIds": [
         "workflow-orchestration",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 3,
       "added": "2026-09-07"
@@ -8883,7 +8883,7 @@
       "date": "2019-09",
       "journalId": "j142",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "vision"
       ],
       "citations": 4,
@@ -8904,7 +8904,7 @@
       "journalId": "j150",
       "keywordIds": [
         "survey",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 3,
       "added": "2026-09-07"
@@ -8942,7 +8942,7 @@
       "date": "2020-06",
       "journalId": "j149",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "optimization-algorithms"
       ],
       "citations": 1,
@@ -8962,7 +8962,7 @@
       "journalId": "j149",
       "keywordIds": [
         "workflow-orchestration",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 1,
       "added": "2026-09-07"
@@ -8983,7 +8983,7 @@
       "journalId": "j98",
       "keywordIds": [
         "hpc-integration",
-        "cloud-computing"
+        "serverless-computing"
       ],
       "citations": 14,
       "added": "2026-09-07"
@@ -9003,7 +9003,7 @@
       "date": "2024-06",
       "journalId": "j98",
       "keywordIds": [
-        "cloud-computing",
+        "serverless-computing",
         "hpc-integration"
       ],
       "citations": 1,

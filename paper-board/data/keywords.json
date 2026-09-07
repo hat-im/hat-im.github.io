@@ -164,6 +164,11 @@
     "bg": "#f0f0db",
     "text": "#707326"
   },
+  "serverless-computing": {
+    "label": "serverless computing",
+    "bg": "#dfdbf0",
+    "text": "#3c2d76"
+  },
   "superconducting-qubits": {
     "label": "superconducting qubits",
     "bg": "#e6dbf0",
