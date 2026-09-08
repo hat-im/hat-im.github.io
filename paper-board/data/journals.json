@@ -602,5 +602,13 @@
   "j151": {
     "name": "IEEE International Conference on Cloud Engineering",
     "type": "conference"
+  },
+  "j152": {
+    "name": "IEEE 25th International Symposium on Cluster, Cloud and Internet Computing (CCGrid)",
+    "type": "conference"
+  },
+  "j153": {
+    "name": "Proceedings of the 2024 Workshop on High Performance and Quantum Computing Integration",
+    "type": "conference"
   }
 }

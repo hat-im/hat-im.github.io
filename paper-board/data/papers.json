@@ -9087,6 +9087,416 @@
       ],
       "citations": 33,
       "added": "2026-09-08"
+    },
+    {
+      "id": "10-1088-2058-9565-ab6bf6",
+      "doi": "10.1088/2058-9565/ab6bf6",
+      "title": "XACC: a system-level software infrastructure for heterogeneous quantum–classical computing*",
+      "authorIds": [
+        "a508",
+        "a484",
+        "a1734",
+        "a1735",
+        "a335"
+      ],
+      "date": "2020-01",
+      "journalId": "j77",
+      "keywordIds": [
+        "middleware",
+        "quantum-programming"
+      ],
+      "citations": 5,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2211-13431",
+      "doi": "10.48550/arXiv.2211.13431",
+      "title": "Error mitigated quantum circuit cutting",
+      "authorIds": [
+        "a490",
+        "a1736"
+      ],
+      "date": "2022-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "fault-tolerance"
+      ],
+      "citations": 4,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2409-14183",
+      "doi": "10.48550/arXiv.2409.14183",
+      "title": "Quantum Computing for Automotive Applications",
+      "authorIds": [
+        "a1521",
+        "a1522",
+        "a1556",
+        "a408",
+        "a1557",
+        "a827"
+      ],
+      "date": "2024-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "applications",
+        "vision"
+      ],
+      "citations": 1,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2405-01021",
+      "doi": "10.48550/arXiv.2405.01021",
+      "title": "QSimPy: A Learning-centric Simulation Framework for Quantum Cloud Resource Management",
+      "authorIds": [
+        "a556",
+        "a744",
+        "a116"
+      ],
+      "date": "2024-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "scheduling"
+      ],
+      "citations": 2,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1088-1367-2630-ad9945",
+      "doi": "10.1088/1367-2630/ad9945",
+      "title": "A modular entanglement-based quantum computer architecture",
+      "authorIds": [
+        "a1741",
+        "a1742"
+      ],
+      "date": "2024-12",
+      "journalId": "j67",
+      "keywordIds": [
+        "architecture",
+        "qubit-hardware"
+      ],
+      "citations": 5,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2509-13826",
+      "doi": "10.48550/arXiv.2509.13826",
+      "title": "Quantum Simulations of Battery Electrolytes with VQE-qEOM and SQD: Active-Space Design, Dissociation, and Excited States of LiPF$_6$, NaPF$_6$, and FSI Salts",
+      "authorIds": [
+        "a1743",
+        "a1744",
+        "a1745"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-ccgrid64434-2025-00070",
+      "doi": "10.1109/CCGRID64434.2025.00070",
+      "title": "Pilot-Quantum: A Middleware for Quantum-HPC Resource, Workload and Task Management",
+      "authorIds": [
+        "a491",
+        "a408",
+        "a659",
+        "a360",
+        "a479"
+      ],
+      "date": "2025-05",
+      "journalId": "j152",
+      "keywordIds": [
+        "middleware",
+        "hpc-integration"
+      ],
+      "citations": 4,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2604-15279",
+      "doi": "10.48550/arXiv.2604.15279",
+      "title": "Wave-Based Dispatch for Circuit Cutting in Hybrid HPC--Quantum Systems",
+      "authorIds": [
+        "a1746",
+        "a1747",
+        "a345"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "scheduling",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qce60285-2024-00114",
+      "doi": "10.1109/QCE60285.2024.00114",
+      "title": "Reducing Mid-Circuit Measurements via Probabilistic Circuits",
+      "authorIds": [
+        "a152",
+        "a1748",
+        "a514"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 5,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qce57702-2023-10199",
+      "doi": "10.1109/QCE57702.2023.10199",
+      "title": "Towards a Dutch Hybrid Quantum/HPC Infrastructure",
+      "authorIds": [
+        "a1749",
+        "a1750",
+        "a1751",
+        "a1752",
+        "a1753",
+        "a827"
+      ],
+      "date": "2023-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "infrastructure",
+        "hpc-integration"
+      ],
+      "citations": 2,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2510-20128",
+      "doi": "10.48550/arXiv.2510.20128",
+      "title": "A Full Stack Framework for High Performance Quantum-Classical Computing",
+      "authorIds": [
+        "a809",
+        "a368",
+        "a224",
+        "a1755",
+        "a1756",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "middleware"
+      ],
+      "citations": 0,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qce65121-2025-10289",
+      "doi": "10.1109/QCE65121.2025.10289",
+      "title": "Dynamic Solutions for Hybrid Quantum-HPC Resource Allocation",
+      "authorIds": [
+        "a1759",
+        "a626",
+        "a52",
+        "a1760",
+        "a1761",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "scheduling",
+        "hpc-integration"
+      ],
+      "citations": 2,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qsw59989-2023-00011",
+      "doi": "10.1109/QSW59989.2023.00011",
+      "title": "Middleware for Quantum: An orchestration of hybrid quantum-classical systems",
+      "authorIds": [
+        "a1770",
+        "a1771",
+        "a1772",
+        "a1773",
+        "a1774",
+        "a827"
+      ],
+      "date": "2023-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "middleware",
+        "workflow-orchestration"
+      ],
+      "citations": 13,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-tqe-2023-3275868",
+      "doi": "10.1109/TQE.2023.3275868",
+      "title": "isQ: An Integrated Software Stack for Quantum Programming",
+      "authorIds": [
+        "a294",
+        "a1776",
+        "a802",
+        "a454",
+        "a1777",
+        "a827"
+      ],
+      "date": "2023-01",
+      "journalId": "j38",
+      "keywordIds": [
+        "quantum-programming",
+        "compilation"
+      ],
+      "citations": 19,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1145-3659996-3660036",
+      "doi": "10.1145/3659996.3660036",
+      "title": "Quantum Mini-Apps: A Framework for Developing and Benchmarking Quantum-HPC Applications",
+      "authorIds": [
+        "a659",
+        "a491",
+        "a408",
+        "a360",
+        "a479"
+      ],
+      "date": "2024-06",
+      "journalId": "j153",
+      "keywordIds": [
+        "benchmarking",
+        "hpc-integration"
+      ],
+      "citations": 6,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qce65121-2025-10290",
+      "doi": "10.1109/QCE65121.2025.10290",
+      "title": "CONQURE: A Co-Execution Environment for Quantum and Classical Resources",
+      "authorIds": [
+        "a1336",
+        "a1299"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qce65121-2025-10287",
+      "doi": "10.1109/QCE65121.2025.10287",
+      "title": "Comparing Performance of Variational Quantum Algorithm Simulations on HPC Systems",
+      "authorIds": [
+        "a1781",
+        "a1782",
+        "a1783",
+        "a1784",
+        "a1785",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "benchmarking",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-ccgrid64434-2025-00069",
+      "doi": "10.1109/CCGRID64434.2025.00069",
+      "title": "Choreography and Profiling of Quantum-Classical FaaS Workflows on Hybrid Clouds",
+      "authorIds": [
+        "a361",
+        "a1790",
+        "a1791",
+        "a1792",
+        "a490",
+        "a827"
+      ],
+      "date": "2025-05",
+      "journalId": "j152",
+      "keywordIds": [
+        "workflow-orchestration",
+        "serverless-computing"
+      ],
+      "citations": 0,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2405-08810",
+      "doi": "10.48550/arXiv.2405.08810",
+      "title": "Quantum computing with Qiskit",
+      "authorIds": [
+        "a356",
+        "a733",
+        "a1794",
+        "a1736",
+        "a1795",
+        "a827"
+      ],
+      "date": "2024-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming",
+        "survey"
+      ],
+      "citations": 202,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1007-s11227-023-05879-9",
+      "doi": "10.1007/s11227-023-05879-9",
+      "title": "QPU integration in OpenCL for heterogeneous programming",
+      "authorIds": [
+        "a1800",
+        "a1801",
+        "a1802",
+        "a1803",
+        "a1804"
+      ],
+      "date": "2024-01",
+      "journalId": "j89",
+      "keywordIds": [
+        "middleware",
+        "hpc-integration"
+      ],
+      "citations": 4,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1007-978-3-032-06343-4-6",
+      "doi": "10.1007/978-3-032-06343-4_6",
+      "title": "OpenMP-Q: Quantum Task Offloading in OpenMP",
+      "authorIds": [
+        "a527",
+        "a1336",
+        "a1299"
+      ],
+      "date": "2025-09",
+      "journalId": "j63",
+      "keywordIds": [
+        "middleware",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-09-08"
     }
   ]
 }
