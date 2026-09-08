@@ -9029,6 +9029,24 @@
       ],
       "citations": 0,
       "added": "2026-09-07"
+    },
+    {
+      "id": "10-1145-3673241",
+      "doi": "10.1145/3673241",
+      "title": "MQT Predictor: Automatic Device Selection with Device-Specific Circuit Compilation for Quantum Computing",
+      "authorIds": [
+        "a606",
+        "a115",
+        "a777"
+      ],
+      "date": "2025-01",
+      "journalId": "j11",
+      "keywordIds": [
+        "compilation",
+        "quantum-machine-learning"
+      ],
+      "citations": 24,
+      "added": "2026-09-08"
     }
   ]
 }
