@@ -9047,6 +9047,46 @@
       ],
       "citations": 24,
       "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-access-2025-3633989",
+      "doi": "10.1109/ACCESS.2025.3633989",
+      "title": "High-Performance Serverless Computing: A Systematic Literature Review on Serverless for HPC, AI, and Big Data",
+      "authorIds": [
+        "a1730",
+        "a1731",
+        "a1732",
+        "a1733"
+      ],
+      "date": "2025-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "survey",
+        "serverless-computing"
+      ],
+      "citations": 9,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-tpds-2022-3208767",
+      "doi": "10.1109/TPDS.2022.3208767",
+      "title": "funcX: Federated Function as a Service for Science",
+      "authorIds": [
+        "a457",
+        "a145",
+        "a47",
+        "a1347",
+        "a1197",
+        "a827"
+      ],
+      "date": "2022-12",
+      "journalId": "j37",
+      "keywordIds": [
+        "middleware",
+        "serverless-computing"
+      ],
+      "citations": 33,
+      "added": "2026-09-08"
     }
   ]
 }
