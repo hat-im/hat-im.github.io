@@ -1474,25 +1474,6 @@
       "added": "2026-07-22"
     },
     {
-      "id": "10-48550-arxiv-1508-04180",
-      "doi": "10.48550/arXiv.1508.04180",
-      "title": "A Comprehensive Perspective on Pilot-Job Systems",
-      "authorIds": [
-        "a739",
-        "a653",
-        "a360"
-      ],
-      "date": "2015-08",
-      "journalId": "j1",
-      "keywordIds": [
-        "middleware",
-        "survey",
-        "hpc-scheduling"
-      ],
-      "citations": 110,
-      "added": "2026-07-22"
-    },
-    {
       "id": "10-1145-3325097",
       "doi": "10.1145/3325097",
       "title": "A Survey on Scheduling Strategies for Workflows in Cloud Environment and Emerging Trends",
@@ -6389,25 +6370,6 @@
         "infrastructure"
       ],
       "citations": 5,
-      "added": "2026-08-19"
-    },
-    {
-      "id": "10-48550-arxiv-2505-02241",
-      "doi": "10.48550/arXiv.2505.02241",
-      "title": "CONQURE: A Co-Execution Environment for Quantum and Classical Resources",
-      "authorIds": [
-        "a1336",
-        "a527",
-        "a1299"
-      ],
-      "date": "2025-05",
-      "journalId": "j98",
-      "keywordIds": [
-        "middleware",
-        "hpc-integration",
-        "scheduling"
-      ],
-      "citations": 0,
       "added": "2026-08-19"
     },
     {
