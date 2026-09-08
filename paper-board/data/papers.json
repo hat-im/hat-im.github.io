@@ -9497,6 +9497,180 @@
       ],
       "citations": 0,
       "added": "2026-09-08"
+    },
+    {
+      "id": "10-1038-s41586-025-09367-3",
+      "doi": "10.1038/s41586-025-09367-3",
+      "title": "Experimental demonstration of logical magic state distillation",
+      "authorIds": [
+        "a1805",
+        "a1806",
+        "a1807",
+        "a1808",
+        "a1809",
+        "a827"
+      ],
+      "date": "2025-07",
+      "journalId": "j64",
+      "keywordIds": [
+        "fault-tolerance",
+        "qubit-hardware"
+      ],
+      "citations": 215,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1145-3177851",
+      "doi": "10.1145/3177851",
+      "title": "A Comprehensive Perspective on Pilot-Job Systems",
+      "authorIds": [
+        "a739",
+        "a653",
+        "a360"
+      ],
+      "date": "2018-04",
+      "journalId": "j1",
+      "keywordIds": [
+        "hpc-scheduling",
+        "survey"
+      ],
+      "citations": 131,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1109-qce57702-2023-00119",
+      "doi": "10.1109/qce57702.2023.00119",
+      "title": "cuQuantum SDK: A High-Performance Library for Accelerating Quantum Science",
+      "authorIds": [
+        "a1810",
+        "a1811",
+        "a1812",
+        "a1813",
+        "a1814",
+        "a827"
+      ],
+      "date": "2023-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-simulation",
+        "gpu-acceleration"
+      ],
+      "citations": 221,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-48550-arxiv-2509-08328",
+      "doi": "10.48550/arXiv.2509.08328",
+      "title": "Towards solving industrial integer linear programs with Decoded Quantum Interferometry",
+      "authorIds": [
+        "a1815",
+        "a1816",
+        "a1817",
+        "a1737",
+        "a1522",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-optimization",
+        "applications"
+      ],
+      "citations": 19,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1145-3385412-3386007",
+      "doi": "10.1145/3385412.3386007",
+      "title": "Silq: a high-level quantum language with safe uncomputation and intuitive semantics",
+      "authorIds": [
+        "a1818",
+        "a1819",
+        "a1820",
+        "a1821"
+      ],
+      "date": "2020-06",
+      "journalId": "j154",
+      "keywordIds": [
+        "quantum-programming",
+        "compilation"
+      ],
+      "citations": 267,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1038-s41534-019-0141-3",
+      "doi": "10.1038/s41534-019-0141-3",
+      "title": "Universal Quantum Control through Deep Reinforcement Learning",
+      "authorIds": [
+        "a1024",
+        "a92",
+        "a1078",
+        "a1079"
+      ],
+      "date": "2019-01",
+      "journalId": "j65",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "qubit-hardware"
+      ],
+      "citations": 549,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-22331-q-2021-11-26-592",
+      "doi": "10.22331/q-2021-11-26-592",
+      "title": "Error mitigation with Clifford quantum-circuit data",
+      "authorIds": [
+        "a1822",
+        "a35",
+        "a174",
+        "a1823"
+      ],
+      "date": "2021-11",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 444,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1103-physrevlett-125-150504",
+      "doi": "10.1103/physrevlett.125.150504",
+      "title": "Simulating Large Quantum Circuits on a Small Quantum Computer",
+      "authorIds": [
+        "a1824",
+        "a1825",
+        "a1826",
+        "a790"
+      ],
+      "date": "2020-10",
+      "journalId": "j103",
+      "keywordIds": [
+        "quantum-simulation",
+        "compilation"
+      ],
+      "citations": 475,
+      "added": "2026-09-08"
+    },
+    {
+      "id": "10-1088-1367-2630-abd7bc",
+      "doi": "10.1088/1367-2630/abd7bc",
+      "title": "Constructing a virtual two-qubit gate by sampling single-qubit operations",
+      "authorIds": [
+        "a1827",
+        "a251"
+      ],
+      "date": "2020-12",
+      "journalId": "j67",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 195,
+      "added": "2026-09-08"
     }
   ]
 }

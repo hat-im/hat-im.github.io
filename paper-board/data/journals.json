@@ -610,5 +610,9 @@
   "j153": {
     "name": "Proceedings of the 2024 Workshop on High Performance and Quantum Computing Integration",
     "type": "conference"
+  },
+  "j154": {
+    "name": "ACM SIGPLAN Conference on Programming Language Design and Implementation",
+    "type": "conference"
   }
 }
