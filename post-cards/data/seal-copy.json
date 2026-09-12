@@ -1,0 +1,11 @@
+{
+  "cities": ["LONDON", "BANGALORE", "VIZAG", "BOMBAY"],
+  "sloganCancels": ["LONDON TO BANGALORE", "FLY SAFE SAM"],
+  "permitPrefix": "HS",
+  "permitNumbers": [181, 2121, 1801, 721],
+  "parsMessages": ["FORWARDING TO: LONDON", "FORWARDING TO: BANGALORE", "REDIRECTED TO SAM"],
+  "nixieReasons": ["ATTEMPTED — SAM NOT HOME", "RETURN TO SENDER"],
+  "ibiCaption": "H + S",
+  "trackingPrefix": "HSLDNBLR",
+  "serviceRequestedOptions": ["COMPANY REQUESTED", "MISSED"]
+}

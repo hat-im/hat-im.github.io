@@ -1,0 +1,19 @@
+{
+  "types": [
+    "cds",
+    "wavyLines",
+    "sloganCancel",
+    "geometricTarget",
+    "fancyPictorial",
+    "imbBarcode",
+    "inkjetSpray",
+    "permitIndicia",
+    "fim",
+    "ibi2d",
+    "parsSticker",
+    "nixieLabel",
+    "fluorescentBarcode",
+    "trackingBarcode",
+    "serviceRequested"
+  ]
+}

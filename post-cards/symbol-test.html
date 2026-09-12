@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postcard symbols</title>
+  <style>
+    body { margin: 0; padding: 32px; background: #fff; font-family: -apple-system, BlinkMacSystemFont, sans-serif; color: #3a3a44; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    h2 { font-size: 15px; margin: 40px 0 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px; }
+    .seal-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+    .item { border: 1px solid rgba(58,58,68,0.14); padding: 12px; text-align: center; }
+    canvas { display: block; margin: 0 auto 10px; max-width: 100%; height: auto; }
+    .id { font-weight: 600; font-size: 13px; }
+    .caption { font-size: 12px; color: rgba(58,58,68,0.65); margin-top: 2px; }
+  </style>
+</head>
+<body>
+  <h1>Postcard symbol reference</h1>
+  <p class="caption">Dev-only preview page, not linked from the site.</p>
+
+  <h2>Icons (glyphs.json)</h2>
+  <div class="grid" id="glyphGrid"></div>
+
+  <h2>Seals &amp; postmarks (seals.json)</h2>
+  <div class="grid seal-grid" id="sealGrid"></div>
+
+  <h2>Stamps (stamps.json)</h2>
+  <div class="grid" id="stampGrid"></div>
+
+  <script src="/post-cards/scripts/hash-utils.js"></script>
+  <script src="/post-cards/scripts/postcard-engine.js"></script>
+  <script src="/post-cards/scripts/symbol-test.js"></script>
+</body>
+</html>

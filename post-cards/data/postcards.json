@@ -1,0 +1,16 @@
+{
+  "postcards": [
+    {
+      "id": "postcard-01",
+      "date": "2026-09-12",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Bangalore",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-01.mp4"
+      },
+      "message": "Hey!\nI hope you're having fun in London. I wonder what you must be thinking about all the things you're seeing and trying. I hope it's not exhausting you too much, though.\nI hope the weather is moody in the best way, that the food is scrumptious, and that British people are real. Say hello to the Queen if you see her!"
+    }
+  ]
+}

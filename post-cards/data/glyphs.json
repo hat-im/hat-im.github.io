@@ -1,0 +1,54 @@
+{
+  "glyphs": {
+    "heart": [
+      { "type": "image", "src": "/post-cards/images/glyphs/heart.png" }
+    ],
+    "star": [
+      { "type": "image", "src": "/post-cards/images/glyphs/star.png" }
+    ],
+    "plane": [
+      { "type": "image", "src": "/post-cards/images/glyphs/airplane.png" }
+    ],
+    "club": [
+      { "type": "image", "src": "/post-cards/images/glyphs/poker.png" }
+    ],
+    "stripe": [
+      { "type": "stripe", "count": 5, "height": 0.7, "gap": 0.16, "skew": 0.5 }
+    ],
+    "crosshatch": [
+      { "type": "crosshatch", "r": 1, "gap": 0.24 }
+    ],
+    "cup": [
+      { "type": "rect", "x": -0.24, "y": -0.32, "w": 0.48, "h": 0.48 },
+      { "type": "rect", "x": -0.34, "y": 0.14, "w": 0.68, "h": 0.1 },
+      { "type": "circle", "cx": 0.26, "cy": -0.08, "r": 0.16 }
+    ],
+    "cat": [
+      { "type": "image", "src": "/post-cards/images/glyphs/cat.png" }
+    ],
+    "cat-sitting": [
+      { "type": "image", "src": "/post-cards/images/glyphs/cat-sitting.png" }
+    ],
+    "puppy": [
+      { "type": "image", "src": "/post-cards/images/glyphs/puppy.png" }
+    ],
+    "pawprint": [
+      { "type": "image", "src": "/post-cards/images/glyphs/paws.png" }
+    ],
+    "bigben": [
+      { "type": "image", "src": "/post-cards/images/glyphs/big-ben.png" }
+    ],
+    "tube": [
+      { "type": "image", "src": "/post-cards/images/glyphs/london-underground.png" }
+    ],
+    "phonebooth": [
+      { "type": "image", "src": "/post-cards/images/glyphs/telephone-booth.png" }
+    ],
+    "bus": [
+      { "type": "image", "src": "/post-cards/images/glyphs/bus-red.png" }
+    ],
+    "waves": [
+      { "type": "image", "src": "/post-cards/images/glyphs/waves.png" }
+    ]
+  }
+}

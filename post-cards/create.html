@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Make a postcard</title>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="%23e6ecfb" stroke="%233a3a44" stroke-width="1.2"/><circle cx="17.5" cy="8.5" r="1.6" fill="%233a3a44"/><path d="M3 16l5-5 4 4 3-3 6 5" fill="none" stroke="%233a3a44" stroke-width="1.2"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&family=Covered+By+Your+Grace&family=Homemade+Apple&family=Kalam:wght@400;700&family=Shadows+Into+Light&family=Special+Elite&display=swap">
+  <link rel="stylesheet" href="/shared/gradient-shift.css">
+  <link rel="stylesheet" href="/post-cards/styles/post-cards.css">
+  <link rel="stylesheet" href="/post-cards/styles/create.css">
+</head>
+<body class="gradient-shift-bg">
+  <div class="page create-page">
+    <div class="toolbar">
+      <a class="text-link" href="/post-cards.html" id="backLink"></a>
+    </div>
+
+    <h1 id="pageHeading" class="create-heading"></h1>
+    <p id="pageIntro" class="create-intro"></p>
+
+    <div class="create-layout">
+      <form class="create-form" id="createForm">
+        <label class="field">
+          <span class="field-label" id="mediaLabel"></span>
+          <input type="file" id="mediaInput" accept="video/*,image/*">
+          <span class="field-hint" id="mediaHint"></span>
+        </label>
+
+        <label class="field">
+          <span class="field-label" id="messageLabel"></span>
+          <textarea id="messageInput" rows="5"></textarea>
+        </label>
+
+        <label class="field">
+          <span class="field-label" id="locationLabel"></span>
+          <input type="text" id="locationInput">
+        </label>
+
+        <div class="field">
+          <span class="field-label" id="colorLabel"></span>
+          <div class="swatches" id="colorSwatches"></div>
+        </div>
+
+        <div class="field">
+          <span class="field-label" id="fontLabel"></span>
+          <div class="font-options" id="fontOptions"></div>
+        </div>
+      </form>
+
+      <div class="preview-panel">
+        <div class="postcard-stage" id="postcardStage">
+          <canvas id="postcardCanvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/post-cards/scripts/hash-utils.js"></script>
+  <script src="/post-cards/scripts/postcard-engine.js"></script>
+  <script src="/post-cards/scripts/create.js"></script>
+</body>
+</html>

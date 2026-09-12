@@ -1,9 +1,30 @@
+.postcards-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #8b5c44 0%, #a0824a 100%);
+  color: white;
+  text-decoration: none;
+  font-family: "Crimson Text", "Georgia", serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+.postcards-link:hover {
+  background: linear-gradient(135deg, #a0824a 0%, #b89660 100%);
+  transform: scale(1.05);
+}
+
 body {
   font-family: "Crimson Text", "Georgia", "Playfair Display", serif;
   max-width: 500px;
   margin: 0 auto;
   padding: 15px;
-  background: linear-gradient(
+  background-image: linear-gradient(
     45deg,
     #faf7f2,
     #f5f1e8,
@@ -11,8 +32,6 @@ body {
     #f7f3ed,
     #fdf9f1
   );
-  background-size: 400% 400%;
-  animation: luxuriousGradient 12s ease-in-out infinite;
   line-height: 1.7;
   color: #3c2f2f;
   display: flex;
@@ -23,24 +42,6 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-@keyframes luxuriousGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 100% 25%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  75% {
-    background-position: 25% 0%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .content-card {

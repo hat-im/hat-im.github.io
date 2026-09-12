@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postcards</title>
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2" fill="%23f3e6fb" stroke="%233a3a44" stroke-width="1.2"/><circle cx="17.5" cy="8.5" r="1.6" fill="%233a3a44"/><path d="M3 16l5-5 4 4 3-3 6 5" fill="none" stroke="%233a3a44" stroke-width="1.2"/></svg>'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat&family=Courier+Prime:wght@400;700&family=Covered+By+Your+Grace&family=Homemade+Apple&family=Kalam:wght@400;700&family=Shadows+Into+Light&family=Special+Elite&display=swap">
+  <link rel="stylesheet" href="/shared/gradient-shift.css">
+  <link rel="stylesheet" href="/post-cards/styles/post-cards.css">
+</head>
+<body class="gradient-shift-bg">
+  <div class="page">
+    <main class="stage-wrap">
+      <div class="stage-row">
+        <button class="nav-btn nav-btn-jump" id="firstBtn" type="button" disabled>&lt;&lt;</button>
+        <button class="nav-btn" id="prevBtn" type="button" disabled>&lt;</button>
+
+        <div class="postcard-pile" id="postcardPile">
+          <div class="postcard-stage" id="postcardStage">
+            <canvas id="postcardCanvas"></canvas>
+          </div>
+        </div>
+
+        <button class="nav-btn" id="nextBtn" type="button" disabled>&gt;</button>
+        <button class="nav-btn nav-btn-jump" id="latestBtn" type="button" disabled>&gt;&gt;</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/post-cards/scripts/hash-utils.js"></script>
+  <script src="/post-cards/scripts/postcard-engine.js"></script>
+  <script src="/post-cards/scripts/app.js"></script>
+</body>
+</html>

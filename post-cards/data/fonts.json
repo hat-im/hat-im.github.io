@@ -1,0 +1,9 @@
+{
+  "fonts": [
+    { "id": "covered-by-your-grace", "label": "Covered By Your Grace", "family": "\"Covered By Your Grace\", cursive" },
+    { "id": "caveat", "label": "Caveat", "family": "\"Caveat\", cursive" },
+    { "id": "homemade-apple", "label": "Homemade Apple", "family": "\"Homemade Apple\", cursive" },
+    { "id": "kalam", "label": "Kalam", "family": "\"Kalam\", cursive" },
+    { "id": "shadows-into-light", "label": "Shadows Into Light", "family": "\"Shadows Into Light\", cursive" }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "pageTitle": "Postcards",
+  "nav": {
+    "firstAria": "First postcard",
+    "prevAria": "Previous postcard",
+    "nextAria": "Next postcard",
+    "latestAria": "Latest postcard"
+  },
+  "mediaFallbackText": "Coming soon",
+  "create": {
+    "pageHeading": "Make a postcard",
+    "pageIntro": "Pick a photo or GIF, write a message, choose a color and a font.",
+    "mediaLabel": "Photo or GIF",
+    "mediaHint": "Square works best.",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write a message...",
+    "locationLabel": "Postmark location",
+    "locationPlaceholder": "Somewhere Nice",
+    "colorLabel": "Color",
+    "fontLabel": "Font",
+    "backLinkLabel": "Back"
+  }
+}
