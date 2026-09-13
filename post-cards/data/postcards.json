@@ -11,6 +11,18 @@
         "src": "/post-cards/videos/postcard-01.mp4"
       },
       "message": "Hey!\nI hope you're having fun in London. I wonder what you must be thinking about all the things you're seeing and trying. I hope it's not exhausting you too much, though.\nI hope the weather is moody in the best way, that you got to try some authentic fish & chips, and that British people are real. Say hello to the Queen if you see her!"
+    },
+    {
+      "id": "postcard-02",
+      "date": "2026-09-13",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Bangalore",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-02.mp4"
+      },
+      "message": "I had pancakes for breakfast today. They were not very good. Would not recommend. I wonder if you've had some authentic British fish 'n' chips yet. I have so much I want to ask you. It feels too much, so here it will stay... I hope you have a good day."
     }
   ]
 }
