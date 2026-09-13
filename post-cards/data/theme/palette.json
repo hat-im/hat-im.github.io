@@ -1,0 +1,30 @@
+{
+  "colors": [
+    { "name": "blush", "hex": "#f0d7df" },
+    { "name": "petal-pink", "hex": "#f9e0e2" },
+    { "name": "seashell", "hex": "#f8eaec" },
+    { "name": "peach-blush", "hex": "#f7ddd9" },
+    { "name": "sand", "hex": "#f7e6da" },
+    { "name": "sage-mist", "hex": "#e3e9dd" },
+    { "name": "seafoam", "hex": "#c4dbd9" },
+    { "name": "mint", "hex": "#d4e5e3" },
+    { "name": "powder-blue", "hex": "#cae0e4" },
+    { "name": "lavender-gray", "hex": "#c8c7d6" },
+    { "name": "salmon", "hex": "#fec5bb" },
+    { "name": "coral", "hex": "#fcd5ce" },
+    { "name": "apricot-cream", "hex": "#fae1dd" },
+    { "name": "linen", "hex": "#f8edeb" },
+    { "name": "stone", "hex": "#e8e8e4" },
+    { "name": "eucalyptus", "hex": "#d8e2dc" },
+    { "name": "champagne", "hex": "#ece4db" },
+    { "name": "peach", "hex": "#ffe5d9" },
+    { "name": "apricot", "hex": "#ffd7ba" },
+    { "name": "cream", "hex": "#ffdfc8" },
+    { "name": "bubblegum", "hex": "#ff99c8" },
+    { "name": "melon", "hex": "#fec8c3" },
+    { "name": "butter", "hex": "#fcf6bd" },
+    { "name": "honeydew", "hex": "#d0f4de" },
+    { "name": "sky-blue", "hex": "#a9def9" },
+    { "name": "lilac", "hex": "#e4c1f9" }
+  ]
+}

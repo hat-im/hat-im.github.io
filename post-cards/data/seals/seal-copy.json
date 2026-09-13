@@ -7,5 +7,6 @@
   "nixieReasons": ["ATTEMPTED — SAM NOT HOME", "RETURN TO SENDER"],
   "ibiCaption": "H + S",
   "trackingPrefix": "HSLDNBLR",
+  "morseCode": ".. / .-.. --- ...- . / -.-- --- ..-",
   "serviceRequestedOptions": ["COMPANY REQUESTED", "MISSED"]
 }
