@@ -17,6 +17,15 @@
   var postcards = [];
   var currentIndex = 0;
 
+  function assignStampIndices(list) {
+    var prevIndex = null;
+    list.forEach(function (pc) {
+      var seed = pc.date || pc.id;
+      prevIndex = PostcardEngine.pickStampIndex(seed, PostcardEngine.STAMPS.length, prevIndex);
+      pc._stampIndex = prevIndex;
+    });
+  }
+
   function formatDisplayDate(iso) {
     var parts = iso.split("-");
     var d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
@@ -58,7 +67,8 @@
       date: formatDisplayDate(pc.date),
       message: pc.message,
       color: pc.color,
-      font: pc.font
+      font: pc.font,
+      stampIndex: pc._stampIndex
     });
 
     var media = pc.media || {};
@@ -96,6 +106,7 @@
       strings = results[0];
       postcards = results[1].postcards;
       postcards.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
+      assignStampIndices(postcards);
 
       renderer.setMuted(true);
 

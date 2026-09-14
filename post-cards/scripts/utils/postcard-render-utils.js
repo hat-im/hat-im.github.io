@@ -3,6 +3,7 @@
 
   var hashSeed = window.HashUtils.hashSeed;
   var pick = window.HashUtils.pick;
+  var shuffledIndices = window.HashUtils.shuffledIndices;
 
   function darken(hex, amount) {
     var m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex || "");
@@ -24,6 +25,15 @@
     var color = (data && data.color) ? resolveColor(data.color) : pick(rng, window.PostcardAssets.PALETTE);
     var offsetY = rng() * 6;
     return { color: color, rotationDeg: rotationDeg, borderColor: darken(color, 0.22), offsetY: offsetY };
+  }
+
+  function pickStampIndex(seed, count, avoidIndex) {
+    var order = shuffledIndices(hashSeed(seed), count);
+    if (avoidIndex == null || count <= 1) return order[0];
+    for (var i = 0; i < order.length; i++) {
+      if (order[i] !== avoidIndex) return order[i];
+    }
+    return order[0];
   }
 
   function parseMorseTokens(code) {
@@ -106,6 +116,7 @@
     darken: darken,
     resolveColor: resolveColor,
     pickCardStyle: pickCardStyle,
+    pickStampIndex: pickStampIndex,
     parseMorseTokens: parseMorseTokens,
     roundRectPath: roundRectPath,
     drawCover: drawCover,

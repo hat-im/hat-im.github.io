@@ -70,7 +70,10 @@
     } else {
       this.data.color = Utils.resolveColor(data.color);
     }
-    this._stampImage = pick(rng, Assets.STAMPS);
+    var stampIndex = (typeof data.stampIndex === "number")
+      ? data.stampIndex
+      : Utils.pickStampIndex(seed, Assets.STAMPS.length, null);
+    this._stampImage = Assets.STAMPS[stampIndex];
 
     var sealCount = Math.min(2, Assets.SEALS.length);
     var stickerCount = Math.min(2, Assets.STICKER_ICONS.length);
@@ -345,6 +348,7 @@
     STAMPS: Assets.STAMPS,
     init: Assets.init,
     pickCardStyle: Utils.pickCardStyle,
+    pickStampIndex: Utils.pickStampIndex,
     drawGlyph: Glyphs.drawGlyph,
     drawSeal: Seals.drawSeal,
     buildSealExtras: Seals.buildSealExtras,
