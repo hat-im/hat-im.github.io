@@ -25,6 +25,18 @@
         "src": "/post-cards/videos/postcard-02.mp4"
       },
       "message": "Hello!\nI had pancakes for breakfast today. They were not very good. Would not recommend. I wonder if you've had some authentic British fish 'n' chips yet. I have so much I want to ask you. It feels too much, so I guess I'm putting them here. It's strange to miss you more that you're in London, when the cadence hasn't changed much, but I do. I hope you have a good day."
+    },
+    {
+      "id": "postcard-03",
+      "date": "2026-09-14",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Bangalore",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-03.mp4"
+      },
+      "message": "Hello!\nIt's raining here and Hilbert is settling in for a nap. I hope Haju is doing okay too. I think it's been raining in London as well. Thinking of you."
     }
   ]
 }
