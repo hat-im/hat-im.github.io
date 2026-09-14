@@ -614,5 +614,57 @@
   "j154": {
     "name": "ACM SIGPLAN Conference on Programming Language Design and Implementation",
     "type": "conference"
+  },
+  "j155": {
+    "name": "Design, Automation & Test in Europe Conference",
+    "type": "conference"
+  },
+  "j156": {
+    "name": "GI Lecture Notes in Informatics",
+    "type": "conference"
+  },
+  "j157": {
+    "name": "Design Automation of Quantum Computers",
+    "type": "journal"
+  },
+  "j158": {
+    "name": "ACM/IEEE Design Automation Conference",
+    "type": "conference"
+  },
+  "j159": {
+    "name": "Asian Conference on Innovation in Technology",
+    "type": "conference"
+  },
+  "j160": {
+    "name": "International Conference on Artificial Intelligence, Computer, Data Sciences and Applications",
+    "type": "conference"
+  },
+  "j161": {
+    "name": "Nature Machine Intelligence",
+    "type": "journal"
+  },
+  "j162": {
+    "name": "IEEE Journal on Emerging and Selected Topics in Circuits and Systems",
+    "type": "journal"
+  },
+  "j163": {
+    "name": "Proceedings of the ACM on Programming Languages",
+    "type": "journal"
+  },
+  "j164": {
+    "name": "Asia and South Pacific Design Automation Conference",
+    "type": "conference"
+  },
+  "j165": {
+    "name": "IEEE International Symposium on Circuits and Systems",
+    "type": "conference"
+  },
+  "j166": {
+    "name": "Leibniz International Proceedings in Informatics (LIPIcs)",
+    "type": "conference"
+  },
+  "j167": {
+    "name": "ACM Transactions on Design Automation of Electronic Systems",
+    "type": "journal"
   }
 }

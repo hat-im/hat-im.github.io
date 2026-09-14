@@ -9633,6 +9633,1068 @@
       ],
       "citations": 195,
       "added": "2026-09-08"
+    },
+    {
+      "id": "10-1145-3400302-3415746",
+      "doi": "10.1145/3400302.3415746",
+      "title": "JKQ: JKU Tools for Quantum Computing",
+      "authorIds": [
+        "a777",
+        "a314",
+        "a115"
+      ],
+      "date": "2020-11",
+      "journalId": "j39",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 22,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qce65121-2025-00079",
+      "doi": "10.1109/QCE65121.2025.00079",
+      "title": "Improving Hardware Requirements for Fault-Tolerant Quantum Computing by Optimizing Error Budget Distributions",
+      "authorIds": [
+        "a245",
+        "a606",
+        "a1828",
+        "a777"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-machine-learning"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-23919-date69613-2026-11539504",
+      "doi": "10.23919/DATE69613.2026.11539504",
+      "title": "Focus Session Paper: The MQT Compiler Collection : A Blueprint for a Future-Proof Quantum-Classical Compilation Framework",
+      "authorIds": [
+        "a115",
+        "a299",
+        "a700",
+        "a636",
+        "a322",
+        "a827"
+      ],
+      "date": "2026-04",
+      "journalId": "j155",
+      "keywordIds": [
+        "compilation",
+        "intermediate-representation"
+      ],
+      "citations": 1,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qce65121-2025-00069",
+      "doi": "10.1109/QCE65121.2025.00069",
+      "title": "Local Optimization of Quantum Circuits",
+      "authorIds": [
+        "a1829",
+        "a1830",
+        "a1831",
+        "a1832",
+        "a452",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-18420-lni-t8-04",
+      "doi": "10.18420/lni-t8_04",
+      "title": "Quantum Computing needs Classical Software (Engineering)",
+      "authorIds": [
+        "a115"
+      ],
+      "date": "2026-01",
+      "journalId": "j156",
+      "keywordIds": [
+        "vision",
+        "quantum-programming"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-23919-date69613-2026-11539523",
+      "doi": "10.23919/DATE69613.2026.11539523",
+      "title": "Quantum Circuit Compilation for Superconducting Bus-Resonator Architectures",
+      "authorIds": [
+        "a322",
+        "a115",
+        "a777"
+      ],
+      "date": "2026-04",
+      "journalId": "j155",
+      "keywordIds": [
+        "compilation",
+        "superconducting-qubits"
+      ],
+      "citations": 1,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1007-978-3-031-15699-1-1",
+      "doi": "10.1007/978-3-031-15699-1_1",
+      "title": "Decision Diagrams for Quantum Computing",
+      "authorIds": [
+        "a777",
+        "a314",
+        "a115"
+      ],
+      "date": "2022-08",
+      "journalId": "j157",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 23,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-48550-arxiv-2602-00024",
+      "doi": "10.48550/arXiv.2602.00024",
+      "title": "QSPE: Enumerating Skeletal Quantum Programs for Quantum Library Testing",
+      "authorIds": [
+        "a1834",
+        "a1358",
+        "a1835",
+        "a295",
+        "a790",
+        "a827"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "quantum-programming"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qsw62656-2024-00013",
+      "doi": "10.1109/QSW62656.2024.00013",
+      "title": "The MQT Handbook : A Summary of Design Automation Tools and Software for Quantum Computing",
+      "authorIds": [
+        "a777",
+        "a1838",
+        "a245",
+        "a1839",
+        "a1840",
+        "a827"
+      ],
+      "date": "2024-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "survey",
+        "compilation"
+      ],
+      "citations": 51,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-23919-date58400-2024-10546746",
+      "doi": "10.23919/DATE58400.2024.10546746",
+      "title": "Design Automation for Quantum Computing: Intermediate Stage Report of the ERC Consolidator Grant “DAQC”",
+      "authorIds": [
+        "a777"
+      ],
+      "date": "2024-03",
+      "journalId": "j155",
+      "keywordIds": [
+        "vision",
+        "survey"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qsw62656-2024-00028",
+      "doi": "10.1109/QSW62656.2024.00028",
+      "title": "Towards Application-Aware Quantum Circuit Compilation",
+      "authorIds": [
+        "a606",
+        "a408",
+        "a1517",
+        "a1521",
+        "a115",
+        "a827"
+      ],
+      "date": "2024-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "compilation",
+        "quantum-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-48550-arxiv-2511-22712",
+      "doi": "10.48550/arXiv.2511.22712",
+      "title": "Qubit Reuse Beyond Reorder and Reset: Optimizing Quantum Circuits by Fully Utilizing the Potential of Dynamic Circuits",
+      "authorIds": [
+        "a636",
+        "a115",
+        "a777"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "optimization-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-23919-date64628-2025-10992761",
+      "doi": "10.23919/DATE64628.2025.10992761",
+      "title": "Improving Figures of Merit for Quantum Circuit Compilation",
+      "authorIds": [
+        "a322",
+        "a606",
+        "a1591",
+        "a777"
+      ],
+      "date": "2025-03",
+      "journalId": "j155",
+      "keywordIds": [
+        "compilation",
+        "quantum-machine-learning"
+      ],
+      "citations": 4,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-22331-q-2023-07-20-1062",
+      "doi": "10.22331/q-2023-07-20-1062",
+      "title": "MQT Bench: Benchmarking Software and Design Automation Tools for Quantum Computing",
+      "authorIds": [
+        "a606",
+        "a115",
+        "a777"
+      ],
+      "date": "2023-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-circuits"
+      ],
+      "citations": 196,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3489517-3530480",
+      "doi": "10.1145/3489517.3530480",
+      "title": "Equivalence Checking Paradigms in Quantum Circuit Design : A Case Study",
+      "authorIds": [
+        "a585",
+        "a115",
+        "a777"
+      ],
+      "date": "2022-07",
+      "journalId": "j158",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 16,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-23919-date69613-2026-11539407",
+      "doi": "10.23919/DATE69613.2026.11539407",
+      "title": "Quantum Hardware-Efficient Selection of Auxiliary Variables for QUBO Formulations",
+      "authorIds": [
+        "a636",
+        "a115",
+        "a777"
+      ],
+      "date": "2026-04",
+      "journalId": "j155",
+      "keywordIds": [
+        "quantum-optimization",
+        "qubit-hardware"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-asiancon66527-2025-11281256",
+      "doi": "10.1109/ASIANCON66527.2025.11281256",
+      "title": "Integration of Machine Learning with Quantum Computing: Compilation of Quantum Circuit for Efficacy on Noisy Intermediate-Scale Quantum Devices",
+      "authorIds": [
+        "a1843",
+        "a1844",
+        "a1845",
+        "a1846",
+        "a1847",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j159",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-acdsa65407-2025-11165960",
+      "doi": "10.1109/ACDSA65407.2025.11165960",
+      "title": "Qukkos: Measurement-Based Quantum Compilation System",
+      "authorIds": [
+        "a1849",
+        "a1850",
+        "a1851"
+      ],
+      "date": "2025-08",
+      "journalId": "j160",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1007-s11227-024-06892-2",
+      "doi": "10.1007/s11227-024-06892-2",
+      "title": "Review of intermediate representations for quantum computing",
+      "authorIds": [
+        "a1852",
+        "a1800",
+        "a1801",
+        "a1802",
+        "a1803",
+        "a827"
+      ],
+      "date": "2025-01",
+      "journalId": "j89",
+      "keywordIds": [
+        "intermediate-representation",
+        "survey"
+      ],
+      "citations": 7,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qsw62656-2024-00032",
+      "doi": "10.1109/QSW62656.2024.00032",
+      "title": "Stripping Quantum Decision Diagrams of their Identity",
+      "authorIds": [
+        "a1841",
+        "a243",
+        "a115",
+        "a777"
+      ],
+      "date": "2024-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3566097-3567932",
+      "doi": "10.1145/3566097.3567932",
+      "title": "Equivalence Checking of Parameterized Quantum Circuits: Verifying the Compilation of Variational Quantum Algorithms",
+      "authorIds": [
+        "a585",
+        "a115",
+        "a777"
+      ],
+      "date": "2023-01",
+      "journalId": "j164",
+      "keywordIds": [
+        "compilation",
+        "variational-algorithms"
+      ],
+      "citations": 24,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1038-s42256-025-01166-9",
+      "doi": "10.1038/s42256-025-01166-9",
+      "title": "Reusability report: Optimizing T count in general quantum circuits with AlphaTensor-Quantum",
+      "authorIds": [
+        "a1853",
+        "a1854",
+        "a1855"
+      ],
+      "date": "2025-12",
+      "journalId": "j161",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "optimization-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-jetcas-2022-3202204",
+      "doi": "10.1109/JETCAS.2022.3202204",
+      "title": "Equivalence Checking of Quantum Circuits With the ZX-Calculus",
+      "authorIds": [
+        "a585",
+        "a115",
+        "a777"
+      ],
+      "date": "2022-08",
+      "journalId": "j162",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 47,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3773656-3773669",
+      "doi": "10.1145/3773656.3773669",
+      "title": "The Munich Quantum Software Stack: Connecting End Users, Integrating Diverse Quantum Technologies, Accelerating HPC",
+      "authorIds": [
+        "a115",
+        "a1119",
+        "a322",
+        "a700",
+        "a636",
+        "a827"
+      ],
+      "date": "2026-01",
+      "journalId": "j85",
+      "keywordIds": [
+        "hpc-integration",
+        "architecture"
+      ],
+      "citations": 9,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-48550-arxiv-2608-18206",
+      "doi": "10.48550/arXiv.2608.18206",
+      "title": "Teaching Quantum Design Automation with Block-Based Programming",
+      "authorIds": [
+        "a636",
+        "a777"
+      ],
+      "date": "2026-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-tcad-2022-3197969",
+      "doi": "10.1109/TCAD.2022.3197969",
+      "title": "Simulation Paths for Quantum Circuit Simulation With Decision Diagrams What to Learn From Tensor Networks, and What Not",
+      "authorIds": [
+        "a115",
+        "a1856",
+        "a777"
+      ],
+      "date": "2022-08",
+      "journalId": "j35",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 17,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qsw67625-2025-00033",
+      "doi": "10.1109/QSW67625.2025.00033",
+      "title": "Optimization of Hybrid Quantum-Classical Algorithms",
+      "authorIds": [
+        "a620",
+        "a773",
+        "a765"
+      ],
+      "date": "2025-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "optimization-algorithms",
+        "quantum-programming"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1038-s42254-025-00854-0",
+      "doi": "10.1038/s42254-025-00854-0",
+      "title": "An open-source initiative would benefit quantum computing",
+      "authorIds": [
+        "a1857",
+        "a1858"
+      ],
+      "date": "2025-07",
+      "journalId": "j66",
+      "keywordIds": [
+        "vision"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qsw72780-2026-00020",
+      "doi": "10.1109/QSW72780.2026.00020",
+      "title": "qScheduler: A Hybrid Reservation–Dispatch System for Integrating QPUs into Slurm-Managed HPC Workflows",
+      "authorIds": [
+        "a1859",
+        "a1860"
+      ],
+      "date": "2026-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "hpc-scheduling",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-48550-arxiv-2604-26788",
+      "doi": "10.48550/arXiv.2604.26788",
+      "title": "A Semantic Quantum Circuit Cache for Scalable and Distributed Quantum-Classical Workflows",
+      "authorIds": [
+        "a1320",
+        "a1321",
+        "a1170"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "scalability"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3591270",
+      "doi": "10.1145/3591270",
+      "title": "An Automata-Based Framework for Verification and Bug Hunting in Quantum Circuits",
+      "authorIds": [
+        "a152",
+        "a1861",
+        "a1862",
+        "a1863",
+        "a1864",
+        "a827"
+      ],
+      "date": "2023-06",
+      "journalId": "j163",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 40,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-asp-dac47756-2020-9045153",
+      "doi": "10.1109/ASP-DAC47756.2020.9045153",
+      "title": "Improved DD-based Equivalence Checking of Quantum Circuits",
+      "authorIds": [
+        "a115",
+        "a777"
+      ],
+      "date": "2020-01",
+      "journalId": "j164",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 39,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3489517-3530481",
+      "doi": "10.1145/3489517.3530481",
+      "title": "Accurate BDD-based Unitary Operator Manipulation for Scalable and Robust Quantum Circuit Verification",
+      "authorIds": [
+        "a1866",
+        "a1867",
+        "a1868",
+        "a1869"
+      ],
+      "date": "2022-07",
+      "journalId": "j158",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 29,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1007-978-3-031-45332-8-10",
+      "doi": "10.1007/978-3-031-45332-8_10",
+      "title": "Fast Equivalence Checking of Quantum Circuits of Clifford Gates",
+      "authorIds": [
+        "a1870",
+        "a1871",
+        "a1872"
+      ],
+      "date": "2023-01",
+      "journalId": "j63",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 11,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-4230-lipics-sat-2022-18",
+      "doi": "10.4230/LIPIcs.SAT.2022.18",
+      "title": "Towards a SAT Encoding for Quantum Circuits: A Journey From Classical Circuits to Clifford Circuits and Beyond",
+      "authorIds": [
+        "a1838",
+        "a115",
+        "a777"
+      ],
+      "date": "2022-01",
+      "journalId": "j166",
+      "keywordIds": [
+        "optimization-algorithms",
+        "quantum-circuits"
+      ],
+      "citations": 6,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-23919-date51398-2021-9474236",
+      "doi": "10.23919/DATE51398.2021.9474236",
+      "title": "Visualizing Decision Diagrams for Quantum Computing (Special Session Summary)",
+      "authorIds": [
+        "a777",
+        "a115",
+        "a1873"
+      ],
+      "date": "2021-02",
+      "journalId": "j155",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 11,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-iscas45731-2020-9180791",
+      "doi": "10.1109/ISCAS45731.2020.9180791",
+      "title": "Efficient and Correct Compilation of Quantum Circuits",
+      "authorIds": [
+        "a777",
+        "a314",
+        "a115"
+      ],
+      "date": "2020-09",
+      "journalId": "j165",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 24,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-dac18072-2020-9218563",
+      "doi": "10.1109/DAC18072.2020.9218563",
+      "title": "The Power of Simulation for Equivalence Checking in Quantum Computing",
+      "authorIds": [
+        "a115",
+        "a777"
+      ],
+      "date": "2020-07",
+      "journalId": "j158",
+      "keywordIds": [
+        "quantum-simulation",
+        "compilation"
+      ],
+      "citations": 27,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1103-3q71-y8cf",
+      "doi": "10.1103/3q71-y8cf",
+      "title": "Equivalence Checking of Quantum Circuits via Intermediary Matrix Product Operator",
+      "authorIds": [
+        "a1841",
+        "a115",
+        "a777"
+      ],
+      "date": "2025-05",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-simulation",
+        "compilation"
+      ],
+      "citations": 2,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3514355",
+      "doi": "10.1145/3514355",
+      "title": "A Tensor Network based Decision Diagram for Representation of Quantum Circuits",
+      "authorIds": [
+        "a1874",
+        "a836",
+        "a1875",
+        "a1876",
+        "a1780"
+      ],
+      "date": "2022-02",
+      "journalId": "j167",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 48,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qce49297-2020-00051",
+      "doi": "10.1109/QCE49297.2020.00051",
+      "title": "Verifying Results of the IBM Qiskit Quantum Circuit Compilation Flow",
+      "authorIds": [
+        "a115",
+        "a1877",
+        "a777"
+      ],
+      "date": "2020-10",
+      "journalId": "j28",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3394885-3431590",
+      "doi": "10.1145/3394885.3431590",
+      "title": "Random Stimuli Generation for the Verification of Quantum Circuits",
+      "authorIds": [
+        "a115",
+        "a1878",
+        "a777"
+      ],
+      "date": "2021-01",
+      "journalId": "j164",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 35,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1007-s42484-025-00264-6",
+      "doi": "10.1007/s42484-025-00264-6",
+      "title": "Application of ZX-calculus to quantum architecture search",
+      "authorIds": [
+        "a1879",
+        "a1880",
+        "a1881",
+        "a1882"
+      ],
+      "date": "2025-03",
+      "journalId": "j75",
+      "keywordIds": [
+        "variational-algorithms",
+        "optimization-algorithms"
+      ],
+      "citations": 6,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-asp-dac52403-2022-9712555",
+      "doi": "10.1109/ASP-DAC52403.2022.9712555",
+      "title": "Limiting the Search Space in Optimal Quantum Circuit Mapping",
+      "authorIds": [
+        "a115",
+        "a1883",
+        "a777"
+      ],
+      "date": "2022-01",
+      "journalId": "j164",
+      "keywordIds": [
+        "compilation",
+        "qubit-hardware"
+      ],
+      "citations": 28,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-tcad-2020-3032630",
+      "doi": "10.1109/TCAD.2020.3032630",
+      "title": "Advanced Equivalence Checking for Quantum Circuits",
+      "authorIds": [
+        "a115",
+        "a777"
+      ],
+      "date": "2021-09",
+      "journalId": "j35",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 120,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3434318",
+      "doi": "10.1145/3434318",
+      "title": "A verified optimizer for Quantum circuits",
+      "authorIds": [
+        "a1884",
+        "a1885",
+        "a1886",
+        "a790",
+        "a1887"
+      ],
+      "date": "2021-01",
+      "journalId": "j163",
+      "keywordIds": [
+        "compilation",
+        "quantum-programming"
+      ],
+      "citations": 110,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1007-978-3-030-79837-6-14",
+      "doi": "10.1007/978-3-030-79837-6_14",
+      "title": "Efficient Construction of Functional Representations for Quantum Algorithms",
+      "authorIds": [
+        "a115",
+        "a1877",
+        "a1888",
+        "a777"
+      ],
+      "date": "2021-01",
+      "journalId": "j63",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-48550-arxiv-2404-18456",
+      "doi": "10.48550/arXiv.2404.18456",
+      "title": "Equivalence Checking of Parameterised Quantum Circuits",
+      "authorIds": [
+        "a1874",
+        "a1889",
+        "a1890",
+        "a1876",
+        "a1891",
+        "a827"
+      ],
+      "date": "2024-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "variational-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1007-978-3-031-62076-8-13",
+      "doi": "10.1007/978-3-031-62076-8_13",
+      "title": "Is Simulation the only Alternative for Effective Verification of Dynamic Quantum Circuits?",
+      "authorIds": [
+        "a1892",
+        "a1893",
+        "a1894",
+        "a1895"
+      ],
+      "date": "2024-01",
+      "journalId": "j63",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 8,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-48550-arxiv-2603-12697",
+      "doi": "10.48550/arXiv.2603.12697",
+      "title": "Efficient equivalence checking of Clifford-U circuits with shared single-qubit unitaries",
+      "authorIds": [
+        "a1896",
+        "a1897",
+        "a1898",
+        "a1827"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-iccad45719-2019-8942057",
+      "doi": "10.1109/ICCAD45719.2019.8942057",
+      "title": "How to Efficiently Handle Complex Values?: Implementing Decision Diagrams for Quantum Computing",
+      "authorIds": [
+        "a826",
+        "a314",
+        "a777"
+      ],
+      "date": "2019-11",
+      "journalId": "j39",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1140-epjqt-s40507-025-00410-w",
+      "doi": "10.1140/epjqt/s40507-025-00410-w",
+      "title": "Quantum architecture search with neural predictor based on ZX-calculus",
+      "authorIds": [
+        "a1899",
+        "a1900",
+        "a1901",
+        "a1902",
+        "a1903"
+      ],
+      "date": "2025-09",
+      "journalId": "j19",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-machine-learning"
+      ],
+      "citations": 4,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-dac18074-2021-9586214",
+      "doi": "10.1109/dac18074.2021.9586214",
+      "title": "Approximate Equivalence Checking of Noisy Quantum Circuits",
+      "authorIds": [
+        "a1874",
+        "a1780",
+        "a1876",
+        "a836",
+        "a1875"
+      ],
+      "date": "2021-11",
+      "journalId": "j158",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 29,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3489517-3530482",
+      "doi": "10.1145/3489517.3530482",
+      "title": "Handling Non-Unitaries in Quantum Circuit Equivalence Checking",
+      "authorIds": [
+        "a115",
+        "a777"
+      ],
+      "date": "2022-07",
+      "journalId": "j158",
+      "keywordIds": [
+        "compilation",
+        "quantum-circuits"
+      ],
+      "citations": 12,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3489517-3530627",
+      "doi": "10.1145/3489517.3530627",
+      "title": "The Basis of Design Tools for Quantum Computing: Arrays, Decision Diagrams, Tensor Networks, and ZX-Calculus",
+      "authorIds": [
+        "a777",
+        "a115",
+        "a314",
+        "a1904",
+        "a1856",
+        "a827"
+      ],
+      "date": "2022-07",
+      "journalId": "j158",
+      "keywordIds": [
+        "survey",
+        "quantum-simulation"
+      ],
+      "citations": 10,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1145-3566097-3567929",
+      "doi": "10.1145/3566097.3567929",
+      "title": "A SAT Encoding for Optimal Clifford Circuit Synthesis",
+      "authorIds": [
+        "a1883",
+        "a115",
+        "a777"
+      ],
+      "date": "2023-01",
+      "journalId": "j164",
+      "keywordIds": [
+        "optimization-algorithms",
+        "quantum-circuits"
+      ],
+      "citations": 17,
+      "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-tcad-2018-2834427",
+      "doi": "10.1109/TCAD.2018.2834427",
+      "title": "Advanced Simulation of Quantum Computations",
+      "authorIds": [
+        "a826",
+        "a777"
+      ],
+      "date": "2018-05",
+      "journalId": "j35",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-circuits"
+      ],
+      "citations": 4,
+      "added": "2026-09-14"
     }
   ]
 }
