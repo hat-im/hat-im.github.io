@@ -7,7 +7,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "IISc",
-      "color": "eucalyptus",
+      "color": "stone",
       "subject": "Wondering & Wishing",
       "media": {
         "type": "video",
@@ -22,7 +22,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Glen's Bakehouse",
-      "color": "cream",
+      "color": "champagne",
       "subject": "Pancakes & Pining",
       "media": {
         "type": "video",
@@ -37,6 +37,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Rainy Bangalore",
+      "color": "butter",
       "subject": "Rainy Reverie",
       "media": {
         "type": "video",
@@ -51,6 +52,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Hilbert's Hideaway",
+      "color": "cream",
       "subject": "Sofie, Salami & Studying",
       "media": {
         "type": "video",
@@ -65,6 +67,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Between Pages",
+      "color": "apricot",
       "subject": "Papers & Pages",
       "media": {
         "type": "video",
