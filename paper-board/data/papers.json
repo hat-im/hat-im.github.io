@@ -10695,6 +10695,702 @@
       ],
       "citations": 4,
       "added": "2026-09-14"
+    },
+    {
+      "id": "10-1109-qsw59989-2023-00022",
+      "doi": "10.1109/QSW59989.2023.00022",
+      "title": "Influence of HW-SW-Co-Design on Quantum Computing Scalability",
+      "authorIds": [
+        "a1905",
+        "a1906",
+        "a1907"
+      ],
+      "date": "2023-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "architecture",
+        "scalability",
+        "qubit-hardware"
+      ],
+      "citations": 22,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1140-epjqt-s40507-025-00413-7",
+      "doi": "10.1140/epjqt/s40507-025-00413-7",
+      "title": "Stacking the odds: full-stack quantum system design space exploration",
+      "authorIds": [
+        "a1905",
+        "a1908",
+        "a1909",
+        "a20",
+        "a1910",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j19",
+      "keywordIds": [
+        "architecture",
+        "scalability",
+        "hpc-integration"
+      ],
+      "citations": 4,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1007-978-3-031-21867-5-7",
+      "doi": "10.1007/978-3-031-21867-5_7",
+      "title": "QPU-System Co-design for Quantum HPC Accelerators",
+      "authorIds": [
+        "a1906",
+        "a1905",
+        "a1907"
+      ],
+      "date": "2022-09",
+      "journalId": "j168",
+      "keywordIds": [
+        "architecture",
+        "hpc-integration",
+        "qubit-hardware"
+      ],
+      "citations": 27,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1007-s42979-026-05089-z",
+      "doi": "10.1007/s42979-026-05089-z",
+      "title": "Dynamic Transformation of Quantum Algorithms for Resource-Constrained Architectures",
+      "authorIds": [
+        "a1894",
+        "a1911",
+        "a1893",
+        "a1912",
+        "a1888",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j169",
+      "keywordIds": [
+        "quantum-algorithms",
+        "architecture",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-48550-arxiv-2608-18598",
+      "doi": "10.48550/arXiv.2608.18598",
+      "title": "Know Your Qubits, Know Your Users: Personas for Quantum Software",
+      "authorIds": [
+        "a1913",
+        "a1914",
+        "a1591",
+        "a1303",
+        "a777",
+        "a827"
+      ],
+      "date": "2026-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming",
+        "vision"
+      ],
+      "citations": 0,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3410566-3410593",
+      "doi": "10.1145/3410566.3410593",
+      "title": "Avoiding blocking by scheduling transactions using quantum annealing",
+      "authorIds": [
+        "a1982",
+        "a1979"
+      ],
+      "date": "2020-08",
+      "journalId": "j176",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 31,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3035918-3064039",
+      "doi": "10.1145/3035918.3064039",
+      "title": "Solving the Join Ordering Problem via Mixed Integer Linear Programming",
+      "authorIds": [
+        "a1943",
+        "a1929"
+      ],
+      "date": "2017-05",
+      "journalId": "j171",
+      "keywordIds": [
+        "databases",
+        "optimization-algorithms"
+      ],
+      "citations": 34,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3579142-3594298",
+      "doi": "10.1145/3579142.3594298",
+      "title": "Constructing Optimal Bushy Join Trees by Solving QUBO Problems on Quantum Hardware and Simulators",
+      "authorIds": [
+        "a1962",
+        "a1944",
+        "a1984",
+        "a1923",
+        "a1986",
+        "a827"
+      ],
+      "date": "2023-06",
+      "journalId": "j178",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 25,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1038-s41598-022-14767-w",
+      "doi": "10.1038/s41598-022-14767-w",
+      "title": "Scaling quantum approximate optimization on near-term hardware",
+      "authorIds": [
+        "a1967",
+        "a1981",
+        "a1921",
+        "a508",
+        "a1970",
+        "a827"
+      ],
+      "date": "2022-07",
+      "journalId": "j83",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms",
+        "scalability"
+      ],
+      "citations": 1,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-14778-3598581-3598603",
+      "doi": "10.14778/3598581.3598603",
+      "title": "Opportunities for Quantum Acceleration of Databases: Optimization of Queries and Transaction Schedules",
+      "authorIds": [
+        "a1986",
+        "a1979",
+        "a1947",
+        "a1984",
+        "a1975",
+        "a827"
+      ],
+      "date": "2023-05",
+      "journalId": "j170",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization",
+        "survey"
+      ],
+      "citations": 27,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-14778-3632093-3632112",
+      "doi": "10.14778/3632093.3632112",
+      "title": "Quantum-Inspired Digital Annealing for Join Ordering",
+      "authorIds": [
+        "a1956",
+        "a1943",
+        "a1907"
+      ],
+      "date": "2023-11",
+      "journalId": "j170",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 24,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3477206-3477464",
+      "doi": "10.1145/3477206.3477464",
+      "title": "On the Co-Design of Quantum Software and Hardware",
+      "authorIds": [
+        "a1937",
+        "a786",
+        "a1995",
+        "a356",
+        "a1590",
+        "a827"
+      ],
+      "date": "2021-09",
+      "journalId": "j177",
+      "keywordIds": [
+        "architecture",
+        "hpc-integration"
+      ],
+      "citations": 37,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-22331-q-2023-03-17-952",
+      "doi": "10.22331/q-2023-03-17-952",
+      "title": "Parity Quantum Optimization: Benchmarks",
+      "authorIds": [
+        "a1960",
+        "a1952",
+        "a1971",
+        "a1988"
+      ],
+      "date": "2023-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-optimization",
+        "benchmarking"
+      ],
+      "citations": 17,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3465998-3466015",
+      "doi": "10.1145/3465998.3466015",
+      "title": "The Case for SIMDified Analytical Query Processing on GPUs",
+      "authorIds": [
+        "a1948",
+        "a1920",
+        "a1931",
+        "a1989"
+      ],
+      "date": "2021-06",
+      "journalId": "j181",
+      "keywordIds": [
+        "databases",
+        "gpu-acceleration"
+      ],
+      "citations": 5,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-qsw59989-2023-00014",
+      "doi": "10.1109/QSW59989.2023.00014",
+      "title": "Effects of Imperfections on Quantum Algorithms: A Software Engineering Perspective",
+      "authorIds": [
+        "a1934",
+        "a1985",
+        "a1907"
+      ],
+      "date": "2023-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "quantum-algorithms",
+        "fault-tolerance"
+      ],
+      "citations": 20,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3465998-3466016",
+      "doi": "10.1145/3465998.3466016",
+      "title": "Playing Fetch with CAT: Composing Cache Partitioning and Prefetching for Task-based Query Processing",
+      "authorIds": [
+        "a1968",
+        "a1954",
+        "a1925"
+      ],
+      "date": "2021-06",
+      "journalId": "j181",
+      "keywordIds": [
+        "databases",
+        "architecture"
+      ],
+      "citations": 2,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-saner53432-2022-00148",
+      "doi": "10.1109/SANER53432.2022.00148",
+      "title": "1-2-3 Reproducibility for Quantum Software Experiments",
+      "authorIds": [
+        "a1907",
+        "a1976"
+      ],
+      "date": "2022-03",
+      "journalId": "j174",
+      "keywordIds": [
+        "quantum-programming",
+        "survey"
+      ],
+      "citations": 29,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-icsa-c54293-2022-00038",
+      "doi": "10.1109/ICSA-C54293.2022.00038",
+      "title": "Towards a Quantum Benchmark Suite with Standardized KPIs",
+      "authorIds": [
+        "a1930",
+        "a1964",
+        "a1942",
+        "a1973",
+        "a1969",
+        "a827"
+      ],
+      "date": "2022-03",
+      "journalId": "j180",
+      "keywordIds": [
+        "benchmarking",
+        "quantum-algorithms"
+      ],
+      "citations": 8,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-48550-arxiv-2211-11287",
+      "doi": "10.48550/arXiv.2211.11287",
+      "title": "Low-depth Circuit Implementation of Parity Constraints for Quantum Optimization",
+      "authorIds": [
+        "a1949",
+        "a1918",
+        "a1922",
+        "a1960",
+        "a1988"
+      ],
+      "date": "2022-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-optimization",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3555041-3589404",
+      "doi": "10.1145/3555041.3589404",
+      "title": "Quantum Machine Learning: Foundation, New Techniques, and Opportunities for Database Research",
+      "authorIds": [
+        "a1984",
+        "a1979",
+        "a1987",
+        "a1996",
+        "a1946",
+        "a827"
+      ],
+      "date": "2023-06",
+      "journalId": "j173",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "databases",
+        "survey"
+      ],
+      "citations": 25,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-14778-2947618-2947621",
+      "doi": "10.14778/2947618.2947621",
+      "title": "Multiple Query Optimization on the D-Wave 2X Adiabatic Quantum Computer",
+      "authorIds": [
+        "a1943",
+        "a1929"
+      ],
+      "date": "2016-05",
+      "journalId": "j170",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 73,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3472163-3472164",
+      "doi": "10.1145/3472163.3472164",
+      "title": "Optimizing Transaction Schedules on Universal Quantum Computers via Code Generation for Grover's Search Algorithm",
+      "authorIds": [
+        "a1979",
+        "a1947"
+      ],
+      "date": "2021-07",
+      "journalId": "j176",
+      "keywordIds": [
+        "databases",
+        "quantum-algorithms"
+      ],
+      "citations": 28,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3588946",
+      "doi": "10.1145/3588946",
+      "title": "Ready to Leap (by Co-Design)? Join Order Optimisation on Quantum Hardware",
+      "authorIds": [
+        "a1956",
+        "a1976",
+        "a1907"
+      ],
+      "date": "2023-05",
+      "journalId": "j172",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 47,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-noms54207-2022-9789782",
+      "doi": "10.1109/NOMS54207.2022.9789782",
+      "title": "Segment Routing with Digital Annealing",
+      "authorIds": [
+        "a1974",
+        "a1928",
+        "a1936",
+        "a1966",
+        "a1958",
+        "a827"
+      ],
+      "date": "2022-04",
+      "journalId": "j182",
+      "keywordIds": [
+        "quantum-optimization",
+        "applications"
+      ],
+      "citations": 4,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-icc45041-2023-10279239",
+      "doi": "10.1109/ICC45041.2023.10279239",
+      "title": "Quantum Approximate Optimization Algorithm for Knapsack Resource Allocation Problems in Communication Systems",
+      "authorIds": [
+        "a1951",
+        "a1941",
+        "a1980"
+      ],
+      "date": "2023-05",
+      "journalId": "j179",
+      "keywordIds": [
+        "quantum-optimization",
+        "applications"
+      ],
+      "citations": 12,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-qce52317-2021-00016",
+      "doi": "10.1109/QCE52317.2021.00016",
+      "title": "Parameters Fixing Strategy for Quantum Approximate Optimization Algorithm",
+      "authorIds": [
+        "a1992",
+        "a1993",
+        "a1932",
+        "a1965"
+      ],
+      "date": "2021-10",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1007-978-3-030-11196-0-25",
+      "doi": "10.1007/978-3-030-11196-0_25",
+      "title": "Processing Unstructured Databases Using a Quantum Approach",
+      "authorIds": [
+        "a1938",
+        "a1916",
+        "a1917"
+      ],
+      "date": "2019-01",
+      "journalId": "j183",
+      "keywordIds": [
+        "databases",
+        "quantum-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-48550-arxiv-2306-06986",
+      "doi": "10.48550/arXiv.2306.06986",
+      "title": "Multilevel leapfrogging initialization for quantum approximate optimization algorithm",
+      "authorIds": [
+        "a1991",
+        "a1924",
+        "a1939",
+        "a1978",
+        "a1933",
+        "a827"
+      ],
+      "date": "2023-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-qce57702-2023-10206",
+      "doi": "10.1109/QCE57702.2023.10206",
+      "title": "Comparing Quantum Service Offerings",
+      "authorIds": [
+        "a1950",
+        "a55",
+        "a64",
+        "a1935",
+        "a1959",
+        "a827"
+      ],
+      "date": "2023-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "survey",
+        "applications"
+      ],
+      "citations": 2,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-21203-rs-3-rs-654802-v1",
+      "doi": "10.21203/rs.3.rs-654802/v1",
+      "title": "Nonlinear Quantum Optimization Algorithms via Efficient Ising Model Encodings",
+      "authorIds": [
+        "a1104",
+        "a1945",
+        "a1919",
+        "a1977"
+      ],
+      "date": "2021-07",
+      "journalId": "j175",
+      "keywordIds": [
+        "quantum-optimization",
+        "quantum-machine-learning"
+      ],
+      "citations": 5,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-48550-arxiv-2312-00077",
+      "doi": "10.48550/arXiv.2312.00077",
+      "title": "Adiabatic-Passage-Based Parameter Setting for Quantum Approximate Optimization Algorithm",
+      "authorIds": [
+        "a1961",
+        "a1940"
+      ],
+      "date": "2023-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3514221-3520257",
+      "doi": "10.1145/3514221.3520257",
+      "title": "Applicability of Quantum Computing on Database Query Optimization",
+      "authorIds": [
+        "a1956"
+      ],
+      "date": "2022-06",
+      "journalId": "j171",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 25,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1103-physrevresearch-4-023249",
+      "doi": "10.1103/PhysRevResearch.4.023249",
+      "title": "Quantum Approximate Optimization Algorithm with Adaptive Bias Fields",
+      "authorIds": [
+        "a1994",
+        "a1927",
+        "a1926",
+        "a1990",
+        "a1963",
+        "a827"
+      ],
+      "date": "2022-06",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms"
+      ],
+      "citations": 36,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1145-3579142-3594299",
+      "doi": "10.1145/3579142.3594299",
+      "title": "Quantum Machine Learning for Join Order Optimization using Variational Quantum Circuits",
+      "authorIds": [
+        "a1984",
+        "a1986",
+        "a1955",
+        "a1979"
+      ],
+      "date": "2023-06",
+      "journalId": "j178",
+      "keywordIds": [
+        "databases",
+        "quantum-machine-learning",
+        "quantum-circuits"
+      ],
+      "citations": 25,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-48550-arxiv-2107-10508",
+      "doi": "10.48550/arXiv.2107.10508",
+      "title": "Multiple Query Optimization using a Hybrid Approach of Classical and Quantum Computing",
+      "authorIds": [
+        "a1983",
+        "a1957",
+        "a1972",
+        "a1953"
+      ],
+      "date": "2021-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "databases",
+        "quantum-optimization"
+      ],
+      "citations": 0,
+      "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-access-2023-3324253",
+      "doi": "10.1109/ACCESS.2023.3324253",
+      "title": "Multiple Query Optimization Using a Gate-Based Quantum Computer",
+      "authorIds": [
+        "a1983",
+        "a1957",
+        "a1972",
+        "a1953"
+      ],
+      "date": "2023-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "databases",
+        "quantum-algorithms"
+      ],
+      "citations": 16,
+      "added": "2026-09-16"
     }
   ]
 }

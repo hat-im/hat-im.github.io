@@ -203,5 +203,10 @@
     "label": "meta scheduling",
     "bg": "#e0f0db",
     "text": "#3d762d"
+  },
+  "databases": {
+    "label": "databases",
+    "bg": "#f0dbe0",
+    "text": "#76263f"
   }
 }

@@ -666,5 +666,69 @@
   "j167": {
     "name": "ACM Transactions on Design Automation of Electronic Systems",
     "type": "journal"
+  },
+  "j168": {
+    "name": "International Conference on Architecture of Computing Systems",
+    "type": "conference"
+  },
+  "j169": {
+    "name": "SN Computer Science",
+    "type": "journal"
+  },
+  "j170": {
+    "name": "Proceedings of the VLDB Endowment",
+    "type": "journal"
+  },
+  "j171": {
+    "name": "International Conference on Management of Data",
+    "type": "conference"
+  },
+  "j172": {
+    "name": "Proceedings of the ACM on Management of Data",
+    "type": "journal"
+  },
+  "j173": {
+    "name": "Companion of the International Conference on Management of Data",
+    "type": "conference"
+  },
+  "j174": {
+    "name": "IEEE International Conference on Software Analysis, Evolution and Reengineering",
+    "type": "conference"
+  },
+  "j175": {
+    "name": "Research Square",
+    "type": "preprint"
+  },
+  "j176": {
+    "name": "International Database Engineering and Applications Symposium",
+    "type": "conference"
+  },
+  "j177": {
+    "name": "ACM International Conference on Nanoscale Computing and Communication",
+    "type": "conference"
+  },
+  "j178": {
+    "name": "International Workshop on Big Data in Emergent Distributed Environments",
+    "type": "conference"
+  },
+  "j179": {
+    "name": "IEEE International Conference on Communications",
+    "type": "conference"
+  },
+  "j180": {
+    "name": "IEEE International Conference on Software Architecture Companion",
+    "type": "conference"
+  },
+  "j181": {
+    "name": "International Workshop on Data Management on New Hardware",
+    "type": "conference"
+  },
+  "j182": {
+    "name": "IEEE/IFIP Network Operations and Management Symposium",
+    "type": "conference"
+  },
+  "j183": {
+    "name": "International Conference on Smart City Applications",
+    "type": "conference"
   }
 }
