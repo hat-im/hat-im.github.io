@@ -60,7 +60,7 @@
     },
     {
       "id": "postcard-05",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-09-16",
       "from": "Hat",
       "to": "Sam",
