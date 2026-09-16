@@ -39,7 +39,7 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-03.mp4"
       },
-      "message": "Hello!\nIt's raining here and Hilbert is settling in for a nap as I write this. I hope Haju is doing okay too. I think it's been raining in London as well. Thinking of you."
+      "message": "Hello!\nIt's raining here and Hilbert is settling in for a nap as I write this. I hope Haju is doing okay too. I think it's been raining in London as well. Have a good day."
     },
     {
       "id": "postcard-04",
@@ -65,7 +65,7 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-05.mp4"
       },
-      "message": "Hello,\nI am guessing this may be the first one you are seeing, as I foolishly sent you the link to this today. I'm reading Stone Mattress too, working on a paper you might find interesting. It's Quantum Week at IEEE too, which has been interesting. Hope you have been doing well."
+      "message": "Hello,\nI am guessing this may be the first one you are seeing, as I sent you the link to this today. I'm reading Stone Mattress too (among other books), working on a paper you might find interesting. I've been watching the IEEE Quantum Week online too. Hope you're doing well."
     }
   ]
 }
