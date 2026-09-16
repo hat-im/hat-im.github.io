@@ -6,9 +6,9 @@
       "date": "2026-09-12",
       "from": "Hat",
       "to": "Sam",
-      "location": "IISc",
+      "location": "Inside IISc",
       "color": "stone",
-      "subject": "Wondering & Wishing",
+      "subject": "Idyll & Imaginings",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-01.mp4"
@@ -23,12 +23,12 @@
       "to": "Sam",
       "location": "Glen's Bakehouse",
       "color": "champagne",
-      "subject": "Pancakes & Pining",
+      "subject": "Gold, Glum",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-02.mp4"
       },
-      "message": "Hello!\nI had pancakes for breakfast today. They were not very good. Would not recommend. I wonder if you've had some authentic British food yet (tea and bottles of water don't count). I want to ask you so many things, but I guess I'm putting them here for now.\n Strange to miss you more that you're in London, when the cadence of our communication hasn't changed much, but I do. Have a good day, I know you'll do well."
+      "message": "Hello!\nI had pancakes at Glen's for breakfast today. They were not very good. Would not recommend — bad maple syrup and dense pancakes. Wondering if you've had some good British food yet (tea and bottles of water don't count). I want to ask you so many things, but I guess I'm putting them here for now...\n Strange to miss you more that you're in London, when the cadence of our communication hasn't changed much, but I do.\nHave a good day, I know you'll do well."
     },
     {
       "id": "postcard-03",
@@ -36,9 +36,9 @@
       "date": "2026-09-14",
       "from": "Hat",
       "to": "Sam",
-      "location": "Rainy Bangalore",
+      "location": "Downpours in Bangalore",
       "color": "butter",
-      "subject": "Rainy Reverie",
+      "subject": "Rainy Rumination",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-03.mp4"
@@ -53,7 +53,7 @@
       "to": "Sam",
       "location": "Hilbert's Hideaway",
       "color": "cream",
-      "subject": "Sofie, Salami & Studying",
+      "subject": "Sofie's Sharaarat",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-04.mp4"
@@ -66,14 +66,14 @@
       "date": "2026-09-16",
       "from": "Hat",
       "to": "Sam",
-      "location": "Between Pages",
+      "location": "Purple-pink Skies",
       "color": "apricot",
-      "subject": "Papers & Pages",
+      "subject": "Chores and Bores",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-05.mp4"
       },
-      "message": "Hello,\nI am guessing this may be the first one you see, as I sent you the link to this today. Started reading Stone Mattress too and rearranged my books. Been working on a paper you might find interesting and attending the IEEE Quantum Week conference this week.\nHope you're doing well."
+      "message": "Hello,\n Beautiful sunset today. I'm guessing this may be the first card you see, as I sent you the link today. I've started reading Stone Mattress and rearranged my books, been working on a paper you might find interesting. Been attending the IEEE Quantum Week conference this week. and gotta take Hilbert to the vet today too. \nHope you're having a good week."
     }
   ]
 }
