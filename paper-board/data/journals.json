@@ -730,5 +730,9 @@
   "j183": {
     "name": "International Conference on Smart City Applications",
     "type": "conference"
+  },
+  "j184": {
+    "name": "Encyclopedia of Optimization",
+    "type": "journal"
   }
 }

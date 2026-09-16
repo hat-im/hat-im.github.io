@@ -11391,6 +11391,23 @@
       ],
       "citations": 16,
       "added": "2026-09-16"
+    },
+    {
+      "id": "10-1007-978-3-030-54621-2-854-1",
+      "doi": "10.1007/978-3-030-54621-2_854-1",
+      "title": "Quantum Approximate Optimization Algorithm (QAOA)",
+      "authorIds": [
+        "a1997",
+        "a1998"
+      ],
+      "date": "2023-01",
+      "journalId": "j184",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms"
+      ],
+      "citations": 20,
+      "added": "2026-09-16"
     }
   ]
 }
