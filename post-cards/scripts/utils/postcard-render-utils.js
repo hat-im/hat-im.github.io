@@ -112,6 +112,61 @@
     });
   }
 
+  // Single source of truth for where text sits on a card, shared by draw() (to render it)
+  // and setContent() (to keep seals/stickers off of it) — the two must never disagree.
+  function layoutTextZones(ctx, data, Config) {
+    var CARD_W = Config.CARD_W, CARD_H = Config.CARD_H, PAD = Config.PAD;
+    var side = CARD_H - PAD * 2;
+    var sw = 104, sh = 126;
+    var sx = CARD_W - PAD - sw, sy = PAD;
+    var dividerX = PAD + side + PAD;
+    var colX = dividerX + PAD;
+    var colW = CARD_W - colX - PAD;
+
+    var msgTop = PAD + sh + 26;
+    var subjectRect = null;
+    if (data.subject) {
+      subjectRect = { x: colX, y: msgTop - 14, w: colW, h: 20 };
+      msgTop += 26;
+    }
+
+    var normalMsgFont = '19px "Kalam", cursive';
+    var bookendMsgFont = '21px "Kalam", cursive';
+    ctx.font = normalMsgFont;
+    var msgBottom = CARD_H - PAD - 44;
+    var lineHeight = 23;
+    var reserveForSignature = data.from ? 1 : 0;
+    var maxLines = Math.max(1, Math.floor((msgBottom - msgTop) / lineHeight) - reserveForSignature);
+    var lines = wrapText(ctx, data.message || "", colW);
+    if (lines.length > maxLines) {
+      lines = lines.slice(0, maxLines);
+      var last = lines[maxLines - 1] || "";
+      while (ctx.measureText(last + "…").width > colW && last.length > 1) {
+        last = last.slice(0, -1);
+      }
+      lines[maxLines - 1] = last + "…";
+    }
+    var messageHeight = lines.length * lineHeight + (data.from ? lineHeight : 0);
+    var messageRect = { x: colX, y: msgTop - 16, w: colW, h: messageHeight + 6 };
+
+    var footerRect = { x: colX, y: CARD_H - PAD - 30, w: CARD_W - colX - PAD, h: 30 };
+
+    return {
+      colX: colX, colW: colW,
+      msgTop: msgTop, lineHeight: lineHeight,
+      normalMsgFont: normalMsgFont, bookendMsgFont: bookendMsgFont,
+      lines: lines,
+      stampRect: { x: sx, y: sy, w: sw, h: sh },
+      subjectRect: subjectRect,
+      messageRect: messageRect,
+      footerRect: footerRect
+    };
+  }
+
+  function rectsOverlap(a, b) {
+    return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
+  }
+
   window.PostcardRenderUtils = {
     darken: darken,
     resolveColor: resolveColor,
@@ -122,6 +177,8 @@
     drawCover: drawCover,
     drawContain: drawContain,
     wrapText: wrapText,
-    centeredLines: centeredLines
+    centeredLines: centeredLines,
+    layoutTextZones: layoutTextZones,
+    rectsOverlap: rectsOverlap
   };
 })();

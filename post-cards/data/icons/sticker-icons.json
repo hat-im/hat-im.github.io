@@ -1,3 +1,8 @@
 {
-  "icons": ["heart", "star", "stripe", "cup", "pawprint", "bigben", "cat", "cat-sitting", "puppy", "tube", "phonebooth", "bus", "waves", "pressed-flower-mixed", "pressed-flower-amber", "pressed-flower-cream"]
+  "icons": ["heart", "star", "stripe", "cup", "pawprint", "bigben", "cat", "cat-sitting", "puppy", "tube", "phonebooth", "bus", "waves", "pressed-flower-mixed", "pressed-flower-amber", "pressed-flower-cream"],
+  "sizeScale": {
+    "pressed-flower-mixed": 2.2,
+    "pressed-flower-amber": 2.2,
+    "pressed-flower-cream": 2.2
+  }
 }

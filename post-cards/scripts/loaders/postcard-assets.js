@@ -6,6 +6,7 @@
   var FONTS = [];
   var GLYPHS = {};
   var STICKER_ICONS = [];
+  var STICKER_SIZE_SCALE = {};
   var POSITIONS = [];
   var SEALS = [];
   var FANCY_SHAPES = [];
@@ -19,6 +20,7 @@
     FONTS: FONTS,
     GLYPHS: GLYPHS,
     STICKER_ICONS: STICKER_ICONS,
+    STICKER_SIZE_SCALE: STICKER_SIZE_SCALE,
     POSITIONS: POSITIONS,
     SEALS: SEALS,
     FANCY_SHAPES: FANCY_SHAPES,
@@ -81,6 +83,7 @@
       fillFrom(FONTS, r[1].fonts);
       fillObject(GLYPHS, r[2].glyphs);
       fillFrom(STICKER_ICONS, r[4].icons);
+      fillObject(STICKER_SIZE_SCALE, r[4].sizeScale);
       fillFrom(POSITIONS, r[5].positions);
       fillFrom(SEALS, r[6].types);
       fillFrom(FANCY_SHAPES, r[7].shapes);

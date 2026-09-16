@@ -75,12 +75,17 @@
       : Utils.pickStampIndex(seed, Assets.STAMPS.length, null);
     this._stampImage = Assets.STAMPS[stampIndex];
 
+    var layout = Utils.layoutTextZones(this.ctx, this.data, Config);
+    var occupiedRects = [layout.stampRect, layout.messageRect, layout.footerRect];
+    if (layout.subjectRect) occupiedRects.push(layout.subjectRect);
+
     var sealCount = Math.min(2, Assets.SEALS.length);
     var stickerCount = Math.min(2, Assets.STICKER_ICONS.length);
     var positionOrder = shuffledIndices(rng, Assets.POSITIONS.length);
     var sealTypeOrder = shuffledIndices(rng, Assets.SEALS.length);
     var stickerTypeOrder = shuffledIndices(rng, Assets.STICKER_ICONS.length);
 
+    // seals are postmark-style ink stamps — free to sit over text, like a real cancellation mark
     this._seals = [];
     for (var s = 0; s < sealCount; s++) {
       var sealType = Assets.SEALS[sealTypeOrder[s]];
@@ -94,14 +99,30 @@
       }, extras));
     }
 
+    // stickers are decorative images — must stay clear of the stamp, subject, message and footer
     this._stickers = [];
+    var remainingPositions = positionOrder.slice(sealCount);
     for (var t = 0; t < stickerCount; t++) {
-      var stickerPos = Assets.POSITIONS[positionOrder[sealCount + t]];
+      var stickerType = Assets.STICKER_ICONS[stickerTypeOrder[t]];
+      var size = Assets.STICKER_MIN_SIZE + rng() * Assets.STICKER_SIZE_RANGE;
+      size *= Assets.STICKER_SIZE_SCALE[stickerType] || 1;
+      var spot = null;
+      for (var i = 0; i < remainingPositions.length; i++) {
+        var pos = Assets.POSITIONS[remainingPositions[i]];
+        var cx = pos.x * Config.CARD_W, cy = pos.y * Config.CARD_H;
+        var box = { x: cx - size, y: cy - size, w: size * 2, h: size * 2 };
+        if (!occupiedRects.some(function (r) { return Utils.rectsOverlap(box, r); })) {
+          spot = { x: cx, y: cy };
+          remainingPositions.splice(i, 1);
+          break;
+        }
+      }
+      if (!spot) continue;
       this._stickers.push({
-        type: Assets.STICKER_ICONS[stickerTypeOrder[t]],
-        x: stickerPos.x * Config.CARD_W,
-        y: stickerPos.y * Config.CARD_H,
-        size: Assets.STICKER_MIN_SIZE + rng() * Assets.STICKER_SIZE_RANGE,
+        type: stickerType,
+        x: spot.x,
+        y: spot.y,
+        size: size,
         rotation: (rng() - 0.5) * Assets.STICKER_ROTATION_RAD
       });
     }
@@ -228,11 +249,9 @@
     ctx.stroke();
     ctx.restore();
 
-    var colX = dividerX + PAD;
-    var colW = CARD_W - colX - PAD;
-
-    var sw = 104, sh = 126;
-    var sx = CARD_W - PAD - sw, sy = PAD;
+    var layout = Utils.layoutTextZones(ctx, data, Config);
+    var colX = layout.colX, colW = layout.colW;
+    var sx = layout.stampRect.x, sy = layout.stampRect.y, sw = layout.stampRect.w, sh = layout.stampRect.h;
     if (this._stampImage) {
       ctx.save();
       ctx.shadowColor = "rgba(0,0,0,0.25)";
@@ -248,43 +267,27 @@
       ctx.strokeRect(sx, sy, sw, sh);
     }
 
-    var msgTop = PAD + sh + 26;
     if (data.subject) {
       ctx.font = "bold 12px " + Config.TYPEWRITER_FONT;
       ctx.fillStyle = "rgba(50,48,55,0.75)";
       ctx.textAlign = "left";
       ctx.textBaseline = "alphabetic";
-      ctx.fillText(data.subject.toUpperCase(), colX, msgTop);
-      msgTop += 26;
+      ctx.fillText(data.subject.toUpperCase(), colX, layout.msgTop - 26);
     }
 
     // Personal zone: message + signature, both handwritten (Kalam) — the letter itself.
-    var normalMsgFont = "19px \"Kalam\", cursive";
-    var bookendMsgFont = "21px \"Kalam\", cursive";
+    var lineHeight = layout.lineHeight;
+    var msgTop = layout.msgTop;
+    var lines = layout.lines;
     ctx.fillStyle = "rgba(50,48,55,0.82)";
-    ctx.font = normalMsgFont;
     ctx.textAlign = "left";
     ctx.textBaseline = "alphabetic";
-    var msgBottom = CARD_H - PAD - 44;
-    var lineHeight = 23;
-    var reserveForSignature = data.from ? 1 : 0;
-    var maxLines = Math.max(1, Math.floor((msgBottom - msgTop) / lineHeight) - reserveForSignature);
-    var lines = Utils.wrapText(ctx, data.message || "", colW);
-    var truncated = lines.length > maxLines;
-    if (truncated) {
-      lines = lines.slice(0, maxLines);
-      var last = lines[maxLines - 1] || "";
-      while (ctx.measureText(last + "…").width > colW && last.length > 1) {
-        last = last.slice(0, -1);
-      }
-      lines[maxLines - 1] = last + "…";
-    }
     lines.forEach(function (line, i) {
-      ctx.font = i === 0 ? bookendMsgFont : normalMsgFont;
+      ctx.font = i === 0 ? layout.bookendMsgFont : layout.normalMsgFont;
       ctx.fillText(line, colX, msgTop + i * lineHeight);
     });
     if (data.from) {
-      ctx.font = normalMsgFont;
+      ctx.font = layout.normalMsgFont;
       ctx.fillStyle = "rgba(50,48,55,0.82)";
       ctx.textAlign = "right";
       ctx.fillText("— " + data.from, CARD_W - PAD, msgTop + lines.length * lineHeight);
