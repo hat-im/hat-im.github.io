@@ -49,6 +49,15 @@
     ],
     "waves": [
       { "type": "image", "src": "/post-cards/images/glyphs/waves.png" }
+    ],
+    "pressed-flower-mixed": [
+      { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-mixed.png" }
+    ],
+    "pressed-flower-amber": [
+      { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-amber.png" }
+    ],
+    "pressed-flower-cream": [
+      { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-cream.png" }
     ]
   }
 }
