@@ -150,6 +150,20 @@ function reachableCount(code, base){
   return seen.size;
 }
 
+function reachableBookCount(code, base){
+  var seen = new Set();
+  var books = new Set();
+  var stack = DEPENDENTS[code].slice();
+  while(stack.length){
+    var cur = stack.pop();
+    if(seen.has(cur) || base[cur] === 'done') continue;
+    seen.add(cur);
+    books.add(CH_BY_CODE[cur].book);
+    DEPENDENTS[cur].forEach(function(d){ stack.push(d); });
+  }
+  return books.size;
+}
+
 function matchesSearch(c){
   if(!searchQuery) return true;
   return c.code.toLowerCase().indexOf(searchQuery) !== -1 || c.title.toLowerCase().indexOf(searchQuery) !== -1;
@@ -424,10 +438,11 @@ function renderSuggestedNext(base){
     el.innerHTML = '';
     return;
   }
-  var best = candidates[0], bestScore = reachableCount(best.code, base);
+  var best = candidates[0], bestBooks = reachableBookCount(best.code, base), bestScore = reachableCount(best.code, base);
   candidates.forEach(function(c){
+    var books = reachableBookCount(c.code, base);
     var score = reachableCount(c.code, base);
-    if(score > bestScore){ bestScore = score; best = c; }
+    if(books > bestBooks || (books === bestBooks && score > bestScore)){ bestBooks = books; bestScore = score; best = c; }
   });
   var impact = STR.suggestedNext.impact;
   var impactText = bestScore === 0 ? impact.zero : fmt(bestScore === 1 ? impact.singular : impact.plural, {n:bestScore});

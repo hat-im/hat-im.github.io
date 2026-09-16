@@ -1,5 +1,5 @@
 {
-  "bookOrder": ["A", "D", "K", "B", "M", "N", "S", "H"],
+  "bookOrder": ["A", "D", "K", "B", "M", "N", "S", "W", "H"],
   "books": {
     "A": {
       "name": "Aho, Lam, Sethi & Ullman",
@@ -49,6 +49,13 @@
       "color": "#8f5fa8",
       "meta": "Cambridge University Press &middot; 3rd edition, 2020",
       "desc": "A widely used graduate quantum mechanics text originally by J. J. Sakurai and completed after his death, later revised and extended by Jim Napolitano with modern applications."
+    },
+    "W": {
+      "name": "Arfken, Weber & Harris",
+      "title": "Mathematical Methods for Physicists: A Comprehensive Guide",
+      "color": "#5d7a8a",
+      "meta": "Academic Press (Elsevier) &middot; 7th edition, 2012",
+      "desc": "A comprehensive, application-driven survey of the mathematical techniques used throughout physics, from vector analysis and complex variables through special functions, group theory, and Green's functions."
     },
     "H": {
       "name": "Hassani",
