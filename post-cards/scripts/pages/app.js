@@ -105,7 +105,7 @@
       PostcardEngine.init()
     ]).then(function (results) {
       strings = results[0];
-      postcards = results[1].postcards;
+      postcards = results[1].postcards.filter(function (pc) { return pc.enabled !== false; });
       postcards.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
       assignStampIndices(postcards);
 
