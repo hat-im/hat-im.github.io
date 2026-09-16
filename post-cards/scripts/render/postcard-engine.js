@@ -248,6 +248,16 @@
       ctx.strokeRect(sx, sy, sw, sh);
     }
 
+    var msgTop = PAD + sh + 26;
+    if (data.subject) {
+      ctx.font = "bold 12px " + Config.TYPEWRITER_FONT;
+      ctx.fillStyle = "rgba(50,48,55,0.75)";
+      ctx.textAlign = "left";
+      ctx.textBaseline = "alphabetic";
+      ctx.fillText(data.subject.toUpperCase(), colX, msgTop);
+      msgTop += 26;
+    }
+
     // Personal zone: message + signature, both handwritten (Kalam) — the letter itself.
     var normalMsgFont = "19px \"Kalam\", cursive";
     var bookendMsgFont = "21px \"Kalam\", cursive";
@@ -255,7 +265,6 @@
     ctx.font = normalMsgFont;
     ctx.textAlign = "left";
     ctx.textBaseline = "alphabetic";
-    var msgTop = PAD + sh + 26;
     var msgBottom = CARD_H - PAD - 44;
     var lineHeight = 23;
     var reserveForSignature = data.from ? 1 : 0;

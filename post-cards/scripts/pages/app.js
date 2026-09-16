@@ -65,6 +65,7 @@
       from: pc.from,
       location: pc.location,
       date: formatDisplayDate(pc.date),
+      subject: pc.subject,
       message: pc.message,
       color: pc.color,
       font: pc.font,

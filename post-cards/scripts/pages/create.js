@@ -3,6 +3,7 @@
 
   var canvas = document.getElementById("postcardCanvas");
   var mediaInput = document.getElementById("mediaInput");
+  var subjectInput = document.getElementById("subjectInput");
   var messageInput = document.getElementById("messageInput");
   var locationInput = document.getElementById("locationInput");
   var colorSwatches = document.getElementById("colorSwatches");
@@ -17,6 +18,7 @@
     from: "Hat",
     date: new Date().toISOString().slice(0, 10),
     location: "",
+    subject: "",
     message: "",
     color: null,
     font: null
@@ -35,6 +37,7 @@
       from: state.from,
       location: state.location,
       date: formatDisplayDate(state.date),
+      subject: state.subject,
       message: state.message,
       color: state.color,
       font: state.font
@@ -94,6 +97,8 @@
       document.getElementById("pageIntro").textContent = strings.create.pageIntro;
       document.getElementById("mediaLabel").textContent = strings.create.mediaLabel;
       document.getElementById("mediaHint").textContent = strings.create.mediaHint;
+      document.getElementById("subjectLabel").textContent = strings.create.subjectLabel;
+      subjectInput.placeholder = strings.create.subjectPlaceholder;
       document.getElementById("messageLabel").textContent = strings.create.messageLabel;
       messageInput.placeholder = strings.create.messagePlaceholder;
       document.getElementById("locationLabel").textContent = strings.create.locationLabel;
@@ -113,6 +118,7 @@
       refresh();
       renderer.start();
 
+      subjectInput.addEventListener("input", function () { state.subject = subjectInput.value; refresh(); });
       messageInput.addEventListener("input", function () { state.message = messageInput.value; refresh(); });
       locationInput.addEventListener("input", function () { state.location = locationInput.value; refresh(); });
       mediaInput.addEventListener("change", function () { handleMediaFile(mediaInput.files[0]); });
