@@ -734,5 +734,9 @@
   "j184": {
     "name": "Encyclopedia of Optimization",
     "type": "journal"
+  },
+  "j185": {
+    "name": "Electronic Proceedings in Theoretical Computer Science",
+    "type": "conference"
   }
 }

@@ -7668,7 +7668,7 @@
       "doi": "10.3390/e24101467",
       "title": "SoK: Benchmarking the Performance of a Quantum Computer",
       "authorIds": [
-        "a758",
+        "a2062",
         "a1549",
         "a1550"
       ],
@@ -11408,6 +11408,684 @@
       ],
       "citations": 20,
       "added": "2026-09-16"
+    },
+    {
+      "id": "10-1109-hpca61900-2025-00032",
+      "doi": "10.1109/HPCA61900.2025.00032",
+      "title": "BOSS: Blocking algorithm for optimizing shuttling scheduling in Ion Trap",
+      "authorIds": [
+        "a2008",
+        "a819",
+        "a758",
+        "a2006"
+      ],
+      "date": "2025-03",
+      "journalId": "j30",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-isca45697-2020-00051",
+      "doi": "10.1109/ISCA45697.2020.00051",
+      "title": "Architecting Noisy Intermediate-Scale Trapped Ion Quantum Computers",
+      "authorIds": [
+        "a544",
+        "a920",
+        "a1449",
+        "a1545"
+      ],
+      "date": "2020-05",
+      "journalId": "j13",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "architecture"
+      ],
+      "citations": 2,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2311-16035",
+      "doi": "10.48550/arXiv.2311.16035",
+      "title": "RobustState: Boosting Fidelity of Quantum State Preparation via Noise-Aware Variational Training",
+      "authorIds": [
+        "a1999",
+        "a2051",
+        "a1832",
+        "a2031",
+        "a2013",
+        "a827"
+      ],
+      "date": "2023-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-isca59077-2024-00030",
+      "doi": "10.1109/ISCA59077.2024.00030",
+      "title": "Atomique: A Quantum Compiler for Reconfigurable Neutral Atom Arrays",
+      "authorIds": [
+        "a1999",
+        "a1832",
+        "a2017",
+        "a2051",
+        "a2031",
+        "a827"
+      ],
+      "date": "2024-06",
+      "journalId": "j13",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 26,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2409-07870",
+      "doi": "10.48550/arXiv.2409.07870",
+      "title": "Weaver: A Retargetable Compiler Framework for FPQA Quantum Architectures",
+      "authorIds": [
+        "a2035",
+        "a2027",
+        "a270",
+        "a77"
+      ],
+      "date": "2024-09",
+      "journalId": "j41",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3470496-3527428",
+      "doi": "10.1145/3470496.3527428",
+      "title": "Geyser: a compilation framework for quantum computing with neutral atoms",
+      "authorIds": [
+        "a2055",
+        "a2019",
+        "a2022"
+      ],
+      "date": "2022-05",
+      "journalId": "j13",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 33,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3658617-3697778",
+      "doi": "10.1145/3658617.3697778",
+      "title": "Compilation for Dynamically Field-Programmable Qubit Arrays with Efficient and Provably Near-Optimal Scheduling",
+      "authorIds": [
+        "a2017",
+        "a2053",
+        "a2057"
+      ],
+      "date": "2025-01",
+      "journalId": "j164",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 11,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-qce65121-2025-00119",
+      "doi": "10.1109/QCE65121.2025.00119",
+      "title": "Orchestrating Multi-Zone Shuttling in Trapped-Ion Quantum Computers",
+      "authorIds": [
+        "a2018",
+        "a777"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "scheduling"
+      ],
+      "citations": 1,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2407-00736",
+      "doi": "10.48550/arXiv.2407.00736",
+      "title": "Quantum Circuit Synthesis and Compilation Optimization: Overview and Prospects",
+      "authorIds": [
+        "a1313",
+        "a1312",
+        "a2040",
+        "a2041",
+        "a2042",
+        "a827"
+      ],
+      "date": "2024-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "survey"
+      ],
+      "citations": 11,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-iccad66269-2025-11240721",
+      "doi": "10.1109/ICCAD66269.2025.11240721",
+      "title": "Routing-Aware Placement for Zoned Neutral Atom-based Quantum Computing",
+      "authorIds": [
+        "a700",
+        "a2053",
+        "a2057",
+        "a777"
+      ],
+      "date": "2025-10",
+      "journalId": "j39",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-isca52012-2021-00069",
+      "doi": "10.1109/ISCA52012.2021.00069",
+      "title": "Exploiting Long-Distance Interactions and Tolerating Atom Loss in Neutral Atom Quantum Architectures",
+      "authorIds": [
+        "a2032",
+        "a2014",
+        "a1809",
+        "a2000",
+        "a2058",
+        "a827"
+      ],
+      "date": "2021-06",
+      "journalId": "j13",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "architecture"
+      ],
+      "citations": 32,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-4204-eptcs-406-5",
+      "doi": "10.4204/EPTCS.406.5",
+      "title": "Multi-controlled Phase Gate Synthesis with ZX-calculus applied to Neutral Atom Hardware",
+      "authorIds": [
+        "a2033",
+        "a1294",
+        "a2060",
+        "a777",
+        "a417"
+      ],
+      "date": "2024-08",
+      "journalId": "j185",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "quantum-circuits"
+      ],
+      "citations": 4,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-hpca53966-2022-00057",
+      "doi": "10.1109/HPCA53966.2022.00057",
+      "title": "QuantumNAS: Noise-Adaptive Search for Robust Quantum Circuits",
+      "authorIds": [
+        "a1999",
+        "a2054",
+        "a2031",
+        "a2050",
+        "a2021",
+        "a827"
+      ],
+      "date": "2022-04",
+      "journalId": "j30",
+      "keywordIds": [
+        "quantum-circuits",
+        "quantum-machine-learning"
+      ],
+      "citations": 181,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3695053-3731084",
+      "doi": "10.1145/3695053.3731084",
+      "title": "S-SYNC: Shuttle and Swap Co-Optimization in Quantum Charge-Coupled Devices",
+      "authorIds": [
+        "a819",
+        "a2008",
+        "a758",
+        "a2006"
+      ],
+      "date": "2025-06",
+      "journalId": "j13",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "scheduling"
+      ],
+      "citations": 2,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2512-18021",
+      "doi": "10.48550/arXiv.2512.18021",
+      "title": "Shuttling Compiler for Trapped-Ion Quantum Computers Based on Fine-Tuned Large Language Models",
+      "authorIds": [
+        "a2026",
+        "a2036",
+        "a2025",
+        "a2015"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3649329-3658470",
+      "doi": "10.1145/3649329.3658470",
+      "title": "Q-Pilot: Field Programmable Qubit Array Compilation with Flying Ancillas",
+      "authorIds": [
+        "a1999",
+        "a2017",
+        "a1832",
+        "a2051",
+        "a2031",
+        "a827"
+      ],
+      "date": "2024-06",
+      "journalId": "j158",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 15,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2311-15123",
+      "doi": "10.48550/arXiv.2311.15123",
+      "title": "Atomique: A Quantum Compiler for Reconfigurable Neutral Atom Arrays",
+      "authorIds": [
+        "a1999",
+        "a1832",
+        "a2017",
+        "a2051",
+        "a2031",
+        "a827"
+      ],
+      "date": "2023-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 4,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-qce60285-2024-00098",
+      "doi": "10.1109/QCE60285.2024.00098",
+      "title": "An Abstract Model and Efficient Routing for Logical Entangling Gates on Zoned Neutral Atom Architectures",
+      "authorIds": [
+        "a700",
+        "a1294",
+        "a115",
+        "a777"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 13,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-iccad51958-2021-9643490",
+      "doi": "10.1109/ICCAD51958.2021.9643490",
+      "title": "Optimal Mapping for Near-Term Quantum Architectures based on Rydberg Atoms",
+      "authorIds": [
+        "a103",
+        "a2029",
+        "a2028"
+      ],
+      "date": "2021-11",
+      "journalId": "j39",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 19,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-qsw67625-2025-00023",
+      "doi": "10.1109/QSW67625.2025.00023",
+      "title": "Shuttling for Trapped-Ion Quantum Computers with Embedded Processing Zones",
+      "authorIds": [
+        "a2018",
+        "a2030",
+        "a2025",
+        "a777"
+      ],
+      "date": "2025-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-hpca56546-2023-10071025",
+      "doi": "10.1109/HPCA56546.2023.10071025",
+      "title": "The Imitation Game: Leveraging CopyCats for Robust Native Gate Selection in NISQ Programs",
+      "authorIds": [
+        "a2003",
+        "a2024",
+        "a1995"
+      ],
+      "date": "2023-02",
+      "journalId": "j30",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "compilation"
+      ],
+      "citations": 16,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3729290",
+      "doi": "10.1145/3729290",
+      "title": "QVM: Quantum Gate Virtualization Machine",
+      "authorIds": [
+        "a732",
+        "a270",
+        "a77"
+      ],
+      "date": "2025-06",
+      "journalId": "j163",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 3,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3669940-3707236",
+      "doi": "10.1145/3669940.3707236",
+      "title": "QECC-Synth: A Layout Synthesizer for Quantum Error Correction Codes on Sparse Architectures",
+      "authorIds": [
+        "a2004",
+        "a810",
+        "a229",
+        "a1995",
+        "a335",
+        "a827"
+      ],
+      "date": "2025-02",
+      "journalId": "j3",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "fault-tolerance"
+      ],
+      "citations": 8,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-qce60285-2024-00126",
+      "doi": "10.1109/QCE60285.2024.00126",
+      "title": "Shuttling Compiler for a Trapped-Ion Quantum Computer Architecture with Junctions",
+      "authorIds": [
+        "a2026",
+        "a2016",
+        "a2056",
+        "a2030",
+        "a2039",
+        "a827"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-tcad-2025-3532818",
+      "doi": "10.1109/TCAD.2025.3532818",
+      "title": "DasAtom: A Divide-and-Shuttle Atom Approach to Quantum Circuit Transformation",
+      "authorIds": [
+        "a330",
+        "a2010",
+        "a1779",
+        "a1875"
+      ],
+      "date": "2025-01",
+      "journalId": "j35",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 6,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-hpca51647-2021-00023",
+      "doi": "10.1109/HPCA51647.2021.00023",
+      "title": "TILT: Achieving Higher Fidelity on a Trapped-Ion Linear-Tape Quantum Computing Architecture",
+      "authorIds": [
+        "a1543",
+        "a920",
+        "a2054",
+        "a2032",
+        "a14",
+        "a827"
+      ],
+      "date": "2021-02",
+      "journalId": "j30",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "architecture"
+      ],
+      "citations": 24,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-22331-q-2024-03-14-1281",
+      "doi": "10.22331/q-2024-03-14-1281",
+      "title": "Compiling Quantum Circuits for Dynamically Field-Programmable Neutral Atoms Array Processors",
+      "authorIds": [
+        "a2017",
+        "a2023",
+        "a2034",
+        "a2057"
+      ],
+      "date": "2024-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 41,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3649329-3655959",
+      "doi": "10.1145/3649329.3655959",
+      "title": "Hybrid Circuit Mapping: Leveraging the Full Spectrum of Computational Capabilities of Neutral Atom Quantum Computers",
+      "authorIds": [
+        "a1294",
+        "a2059",
+        "a777"
+      ],
+      "date": "2024-06",
+      "journalId": "j158",
+      "keywordIds": [
+        "compilation",
+        "architecture"
+      ],
+      "citations": 17,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1145-3508352-3549331",
+      "doi": "10.1145/3508352.3549331",
+      "title": "Qubit Mapping for Reconfigurable Atom Arrays",
+      "authorIds": [
+        "a2017",
+        "a2023",
+        "a2034",
+        "a2057"
+      ],
+      "date": "2022-10",
+      "journalId": "j39",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 26,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-iscas56072-2025-11044292",
+      "doi": "10.1109/ISCAS56072.2025.11044292",
+      "title": "Exploring operation parallelism vs. ion movement in ion-trapped QCCD architectures",
+      "authorIds": [
+        "a573",
+        "a20"
+      ],
+      "date": "2025-05",
+      "journalId": "j165",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "architecture"
+      ],
+      "citations": 2,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-hpca61900-2025-00021",
+      "doi": "10.1109/HPCA61900.2025.00021",
+      "title": "Reuse-Aware Compilation for Zoned Quantum Architectures Based on Neutral Atoms",
+      "authorIds": [
+        "a2053",
+        "a2017",
+        "a2057"
+      ],
+      "date": "2025-03",
+      "journalId": "j30",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 8,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1109-qce60285-2024-00129",
+      "doi": "10.1109/QCE60285.2024.00129",
+      "title": "Using Compiler Frameworks for the Evaluation of Hardware Design Choices in Trapped-Ion Quantum Computers",
+      "authorIds": [
+        "a2018",
+        "a314",
+        "a2002",
+        "a777"
+      ],
+      "date": "2024-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "compilation",
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2505-05380",
+      "doi": "10.48550/arXiv.2505.05380",
+      "title": "Scalable Quantum Architecture Search via Landscape Analysis",
+      "authorIds": [
+        "a819",
+        "a2008",
+        "a2012",
+        "a2011",
+        "a2009",
+        "a827"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "architecture",
+        "optimization-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1088-2058-9565-ad33ac",
+      "doi": "10.1088/2058-9565/ad33ac",
+      "title": "Computational capabilities and compiler development for neutral atom quantum processors—connecting tool developers and hardware experts",
+      "authorIds": [
+        "a1294",
+        "a2020",
+        "a2061",
+        "a2037",
+        "a2060",
+        "a827"
+      ],
+      "date": "2024-03",
+      "journalId": "j77",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "compilation"
+      ],
+      "citations": 33,
+      "added": "2026-09-17"
+    },
+    {
+      "id": "10-1103-rfn7-c5n6",
+      "doi": "10.1103/rfn7-c5n6",
+      "title": "Learning-optimized qubit mapping and reuse to minimize intercore communication in modular quantum architectures",
+      "authorIds": [
+        "a2045",
+        "a2046",
+        "a2047"
+      ],
+      "date": "2026-04",
+      "journalId": "j124",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-09-17"
     }
   ]
 }
