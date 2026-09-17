@@ -5,7 +5,7 @@
   var mediaInput = document.getElementById("mediaInput");
   var subjectInput = document.getElementById("subjectInput");
   var messageInput = document.getElementById("messageInput");
-  var questionInput = document.getElementById("questionInput");
+  var postscriptInput = document.getElementById("postscriptInput");
   var locationInput = document.getElementById("locationInput");
   var colorSwatches = document.getElementById("colorSwatches");
   var fontOptions = document.getElementById("fontOptions");
@@ -21,7 +21,7 @@
     location: "",
     subject: "",
     message: "",
-    question: "",
+    postscript: "",
     color: null,
     font: null
   };
@@ -41,7 +41,7 @@
       date: formatDisplayDate(state.date),
       subject: state.subject,
       message: state.message,
-      question: state.question,
+      postscript: state.postscript,
       color: state.color,
       font: state.font
     });
@@ -104,8 +104,8 @@
       subjectInput.placeholder = strings.create.subjectPlaceholder;
       document.getElementById("messageLabel").textContent = strings.create.messageLabel;
       messageInput.placeholder = strings.create.messagePlaceholder;
-      document.getElementById("questionLabel").textContent = strings.create.questionLabel;
-      questionInput.placeholder = strings.create.questionPlaceholder;
+      document.getElementById("postscriptLabel").textContent = strings.create.postscriptLabel;
+      postscriptInput.placeholder = strings.create.postscriptPlaceholder;
       document.getElementById("locationLabel").textContent = strings.create.locationLabel;
       locationInput.placeholder = strings.create.locationPlaceholder;
       document.getElementById("colorLabel").textContent = strings.create.colorLabel;
@@ -125,7 +125,7 @@
 
       subjectInput.addEventListener("input", function () { state.subject = subjectInput.value; refresh(); });
       messageInput.addEventListener("input", function () { state.message = messageInput.value; refresh(); });
-      questionInput.addEventListener("input", function () { state.question = questionInput.value; refresh(); });
+      postscriptInput.addEventListener("input", function () { state.postscript = postscriptInput.value; refresh(); });
       locationInput.addEventListener("input", function () { state.location = locationInput.value; refresh(); });
       mediaInput.addEventListener("change", function () { handleMediaFile(mediaInput.files[0]); });
     });

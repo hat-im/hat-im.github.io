@@ -132,13 +132,13 @@
 
     var normalMsgFont = '19px "Kalam", cursive';
     var bookendMsgFont = '21px "Kalam", cursive';
-    var questionFont = 'italic 16px "Kalam", cursive';
+    var postscriptFont = 'italic 16px "Kalam", cursive';
     ctx.font = normalMsgFont;
     var msgBottom = CARD_H - PAD - 44;
     var lineHeight = 23;
     var reserveForSignature = data.from ? 1 : 0;
-    var reserveForQuestion = data.question ? 1 : 0;
-    var maxLines = Math.max(1, Math.floor((msgBottom - msgTop) / lineHeight) - reserveForSignature - reserveForQuestion);
+    var reserveForPostscript = data.postscript ? 1 : 0;
+    var maxLines = Math.max(1, Math.floor((msgBottom - msgTop) / lineHeight) - reserveForSignature - reserveForPostscript);
     var lines = wrapText(ctx, data.message || "", colW);
     if (lines.length > maxLines) {
       lines = lines.slice(0, maxLines);
@@ -148,8 +148,8 @@
       }
       lines[maxLines - 1] = last + "…";
     }
-    var questionY = msgTop + (lines.length + reserveForSignature) * lineHeight;
-    var messageHeight = lines.length * lineHeight + reserveForSignature * lineHeight + reserveForQuestion * lineHeight;
+    var postscriptY = msgTop + (lines.length + reserveForSignature) * lineHeight;
+    var messageHeight = lines.length * lineHeight + reserveForSignature * lineHeight + reserveForPostscript * lineHeight;
     var messageRect = { x: colX, y: msgTop - 16, w: colW, h: messageHeight + 6 };
 
     var footerRect = { x: colX, y: CARD_H - PAD - 30, w: CARD_W - colX - PAD, h: 30 };
@@ -157,8 +157,8 @@
     return {
       colX: colX, colW: colW,
       msgTop: msgTop, lineHeight: lineHeight,
-      normalMsgFont: normalMsgFont, bookendMsgFont: bookendMsgFont, questionFont: questionFont,
-      lines: lines, questionY: questionY,
+      normalMsgFont: normalMsgFont, bookendMsgFont: bookendMsgFont, postscriptFont: postscriptFont,
+      lines: lines, postscriptY: postscriptY,
       stampRect: { x: sx, y: sy, w: sw, h: sh },
       subjectRect: subjectRect,
       messageRect: messageRect,

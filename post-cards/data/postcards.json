@@ -14,7 +14,7 @@
         "src": "/post-cards/videos/postcard-01.mp4"
       },
       "message": "Hey!\nI hope you're having fun in London. I hope the trip is the refreshing break I know you've needed for a while. I wonder about all the things you're seeing and trying.\nSay hello to the Queen if you see her!",
-      "question": "What was the first thing you noticed about London?"
+      "postscript": "What was the first thing you noticed about London?"
     },
     {
       "id": "postcard-02",
@@ -30,7 +30,7 @@
         "src": "/post-cards/videos/postcard-02.mp4"
       },
       "message": "Hello!\nI had pancakes at Glen's for breakfast today. They were not very good. Would not recommend. Bad maple syrup and clumpy pancakes. Wondering if you've had some good British food yet. I want to ask you so many things, but I'm putting them here for now...\nHave a good day, I know you'll do well.",
-      "question": "How do you like British food?"
+      "postscript": "How do you like British food?"
     },
     {
       "id": "postcard-03",
@@ -46,7 +46,7 @@
         "src": "/post-cards/videos/postcard-03.mp4"
       },
       "message": "Hello!\nIt's raining here and Hilbert is settling in for a nap as I write this. I hope Haju is doing okay too. I wonder if it's been raining in London as well. Time-zones make things confusing. I know things must be hectic, but I hope you're having fun nevertheless.\nStrange, to miss you more now, while you're in London, when our cadence of communication hasn't changed much, but I do.",
-      "question": "How's the jet-lag been treating you?"
+      "postscript": "How's the jet-lag been treating you?"
     },
     {
       "id": "postcard-04",
@@ -62,7 +62,7 @@
         "src": "/post-cards/videos/postcard-04.mp4"
       },
       "message": "Hey,\nSofie and Hilbert are slowly warming up to each other, as you can see.\nI'm keeping myself busy. Spent today cooking (made a salami sandwich), studying (still in that physics textbook), thinking (hoping you have a bright day), painting (a few projects). Sending warmth.",
-      "question": "If you had to give a talk at the LDF next year, what would it be about?"
+      "postscript": "If you had to give a talk at the LDF next year, what would it be about?"
     },
     {
       "id": "postcard-05",
@@ -78,7 +78,23 @@
         "src": "/post-cards/videos/postcard-05.mp4"
       },
       "message": "Hello,\nThe sunset today was quite beautiful. I'm guessing this may be the first card you see, as I sent you the link today. I've started reading Stone Mattress and rearranged my books, been working on a paper you might find interesting. Been attending the IEEE Quantum Week conference this week, and gotta take Hilbert to the vet today too.\nHope you're having a good week.",
-      "question": "What is your favourite story from Stone Mattress?"
+      "postscript": "What is your favourite story from Stone Mattress?"
+    },
+    {
+      "id": "postcard-06",
+      "enabled": false,
+      "date": "2026-09-17",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Study Session",
+      "color": "powder-blue",
+      "subject": "Salt & Screens",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-06.mp4"
+      },
+      "message": "Evening,\nIt never seems to go away, this imposter syndrome. Stretched thin, yet not doing enough. Sitting in on talks and meetings of people with more years, experience, degrees and citations than I.\nI wonder if you feel something similar around all the artists, designers and leaders in London, from all over the world. I doubt you leave anyone less than dazzled, but do you ever find it as strange to suddenly be yourself?",
+      "postscript": "Miss debriefing these things, and you."
     }
   ]
 }
