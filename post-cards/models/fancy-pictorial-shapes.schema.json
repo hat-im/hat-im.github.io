@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/fancy-pictorial-shapes.schema.json",
+  "title": "Postcards — Fancy Pictorial Shapes",
+  "description": "post-cards/data/icons/fancy-pictorial-shapes.json. Which glyphs.json ids the 'fancyPictorial' seal type may draw inside its postmark design.",
+  "type": "object",
+  "required": ["shapes"],
+  "additionalProperties": false,
+  "properties": {
+    "shapes": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "description": "Each entry must be a key in glyphs.json's glyphs object."
+    }
+  }
+}

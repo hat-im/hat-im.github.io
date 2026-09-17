@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/paper-board/models/keywords.schema.json",
+  "title": "Paper Board — Keywords",
+  "description": "paper-board/data/keywords.json. Maps a keyword id to its display/color details. Referenced by papers.json's keywordIds.",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "required": ["label", "bg", "text"],
+    "additionalProperties": false,
+    "properties": {
+      "label": { "type": "string", "minLength": 1 },
+      "bg": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+      "text": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/sticker-icons.schema.json",
+  "title": "Postcards — Sticker Icons",
+  "description": "post-cards/data/icons/sticker-icons.json. Which glyphs.json ids are eligible as decorative stickers (as opposed to seal decoration only), plus an optional per-type size multiplier.",
+  "type": "object",
+  "required": ["icons"],
+  "additionalProperties": false,
+  "properties": {
+    "icons": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "description": "Each entry must be a key in glyphs.json's glyphs object."
+    },
+    "sizeScale": {
+      "type": "object",
+      "description": "Optional per-type multiplier applied to the randomly rolled base sticker size. Keys must appear in icons.",
+      "additionalProperties": { "type": "number", "exclusiveMinimum": 0 }
+    }
+  }
+}

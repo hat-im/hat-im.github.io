@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/angles.schema.json",
+  "title": "Postcards — Angles",
+  "description": "post-cards/data/theme/angles.json. Candidate card-tilt angles (degrees); one is picked per postcard by its seeded RNG.",
+  "type": "object",
+  "required": ["degrees"],
+  "additionalProperties": false,
+  "properties": {
+    "degrees": {
+      "type": "array",
+      "items": { "type": "number" }
+    }
+  }
+}

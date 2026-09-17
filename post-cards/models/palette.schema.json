@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/palette.schema.json",
+  "title": "Postcards — Palette",
+  "description": "post-cards/data/theme/palette.json. Named card-background colors. postcards.json's color field references a name here, resolved to hex via PostcardAssets.PALETTE_NAMES.",
+  "type": "object",
+  "required": ["colors"],
+  "additionalProperties": false,
+  "properties": {
+    "colors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "hex"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z]+(-[a-z]+)*$" },
+          "hex": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" }
+        }
+      }
+    }
+  }
+}

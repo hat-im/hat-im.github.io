@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/glyphs.schema.json",
+  "title": "Postcards — Glyphs",
+  "description": "post-cards/data/icons/glyphs.json. Maps a glyph id to the ordered list of drawing parts PostcardGlyphs.drawGlyph composites to render it. sticker-icons.json's icons list references these ids.",
+  "type": "object",
+  "required": ["glyphs"],
+  "additionalProperties": false,
+  "properties": {
+    "glyphs": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["type", "src"],
+              "additionalProperties": false,
+              "properties": {
+                "type": { "const": "image" },
+                "src": { "type": "string", "minLength": 1 }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["type", "count", "height", "gap", "skew"],
+              "additionalProperties": false,
+              "properties": {
+                "type": { "const": "stripe" },
+                "count": { "type": "integer", "minimum": 1 },
+                "height": { "type": "number" },
+                "gap": { "type": "number" },
+                "skew": { "type": "number" }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["type", "r", "gap"],
+              "additionalProperties": false,
+              "properties": {
+                "type": { "const": "crosshatch" },
+                "r": { "type": "number" },
+                "gap": { "type": "number" }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["type", "x", "y", "w", "h"],
+              "additionalProperties": false,
+              "properties": {
+                "type": { "const": "rect" },
+                "x": { "type": "number" },
+                "y": { "type": "number" },
+                "w": { "type": "number" },
+                "h": { "type": "number" }
+              }
+            },
+            {
+              "type": "object",
+              "required": ["type", "cx", "cy", "r"],
+              "additionalProperties": false,
+              "properties": {
+                "type": { "const": "circle" },
+                "cx": { "type": "number" },
+                "cy": { "type": "number" },
+                "r": { "type": "number" }
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

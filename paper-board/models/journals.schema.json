@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/paper-board/models/journals.schema.json",
+  "title": "Paper Board — Journals",
+  "description": "paper-board/data/journals.json. Maps a journal/venue id to its details. Referenced by papers.json's journalId.",
+  "type": "object",
+  "propertyNames": {
+    "pattern": "^j[0-9]+$"
+  },
+  "additionalProperties": {
+    "type": "object",
+    "required": ["name", "type"],
+    "additionalProperties": false,
+    "properties": {
+      "name": { "type": "string", "minLength": 1 },
+      "type": {
+        "type": "string",
+        "enum": ["journal", "conference", "preprint", "report"],
+        "description": "Drives the UI's venue color-coding. Workshops and proceedings series (LNCS, Procedia CS, EPJ Web of Conferences, ...) count as conference. arXiv/SSRN/Zenodo/Cryptology ePrint are preprint. USDOE/EuroHPC JU/European Commission/PRACE TR are report."
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/ink-colors.schema.json",
+  "title": "Postcards — Ink Colors",
+  "description": "post-cards/data/theme/ink-colors.json. CSS color values used for sticker/glyph ink and the barcode-style seal ink.",
+  "type": "object",
+  "required": ["ink", "barcodeInk"],
+  "additionalProperties": false,
+  "properties": {
+    "ink": { "type": "string", "minLength": 1 },
+    "barcodeInk": { "type": "string", "minLength": 1 }
+  }
+}

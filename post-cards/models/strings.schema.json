@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/strings.schema.json",
+  "title": "Postcards — UI Strings",
+  "description": "post-cards/strings.json. Static UI copy for post-cards.html and create.html.",
+  "type": "object",
+  "required": ["pageTitle", "nav", "mediaFallbackText", "create"],
+  "additionalProperties": false,
+  "properties": {
+    "pageTitle": { "type": "string" },
+    "nav": {
+      "type": "object",
+      "required": ["firstAria", "prevAria", "nextAria", "latestAria"],
+      "additionalProperties": false,
+      "properties": {
+        "firstAria": { "type": "string" },
+        "prevAria": { "type": "string" },
+        "nextAria": { "type": "string" },
+        "latestAria": { "type": "string" }
+      }
+    },
+    "mediaFallbackText": { "type": "string" },
+    "create": {
+      "type": "object",
+      "required": [
+        "pageHeading", "pageIntro", "mediaLabel", "mediaHint",
+        "subjectLabel", "subjectPlaceholder",
+        "messageLabel", "messagePlaceholder",
+        "postscriptLabel", "postscriptPlaceholder",
+        "locationLabel", "locationPlaceholder",
+        "colorLabel", "fontLabel", "backLinkLabel"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "pageHeading": { "type": "string" },
+        "pageIntro": { "type": "string" },
+        "mediaLabel": { "type": "string" },
+        "mediaHint": { "type": "string" },
+        "subjectLabel": { "type": "string" },
+        "subjectPlaceholder": { "type": "string" },
+        "messageLabel": { "type": "string" },
+        "messagePlaceholder": { "type": "string" },
+        "postscriptLabel": { "type": "string" },
+        "postscriptPlaceholder": { "type": "string" },
+        "locationLabel": { "type": "string" },
+        "locationPlaceholder": { "type": "string" },
+        "colorLabel": { "type": "string" },
+        "fontLabel": { "type": "string" },
+        "backLinkLabel": { "type": "string" }
+      }
+    }
+  }
+}

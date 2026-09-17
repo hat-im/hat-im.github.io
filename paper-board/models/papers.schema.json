@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/paper-board/models/papers.schema.json",
+  "title": "Paper Board — Papers",
+  "description": "paper-board/data/papers.json.",
+  "type": "object",
+  "required": ["papers"],
+  "additionalProperties": false,
+  "properties": {
+    "papers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "doi", "title", "authorIds", "date", "journalId", "keywordIds", "citations", "added"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9-]+$",
+            "description": "The DOI (or URL), lowercased, non-alphanumeric runs collapsed to a single '-', trimmed. E.g. 10.1016/j.future.2011.08.019 -> 10-1016-j-future-2011-08-019."
+          },
+          "doi": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "authorIds": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "pattern": "^(a[0-9]+|a827)$" },
+            "if": { "minItems": 6 },
+            "then": {
+              "maxItems": 6,
+              "prefixItems": [
+                {}, {}, {}, {}, {},
+                { "const": "a827" }
+              ]
+            },
+            "description": "References keys in authors.json. Papers with 6+ real authors are truncated to the first 5 plus the 'a827' (\"et al.\") placeholder as the final, 6th entry — the array is never longer than 6."
+          },
+          "date": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}$",
+            "description": "Publication year-month, e.g. 2017-03."
+          },
+          "journalId": {
+            "type": "string",
+            "pattern": "^j[0-9]+$",
+            "description": "References a key in journals.json."
+          },
+          "keywordIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            },
+            "description": "References keys in keywords.json."
+          },
+          "citations": { "type": "integer", "minimum": 0 },
+          "added": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+            "description": "Date the paper joined the dataset."
+          }
+        }
+      }
+    }
+  }
+}

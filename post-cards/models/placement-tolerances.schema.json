@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/placement-tolerances.schema.json",
+  "title": "Postcards — Placement Tolerances",
+  "description": "post-cards/data/layout/placement-tolerances.json. Tuning constants for seal/sticker rotation range and sticker sizing.",
+  "type": "object",
+  "required": ["sealRotationDegrees", "stickerRotationDegrees", "stickerMinSize", "stickerSizeRange"],
+  "additionalProperties": false,
+  "properties": {
+    "sealRotationDegrees": { "type": "number", "minimum": 0 },
+    "stickerRotationDegrees": { "type": "number", "minimum": 0 },
+    "stickerMinSize": { "type": "number", "minimum": 0 },
+    "stickerSizeRange": { "type": "number", "minimum": 0 }
+  }
+}

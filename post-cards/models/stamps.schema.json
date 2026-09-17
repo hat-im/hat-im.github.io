@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/stamps.schema.json",
+  "title": "Postcards — Stamps",
+  "description": "post-cards/data/stamps/stamps.json. Postage-stamp images preloaded at startup; one is assigned to each postcard via pickStampIndex, avoiding repeats between consecutive postcards.",
+  "type": "object",
+  "required": ["images"],
+  "additionalProperties": false,
+  "properties": {
+    "images": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    }
+  }
+}

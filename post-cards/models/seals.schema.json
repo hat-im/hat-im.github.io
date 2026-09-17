@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/seals.schema.json",
+  "title": "Postcards — Seal Types",
+  "description": "post-cards/data/seals/seals.json. The postmark/cancellation-mark styles PostcardSeals.drawSeal knows how to render; two are picked per postcard by its seeded RNG.",
+  "type": "object",
+  "required": ["types"],
+  "additionalProperties": false,
+  "properties": {
+    "types": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Each entry must be a seal type implemented in postcard-seals.js (e.g. cds, wavyLines, sloganCancel, ...)."
+    }
+  }
+}
