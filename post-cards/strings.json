@@ -16,6 +16,8 @@
     "subjectPlaceholder": "What's this one about?",
     "messageLabel": "Message",
     "messagePlaceholder": "Write a message...",
+    "questionLabel": "P.S. — a question for you",
+    "questionPlaceholder": "Ask something...",
     "locationLabel": "Postmark location",
     "locationPlaceholder": "Somewhere Nice",
     "colorLabel": "Color",

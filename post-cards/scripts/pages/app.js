@@ -67,6 +67,7 @@
       date: formatDisplayDate(pc.date),
       subject: pc.subject,
       message: pc.message,
+      question: pc.question,
       color: pc.color,
       font: pc.font,
       stampIndex: pc._stampIndex

@@ -293,6 +293,12 @@
       ctx.fillText("— " + data.from, CARD_W - PAD, msgTop + lines.length * lineHeight);
       ctx.textAlign = "left";
     }
+    if (data.question) {
+      ctx.font = layout.questionFont;
+      ctx.fillStyle = "rgba(50,48,55,0.62)";
+      ctx.textAlign = "left";
+      ctx.fillText("P.S. " + data.question, colX, layout.questionY);
+    }
 
     // Administrative zone: addressee is primary (left), postmark info is secondary (right) —
     // hierarchy comes from position/role, not just from shrinking the font.

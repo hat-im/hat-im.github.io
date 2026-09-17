@@ -13,7 +13,8 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-01.mp4"
       },
-      "message": "Hey!\nI hope you're having fun in London. I wonder what about all the things you're seeing and trying. I hope it's not exhausting you too much, though.\nI hope the weather is moody in the best way, that you got to try some authentic fish & chips, and that British people are real. Say hello to the Queen if you see her!"
+      "message": "Hey!\nI hope you're having fun in London. I hope the trip is the refreshing break I know you've needed for a while. I wonder about all the things you're seeing and trying.\nSay hello to the Queen if you see her!",
+      "question": "What was the first thing you noticed about London?"
     },
     {
       "id": "postcard-02",
@@ -28,7 +29,8 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-02.mp4"
       },
-      "message": "Hello!\nI had pancakes at Glen's for breakfast today. They were not very good. Would not recommend — bad maple syrup and dense pancakes. Wondering if you've had some good British food yet (tea and bottles of water don't count). I want to ask you so many things, but I guess I'm putting them here for now...\n Strange to miss you more that you're in London, when the cadence of our communication hasn't changed much, but I do.\nHave a good day, I know you'll do well."
+      "message": "Hello!\nI had pancakes at Glen's for breakfast today. They were not very good. Would not recommend. Bad maple syrup and clumpy pancakes. Wondering if you've had some good British food yet. I want to ask you so many things, but I'm putting them here for now...\nHave a good day, I know you'll do well.",
+      "question": "How do you like British food?"
     },
     {
       "id": "postcard-03",
@@ -43,7 +45,8 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-03.mp4"
       },
-      "message": "Hello!\nIt's raining here and Hilbert is settling in for a nap as I write this. I hope Haju is doing okay too. I wonder if it's been raining in London as well. Time-zones make things confusing. I hope you're not suffering from jet-lag too much."
+      "message": "Hello!\nIt's raining here and Hilbert is settling in for a nap as I write this. I hope Haju is doing okay too. I wonder if it's been raining in London as well. Time-zones make things confusing. I know things must be hectic, but I hope you're having fun nevertheless.\nStrange, to miss you more now, while you're in London, when our cadence of communication hasn't changed much, but I do.",
+      "question": "How's the jet-lag been treating you?"
     },
     {
       "id": "postcard-04",
@@ -58,7 +61,8 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-04.mp4"
       },
-      "message": "Hey\nSofie and Hilbert are slowly warming up to each other, as you can see.\nI'm keeping myself busy. Spent today cooking (made a salami sandwich), studying physics (still in that textbook), thinking about you (hope you have a bright day), painting (a few projects). Sending warmth..."
+      "message": "Hey,\nSofie and Hilbert are slowly warming up to each other, as you can see.\nI'm keeping myself busy. Spent today cooking (made a salami sandwich), studying (still in that physics textbook), thinking (hoping you have a bright day), painting (a few projects). Sending warmth.",
+      "question": "If you had to give a talk at the LDF next year, what would it be about?"
     },
     {
       "id": "postcard-05",
@@ -66,14 +70,15 @@
       "date": "2026-09-16",
       "from": "Hat",
       "to": "Sam",
-      "location": "Purple-pink Skies",
+      "location": "Purple-Pink Skies",
       "color": "apricot",
       "subject": "Chores and Bores",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-05.mp4"
       },
-      "message": "Hello,\n Beautiful sunset today. I'm guessing this may be the first card you see, as I sent you the link today. I've started reading Stone Mattress and rearranged my books, been working on a paper you might find interesting. Been attending the IEEE Quantum Week conference this week. and gotta take Hilbert to the vet today too. \nHope you're having a good week."
+      "message": "Hello,\nThe sunset today was quite beautiful. I'm guessing this may be the first card you see, as I sent you the link today. I've started reading Stone Mattress and rearranged my books, been working on a paper you might find interesting. Been attending the IEEE Quantum Week conference this week, and gotta take Hilbert to the vet today too.\nHope you're having a good week.",
+      "question": "What is your favourite story from Stone Mattress?"
     }
   ]
 }
