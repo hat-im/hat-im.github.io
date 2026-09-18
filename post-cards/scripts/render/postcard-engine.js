@@ -203,7 +203,7 @@
     ctx.restore();
 
     ctx.save();
-    ctx.strokeStyle = Utils.darken(data.color || Assets.PALETTE[0], 0.22);
+    ctx.strokeStyle = Utils.darken(data.color || Assets.PALETTE[0], Config.CARD_BORDER_DARKEN);
     ctx.lineWidth = 5;
     Utils.roundRectPath(ctx, 2.5, 2.5, CARD_W - 5, CARD_H - 5, 0);
     ctx.stroke();

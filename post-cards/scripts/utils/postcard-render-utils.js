@@ -19,12 +19,13 @@
   }
 
   function pickCardStyle(data) {
+    var Config = window.PostcardConfig;
     var seed = (data && data.date) || (data && data.id) || Math.random();
     var rng = hashSeed(seed);
     var rotationDeg = pick(rng, window.PostcardAssets.ANGLES);
     var color = (data && data.color) ? resolveColor(data.color) : pick(rng, window.PostcardAssets.PALETTE);
-    var offsetY = rng() * 6;
-    return { color: color, rotationDeg: rotationDeg, borderColor: darken(color, 0.22), offsetY: offsetY };
+    var offsetY = rng() * Config.GHOST_STACK_MAX_OFFSET;
+    return { color: color, rotationDeg: rotationDeg, borderColor: darken(color, Config.CARD_BORDER_DARKEN), offsetY: offsetY };
   }
 
   function pickStampIndex(seed, count, avoidIndex) {
@@ -117,26 +118,26 @@
   function layoutTextZones(ctx, data, Config) {
     var CARD_W = Config.CARD_W, CARD_H = Config.CARD_H, PAD = Config.PAD;
     var side = CARD_H - PAD * 2;
-    var sw = 104, sh = 126;
+    var sw = Config.STAMP_W, sh = Config.STAMP_H;
     var sx = CARD_W - PAD - sw, sy = PAD;
     var dividerX = PAD + side + PAD;
     var colX = dividerX + PAD;
     var colW = CARD_W - colX - PAD;
 
-    var msgTop = PAD + sh + 26;
+    var msgTop = PAD + sh + Config.STAMP_TO_MESSAGE_GAP;
     var subjectRect = null;
     if (data.subject) {
-      subjectRect = { x: colX, y: msgTop - 14, w: colW, h: 20 };
-      msgTop += 26;
+      subjectRect = { x: colX, y: msgTop - Config.SUBJECT_BASELINE_OFFSET, w: colW, h: Config.SUBJECT_HEIGHT };
+      msgTop += Config.SUBJECT_GAP;
     }
 
-    var normalMsgFont = '19px "Kalam", cursive';
-    var bookendMsgFont = '21px "Kalam", cursive';
-    var postscriptFont = 'italic 16px "Kalam", cursive';
-    var postscriptLineHeight = 20;
+    var normalMsgFont = Config.MESSAGE_FONT_SIZE + 'px ' + Config.HANDWRITTEN_FONT;
+    var bookendMsgFont = Config.MESSAGE_BOOKEND_FONT_SIZE + 'px ' + Config.HANDWRITTEN_FONT;
+    var postscriptFont = 'italic ' + Config.POSTSCRIPT_FONT_SIZE + 'px ' + Config.HANDWRITTEN_FONT;
+    var postscriptLineHeight = Config.POSTSCRIPT_LINE_HEIGHT;
     ctx.font = normalMsgFont;
-    var msgBottom = CARD_H - PAD - 44;
-    var lineHeight = 23;
+    var msgBottom = CARD_H - PAD - Config.MESSAGE_BOTTOM_MARGIN;
+    var lineHeight = Config.MESSAGE_LINE_HEIGHT;
     var reserveForSignature = data.from ? 1 : 0;
 
     var postscriptLines = [];
@@ -160,9 +161,9 @@
     }
     var postscriptY = msgTop + lines.length * lineHeight + signaturePx;
     var messageHeight = lines.length * lineHeight + signaturePx + postscriptPx;
-    var messageRect = { x: colX, y: msgTop - 16, w: colW, h: messageHeight + 6 };
+    var messageRect = { x: colX, y: msgTop - Config.MESSAGE_RECT_TOP_PAD, w: colW, h: messageHeight + Config.MESSAGE_RECT_BOTTOM_PAD };
 
-    var footerRect = { x: colX, y: CARD_H - PAD - 30, w: CARD_W - colX - PAD, h: 30 };
+    var footerRect = { x: colX, y: CARD_H - PAD - Config.FOOTER_HEIGHT, w: CARD_W - colX - PAD, h: Config.FOOTER_HEIGHT };
 
     return {
       colX: colX, colW: colW,
