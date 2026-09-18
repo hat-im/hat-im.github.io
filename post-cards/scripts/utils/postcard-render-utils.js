@@ -133,12 +133,22 @@
     var normalMsgFont = '19px "Kalam", cursive';
     var bookendMsgFont = '21px "Kalam", cursive';
     var postscriptFont = 'italic 16px "Kalam", cursive';
+    var postscriptLineHeight = 20;
     ctx.font = normalMsgFont;
     var msgBottom = CARD_H - PAD - 44;
     var lineHeight = 23;
     var reserveForSignature = data.from ? 1 : 0;
-    var reserveForPostscript = data.postscript ? 1 : 0;
-    var maxLines = Math.max(1, Math.floor((msgBottom - msgTop) / lineHeight) - reserveForSignature - reserveForPostscript);
+
+    var postscriptLines = [];
+    if (data.postscript) {
+      ctx.font = postscriptFont;
+      postscriptLines = wrapText(ctx, "P.S. " + data.postscript, colW);
+      ctx.font = normalMsgFont;
+    }
+    var signaturePx = reserveForSignature * lineHeight;
+    var postscriptPx = postscriptLines.length * postscriptLineHeight;
+
+    var maxLines = Math.max(1, Math.floor((msgBottom - msgTop - signaturePx - postscriptPx) / lineHeight));
     var lines = wrapText(ctx, data.message || "", colW);
     if (lines.length > maxLines) {
       lines = lines.slice(0, maxLines);
@@ -148,8 +158,8 @@
       }
       lines[maxLines - 1] = last + "…";
     }
-    var postscriptY = msgTop + (lines.length + reserveForSignature) * lineHeight;
-    var messageHeight = lines.length * lineHeight + reserveForSignature * lineHeight + reserveForPostscript * lineHeight;
+    var postscriptY = msgTop + lines.length * lineHeight + signaturePx;
+    var messageHeight = lines.length * lineHeight + signaturePx + postscriptPx;
     var messageRect = { x: colX, y: msgTop - 16, w: colW, h: messageHeight + 6 };
 
     var footerRect = { x: colX, y: CARD_H - PAD - 30, w: CARD_W - colX - PAD, h: 30 };
@@ -157,8 +167,9 @@
     return {
       colX: colX, colW: colW,
       msgTop: msgTop, lineHeight: lineHeight,
-      normalMsgFont: normalMsgFont, bookendMsgFont: bookendMsgFont, postscriptFont: postscriptFont,
-      lines: lines, postscriptY: postscriptY,
+      normalMsgFont: normalMsgFont, bookendMsgFont: bookendMsgFont,
+      postscriptFont: postscriptFont, postscriptLineHeight: postscriptLineHeight,
+      lines: lines, postscriptY: postscriptY, postscriptLines: postscriptLines,
       stampRect: { x: sx, y: sy, w: sw, h: sh },
       subjectRect: subjectRect,
       messageRect: messageRect,

@@ -297,7 +297,9 @@
       ctx.font = layout.postscriptFont;
       ctx.fillStyle = "rgba(50,48,55,0.62)";
       ctx.textAlign = "left";
-      ctx.fillText("P.S. " + data.postscript, colX, layout.postscriptY);
+      layout.postscriptLines.forEach(function (line, i) {
+        ctx.fillText(line, colX, layout.postscriptY + i * layout.postscriptLineHeight);
+      });
     }
 
     // Administrative zone: addressee is primary (left), postmark info is secondary (right) —
