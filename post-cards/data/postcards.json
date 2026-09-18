@@ -95,6 +95,22 @@
       },
       "message": "Evening,\nIt never seems to go away, this imposter syndrome. Stretched thin, yet not doing enough. Sitting in on talks and meetings of people with more years, experience, degrees and citations than I.\nI wonder if you feel something similar around all the artists, designers and leaders in London, from all over the world. I doubt you leave anyone less than dazzled, but do you ever find it as strange to suddenly be yourself?",
       "postscript": "Miss debriefing these things, and you."
+    },
+    {
+      "id": "postcard-07",
+      "enabled": false,
+      "date": "2026-09-18",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Whisker Watch",
+      "color": "sand",
+      "subject": "Whiskers & Winks",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-07.mp4"
+      },
+      "message": "Evening,\nHilbert fell asleep again. Thought you'd like this one.\nI understand, and I'm not pushing against your decision. I'll keep writing these anyway, at my own pace. They'll just be here, for you.\nI love you. That hasn't changed and it won't.\nNo need to write back. Just wanted you to have something soft today.",
+      "postscript": "We both miss you."
     }
   ]
 }
