@@ -98,7 +98,7 @@
     },
     {
       "id": "postcard-07",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-09-18",
       "from": "Hat",
       "to": "Sam",
