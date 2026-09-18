@@ -1176,7 +1176,7 @@
         "a790",
         "a819",
         "a758",
-        "a762"
+        "a2006"
       ],
       "date": "2025-10",
       "journalId": "j42",
@@ -2836,7 +2836,7 @@
         "a675",
         "a378",
         "a526",
-        "a536",
+        "a629",
         "a457",
         "a827"
       ],
@@ -2897,8 +2897,8 @@
       "added": "2026-07-22"
     },
     {
-      "id": "10-48550-arxiv-2511-00224",
-      "doi": "10.48550/arXiv.2511.00224",
+      "id": "10-1016-j-future-2026-108731",
+      "doi": "10.1016/j.future.2026.108731",
       "title": "Closed-loop calculations of electronic structure on a quantum processor and a classical supercomputer at full scale",
       "authorIds": [
         "a680",
@@ -2908,8 +2908,8 @@
         "a741",
         "a827"
       ],
-      "date": "2025-10",
-      "journalId": "j98",
+      "date": "2026-07",
+      "journalId": "j24",
       "keywordIds": [
         "hpc-integration",
         "quantum-algorithms",
@@ -3123,7 +3123,7 @@
       "title": "Quantum-Centric Algorithm for Sample-Based Krylov Diagonalization",
       "authorIds": [
         "a802",
-        "a536",
+        "a629",
         "a344",
         "a73",
         "a170",
@@ -12086,6 +12086,989 @@
       ],
       "citations": 0,
       "added": "2026-09-17"
+    },
+    {
+      "id": "10-48550-arxiv-2504-12893",
+      "doi": "10.48550/arxiv.2504.12893",
+      "title": "Hardness of classically sampling quantum chemistry circuits",
+      "authorIds": [
+        "a2063",
+        "a2064",
+        "a2065",
+        "a838",
+        "a2066"
+      ],
+      "date": "2025-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-simulation"
+      ],
+      "citations": 1,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2604-09756",
+      "doi": "10.48550/arxiv.2604.09756",
+      "title": "Generative Circuit Design for Quantum-Selected Configuration Interaction",
+      "authorIds": [
+        "a2067",
+        "a2068",
+        "a2069",
+        "a2070",
+        "a2071",
+        "a827"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1103-n5g8-tdp8",
+      "doi": "10.1103/n5g8-tdp8",
+      "title": "Symmetry-based perturbation theory for electronic structure calculations",
+      "authorIds": [
+        "a2126",
+        "a557",
+        "a2127",
+        "a540"
+      ],
+      "date": "2026-06",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2605-02494",
+      "doi": "10.48550/arxiv.2605.02494",
+      "title": "A Critical Assessment of the Sample-Based Quantum Diagonalization for Heisenberg and Hubbard Models",
+      "authorIds": [
+        "a2074",
+        "a355"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-7566-jpsj-94-114002",
+      "doi": "10.7566/jpsj.94.114002",
+      "title": "Quantum Computation of a Quasiparticle Band Structure with the Quantum-Selected Configuration Interaction",
+      "authorIds": [
+        "a2128",
+        "a2064",
+        "a2129",
+        "a2130",
+        "a2066"
+      ],
+      "date": "2025-10",
+      "journalId": "j186",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-simulation"
+      ],
+      "citations": 3,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acsomega-5c03371",
+      "doi": "10.1021/acsomega.5c03371",
+      "title": "Enhancing Accuracy of Quantum-Selected Configuration Interaction Calculations Using Multireference Perturbation Theory: Application to Aromatic Molecules",
+      "authorIds": [
+        "a2131",
+        "a2132",
+        "a2064",
+        "a2133",
+        "a2134",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j187",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 6,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1038-s41524-026-02059-0",
+      "doi": "10.1038/s41524-026-02059-0",
+      "title": "Computing band gaps of periodic materials via sample-based quantum diagonalization",
+      "authorIds": [
+        "a2135",
+        "a2136",
+        "a2137",
+        "a2138",
+        "a2139",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j188",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "energy-materials"
+      ],
+      "citations": 2,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acs-jctc-5c00375",
+      "doi": "10.1021/acs.jctc.5c00375",
+      "title": "Critical Limitations in Quantum-Selected Configuration Interaction Methods",
+      "authorIds": [
+        "a2143",
+        "a2144",
+        "a2145",
+        "a2146",
+        "a2147",
+        "a827"
+      ],
+      "date": "2025-06",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 5,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1088-2632-2153-ae7eee",
+      "doi": "10.1088/2632-2153/ae7eee",
+      "title": "Improving generalization and trainability of quantum eigensolvers via graph neural encoding",
+      "authorIds": [
+        "a990",
+        "a2094"
+      ],
+      "date": "2026-06",
+      "journalId": "j189",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-machine-learning"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-3390-e28040367",
+      "doi": "10.3390/e28040367",
+      "title": "Evaluating Sample-Based Krylov Quantum Diagonalization for Heisenberg Models with Applications to Materials Science",
+      "authorIds": [
+        "a2149",
+        "a2150",
+        "a2151",
+        "a2152",
+        "a2153",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j20",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-simulation"
+      ],
+      "citations": 1,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2602-01165",
+      "doi": "10.48550/arxiv.2602.01165",
+      "title": "Noise-Resilient Quantum Chemistry with Half the Qubits",
+      "authorIds": [
+        "a2075",
+        "a2076",
+        "a2077"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1007-s11128-026-05068-6",
+      "doi": "10.1007/s11128-026-05068-6",
+      "title": "Velocity Verlet-based optimization for variational quantum eigensolvers",
+      "authorIds": [
+        "a528"
+      ],
+      "date": "2026-01",
+      "journalId": "j74",
+      "keywordIds": [
+        "variational-algorithms",
+        "optimization-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2604-09483",
+      "doi": "10.48550/arxiv.2604.09483",
+      "title": "Quantum Randomized Subspace Iteration",
+      "authorIds": [
+        "a2078",
+        "a2079",
+        "a2080",
+        "a2081"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2601-07037",
+      "doi": "10.48550/arxiv.2601.07037",
+      "title": "Subspace Selected Variational Quantum Configuration Interaction with a Partial Walsh Series",
+      "authorIds": [
+        "a2082",
+        "a2083",
+        "a2084",
+        "a2085"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1002-qute-202500871",
+      "doi": "10.1002/qute.202500871",
+      "title": "Quantum Simulations of Battery Electrolytes Using Variational Quantum Eigensolver, Equation‐of‐Motion, and Sample‐Based Diagonalization Methods: Active‐Space Design, Dissociation, and Excited States of LiPF6, NaPF6, and FSI Salts",
+      "authorIds": [
+        "a1743",
+        "a1744",
+        "a1745"
+      ],
+      "date": "2026-02",
+      "journalId": "j15",
+      "keywordIds": [
+        "variational-algorithms",
+        "energy-materials"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2512-13044",
+      "doi": "10.48550/arxiv.2512.13044",
+      "title": "Imaginary-time-enhanced feedback-based quantum algorithms for universal ground-state preparation",
+      "authorIds": [
+        "a2086",
+        "a2087",
+        "a2088"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2510-23154",
+      "doi": "10.48550/arxiv.2510.23154",
+      "title": "Size-consistent implementation of Hamiltonian simulation-based quantum-selected configuration interaction method for the supramolecular approach",
+      "authorIds": [
+        "a2089"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2505-00914",
+      "doi": "10.48550/arxiv.2505.00914",
+      "title": "Symmetry-adapted sample-based quantum diagonalization: Application to lattice model",
+      "authorIds": [
+        "a2090",
+        "a2091",
+        "a680",
+        "a803",
+        "a2092"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acs-jctc-5c01994",
+      "doi": "10.1021/acs.jctc.5c01994",
+      "title": "Selected Configuration Interaction Using Time-Evolved Population Statistics",
+      "authorIds": [
+        "a2156",
+        "a2157",
+        "a2158",
+        "a2159"
+      ],
+      "date": "2026-04",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2512-19420",
+      "doi": "10.48550/arxiv.2512.19420",
+      "title": "Generative Krylov Subspace Representations for Scalable Quantum Eigensolvers",
+      "authorIds": [
+        "a2093",
+        "a2094"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-machine-learning"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acs-jctc-6c00521",
+      "doi": "10.1021/acs.jctc.6c00521",
+      "title": "Resource-Efficient Quantum Algorithms for Selected Hamiltonian Subspace Diagonalization",
+      "authorIds": [
+        "a2160",
+        "a316",
+        "a2161",
+        "a265"
+      ],
+      "date": "2026-07",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2510-26951",
+      "doi": "10.48550/arxiv.2510.26951",
+      "title": "Sample-Based Krylov Quantum Diagonalization for the Schwinger Model on Trapped-Ion and Superconducting Quantum Processors",
+      "authorIds": [
+        "a2095",
+        "a2096",
+        "a2097",
+        "a2039",
+        "a2025"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "trapped-ion-qubits"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1103-75pv-hbrx",
+      "doi": "10.1103/75pv-hbrx",
+      "title": "Quantum-selected configuration interaction with time-evolved state",
+      "authorIds": [
+        "a2162",
+        "a2108"
+      ],
+      "date": "2025-09",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 13,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1145-3815786",
+      "doi": "10.1145/3815786",
+      "title": "Utility-scale Experimental Quantum Computation with Hardware Efficient Ansätze and Calibrated Hamiltonian",
+      "authorIds": [
+        "a2163"
+      ],
+      "date": "2026-05",
+      "journalId": "j11",
+      "keywordIds": [
+        "variational-algorithms",
+        "qubit-hardware"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acs-jctc-5c01407",
+      "doi": "10.1021/acs.jctc.5c01407",
+      "title": "Enhancing the Accuracy and Efficiency of Sample-Based Quantum Diagonalization with Phaseless Auxiliary-Field Quantum Monte Carlo",
+      "authorIds": [
+        "a2164",
+        "a629",
+        "a2098",
+        "a540",
+        "a2103"
+      ],
+      "date": "2025-11",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 6,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2605-03123",
+      "doi": "10.48550/arxiv.2605.03123",
+      "title": "ffsim: Faster simulation of fermionic quantum circuits",
+      "authorIds": [
+        "a2098",
+        "a2099",
+        "a839",
+        "a2100",
+        "a2101",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-chemistry"
+      ],
+      "citations": 1,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2512-11788",
+      "doi": "10.48550/arxiv.2512.11788",
+      "title": "Exact and Tunable Quantum Krylov Subspaces via Unitary Decomposition",
+      "authorIds": [
+        "a2105"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1039-d5cp02202a",
+      "doi": "10.1039/d5cp02202a",
+      "title": "Hamiltonian simulation-based quantum-selected configuration interaction for large-scale electronic structure calculations with a quantum computer",
+      "authorIds": [
+        "a2089",
+        "a2069",
+        "a348",
+        "a2165",
+        "a2072"
+      ],
+      "date": "2025-01",
+      "journalId": "j190",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 21,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2510-24911",
+      "doi": "10.48550/arxiv.2510.24911",
+      "title": "Classically Prepared, Quantumly Evolved: Hybrid Algorithm for Molecular Spectra",
+      "authorIds": [
+        "a2106",
+        "a1088",
+        "a2107"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2511-20998",
+      "doi": "10.48550/arxiv.2511.20998",
+      "title": "Mirror subspace diagonalization: A quantum Krylov algorithm with near-optimal sampling cost",
+      "authorIds": [
+        "a1374",
+        "a2108",
+        "a2109",
+        "a2110",
+        "a1378",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2502-21081",
+      "doi": "10.48550/arxiv.2502.21081",
+      "title": "Auxiliary-field quantum Monte Carlo method with quantum selected configuration interaction",
+      "authorIds": [
+        "a2111",
+        "a2112",
+        "a2113",
+        "a2114",
+        "a2115",
+        "a827"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 2,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2603-09346",
+      "doi": "10.48550/arxiv.2603.09346",
+      "title": "Cluster-Adaptive Sample-Based Quantum Diagonalization for Strongly Correlated Systems",
+      "authorIds": [
+        "a2166",
+        "a2167",
+        "a2168",
+        "a2169",
+        "a2170",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1103-rjdv-bxgq",
+      "doi": "10.1103/rjdv-bxgq",
+      "title": "Dissipative ground-state preparation of a quantum spin chain on a trapped-ion quantum computer",
+      "authorIds": [
+        "a1419",
+        "a2172",
+        "a2173",
+        "a803"
+      ],
+      "date": "2026-06",
+      "journalId": "j124",
+      "keywordIds": [
+        "quantum-simulation",
+        "trapped-ion-qubits"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2602-02165",
+      "doi": "10.48550/arxiv.2602.02165",
+      "title": "AQER: a scalable and efficient data loader for digital quantum computers",
+      "authorIds": [
+        "a2119",
+        "a2120",
+        "a2121",
+        "a1891",
+        "a2122"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2603-00946",
+      "doi": "10.48550/arxiv.2603.00946",
+      "title": "No Quantum Utility from Hadron Masses? No, Quantum Utility from Hadron Masses!",
+      "authorIds": [
+        "a2123"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "high-energy-physics",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2603-16049",
+      "doi": "10.48550/arxiv.2603.16049",
+      "title": "Qudit Implementation of the Rodeo Algorithm for Quantum Spectral Filtering",
+      "authorIds": [
+        "a2124",
+        "a2125"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1103-x6j4-gnww",
+      "doi": "10.1103/x6j4-gnww",
+      "title": "Two variations of quantum phase estimation for reducing circuit error rates: Application to the Harrow-Hassidim-Lloyd algorithm",
+      "authorIds": [
+        "a446",
+        "a2174",
+        "a2175",
+        "a2176",
+        "a2177"
+      ],
+      "date": "2025-11",
+      "journalId": "j117",
+      "keywordIds": [
+        "algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1103-physrevresearch-6-l022022",
+      "doi": "10.1103/physrevresearch.6.l022022",
+      "title": "Demonstrating quantum computation for quasiparticle band structures",
+      "authorIds": [
+        "a2128",
+        "a2064",
+        "a2066",
+        "a2129",
+        "a2108",
+        "a827"
+      ],
+      "date": "2024-04",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-simulation"
+      ],
+      "citations": 6,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2606-30402",
+      "doi": "10.48550/arXiv.2606.30402",
+      "title": "Quantum Computations on Fusion Blanket Molten Salts",
+      "authorIds": [
+        "a186",
+        "a2179",
+        "a79",
+        "a60",
+        "a457",
+        "a827"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acs-jctc-6c00364",
+      "doi": "10.1021/acs.jctc.6c00364",
+      "title": "Molecular Quantum Computations on a Protein",
+      "authorIds": [
+        "a675",
+        "a378",
+        "a458",
+        "a587",
+        "a202",
+        "a827"
+      ],
+      "date": "2026-06",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 2,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1038-s42005-025-02305-9",
+      "doi": "10.1038/s42005-025-02305-9",
+      "title": "Accurate quantum-centric simulations of intermolecular interactions",
+      "authorIds": [
+        "a378",
+        "a675",
+        "a458",
+        "a629",
+        "a457",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j191",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 8,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2506-21431",
+      "doi": "10.48550/arXiv.2506.21431",
+      "title": "Quantum Assisted Ghost Gutzwiller Ansatz",
+      "authorIds": [
+        "a2180",
+        "a2181",
+        "a2182"
+      ],
+      "date": "2025-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 2,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-1021-acs-jctc-5c00075",
+      "doi": "10.1021/acs.jctc.5c00075",
+      "title": "Quantum-Centric Computational Study of Methylene Singlet and Triplet States",
+      "authorIds": [
+        "a2183",
+        "a2184",
+        "a629",
+        "a2185",
+        "a2186",
+        "a827"
+      ],
+      "date": "2025-05",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 13,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2605-24824",
+      "doi": "10.48550/arXiv.2605.24824",
+      "title": "Point-group symmetry analysis of many-electron wavefunctions on a quantum computer",
+      "authorIds": [
+        "a2165",
+        "a2089",
+        "a2069",
+        "a348",
+        "a2187"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2512-14936",
+      "doi": "10.48550/arXiv.2512.14936",
+      "title": "Sample-based quantum diagonalization as parallel fragment solver for the localized active space self-consistent field method",
+      "authorIds": [
+        "a759",
+        "a540",
+        "a2188",
+        "a2098",
+        "a2189",
+        "a827"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2603-18731",
+      "doi": "10.48550/arXiv.2603.18731",
+      "title": "A generalized framework for quantum subspace diagonalization",
+      "authorIds": [
+        "a550",
+        "a649",
+        "a972"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2605-12614",
+      "doi": "10.48550/arXiv.2605.12614",
+      "title": "A Quantum Multi-Programming Framework to Maximize Quantum Resources for the LUCJ Ansatz",
+      "authorIds": [
+        "a60",
+        "a2190",
+        "a1583"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming",
+        "scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2511-22476",
+      "doi": "10.48550/arXiv.2511.22476",
+      "title": "Improved parameter initialization for the (local) unitary cluster Jastrow ansatz",
+      "authorIds": [
+        "a2053",
+        "a458",
+        "a540",
+        "a2191",
+        "a1583",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2511-22158",
+      "doi": "10.48550/arXiv.2511.22158",
+      "title": "Quantum Simulation of Ligand-like Molecules through Sample-based Quantum Diagonalization in Density Matrix Embedding Framework",
+      "authorIds": [
+        "a2192",
+        "a1383",
+        "a2193",
+        "a2194",
+        "a2195",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2606-06015",
+      "doi": "10.48550/arXiv.2606.06015",
+      "title": "Quantum computing for accurate large-scale electronic-structure calculations: DFT-embedded, post-processed quantum-selected configuration interaction",
+      "authorIds": [
+        "a2196",
+        "a2111",
+        "a2197",
+        "a2118"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-09-18"
+    },
+    {
+      "id": "10-48550-arxiv-2508-08229",
+      "doi": "10.48550/arXiv.2508.08229",
+      "title": "Quantum-centric simulation of hydrogen abstraction by sample-based quantum diagonalization and entanglement forging",
+      "authorIds": [
+        "a2198",
+        "a2127",
+        "a540",
+        "a462",
+        "a2183",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization",
+        "quantum-chemistry"
+      ],
+      "citations": 1,
+      "added": "2026-09-18"
     }
   ]
 }

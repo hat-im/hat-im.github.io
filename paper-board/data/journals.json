@@ -738,5 +738,29 @@
   "j185": {
     "name": "Electronic Proceedings in Theoretical Computer Science",
     "type": "conference"
+  },
+  "j186": {
+    "name": "Journal of the Physical Society of Japan",
+    "type": "journal"
+  },
+  "j187": {
+    "name": "ACS Omega",
+    "type": "journal"
+  },
+  "j188": {
+    "name": "npj Computational Materials",
+    "type": "journal"
+  },
+  "j189": {
+    "name": "Machine Learning Science and Technology",
+    "type": "journal"
+  },
+  "j190": {
+    "name": "Physical Chemistry Chemical Physics",
+    "type": "journal"
+  },
+  "j191": {
+    "name": "Communications Physics",
+    "type": "journal"
   }
 }
