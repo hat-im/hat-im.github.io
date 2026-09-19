@@ -109,8 +109,24 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-07.mp4"
       },
-      "message": "Evening,\nHilbert fell asleep again. Thought you'd like this one.\nMy first conference paper got accepted today, and no matter what, it never would've happened without you.\nI understand and I'm not pushing against your decision. I'll keep writing these anyway, at my own pace. They'll just be here, for you.\nStill care about you the same, as scary as that is.\nNo need to write back. Just wanted you to have something soft today. Hope you have a good one.",
+      "message": "Evening,\nHilbert fell asleep again. Thought you'd like this one.\nMy first conference paper got accepted today, and no matter what, it never would've happened without you.\nI understand and I'm not pushing against your decision. I'll keep these anyway, at my own pace. They'll just be here, for you.\nStill care about you the same, as scary as that is.\nNo need to write back. Just wanted you to have something soft today. Hope you have a good one.",
       "postscript": "Hilbert says hi."
+    },
+    {
+      "id": "postcard-08",
+      "enabled": true,
+      "date": "2026-09-19",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Horizontal",
+      "color": "coral",
+      "subject": "Headaches & Hazy",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-08.mp4"
+      },
+      "message": "Hey,\nA bit of a rough time here, fevers, headaches. Nothing serious, just the usual.\nIf today's around when your time of the month might be, take it easy on yourself today. Hot chocolate might help, if you're in the mood for it. You know what you need better than I do, just know I'm thinking of you.\nHope the jet-lag isn't making it worse on top of everything.",
+      "postscript": "Google \"Tilcayo\" for something cute."
     }
   ]
 }
