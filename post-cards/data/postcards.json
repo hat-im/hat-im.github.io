@@ -114,7 +114,7 @@
     },
     {
       "id": "postcard-08",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-09-19",
       "from": "Hat",
       "to": "Sam",
@@ -125,7 +125,7 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-08.mp4"
       },
-      "message": "Hey,\nIf today's around when your time of the month might be, take it easy on yourself today. Hot chocolate might help, if you're in the mood for it. You know what you need better than I do. Save whatever energy you've got for yourself.\nThings aren't easy on my end either, but I'd rather be patient and graceful about it than ask you for anything back.\nHope the jet-lag isn't making it worse on top of everything.",
+      "message": "Hey,\nIf today's around when your time of the month might be, take it easy on yourself today. Hot chocolate might help, if you're in the mood for it. You know what you need better than I do. Save whatever energy you've got for yourself.\nI'd rather be patient than ask anything of you.\nHope the jet-lag isn't making it worse on top of everything.",
       "postscript": "Google \"Tilcayo\" for something cute."
     }
   ]
