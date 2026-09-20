@@ -127,6 +127,22 @@
       },
       "message": "Hey,\nIf today's around when your time of the month might be, take it easy on yourself today. Hot chocolate might help, if you're in the mood for it. You know what you need better than I do. Save whatever energy you've got for yourself.\nI'd rather be patient than ask anything of you.\nHope the jet-lag isn't making it worse on top of everything.",
       "postscript": "Google \"Tilcayo\" for something cute."
+    },
+    {
+      "id": "postcard-09",
+      "enabled": false,
+      "date": "2026-09-20",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Reading Room",
+      "color": "lilac",
+      "subject": "Rainbow Reads",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-09.mp4"
+      },
+      "message": "Hey,\nSofie and Rubina went back home today.\nPreparing for a meeting with IBM this week, and a bunch of papers — one on quantum compilers, my dream field. Just a survey, but it's a start.\nI'm sorry for overwhelming you. I'll wait patiently. You're always welcome.\nHope you have a good day.",
+      "postscript": ""
     }
   ]
 }
