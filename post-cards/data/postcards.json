@@ -119,7 +119,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Horizontal",
-      "color": "coral",
+      "color": "linen",
       "subject": "Headaches & Hazy",
       "media": {
         "type": "video",
@@ -141,7 +141,18 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-09.mp4"
       },
-      "message": "Hey,\nRubina and Sofie go back home today.\nLots of work this week. Much to read, learn and write. I should be excited.\nI'm sorry for overwhelming you. I just wanted to make you smile. I'm not always as okay as I let on. Fighting a wheel that pulls to the right among waves of panic and regret. I know I don't deserve it, but I'm trying. I'm giving this my best.\nI'll wait. You're always welcome here.\nHope you have a good day.",
+      "message": "Sorry,\nI'm sorry that I made you feel overwhelmed. I think about that more than I probably should. I want to get this right. For you, not for me.\nNot to make your life harder, or pull us back to what we were. I want you to know that, without needing anything back.\nI'll wait, and you're always welcome here. Maybe you're right that there's more out there, but yours is still the only voice I return to. All I want is your thoughts and time.",
+      "postscript": "Tell me what you're reading, whenever."
+    },
+    {
+      "id": "postcard-10",
+      "enabled": false,
+      "date": "2026-09-21",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
       "postscript": ""
     }
   ]
