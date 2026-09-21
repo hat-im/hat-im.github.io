@@ -150,10 +150,11 @@
       "date": "2026-09-21",
       "from": "Hat",
       "to": "Sam",
-      "location": "",
-      "subject": "",
-      "message": "",
-      "postscript": ""
+      "location": "Still in Bed",
+      "color": "lavender-gray",
+      "subject": "Down and Downpours",
+      "message": "Hey,\nUnable to get out of bed today. Doesn't seem like that's going to change.\nI'm not all that smart, and I know it. It takes me a while to understand things. And I make mistakes, some days more than others. I'm not asking you to pretend to not see my frustratingly frequent flaws. You tell me that there's so much out there. Maybe so, but there's plenty in you too, and I'd rather spend my time getting to know it, thorns and all.\nStill patient, still here.",
+      "postscript": "Hope your day's easier than mine."
     }
   ]
 }
