@@ -1,5 +1,5 @@
 {
-  "pageTitle": "Postcards",
+  "pageTitle": "Postcards to Sam",
   "nav": {
     "firstAria": "First postcard",
     "prevAria": "Previous postcard",
@@ -10,8 +10,8 @@
   "createLinkLabel": "Create",
   "create": {
     "pageHeading": "Make a postcard",
-    "pageIntro": "Pick a photo or GIF, write a message, choose a color.",
-    "mediaLabel": "Photo or GIF",
+    "pageIntro": "Pick a photo, video or GIF, write a message, choose a color.",
+    "mediaLabel": "Photo or video",
     "mediaHint": "Square works best.",
     "mediaFallbackText": "Choose a photo or video",
     "toLabel": "To",
@@ -23,11 +23,11 @@
     "messageLabel": "Message",
     "messagePlaceholder": "Write a message...",
     "postscriptLabel": "P.S.",
-    "postscriptPlaceholder": "Ask something...",
+    "postscriptPlaceholder": "Anything else?",
     "locationLabel": "Postmark location",
     "locationPlaceholder": "Somewhere Nice",
-    "colorLabel": "Color",
-    "backLinkLabel": "Back",
+    "colorLabel": "Background color",
+    "backLinkLabel": "Postcards",
     "shuffleLabel": "Shuffle stickers",
     "downloadGifLabel": "Generate GIF",
     "downloadGifBusyLabel": "Generating",
