@@ -171,6 +171,8 @@
       normalMsgFont: normalMsgFont, bookendMsgFont: bookendMsgFont,
       postscriptFont: postscriptFont, postscriptLineHeight: postscriptLineHeight,
       lines: lines, postscriptY: postscriptY, postscriptLines: postscriptLines,
+      mediaRect: { x: PAD, y: PAD, w: side, h: side },
+      dividerX: dividerX,
       stampRect: { x: sx, y: sy, w: sw, h: sh },
       subjectRect: subjectRect,
       messageRect: messageRect,

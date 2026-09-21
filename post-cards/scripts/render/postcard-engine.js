@@ -6,22 +6,6 @@
   var Utils = window.PostcardRenderUtils;
   var Glyphs = window.PostcardGlyphs;
   var Seals = window.PostcardSeals;
-  var hashSeed = window.HashUtils.hashSeed;
-  var pick = window.HashUtils.pick;
-  var shuffledIndices = window.HashUtils.shuffledIndices;
-
-  function seekTo(video, time) {
-    return new Promise(function (resolve) {
-      if (!video.duration || isNaN(video.duration)) { resolve(); return; }
-      var target = Math.max(0, Math.min(time, video.duration - 0.01));
-      var onSeeked = function () {
-        video.removeEventListener("seeked", onSeeked);
-        resolve();
-      };
-      video.addEventListener("seeked", onSeeked);
-      video.currentTime = target;
-    });
-  }
 
   function PostcardRenderer(canvas) {
     this.canvas = canvas;
@@ -51,81 +35,19 @@
     this.imageEl.style.cssText = "position:fixed;left:-9999px;top:-9999px;pointer-events:none;";
     this.imageEl.setAttribute("aria-hidden", "true");
     document.body.appendChild(this.imageEl);
+
+    // bg/fg hold everything that doesn't change frame-to-frame (card, border, text, seals,
+    // stickers); only the media box is redrawn live each tick. Rebuilt on setContent().
+    this._bgCanvas = document.createElement("canvas");
+    this._fgCanvas = document.createElement("canvas");
+    this._bgCanvas.width = this._fgCanvas.width = canvas.width;
+    this._bgCanvas.height = this._fgCanvas.height = canvas.height;
+    this._layersDirty = true;
   }
 
   PostcardRenderer.prototype.setMuted = function (m) {
     this.muted = !!m;
     this.video.muted = this.muted;
-  };
-
-  PostcardRenderer.prototype.setContent = function (data) {
-    this.data = Object.assign({}, this.data, data);
-    // seeded by date, not id/message, so a given date always looks the same
-    var seed = (data && data.date) || (data && data.id) || Math.random();
-    var rng = hashSeed(seed);
-    this._rotation = pick(rng, Assets.ANGLES) * Math.PI / 180;
-
-    if (!data || !data.color) {
-      this.data.color = pick(rng, Assets.PALETTE);
-    } else {
-      this.data.color = Utils.resolveColor(data.color);
-    }
-    var stampIndex = (typeof data.stampIndex === "number")
-      ? data.stampIndex
-      : Utils.pickStampIndex(seed, Assets.STAMPS.length, null);
-    this._stampImage = Assets.STAMPS[stampIndex];
-
-    var layout = Utils.layoutTextZones(this.ctx, this.data, Config);
-    var occupiedRects = [layout.stampRect, layout.messageRect, layout.footerRect];
-    if (layout.subjectRect) occupiedRects.push(layout.subjectRect);
-
-    var sealCount = Math.min(2, Assets.SEALS.length);
-    var stickerCount = Math.min(2, Assets.STICKER_ICONS.length);
-    var positionOrder = shuffledIndices(rng, Assets.POSITIONS.length);
-    var sealTypeOrder = shuffledIndices(rng, Assets.SEALS.length);
-    var stickerTypeOrder = shuffledIndices(rng, Assets.STICKER_ICONS.length);
-
-    // seals are postmark-style ink stamps — free to sit over text, like a real cancellation mark
-    this._seals = [];
-    for (var s = 0; s < sealCount; s++) {
-      var sealType = Assets.SEALS[sealTypeOrder[s]];
-      var sealPos = Assets.POSITIONS[positionOrder[s]];
-      var extras = Seals.buildSealExtras(sealType, rng, Assets.SEAL_COPY, this.data.date);
-      this._seals.push(Object.assign({
-        type: sealType,
-        x: sealPos.x * Config.CARD_W,
-        y: sealPos.y * Config.CARD_H,
-        rotation: (rng() - 0.5) * Assets.SEAL_ROTATION_RAD
-      }, extras));
-    }
-
-    // stickers are decorative images — must stay clear of the stamp, subject, message and footer
-    this._stickers = [];
-    var remainingPositions = positionOrder.slice(sealCount);
-    for (var t = 0; t < stickerCount; t++) {
-      var stickerType = Assets.STICKER_ICONS[stickerTypeOrder[t]];
-      var size = Assets.STICKER_MIN_SIZE + rng() * Assets.STICKER_SIZE_RANGE;
-      size *= Assets.STICKER_SIZE_SCALE[stickerType] || 1;
-      var spot = null;
-      for (var i = 0; i < remainingPositions.length; i++) {
-        var pos = Assets.POSITIONS[remainingPositions[i]];
-        var cx = pos.x * Config.CARD_W, cy = pos.y * Config.CARD_H;
-        var box = { x: cx - size, y: cy - size, w: size * 2, h: size * 2 };
-        if (!occupiedRects.some(function (r) { return Utils.rectsOverlap(box, r); })) {
-          spot = { x: cx, y: cy };
-          remainingPositions.splice(i, 1);
-          break;
-        }
-      }
-      if (!spot) continue;
-      this._stickers.push({
-        type: stickerType,
-        x: spot.x,
-        y: spot.y,
-        size: size,
-        rotation: (rng() - 0.5) * Assets.STICKER_ROTATION_RAD
-      });
-    }
   };
 
   PostcardRenderer.prototype.loadVideo = function (src) {
@@ -178,173 +100,6 @@
   PostcardRenderer.prototype.stop = function () {
     if (this._raf) cancelAnimationFrame(this._raf);
     this._raf = null;
-  };
-
-  PostcardRenderer.prototype.draw = function () {
-    var ctx = this.ctx;
-    var data = this.data;
-    var CARD_W = Config.CARD_W, CARD_H = Config.CARD_H, PAD = Config.PAD;
-    var CANVAS_W = Config.CANVAS_W, CANVAS_H = Config.CANVAS_H;
-
-    ctx.setTransform(Config.RENDER_SCALE, 0, 0, Config.RENDER_SCALE, 0, 0);
-    ctx.clearRect(0, 0, CANVAS_W, CANVAS_H);
-    ctx.save();
-    ctx.translate(CANVAS_W / 2, CANVAS_H / 2);
-    ctx.rotate(this._rotation);
-    ctx.translate(-CARD_W / 2, -CARD_H / 2);
-
-    ctx.save();
-    ctx.shadowColor = "rgba(30,25,20,0.22)";
-    ctx.shadowBlur = 26;
-    ctx.shadowOffsetY = 12;
-    Utils.roundRectPath(ctx, 0, 0, CARD_W, CARD_H, 0);
-    ctx.fillStyle = data.color || Assets.PALETTE[0];
-    ctx.fill();
-    ctx.restore();
-
-    ctx.save();
-    ctx.strokeStyle = Utils.darken(data.color || Assets.PALETTE[0], Config.CARD_BORDER_DARKEN);
-    ctx.lineWidth = 5;
-    Utils.roundRectPath(ctx, 2.5, 2.5, CARD_W - 5, CARD_H - 5, 0);
-    ctx.stroke();
-    ctx.restore();
-
-    Utils.roundRectPath(ctx, 0, 0, CARD_W, CARD_H, 0);
-    ctx.clip();
-
-    var side = CARD_H - PAD * 2;
-    var mx = PAD, my = PAD;
-    ctx.save();
-    Utils.roundRectPath(ctx, mx, my, side, side, 0);
-    ctx.clip();
-    ctx.fillStyle = "#00000018";
-    ctx.fillRect(mx, my, side, side);
-    if (this.mediaType === "video" && this._hasVideo) {
-      Utils.drawCover(ctx, this.video, mx, my, side, side);
-    } else if (this.mediaType === "image" && this._image) {
-      Utils.drawCover(ctx, this._image, mx, my, side, side);
-    } else {
-      ctx.fillStyle = "rgba(0,0,0,0.06)";
-      ctx.fillRect(mx, my, side, side);
-      ctx.fillStyle = "rgba(60,60,68,0.55)";
-      ctx.font = "13px " + Config.TYPEWRITER_FONT;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      ctx.fillText(this.fallbackText || "Video coming soon", mx + side / 2, my + side / 2);
-    }
-    ctx.restore();
-    ctx.strokeStyle = "rgba(255,255,255,0.6)";
-    ctx.lineWidth = 3;
-    Utils.roundRectPath(ctx, mx, my, side, side, 0);
-    ctx.stroke();
-
-    var dividerX = mx + side + PAD;
-    ctx.save();
-    ctx.strokeStyle = "rgba(70,70,80,0.25)";
-    ctx.setLineDash([4, 5]);
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(dividerX, PAD);
-    ctx.lineTo(dividerX, CARD_H - PAD);
-    ctx.stroke();
-    ctx.restore();
-
-    var layout = Utils.layoutTextZones(ctx, data, Config);
-    var colX = layout.colX, colW = layout.colW;
-    var sx = layout.stampRect.x, sy = layout.stampRect.y, sw = layout.stampRect.w, sh = layout.stampRect.h;
-    if (this._stampImage) {
-      ctx.save();
-      ctx.shadowColor = "rgba(0,0,0,0.25)";
-      ctx.shadowBlur = 6;
-      ctx.shadowOffsetY = 2;
-      Utils.drawContain(ctx, this._stampImage, sx, sy, sw, sh);
-      ctx.restore();
-    } else {
-      ctx.fillStyle = "rgba(255,255,255,0.9)";
-      ctx.fillRect(sx, sy, sw, sh);
-      ctx.strokeStyle = "rgba(70,70,80,0.35)";
-      ctx.lineWidth = 1.5;
-      ctx.strokeRect(sx, sy, sw, sh);
-    }
-
-    if (data.subject) {
-      ctx.font = "bold 12px " + Config.TYPEWRITER_FONT;
-      ctx.fillStyle = "rgba(50,48,55,0.75)";
-      ctx.textAlign = "left";
-      ctx.textBaseline = "alphabetic";
-      ctx.fillText(data.subject.toUpperCase(), colX, layout.msgTop - 26);
-    }
-
-    // Personal zone: message + signature, both handwritten (Kalam) — the letter itself.
-    var lineHeight = layout.lineHeight;
-    var msgTop = layout.msgTop;
-    var lines = layout.lines;
-    ctx.fillStyle = "rgba(50,48,55,0.82)";
-    ctx.textAlign = "left";
-    ctx.textBaseline = "alphabetic";
-    lines.forEach(function (line, i) {
-      ctx.font = i === 0 ? layout.bookendMsgFont : layout.normalMsgFont;
-      ctx.fillText(line, colX, msgTop + i * lineHeight);
-    });
-    if (data.from) {
-      ctx.font = layout.normalMsgFont;
-      ctx.fillStyle = "rgba(50,48,55,0.82)";
-      ctx.textAlign = "right";
-      ctx.fillText("— " + data.from, CARD_W - PAD, msgTop + lines.length * lineHeight);
-      ctx.textAlign = "left";
-    }
-    if (data.postscript) {
-      ctx.font = layout.postscriptFont;
-      ctx.fillStyle = "rgba(50,48,55,0.62)";
-      ctx.textAlign = "left";
-      layout.postscriptLines.forEach(function (line, i) {
-        ctx.fillText(line, colX, layout.postscriptY + i * layout.postscriptLineHeight);
-      });
-    }
-
-    // Administrative zone: addressee is primary (left), postmark info is secondary (right) —
-    // hierarchy comes from position/role, not just from shrinking the font.
-    ctx.strokeStyle = "rgba(70,70,80,0.3)";
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(colX, CARD_H - PAD - 26);
-    ctx.lineTo(CARD_W - PAD, CARD_H - PAD - 26);
-    ctx.stroke();
-
-    ctx.fillStyle = "rgba(50,48,55,0.9)";
-    ctx.font = "bold 16px " + Config.TYPEWRITER_FONT;
-    ctx.textAlign = "left";
-    ctx.fillText("To: " + (data.to || ""), colX, CARD_H - PAD - 6);
-
-    var postmarkBits = [];
-    if (data.location) postmarkBits.push(data.location);
-    if (data.date) postmarkBits.push(data.date);
-    if (postmarkBits.length) {
-      ctx.fillStyle = "rgba(50,48,55,0.5)";
-      ctx.font = "10px " + Config.TYPEWRITER_FONT;
-      ctx.textAlign = "right";
-      ctx.fillText(postmarkBits.join("  ·  "), CARD_W - PAD, CARD_H - PAD - 6);
-      ctx.textAlign = "left";
-    }
-
-    (this._seals || []).forEach(function (seal) {
-      Seals.drawSeal(ctx, seal);
-    });
-
-    (this._stickers || []).forEach(function (s) {
-      Glyphs.drawGlyph(ctx, s.type, s.x, s.y, s.size, Assets.INK, s.rotation);
-    });
-
-    ctx.restore();
-  };
-
-  PostcardRenderer.prototype.renderFrameAtTime = function (loopT) {
-    var self = this;
-    if (this.mediaType !== "video" || !this._hasVideo) {
-      this.draw();
-      return Promise.resolve();
-    }
-    return seekTo(this.video, loopT).then(function () { self.draw(); });
   };
 
   PostcardRenderer.prototype.getLoopDuration = function () {

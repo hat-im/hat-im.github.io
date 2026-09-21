@@ -6,6 +6,7 @@
   var parseMorseTokens = window.PostcardRenderUtils.parseMorseTokens;
   var drawGlyph = window.PostcardGlyphs.drawGlyph;
   var pick = window.HashUtils.pick;
+  var shuffledIndices = window.HashUtils.shuffledIndices;
 
   // seal random sub-choices are precomputed in buildSealExtras(), never in draw() (runs every frame)
 
@@ -260,6 +261,31 @@
     ctx.restore();
   }
 
+  // seals are postmark-style ink stamps — free to sit over text, like a real cancellation mark.
+  // Picks up to MAX_SEALS from the front of positionOrder (a shared pool also drawn from by
+  // stickers) and returns how many it used, so the caller can hand the rest on to stickers.
+  var MAX_SEALS = 2;
+
+  function pickSeals(rng, positionOrder, dateText) {
+    var Assets = window.PostcardAssets;
+    var Config = window.PostcardConfig;
+    var count = Math.min(MAX_SEALS, Assets.SEALS.length, positionOrder.length);
+    var typeOrder = shuffledIndices(rng, Assets.SEALS.length);
+    var seals = [];
+    for (var s = 0; s < count; s++) {
+      var sealType = Assets.SEALS[typeOrder[s]];
+      var sealPos = Assets.POSITIONS[positionOrder[s]];
+      var extras = buildSealExtras(sealType, rng, Assets.SEAL_COPY, dateText);
+      seals.push(Object.assign({
+        type: sealType,
+        x: sealPos.x * Config.CARD_W,
+        y: sealPos.y * Config.CARD_H,
+        rotation: (rng() - 0.5) * Assets.SEAL_ROTATION_RAD
+      }, extras));
+    }
+    return { seals: seals, count: count };
+  }
+
   function buildSealExtras(type, rng, copy, dateText) {
     var i, arr;
     switch (type) {
@@ -310,6 +336,7 @@
   }
 
   window.PostcardSeals = {
+    pickSeals: pickSeals,
     drawSeal: drawSeal,
     buildSealExtras: buildSealExtras
   };
