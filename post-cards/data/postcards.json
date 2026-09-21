@@ -146,7 +146,7 @@
     },
     {
       "id": "postcard-10",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-09-21",
       "from": "Hat",
       "to": "Sam",
@@ -157,7 +157,7 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-10.mp4"
       },
-      "message": "Hey,\nBeen raining all evening. Unable to get out of bed today.\nI'm not all that smart, and I know it. It takes me a while to understand things. And I make mistakes, some days more than others. I'm not asking you to pretend to not see my frustratingly frequent flaws. You tell me that there's so much out there. Maybe so, but there's plenty in you too, and I'd rather spend my time getting to know it, thorns and all.\nStill patient, still here.",
+      "message": "Hey,\nBeen raining all evening. Unable to get out of bed today.\nI'm not all that smart, and I know it. It takes me a while to understand things, and I make mistakes, some days more than others. I'm not asking you to pretend not to see my flaws.\nYou tell me there's so much out there. Maybe so, but there's plenty in you too, and I'd rather get to know it, thorns and all.\nStill patient, still here.",
       "postscript": "Hope your day's easier than mine."
     }
   ]
