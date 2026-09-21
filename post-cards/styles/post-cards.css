@@ -132,6 +132,25 @@ html, body {
 .nav-btn:active { transform: scale(0.9); }
 .nav-btn:disabled { opacity: 0.2; cursor: default; transform: none; }
 
+.create-link {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.create-link:hover { opacity: 0.75; }
+.create-link:active { transform: scale(0.96); }
+
 @media (max-width: 480px) {
   .page { padding: 18px 14px 40px; }
   .toolbar { flex-wrap: wrap; }

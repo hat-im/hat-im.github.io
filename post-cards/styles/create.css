@@ -1,3 +1,7 @@
+.create-page {
+  font-family: "Courier Prime", monospace;
+}
+
 .create-heading {
   font-size: 26px;
   margin: 0 0 6px;
@@ -20,12 +24,14 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 0;
 }
 
 .field {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 .field-label {
   font-size: 13px;
@@ -41,7 +47,7 @@
   font-family: inherit;
   font-size: 14px;
   padding: 9px 11px;
-  border-radius: 10px;
+  border-radius: 0;
   border: 1px solid var(--border);
   background: #fff;
   color: var(--ink);
@@ -53,11 +59,16 @@
 
 .swatches {
   display: flex;
+  flex-wrap: nowrap;
   gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
 }
 .swatch {
   width: 30px;
   height: 30px;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 2px solid transparent;
   cursor: pointer;
@@ -67,26 +78,6 @@
   border-color: var(--ink);
 }
 
-.font-options {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.font-option {
-  text-align: left;
-  font-size: 16px;
-  padding: 8px 12px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: var(--ink);
-  cursor: pointer;
-}
-.font-option.is-selected {
-  border-color: var(--ink);
-  background: var(--pastel-cream);
-}
-
 .preview-panel {
   position: sticky;
   top: 24px;
@@ -94,6 +85,52 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+}
+
+.action-btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.action-btn:hover { opacity: 0.75; }
+.action-btn:active { transform: scale(0.96); }
+
+.action-btn-primary {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.action-btn-primary:hover { opacity: 0.85; }
+
+.action-btn:disabled,
+.action-btn:disabled:hover,
+.action-btn:disabled:active {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.field input:disabled,
+.field textarea:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.swatch:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (max-width: 760px) {

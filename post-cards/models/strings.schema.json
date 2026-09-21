@@ -4,7 +4,7 @@
   "title": "Postcards — UI Strings",
   "description": "post-cards/strings.json. Static UI copy for post-cards.html and create.html.",
   "type": "object",
-  "required": ["pageTitle", "nav", "mediaFallbackText", "create"],
+  "required": ["pageTitle", "nav", "mediaFallbackText", "createLinkLabel", "create"],
   "additionalProperties": false,
   "properties": {
     "pageTitle": { "type": "string" },
@@ -20,15 +20,19 @@
       }
     },
     "mediaFallbackText": { "type": "string" },
+    "createLinkLabel": { "type": "string" },
     "create": {
       "type": "object",
       "required": [
-        "pageHeading", "pageIntro", "mediaLabel", "mediaHint",
+        "pageHeading", "pageIntro", "mediaLabel", "mediaHint", "mediaFallbackText",
+        "toLabel", "toPlaceholder", "fromLabel", "fromPlaceholder",
         "subjectLabel", "subjectPlaceholder",
         "messageLabel", "messagePlaceholder",
         "postscriptLabel", "postscriptPlaceholder",
         "locationLabel", "locationPlaceholder",
-        "colorLabel", "fontLabel", "backLinkLabel"
+        "colorLabel", "backLinkLabel",
+        "shuffleLabel", "downloadGifLabel", "downloadGifBusyLabel", "downloadGifSuccessLabel",
+        "gifProgressPhrases"
       ],
       "additionalProperties": false,
       "properties": {
@@ -36,6 +40,11 @@
         "pageIntro": { "type": "string" },
         "mediaLabel": { "type": "string" },
         "mediaHint": { "type": "string" },
+        "mediaFallbackText": { "type": "string" },
+        "toLabel": { "type": "string" },
+        "toPlaceholder": { "type": "string" },
+        "fromLabel": { "type": "string" },
+        "fromPlaceholder": { "type": "string" },
         "subjectLabel": { "type": "string" },
         "subjectPlaceholder": { "type": "string" },
         "messageLabel": { "type": "string" },
@@ -45,8 +54,16 @@
         "locationLabel": { "type": "string" },
         "locationPlaceholder": { "type": "string" },
         "colorLabel": { "type": "string" },
-        "fontLabel": { "type": "string" },
-        "backLinkLabel": { "type": "string" }
+        "backLinkLabel": { "type": "string" },
+        "shuffleLabel": { "type": "string" },
+        "downloadGifLabel": { "type": "string" },
+        "downloadGifBusyLabel": { "type": "string" },
+        "downloadGifSuccessLabel": { "type": "string" },
+        "gifProgressPhrases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
       }
     }
   }

@@ -16,8 +16,9 @@
   // decision; postcard-draw.js only knows how to paint whatever this produces.
   PostcardRenderer.prototype.setContent = function (data) {
     this.data = Object.assign({}, this.data, data);
-    // seeded by date, not id/message, so a given date always looks the same
-    var seed = (data && data.date) || (data && data.id) || Math.random();
+    // seeded by date, not id/message, so a given date always looks the same — data.seed lets
+    // a caller (e.g. a "shuffle" control) override that with a fresh look on demand
+    var seed = (data && data.seed) || (data && data.date) || (data && data.id) || Math.random();
     var rng = hashSeed(seed);
     this._rotation = pick(rng, Assets.ANGLES) * Math.PI / 180;
 

@@ -11,6 +11,7 @@
   var prevBtn = document.getElementById("prevBtn");
   var nextBtn = document.getElementById("nextBtn");
   var latestBtn = document.getElementById("latestBtn");
+  var createLink = document.getElementById("createLink");
 
   var renderer = new PostcardEngine.PostcardRenderer(canvas);
   var strings = null;
@@ -116,6 +117,7 @@
       prevBtn.setAttribute("aria-label", strings.nav.prevAria);
       nextBtn.setAttribute("aria-label", strings.nav.nextAria);
       latestBtn.setAttribute("aria-label", strings.nav.latestAria);
+      createLink.textContent = strings.createLinkLabel;
 
       showPostcard(initialIndex());
 
