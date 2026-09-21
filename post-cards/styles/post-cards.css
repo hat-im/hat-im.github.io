@@ -58,6 +58,7 @@ html, body {
   font-weight: 600;
   padding: 9px 16px;
   border-radius: 4px;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
