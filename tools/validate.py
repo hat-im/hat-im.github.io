@@ -153,7 +153,8 @@ def layout_text_zones(data, config, font_normal, font_postscript):
     postscript_px = len(postscript_lines) * config["POSTSCRIPT_LINE_HEIGHT"]
 
     max_lines = max(1, int((msg_bottom - msg_top - signature_px - postscript_px) // line_height))
-    lines = wrap_text(data.get("message", ""), col_w, font_normal)
+    full_lines = wrap_text(data.get("message", ""), col_w, font_normal)
+    lines = full_lines
     truncated = False
     if len(lines) > max_lines:
         truncated = True
@@ -171,7 +172,7 @@ def layout_text_zones(data, config, font_normal, font_postscript):
         ps_bottom = postscript_y + (len(postscript_lines) - 1) * config["POSTSCRIPT_LINE_HEIGHT"]
         postscript_overflow = ps_bottom > footer_y
 
-    return truncated, len(postscript_lines), postscript_overflow
+    return truncated, len(postscript_lines), postscript_overflow, full_lines, max_lines
 
 
 def run_postcard_length_check():
@@ -184,10 +185,15 @@ def run_postcard_length_check():
     for pc in postcards:
         data = {"subject": pc.get("subject"), "message": pc.get("message", ""),
                 "postscript": pc.get("postscript"), "from": pc.get("from")}
-        truncated, ps_line_count, ps_overflow = layout_text_zones(data, config, font_normal, font_postscript)
+        truncated, ps_line_count, ps_overflow, full_lines, max_lines = layout_text_zones(
+            data, config, font_normal, font_postscript
+        )
 
         if truncated:
-            fail(f"{pc['id']}: message is truncated (needs more lines than the card fits)")
+            fail(f"{pc['id']}: message is truncated (needs {len(full_lines)} lines, fits {max_lines})")
+            for i, line in enumerate(full_lines):
+                marker = "  " if i < max_lines else "->"
+                print(f"    {marker} {i + 1:2d} {line}")
         else:
             passed(f"{pc['id']}: message fits")
 
