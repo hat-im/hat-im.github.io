@@ -157,8 +157,24 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-10.mp4"
       },
-      "message": "Hey,\nBeen raining all evening. Unable to get out of bed today.\nI take a while to understand things, and I make my share of mistakes. Not asking you to fix any of it, just wanted you to know.\nYou tell me to grow my circle, that there's so much out there. Maybe so, but there's plenty in you too, and I'd rather get to know you, thorns and all.\nStill patient, still here. Hoping your evening's kinder than mine.",
+      "message": "Hey,\nBeen raining all evening. Unable to get out of bed today.\nI take a while to understand things, and I make my share of mistakes. Not asking you to fix any of it, just wanted you to know.\nYou tell me to grow my circle, that there's so much out there. Maybe so, but there's plenty in you too, and I want to know you, thorns and all.\nStill patient, still here.",
       "postscript": "Hope your day's easier than mine."
+    },
+    {
+      "id": "postcard-11",
+      "enabled": true,
+      "date": "2026-09-22",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Superposition",
+      "color": "eucalyptus",
+      "subject": "Quantemplations",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-11.mp4"
+      },
+      "message": "Hey,\nNot a great day at work. Slept through my 4AM meeting, and I can feel a cold coming on at the worst possible time. The rain's jammed every road, so just getting anywhere has been messy. Wondering if I should throw in the towel for today, tomorrow is tomorrow is tomorrow.\nBeen seeing clips of Coyote vs Acme online, it's got your kind of humor.",
+      "postscript": "How's the drawing competition going on this trip? Are you winning?"
     }
   ]
 }
