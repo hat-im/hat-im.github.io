@@ -58,6 +58,15 @@
     ],
     "pressed-flower-cream": [
       { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-cream.png" }
+    ],
+    "pressed-flower-bouquet": [
+      { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-bouquet.png" }
+    ],
+    "pressed-flower-eucalyptus": [
+      { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-eucalyptus.png" }
+    ],
+    "pressed-flower-bougainvillea": [
+      { "type": "image", "src": "/post-cards/images/glyphs/pressed-flower-bougainvillea.png" }
     ]
   }
 }
