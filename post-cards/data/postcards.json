@@ -39,7 +39,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Downpours in Bangalore",
-      "color": "butter",
+      "color": "seafoam",
       "subject": "Rainy Rumination",
       "media": {
         "type": "video",
@@ -55,7 +55,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Hilbert's Hideaway",
-      "color": "cream",
+      "color": "blush",
       "subject": "Sofie's Sharaarat",
       "media": {
         "type": "video",
@@ -103,7 +103,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Whisker Watch",
-      "color": "sand",
+      "color": "coral",
       "subject": "Whiskers & Whispers",
       "media": {
         "type": "video",
@@ -151,7 +151,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Still in Bed",
-      "color": "sage-mist",
+      "color": "lavender-gray",
       "subject": "Downpours",
       "media": {
         "type": "video",
