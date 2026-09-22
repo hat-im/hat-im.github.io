@@ -2,7 +2,6 @@
   "use strict";
 
   var LAST_VIEWED_KEY = "post-cards-last-viewed";
-  var MAX_STACK = 6;
 
   var canvas = document.getElementById("postcardCanvas");
   var pileEl = document.getElementById("postcardPile");
@@ -35,8 +34,7 @@
 
   function renderStack() {
     Array.prototype.slice.call(pileEl.querySelectorAll(".ghost-card")).forEach(function (el) { el.remove(); });
-    var start = Math.max(0, currentIndex - MAX_STACK);
-    for (var i = start; i < currentIndex; i++) {
+    for (var i = 0; i < currentIndex; i++) {
       var pc = postcards[i];
       var style = PostcardEngine.pickCardStyle({ id: pc.id, date: formatDisplayDate(pc.date), color: pc.color });
       var el = document.createElement("div");
