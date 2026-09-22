@@ -47,6 +47,8 @@
     ctx.fillRect(mr.x, mr.y, mr.w, mr.w);
     if (self.mediaType === "video" && self._hasVideo) {
       Utils.drawCover(ctx, self.video, mr.x, mr.y, mr.w, mr.w);
+    } else if (self.mediaType === "video" && self._posterImage) {
+      Utils.drawCover(ctx, self._posterImage, mr.x, mr.y, mr.w, mr.w);
     } else if (self.mediaType === "image" && self._image) {
       Utils.drawCover(ctx, self._image, mr.x, mr.y, mr.w, mr.w);
     } else {

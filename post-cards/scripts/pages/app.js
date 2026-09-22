@@ -53,6 +53,17 @@
     latestBtn.disabled = currentIndex >= postcards.length - 1;
   }
 
+  // Prefetches the first frame of the videos a viewer is most likely to land on next, so
+  // showPostcard() can hand the renderer a poster instead of leaving the media box blank
+  // while the real video loads.
+  function warmNeighborPosters(index) {
+    [index - 1, index + 1, 0, postcards.length - 1].forEach(function (i) {
+      if (i < 0 || i >= postcards.length) return;
+      var media = postcards[i].media || {};
+      if (media.type === "video" && media.src) PostcardVideoCache.warm(media.src);
+    });
+  }
+
   function showPostcard(index) {
     currentIndex = Math.max(0, Math.min(postcards.length - 1, index));
     var pc = postcards[currentIndex];
@@ -73,6 +84,7 @@
     });
 
     var media = pc.media || {};
+    renderer.setPosterImage(media.type === "video" ? PostcardVideoCache.get(media.src) : null);
     var loadPromise = media.type === "image"
       ? renderer.loadImage(media.src)
       : renderer.loadVideo(media.src);
@@ -80,6 +92,7 @@
 
     renderStack();
     updateNavButtons();
+    warmNeighborPosters(currentIndex);
 
     localStorage.setItem(LAST_VIEWED_KEY, pc.id);
     renderer.start();

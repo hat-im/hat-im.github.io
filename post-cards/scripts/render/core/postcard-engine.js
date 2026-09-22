@@ -21,6 +21,7 @@
     this._rotation = 0;
     this._stickers = [];
     this._hasVideo = false;
+    this._posterImage = null;
     this._raf = null;
 
     this.video = document.createElement("video");
@@ -50,6 +51,12 @@
     this.video.muted = this.muted;
   };
 
+  // Shown in place of the video while it's still loading, so navigating between postcards
+  // doesn't flash an empty media box. Cleared once the real video is ready to draw.
+  PostcardRenderer.prototype.setPosterImage = function (img) {
+    this._posterImage = img || null;
+  };
+
   PostcardRenderer.prototype.loadVideo = function (src) {
     var self = this;
     this.mediaType = "video";
@@ -61,12 +68,15 @@
       self.video.muted = self.muted;
       self.video.src = src;
       var onReady = function () {
-        self.video.removeEventListener("loadedmetadata", onReady);
+        // loadeddata (not loadedmetadata) — guarantees a decoded frame is actually
+        // available to draw, so swapping away from the poster never shows a blank frame.
+        self.video.removeEventListener("loadeddata", onReady);
         self._hasVideo = true;
+        self._posterImage = null;
         if (self._raf) self.video.play().catch(function () {});
         resolve();
       };
-      self.video.addEventListener("loadedmetadata", onReady);
+      self.video.addEventListener("loadeddata", onReady);
       self.video.addEventListener("error", function () {
         self._hasVideo = false;
         reject(new Error("video failed to load"));
