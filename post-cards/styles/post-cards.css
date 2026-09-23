@@ -120,6 +120,8 @@ html, body {
   display: block;
   width: 100%;
   height: auto;
+  /* must match CANVAS_W/CANVAS_H in postcard-config.js, or the box resizes once JS sets the canvas's real pixel dimensions */
+  aspect-ratio: 1290 / 845;
 }
 
 .nav-btn {
