@@ -13069,6 +13069,459 @@
       ],
       "citations": 1,
       "added": "2026-09-18"
+    },
+    {
+      "id": "10-1016-j-physleta-2020-126595",
+      "doi": "10.1016/j.physleta.2020.126595",
+      "title": "A survey on HHL algorithm: From theory to application in quantum machine learning",
+      "authorIds": [
+        "a2199",
+        "a2200",
+        "a2201",
+        "a2202",
+        "a2203"
+      ],
+      "date": "2020-08",
+      "journalId": "j192",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-machine-learning",
+        "survey"
+      ],
+      "citations": 90,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1016-j-jksuci-2020-01-012",
+      "doi": "10.1016/j.jksuci.2020.01.012",
+      "title": "Hybridization of meta-heuristic algorithm for load balancing in cloud computing environment",
+      "authorIds": [
+        "a2204",
+        "a2205",
+        "a2206"
+      ],
+      "date": "2022-06",
+      "journalId": "j193",
+      "keywordIds": [
+        "cloud-computing",
+        "scheduling"
+      ],
+      "citations": 137,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1016-j-ins-2021-10-070",
+      "doi": "10.1016/j.ins.2021.10.070",
+      "title": "Reinforcement Learning-based control using Q-learning and gravitational search algorithm with experimental validation on a nonlinear servo system",
+      "authorIds": [
+        "a2207",
+        "a2208",
+        "a2209",
+        "a2210"
+      ],
+      "date": "2022-01",
+      "journalId": "j194",
+      "keywordIds": [
+        "optimization-algorithms"
+      ],
+      "citations": 166,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-34133-research-0947",
+      "doi": "10.34133/research.0947",
+      "title": "A Resource-Virtualized and Hardware-Aware Quantum Compilation Framework for Real Quantum Computing Processors",
+      "authorIds": [
+        "a2211",
+        "a2212",
+        "a326",
+        "a2213",
+        "a2214",
+        "a827"
+      ],
+      "date": "2025-01",
+      "journalId": "j195",
+      "keywordIds": [
+        "compilation",
+        "superconducting-qubits",
+        "architecture"
+      ],
+      "citations": 3,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1109-tcad-2024-3513262",
+      "doi": "10.1109/TCAD.2024.3513262",
+      "title": "Shuttling for Scalable Trapped-Ion Quantum Computers",
+      "authorIds": [
+        "a2018",
+        "a314",
+        "a2220",
+        "a777"
+      ],
+      "date": "2024-12",
+      "journalId": "j35",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "architecture"
+      ],
+      "citations": 24,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1109-isca66397-2026-00149",
+      "doi": "10.1109/ISCA66397.2026.00149",
+      "title": "O3LS: Optimizing Lattice Surgery via Automatic Layout Searching and Loose Scheduling",
+      "authorIds": [
+        "a819",
+        "a790",
+        "a150",
+        "a2221",
+        "a2222",
+        "a827"
+      ],
+      "date": "2026-06",
+      "journalId": "j196",
+      "keywordIds": [
+        "compilation",
+        "fault-tolerance"
+      ],
+      "citations": 0,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1145-3676642-3736128",
+      "doi": "10.1145/3676642.3736128",
+      "title": "PowerMove: Optimizing Compilation for Neutral Atom Quantum Computers with Zoned Architecture",
+      "authorIds": [
+        "a638",
+        "a229",
+        "a810",
+        "a450",
+        "a335",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j197",
+      "keywordIds": [
+        "compilation",
+        "neutral-atom-qubits"
+      ],
+      "citations": 1,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1145-3831246",
+      "doi": "10.1145/3831246",
+      "title": "Efficient Compilation for Shuttling Trapped-Ion Machines via the Position Graph Architectural Abstraction",
+      "authorIds": [
+        "a2225",
+        "a645",
+        "a801"
+      ],
+      "date": "2026-07",
+      "journalId": "j11",
+      "keywordIds": [
+        "compilation",
+        "trapped-ion-qubits"
+      ],
+      "citations": 0,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1109-asp-dac58780-2024-10473902",
+      "doi": "10.1109/ASP-DAC58780.2024.10473902",
+      "title": "Using Boolean Satisfiability for Exact Shuttling in Trapped-Ion Quantum Computers",
+      "authorIds": [
+        "a2018",
+        "a314",
+        "a2220",
+        "a777"
+      ],
+      "date": "2024-01",
+      "journalId": "j198",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "compilation",
+        "optimization-algorithms"
+      ],
+      "citations": 23,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-48550-arxiv-2311-16190",
+      "doi": "10.48550/arXiv.2311.16190",
+      "title": "Q-Pilot: Field Programmable Qubit Array Compilation with Flying Ancillas",
+      "authorIds": [
+        "a1999",
+        "a2017",
+        "a1832",
+        "a467",
+        "a2031",
+        "a827"
+      ],
+      "date": "2023-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "compilation",
+        "neutral-atom-qubits"
+      ],
+      "citations": 2,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1103-physrevlett-113-220501",
+      "doi": "10.1103/physrevlett.113.220501",
+      "title": "High-Fidelity Preparation, Gates, Memory, and Readout of a Trapped-Ion Quantum Bit",
+      "authorIds": [
+        "a2226",
+        "a2227",
+        "a2228",
+        "a1428",
+        "a2229",
+        "a827"
+      ],
+      "date": "2014-11",
+      "journalId": "j103",
+      "keywordIds": [
+        "trapped-ion-qubits",
+        "qubit-hardware"
+      ],
+      "citations": 645,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-48550-arxiv-2110-11331",
+      "doi": "10.48550/arxiv.2110.11331",
+      "title": "QuantumNAT: Quantum Noise-Aware Training with Noise Injection, Quantization and Normalization",
+      "authorIds": [
+        "a1999",
+        "a2031",
+        "a1590",
+        "a457",
+        "a161",
+        "a827"
+      ],
+      "date": "2021-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-machine-learning",
+        "quantum-circuits"
+      ],
+      "citations": 8,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1038-s41586-018-0450-2",
+      "doi": "10.1038/s41586-018-0450-2",
+      "title": "Synthetic three-dimensional atomic structures assembled atom by atom",
+      "authorIds": [
+        "a2232",
+        "a2233",
+        "a2234",
+        "a2235",
+        "a2236"
+      ],
+      "date": "2018-08",
+      "journalId": "j64",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "qubit-hardware"
+      ],
+      "citations": 567,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1147-jrd-2018-2888987",
+      "doi": "10.1147/jrd.2018.2888987",
+      "title": "Potential of quantum computing for drug discovery",
+      "authorIds": [
+        "a2237",
+        "a634",
+        "a39"
+      ],
+      "date": "2018-11",
+      "journalId": "j199",
+      "keywordIds": [
+        "quantum-chemistry",
+        "applications"
+      ],
+      "citations": 360,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1103-physrevlett-85-2208",
+      "doi": "10.1103/physrevlett.85.2208",
+      "title": "Fast Quantum Gates for Neutral Atoms",
+      "authorIds": [
+        "a2238",
+        "a2239",
+        "a2240",
+        "a2241",
+        "a2242",
+        "a827"
+      ],
+      "date": "2000-09",
+      "journalId": "j103",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "qubit-hardware"
+      ],
+      "citations": 1571,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1103-physrevx-4-021034",
+      "doi": "10.1103/physrevx.4.021034",
+      "title": "Single-Atom Trapping in Holographic 2D Arrays of Microtraps with Arbitrary Geometries",
+      "authorIds": [
+        "a2243",
+        "a2244",
+        "a2245",
+        "a2232",
+        "a2246",
+        "a827"
+      ],
+      "date": "2014-05",
+      "journalId": "j131",
+      "keywordIds": [
+        "neutral-atom-qubits",
+        "qubit-hardware"
+      ],
+      "citations": 310,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1109-tcad-2023-3325974",
+      "doi": "10.1109/tcad.2023.3325974",
+      "title": "Efficient Quantum Circuit Synthesis for SAT-Oracle With Limited Ancillary Qubit",
+      "authorIds": [
+        "a2248",
+        "a2249",
+        "a2250",
+        "a2251",
+        "a1652",
+        "a827"
+      ],
+      "date": "2023-10",
+      "journalId": "j35",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 2,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1016-j-revip-2019-100028",
+      "doi": "10.1016/j.revip.2019.100028",
+      "title": "Quantum computing for finance: Overview and prospects",
+      "authorIds": [
+        "a2253",
+        "a2254",
+        "a2255"
+      ],
+      "date": "2019-02",
+      "journalId": "j200",
+      "keywordIds": [
+        "finance-applications",
+        "survey"
+      ],
+      "citations": 672,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1145-3723153",
+      "doi": "10.1145/3723153",
+      "title": "Beyond NISQ: The Megaquop Machine",
+      "authorIds": [
+        "a2256"
+      ],
+      "date": "2025-03",
+      "journalId": "j11",
+      "keywordIds": [
+        "vision",
+        "fault-tolerance"
+      ],
+      "citations": 39,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-48550-arxiv-1910-01500",
+      "doi": "10.48550/arxiv.1910.01500",
+      "title": "MLPerf Training Benchmark",
+      "authorIds": [
+        "a2257",
+        "a2258",
+        "a2259",
+        "a2260",
+        "a2261",
+        "a827"
+      ],
+      "date": "2019-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "benchmarking"
+      ],
+      "citations": 171,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-48550-arxiv-2203-17181",
+      "doi": "10.48550/arxiv.2203.17181",
+      "title": "Quantum computing at the quantum advantage threshold: a down-to-business review",
+      "authorIds": [
+        "a234",
+        "a2292",
+        "a2293",
+        "a2294"
+      ],
+      "date": "2022-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "survey",
+        "vision"
+      ],
+      "citations": 36,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1007-s11467-022-1249-z",
+      "doi": "10.1007/s11467-022-1249-z",
+      "title": "Noisy intermediate-scale quantum computers",
+      "authorIds": [
+        "a2295",
+        "a2296",
+        "a2297",
+        "a2298",
+        "a2299",
+        "a827"
+      ],
+      "date": "2023-03",
+      "journalId": "j23",
+      "keywordIds": [
+        "survey",
+        "quantum-algorithms"
+      ],
+      "citations": 128,
+      "added": "2026-09-23"
+    },
+    {
+      "id": "10-1007-978-3-031-73716-9-19",
+      "doi": "10.1007/978-3-031-73716-9_19",
+      "title": "An Exascale Slurm Testing and Evaluation Environment Utilising Generated DAG Workloads",
+      "authorIds": [
+        "a2313",
+        "a2314"
+      ],
+      "date": "2024-12",
+      "journalId": "j63",
+      "keywordIds": [
+        "hpc-scheduling",
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-09-23"
     }
   ]
 }

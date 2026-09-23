@@ -762,5 +762,41 @@
   "j191": {
     "name": "Communications Physics",
     "type": "journal"
+  },
+  "j192": {
+    "name": "Physics Letters A",
+    "type": "journal"
+  },
+  "j193": {
+    "name": "Journal of King Saud University - Computer and Information Sciences",
+    "type": "journal"
+  },
+  "j194": {
+    "name": "Information Sciences",
+    "type": "journal"
+  },
+  "j195": {
+    "name": "Research",
+    "type": "journal"
+  },
+  "j196": {
+    "name": "ACM/IEEE 53rd Annual International Symposium on Computer Architecture",
+    "type": "conference"
+  },
+  "j197": {
+    "name": "Proceedings of the 30th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 3",
+    "type": "conference"
+  },
+  "j198": {
+    "name": "29th Asia and South Pacific Design Automation Conference",
+    "type": "conference"
+  },
+  "j199": {
+    "name": "IBM Journal of Research and Development",
+    "type": "journal"
+  },
+  "j200": {
+    "name": "Reviews in Physics",
+    "type": "journal"
   }
 }
