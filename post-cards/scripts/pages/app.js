@@ -32,11 +32,20 @@
     return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
   }
 
+  // Both the formatted date and pickCardStyle's result are deterministic functions of a
+  // postcard's own fields, so they're computed once here instead of on every showPostcard()/
+  // renderStack() call.
+  function assignDisplayFields(list) {
+    list.forEach(function (pc) {
+      pc._displayDate = formatDisplayDate(pc.date);
+      pc._cardStyle = PostcardEngine.pickCardStyle({ id: pc.id, date: pc._displayDate, color: pc.color });
+    });
+  }
+
   function renderStack() {
     Array.prototype.slice.call(pileEl.querySelectorAll(".ghost-card")).forEach(function (el) { el.remove(); });
     for (var i = 0; i < currentIndex; i++) {
-      var pc = postcards[i];
-      var style = PostcardEngine.pickCardStyle({ id: pc.id, date: formatDisplayDate(pc.date), color: pc.color });
+      var style = postcards[i]._cardStyle;
       var el = document.createElement("div");
       el.className = "ghost-card";
       el.style.background = style.color;
@@ -74,7 +83,7 @@
       to: pc.to,
       from: pc.from,
       location: pc.location,
-      date: formatDisplayDate(pc.date),
+      date: pc._displayDate,
       subject: pc.subject,
       message: pc.message,
       postscript: pc.postscript,
@@ -121,6 +130,7 @@
       postcards = results[1].postcards.filter(function (pc) { return pc.enabled !== false; });
       postcards.sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; });
       assignStampIndices(postcards);
+      assignDisplayFields(postcards);
 
       renderer.setMuted(true);
 
