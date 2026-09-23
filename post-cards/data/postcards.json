@@ -175,6 +175,17 @@
       },
       "message": "Hey,\nNot a great day at work. Slept past my 4AM meeting, and woke up with clogged sinuses and to clogged roads. Might just throw in the towel for today. Tomorrow is tomorrow is tomorrow.\nAlso spent the last few days trying to find blood for a friend's friend's cat. I wish I could say it ended well, but it didn't.\nTo end on a lighter note, you should watch Coyote vs Acme, it's quite unique.",
       "postscript": "How's the drawing competition going on this trip? Are you winning?"
+    },
+    {
+      "id": "postcard-12",
+      "enabled": false,
+      "date": "2026-09-23",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
