@@ -5,7 +5,7 @@
   "permitNumbers": [181, 2121, 1801, 721],
   "parsMessages": ["FORWARDING TO: LONDON", "FORWARDING TO: BANGALORE", "REDIRECTED TO SAM"],
   "nixieReasons": ["ATTEMPTED — SAM NOT HOME", "RETURN TO SENDER"],
-  "ibiCaption": "H + S",
+  "ibiCaption": "H to S",
   "trackingPrefix": "HSLDNBLR",
   "morseCode": ".. / .-.. --- ...- . / -.-- --- ..-",
   "serviceRequestedOptions": ["COMPANY REQUESTED", "MISSED"]
