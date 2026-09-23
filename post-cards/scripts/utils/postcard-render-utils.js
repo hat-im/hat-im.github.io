@@ -184,6 +184,16 @@
     return a.x < b.x + b.w && a.x + a.w > b.x && a.y < b.y + b.h && a.y + a.h > b.y;
   }
 
+  // Traces (but doesn't fill/stroke/close) a path through unit-scale points, each scaled by
+  // (sx, sy). Callers decide fill vs stroke vs closePath — this only builds the path.
+  function tracePathPoints(ctx, points, sx, sy) {
+    ctx.beginPath();
+    points.forEach(function (p, i) {
+      var x = p[0] * sx, y = p[1] * sy;
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+  }
+
   window.PostcardRenderUtils = {
     darken: darken,
     resolveColor: resolveColor,
@@ -196,6 +206,7 @@
     wrapText: wrapText,
     centeredLines: centeredLines,
     layoutTextZones: layoutTextZones,
-    rectsOverlap: rectsOverlap
+    rectsOverlap: rectsOverlap,
+    tracePathPoints: tracePathPoints
   };
 })();

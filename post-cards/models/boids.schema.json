@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/boids.schema.json",
+  "title": "Postcards — Boids Background",
+  "description": "post-cards/data/background/boids.json. Tuning for the envelope-flocking animation behind the postcard stage. herd/scatter give the alignment/cohesion/separation/perception values the flock drifts between over phasePeriodMs. colorVar is a CSS custom property name read from :root and drawn at colorAlpha.",
+  "type": "object",
+  "required": ["flockSize", "envelopeWidth", "envelopeHeight", "envelopeShape", "maxSpeed", "speedPerNeighbor", "maxForce", "accelerationScale", "separationDistance", "phasePeriodMs", "herd", "scatter", "colorVar", "colorAlpha"],
+  "additionalProperties": false,
+  "properties": {
+    "flockSize": { "type": "integer", "minimum": 1 },
+    "envelopeWidth": { "type": "number", "exclusiveMinimum": 0 },
+    "envelopeHeight": { "type": "number", "exclusiveMinimum": 0 },
+    "envelopeShape": {
+      "type": "object",
+      "description": "Unit-scale (roughly -0.5 to 0.5) point paths, scaled by envelopeWidth/envelopeHeight at draw time. body is closed and filled; flap is an open stroke on top.",
+      "required": ["body", "flap"],
+      "additionalProperties": false,
+      "properties": {
+        "body": { "$ref": "#/$defs/path" },
+        "flap": { "$ref": "#/$defs/path" }
+      }
+    },
+    "maxSpeed": { "type": "number", "exclusiveMinimum": 0 },
+    "speedPerNeighbor": { "type": "number", "minimum": 0, "description": "Added to a boid's max speed for each flockmate currently within its perception radius." },
+    "maxForce": { "type": "number", "exclusiveMinimum": 0 },
+    "accelerationScale": { "type": "number", "exclusiveMinimum": 0 },
+    "separationDistance": { "type": "number", "exclusiveMinimum": 0 },
+    "phasePeriodMs": { "type": "number", "exclusiveMinimum": 0 },
+    "herd": { "$ref": "#/$defs/phase" },
+    "scatter": { "$ref": "#/$defs/phase" },
+    "colorVar": { "type": "string", "pattern": "^--[a-z0-9-]+$" },
+    "colorAlpha": { "type": "number", "minimum": 0, "maximum": 1 }
+  },
+  "$defs": {
+    "path": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "array",
+        "items": { "type": "number" },
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "phase": {
+      "type": "object",
+      "required": ["alignment", "cohesion", "separation", "perception"],
+      "additionalProperties": false,
+      "properties": {
+        "alignment": { "type": "number", "minimum": 0 },
+        "cohesion": { "type": "number", "minimum": 0 },
+        "separation": { "type": "number", "minimum": 0 },
+        "perception": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    }
+  }
+}

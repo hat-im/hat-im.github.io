@@ -20,7 +20,16 @@ html, body {
   min-height: 100%;
 }
 
+#boidsCanvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .page {
+  position: relative;
+  z-index: 1;
   max-width: 1320px;
   margin: 0 auto;
   padding: 28px 20px 60px;

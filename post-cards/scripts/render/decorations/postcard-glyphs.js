@@ -2,6 +2,7 @@
   "use strict";
 
   var drawContain = window.PostcardRenderUtils.drawContain;
+  var tracePathPoints = window.PostcardRenderUtils.tracePathPoints;
 
   function drawPathPart(ctx, part, size) {
     ctx.beginPath();
@@ -16,11 +17,7 @@
   }
 
   function drawPolygonPart(ctx, part, size) {
-    ctx.beginPath();
-    part.points.forEach(function (p, i) {
-      var x = p[0] * size, y = p[1] * size;
-      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-    });
+    tracePathPoints(ctx, part.points, size, size);
     ctx.closePath();
     ctx.fill();
   }

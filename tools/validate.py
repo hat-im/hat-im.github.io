@@ -51,6 +51,7 @@ SCHEMA_PAIRS = [
     ("post-cards/models/seals.schema.json", "post-cards/data/seals/seals.json"),
     ("post-cards/models/seal-copy.schema.json", "post-cards/data/seals/seal-copy.json"),
     ("post-cards/models/stamps.schema.json", "post-cards/data/stamps/stamps.json"),
+    ("post-cards/models/boids.schema.json", "post-cards/data/background/boids.json"),
 ]
 
 

@@ -1,0 +1,19 @@
+{
+  "flockSize": 50,
+  "envelopeWidth": 12,
+  "envelopeHeight": 9,
+  "envelopeShape": {
+    "body": [[-0.5, -0.5], [0.5, -0.5], [0.5, 0.5], [-0.5, 0.5]],
+    "flap": [[-0.5, -0.5], [0, 0.1], [0.5, -0.5]]
+  },
+  "maxSpeed": 5,
+  "speedPerNeighbor": 0.02,
+  "maxForce": 0.8,
+  "accelerationScale": 0.3,
+  "separationDistance": 20,
+  "phasePeriodMs": 30000,
+  "herd": { "alignment": 0.9, "cohesion": 1.0, "separation": 3.2, "perception": 130 },
+  "scatter": { "alignment": 0.15, "cohesion": 0.1, "separation": 7.5, "perception": 55 },
+  "colorVar": "--ink",
+  "colorAlpha": 0.3
+}
