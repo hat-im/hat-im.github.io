@@ -3,7 +3,6 @@
 
   var PALETTE = [];
   var PALETTE_NAMES = {};
-  var FONTS = [];
   var GLYPHS = {};
   var STICKER_ICONS = [];
   var STICKER_SIZE_SCALE = {};
@@ -17,7 +16,6 @@
   var Assets = {
     PALETTE: PALETTE,
     PALETTE_NAMES: PALETTE_NAMES,
-    FONTS: FONTS,
     GLYPHS: GLYPHS,
     STICKER_ICONS: STICKER_ICONS,
     STICKER_SIZE_SCALE: STICKER_SIZE_SCALE,
@@ -61,7 +59,6 @@
   function loadAssets() {
     return Promise.all([
       getJSON("/post-cards/data/theme/palette.json"),
-      getJSON("/post-cards/data/theme/fonts.json"),
       getJSON("/post-cards/data/icons/glyphs.json"),
       getJSON("/post-cards/data/stamps/stamps.json"),
       getJSON("/post-cards/data/icons/sticker-icons.json"),
@@ -80,28 +77,27 @@
       });
       fillFrom(PALETTE, hexList);
       fillObject(PALETTE_NAMES, nameMap);
-      fillFrom(FONTS, r[1].fonts);
-      fillObject(GLYPHS, r[2].glyphs);
-      fillFrom(STICKER_ICONS, r[4].icons);
-      fillObject(STICKER_SIZE_SCALE, r[4].sizeScale);
-      fillFrom(POSITIONS, r[5].positions);
-      fillFrom(SEALS, r[6].types);
-      fillFrom(FANCY_SHAPES, r[7].shapes);
-      fillObject(SEAL_COPY, r[8]);
-      fillFrom(ANGLES, r[9].degrees);
-      Assets.INK = r[10].ink;
-      Assets.BARCODE_INK = r[10].barcodeInk;
-      Assets.SEAL_ROTATION_RAD = r[11].sealRotationDegrees * Math.PI / 180;
-      Assets.STICKER_ROTATION_RAD = r[11].stickerRotationDegrees * Math.PI / 180;
-      Assets.STICKER_MIN_SIZE = r[11].stickerMinSize;
-      Assets.STICKER_SIZE_RANGE = r[11].stickerSizeRange;
+      fillObject(GLYPHS, r[1].glyphs);
+      fillFrom(STICKER_ICONS, r[3].icons);
+      fillObject(STICKER_SIZE_SCALE, r[3].sizeScale);
+      fillFrom(POSITIONS, r[4].positions);
+      fillFrom(SEALS, r[5].types);
+      fillFrom(FANCY_SHAPES, r[6].shapes);
+      fillObject(SEAL_COPY, r[7]);
+      fillFrom(ANGLES, r[8].degrees);
+      Assets.INK = r[9].ink;
+      Assets.BARCODE_INK = r[9].barcodeInk;
+      Assets.SEAL_ROTATION_RAD = r[10].sealRotationDegrees * Math.PI / 180;
+      Assets.STICKER_ROTATION_RAD = r[10].stickerRotationDegrees * Math.PI / 180;
+      Assets.STICKER_MIN_SIZE = r[10].stickerMinSize;
+      Assets.STICKER_SIZE_RANGE = r[10].stickerSizeRange;
 
       // Stamp/glyph images load in the background rather than blocking init(): with dozens of
       // stamps, waiting for every single one to download before the first postcard can render
       // made the page feel stuck on load. STAMPS is sized up front so index lookups are valid
       // immediately; draw() notices when a still-null slot it needs has since arrived (see
       // postcard-draw.js) and redraws once it does.
-      var stampSrcs = r[3].images || [];
+      var stampSrcs = r[2].images || [];
       fillFrom(STAMPS, new Array(stampSrcs.length).fill(null));
       stampSrcs.forEach(function (src, i) {
         preloadImageAsset(src).then(function (img) { STAMPS[i] = img; });
@@ -117,10 +113,12 @@
     });
   }
 
+  // Only the two fonts the canvas actually draws with need to be ready before first render;
+  // Courier Prime is plain CSS text and the browser handles its own font-display swap for that.
   function preloadFonts() {
     if (!("fonts" in document)) return Promise.resolve();
-    var specs = ['20px "Special Elite"'];
-    FONTS.forEach(function (f) { specs.push('20px ' + f.family); });
+    var Config = window.PostcardConfig;
+    var specs = ["20px " + Config.TYPEWRITER_FONT, "20px " + Config.HANDWRITTEN_FONT];
     return Promise.all(specs.map(function (s) {
       return document.fonts.load(s).catch(function () {});
     })).then(function () { return document.fonts.ready; });

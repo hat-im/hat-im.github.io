@@ -40,7 +40,6 @@ SCHEMA_PAIRS = [
     ("post-cards/models/postcards.schema.json", "post-cards/data/postcards.json"),
     ("post-cards/models/strings.schema.json", "post-cards/strings.json"),
     ("post-cards/models/palette.schema.json", "post-cards/data/theme/palette.json"),
-    ("post-cards/models/fonts.schema.json", "post-cards/data/theme/fonts.json"),
     ("post-cards/models/angles.schema.json", "post-cards/data/theme/angles.json"),
     ("post-cards/models/ink-colors.schema.json", "post-cards/data/theme/ink-colors.json"),
     ("post-cards/models/positions.schema.json", "post-cards/data/layout/positions.json"),
