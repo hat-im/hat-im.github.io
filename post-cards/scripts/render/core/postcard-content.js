@@ -27,10 +27,10 @@
     } else {
       this.data.color = Utils.resolveColor(data.color);
     }
-    var stampIndex = (typeof data.stampIndex === "number")
+    this._stampIndex = (typeof data.stampIndex === "number")
       ? data.stampIndex
       : Utils.pickStampIndex(seed, Assets.STAMPS.length, null);
-    this._stampImage = Assets.STAMPS[stampIndex];
+    this._stampImage = Assets.STAMPS[this._stampIndex];
 
     var layout = Utils.layoutTextZones(this.ctx, this.data, Config);
     this._layout = layout;

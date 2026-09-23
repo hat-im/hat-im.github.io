@@ -2,6 +2,7 @@
   "use strict";
 
   var Config = window.PostcardConfig;
+  var Assets = window.PostcardAssets;
   var Utils = window.PostcardRenderUtils;
   var Chrome = window.PostcardChrome;
   var Typography = window.PostcardTypography;
@@ -104,6 +105,13 @@
     var ctx = this.ctx;
     var CARD_W = Config.CARD_W, CARD_H = Config.CARD_H;
     var CANVAS_W = Config.CANVAS_W, CANVAS_H = Config.CANVAS_H;
+
+    // Stamp images load in the background (see postcard-assets.js); if this card's stamp
+    // wasn't ready yet when its static layers were built, pick it up as soon as it arrives.
+    if (!this._stampImage) {
+      var stampImg = Assets.STAMPS[this._stampIndex];
+      if (stampImg) { this._stampImage = stampImg; this._layersDirty = true; }
+    }
 
     if (this._layersDirty) this._buildStaticLayers();
 
