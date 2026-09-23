@@ -37,20 +37,6 @@
     return order[0];
   }
 
-  function parseMorseTokens(code) {
-    var tokens = [];
-    String(code || "").split(" / ").forEach(function (word, wi, words) {
-      word.trim().split(" ").filter(Boolean).forEach(function (letter, li, letters) {
-        letter.split("").forEach(function (sym) {
-          tokens.push(sym === "." ? "dot" : "dash");
-        });
-        if (li < letters.length - 1) tokens.push("letterGap");
-      });
-      if (wi < words.length - 1) tokens.push("wordGap");
-    });
-    return tokens;
-  }
-
   function roundRectPath(ctx, x, y, w, h, r) {
     if (typeof ctx.roundRect === "function") {
       ctx.beginPath();
@@ -199,7 +185,6 @@
     resolveColor: resolveColor,
     pickCardStyle: pickCardStyle,
     pickStampIndex: pickStampIndex,
-    parseMorseTokens: parseMorseTokens,
     roundRectPath: roundRectPath,
     drawCover: drawCover,
     drawContain: drawContain,

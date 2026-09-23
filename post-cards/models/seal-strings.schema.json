@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://hat-im.github.io/post-cards/models/seal-copy.schema.json",
-  "title": "Postcards — Seal Copy",
-  "description": "post-cards/data/seals/seal-copy.json. Text content each seal type in seals.json draws from, passed to PostcardSeals.buildSealExtras.",
+  "$id": "https://hat-im.github.io/post-cards/models/seal-strings.schema.json",
+  "title": "Postcards — Seal Strings",
+  "description": "post-cards/data/seals/seal-strings.json. Text content each seal type in seal-types.json draws from, passed to PostcardSeals.buildSealExtras.",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -14,7 +14,7 @@
     "nixieReasons": { "type": "array", "items": { "type": "string" }, "description": "Used by the nixieLabel seal type." },
     "ibiCaption": { "type": "string", "description": "Used by the ibi2d seal type." },
     "trackingPrefix": { "type": "string", "description": "Used by the trackingBarcode seal type." },
-    "morseCode": { "type": "string", "pattern": "^[.\\- /]+$", "description": "Used by the fim seal type; parsed by parseMorseTokens." },
+    "morseTokens": { "type": "array", "items": { "enum": ["dot", "dash", "letterGap", "wordGap"] }, "description": "Precomputed token sequence for the trackingBarcode seal type (dot/dash marks plus gaps)." },
     "serviceRequestedOptions": { "type": "array", "items": { "type": "string" }, "description": "Used by the serviceRequested seal type." }
   }
 }

@@ -1,0 +1,30 @@
+{
+  "cities": ["LONDON", "BANGALORE", "VIZAG", "BOMBAY"],
+  "sloganCancels": [
+    "LONDON TO BANGALORE",
+    "LONDON TO VIZAG",
+    "LONDON TO BOMBAY",
+    "BANGALORE TO LONDON",
+    "BANGALORE TO VIZAG",
+    "BANGALORE TO BOMBAY",
+    "VIZAG TO LONDON",
+    "VIZAG TO BANGALORE",
+    "VIZAG TO BOMBAY",
+    "BOMBAY TO LONDON",
+    "BOMBAY TO BANGALORE",
+    "BOMBAY TO VIZAG",
+    "FLY SAFE SAM",
+    "TRAVEL EASY",
+    "SAFE TRAVELS",
+    "SEE YOU SOON",
+    "MISS YOU ALREADY"
+  ],
+  "permitPrefix": "HS",
+  "permitNumbers": [181, 2121, 1801, 721],
+  "parsMessages": ["FORWARDING TO: LONDON", "FORWARDING TO: BANGALORE", "REDIRECTED TO SAM"],
+  "nixieReasons": ["ATTEMPTED — SAM NOT HOME", "RETURN TO SENDER"],
+  "ibiCaption": "H to S",
+  "trackingPrefix": "HSLDNBLR",
+  "morseTokens": ["dot", "dot", "wordGap", "dot", "dash", "dot", "dot", "letterGap", "dash", "dash", "dash", "letterGap", "dot", "dot", "dot", "dash", "letterGap", "dot", "wordGap", "dash", "dot", "dash", "dash", "letterGap", "dash", "dash", "dash", "letterGap", "dot", "dot", "dash"],
+  "serviceRequestedOptions": ["COMPANY REQUESTED", "MISSED"]
+}

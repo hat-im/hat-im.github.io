@@ -66,9 +66,9 @@
       getJSON("/post-cards/data/stamps/stamps.json"),
       getJSON("/post-cards/data/icons/sticker-icons.json"),
       getJSON("/post-cards/data/layout/positions.json"),
-      getJSON("/post-cards/data/seals/seals.json"),
+      getJSON("/post-cards/data/seals/seal-types.json"),
       getJSON("/post-cards/data/icons/fancy-pictorial-shapes.json"),
-      getJSON("/post-cards/data/seals/seal-copy.json"),
+      getJSON("/post-cards/data/seals/seal-strings.json"),
       getJSON("/post-cards/data/theme/angles.json"),
       getJSON("/post-cards/data/theme/ink-colors.json"),
       getJSON("/post-cards/data/layout/placement-tolerances.json")

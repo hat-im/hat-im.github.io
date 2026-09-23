@@ -48,8 +48,8 @@ SCHEMA_PAIRS = [
     ("post-cards/models/glyphs.schema.json", "post-cards/data/icons/glyphs.json"),
     ("post-cards/models/sticker-icons.schema.json", "post-cards/data/icons/sticker-icons.json"),
     ("post-cards/models/fancy-pictorial-shapes.schema.json", "post-cards/data/icons/fancy-pictorial-shapes.json"),
-    ("post-cards/models/seals.schema.json", "post-cards/data/seals/seals.json"),
-    ("post-cards/models/seal-copy.schema.json", "post-cards/data/seals/seal-copy.json"),
+    ("post-cards/models/seal-types.schema.json", "post-cards/data/seals/seal-types.json"),
+    ("post-cards/models/seal-strings.schema.json", "post-cards/data/seals/seal-strings.json"),
     ("post-cards/models/stamps.schema.json", "post-cards/data/stamps/stamps.json"),
     ("post-cards/models/boids.schema.json", "post-cards/data/background/boids.json"),
 ]

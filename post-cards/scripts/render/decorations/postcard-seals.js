@@ -3,7 +3,6 @@
 
   var TYPEWRITER_FONT = window.PostcardConfig.TYPEWRITER_FONT;
   var centeredLines = window.PostcardRenderUtils.centeredLines;
-  var parseMorseTokens = window.PostcardRenderUtils.parseMorseTokens;
   var drawGlyph = window.PostcardGlyphs.drawGlyph;
   var pick = window.HashUtils.pick;
   var shuffledIndices = window.HashUtils.shuffledIndices;
@@ -323,7 +322,7 @@
         return { pattern: arr };
       case "trackingBarcode":
         return {
-          tokens: parseMorseTokens(copy.morseCode),
+          tokens: copy.morseTokens,
           text: copy.trackingPrefix + "-" + (Math.floor(rng() * 900000) + 100000)
         };
       case "serviceRequested":
