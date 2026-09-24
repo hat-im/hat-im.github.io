@@ -72,7 +72,7 @@
       "to": "Sam",
       "location": "Purple-Pink Skies",
       "color": "apricot",
-      "subject": "Chores and Bores",
+      "subject": "Skies and Syllabi",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-05.mp4"
@@ -86,7 +86,7 @@
       "date": "2026-09-17",
       "from": "Hat",
       "to": "Sam",
-      "location": "Study Session",
+      "location": "Conference Corner",
       "color": "powder-blue",
       "subject": "Salt & Screens",
       "media": {
@@ -152,7 +152,7 @@
       "to": "Sam",
       "location": "Still in Bed",
       "color": "lavender-gray",
-      "subject": "Downpours",
+      "subject": "Rain & Patience",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-10.mp4"
@@ -183,6 +183,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Hilbert Space",
+      "color": "petal-pink",
       "subject": "Mentoring Musings",
       "media": {
         "type": "video",
@@ -193,14 +194,19 @@
     },
     {
       "id": "postcard-13",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-09-24",
       "from": "Hat",
       "to": "Sam",
-      "location": "",
-      "subject": "",
-      "message": "",
-      "postscript": ""
+      "location": "Windy Wists",
+      "color": "peach",
+      "subject": "Wistful Winds",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-13.mp4"
+      },
+      "message": "Hi,\nSpent today at the office. Busy, though hard to get excited about work these days.\nThere was a nice breeze blowing around the campus when I left. I hope it comes back when you're here, you'd have liked it. Hope the end of your trip leaves you refreshed and eager for whatever's next, I know you'll do great at it. I'm sure Haju will be glad you'll be back soon.",
+      "postscript": "What's the first thing you'll do when you're back?"
     }
   ]
 }
