@@ -13542,6 +13542,26 @@
       ],
       "citations": 9,
       "added": "2026-09-24"
+    },
+    {
+      "id": "10-1109-qsw67625-2025-00031",
+      "doi": "10.1109/QSW67625.2025.00031",
+      "title": "QAOA in Quantum Datacenters: Parallelization, Simulation, and Orchestration",
+      "authorIds": [
+        "a2316",
+        "a2317",
+        "a2318",
+        "a1344"
+      ],
+      "date": "2025-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "quantum-optimization",
+        "variational-algorithms",
+        "workflow-orchestration"
+      ],
+      "citations": 3,
+      "added": "2026-09-24"
     }
   ]
 }
