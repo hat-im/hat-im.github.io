@@ -798,5 +798,9 @@
   "j200": {
     "name": "Reviews in Physics",
     "type": "journal"
+  },
+  "j201": {
+    "name": "IEEE/ACM Third International Workshop on Quantum Computing Software",
+    "type": "conference"
   }
 }

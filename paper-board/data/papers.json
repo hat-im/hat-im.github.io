@@ -13522,6 +13522,26 @@
       ],
       "citations": 0,
       "added": "2026-09-23"
+    },
+    {
+      "id": "10-1109-qcs56647-2022-00007",
+      "doi": "10.1109/QCS56647.2022.00007",
+      "title": "Tierkreis: a Dataflow Framework for Hybrid Quantum-Classical Computing",
+      "authorIds": [
+        "a689",
+        "a311",
+        "a2315",
+        "a210"
+      ],
+      "date": "2022-11",
+      "journalId": "j201",
+      "keywordIds": [
+        "quantum-programming",
+        "workflow-orchestration",
+        "middleware"
+      ],
+      "citations": 9,
+      "added": "2026-09-24"
     }
   ]
 }
