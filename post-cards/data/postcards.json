@@ -190,6 +190,17 @@
       },
       "message": "Hey,\nSpent the day reviewing intern projects with another staff and a PhD student. One reminded me of the interesting interface of the ISC website. They're building something similar, but for battleship.\nHope you're still enjoying London. Wonder if you could see yourself working there. I doubt you'd overstay your welcome if you did.",
       "postscript": "The little envelopes flying around the page now follow an interesting algorithm."
+    },
+    {
+      "id": "postcard-13",
+      "enabled": false,
+      "date": "2026-09-24",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
