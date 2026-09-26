@@ -1,6 +1,6 @@
 (function(){
 
-var BASE = 'study-plan/';
+var BASE = 'study-board/';
 var STRINGS_URL = BASE + 'strings.json';
 var BOOKS_URL = BASE + 'data/books.json';
 var CHAPTERS_URL = BASE + 'data/chapters.json';
