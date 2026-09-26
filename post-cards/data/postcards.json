@@ -206,7 +206,7 @@
         "src": "/post-cards/videos/postcard-13.mp4"
       },
       "message": "Hi,\nSpent today at the office. Busy, though hard to get excited about work these days.\nThere was a nice breeze blowing around the campus when I left. I hope it comes back when you're here, you'd have liked it. Hope the end of your trip leaves you refreshed and eager for whatever's next, I know you'll do great at it. I'm sure Haju will be glad you'll be back soon.",
-      "postscript": "What's been the thing you've missed most from Bangalore?"
+      "postscript": "What's have you missed most from Bangalore?"
     },
     {
       "id": "postcard-14",
@@ -214,15 +214,26 @@
       "date": "2026-09-25",
       "from": "Hat",
       "to": "Sam",
-      "location": "Almost Audible",
+      "location": "Pattering among Pines",
       "color": "cream",
       "subject": "Moody & Muted",
       "media": {
         "type": "video",
         "src": "/post-cards/videos/postcard-14.mp4"
       },
-      "message": "Hi,\nThe weather's been quiet, moody. The rain's been too light for a downpour, too heavy for a drizzle. A rain you could almost hear, if you really listened for it.\nYesterday's breeze is still hanging around. I hope it's still here when you're back.",
+      "message": "Hi,\nThe weather's been quiet, moody. The rain's been too light for a downpour, too heavy for a drizzle. You can only just hear the rain, if you listen for it.\nYesterday's breeze is still moving around. I hope it's still there when you're back.",
       "postscript": "What do you think you'll miss most about London?"
+    },
+    {
+      "id": "postcard-15",
+      "enabled": false,
+      "date": "2026-09-26",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
