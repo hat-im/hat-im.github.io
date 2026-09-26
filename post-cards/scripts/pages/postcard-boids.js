@@ -11,7 +11,6 @@
   var startTime = performance.now();
   var C = null;
   var shapePath2Ds = {};
-  var separationDistanceSq = 0;
 
   function resolveColorRgb(colorVar) {
     var hex = getComputedStyle(document.documentElement).getPropertyValue(colorVar).trim();
@@ -114,7 +113,8 @@
       cohesion: lerp(C.scatter.cohesion, C.herd.cohesion, t),
       separation: lerp(C.scatter.separation, C.herd.separation, t),
       wind: C.wind.weight,
-      perception: lerp(C.scatter.perception, C.herd.perception, t)
+      perception: lerp(C.scatter.perception, C.herd.perception, t),
+      separationDistanceSq: Math.pow(lerp(C.scatter.separationDistance, C.herd.separationDistance, t), 2)
     };
   }
 
@@ -132,7 +132,7 @@
         alignX += other.vx; alignY += other.vy; alignN++;
         cohX += wx; cohY += wy; cohN++;
       }
-      if (distSq < separationDistanceSq) {
+      if (distSq < params.separationDistanceSq) {
         sepX -= wx; sepY -= wy;
       }
     });
@@ -219,7 +219,6 @@
       category.rgb = resolveColorRgb(category.colorVar);
     });
 
-    separationDistanceSq = C.separationDistance * C.separationDistance;
     resize();
     spawnBoids();
     requestAnimationFrame(loop);
