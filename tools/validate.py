@@ -51,6 +51,7 @@ SCHEMA_PAIRS = [
     ("post-cards/models/seal-strings.schema.json", "post-cards/data/seals/seal-strings.json"),
     ("post-cards/models/stamps.schema.json", "post-cards/data/stamps/stamps.json"),
     ("post-cards/models/boids.schema.json", "post-cards/data/background/boids.json"),
+    ("post-cards/models/boids-shapes.schema.json", "post-cards/data/background/boids-shapes.json"),
 ]
 
 
@@ -106,6 +107,19 @@ def run_schema_checks():
             fail(f"paper-board: dangling reference {d}")
     else:
         passed("paper-board: no dangling authorId/journalId/keywordId references")
+
+    boids = json.loads((ROOT / "post-cards/data/background/boids.json").read_text())
+    boids_shapes = json.loads((ROOT / "post-cards/data/background/boids-shapes.json").read_text())["shapes"]
+    dangling_shapes = []
+    for cat in boids["categories"]:
+        for shape_id in cat["shapeIds"]:
+            if shape_id not in boids_shapes:
+                dangling_shapes.append(f"{cat['id']} -> shapeId {shape_id}")
+    if dangling_shapes:
+        for d in dangling_shapes:
+            fail(f"boids: dangling reference {d}")
+    else:
+        passed("boids: no dangling shapeId references")
 
 
 def load_config():
