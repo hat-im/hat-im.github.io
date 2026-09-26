@@ -106,26 +106,25 @@
     els.range.disabled = true;
 
     var animal = currentAnimal();
-    var isCorrect = guessedLevelId === animal.dangerLevel;
+    var isUnknown = animal.dangerLevel == null;
+    var isCorrect = isUnknown || guessedLevelId === animal.dangerLevel;
 
     state.seen++;
     if (isCorrect) state.correct++;
     updateStats();
 
-    els.barEl.dataset.result = isCorrect ? "correct" : "wrong";
+    els.barEl.dataset.result = isUnknown ? "unknown" : isCorrect ? "correct" : "wrong";
 
     setTimeout(function () {
-      showModal(animal, isCorrect, guessedLevelId);
+      showModal(animal, isCorrect, guessedLevelId, isUnknown);
     }, RESOLVE_PAUSE_MS);
   }
 
-  // Wrong guesses never reveal the correct level, but do say which
-  // direction the guess was off in — overestimating danger reads
-  // differently from underestimating it.
-  function resultText(isCorrect, guessedLevelId, correctLevelId) {
+  function resultText(isCorrect, guessedLevelId, correctLevelId, isUnknown) {
+    if (isUnknown) return "Both correct and incorrect — Schrödinger's cat, danger unmeasured.";
     if (isCorrect) return "Correct!";
     return levelIndexById(guessedLevelId) > levelIndexById(correctLevelId)
-      ? "Less lethal than you think."
+      ? "Less lethal than you like."
       : "More menace than you measured.";
   }
 
@@ -134,11 +133,12 @@
     return facts[Math.floor(Math.random() * facts.length)];
   }
 
-  function showModal(animal, isCorrect, guessedLevelId) {
+  function showModal(animal, isCorrect, guessedLevelId, isUnknown) {
     els.modalImage.src = animal.image;
     els.modalImage.alt = animal.altText || animal.name;
-    els.modalResult.textContent = resultText(isCorrect, guessedLevelId, animal.dangerLevel);
-    els.modalResult.className = "modal-result" + (isCorrect ? "" : " wrong");
+    els.modalResult.textContent = resultText(isCorrect, guessedLevelId, animal.dangerLevel, isUnknown);
+    els.modalResult.className =
+      "modal-result" + (isUnknown ? " unknown" : isCorrect ? "" : " wrong");
     els.modalNameLink.textContent = animal.name;
     els.modalNameLink.href = animal.wikipediaUrl;
     els.modalFact.textContent = randomFact(animal);
@@ -185,17 +185,11 @@
     renderCard();
     updateStats();
 
-    // Fires continuously while dragging/using arrow keys — just previews
-    // which level the handle is currently over. The handle itself moves
-    // smoothly; only the readout snaps, at bucket boundaries.
     els.range.addEventListener("input", function () {
       state.touched = true;
       updateReadout();
     });
 
-    // Fires once, on release/commit — this is what actually locks in the
-    // guess. Ignoring it when `touched` is false means the slider resting
-    // at its default starting position on load doesn't auto-submit anything.
     els.range.addEventListener("change", function () {
       if (!state.touched) return;
       resolveDrop(levelAtSliderValue().id);

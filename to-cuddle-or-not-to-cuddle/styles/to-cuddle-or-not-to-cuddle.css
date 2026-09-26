@@ -170,6 +170,23 @@ body {
   background: #b3503f;
 }
 
+@keyframes schrodinger-flash {
+  0%, 100% {
+    background: #6b7a3a;
+  }
+  50% {
+    background: #b3503f;
+  }
+}
+
+.danger-slider-bar[data-result="unknown"] .danger-range::-webkit-slider-thumb {
+  animation: schrodinger-flash 0.5s steps(1) infinite;
+}
+
+.danger-slider-bar[data-result="unknown"] .danger-range::-moz-range-thumb {
+  animation: schrodinger-flash 0.5s steps(1) infinite;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -218,6 +235,19 @@ body {
 
 .modal-result.wrong {
   color: #b3503f;
+}
+
+@keyframes schrodinger-flash-text {
+  0%, 100% {
+    color: #6b7a3a;
+  }
+  50% {
+    color: #b3503f;
+  }
+}
+
+.modal-result.unknown {
+  animation: schrodinger-flash-text 0.5s steps(1) infinite;
 }
 
 .modal-name {
