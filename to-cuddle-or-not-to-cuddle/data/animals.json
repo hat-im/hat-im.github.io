@@ -362,5 +362,18 @@
       "This one is already cleared for airport duty, despite still working on stairs."
     ],
     "wikipediaUrl": "https://en.wikipedia.org/wiki/German_Shepherd"
+  },
+  {
+    "id": "tilcayo",
+    "name": "Tilcayo",
+    "image": "to-cuddle-or-not-to-cuddle/images/tilcayo.jpeg",
+    "altText": "A tilcayo peering out from behind wooden beams with huge round eyes",
+    "dangerLevel": null,
+    "funFacts": [
+      "The tilcayo was discovered when a man near La Paz who had been feeding it noodles, rice, and eggs for a year realized it was not a stray cat.",
+      "It looks almost identical to its cousin the oncilla, a 'cryptic species' told apart mainly by genetics rather than looks.",
+      "The tilcayo has reportedly filed a stolen valor complaint against the oncilla."
+    ],
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tilcayo_tiger_cat"
   }
 ]
