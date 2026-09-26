@@ -802,5 +802,25 @@
   "j201": {
     "name": "IEEE/ACM Third International Workshop on Quantum Computing Software",
     "type": "conference"
+  },
+  "j202": {
+    "name": "Proceedings of the 52nd Annual International Symposium on Computer Architecture",
+    "type": "conference"
+  },
+  "j203": {
+    "name": "Wiley Interdisciplinary Reviews Computational Molecular Science",
+    "type": "journal"
+  },
+  "j204": {
+    "name": "Proceedings of the SC '23 Workshops of the International Conference on High Performance Computing, Network, Storage, and Analysis",
+    "type": "conference"
+  },
+  "j205": {
+    "name": "IEEE 66th Annual Symposium on Foundations of Computer Science",
+    "type": "conference"
+  },
+  "j206": {
+    "name": "arXiv (Cornell University)",
+    "type": "journal"
   }
 }
