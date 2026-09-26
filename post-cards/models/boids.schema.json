@@ -2,16 +2,15 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hat-im.github.io/post-cards/models/boids.schema.json",
   "title": "Postcards — Boids Background",
-  "description": "post-cards/data/background/boids.json. Tuning for the envelope-flocking animation behind the postcard stage. Shared/environmental mechanics (flocking phases, wind, force limits) live at the top level; each entry in categories owns its own visual/behavioral traits (which shapes it draws from boids-shapes.json, how fast/large/wobbly it is, its color) and a spawn weight (higher = more common). herd/scatter give the alignment/cohesion/separation/perception values the whole flock drifts between over phasePeriodMs. wind is an ambient steering target so the flock drifts like paper on a breeze rather than flying under its own power.",
+  "description": "post-cards/data/background/boids.json. Tuning for the envelope-flocking animation behind the postcard stage. Shared/environmental mechanics (wind, force limits) live at the top level; each entry in categories owns its own visual/behavioral traits (which shapes it draws from boids-shapes.json, how fast/large/wobbly it is, its color) and a spawn weight (higher = more common). herd/scatter give the alignment/cohesion/separation/perception/separationDistance values the whole flock drifts between over phasePeriodMs — scatter's separationDistance reaches out past herd's perception radius so a clump formed during herd actually gets pushed apart during scatter, instead of separation only ever acting at herd's tight anti-overlap range. wind is an ambient steering target so the flock drifts like paper on a breeze rather than flying under its own power.",
   "type": "object",
-  "required": ["flockSize", "shapeViewBox", "maxForce", "accelerationScale", "separationDistance", "phasePeriodMs", "herd", "scatter", "wind", "categories"],
+  "required": ["flockSize", "shapeViewBox", "maxForce", "accelerationScale", "phasePeriodMs", "herd", "scatter", "wind", "categories"],
   "additionalProperties": false,
   "properties": {
     "flockSize": { "type": "integer", "minimum": 1, "description": "Total boid count across all categories." },
     "shapeViewBox": { "type": "number", "exclusiveMinimum": 0, "description": "The square SVG viewBox size (e.g. 512) every shape in boids-shapes.json is authored against." },
     "maxForce": { "type": "number", "exclusiveMinimum": 0 },
     "accelerationScale": { "type": "number", "exclusiveMinimum": 0 },
-    "separationDistance": { "type": "number", "exclusiveMinimum": 0 },
     "phasePeriodMs": { "type": "number", "exclusiveMinimum": 0 },
     "herd": { "$ref": "#/$defs/phase" },
     "scatter": { "$ref": "#/$defs/phase" },
@@ -37,13 +36,14 @@
   "$defs": {
     "phase": {
       "type": "object",
-      "required": ["alignment", "cohesion", "separation", "perception"],
+      "required": ["alignment", "cohesion", "separation", "perception", "separationDistance"],
       "additionalProperties": false,
       "properties": {
         "alignment": { "type": "number", "minimum": 0 },
         "cohesion": { "type": "number", "minimum": 0 },
         "separation": { "type": "number", "minimum": 0 },
-        "perception": { "type": "number", "exclusiveMinimum": 0 }
+        "perception": { "type": "number", "exclusiveMinimum": 0 },
+        "separationDistance": { "type": "number", "exclusiveMinimum": 0, "description": "Radius within which separation actively repels neighbors while in this phase." }
       }
     },
     "category": {

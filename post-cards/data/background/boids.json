@@ -3,11 +3,10 @@
   "shapeViewBox": 512,
   "maxForce": 0.5,
   "accelerationScale": 0.22,
-  "separationDistance": 20,
-  "phasePeriodMs": 30000,
-  "herd": { "alignment": 0.3, "cohesion": 1.0, "separation": 3.2, "perception": 130 },
-  "scatter": { "alignment": 0.05, "cohesion": 0.1, "separation": 7.5, "perception": 55 },
-  "wind": { "angle": 0.15, "angleVariance": 0.35, "periodMs": 40000, "speed": 2.2, "weight": 2.5 },
+  "phasePeriodMs": 40000,
+  "herd": { "alignment": 0.3, "cohesion": 1.0, "separation": 3.2, "perception": 130, "separationDistance": 20 },
+  "scatter": { "alignment": 0.05, "cohesion": 0.1, "separation": 2.0, "perception": 55, "separationDistance": 140 },
+  "wind": { "angle": -0.1745, "angleVariance": 0.3491, "periodMs": 45030, "speed": 2.2, "weight": 2.5 },
   "categories": [
     {
       "id": "envelope",
