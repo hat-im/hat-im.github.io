@@ -37,9 +37,6 @@
     },
     "citationsSuffixTemplate": "{n} citations"
   },
-  "highlights": {
-    "staleTemplate": "In this pass {n}+ days"
-  },
   "collapsibleRow": {
     "seeMoreTemplate": "More {label}",
     "seeLessTemplate": "Fewer {label}",
