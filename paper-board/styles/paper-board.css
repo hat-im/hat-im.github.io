@@ -97,6 +97,7 @@ button.chip {
   border: 1px solid transparent;
   cursor: pointer;
   line-height: 1.3;
+  white-space: nowrap;
   transition: filter .1s ease, box-shadow .1s ease;
 }
 button.chip:hover { filter: brightness(0.96); }
@@ -249,20 +250,8 @@ select.sort-select:focus-visible { outline: 2px solid var(--accent); outline-off
 }
 .card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* Left-edge accent colour is set inline per card (venue type, or the
-   stale-warning status when applicable) — see buildCard() in app.js */
-
-.card-flag {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 10.5px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 999px;
-  margin-bottom: 8px;
-}
-.card-flag.flag-stale { background: #f7ecd9; color: #8a6423; }
+/* Left-edge accent colour is set inline per card (venue type) — see
+   buildCard() in app.js */
 
 .card-title { font-size: 13.5px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; overflow-wrap: break-word; }
 

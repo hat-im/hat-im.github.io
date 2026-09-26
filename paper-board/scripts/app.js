@@ -32,10 +32,8 @@
   // pass-3 (fully read). Column index === pass level.
   var PASS_COLUMNS = ['unread', 'pass-1', 'pass-2', 'pass-3'];
   var PASS_COLUMN_LEVEL = { unread: 0, 'pass-1': 1, 'pass-2': 2, 'pass-3': 3 };
-  var STALE_MS = 14 * 24 * 60 * 60 * 1000;
 
   function clone(x) { return JSON.parse(JSON.stringify(x)); }
-  function nowISO() { return new Date().toISOString(); }
 
   function fmt(template, vars) {
     return template.replace(/\{(\w+)\}/g, function (_, key) { return vars[key]; });
@@ -73,10 +71,6 @@
         if ('status' in p) {
           if (typeof p.pass !== 'number') p.pass = (p.status === 'read') ? 3 : 0;
           delete p.status;
-          dirty = true;
-        }
-        if (!p.passEnteredAt) {
-          p.passEnteredAt = p.added || nowISO();
           dirty = true;
         }
       });
@@ -217,18 +211,6 @@
   function columnForPaper(paper) {
     var lvl = Math.max(0, Math.min(3, passLevel(paper)));
     return PASS_COLUMNS[lvl];
-  }
-
-  function isStale(paper) {
-    var lvl = passLevel(paper);
-    if (lvl >= 3) return false;
-    var since = paper.passEnteredAt ? new Date(paper.passEnteredAt).getTime() : 0;
-    return since > 0 && Date.now() - since > STALE_MS;
-  }
-
-  function daysSince(iso) {
-    if (!iso) return 0;
-    return Math.floor((Date.now() - new Date(iso).getTime()) / (24 * 60 * 60 * 1000));
   }
 
   function matchesSearch(paper, term) {
@@ -483,19 +465,15 @@
     preprint: '#8b62b0',
     report: '#b8933f'
   };
-  var STALE_COLOR = '#b8863a';
 
   function buildCard(paper) {
     var card = document.createElement('div');
-    var stale = isStale(paper);
-    card.className = 'card' + (stale ? ' card-stale' : '');
+    card.className = 'card';
     card.setAttribute('draggable', 'true');
     card.setAttribute('tabindex', '0');
     card.dataset.id = paper.id;
 
-    // Left-edge accent: the stale warning takes priority over the paper's
-    // venue-type colour when both would apply.
-    var accentColor = stale ? STALE_COLOR : VENUE_TYPE_COLOR[paper.journalType];
+    var accentColor = VENUE_TYPE_COLOR[paper.journalType];
     if (accentColor) card.style.borderLeftColor = accentColor;
 
     var title = document.createElement('div');
@@ -513,13 +491,6 @@
       meta.className = 'card-meta';
       meta.textContent = metaBits.join(' · ');
       card.appendChild(meta);
-    }
-
-    if (stale) {
-      var flag = document.createElement('span');
-      flag.className = 'card-flag flag-stale';
-      flag.textContent = fmt(STR.highlights.staleTemplate, { n: daysSince(paper.passEnteredAt) });
-      card.appendChild(flag);
     }
 
     var kwWrap = document.createElement('div');
@@ -635,15 +606,13 @@
     });
   }
 
-  // Sets a paper's pass level (0-3) and bumps passEnteredAt so stale
-  // highlighting resets from the moment it last changed.
+  // Sets a paper's pass level (0-3).
   function setPass(id, level) {
     var paper = state.papers.find(function (p) { return p.id === id; });
     if (!paper) return;
     var prev = passLevel(paper);
     if (prev === level) return;
     paper.pass = level;
-    paper.passEnteredAt = nowISO();
     saveState();
     renderAll();
   }
@@ -849,7 +818,6 @@
         journalType: p.journalId ? journals[p.journalId].type : '',
         keywords: p.keywordIds.map(function (id) { return keywords[id].label; }),
         pass: 0,
-        passEnteredAt: p.added || nowISO(),
         citations: p.citations,
         added: p.added
       };
