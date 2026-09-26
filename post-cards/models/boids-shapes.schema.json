@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hat-im.github.io/post-cards/models/boids-shapes.schema.json",
+  "title": "Postcards — Boids Shape Library",
+  "description": "post-cards/data/background/boids-shapes.json. Pure SVG geometry for the boids background: id -> an SVG path 'd' attribute (authored against boids.json's shapeViewBox), drawn via Path2D. Carries no behavior/weight/color — categories in boids.json reference these ids and own that tuning.",
+  "type": "object",
+  "required": ["shapes"],
+  "additionalProperties": false,
+  "properties": {
+    "shapes": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z0-9-]+$" },
+      "additionalProperties": { "type": "string", "minLength": 1 }
+    }
+  }
+}
