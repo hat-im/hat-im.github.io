@@ -213,20 +213,83 @@
     return PASS_COLUMNS[lvl];
   }
 
-  function matchesSearch(paper, term) {
-    if (!term) return true;
-    var hay = [
-      paper.title,
-      paper.authors.join(' '),
-      paper.journal,
-      paper.keywords.join(' ')
-    ].join(' ').toLowerCase();
-    return hay.indexOf(term.toLowerCase()) !== -1;
+  // ---------- Search query language ----------
+  //
+  // Bare words AND together (implicit AND). "OR" (its own token, case-
+  // insensitive) starts a new alternative — the query matches a paper if
+  // ANY of its OR-separated groups fully matches (every term in that group).
+  // "AND" between terms is accepted as a no-op filler, since AND is already
+  // the default. A term may be scoped to one field with "field:value"
+  // (keyword/author/venue/journal/title; quote the value if it has spaces),
+  // and negated with a leading "-" to exclude matches.
+  // Examples: `keyword:fault-tolerance author:"Van Den Berg" -keyword:survey`
+  //           `quantum OR chemistry`
+
+  var SEARCH_FIELDS = {
+    keyword: 'keywords', keywords: 'keywords', kw: 'keywords',
+    author: 'authors', authors: 'authors',
+    venue: 'journal', venues: 'journal', journal: 'journal',
+    title: 'title'
+  };
+
+  function tokenizeQuery(raw) {
+    return raw.match(/(?:[A-Za-z_-]+:)?"[^"]*"|\S+/g) || [];
+  }
+
+  function parseSearchTerm(token) {
+    var negate = false;
+    if (token[0] === '-' && token.length > 1) {
+      negate = true;
+      token = token.slice(1);
+    }
+    var field = null;
+    var m = /^([A-Za-z_-]+):(.*)$/.exec(token);
+    if (m && SEARCH_FIELDS[m[1].toLowerCase()]) {
+      field = SEARCH_FIELDS[m[1].toLowerCase()];
+      token = m[2];
+    }
+    if (token.length >= 2 && token[0] === '"' && token[token.length - 1] === '"') {
+      token = token.slice(1, -1);
+    }
+    return { field: field, value: token.toLowerCase(), negate: negate };
+  }
+
+  // Returns an array of OR-groups, each an array of terms AND'd together.
+  function parseSearchQuery(raw) {
+    var groups = [[]];
+    tokenizeQuery(raw || '').forEach(function (tok) {
+      if (/^or$/i.test(tok)) { groups.push([]); return; }
+      if (/^and$/i.test(tok)) return;
+      groups[groups.length - 1].push(parseSearchTerm(tok));
+    });
+    return groups.filter(function (g) { return g.length > 0; });
+  }
+
+  function paperFieldText(paper, field) {
+    if (field === 'keywords') return paper.keywords.join(' ');
+    if (field === 'authors') return paper.authors.join(' ');
+    if (field === 'journal') return paper.journal || '';
+    if (field === 'title') return paper.title || '';
+    return [paper.title, paper.authors.join(' '), paper.journal, paper.keywords.join(' ')].join(' ');
+  }
+
+  function termMatches(paper, term) {
+    var hay = paperFieldText(paper, term.field).toLowerCase();
+    var found = term.value === '' || hay.indexOf(term.value) !== -1;
+    return term.negate ? !found : found;
+  }
+
+  function matchesSearch(paper, query) {
+    if (query.length === 0) return true;
+    return query.some(function (terms) {
+      return terms.every(function (t) { return termMatches(paper, t); });
+    });
   }
 
   function visiblePapers() {
+    var query = parseSearchQuery(state.searchTerm);
     return state.papers.filter(function (p) {
-      if (!matchesSearch(p, state.searchTerm)) return false;
+      if (!matchesSearch(p, query)) return false;
       if (state.activeKeywords.size > 0) {
         var hasKw = p.keywords.some(function (k) { return state.activeKeywords.has(k); });
         if (!hasKw) return false;
