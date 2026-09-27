@@ -11,7 +11,6 @@
   var FANCY_SHAPES = [];
   var SEAL_COPY = {};
   var STAMPS = [];
-  var ANGLES = [];
   var LETTER_ANGLES = [];
 
   var Assets = {
@@ -25,7 +24,6 @@
     FANCY_SHAPES: FANCY_SHAPES,
     SEAL_COPY: SEAL_COPY,
     STAMPS: STAMPS,
-    ANGLES: ANGLES,
     LETTER_ANGLES: LETTER_ANGLES,
     SEAL_ROTATION_RAD: 0,
     STICKER_ROTATION_RAD: 0,
@@ -86,7 +84,6 @@
       fillFrom(SEALS, r[5].types);
       fillFrom(FANCY_SHAPES, r[6].shapes);
       fillObject(SEAL_COPY, r[7]);
-      fillFrom(ANGLES, r[8].degrees);
       fillFrom(LETTER_ANGLES, r[8].letterDegrees);
       Assets.INK = r[9].ink;
       Assets.BARCODE_INK = r[9].barcodeInk;

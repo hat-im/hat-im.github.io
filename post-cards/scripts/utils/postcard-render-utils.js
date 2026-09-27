@@ -3,6 +3,7 @@
 
   var hashSeed = window.HashUtils.hashSeed;
   var pick = window.HashUtils.pick;
+  var pickByModulo = window.HashUtils.pickByModulo;
   var shuffledIndices = window.HashUtils.shuffledIndices;
 
   function darken(hex, amount) {
@@ -18,11 +19,15 @@
     return window.PostcardAssets.PALETTE_NAMES[nameOrHex] || nameOrHex;
   }
 
+  function pickRotationDeg(seed) {
+    return pickByModulo(seed, window.PostcardAssets.LETTER_ANGLES);
+  }
+
   function pickCardStyle(data) {
     var Config = window.PostcardConfig;
     var seed = (data && data.date) || (data && data.id) || Math.random();
     var rng = hashSeed(seed);
-    var rotationDeg = pick(rng, window.PostcardAssets.ANGLES);
+    var rotationDeg = pickRotationDeg(seed);
     var color = (data && data.color) ? resolveColor(data.color) : pick(rng, window.PostcardAssets.PALETTE);
     var offsetY = rng() * Config.GHOST_STACK_MAX_OFFSET;
     return { color: color, rotationDeg: rotationDeg, borderColor: darken(color, Config.CARD_BORDER_DARKEN), offsetY: offsetY };
@@ -183,6 +188,7 @@
   window.PostcardRenderUtils = {
     darken: darken,
     resolveColor: resolveColor,
+    pickRotationDeg: pickRotationDeg,
     pickCardStyle: pickCardStyle,
     pickStampIndex: pickStampIndex,
     roundRectPath: roundRectPath,

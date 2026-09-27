@@ -8,7 +8,6 @@
   var Stickers = window.PostcardStickers;
   var hashSeed = window.HashUtils.hashSeed;
   var pick = window.HashUtils.pick;
-  var pickByModulo = window.HashUtils.pickByModulo;
   var shuffledIndices = window.HashUtils.shuffledIndices;
   var PostcardRenderer = window.PostcardEngine.PostcardRenderer;
 
@@ -21,7 +20,7 @@
     // a caller (e.g. a "shuffle" control) override that with a fresh look on demand
     var seed = (data && data.seed) || (data && data.date) || (data && data.id) || Math.random();
     var rng = hashSeed(seed);
-    this._rotation = pickByModulo(seed, Assets.LETTER_ANGLES) * Math.PI / 180;
+    this._rotation = Utils.pickRotationDeg(seed) * Math.PI / 180;
 
     if (!data || !data.color) {
       this.data.color = pick(rng, Assets.PALETTE);
