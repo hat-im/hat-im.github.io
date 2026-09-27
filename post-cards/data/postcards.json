@@ -7,7 +7,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Inside IISc",
-      "color": "stone",
+      "color": "sage-mist",
       "subject": "Idyll & Imaginings",
       "media": {
         "type": "video",
@@ -39,7 +39,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Downpours in Bangalore",
-      "color": "seafoam",
+      "color": "mint",
       "subject": "Rainy Rumination",
       "media": {
         "type": "video",
@@ -242,15 +242,19 @@
     },
     {
       "id": "postcard-16",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-09-27",
       "from": "Hat",
       "to": "Sam",
-      "location": "",
-      "color": "",
-      "subject": "",
-      "message": "",
-      "postscript": ""
+      "location": "Under the Weather",
+      "color": "sky-blue",
+      "subject": "Papers & Patience",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-16.mp4"
+      },
+      "message": "Hi,\nFeeling quite unwell today. Trying to write a paper with the working group though, and it's interesting work despite everything.\nI hope you had a good weekend, and that getting back to work isn't too overwhelming. Hope your week starts, ends, and everything-in-betweens well.",
+      "postscript": "Hilbert's supervising the paper too."
     }
   ]
 }
