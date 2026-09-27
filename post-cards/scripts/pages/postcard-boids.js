@@ -59,7 +59,7 @@
         shade: 1 + depth * category.colorAlphaVariance,
         speedScale: 1 + depth * category.depthSpeedVariance,
         sizeScale: 1 + depth * category.depthSizeVariance + (Math.random() * 2 - 1) * category.sizeJitter,
-        spawnTime: startTime + (order[j] / C.flockSize) * (C.phasePeriodSec * 1000)
+        spawnTime: startTime + (order[j] / C.flockSize) * (C.spawnDurationSec * 1000)
       });
     }
   }
