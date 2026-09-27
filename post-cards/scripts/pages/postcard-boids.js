@@ -59,7 +59,7 @@
         shade: 1 + depth * category.colorAlphaVariance,
         speedScale: 1 + depth * category.depthSpeedVariance,
         sizeScale: 1 + depth * category.depthSizeVariance + (Math.random() * 2 - 1) * category.sizeJitter,
-        spawnTime: startTime + (order[j] / C.flockSize) * C.phasePeriodMs
+        spawnTime: startTime + (order[j] / C.flockSize) * (C.phasePeriodSec * 1000)
       });
     }
   }
@@ -97,13 +97,13 @@
   }
 
   function windVector(now) {
-    var wander = Math.sin((2 * Math.PI * (now - startTime)) / C.wind.periodMs) * C.wind.angleVariance;
+    var wander = Math.sin((2 * Math.PI * (now - startTime)) / (C.wind.periodSec * 1000)) * C.wind.angleVariance;
     var angle = C.wind.angle + wander;
     return { x: Math.cos(angle) * C.wind.speed, y: Math.sin(angle) * C.wind.speed };
   }
 
   function herdPhaseFactor(now) {
-    return (Math.sin((2 * Math.PI * (now - startTime)) / C.phasePeriodMs) + 1) / 2;
+    return (Math.sin((2 * Math.PI * (now - startTime)) / (C.phasePeriodSec * 1000)) + 1) / 2;
   }
 
   function currentParams(now) {
