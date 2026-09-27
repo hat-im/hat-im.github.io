@@ -2,12 +2,16 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hat-im.github.io/post-cards/models/angles.schema.json",
   "title": "Postcards — Angles",
-  "description": "post-cards/data/theme/angles.json. Candidate card-tilt angles (degrees); one is picked per postcard by its seeded RNG.",
+  "description": "post-cards/data/theme/angles.json. degrees are candidate ghost-stack card-tilt angles; one is picked per postcard by its seeded RNG. letterDegrees is a separate, finer-grained candidate list for the letter's own tilt, picked the same way (seeded by date) — more candidates than degrees so collisions between postcards are rare in practice.",
   "type": "object",
-  "required": ["degrees"],
+  "required": ["degrees", "letterDegrees"],
   "additionalProperties": false,
   "properties": {
     "degrees": {
+      "type": "array",
+      "items": { "type": "number" }
+    },
+    "letterDegrees": {
       "type": "array",
       "items": { "type": "number" }
     }

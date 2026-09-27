@@ -20,7 +20,7 @@
     // a caller (e.g. a "shuffle" control) override that with a fresh look on demand
     var seed = (data && data.seed) || (data && data.date) || (data && data.id) || Math.random();
     var rng = hashSeed(seed);
-    this._rotation = pick(rng, Assets.ANGLES) * Math.PI / 180;
+    this._rotation = pick(rng, Assets.LETTER_ANGLES) * Math.PI / 180;
 
     if (!data || !data.color) {
       this.data.color = pick(rng, Assets.PALETTE);
