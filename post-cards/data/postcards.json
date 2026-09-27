@@ -239,6 +239,18 @@
       },
       "message": "Hi,\nI'm not sure if you're departing London or arriving in Bangalore today. I hope you had (or will have, or are having) a safe flight, and the flight brought (or brings or is bringing) some rest, reading, or relaxation.\nI hope you get enough time to breathe and re-align your internal clock and self before the daily battles of work begin on Monday, and that the rest of your weekend goes well.\nAlso, if you get some downtime, I think you'd like the movie Resident Evil.",
       "postscript": "Hilbert sends purrs, mid-nap."
+    },
+    {
+      "id": "postcard-16",
+      "enabled": false,
+      "date": "2026-09-27",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "color": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
