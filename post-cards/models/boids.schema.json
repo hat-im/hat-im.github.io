@@ -11,7 +11,7 @@
     "shapeViewBox": { "type": "number", "exclusiveMinimum": 0, "description": "The square SVG viewBox size (e.g. 512) every shape in boids-shapes.json is authored against." },
     "maxForce": { "type": "number", "exclusiveMinimum": 0 },
     "accelerationScale": { "type": "number", "exclusiveMinimum": 0 },
-    "phasePeriodSec": { "type": "number", "exclusiveMinimum": 0, "description": "Time for one full herd/scatter cycle, in seconds." },
+    "phasePeriodSec": { "type": "number", "exclusiveMinimum": 0, "description": "Time for one full herd/scatter cycle, in seconds. Multiply it by wind.periodSec before assuming it's an arbitrary number." },
     "herd": { "$ref": "#/$defs/phase" },
     "scatter": { "$ref": "#/$defs/phase" },
     "wind": {
@@ -22,7 +22,7 @@
       "properties": {
         "angle": { "type": "number", "description": "Base direction in radians (0 = rightward, increasing clockwise)." },
         "angleVariance": { "type": "number", "minimum": 0, "description": "Radians the wind direction wanders either side of angle." },
-        "periodSec": { "type": "number", "exclusiveMinimum": 0, "description": "Time for one full wander cycle, in seconds." },
+        "periodSec": { "type": "number", "exclusiveMinimum": 0, "description": "Time for one full wander cycle, in seconds. Its product with phasePeriodSec is worth a second look." },
         "speed": { "type": "number", "exclusiveMinimum": 0 },
         "weight": { "type": "number", "minimum": 0, "description": "Steering weight toward the wind vector." }
       }
