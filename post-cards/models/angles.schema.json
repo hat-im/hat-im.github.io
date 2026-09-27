@@ -4,12 +4,16 @@
   "title": "Postcards — Angles",
   "description": "post-cards/data/theme/angles.json. letterDegrees is the candidate tilt list for a postcard, indexed directly by date-hash modulo its length (HashUtils.pickByModulo) — shared by the letter's own tilt and its ghost-stack card, so both always agree. Its order is deliberately shuffled (not sorted) so that modulo picking doesn't cluster nearby dates on nearby angles.",
   "type": "object",
-  "required": ["letterDegrees"],
+  "required": [
+    "letterDegrees"
+  ],
   "additionalProperties": false,
   "properties": {
     "letterDegrees": {
       "type": "array",
-      "items": { "type": "number" }
+      "items": {
+        "type": "number"
+      }
     }
   }
 }

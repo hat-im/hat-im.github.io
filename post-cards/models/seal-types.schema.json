@@ -4,12 +4,16 @@
   "title": "Postcards — Seal Types",
   "description": "post-cards/data/seals/seal-types.json. The postmark/cancellation-mark styles PostcardSeals.drawSeal knows how to render; two are picked per postcard by its seeded RNG.",
   "type": "object",
-  "required": ["types"],
+  "required": [
+    "types"
+  ],
   "additionalProperties": false,
   "properties": {
     "types": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Each entry must be a seal type implemented in postcard-seals.js (e.g. cds, wavyLines, sloganCancel, ...)."
     }
   }

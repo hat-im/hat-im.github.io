@@ -4,12 +4,17 @@
   "title": "Postcards — Stamps",
   "description": "post-cards/data/stamps/stamps.json. Postage-stamp images preloaded at startup; one is assigned to each postcard via pickStampIndex, avoiding repeats between consecutive postcards.",
   "type": "object",
-  "required": ["images"],
+  "required": [
+    "images"
+  ],
   "additionalProperties": false,
   "properties": {
     "images": {
       "type": "array",
-      "items": { "type": "string", "minLength": 1 }
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     }
   }
 }

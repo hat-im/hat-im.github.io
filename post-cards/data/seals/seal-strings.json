@@ -1,5 +1,10 @@
 {
-  "cities": ["LONDON", "BANGALORE", "VIZAG", "BOMBAY"],
+  "cities": [
+    "LONDON",
+    "BANGALORE",
+    "VIZAG",
+    "BOMBAY"
+  ],
   "sloganCancels": [
     "LONDON TO BANGALORE",
     "LONDON TO VIZAG",
@@ -20,11 +25,58 @@
     "MISS YOU ALREADY"
   ],
   "permitPrefix": "HS",
-  "permitNumbers": [181, 2121, 1801, 721],
-  "parsMessages": ["FORWARDING TO: LONDON", "FORWARDING TO: BANGALORE", "REDIRECTED TO SAM"],
-  "nixieReasons": ["ATTEMPTED — SAM NOT HOME", "RETURN TO SENDER"],
+  "permitNumbers": [
+    181,
+    2121,
+    1801,
+    721
+  ],
+  "parsMessages": [
+    "FORWARDING TO: LONDON",
+    "FORWARDING TO: BANGALORE",
+    "REDIRECTED TO SAM"
+  ],
+  "nixieReasons": [
+    "ATTEMPTED — SAM NOT HOME",
+    "RETURN TO SENDER"
+  ],
   "ibiCaption": "H to S",
   "trackingPrefix": "HSLDNBLR",
-  "morseTokens": ["dot", "dot", "wordGap", "dot", "dash", "dot", "dot", "letterGap", "dash", "dash", "dash", "letterGap", "dot", "dot", "dot", "dash", "letterGap", "dot", "wordGap", "dash", "dot", "dash", "dash", "letterGap", "dash", "dash", "dash", "letterGap", "dot", "dot", "dash"],
-  "serviceRequestedOptions": ["COMPANY REQUESTED", "MISSED"]
+  "morseTokens": [
+    "dot",
+    "dot",
+    "wordGap",
+    "dot",
+    "dash",
+    "dot",
+    "dot",
+    "letterGap",
+    "dash",
+    "dash",
+    "dash",
+    "letterGap",
+    "dot",
+    "dot",
+    "dot",
+    "dash",
+    "letterGap",
+    "dot",
+    "wordGap",
+    "dash",
+    "dot",
+    "dash",
+    "dash",
+    "letterGap",
+    "dash",
+    "dash",
+    "dash",
+    "letterGap",
+    "dot",
+    "dot",
+    "dash"
+  ],
+  "serviceRequestedOptions": [
+    "COMPANY REQUESTED",
+    "MISSED"
+  ]
 }

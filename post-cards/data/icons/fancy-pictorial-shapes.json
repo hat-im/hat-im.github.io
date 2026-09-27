@@ -1,3 +1,9 @@
 {
-  "shapes": ["star", "club", "crosshatch", "heart", "cat"]
+  "shapes": [
+    "star",
+    "club",
+    "crosshatch",
+    "heart",
+    "cat"
+  ]
 }

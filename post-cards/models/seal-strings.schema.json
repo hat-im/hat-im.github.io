@@ -6,15 +6,70 @@
   "type": "object",
   "additionalProperties": false,
   "properties": {
-    "cities": { "type": "array", "items": { "type": "string" }, "description": "Used by the cds seal type." },
-    "sloganCancels": { "type": "array", "items": { "type": "string" }, "description": "Used by the sloganCancel seal type." },
-    "permitPrefix": { "type": "string" },
-    "permitNumbers": { "type": "array", "items": { "type": "integer" }, "description": "Used with permitPrefix by the permitIndicia seal type." },
-    "parsMessages": { "type": "array", "items": { "type": "string" }, "description": "Used by the parsSticker seal type." },
-    "nixieReasons": { "type": "array", "items": { "type": "string" }, "description": "Used by the nixieLabel seal type." },
-    "ibiCaption": { "type": "string", "description": "Used by the ibi2d seal type." },
-    "trackingPrefix": { "type": "string", "description": "Used by the trackingBarcode seal type." },
-    "morseTokens": { "type": "array", "items": { "enum": ["dot", "dash", "letterGap", "wordGap"] }, "description": "Precomputed token sequence for the trackingBarcode seal type (dot/dash marks plus gaps)." },
-    "serviceRequestedOptions": { "type": "array", "items": { "type": "string" }, "description": "Used by the serviceRequested seal type." }
+    "cities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Used by the cds seal type."
+    },
+    "sloganCancels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Used by the sloganCancel seal type."
+    },
+    "permitPrefix": {
+      "type": "string"
+    },
+    "permitNumbers": {
+      "type": "array",
+      "items": {
+        "type": "integer"
+      },
+      "description": "Used with permitPrefix by the permitIndicia seal type."
+    },
+    "parsMessages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Used by the parsSticker seal type."
+    },
+    "nixieReasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Used by the nixieLabel seal type."
+    },
+    "ibiCaption": {
+      "type": "string",
+      "description": "Used by the ibi2d seal type."
+    },
+    "trackingPrefix": {
+      "type": "string",
+      "description": "Used by the trackingBarcode seal type."
+    },
+    "morseTokens": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "dot",
+          "dash",
+          "letterGap",
+          "wordGap"
+        ]
+      },
+      "description": "Precomputed token sequence for the trackingBarcode seal type (dot/dash marks plus gaps)."
+    },
+    "serviceRequestedOptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Used by the serviceRequested seal type."
+    }
   }
 }

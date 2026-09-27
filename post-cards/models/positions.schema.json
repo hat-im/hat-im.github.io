@@ -4,18 +4,31 @@
   "title": "Postcards — Positions",
   "description": "post-cards/data/layout/positions.json. Candidate seal/sticker anchor points, as fractions (0-1) of the card width/height. Sticker placement filters these against layoutTextZones()'s occupied rects at render time; seals are placed unconstrained.",
   "type": "object",
-  "required": ["positions"],
+  "required": [
+    "positions"
+  ],
   "additionalProperties": false,
   "properties": {
     "positions": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["x", "y"],
+        "required": [
+          "x",
+          "y"
+        ],
         "additionalProperties": false,
         "properties": {
-          "x": { "type": "number", "minimum": 0, "maximum": 1 },
-          "y": { "type": "number", "minimum": 0, "maximum": 1 }
+          "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
         }
       }
     }
