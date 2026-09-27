@@ -3,7 +3,7 @@
 
   var CARD_W = 1060;
   var CARD_H = 615;
-  var MARGIN = 115;
+  var MARGIN = 140;
   var PAD = 32;
   var CANVAS_W = CARD_W + MARGIN * 2;
   var CANVAS_H = CARD_H + MARGIN * 2;
