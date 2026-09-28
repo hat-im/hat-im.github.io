@@ -255,6 +255,21 @@
       },
       "message": "Hi,\nFeeling quite unwell today, this is just the room I wake up in these days. Trying to write a paper with the working group about the language we use to compare quantum algorithms. Interesting work.\nI hope you had a good weekend, and that getting back to work isn't too overwhelming. Hope your week starts, ends, and everything-in-betweens well.",
       "postscript": "Has your PR made any progress since you left?"
+    },
+    {
+      "id": "postcard-17",
+      "enabled": false,
+      "date": "2026-09-28",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Wasp Watch",
+      "subject": "Wasps & Worries",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-17.mp4"
+      },
+      "message": "Hey,\nWasp on one side of my window, bee on the other. Not sure which side is worse today.\nI wonder how your first day back in Bangalore is going. I doubt you wouldn't have sat in on at least a few meetings from London already, but still, a first day back can be overwhelming, and I hope you're letting yourself acclimate. I wonder if the trip helped with the burnout you'd been feeling before.\nHope you're having a good day.",
+      "postscript": "The wasp just disappeared. Scarier."
     }
   ]
 }
