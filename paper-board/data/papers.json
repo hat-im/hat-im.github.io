@@ -13577,7 +13577,10 @@
       ],
       "date": "2025-11",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance", "benchmarking"],
+      "keywordIds": [
+        "fault-tolerance",
+        "benchmarking"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13595,7 +13598,11 @@
       ],
       "date": "2025-11",
       "journalId": "j64",
-      "keywordIds": ["fault-tolerance", "neutral-atom-qubits", "architecture"],
+      "keywordIds": [
+        "fault-tolerance",
+        "neutral-atom-qubits",
+        "architecture"
+      ],
       "citations": 54,
       "added": "2026-09-26"
     },
@@ -13613,7 +13620,9 @@
       ],
       "date": "2025-09",
       "journalId": "j64",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 29,
       "added": "2026-09-26"
     },
@@ -13631,7 +13640,11 @@
       ],
       "date": "2026-02",
       "journalId": "j98",
-      "keywordIds": ["quantum-cryptanalysis", "fault-tolerance", "architecture"],
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "fault-tolerance",
+        "architecture"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -13647,7 +13660,9 @@
       ],
       "date": "2025-10",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13665,7 +13680,10 @@
       ],
       "date": "2026-04",
       "journalId": "j69",
-      "keywordIds": ["fault-tolerance", "architecture"],
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13680,7 +13698,9 @@
       ],
       "date": "2024-09",
       "journalId": "j28",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 5,
       "added": "2026-09-26"
     },
@@ -13696,7 +13716,9 @@
       ],
       "date": "2025-05",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13711,7 +13733,9 @@
       ],
       "date": "2024-09",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 6,
       "added": "2026-09-26"
     },
@@ -13725,7 +13749,9 @@
       ],
       "date": "2025-08",
       "journalId": "j28",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 4,
       "added": "2026-09-26"
     },
@@ -13743,7 +13769,11 @@
       ],
       "date": "2024-08",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance", "compilation", "architecture"],
+      "keywordIds": [
+        "fault-tolerance",
+        "compilation",
+        "architecture"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -13756,7 +13786,9 @@
       ],
       "date": "2019-12",
       "journalId": "j73",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 216,
       "added": "2026-09-26"
     },
@@ -13774,7 +13806,9 @@
       ],
       "date": "2025-09",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13789,7 +13823,9 @@
       ],
       "date": "2026-03",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13807,7 +13843,9 @@
       ],
       "date": "2026-04",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13820,7 +13858,9 @@
       ],
       "date": "2025-09",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13836,7 +13876,9 @@
       ],
       "date": "2026-02",
       "journalId": "j101",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13854,7 +13896,10 @@
       ],
       "date": "2025-06",
       "journalId": "j202",
-      "keywordIds": ["fault-tolerance", "neutral-atom-qubits"],
+      "keywordIds": [
+        "fault-tolerance",
+        "neutral-atom-qubits"
+      ],
       "citations": 7,
       "added": "2026-09-26"
     },
@@ -13868,7 +13913,9 @@
       ],
       "date": "2025-04",
       "journalId": "j121",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 8,
       "added": "2026-09-26"
     },
@@ -13886,7 +13933,9 @@
       ],
       "date": "2025-05",
       "journalId": "j64",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 49,
       "added": "2026-09-26"
     },
@@ -13904,7 +13953,9 @@
       ],
       "date": "2025-10",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13922,7 +13973,9 @@
       ],
       "date": "2025-05",
       "journalId": "j131",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 14,
       "added": "2026-09-26"
     },
@@ -13938,7 +13991,10 @@
       ],
       "date": "2024-12",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance", "neutral-atom-qubits"],
+      "keywordIds": [
+        "fault-tolerance",
+        "neutral-atom-qubits"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13953,7 +14009,9 @@
       ],
       "date": "2026-06",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -13968,7 +14026,9 @@
       ],
       "date": "2024-07",
       "journalId": "j77",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 6,
       "added": "2026-09-26"
     },
@@ -13984,7 +14044,9 @@
       ],
       "date": "2025-05",
       "journalId": "j69",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 19,
       "added": "2026-09-26"
     },
@@ -14000,7 +14062,9 @@
       ],
       "date": "2025-03",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14016,7 +14080,10 @@
       ],
       "date": "2025-03",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance", "architecture"],
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -14029,7 +14096,9 @@
       ],
       "date": "2025-11",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14044,7 +14113,9 @@
       ],
       "date": "2026-03",
       "journalId": "j69",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14062,7 +14133,9 @@
       ],
       "date": "2026-03",
       "journalId": "j131",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14075,7 +14148,9 @@
       ],
       "date": "2025-01",
       "journalId": "j121",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -14092,7 +14167,9 @@
       ],
       "date": "2025-05",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14110,7 +14187,9 @@
       ],
       "date": "2025-05",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14125,7 +14204,9 @@
       ],
       "date": "2026-06",
       "journalId": "j73",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14139,7 +14220,9 @@
       ],
       "date": "2025-05",
       "journalId": "j117",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14156,7 +14239,9 @@
       ],
       "date": "2025-05",
       "journalId": "j69",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 14,
       "added": "2026-09-26"
     },
@@ -14172,7 +14257,9 @@
       ],
       "date": "2026-05",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14190,7 +14277,9 @@
       ],
       "date": "2025-11",
       "journalId": "j98",
-      "keywordIds": ["applications"],
+      "keywordIds": [
+        "applications"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14206,7 +14295,9 @@
       ],
       "date": "2025-10",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14224,7 +14315,9 @@
       ],
       "date": "2025-12",
       "journalId": "j11",
-      "keywordIds": ["neutral-atom-qubits"],
+      "keywordIds": [
+        "neutral-atom-qubits"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14240,7 +14333,9 @@
       ],
       "date": "2025-08",
       "journalId": "j98",
-      "keywordIds": ["applications"],
+      "keywordIds": [
+        "applications"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14258,7 +14353,10 @@
       ],
       "date": "2025-05",
       "journalId": "j203",
-      "keywordIds": ["quantum-chemistry", "survey"],
+      "keywordIds": [
+        "quantum-chemistry",
+        "survey"
+      ],
       "citations": 18,
       "added": "2026-09-26"
     },
@@ -14276,7 +14374,9 @@
       ],
       "date": "2025-08",
       "journalId": "j60",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 7,
       "added": "2026-09-26"
     },
@@ -14294,7 +14394,9 @@
       ],
       "date": "2025-04",
       "journalId": "j101",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 18,
       "added": "2026-09-26"
     },
@@ -14308,7 +14410,9 @@
       ],
       "date": "2025-10",
       "journalId": "j98",
-      "keywordIds": ["applications"],
+      "keywordIds": [
+        "applications"
+      ],
       "citations": 3,
       "added": "2026-09-26"
     },
@@ -14322,7 +14426,9 @@
       ],
       "date": "2025-08",
       "journalId": "j98",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14340,7 +14446,9 @@
       ],
       "date": "2024-03",
       "journalId": "j130",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 128,
       "added": "2026-09-26"
     },
@@ -14358,7 +14466,10 @@
       ],
       "date": "2025-08",
       "journalId": "j28",
-      "keywordIds": ["fault-tolerance", "neutral-atom-qubits"],
+      "keywordIds": [
+        "fault-tolerance",
+        "neutral-atom-qubits"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -14376,7 +14487,9 @@
       ],
       "date": "2025-09",
       "journalId": "j131",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 10,
       "added": "2026-09-26"
     },
@@ -14394,7 +14507,9 @@
       ],
       "date": "2024-12",
       "journalId": "j103",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 34,
       "added": "2026-09-26"
     },
@@ -14408,7 +14523,10 @@
       ],
       "date": "2025-12",
       "journalId": "j98",
-      "keywordIds": ["benchmarking", "applications"],
+      "keywordIds": [
+        "benchmarking",
+        "applications"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14424,7 +14542,9 @@
       ],
       "date": "2026-01",
       "journalId": "j82",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14439,7 +14559,11 @@
       ],
       "date": "2022-07",
       "journalId": "j73",
-      "keywordIds": ["quantum-chemistry", "benchmarking", "quantum-algorithms"],
+      "keywordIds": [
+        "quantum-chemistry",
+        "benchmarking",
+        "quantum-algorithms"
+      ],
       "citations": 9,
       "added": "2026-09-26"
     },
@@ -14455,7 +14579,9 @@
       ],
       "date": "2025-06",
       "journalId": "j98",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14470,7 +14596,9 @@
       ],
       "date": "2025-05",
       "journalId": "j98",
-      "keywordIds": ["applications"],
+      "keywordIds": [
+        "applications"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14488,7 +14616,9 @@
       ],
       "date": "2024-09",
       "journalId": "j98",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 4,
       "added": "2026-09-26"
     },
@@ -14506,7 +14636,10 @@
       ],
       "date": "2025-07",
       "journalId": "j69",
-      "keywordIds": ["fault-tolerance", "quantum-chemistry"],
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -14524,7 +14657,9 @@
       ],
       "date": "2025-03",
       "journalId": "j98",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14539,7 +14674,9 @@
       ],
       "date": "2025-12",
       "journalId": "j65",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14552,7 +14689,9 @@
       ],
       "date": "2025-05",
       "journalId": "j98",
-      "keywordIds": ["quantum-cryptanalysis"],
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
       "citations": 5,
       "added": "2026-09-26"
     },
@@ -14567,7 +14706,9 @@
       ],
       "date": "2025-05",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14582,7 +14723,10 @@
       ],
       "date": "2024-06",
       "journalId": "j73",
-      "keywordIds": ["fault-tolerance", "quantum-algorithms"],
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-algorithms"
+      ],
       "citations": 56,
       "added": "2026-09-26"
     },
@@ -14595,7 +14739,9 @@
       ],
       "date": "2023-06",
       "journalId": "j98",
-      "keywordIds": ["quantum-cryptanalysis"],
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
       "citations": 6,
       "added": "2026-09-26"
     },
@@ -14610,7 +14756,10 @@
       ],
       "date": "2023-11",
       "journalId": "j204",
-      "keywordIds": ["benchmarking", "fault-tolerance"],
+      "keywordIds": [
+        "benchmarking",
+        "fault-tolerance"
+      ],
       "citations": 17,
       "added": "2026-09-26"
     },
@@ -14628,7 +14777,10 @@
       ],
       "date": "2023-11",
       "journalId": "j73",
-      "keywordIds": ["fault-tolerance", "quantum-chemistry"],
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry"
+      ],
       "citations": 16,
       "added": "2026-09-26"
     },
@@ -14643,7 +14795,9 @@
       ],
       "date": "2022-07",
       "journalId": "j103",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 92,
       "added": "2026-09-26"
     },
@@ -14661,7 +14815,9 @@
       ],
       "date": "2023-03",
       "journalId": "j121",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 33,
       "added": "2026-09-26"
     },
@@ -14676,7 +14832,9 @@
       ],
       "date": "2025-12",
       "journalId": "j121",
-      "keywordIds": ["architecture"],
+      "keywordIds": [
+        "architecture"
+      ],
       "citations": 1,
       "added": "2026-09-26"
     },
@@ -14690,7 +14848,9 @@
       ],
       "date": "2025-08",
       "journalId": "j28",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14705,7 +14865,9 @@
       ],
       "date": "2023-04",
       "journalId": "j98",
-      "keywordIds": ["quantum-programming"],
+      "keywordIds": [
+        "quantum-programming"
+      ],
       "citations": 2,
       "added": "2026-09-26"
     },
@@ -14720,7 +14882,9 @@
       ],
       "date": "2025-06",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14735,7 +14899,9 @@
       ],
       "date": "2025-12",
       "journalId": "j69",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 3,
       "added": "2026-09-26"
     },
@@ -14750,7 +14916,9 @@
       ],
       "date": "2024-01",
       "journalId": "j73",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 48,
       "added": "2026-09-26"
     },
@@ -14768,7 +14936,10 @@
       ],
       "date": "2024-05",
       "journalId": "j60",
-      "keywordIds": ["fault-tolerance", "quantum-chemistry"],
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry"
+      ],
       "citations": 24,
       "added": "2026-09-26"
     },
@@ -14782,7 +14953,9 @@
       ],
       "date": "2021-04",
       "journalId": "j73",
-      "keywordIds": ["quantum-cryptanalysis"],
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
       "citations": 710,
       "added": "2026-09-26"
     },
@@ -14800,7 +14973,11 @@
       ],
       "date": "2022-04",
       "journalId": "j121",
-      "keywordIds": ["fault-tolerance", "quantum-chemistry", "benchmarking"],
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry",
+        "benchmarking"
+      ],
       "citations": 100,
       "added": "2026-09-26"
     },
@@ -14815,7 +14992,11 @@
       ],
       "date": "2024-03",
       "journalId": "j121",
-      "keywordIds": ["fault-tolerance", "quantum-chemistry", "compilation"],
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry",
+        "compilation"
+      ],
       "citations": 11,
       "added": "2026-09-26"
     },
@@ -14833,7 +15014,10 @@
       ],
       "date": "2022-11",
       "journalId": "j98",
-      "keywordIds": ["benchmarking", "applications"],
+      "keywordIds": [
+        "benchmarking",
+        "applications"
+      ],
       "citations": 67,
       "added": "2026-09-26"
     },
@@ -14847,7 +15031,9 @@
       ],
       "date": "2024-06",
       "journalId": "j163",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 10,
       "added": "2026-09-26"
     },
@@ -14865,7 +15051,9 @@
       ],
       "date": "2025-12",
       "journalId": "j205",
-      "keywordIds": ["fault-tolerance"],
+      "keywordIds": [
+        "fault-tolerance"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14879,7 +15067,10 @@
       ],
       "date": "2022-11",
       "journalId": "j98",
-      "keywordIds": ["fault-tolerance", "architecture"],
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
       "citations": 13,
       "added": "2026-09-26"
     },
@@ -14897,7 +15088,9 @@
       ],
       "date": "2018-10",
       "journalId": "j131",
-      "keywordIds": ["quantum-chemistry"],
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
       "citations": 382,
       "added": "2026-09-26"
     },
@@ -14912,7 +15105,9 @@
       ],
       "date": "2024-04",
       "journalId": "j163",
-      "keywordIds": ["quantum-programming"],
+      "keywordIds": [
+        "quantum-programming"
+      ],
       "citations": 9,
       "added": "2026-09-26"
     },
@@ -14926,7 +15121,9 @@
       ],
       "date": "2026-01",
       "journalId": "j206",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 0,
       "added": "2026-09-26"
     },
@@ -14939,9 +15136,30 @@
       ],
       "date": "2023-12",
       "journalId": "j98",
-      "keywordIds": ["quantum-algorithms"],
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
       "citations": 1,
       "added": "2026-09-26"
+    },
+    {
+      "id": "10-1109-cloud72782-2026-00059",
+      "doi": "10.1109/CLOUD72782.2026.00059",
+      "title": "QCOEM: Quantum Cloud Orchestration with Evolutionary Multi-Objective Optimization",
+      "authorIds": [
+        "a2536",
+        "a556",
+        "a2537"
+      ],
+      "date": "2026-07",
+      "journalId": "j26",
+      "keywordIds": [
+        "cloud-computing",
+        "workflow-orchestration",
+        "optimization-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-09-27"
     }
   ]
 }
