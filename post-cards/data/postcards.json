@@ -271,6 +271,21 @@
       },
       "message": "Hey,\nWasp on the in side of my window, bee on the out. Can't decide which is worse, but the bee doesn't have to sit with LLM-dependent puppets. I wonder how your \"first\" day back at work went. I know you'd have sat in on a few meetings from London already, but it can still feel as overwhelming as the thundering monsoon pouring onto our heads.\nI hope you're letting yourself acclimate gently, and that the trip helped with the burnout. Hope you're having a good day.",
       "postscript": "The wasp disappeared (Scarier)."
+    },
+    {
+      "id": "postcard-18",
+      "enabled": false,
+      "date": "2026-09-29",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Hilbert Huddle",
+      "subject": "Sniffles & Scratchboards",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-18.mp4"
+      },
+      "message": "Hey,\nTook the day off, the whole team and possibly the town is down with the flu, myself included, so we're all toiling away online. My throat feels like Hilbert's scratchboard, and my head like his punching bag. The boy himself has been going the extra mile (meow-le?), demanding food and attention to no end.\nGot a bunch of nice papers in the works, one's almost philosophical, might be interesting. I wonder how Homepage's going. Hope you haven't fallen sick too.",
+      "postscript": "Hope you're keeping warm."
     }
   ]
 }
