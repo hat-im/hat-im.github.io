@@ -286,6 +286,21 @@
       },
       "message": "Hey,\nTook the day off, the whole team and possibly the town is down with the flu, myself included, so we're all toiling away online. My throat feels like Hilbert's scratchboard, and my head like his punching bag. The boy himself has been going the extra mile (meow-le?), demanding food and attention to no end.\nGot a bunch of nice papers in the works, one's almost philosophical, might be interesting. I wonder how Homepage's going. Hope you haven't fallen sick too.",
       "postscript": "Hope you're keeping warm."
+    },
+    {
+      "id": "postcard-19",
+      "enabled": true,
+      "date": "2026-09-30",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Desk Debris",
+      "subject": "Rain & Ruckus",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-19.mp4"
+      },
+      "message": "Hey,\nToday was exhausting. Rained a lot, hope you didn't get stuck in it too. Heard a gas cylinder blew up near Bellandur, nobody was hurt thankfully, but I hope you're okay. Got stuck on the way home myself.\nI wonder how your week's going. There was a play at BIC today I think you'd have liked, I wonder if you went.\nI'm tired, hope you rest well tonight.",
+      "postscript": "Back to Feynman, or still on Stone Mattress? No worries if it's neither so far."
     }
   ]
 }
