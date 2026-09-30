@@ -303,6 +303,17 @@
       },
       "message": "Hey,\nToday was exhausting. Rained a lot, hope you didn't get stuck in it too. Heard a gas cylinder blew up near Bellandur, nobody was hurt thankfully, but I hope you're okay. Got stuck on the way home myself.\nI wonder how your week's going. There was a play at BIC today I think you'd have liked, I wonder if you went.\nI'm tired, hope you rest well tonight.",
       "postscript": "Back to Feynman, or still on Stone Mattress? No worries if it's neither so far."
+    },
+    {
+      "id": "postcard-20",
+      "enabled": false,
+      "date": "2026-10-01",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
