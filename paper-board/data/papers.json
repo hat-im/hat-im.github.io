@@ -15741,6 +15741,328 @@
       ],
       "citations": 31,
       "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-e-science62913-2024-10678731",
+      "doi": "10.1109/e-Science62913.2024.10678731",
+      "title": "Workflow Provenance in the Computing Continuum for Responsible, Trustworthy, and Energy-Efficient AI",
+      "authorIds": [
+        "a1198",
+        "a2784",
+        "a2785",
+        "a1197",
+        "a2786",
+        "a827"
+      ],
+      "date": "2024-09",
+      "journalId": "j218",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 10,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-48550-arxiv-2511-04563",
+      "doi": "10.48550/arXiv.2511.04563",
+      "title": "QEF: Reproducible and Exploratory Quantum Software Experiments",
+      "authorIds": [
+        "a2787",
+        "a1907"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-programming"
+      ],
+      "citations": 0,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1145-3731599-3767592",
+      "doi": "10.1145/3731599.3767592",
+      "title": "AI Agents for Enabling Autonomous Experiments at ORNL's HPC and Manufacturing User Facilities",
+      "authorIds": [
+        "a1203",
+        "a2788",
+        "a1198",
+        "a2789",
+        "a2790",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j95",
+      "keywordIds": [
+        "hpc-integration",
+        "workflow-orchestration"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1145-3731599-3767582",
+      "doi": "10.1145/3731599.3767582",
+      "title": "LLM Agents for Interactive Workflow Provenance: Reference Architecture and Evaluation Methodology",
+      "authorIds": [
+        "a1198",
+        "a2791",
+        "a2660",
+        "a1203",
+        "a2792",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j95",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1145-3750720-3757296",
+      "doi": "10.1145/3750720.3757296",
+      "title": "Enabling Command-and-Control in Advanced In Situ Workflows",
+      "authorIds": [
+        "a2793",
+        "a2794",
+        "a1139",
+        "a253",
+        "a2795",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j226",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1177-10943420251339317",
+      "doi": "10.1177/10943420251339317",
+      "title": "SWARM: Reimagining scientific workflow management systems in a distributed world",
+      "authorIds": [
+        "a1205",
+        "a1246",
+        "a2796",
+        "a192",
+        "a1248",
+        "a827"
+      ],
+      "date": "2025-05",
+      "journalId": "j88",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-scheduling"
+      ],
+      "citations": 5,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1145-3750720-3757292",
+      "doi": "10.1145/3750720.3757292",
+      "title": "A Grassroots Network and Community Roadmap for Interconnected Autonomous Science Laboratories for Accelerated Discovery",
+      "authorIds": [
+        "a1201",
+        "a2797",
+        "a2798",
+        "a2799",
+        "a2723",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j226",
+      "keywordIds": [
+        "infrastructure",
+        "workflow-orchestration"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-48550-arxiv-2505-05428",
+      "doi": "10.48550/arXiv.2505.05428",
+      "title": "Empowering Scientific Workflows with Federated Agents",
+      "authorIds": [
+        "a1669",
+        "a47",
+        "a145",
+        "a2800",
+        "a144",
+        "a827"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "middleware",
+        "workflow-orchestration"
+      ],
+      "citations": 0,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1007-978-3-030-96498-6-14",
+      "doi": "10.1007/978-3-030-96498-6_14",
+      "title": "Braid-DB: Toward AI-Driven Science with Machine Learning Provenance",
+      "authorIds": [
+        "a1640",
+        "a1679",
+        "a1675",
+        "a145",
+        "a2801",
+        "a827"
+      ],
+      "date": "2022-01",
+      "journalId": "j209",
+      "keywordIds": [
+        "databases",
+        "workflow-orchestration"
+      ],
+      "citations": 6,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-acdsa65407-2025-11166486",
+      "doi": "10.1109/ACDSA65407.2025.11166486",
+      "title": "Converging High-Performance Computing, Artificial Intelligence, and Intelligent Workflows for Next-Generation Innovation",
+      "authorIds": [
+        "a1849",
+        "a1850",
+        "a1851",
+        "a2171",
+        "a2802",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j160",
+      "keywordIds": [
+        "hpc-integration",
+        "workflow-orchestration"
+      ],
+      "citations": 0,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-48550-arxiv-2505-02841",
+      "doi": "10.48550/arXiv.2505.02841",
+      "title": "Snakemaker: Seamlessly transforming ad-hoc analyses into sustainable Snakemake workflows with generative AI",
+      "authorIds": [
+        "a2803",
+        "a2804",
+        "a2805",
+        "a2806"
+      ],
+      "date": "2025-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-escience65000-2025-00086",
+      "doi": "10.1109/eScience65000.2025.00086",
+      "title": "ControlA: Agentic Workflow Control Mechanisms for Reliable Science",
+      "authorIds": [
+        "a2792",
+        "a2807",
+        "a1198",
+        "a1201",
+        "a2808",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j227",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-escience65000-2025-00093",
+      "doi": "10.1109/eScience65000.2025.00093",
+      "title": "PROV-AGENT: Unified Provenance for Tracking AI Agent Interactions in Agentic Workflows",
+      "authorIds": [
+        "a1198",
+        "a2792",
+        "a2788",
+        "a1203",
+        "a2790",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j227",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 22,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-3389-fhpcp-2025-1638203",
+      "doi": "10.3389/fhpcp.2025.1638203",
+      "title": "Toward a persistent event-streaming system for high-performance computing applications",
+      "authorIds": [
+        "a2811",
+        "a2792",
+        "a1687",
+        "a2809",
+        "a2810",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j207",
+      "keywordIds": [
+        "hpc-integration",
+        "middleware",
+        "infrastructure"
+      ],
+      "citations": 5,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1002-cpe-6544",
+      "doi": "10.1002/cpe.6544",
+      "title": "Workflow provenance in the lifecycle of scientific machine learning",
+      "authorIds": [
+        "a1198",
+        "a2812",
+        "a2813",
+        "a2814",
+        "a2815",
+        "a827"
+      ],
+      "date": "2021-08",
+      "journalId": "j107",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 44,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-qsw67625-2025-00010",
+      "doi": "10.1109/QSW67625.2025.00010",
+      "title": "Make Some Noise! Measuring Noise Model Quality in Real-World Quantum Software",
+      "authorIds": [
+        "a2816",
+        "a2817",
+        "a2818",
+        "a1907"
+      ],
+      "date": "2025-07",
+      "journalId": "j113",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 6,
+      "added": "2026-09-30"
     }
   ]
 }

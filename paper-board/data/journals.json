@@ -898,5 +898,13 @@
   "j225": {
     "name": "The University of Queensland",
     "type": "report"
+  },
+  "j226": {
+    "name": "Workshop Proceedings of the 54th International Conference on Parallel Processing",
+    "type": "conference"
+  },
+  "j227": {
+    "name": "2025 IEEE International Conference on eScience (eScience)",
+    "type": "conference"
   }
 }
