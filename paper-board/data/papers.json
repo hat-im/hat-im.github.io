@@ -15160,6 +15160,587 @@
       ],
       "citations": 0,
       "added": "2026-09-27"
+    },
+    {
+      "id": "10-48550-arxiv-2401-14550",
+      "doi": "10.48550/arXiv.2401.14550",
+      "title": "Interactive and Urgent HPC: Challenges and Opportunities",
+      "authorIds": [
+        "a622",
+        "a111",
+        "a2538",
+        "a88",
+        "a91",
+        "a827"
+      ],
+      "date": "2024-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration",
+        "survey"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-3389-fhpcp-2025-1536471",
+      "doi": "10.3389/fhpcp.2025.1536471",
+      "title": "End-to-end deep learning pipeline for real-time Bragg peak segmentation: from training to large-scale deployment",
+      "authorIds": [
+        "a2543",
+        "a2544",
+        "a2545",
+        "a2546",
+        "a2547"
+      ],
+      "date": "2025-03",
+      "journalId": "j207",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 5,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-2218-ijdc-v15i1-553",
+      "doi": "10.2218/ijdc.v15i1.553",
+      "title": "Design and Implementation of the first Generic Archive Storage Service for Research Data in Germany",
+      "authorIds": [
+        "a2548",
+        "a2549",
+        "a2550"
+      ],
+      "date": "2020-07",
+      "journalId": "j216",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-2172-2338264",
+      "doi": "10.2172/2338264",
+      "title": "A High-level Design for Bidirectional Data Streaming to High-Performance Computing Systems from External Science Facilities",
+      "authorIds": [
+        "a2551",
+        "a2552",
+        "a677",
+        "a2553",
+        "a2554",
+        "a827"
+      ],
+      "date": "2024-03",
+      "journalId": "j90",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 6,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-e-science62913-2024-10678706",
+      "doi": "10.1109/e-Science62913.2024.10678706",
+      "title": "An Analysis of Research Data Storage Systems",
+      "authorIds": [
+        "a2559",
+        "a2560",
+        "a2561"
+      ],
+      "date": "2024-09",
+      "journalId": "j218",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 3,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1051-epjconf-202429513002",
+      "doi": "10.1051/epjconf/202429513002",
+      "title": "Massive Scale Data Analytics at LCLS-II",
+      "authorIds": [
+        "a2547",
+        "a911",
+        "a2562",
+        "a2563",
+        "a2564",
+        "a827"
+      ],
+      "date": "2024-01",
+      "journalId": "j112",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 9,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1147-jrd-2014-2303321",
+      "doi": "10.1147/JRD.2014.2303321",
+      "title": "GPFS-based implementation of a hyperconverged system for software defined infrastructure",
+      "authorIds": [
+        "a2583",
+        "a2584",
+        "a2585",
+        "a2586",
+        "a2587",
+        "a827"
+      ],
+      "date": "2014-03",
+      "journalId": "j199",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 10,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-e-science58273-2023-10254825",
+      "doi": "10.1109/e-Science58273.2023.10254825",
+      "title": "Why We Need a Reference Architecture for Research Data",
+      "authorIds": [
+        "a2560",
+        "a2590",
+        "a2591",
+        "a2559",
+        "a2592",
+        "a827"
+      ],
+      "date": "2023-09",
+      "journalId": "j215",
+      "keywordIds": [
+        "architecture",
+        "infrastructure"
+      ],
+      "citations": 5,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1007-978-3-030-52829-4-4",
+      "doi": "10.1007/978-3-030-52829-4_4",
+      "title": "The ENVRI Reference Model",
+      "authorIds": [
+        "a2599",
+        "a2600",
+        "a2601",
+        "a2602",
+        "a815"
+      ],
+      "date": "2020-01",
+      "journalId": "j63",
+      "keywordIds": [
+        "architecture",
+        "infrastructure"
+      ],
+      "citations": 8,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-14264-1c8e79c",
+      "doi": "10.14264/1c8e79c",
+      "title": "A reference architecture for research data",
+      "authorIds": [
+        "a2560",
+        "a2559",
+        "a2590",
+        "a2591",
+        "a2592",
+        "a827"
+      ],
+      "date": "2024-05",
+      "journalId": "j225",
+      "keywordIds": [
+        "architecture",
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1145-3332186-3332206",
+      "doi": "10.1145/3332186.3332206",
+      "title": "Research Computing Desktops",
+      "authorIds": [
+        "a2603",
+        "a2604",
+        "a2605",
+        "a2606",
+        "a2607",
+        "a827"
+      ],
+      "date": "2019-07",
+      "journalId": "j111",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 3,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1007-s11192-022-04516-1",
+      "doi": "10.1007/s11192-022-04516-1",
+      "title": "Mutual Granger \"causality\" between scientific instruments and scientific publications",
+      "authorIds": [
+        "a2615",
+        "a2616",
+        "a2617"
+      ],
+      "date": "2022-09",
+      "journalId": "j211",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 4,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-3389-fphy-2024-1524041",
+      "doi": "10.3389/fphy.2024.1524041",
+      "title": "Accelerating discoveries at DIII-D with the Integrated Research Infrastructure",
+      "authorIds": [
+        "a2618",
+        "a2619",
+        "a2620",
+        "a2621",
+        "a2622",
+        "a827"
+      ],
+      "date": "2025-01",
+      "journalId": "j219",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 3,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1007-978-3-031-73716-9-16",
+      "doi": "10.1007/978-3-031-73716-9_16",
+      "title": "Challenges in Computing Resource Sharing Towards Next-Gen Interactive Accelerated HPC",
+      "authorIds": [
+        "a2642",
+        "a2643",
+        "a2644",
+        "a2645",
+        "a2646",
+        "a827"
+      ],
+      "date": "2024-12",
+      "journalId": "j63",
+      "keywordIds": [
+        "hpc-integration",
+        "hpc-scheduling"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-2172-2477506",
+      "doi": "10.2172/2477506",
+      "title": "OLCF's Advanced Computing Ecosystem (ACE): FY24 Efforts for the DOE Integrated Research Infrastructure (IRI) Program",
+      "authorIds": [
+        "a2558",
+        "a2557",
+        "a2651",
+        "a2652",
+        "a2653",
+        "a827"
+      ],
+      "date": "2024-11",
+      "journalId": "j90",
+      "keywordIds": [
+        "hpc-integration",
+        "infrastructure"
+      ],
+      "citations": 4,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-iiai-aai-2017-144",
+      "doi": "10.1109/IIAI-AAI.2017.144",
+      "title": "Nationwide Research Data Management Service of Japan in the Open Science Era",
+      "authorIds": [
+        "a2670",
+        "a2671"
+      ],
+      "date": "2017-07",
+      "journalId": "j210",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 10,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-48550-arxiv-2404-19717",
+      "doi": "10.48550/arXiv.2404.19717",
+      "title": "Automated, Reliable, and Efficient Continental-Scale Replication of 7.3 Petabytes of Climate Simulation Data: A Case Study",
+      "authorIds": [
+        "a2672",
+        "a2673",
+        "a2674",
+        "a2675",
+        "a144",
+        "a827"
+      ],
+      "date": "2024-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-3389-fhpcp-2024-1414569",
+      "doi": "10.3389/fhpcp.2024.1414569",
+      "title": "ExaFEL: extreme-scale real-time data processing for X-ray free electron laser science",
+      "authorIds": [
+        "a88",
+        "a2680",
+        "a2681",
+        "a2682",
+        "a2683",
+        "a827"
+      ],
+      "date": "2024-10",
+      "journalId": "j207",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 2,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-48550-arxiv-cs-0205023",
+      "doi": "10.48550/arXiv.cs/0205023",
+      "title": "Performance evaluation of the GridFTP within the NorduGrid project",
+      "authorIds": [
+        "a2700",
+        "a2701",
+        "a2702",
+        "a2703",
+        "a2704"
+      ],
+      "date": "2002-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "infrastructure",
+        "middleware"
+      ],
+      "citations": 5,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-nss-mic44845-2022-10398933",
+      "doi": "10.1109/NSS/MIC44845.2022.10398933",
+      "title": "ePixHR10k 2M – A 2M Pixel X-ray Detector at 5,000 Frame Per Second for LCLS-II",
+      "authorIds": [
+        "a2705",
+        "a2706",
+        "a2707",
+        "a2708",
+        "a2709",
+        "a827"
+      ],
+      "date": "2022-11",
+      "journalId": "j220",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1063-1-5084708",
+      "doi": "10.1063/1.5084708",
+      "title": "Ultrafast processing of pixel detector data with machine learning frameworks",
+      "authorIds": [
+        "a2716",
+        "a2722",
+        "a2720"
+      ],
+      "date": "2019-01",
+      "journalId": "j213",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 6,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1007-978-3-031-23606-8-8",
+      "doi": "10.1007/978-3-031-23606-8_8",
+      "title": "Implementation of a Framework for Deploying AI Inference Engines in FPGAs",
+      "authorIds": [
+        "a2712",
+        "a2723",
+        "a2708",
+        "a2724",
+        "a2725",
+        "a827"
+      ],
+      "date": "2022-01",
+      "journalId": "j209",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 6,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-3938-jkps-73-16",
+      "doi": "10.3938/jkps.73.16",
+      "title": "Data Analysis using Psocake at PAL-XFEL",
+      "authorIds": [
+        "a2727",
+        "a2728",
+        "a2582"
+      ],
+      "date": "2018-07",
+      "journalId": "j214",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 5,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-nssmic-2017-8533033",
+      "doi": "10.1109/NSSMIC.2017.8533033",
+      "title": "Building a Data System for LCLS-II",
+      "authorIds": [
+        "a2547",
+        "a2729",
+        "a2567",
+        "a2573",
+        "a2572",
+        "a827"
+      ],
+      "date": "2017-10",
+      "journalId": "j208",
+      "keywordIds": [
+        "hpc-integration",
+        "architecture"
+      ],
+      "citations": 14,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-17192-bfdm-2021-3-8348",
+      "doi": "10.17192/BFDM.2021.3.8348",
+      "title": "Kriterien für die Auswahl einer Softwarelösung für den Betrieb eines Repositoriums für Forschungsdaten",
+      "authorIds": [
+        "a2730",
+        "a2548",
+        "a2731",
+        "a2732",
+        "a2733",
+        "a827"
+      ],
+      "date": "2021-12",
+      "journalId": "j221",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-14529-jsfi200203",
+      "doi": "10.14529/jsfi200203",
+      "title": "Potential of I/O Aware Workflows in Climate and Weather",
+      "authorIds": [
+        "a2541",
+        "a2755"
+      ],
+      "date": "2020-06",
+      "journalId": "j222",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 3,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1109-p2p-2005-24",
+      "doi": "10.1109/P2P.2005.24",
+      "title": "P2P-Based Grid Architecture for Homology Searching",
+      "authorIds": [
+        "a2756",
+        "a2757",
+        "a741",
+        "a2758"
+      ],
+      "date": "2005-12",
+      "journalId": "j223",
+      "keywordIds": [
+        "architecture",
+        "infrastructure"
+      ],
+      "citations": 3,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-5334-dsj-2023-009",
+      "doi": "10.5334/dsj-2023-009",
+      "title": "Improving NASA's Earth Satellite and Model Data Discoverability for Interdisciplinary Research, Applications, and Education",
+      "authorIds": [
+        "a1679",
+        "a2759",
+        "a2760",
+        "a2761",
+        "a450",
+        "a827"
+      ],
+      "date": "2023-01",
+      "journalId": "j217",
+      "keywordIds": [
+        "infrastructure"
+      ],
+      "citations": 3,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1088-1742-6596-513-6-062052",
+      "doi": "10.1088/1742-6596/513/6/062052",
+      "title": "Disaster Recovery and Data Centre Operational Continuity",
+      "authorIds": [
+        "a2764",
+        "a2765",
+        "a2766",
+        "a2767",
+        "a2768",
+        "a827"
+      ],
+      "date": "2014-06",
+      "journalId": "j224",
+      "keywordIds": [
+        "infrastructure",
+        "high-energy-physics"
+      ],
+      "citations": 1,
+      "added": "2026-09-30"
+    },
+    {
+      "id": "10-1145-945721-945739",
+      "doi": "10.1145/945721.945739",
+      "title": "Standards for databases on the grid",
+      "authorIds": [
+        "a2781",
+        "a2782",
+        "a2783"
+      ],
+      "date": "2003-09",
+      "journalId": "j212",
+      "keywordIds": [
+        "databases",
+        "infrastructure"
+      ],
+      "citations": 31,
+      "added": "2026-09-30"
     }
   ]
 }

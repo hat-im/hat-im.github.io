@@ -822,5 +822,81 @@
   "j206": {
     "name": "arXiv (Cornell University)",
     "type": "journal"
+  },
+  "j207": {
+    "name": "Frontiers in High Performance Computing",
+    "type": "journal"
+  },
+  "j208": {
+    "name": "2017 IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)",
+    "type": "conference"
+  },
+  "j209": {
+    "name": "Communications in computer and information science",
+    "type": "conference"
+  },
+  "j210": {
+    "name": "2017 6th IIAI International Congress on Advanced Applied Informatics (IIAI-AAI)",
+    "type": "conference"
+  },
+  "j211": {
+    "name": "Scientometrics",
+    "type": "journal"
+  },
+  "j212": {
+    "name": "ACM SIGMOD Record",
+    "type": "journal"
+  },
+  "j213": {
+    "name": "AIP Conference Proceedings",
+    "type": "conference"
+  },
+  "j214": {
+    "name": "Journal of the Korean Physical Society",
+    "type": "journal"
+  },
+  "j215": {
+    "name": "2023 IEEE 19th International Conference on e-Science (e-Science)",
+    "type": "conference"
+  },
+  "j216": {
+    "name": "International Journal of Digital Curation",
+    "type": "journal"
+  },
+  "j217": {
+    "name": "Data Science Journal",
+    "type": "journal"
+  },
+  "j218": {
+    "name": "2024 IEEE 20th International Conference on e-Science (e-Science)",
+    "type": "conference"
+  },
+  "j219": {
+    "name": "Frontiers in Physics",
+    "type": "journal"
+  },
+  "j220": {
+    "name": "2022 IEEE Nuclear Science Symposium and Medical Imaging Conference (NSS/MIC)",
+    "type": "conference"
+  },
+  "j221": {
+    "name": "Bausteine Forschungsdatenmanagement",
+    "type": "journal"
+  },
+  "j222": {
+    "name": "Supercomputing Frontiers and Innovations",
+    "type": "journal"
+  },
+  "j223": {
+    "name": "Fifth IEEE International Conference on Peer-to-Peer Computing (P2P'05)",
+    "type": "conference"
+  },
+  "j224": {
+    "name": "Journal of Physics: Conference Series",
+    "type": "conference"
+  },
+  "j225": {
+    "name": "The University of Queensland",
+    "type": "report"
   }
 }
