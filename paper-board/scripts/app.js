@@ -695,6 +695,7 @@
     document.getElementById('pageSubtitle').textContent = STR.subheading;
     document.getElementById('resetBtn').textContent = STR.resetButtonLabel;
     document.getElementById('searchInput').setAttribute('placeholder', STR.searchPlaceholder);
+    document.getElementById('searchClear').setAttribute('aria-label', STR.searchClearLabel);
     document.getElementById('popoverTitle').textContent = STR.progress.popoverTitle;
     document.getElementById('modalCancel').textContent = STR.modal.cancel;
 
@@ -728,10 +729,27 @@
 
   function setupSearch() {
     var input = document.getElementById('searchInput');
+    var clearBtn = document.getElementById('searchClear');
+
+    function syncClearVisibility() {
+      clearBtn.hidden = !input.value;
+    }
+
     input.addEventListener('input', function () {
       state.searchTerm = input.value;
+      syncClearVisibility();
       renderAll();
     });
+
+    clearBtn.addEventListener('click', function () {
+      input.value = '';
+      state.searchTerm = '';
+      syncClearVisibility();
+      input.focus();
+      renderAll();
+    });
+
+    syncClearVisibility();
   }
 
   // ---------- Progress popover (click "N read / M total" to see the breakdown) ----------
@@ -788,6 +806,7 @@
       state.activeVenues = new Set();
       state.searchTerm = '';
       document.getElementById('searchInput').value = '';
+      document.getElementById('searchClear').hidden = true;
       await saveState();
       backdrop.classList.remove('open');
       renderAll();

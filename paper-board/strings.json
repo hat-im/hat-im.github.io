@@ -3,6 +3,7 @@
   "subheading": "Move each paper through the three-pass reading method as you work through it.",
   "resetButtonLabel": "Reset",
   "searchPlaceholder": "Search, or query: keyword:x author:\"y\" OR title:z -venue:w",
+  "searchClearLabel": "Clear search",
   "progress": {
     "countTemplate": "{read} read / {total} total",
     "popoverTitle": "Read by keyword"
