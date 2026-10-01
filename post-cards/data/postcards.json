@@ -306,8 +306,24 @@
     },
     {
       "id": "postcard-20",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-10-01",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Server Sighs",
+      "color": "seafoam",
+      "subject": "Clusters & Complaints",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-20.mp4"
+      },
+      "message": "Hey,\nI work with IDIOTS who offload their \"thinking\" to LLMs, then call me when they mess things up because they don't read ANYTHING. Not what they run, not my instructions, not the documentation. Now they want to blame the 'puter. End of rant.\nI wonder what plans you have for the long weekend (not work, I hope). I wonder if you've caught up on the salsa you missed to the flu and London. I wonder how your day was. I hope you have a good weekend.",
+      "postscript": "Have you seen season 2 of Deli Boys yet?"
+    },
+    {
+      "id": "postcard-21",
+      "enabled": false,
+      "date": "2026-10-02",
       "from": "Hat",
       "to": "Sam",
       "location": "",
