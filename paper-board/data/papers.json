@@ -16063,6 +16063,5631 @@
       ],
       "citations": 6,
       "added": "2026-09-30"
+    },
+    {
+      "id": "10-22331-q-2023-12-18-1208",
+      "doi": "10.22331/q-2023-12-18-1208",
+      "title": "Shorter quantum circuits via single-qubit gate approximation",
+      "authorIds": [
+        "a409",
+        "a2819",
+        "a2820",
+        "a2821",
+        "a2822"
+      ],
+      "date": "2023-12",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 31,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-5-010324",
+      "doi": "10.1103/PRXQuantum.5.010324",
+      "title": "Quantum Error Mitigated Classical Shadows",
+      "authorIds": [
+        "a2823",
+        "a2824",
+        "a2825",
+        "a2826",
+        "a2827"
+      ],
+      "date": "2024-02",
+      "journalId": "j69",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 38,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2019-04-30-135",
+      "doi": "10.22331/q-2019-04-30-135",
+      "title": "Efficient magic state factories with a catalyzed | C C Z ⟩ to 2 | T ⟩ transformation",
+      "authorIds": [
+        "a943",
+        "a938"
+      ],
+      "date": "2019-04",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 141,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-91-042315",
+      "doi": "10.1103/PhysRevA.91.042315",
+      "title": "Reducing the quantum-computing overhead with complex gate distillation",
+      "authorIds": [
+        "a2828",
+        "a2829"
+      ],
+      "date": "2015-04",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 44,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1504-04350",
+      "doi": "10.48550/arXiv.1504.04350",
+      "title": "A framework for exact synthesis",
+      "authorIds": [
+        "a409",
+        "a2830"
+      ],
+      "date": "2015-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 10,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2205-03007",
+      "doi": "10.48550/arXiv.2205.03007",
+      "title": "Fast Navigation with Icosahedral Golden Gates",
+      "authorIds": [
+        "a2831",
+        "a2832"
+      ],
+      "date": "2022-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1063-1-4927100",
+      "doi": "10.1063/1.4927100",
+      "title": "Exact synthesis of single-qubit unitaries over Clifford-cyclotomic gate sets",
+      "authorIds": [
+        "a2833",
+        "a2834",
+        "a409",
+        "a2835"
+      ],
+      "date": "2015-08",
+      "journalId": "j228",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 44,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1510-02198",
+      "doi": "10.48550/arXiv.1510.02198",
+      "title": "ALGEBRAIC AND LOGICAL METHODS IN QUANTUM COMPUTATION",
+      "authorIds": [
+        "a2836"
+      ],
+      "date": "2015-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-5-040352",
+      "doi": "10.1103/PRXQuantum.5.040352",
+      "title": "Sparse Probabilistic Synthesis of Quantum Operations",
+      "authorIds": [
+        "a2827"
+      ],
+      "date": "2024-12",
+      "journalId": "j69",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 6,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2403-18900",
+      "doi": "10.48550/arXiv.2403.18900",
+      "title": "Minimal entanglement for injecting diagonal gates",
+      "authorIds": [
+        "a409",
+        "a2837"
+      ],
+      "date": "2024-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-110-190502",
+      "doi": "10.1103/PhysRevLett.110.190502",
+      "title": "Asymptotically Optimal Approximation of Single Qubit Unitaries by Clifford and T Circuits Using a Constant Number of Ancillary Qubits",
+      "authorIds": [
+        "a409",
+        "a2838",
+        "a539"
+      ],
+      "date": "2013-05",
+      "journalId": "j103",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 133,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1306-3200",
+      "doi": "10.48550/arXiv.1306.3200",
+      "title": "Synthesis of unitaries with Clifford+T circuits",
+      "authorIds": [
+        "a409"
+      ],
+      "date": "2013-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 16,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-87-032332",
+      "doi": "10.1103/PhysRevA.87.032332",
+      "title": "Exact synthesis of multiqubit Clifford+ T circuits",
+      "authorIds": [
+        "a2839",
+        "a2840"
+      ],
+      "date": "2013-03",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 165,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic15-1-2-10",
+      "doi": "10.26421/QIC15.1-2-10",
+      "title": "Efficient Clifford+T approximation of single-qubit operators",
+      "authorIds": [
+        "a2840"
+      ],
+      "date": "2015-01",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 95,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-quant-ph-0505030",
+      "doi": "10.48550/arXiv.quant-ph/0505030",
+      "title": "The Solovay-Kitaev algorithm",
+      "authorIds": [
+        "a2841",
+        "a2842"
+      ],
+      "date": "2005-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 8,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1751-8121-ad0ac7",
+      "doi": "10.1088/1751-8121/ad0ac7",
+      "title": "Can shallow quantum circuits scramble local noise into global white noise?",
+      "authorIds": [
+        "a2843",
+        "a2827"
+      ],
+      "date": "2023-11",
+      "journalId": "j230",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 11,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1063-1-4936990",
+      "doi": "10.1063/1.4936990",
+      "title": "Optimal ancilla-free Pauli+V circuits for axial rotations",
+      "authorIds": [
+        "a2844",
+        "a2845",
+        "a2846"
+      ],
+      "date": "2015-12",
+      "journalId": "j228",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 14,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-023-00793-7",
+      "doi": "10.1038/s41534-023-00793-7",
+      "title": "Probabilistic state synthesis based on optimal convex approximation",
+      "authorIds": [
+        "a2847",
+        "a2848",
+        "a2849"
+      ],
+      "date": "2024-01",
+      "journalId": "j101",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic14-15-16-2",
+      "doi": "10.26421/QIC14.15-16-2",
+      "title": "Repeat-Until-Success: Non-deterministic decomposition of single-qubit unitaries",
+      "authorIds": [
+        "a2821",
+        "a2528"
+      ],
+      "date": "2014-11",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 85,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic17-5-6-7",
+      "doi": "10.26421/QIC17.5-6-7",
+      "title": "Turning gate synthesis errors into incoherent errors",
+      "authorIds": [
+        "a2850"
+      ],
+      "date": "2017-04",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 12,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-91-052317",
+      "doi": "10.1103/PhysRevA.91.052317",
+      "title": "Efficient synthesis of probabilistic quantum circuits with fallback",
+      "authorIds": [
+        "a2845",
+        "a631",
+        "a2528"
+      ],
+      "date": "2015-05",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 59,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-14288-1-0319170",
+      "doi": "10.14288/1.0319170",
+      "title": "A framework for approximating qubit unitaries",
+      "authorIds": [
+        "a409"
+      ],
+      "date": "2016-01",
+      "journalId": "j206",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 11,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-132-130602",
+      "doi": "10.1103/PhysRevLett.132.130602",
+      "title": "Probabilistic Interpolation of Quantum Rotation Angles",
+      "authorIds": [
+        "a2827",
+        "a2851",
+        "a68"
+      ],
+      "date": "2024-03",
+      "journalId": "j103",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 17,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-95-042306",
+      "doi": "10.1103/PhysRevA.95.042306",
+      "title": "Shorter gate sequences for quantum computing by mixing unitaries",
+      "authorIds": [
+        "a2427"
+      ],
+      "date": "2017-04",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 56,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-88-012313",
+      "doi": "10.1103/PhysRevA.88.012313",
+      "title": "Efficient decomposition of single-qubit gates into V basis circuits",
+      "authorIds": [
+        "a2845",
+        "a2846",
+        "a2528"
+      ],
+      "date": "2013-07",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 73,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic21-9-10-3",
+      "doi": "10.26421/QIC21.9-10-3",
+      "title": "Short paths in PU(2)",
+      "authorIds": [
+        "a2832"
+      ],
+      "date": "2021-07",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2019-03-05-128",
+      "doi": "10.22331/q-2019-03-05-128",
+      "title": "A Game of Surface Codes: Large-Scale Quantum Computing with Lattice Surgery",
+      "authorIds": [
+        "a2360"
+      ],
+      "date": "2019-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 398,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tc-2015-2409842",
+      "doi": "10.1109/TC.2015.2409842",
+      "title": "Practical Approximation of Single-Qubit Unitaries by Single-Qubit Quantum Clifford and T Circuits",
+      "authorIds": [
+        "a409",
+        "a2852",
+        "a539"
+      ],
+      "date": "2015-03",
+      "journalId": "j36",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 72,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2407-03414",
+      "doi": "10.48550/arXiv.2407.03414",
+      "title": "Direct Estimation of the Density of States for Fermionic Systems",
+      "authorIds": [
+        "a2853",
+        "a2827"
+      ],
+      "date": "2024-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic15-11-12-4",
+      "doi": "10.26421/QIC15.11-12-4",
+      "title": "Optimal ancilla-free Clifford+V approximation of z-rotations",
+      "authorIds": [
+        "a2836"
+      ],
+      "date": "2015-09",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 19,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-05816",
+      "doi": "10.48550/arXiv.2510.05816",
+      "title": "Optimal ancilla-free Clifford+T synthesis for general single-qubit unitaries",
+      "authorIds": [
+        "a2854",
+        "a2855",
+        "a2847"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3663576",
+      "doi": "10.1145/3663576",
+      "title": "Probabilistic Unitary Synthesis with Optimal Accuracy",
+      "authorIds": [
+        "a2847",
+        "a2848",
+        "a2849"
+      ],
+      "date": "2024-05",
+      "journalId": "j11",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1905-08916",
+      "doi": "10.48550/arXiv.1905.08916",
+      "title": "Flexible layout of surface code computations using AutoCCZ states",
+      "authorIds": [
+        "a943",
+        "a938"
+      ],
+      "date": "2019-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 7,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic13-7-8-4",
+      "doi": "10.26421/QIC13.7-8-4",
+      "title": "Fast and efficient exact synthesis of single-qubit unitaries generated by Clifford and T gates",
+      "authorIds": [
+        "a409",
+        "a2852",
+        "a539"
+      ],
+      "date": "2013-05",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 136,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2024-04-08-1310",
+      "doi": "10.22331/q-2024-04-08-1310",
+      "title": "Inplace Access to the Surface Code Y Basis",
+      "authorIds": [
+        "a943"
+      ],
+      "date": "2024-04",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 25,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1409-4355",
+      "doi": "10.48550/arXiv.1409.4355",
+      "title": "Optimal ancilla-free Clifford+V approximation of z-rotations",
+      "authorIds": [
+        "a2836"
+      ],
+      "date": "2014-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2606-13521",
+      "doi": "10.48550/arXiv.2606.13521",
+      "title": "Quantum Logic Codes: Complete Transversal Logical Clifford Instruction Sets for High-Rate Stabilizer Quantum Error Correcting Codes",
+      "authorIds": [
+        "a320"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-02157",
+      "doi": "10.48550/arXiv.2603.02157",
+      "title": "Constant-Time Surgery on 2D Hypergraph Product Codes with Near-Constant Space Overhead",
+      "authorIds": [
+        "a2363",
+        "a1808",
+        "a2421",
+        "a2856",
+        "a2857"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-026-73061-9",
+      "doi": "10.1038/s41467-026-73061-9",
+      "title": "Computing efficiently in QLDPC codes",
+      "authorIds": [
+        "a2858",
+        "a2859",
+        "a2860",
+        "a2861",
+        "a2862",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 4,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2410-03628",
+      "doi": "10.48550/arXiv.2410.03628",
+      "title": "Supporting Data for PRX Quantum (Universal Adapters between quantum LDPC codes)",
+      "authorIds": [
+        "a2871",
+        "a2857",
+        "a2421"
+      ],
+      "date": "2024-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevx-6-031039",
+      "doi": "10.1103/PhysRevX.6.031039",
+      "title": "Universal Fault-Tolerant Gates on Concatenated Stabilizer Codes",
+      "authorIds": [
+        "a2421",
+        "a2872",
+        "a2873"
+      ],
+      "date": "2016-09",
+      "journalId": "j131",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 73,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2602-09788",
+      "doi": "10.48550/arXiv.2602.09788",
+      "title": "Construction of the full logical Clifford group for high-rate quantum Reed-Muller codes using only transversal and fold-transversal gates",
+      "authorIds": [
+        "a2874",
+        "a2875",
+        "a2872"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2407-18393",
+      "doi": "10.48550/arXiv.2407.18393",
+      "title": "Improved QLDPC Surgery: Logical Measurements and Bridging Codes",
+      "authorIds": [
+        "a1797",
+        "a1808",
+        "a2876",
+        "a2421"
+      ],
+      "date": "2024-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1705-01686",
+      "doi": "10.48550/arXiv.1705.01686",
+      "title": "Universal fault-tolerant quantum computation with Bacon-Shor codes",
+      "authorIds": [
+        "a2421"
+      ],
+      "date": "2017-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 20,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1367-2630-17-8-083002",
+      "doi": "10.1088/1367-2630/17/8/083002",
+      "title": "Gauge color codes: optimal transversal gates and gauge fixing in topological stabilizer codes",
+      "authorIds": [
+        "a2877"
+      ],
+      "date": "2015-08",
+      "journalId": "j67",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 218,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic18-11-12-3",
+      "doi": "10.26421/qic18.11-12-3",
+      "title": "Limitations on transversal computation through quantum homomorphic encryption",
+      "authorIds": [
+        "a1020",
+        "a1995"
+      ],
+      "date": "2018-09",
+      "journalId": "j229",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 21,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1367-2630-17-8-083026",
+      "doi": "10.1088/1367-2630/17/8/083026",
+      "title": "Unfolding the color code",
+      "authorIds": [
+        "a2341",
+        "a2878",
+        "a2879"
+      ],
+      "date": "2015-08",
+      "journalId": "j67",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 146,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2023-10-24-1153",
+      "doi": "10.22331/q-2023-10-24-1153",
+      "title": "Partitioning qubits in hypergraph product codes to implement logical gates",
+      "authorIds": [
+        "a2867",
+        "a2880",
+        "a2881"
+      ],
+      "date": "2023-10",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 35,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic16-9-10-3",
+      "doi": "10.26421/QIC16.9-10-3",
+      "title": "Classification of transversal gates in qubit stabilizer codes",
+      "authorIds": [
+        "a2882",
+        "a2857"
+      ],
+      "date": "2016-07",
+      "journalId": "j229",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 8,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41567-026-03220-8",
+      "doi": "10.1038/s41567-026-03220-8",
+      "title": "Low-overhead fault-tolerant quantum computation by gauging logical operators",
+      "authorIds": [
+        "a2369",
+        "a2421"
+      ],
+      "date": "2026-04",
+      "journalId": "j130",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevx-15-021088",
+      "doi": "10.1103/physrevx.15.021088",
+      "title": "Fault-Tolerant Logical Measurements via Homological Measurement",
+      "authorIds": [
+        "a2883",
+        "a2884",
+        "a2885",
+        "a2886"
+      ],
+      "date": "2025-06",
+      "journalId": "j131",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 10,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevresearch-4-013092",
+      "doi": "10.1103/PhysRevResearch.4.013092",
+      "title": "Universal fault-tolerant quantum computing with stabilizer codes",
+      "authorIds": [
+        "a2342",
+        "a2881",
+        "a2887",
+        "a2888"
+      ],
+      "date": "2022-02",
+      "journalId": "j121",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 26,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-nature23460",
+      "doi": "10.1038/nature23460",
+      "title": "Roads towards fault-tolerant universal quantum computation",
+      "authorIds": [
+        "a2427",
+        "a2495",
+        "a2375"
+      ],
+      "date": "2017-09",
+      "journalId": "j64",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 599,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1126-sciadv-aay4929",
+      "doi": "10.1126/sciadv.aay4929",
+      "title": "A fault-tolerant non-Clifford gate for the surface code in two dimensions",
+      "authorIds": [
+        "a2368"
+      ],
+      "date": "2020-05",
+      "journalId": "j82",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 74,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2019-02-04-120",
+      "doi": "10.22331/q-2019-02-04-120",
+      "title": "Fault-tolerant gates via homological product codes",
+      "authorIds": [
+        "a2889"
+      ],
+      "date": "2019-02",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 16,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2017-10-03-31",
+      "doi": "10.22331/q-2017-10-03-31",
+      "title": "Magic state distillation with low space overhead and optimal asymptotic input count",
+      "authorIds": [
+        "a2890",
+        "a2850",
+        "a2829",
+        "a2891"
+      ],
+      "date": "2017-10",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 62,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2026-06-30-2145",
+      "doi": "10.22331/q-2026-06-30-2145",
+      "title": "On the Addressability Problem on CSS Codes",
+      "authorIds": [
+        "a2892",
+        "a2893"
+      ],
+      "date": "2026-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-y14y-7kp3",
+      "doi": "10.1103/y14y-7kp3",
+      "title": "No-Go Theorem on Fault Tolerant Gadgets for Multiple Logical Qubits",
+      "authorIds": [
+        "a2894",
+        "a2895"
+      ],
+      "date": "2026-02",
+      "journalId": "j206",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-05082",
+      "doi": "10.48550/arXiv.2603.05082",
+      "title": "Parsimonious Quantum Low-Density Parity-Check Code Surgery",
+      "authorIds": [
+        "a2896",
+        "a2420",
+        "a1808",
+        "a2897",
+        "a2369"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2020-03-23-245",
+      "doi": "10.22331/q-2020-03-23-245",
+      "title": "Continuous groups of transversal gates for quantum error correcting codes from finite clock reference frames",
+      "authorIds": [
+        "a2898",
+        "a2899"
+      ],
+      "date": "2020-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 51,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2024-06-13-1372",
+      "doi": "10.22331/q-2024-06-13-1372",
+      "title": "Fold-Transversal Clifford Gates for Quantum Codes",
+      "authorIds": [
+        "a2900",
+        "a2901"
+      ],
+      "date": "2024-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 37,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2407-09423",
+      "doi": "10.48550/arXiv.2407.09423",
+      "title": "SSIP: automated surgery with quantum LDPC codes",
+      "authorIds": [
+        "a2420"
+      ],
+      "date": "2024-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-18753",
+      "doi": "10.48550/arXiv.2510.18753",
+      "title": "Simple logical quantum computation with concatenated symplectic double codes",
+      "authorIds": [
+        "a1442",
+        "a2902"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tit-2024-3521638",
+      "doi": "10.1109/TIT.2024.3521638",
+      "title": "Logical Operators and Fold-Transversal Gates of Bivariate Bicycle Codes",
+      "authorIds": [
+        "a2903",
+        "a2904"
+      ],
+      "date": "2024-12",
+      "journalId": "j232",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 13,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevx-8-021047",
+      "doi": "10.1103/PhysRevX.8.021047",
+      "title": "Disjointness of Stabilizer Codes and Limitations on Fault-Tolerant Logical Gates",
+      "authorIds": [
+        "a2857",
+        "a2341",
+        "a2421"
+      ],
+      "date": "2018-05",
+      "journalId": "j131",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 49,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-024-00945-3",
+      "doi": "10.1038/s41534-024-00945-3",
+      "title": "Efficient fault-tolerant implementations of non-Clifford gates with reconfigurable atom arrays",
+      "authorIds": [
+        "a763",
+        "a763",
+        "a2905",
+        "a2906",
+        "a2907",
+        "a827"
+      ],
+      "date": "2024-12",
+      "journalId": "j101",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2604-15111",
+      "doi": "10.48550/arXiv.2604.15111",
+      "title": "Constraints on phantom codes from automorphism group bounds",
+      "authorIds": [
+        "a2912",
+        "a2913"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-vf7v-cpq9",
+      "doi": "10.1103/vf7v-cpq9",
+      "title": "Fault-Tolerant Logical Clifford Gates from Code Automorphisms",
+      "authorIds": [
+        "a2914",
+        "a2915",
+        "a2916",
+        "a2917",
+        "a2918"
+      ],
+      "date": "2025-07",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 6,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2507-16797",
+      "doi": "10.48550/arXiv.2507.16797",
+      "title": "No-go theorems for logical gates on product quantum codes",
+      "authorIds": [
+        "a250",
+        "a2919",
+        "a457",
+        "a2911"
+      ],
+      "date": "2025-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-gj8x-n5gg",
+      "doi": "10.1103/gj8x-n5gg",
+      "title": "Parallel Logical Measurements via Quantum Code Surgery",
+      "authorIds": [
+        "a2420",
+        "a1808",
+        "a2369",
+        "a2421"
+      ],
+      "date": "2026-04",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1509-03239",
+      "doi": "10.48550/arXiv.1509.03239",
+      "title": "Doubled Color Codes",
+      "authorIds": [
+        "a2920",
+        "a1797"
+      ],
+      "date": "2015-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 14,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2505-01370",
+      "doi": "10.48550/arXiv.2505.01370",
+      "title": "Engineering CSS surgery: compiling any CNOT in any code",
+      "authorIds": [
+        "a2921",
+        "a2866",
+        "a2922"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevx-11-011023",
+      "doi": "10.1103/PHYSREVX.11.011023",
+      "title": "Fault-Tolerant Gates on Hypergraph Product Codes",
+      "authorIds": [
+        "a2923",
+        "a2829"
+      ],
+      "date": "2021-02",
+      "journalId": "j131",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 38,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-67xf-zdjb",
+      "doi": "10.1103/67xf-zdjb",
+      "title": "High-Threshold, Low-Overhead and Single-Shot Decodable Fault-Tolerant Quantum Memory",
+      "authorIds": [
+        "a2887",
+        "a2924",
+        "a2866"
+      ],
+      "date": "2026-03",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1126-sciadv-abn1717",
+      "doi": "10.1126/sciadv.abn1717",
+      "title": "Low-overhead fault-tolerant quantum computing using long-range connectivity",
+      "authorIds": [
+        "a2348",
+        "a2378",
+        "a2888",
+        "a2368"
+      ],
+      "date": "2022-05",
+      "journalId": "j82",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 99,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41567-024-02479-z",
+      "doi": "10.1038/s41567-024-02479-z",
+      "title": "Constant-overhead fault-tolerant quantum computation with reconfigurable atom arrays",
+      "authorIds": [
+        "a2408",
+        "a2324",
+        "a2925",
+        "a2926",
+        "a2023",
+        "a827"
+      ],
+      "date": "2024-04",
+      "journalId": "j130",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 156,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2504-13043",
+      "doi": "10.48550/arXiv.2504.13043",
+      "title": "Machine Learning Decoding of Circuit-Level Noise for Bivariate Bicycle Codes",
+      "authorIds": [
+        "a2929",
+        "a2930",
+        "a1808",
+        "a2931",
+        "a2873"
+      ],
+      "date": "2025-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-86j7-cmsw",
+      "doi": "10.1103/86j7-cmsw",
+      "title": "Anyon Theory and Topological Frustration of High-Efficiency Quantum Low-Density Parity-Check Codes",
+      "authorIds": [
+        "a2932",
+        "a467",
+        "a811",
+        "a2048",
+        "a2905",
+        "a827"
+      ],
+      "date": "2025-06",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-ps3r-wf84",
+      "doi": "10.1103/ps3r-wf84",
+      "title": "Adaptive Syndrome Extraction",
+      "authorIds": [
+        "a2934",
+        "a2935",
+        "a2936",
+        "a2895"
+      ],
+      "date": "2025-05",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2310-16982",
+      "doi": "10.48550/arXiv.2310.16982",
+      "title": "Non-Clifford and parallelizable fault-tolerant logical gates on constant and almost-constant rate homological quantum LDPC codes via higher symmetries",
+      "authorIds": [
+        "a2856",
+        "a2937",
+        "a2938",
+        "a1797",
+        "a2368"
+      ],
+      "date": "2023-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2309-16406",
+      "doi": "10.48550/arXiv.2309.16406",
+      "title": "Towards surgery with good quantum LDPC codes",
+      "authorIds": [
+        "a2420"
+      ],
+      "date": "2023-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-cjb4-l57n",
+      "doi": "10.1103/cjb4-l57n",
+      "title": "Single-shot and measurement-based quantum error correction via fault complexes",
+      "authorIds": [
+        "a2924",
+        "a2886",
+        "a2939",
+        "a2881"
+      ],
+      "date": "2025-09",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 4,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-133-180601",
+      "doi": "10.1103/PhysRevLett.133.180601",
+      "title": "Entangling Four Logical Qubits beyond Break-Even in a Nonlocal Code",
+      "authorIds": [
+        "a2940",
+        "a2902",
+        "a2941",
+        "a2942"
+      ],
+      "date": "2024-10",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 29,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-07269",
+      "doi": "10.48550/arXiv.2510.07269",
+      "title": "Transversal dimension jump for product qLDPC codes",
+      "authorIds": [
+        "a2943",
+        "a2256",
+        "a2408"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-110-022607",
+      "doi": "10.1103/PhysRevA.110.022607",
+      "title": "Long-range-enhanced surface codes",
+      "authorIds": [
+        "a2940",
+        "a2944",
+        "a2945",
+        "a2942"
+      ],
+      "date": "2024-08",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 15,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2508-08191",
+      "doi": "10.48550/arXiv.2508.08191",
+      "title": "Single-Shot Decoding and Fault-tolerant Gates with Trivariate Tricycle Codes",
+      "authorIds": [
+        "a2946",
+        "a2947",
+        "a2918"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-14090",
+      "doi": "10.48550/arXiv.2510.14090",
+      "title": "Quantum Low-Density Parity-Check Codes",
+      "authorIds": [
+        "a2928",
+        "a2948",
+        "a2949",
+        "a2950",
+        "a2926"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2507-21396",
+      "doi": "10.48550/arXiv.2507.21396",
+      "title": "Towards self-correcting quantum codes for neutral atom arrays",
+      "authorIds": [
+        "a294",
+        "a2940",
+        "a2951",
+        "a2942"
+      ],
+      "date": "2025-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3717823-3718318",
+      "doi": "10.1145/3717823.3718318",
+      "title": "Quantum Fault Tolerance with Constant-Space and Logarithmic-Time Overheads",
+      "authorIds": [
+        "a2532",
+        "a2925"
+      ],
+      "date": "2025-06",
+      "journalId": "j233",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 6,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2508-10714",
+      "doi": "10.48550/arXiv.2508.10714",
+      "title": "Magic tricycles: efficient magic state generation with finite block-length quantum LDPC codes",
+      "authorIds": [
+        "a2424",
+        "a2952",
+        "a2953",
+        "a2954",
+        "a2017",
+        "a827"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-025-56298-8",
+      "doi": "10.1038/s41467-025-56298-8",
+      "title": "LDPC-cat codes for low-overhead quantum computing in 2D",
+      "authorIds": [
+        "a2373",
+        "a2374",
+        "a449",
+        "a2376",
+        "a2375"
+      ],
+      "date": "2025-01",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 25,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2410-16250",
+      "doi": "10.48550/arXiv.2410.16250",
+      "title": "Cups and Gates I: Cohomology invariants and logical quantum operations",
+      "authorIds": [
+        "a2900",
+        "a2956",
+        "a2903",
+        "a2957"
+      ],
+      "date": "2024-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2410-02213",
+      "doi": "10.48550/arXiv.2410.02213",
+      "title": "Low-overhead fault-tolerant quantum computation by gauging logical operators",
+      "authorIds": [
+        "a2369",
+        "a2421"
+      ],
+      "date": "2024-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2503-05003",
+      "doi": "10.48550/arXiv.2503.05003",
+      "title": "Parallel Logical Measurements via Quantum Code Surgery",
+      "authorIds": [
+        "a2420",
+        "a1808",
+        "a2369",
+        "a2421"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2506-18061",
+      "doi": "10.48550/arXiv.2506.18061",
+      "title": "Planar Fault-Tolerant Quantum Computation with Low Overhead",
+      "authorIds": [
+        "a2958",
+        "a2959",
+        "a456"
+      ],
+      "date": "2025-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-5-040302",
+      "doi": "10.1103/PRXQuantum.5.040302",
+      "title": "Weight-Reduced Stabilizer Codes with Lower Overhead",
+      "authorIds": [
+        "a2960",
+        "a2961",
+        "a2883",
+        "a2881",
+        "a2886"
+      ],
+      "date": "2024-10",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 9,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-134-070602",
+      "doi": "10.1103/PhysRevLett.134.070602",
+      "title": "Time-Efficient Logical Operations on Quantum Low-Density Parity Check Codes",
+      "authorIds": [
+        "a2959",
+        "a456"
+      ],
+      "date": "2025-02",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2503-19790",
+      "doi": "10.48550/arXiv.2503.19790",
+      "title": "Clifford gates with logical transversality for self-dual CSS codes",
+      "authorIds": [
+        "a2874",
+        "a2418",
+        "a251"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2504-02673",
+      "doi": "10.48550/arXiv.2504.02673",
+      "title": "QUITS: A modular Qldpc code circUIT Simulator",
+      "authorIds": [
+        "a2962",
+        "a1642",
+        "a2963",
+        "a2964",
+        "a2965",
+        "a827"
+      ],
+      "date": "2025-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2503-19758",
+      "doi": "10.48550/arXiv.2503.19758",
+      "title": "Magic teleportation with generalized lattice surgery",
+      "authorIds": [
+        "a763",
+        "a2910"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-6-010306",
+      "doi": "10.1103/PRXQuantum.6.010306",
+      "title": "Toward a 2D Local Implementation of Quantum Low-Density Parity-Check Codes",
+      "authorIds": [
+        "a2934",
+        "a2966",
+        "a2837",
+        "a157",
+        "a2334",
+        "a827"
+      ],
+      "date": "2025-01",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 28,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-10-07-1879",
+      "doi": "10.22331/q-2025-10-07-1879",
+      "title": "Single-shot preparation of hypergraph product codes via dimension jump",
+      "authorIds": [
+        "a2940"
+      ],
+      "date": "2025-10",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-07223",
+      "doi": "10.48550/arXiv.2510.07223",
+      "title": "Multi-qubit Toffoli with exponentially fewer T gates",
+      "authorIds": [
+        "a2834",
+        "a2968",
+        "a2969"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2022-04-20-692",
+      "doi": "10.22331/q-2022-04-20-692",
+      "title": "New techniques for bounding stabilizer rank",
+      "authorIds": [
+        "a2970",
+        "a2904"
+      ],
+      "date": "2022-04",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 6,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1098-rspa-2019-0251",
+      "doi": "10.1098/rspa.2019.0251",
+      "title": "Quantifying magic for multi-qubit operations",
+      "authorIds": [
+        "a2971",
+        "a2427"
+      ],
+      "date": "2019-07",
+      "journalId": "j234",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 118,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2509-25702",
+      "doi": "10.48550/arXiv.2509.25702",
+      "title": "Unitary synthesis with fewer T gates",
+      "authorIds": [
+        "a2972"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevx-6-021043",
+      "doi": "10.1103/PhysRevX.6.021043",
+      "title": "Trading Classical and Quantum Computational Resources",
+      "authorIds": [
+        "a2920",
+        "a2973",
+        "a2974"
+      ],
+      "date": "2016-06",
+      "journalId": "j131",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 302,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tit-2019-2906374",
+      "doi": "10.1109/TIT.2019.2906374",
+      "title": "T-Count Optimization and Reed–Muller Codes",
+      "authorIds": [
+        "a25",
+        "a539"
+      ],
+      "date": "2019-03",
+      "journalId": "j232",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 47,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2508-14546",
+      "doi": "10.48550/arXiv.2508.14546",
+      "title": "Application of resource theory based on free Clifford+kT computation to early fault-tolerant quantum computing",
+      "authorIds": [
+        "a2108",
+        "a446"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevapplied-19-034052",
+      "doi": "10.1103/PhysRevApplied.19.034052",
+      "title": "Lower Bound for the T Count Via Unitary Stabilizer Nullity",
+      "authorIds": [
+        "a2975",
+        "a762"
+      ],
+      "date": "2023-03",
+      "journalId": "j124",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 38,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2022-02-15-652",
+      "doi": "10.22331/q-2022-02-15-652",
+      "title": "Lower Bounds on Stabilizer Rank",
+      "authorIds": [
+        "a2976",
+        "a2977",
+        "a2978"
+      ],
+      "date": "2022-02",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 8,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-2-010345",
+      "doi": "10.1103/PRXQUANTUM.2.010345",
+      "title": "Quantifying Quantum Speedups: Improved Classical Simulation From Tighter Magic Monotones",
+      "authorIds": [
+        "a2971",
+        "a2979",
+        "a2980",
+        "a2981",
+        "a2427"
+      ],
+      "date": "2021-03",
+      "journalId": "j69",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 118,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2026-07-22-2168",
+      "doi": "10.22331/q-2026-07-22-2168",
+      "title": "Quantum state preparation with optimal T-count",
+      "authorIds": [
+        "a2834",
+        "a2968",
+        "a2982"
+      ],
+      "date": "2026-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-2058-9565-aad604",
+      "doi": "10.1088/2058-9565/aad604",
+      "title": "An efficient quantum compiler that reduces T count",
+      "authorIds": [
+        "a2983",
+        "a2427"
+      ],
+      "date": "2018-07",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 96,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2022-02-09-645",
+      "doi": "10.22331/q-2022-02-09-645",
+      "title": "Stabilizer rank and higher-order Fourier analysis",
+      "authorIds": [
+        "a2984"
+      ],
+      "date": "2022-02",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 16,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2509-01224",
+      "doi": "10.48550/arXiv.2509.01224",
+      "title": "Cutting stabiliser decompositions of magic state cultivation with ZX-calculus",
+      "authorIds": [
+        "a2432",
+        "a2433"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-025-01032-x",
+      "doi": "10.1038/s41534-025-01032-x",
+      "title": "Error crafting in mixed quantum gate synthesis",
+      "authorIds": [
+        "a838",
+        "a2847",
+        "a2854",
+        "a2065",
+        "a2985"
+      ],
+      "date": "2025-06",
+      "journalId": "j101",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2609-11153",
+      "doi": "10.48550/arXiv.2609.11153",
+      "title": "Optimal T-Count for Block Encodings of Fermionic and Spin Hamiltonians",
+      "authorIds": [
+        "a2986",
+        "a2987",
+        "a467"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-31544",
+      "doi": "10.48550/arXiv.2605.31544",
+      "title": "More efficient Clifford+T synthesis for small-angle rotations and application to Trotterization",
+      "authorIds": [
+        "a2449",
+        "a2450",
+        "a2988",
+        "a2427",
+        "a2490"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2021-12-20-606",
+      "doi": "10.22331/q-2021-12-20-606",
+      "title": "Improved upper bounds on the stabilizer rank of magic states",
+      "authorIds": [
+        "a2989",
+        "a2980",
+        "a2834"
+      ],
+      "date": "2021-12",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 47,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2012-11739",
+      "doi": "10.48550/arXiv.2012.11739",
+      "title": "Improved Strong Simulation of Universal Quantum Circuits",
+      "authorIds": [
+        "a2990"
+      ],
+      "date": "2020-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-2058-9565-ac5d20",
+      "doi": "10.1088/2058-9565/ac5d20",
+      "title": "Simulating quantum circuits with ZX-calculus reduced stabiliser decompositions",
+      "authorIds": [
+        "a2991",
+        "a2992"
+      ],
+      "date": "2022-03",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 45,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-07627",
+      "doi": "10.48550/arXiv.2510.07627",
+      "title": "Asymptotic Gate Count Bounds for Ancilla-Free Single-Qubit Synthesis with Arithmetic Gates",
+      "authorIds": [
+        "a2855",
+        "a2854",
+        "a2847"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2019-09-02-181",
+      "doi": "10.22331/q-2019-09-02-181",
+      "title": "Simulation of quantum circuits by low-rank stabilizer decompositions",
+      "authorIds": [
+        "a2920",
+        "a2993",
+        "a2994",
+        "a2995",
+        "a2834",
+        "a827"
+      ],
+      "date": "2019-09",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 290,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2604-21333",
+      "doi": "10.48550/arXiv.2604.21333",
+      "title": "pygridsynth: A fast numerical tool for ancilla-free Clifford+T synthesis",
+      "authorIds": [
+        "a2997",
+        "a838"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-18000",
+      "doi": "10.48550/arXiv.2510.18000",
+      "title": "Application Scale Quantum Circuit Compilation with Controlled Error",
+      "authorIds": [
+        "a379",
+        "a2998",
+        "a772",
+        "a419",
+        "a801",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-116-250501",
+      "doi": "10.1103/PhysRevLett.116.250501",
+      "title": "Improved Classical Simulation of Quantum Circuits Dominated by Clifford Gates",
+      "authorIds": [
+        "a2920",
+        "a2834"
+      ],
+      "date": "2016-06",
+      "journalId": "j103",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 326,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-0909-3392",
+      "doi": "10.48550/arXiv.0909.3392",
+      "title": "On the communication complexity of XOR functions",
+      "authorIds": [
+        "a2999",
+        "a2638"
+      ],
+      "date": "2009-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-2058-9565-ab8963",
+      "doi": "10.1088/2058-9565/ab8963",
+      "title": "Lower bounds on the non-Clifford resources for quantum computations",
+      "authorIds": [
+        "a2527",
+        "a2427",
+        "a2996",
+        "a409"
+      ],
+      "date": "2020-04",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 128,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-14202",
+      "doi": "10.48550/arXiv.2603.14202",
+      "title": "Multi-qubit controlled gate with optimal T-count",
+      "authorIds": [
+        "a3000",
+        "a2847"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-09-16-1860",
+      "doi": "10.22331/q-2025-09-16-1860",
+      "title": "Lower T-count with faster algorithms",
+      "authorIds": [
+        "a3001"
+      ],
+      "date": "2025-09",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 4,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-28586",
+      "doi": "10.48550/arXiv.2605.28586",
+      "title": "Stabilizer rank bounds for magic-state orbits",
+      "authorIds": [
+        "a2984",
+        "a3002"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-4230-lipics-tqc-2022-5",
+      "doi": "10.4230/LIPIcs.TQC.2022.5",
+      "title": "Classical Simulation of Quantum Circuits with Partial and Graphical Stabiliser Decompositions",
+      "authorIds": [
+        "a2991",
+        "a2992",
+        "a3003"
+      ],
+      "date": "2022-01",
+      "journalId": "j206",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 27,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-022-00666-5",
+      "doi": "10.1038/s41534-022-00666-5",
+      "title": "Measuring magic on a quantum processor",
+      "authorIds": [
+        "a3004",
+        "a3005",
+        "a3006",
+        "a3007"
+      ],
+      "date": "2022-12",
+      "journalId": "j101",
+      "keywordIds": [
+        "quantum-circuits",
+        "compilation"
+      ],
+      "citations": 106,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1905-07682",
+      "doi": "10.48550/arXiv.1905.07682",
+      "title": "Windowed quantum arithmetic",
+      "authorIds": [
+        "a943"
+      ],
+      "date": "2019-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-dac63849-2025-11132981",
+      "doi": "10.1109/DAC63849.2025.11132981",
+      "title": "Measurement-based uncomputation of quantum circuits for modular arithmetic",
+      "authorIds": [
+        "a3008",
+        "a3009",
+        "a3010",
+        "a3011"
+      ],
+      "date": "2025-06",
+      "journalId": "j235",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-86-032324",
+      "doi": "10.1103/PhysRevA.86.032324",
+      "title": "Surface codes: Towards practical large-scale quantum computation",
+      "authorIds": [
+        "a938",
+        "a3012",
+        "a3013",
+        "a3014"
+      ],
+      "date": "2012-09",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 3084,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1367-2630-14-12-123011",
+      "doi": "10.1088/1367-2630/14/12/123011",
+      "title": "Surface code quantum computing by lattice surgery",
+      "authorIds": [
+        "a3015",
+        "a938",
+        "a3016",
+        "a3017"
+      ],
+      "date": "2012-12",
+      "journalId": "j67",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 590,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-s00145-026-09572-x",
+      "doi": "10.1007/s00145-026-09572-x",
+      "title": "Space-Efficient and Noise-Robust Quantum Factoring",
+      "authorIds": [
+        "a3018",
+        "a3019"
+      ],
+      "date": "2026-04",
+      "journalId": "j236",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-978-3-031-62746-0-10",
+      "doi": "10.1007/978-3-031-62746-0_10",
+      "title": "Extending Regev’s Factoring Algorithm to Compute Discrete Logarithms",
+      "authorIds": [
+        "a2521",
+        "a3020"
+      ],
+      "date": "2024-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 14,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-978-3-032-01878-6-13",
+      "doi": "10.1007/978-3-032-01878-6_13",
+      "title": "Reducing the Number of Qubits in Quantum Factoring",
+      "authorIds": [
+        "a3021",
+        "a3022",
+        "a3023"
+      ],
+      "date": "2025-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 8,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-dac63849-2025-11132436",
+      "doi": "10.1109/DAC63849.2025.11132436",
+      "title": "Optimizing windowed arithmetic for quantum attacks against RSA-2048",
+      "authorIds": [
+        "a3008",
+        "a3010",
+        "a3011"
+      ],
+      "date": "2025-06",
+      "journalId": "j235",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-62056-ayzojb0kr",
+      "doi": "10.62056/ayzojb0kr",
+      "title": "A high-level comparison of state-of-the-art quantum algorithms for breaking asymmetric cryptography",
+      "authorIds": [
+        "a2521",
+        "a3020"
+      ],
+      "date": "2025-04",
+      "journalId": "j238",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-62056-an2isgsfg",
+      "doi": "10.62056/an2isgsfg",
+      "title": "On the success probability of the quantum algorithm for the short DLP",
+      "authorIds": [
+        "a2521"
+      ],
+      "date": "2026-05",
+      "journalId": "j238",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-s11128-022-03736-x",
+      "doi": "10.1007/s11128-022-03736-x",
+      "title": "Quantum modular multiplier via binary-exponent-based recombination",
+      "authorIds": [
+        "a2298",
+        "a2338",
+        "a3024",
+        "a2221",
+        "a3025",
+        "a827"
+      ],
+      "date": "2022-11",
+      "journalId": "j74",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 4,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-025-59714-1",
+      "doi": "10.1038/s41467-025-59714-1",
+      "title": "Yoked surface codes",
+      "authorIds": [
+        "a943",
+        "a1020",
+        "a3026",
+        "a967"
+      ],
+      "date": "2025-05",
+      "journalId": "j231",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 30,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2403-18006",
+      "doi": "10.48550/arXiv.2403.18006",
+      "title": "Fast quantum integer multiplication with zero ancillas",
+      "authorIds": [
+        "a3027",
+        "a3028"
+      ],
+      "date": "2024-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-131-040602",
+      "doi": "10.1103/PhysRevLett.131.040602",
+      "title": "Computing 256-bit Elliptic Curve Logarithm in 9 Hours with 126133 Cat Qubits",
+      "authorIds": [
+        "a284",
+        "a2373",
+        "a3029",
+        "a2374",
+        "a3030"
+      ],
+      "date": "2023-01",
+      "journalId": "j239",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-access-2026-3665887",
+      "doi": "10.1109/ACCESS.2026.3665887",
+      "title": "An Evaluation of Computational Complexity of Shor’s Algorithm on Surface Codes for Factorization",
+      "authorIds": [
+        "a3031",
+        "a3032"
+      ],
+      "date": "2026-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2502-17325",
+      "doi": "10.48550/arXiv.2502.17325",
+      "title": "Optimized circuits for windowed modular arithmetic with applications to quantum attacks against RSA",
+      "authorIds": [
+        "a3008",
+        "a3010",
+        "a3011"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-03951",
+      "doi": "10.48550/arXiv.2605.03951",
+      "title": "Factoring $2048$ bit RSA integers with a half-million-qubit modular atomic processor",
+      "authorIds": [
+        "a3033",
+        "a3034"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-978-3-032-25291-3-14",
+      "doi": "10.1007/978-3-032-25291-3_14",
+      "title": "Parallel Spooky Pebbling Makes Regev Factoring More Practical",
+      "authorIds": [
+        "a3027",
+        "a3018",
+        "a3035"
+      ],
+      "date": "2026-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic14-7-8-8",
+      "doi": "10.26421/QIC14.7-8-8",
+      "title": "Fast quantum modular exponentiation architecture for Shor's factoring alogrithm",
+      "authorIds": [
+        "a3036",
+        "a3037"
+      ],
+      "date": "2014-05",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-cryptanalysis",
+        "quantum-circuits"
+      ],
+      "citations": 38,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-25213",
+      "doi": "10.48550/arXiv.2510.25213",
+      "title": "Platform Architecture for Tight Coupling of High-Performance Computing with Quantum Processors",
+      "authorIds": [
+        "a3038",
+        "a3039",
+        "a3040",
+        "a3041",
+        "a3042",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-25222",
+      "doi": "10.48550/arXiv.2510.25222",
+      "title": "Decoder Switching: Breaking the Speed-Accuracy Tradeoff in Real-Time Quantum Error Correction",
+      "authorIds": [
+        "a1373",
+        "a3056",
+        "a1375",
+        "a1376",
+        "a1377",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-isca66397-2026-00069",
+      "doi": "10.1109/ISCA66397.2026.00069",
+      "title": "Triage: An Adaptive Parallel Window Decoding Scheduler for Real-Time Fault-Tolerant Quantum Computation",
+      "authorIds": [
+        "a150",
+        "a819",
+        "a3057",
+        "a2223"
+      ],
+      "date": "2026-06",
+      "journalId": "j196",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-025-01033-w",
+      "doi": "10.1038/s41534-025-01033-w",
+      "title": "Machine learning message-passing for the scalable decoding of QLDPC codes",
+      "authorIds": [
+        "a3058",
+        "a575"
+      ],
+      "date": "2025-05",
+      "journalId": "j101",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 14,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2406-17995",
+      "doi": "10.48550/arXiv.2406.17995",
+      "title": "Managing Classical Processing Requirements for Quantum Error Correction",
+      "authorIds": [
+        "a3059",
+        "a3060"
+      ],
+      "date": "2024-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-qce65121-2025-00129",
+      "doi": "10.1109/QCE65121.2025.00129",
+      "title": "Network-Integrated Decoding System for Real-Time Quantum Error Correction with Lattice Surgery",
+      "authorIds": [
+        "a3061",
+        "a1140",
+        "a3062",
+        "a3063"
+      ],
+      "date": "2025-08",
+      "journalId": "j28",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2601-09921",
+      "doi": "10.48550/arXiv.2601.09921",
+      "title": "Learning to Decode in Parallel: Self-Coordinating Neural Network for Real-Time Quantum Error Correction",
+      "authorIds": [
+        "a2119",
+        "a3064",
+        "a3065",
+        "a1357",
+        "a760",
+        "a827"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-2058-9565-adc6b6",
+      "doi": "10.1088/2058-9565/adc6b6",
+      "title": "Spatially parallel decoding for multi-qubit lattice surgery",
+      "authorIds": [
+        "a2440",
+        "a3071",
+        "a3072",
+        "a3073"
+      ],
+      "date": "2025-03",
+      "journalId": "j77",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 6,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2026-06-30-2149",
+      "doi": "10.22331/q-2026-06-30-2149",
+      "title": "Machine Learning Decoding of Circuit-Level Noise for Bivariate Bicycle Codes",
+      "authorIds": [
+        "a2929",
+        "a2930",
+        "a1808",
+        "a2931",
+        "a2873"
+      ],
+      "date": "2026-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2506-01779",
+      "doi": "10.48550/arXiv.2506.01779",
+      "title": "Improved belief propagation is sufficient for real-time decoding of quantum memory",
+      "authorIds": [
+        "a3074",
+        "a12",
+        "a2527",
+        "a3075",
+        "a1798",
+        "a827"
+      ],
+      "date": "2025-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 4,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2505-22741",
+      "doi": "10.48550/arXiv.2505.22741",
+      "title": "Importance sampling for data-driven decoding of quantum error-correcting codes",
+      "authorIds": [
+        "a3078"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-2058-9565-ae4e55",
+      "doi": "10.1088/2058-9565/ae4e55",
+      "title": "Reducing quantum error correction overhead using soft information",
+      "authorIds": [
+        "a3079",
+        "a3080"
+      ],
+      "date": "2026-03",
+      "journalId": "j77",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1140-epjqt-s40507-025-00446-y",
+      "doi": "10.1140/epjqt/s40507-025-00446-y",
+      "title": "Exploring the FPGA and ASIC design space of belief propagation and ordered statistics decoders for quantum error correction codes",
+      "authorIds": [
+        "a3081",
+        "a3082",
+        "a3083"
+      ],
+      "date": "2025-11",
+      "journalId": "j19",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2512-15689",
+      "doi": "10.48550/arXiv.2512.15689",
+      "title": "Error mitigation for logical circuits using decoder confidence",
+      "authorIds": [
+        "a3084",
+        "a2875",
+        "a68"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-sv11-f78l",
+      "doi": "10.1103/sv11-f78l",
+      "title": "Simple, Efficient, and Generic Postselection Decoding for qLDPC Codes",
+      "authorIds": [
+        "a2351",
+        "a838",
+        "a2065",
+        "a456"
+      ],
+      "date": "2026-07",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-14637",
+      "doi": "10.48550/arXiv.2605.14637",
+      "title": "Adaptive Window Decoding based on Spatiotemporal Complementary Gap",
+      "authorIds": [
+        "a3085",
+        "a1373",
+        "a3056",
+        "a1375",
+        "a1376",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2508-04969",
+      "doi": "10.48550/arXiv.2508.04969",
+      "title": "Minimum-Weight Parity Factor Decoder for Quantum Error Correction",
+      "authorIds": [
+        "a1140",
+        "a451",
+        "a3086",
+        "a2366",
+        "a3063"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2509-03954",
+      "doi": "10.48550/arXiv.2509.03954",
+      "title": "LATTE: A Decoding Architecture for Quantum Computing with Temporal and Spatial Scalability",
+      "authorIds": [
+        "a2119",
+        "a3087",
+        "a1358",
+        "a1357",
+        "a3088",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2502-19971",
+      "doi": "10.48550/arXiv.2502.19971",
+      "title": "Efficient and Universal Neural-Network Decoder for Stabilizer-Based Quantum Error Correction",
+      "authorIds": [
+        "a2299",
+        "a3089",
+        "a2413",
+        "a1132",
+        "a3090"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2509-03815",
+      "doi": "10.48550/arXiv.2509.03815",
+      "title": "Learning Neural Decoding with Parallelism and Self-Coordination for Quantum Error Correction",
+      "authorIds": [
+        "a2119",
+        "a760",
+        "a1357",
+        "a1358",
+        "a3088",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2026-07-22-2170",
+      "doi": "10.22331/q-2026-07-22-2170",
+      "title": "Controller-decoder system requirements derived by implementing Shor&amp;apos;s algorithm with surface code",
+      "authorIds": [
+        "a3091",
+        "a3092",
+        "a3093",
+        "a775",
+        "a3094"
+      ],
+      "date": "2026-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-023-42482-1",
+      "doi": "10.1038/s41467-023-42482-1",
+      "title": "Parallel window decoding enables scalable fault tolerant quantum computation",
+      "authorIds": [
+        "a3095",
+        "a2918",
+        "a3096",
+        "a2429",
+        "a2427"
+      ],
+      "date": "2023-11",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 81,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2026-03-20-2033",
+      "doi": "10.22331/q-2026-03-20-2033",
+      "title": "Snowflake: A Distributed Streaming Decoder",
+      "authorIds": [
+        "a2875"
+      ],
+      "date": "2026-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-21600",
+      "doi": "10.48550/arXiv.2510.21600",
+      "title": "Real-time decoding of the gross code memory with FPGAs",
+      "authorIds": [
+        "a3076",
+        "a3097",
+        "a3098",
+        "a3099",
+        "a3100",
+        "a827"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-026-70556-3",
+      "doi": "10.1038/s41467-026-70556-3",
+      "title": "Decoding correlated errors in quantum LDPC codes",
+      "authorIds": [
+        "a3058",
+        "a3082",
+        "a575",
+        "a2948"
+      ],
+      "date": "2026-03",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-16203",
+      "doi": "10.48550/arXiv.2603.16203",
+      "title": "A Scalable Open-Source QEC System with Sub-Microsecond Decoding-Feedback Latency",
+      "authorIds": [
+        "a466",
+        "a446",
+        "a3052",
+        "a3053",
+        "a790"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-04892",
+      "doi": "10.48550/arXiv.2605.04892",
+      "title": "Real-time Surface-Code Error Correction Using an FPGA-based Neural-Network Decoder",
+      "authorIds": [
+        "a1400",
+        "a2252",
+        "a3101",
+        "a1652",
+        "a2975",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tqe-2025-3608053",
+      "doi": "10.1109/TQE.2025.3608053",
+      "title": "Benchmarking the Ability of a Controller to Execute Quantum Error Corrected Non-Clifford Circuits",
+      "authorIds": [
+        "a3091",
+        "a3092",
+        "a3106",
+        "a775",
+        "a3107",
+        "a827"
+      ],
+      "date": "2025-01",
+      "journalId": "j38",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-025-63214-7",
+      "doi": "10.1038/s41467-025-63214-7",
+      "title": "Localized statistics decoding for quantum low-density parity-check codes",
+      "authorIds": [
+        "a2924",
+        "a1838",
+        "a2867",
+        "a1532",
+        "a777",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "architecture"
+      ],
+      "citations": 31,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-28627",
+      "doi": "10.48550/arXiv.2603.28627",
+      "title": "Shor's algorithm is possible with as few as 10,000 reconfigurable atomic qubits",
+      "authorIds": [
+        "a2337",
+        "a2408",
+        "a405",
+        "a3108",
+        "a3109",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2511-06124",
+      "doi": "10.48550/arXiv.2511.06124",
+      "title": "Addressable gate-based logical computation with quantum LDPC codes",
+      "authorIds": [
+        "a3111",
+        "a3112",
+        "a3113",
+        "a3114"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2606-07734",
+      "doi": "10.48550/arXiv.2606.07734",
+      "title": "Exploring the landscape of compact magic-state distillation factories",
+      "authorIds": [
+        "a3115",
+        "a3116",
+        "a3117",
+        "a284",
+        "a3030"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41586-024-07107-7",
+      "doi": "10.1038/s41586-024-07107-7",
+      "title": "High-threshold and low-overhead fault-tolerant quantum memory",
+      "authorIds": [
+        "a2920",
+        "a1797",
+        "a1799",
+        "a2852",
+        "a2876",
+        "a827"
+      ],
+      "date": "2024-03",
+      "journalId": "j64",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 439,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-isca66397-2026-00148",
+      "doi": "10.1109/ISCA66397.2026.00148",
+      "title": "Distilling Magic States in the Bicycle Architecture",
+      "authorIds": [
+        "a3118",
+        "a2933",
+        "a2876",
+        "a1808",
+        "a1590"
+      ],
+      "date": "2026-06",
+      "journalId": "j196",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2511-15989",
+      "doi": "10.48550/arXiv.2511.15989",
+      "title": "Explicit construction of low-overhead gadgets for gates on quantum LDPC codes",
+      "authorIds": [
+        "a2880",
+        "a2347",
+        "a2348"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2603-28846",
+      "doi": "10.48550/arXiv.2603.28846",
+      "title": "Securing Elliptic Curve Cryptocurrencies against Quantum Vulnerabilities: Resource Estimates and Mitigations",
+      "authorIds": [
+        "a45",
+        "a1073",
+        "a943",
+        "a900",
+        "a398",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2604-16209",
+      "doi": "10.48550/arXiv.2604.16209",
+      "title": "Towards Ultra-High-Rate Quantum Error Correction with Reconfigurable Atom Arrays",
+      "authorIds": [
+        "a2338",
+        "a1809",
+        "a2326",
+        "a2330",
+        "a817"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-026-01310-2",
+      "doi": "10.1038/s41534-026-01310-2",
+      "title": "Planar fault-tolerant logical measurements with low qubit overhead",
+      "authorIds": [
+        "a2958",
+        "a2959",
+        "a456"
+      ],
+      "date": "2026-06",
+      "journalId": "j101",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2606-03507",
+      "doi": "10.48550/arXiv.2606.03507",
+      "title": "Full Extractors for Logical Processing in Hypergraph Product Codes",
+      "authorIds": [
+        "a2929",
+        "a1808",
+        "a817",
+        "a2873"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-21746",
+      "doi": "10.48550/arXiv.2605.21746",
+      "title": "GeneCS: Synthesizing Resource-Efficient Code Surgery for Arbitrary Quantum Stabilizer Codes",
+      "authorIds": [
+        "a3122",
+        "a356",
+        "a1937"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-vxpb-vjwl",
+      "doi": "10.1103/vxpb-vjwl",
+      "title": "Sequences of Bivariate Bicycle Codes from Covering Graphs",
+      "authorIds": [
+        "a2351"
+      ],
+      "date": "2026-08",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-08523",
+      "doi": "10.48550/arXiv.2510.08523",
+      "title": "High-Rate Surgery: towards constant-overhead logical operations",
+      "authorIds": [
+        "a3123",
+        "a2410",
+        "a2408"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1126-sciadv-adp6388",
+      "doi": "10.1126/sciadv.adp6388",
+      "title": "High-performance fault-tolerant quantum computing with many-hypercube codes",
+      "authorIds": [
+        "a2422"
+      ],
+      "date": "2024-09",
+      "journalId": "j82",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 17,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2509-02721",
+      "doi": "10.48550/arXiv.2509.02721",
+      "title": "Tableau-Based Framework for Efficient Logical Quantum Compilation",
+      "authorIds": [
+        "a1587",
+        "a464",
+        "a3124",
+        "a1526",
+        "a1590",
+        "a827"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2601-22939",
+      "doi": "10.48550/arXiv.2601.22939",
+      "title": "Fast magic state preparation by gauging higher-form transversal gates in parallel",
+      "authorIds": [
+        "a2369"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3676641-3716001",
+      "doi": "10.1145/3676641.3716001",
+      "title": "HetEC: Architectures for Heterogeneous Quantum Error Correction Codes",
+      "authorIds": [
+        "a1526",
+        "a3118",
+        "a1797",
+        "a2421",
+        "a356",
+        "a827"
+      ],
+      "date": "2025-03",
+      "journalId": "j240",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 10,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3779212-3790122",
+      "doi": "10.1145/3779212.3790122",
+      "title": "Accelerating Computation in Quantum LDPC Code",
+      "authorIds": [
+        "a3127",
+        "a3128",
+        "a402",
+        "a3129",
+        "a3130",
+        "a827"
+      ],
+      "date": "2026-03",
+      "journalId": "j241",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2604-05126",
+      "doi": "10.48550/arXiv.2604.05126",
+      "title": "In-Situ Simultaneous Magic State Injection on Arbitrary CSS qLDPC Codes",
+      "authorIds": [
+        "a2933",
+        "a3118",
+        "a2857",
+        "a1808",
+        "a1585",
+        "a827"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3519935-3520024",
+      "doi": "10.1145/3519935.3520024",
+      "title": "Locally testable codes with constant rate, distance, and locality",
+      "authorIds": [
+        "a3131",
+        "a3132",
+        "a3133",
+        "a3134",
+        "a3135"
+      ],
+      "date": "2022-06",
+      "journalId": "j242",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 54,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tit-2021-3119384",
+      "doi": "10.1109/TIT.2021.3119384",
+      "title": "Quantum LDPC Codes With Almost Linear Minimum Distance",
+      "authorIds": [
+        "a3136",
+        "a3137"
+      ],
+      "date": "2021-10",
+      "journalId": "j232",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 157,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-01-20-1600",
+      "doi": "10.22331/q-2025-01-20-1600",
+      "title": "Sparse Blossom: correcting a million errors per core second with minimum-weight matching",
+      "authorIds": [
+        "a2385",
+        "a943"
+      ],
+      "date": "2025-01",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 136,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3564246-3585101",
+      "doi": "10.1145/3564246.3585101",
+      "title": "Good Quantum LDPC Codes with Linear Time Decoders",
+      "authorIds": [
+        "a3131",
+        "a1891",
+        "a2897",
+        "a3138"
+      ],
+      "date": "2023-05",
+      "journalId": "j243",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 77,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tit-2013-2292061",
+      "doi": "10.1109/TIT.2013.2292061",
+      "title": "Quantum LDPC Codes With Positive Rate and Minimum Distance Proportional to the Square Root of the Blocklength",
+      "authorIds": [
+        "a3139",
+        "a3140"
+      ],
+      "date": "2014-01",
+      "journalId": "j232",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 283,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-isit57864-2024-10619083",
+      "doi": "10.1109/ISIT57864.2024.10619083",
+      "title": "Belief Propagation Decoding of Quantum LDPC Codes with Guided Decimation",
+      "authorIds": [
+        "a2963",
+        "a3141",
+        "a3142",
+        "a3143",
+        "a3144"
+      ],
+      "date": "2024-07",
+      "journalId": "j31",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 27,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-focs54457-2022-00117",
+      "doi": "10.1109/FOCS54457.2022.00117",
+      "title": "Quantum Tanner codes",
+      "authorIds": [
+        "a449",
+        "a3140"
+      ],
+      "date": "2022-10",
+      "journalId": "j244",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 119,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1016-b978-0-12-385491-9-00010-1",
+      "doi": "10.1016/B978-0-12-385491-9.00010-1",
+      "title": "Quantum Low-Density Parity-Check Codes",
+      "authorIds": [
+        "a3145"
+      ],
+      "date": "2012-01",
+      "journalId": "j245",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 4,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2021-10-14-562",
+      "doi": "10.22331/q-2021-10-14-562",
+      "title": "Trapping Sets of Quantum LDPC Codes",
+      "authorIds": [
+        "a2926",
+        "a2928"
+      ],
+      "date": "2021-10",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 55,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-s00220-024-04951-6",
+      "doi": "10.1007/s00220-024-04951-6",
+      "title": "Single-Shot Decoding of Good Quantum LDPC Codes",
+      "authorIds": [
+        "a2431",
+        "a3146",
+        "a3147",
+        "a3148",
+        "a1808",
+        "a827"
+      ],
+      "date": "2024-03",
+      "journalId": "j246",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 24,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-ll5p-z88p",
+      "doi": "10.1103/ll5p-z88p",
+      "title": "Multivariate bicycle codes",
+      "authorIds": [
+        "a3149",
+        "a3150",
+        "a309",
+        "a76"
+      ],
+      "date": "2025-06",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 7,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2403-18901",
+      "doi": "10.48550/arXiv.2403.18901",
+      "title": "Toward Low-latency Iterative Decoding of QLDPC Codes Under Circuit-Level Noise",
+      "authorIds": [
+        "a3151",
+        "a3152",
+        "a3153"
+      ],
+      "date": "2024-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3519935-3520017",
+      "doi": "10.1145/3519935.3520017",
+      "title": "Asymptotically good Quantum and locally testable classical LDPC codes",
+      "authorIds": [
+        "a3136",
+        "a3137"
+      ],
+      "date": "2022-06",
+      "journalId": "j242",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 215,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-88-012311",
+      "doi": "10.1103/PhysRevA.88.012311",
+      "title": "Quantum Kronecker sum-product low-density parity-check codes with finite rate",
+      "authorIds": [
+        "a3154",
+        "a1030"
+      ],
+      "date": "2013-07",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 109,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-jsait-2020-3011758",
+      "doi": "10.1109/JSAIT.2020.3011758",
+      "title": "Refined Belief Propagation Decoding of Sparse-Graph Quantum Codes",
+      "authorIds": [
+        "a3155",
+        "a3156"
+      ],
+      "date": "2020-07",
+      "journalId": "j247",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 45,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2021-07-06-497",
+      "doi": "10.22331/q-2021-07-06-497",
+      "title": "Stim: a fast stabilizer circuit simulator",
+      "authorIds": [
+        "a943"
+      ],
+      "date": "2021-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 392,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41586-023-06927-3",
+      "doi": "10.1038/s41586-023-06927-3",
+      "title": "Logical quantum processor based on reconfigurable atom arrays",
+      "authorIds": [
+        "a2023",
+        "a2323",
+        "a2321",
+        "a2322",
+        "a817",
+        "a827"
+      ],
+      "date": "2023-12",
+      "journalId": "j64",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 1094,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1145-3406325-3451005",
+      "doi": "10.1145/3406325.3451005",
+      "title": "Fiber bundle codes: breaking the n 1/2 polylog( n ) barrier for Quantum LDPC codes",
+      "authorIds": [
+        "a2850",
+        "a2890",
+        "a3164"
+      ],
+      "date": "2021-06",
+      "journalId": "j248",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 75,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-05-05-1728",
+      "doi": "10.22331/q-2025-05-05-1728",
+      "title": "Hierarchical memories: Simulating quantum LDPC codes with local gates",
+      "authorIds": [
+        "a2925",
+        "a2923",
+        "a2256"
+      ],
+      "date": "2025-05",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 19,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic8-10-8",
+      "doi": "10.26421/QIC8.10-8",
+      "title": "On the iterative decoding of sparse quantum codes",
+      "authorIds": [
+        "a2829",
+        "a3165"
+      ],
+      "date": "2008-11",
+      "journalId": "j229",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 150,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-01-30-1618",
+      "doi": "10.22331/q-2025-01-30-1618",
+      "title": "Distance-preserving stabilizer measurements in hypergraph product codes",
+      "authorIds": [
+        "a3166",
+        "a913"
+      ],
+      "date": "2025-01",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 16,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41586-022-05434-1",
+      "doi": "10.1038/s41586-022-05434-1",
+      "title": "Suppressing quantum errors by scaling a surface code logical qubit",
+      "authorIds": [
+        "a3167",
+        "a884",
+        "a3168",
+        "a3169",
+        "a886",
+        "a827"
+      ],
+      "date": "2023-02",
+      "journalId": "j64",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 1100,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41586-024-08449-y",
+      "doi": "10.1038/s41586-024-08449-y",
+      "title": "Quantum error correction below the surface code threshold",
+      "authorIds": [
+        "a3184",
+        "a884",
+        "a3185",
+        "a3186",
+        "a3168",
+        "a827"
+      ],
+      "date": "2024-12",
+      "journalId": "j64",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 740,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1016-b978-0-12-821982-9-00015-0",
+      "doi": "10.1016/B978-0-12-821982-9.00015-0",
+      "title": "Quantum LDPC Codes",
+      "authorIds": [
+        "a3145"
+      ],
+      "date": "2021-01",
+      "journalId": "j245",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2021-11-22-585",
+      "doi": "10.22331/q-2021-11-22-585",
+      "title": "Degenerate Quantum LDPC Codes With Good Finite Length Performance",
+      "authorIds": [
+        "a3136",
+        "a3137"
+      ],
+      "date": "2021-11",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 238,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tit-2021-3097347",
+      "doi": "10.1109/TIT.2021.3097347",
+      "title": "Balanced Product Quantum Codes",
+      "authorIds": [
+        "a2900",
+        "a2903"
+      ],
+      "date": "2021-08",
+      "journalId": "j232",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 139,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2602-15372",
+      "doi": "10.48550/arXiv.2602.15372",
+      "title": "Self-dual Stacked Quantum Low-Density Parity-Check Codes",
+      "authorIds": [
+        "a3196",
+        "a3197",
+        "a3052"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-26421-qic14-15-16-5",
+      "doi": "10.26421/QIC14.15-16-5",
+      "title": "Fault-Tolerant quantum computation with constant overhead",
+      "authorIds": [
+        "a2895"
+      ],
+      "date": "2014-11",
+      "journalId": "j229",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 158,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2607-02482",
+      "doi": "10.48550/arXiv.2607.02482",
+      "title": "Automated logical Clifford gadgets for heterogeneous architectures via chain maps",
+      "authorIds": [
+        "a3198",
+        "a2934"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2601-10964",
+      "doi": "10.48550/arXiv.2601.10964",
+      "title": "Stabilizer Code-Generic Universal Fault-Tolerant Quantum Computation",
+      "authorIds": [
+        "a3199",
+        "a3200"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2410-23263",
+      "doi": "10.48550/arXiv.2410.23263",
+      "title": "Computation with quantum Reed-Muller codes and their mapping onto 2D atom arrays",
+      "authorIds": [
+        "a3151",
+        "a3153"
+      ],
+      "date": "2024-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-5q1v-ry3y",
+      "doi": "10.1103/5q1v-ry3y",
+      "title": "Magic State Injection with Erasure Qubits",
+      "authorIds": [
+        "a3201",
+        "a3202",
+        "a3203",
+        "a3204"
+      ],
+      "date": "2025-09",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 3,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2605-11318",
+      "doi": "10.48550/arXiv.2605.11318",
+      "title": "Spatial overhead reduction for 2D hypergraph product codes",
+      "authorIds": [
+        "a574",
+        "a3205",
+        "a2940"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2510-04521",
+      "doi": "10.48550/arXiv.2510.04521",
+      "title": "Fast surgery for quantum LDPC codes",
+      "authorIds": [
+        "a2345",
+        "a1838",
+        "a2348"
+      ],
+      "date": "2025-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2026-08-19-2195",
+      "doi": "10.22331/q-2026-08-19-2195",
+      "title": "Simple logical quantum computation with concatenated symplectic double codes",
+      "authorIds": [
+        "a2934",
+        "a2902"
+      ],
+      "date": "2026-08",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2609-11723",
+      "doi": "10.48550/arXiv.2609.11723",
+      "title": "Lifted surgery: Fast processing with QLDPC codes",
+      "authorIds": [
+        "a1838",
+        "a2348",
+        "a2867"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2604-01282",
+      "doi": "10.48550/arXiv.2604.01282",
+      "title": "Exhaustive Optimisation of Automorphism Groups for Stabiliser Codes",
+      "authorIds": [
+        "a3206",
+        "a2996"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-023-36493-1",
+      "doi": "10.1038/s41467-023-36493-1",
+      "title": "Fusion-based quantum computation",
+      "authorIds": [
+        "a3207",
+        "a3208",
+        "a2877",
+        "a3209",
+        "a3210",
+        "a827"
+      ],
+      "date": "2023-02",
+      "journalId": "j231",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 326,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2024-03-28-1302",
+      "doi": "10.22331/q-2024-03-28-1302",
+      "title": "Loss-tolerant architecture for quantum computing with quantum emitters",
+      "authorIds": [
+        "a3217",
+        "a3218",
+        "a3219"
+      ],
+      "date": "2024-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 11,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-023-00677-w",
+      "doi": "10.1038/s41534-023-00677-w",
+      "title": "Tailored cluster states with high threshold under biased noise",
+      "authorIds": [
+        "a913",
+        "a3220",
+        "a2366"
+      ],
+      "date": "2023-01",
+      "journalId": "j101",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 17,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2308-07844",
+      "doi": "10.48550/arXiv.2308.07844",
+      "title": "Fault-tolerant complexes",
+      "authorIds": [
+        "a2877",
+        "a3210",
+        "a3221",
+        "a2522",
+        "a2533",
+        "a827"
+      ],
+      "date": "2023-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 1,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-133-050604",
+      "doi": "10.1103/PhysRevLett.133.050604",
+      "title": "High-Photon-Loss Threshold Quantum Computing Using GHZ-State Measurements",
+      "authorIds": [
+        "a3222",
+        "a3223",
+        "a2432",
+        "a3224",
+        "a3225",
+        "a827"
+      ],
+      "date": "2024-08",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 30,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2312-09070",
+      "doi": "10.48550/arXiv.2312.09070",
+      "title": "Photonic fusion of entangled resource states from a quantum emitter",
+      "authorIds": [
+        "a3229",
+        "a3230",
+        "a3231",
+        "a3232",
+        "a1679",
+        "a827"
+      ],
+      "date": "2023-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-018-0076-0",
+      "doi": "10.1038/s41534-018-0076-0",
+      "title": "A local and scalable lattice renormalization method for ballistic quantum computation",
+      "authorIds": [
+        "a3238",
+        "a575",
+        "a198",
+        "a2311"
+      ],
+      "date": "2018-06",
+      "journalId": "j101",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 20,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-133-050605",
+      "doi": "10.1103/PhysRevLett.133.050605",
+      "title": "Encoded-Fusion-Based Quantum Computation for High Thresholds with Linear Optics",
+      "authorIds": [
+        "a3239",
+        "a3240",
+        "a3241",
+        "a3242"
+      ],
+      "date": "2024-08",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 15,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2023-08-22-1089",
+      "doi": "10.22331/q-2023-08-22-1089",
+      "title": "Concatenation Schemes for Topological Fault-tolerant Quantum Error Correction",
+      "authorIds": [
+        "a457",
+        "a2378",
+        "a3243"
+      ],
+      "date": "2023-08",
+      "journalId": "j73",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 7,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-nphys1157",
+      "doi": "10.1038/nphys1157",
+      "title": "Measurement-based quantum computation",
+      "authorIds": [
+        "a3244",
+        "a2918",
+        "a1742",
+        "a3245",
+        "a3246"
+      ],
+      "date": "2009-01",
+      "journalId": "j130",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 1092,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-115-020502",
+      "doi": "10.1103/PhysRevLett.115.020502",
+      "title": "From Three-Photon Greenberger-Horne-Zeilinger States to Ballistic Universal Quantum Computation",
+      "authorIds": [
+        "a3211",
+        "a834",
+        "a2918",
+        "a3215"
+      ],
+      "date": "2015-07",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 220,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-6-010305",
+      "doi": "10.1103/prxquantum.6.010305",
+      "title": "Deterministic Generation of Concatenated Graph Codes from Quantum Emitters",
+      "authorIds": [
+        "a3247",
+        "a3219",
+        "a3218"
+      ],
+      "date": "2025-01",
+      "journalId": "j69",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 10,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2024-07-24-1423",
+      "doi": "10.22331/q-2024-07-24-1423",
+      "title": "A Spin-Optical Quantum Computing Architecture",
+      "authorIds": [
+        "a3248",
+        "a3249",
+        "a3250",
+        "a3251",
+        "a3252",
+        "a827"
+      ],
+      "date": "2024-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 24,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2021-02-04-392",
+      "doi": "10.22331/Q-2021-02-04-392",
+      "title": "Blueprint for a Scalable Photonic Fault-Tolerant Quantum Computer",
+      "authorIds": [
+        "a3220",
+        "a3254",
+        "a2881",
+        "a852",
+        "a2939",
+        "a827"
+      ],
+      "date": "2021-02",
+      "journalId": "j73",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 300,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-3-030309",
+      "doi": "10.1103/PRXQuantum.3.030309",
+      "title": "All-Photonic Architecture for Scalable Quantum Computing with Greenberger-Horne-Zeilinger States",
+      "authorIds": [
+        "a3226",
+        "a3262",
+        "a3263",
+        "a3242",
+        "a3128"
+      ],
+      "date": "2022-07",
+      "journalId": "j69",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 31,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-97-030301",
+      "doi": "10.1103/PhysRevA.97.030301",
+      "title": "Fault-tolerant quantum computation with nondeterministic entangling gates",
+      "authorIds": [
+        "a3264",
+        "a3265",
+        "a3211",
+        "a3266",
+        "a2918"
+      ],
+      "date": "2018-03",
+      "journalId": "j117",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 42,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-131-120604",
+      "doi": "10.1103/PhysRevLett.131.120604",
+      "title": "Tailoring Fusion-Based Error Correction for High Thresholds to Biased Fusion Failures",
+      "authorIds": [
+        "a2361",
+        "a913",
+        "a2366"
+      ],
+      "date": "2023-09",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 17,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-2-030325",
+      "doi": "10.1103/PRXQuantum.2.030325",
+      "title": "Fault-Tolerant Continuous-Variable Measurement-based Quantum Computation Architecture",
+      "authorIds": [
+        "a3267",
+        "a1352",
+        "a3268",
+        "a3269",
+        "a3270"
+      ],
+      "date": "2021-08",
+      "journalId": "j69",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 100,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41586-025-08820-7",
+      "doi": "10.1038/s41586-025-08820-7",
+      "title": "A manufacturable platform for photonic quantum computing",
+      "authorIds": [
+        "a3271",
+        "a3272",
+        "a3273",
+        "a3274",
+        "a3275",
+        "a827"
+      ],
+      "date": "2025-02",
+      "journalId": "j64",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 228,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-103-113602",
+      "doi": "10.1103/PHYSREVLETT.103.113602",
+      "title": "Proposal for Pulsed On-Demand Sources of Photonic Cluster State Strings",
+      "authorIds": [
+        "a3363",
+        "a3215"
+      ],
+      "date": "2009-09",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 342,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2103-08612",
+      "doi": "10.48550/arXiv.2103.08612",
+      "title": "Interleaving: Modular architectures for fault-tolerant photonic quantum computing",
+      "authorIds": [
+        "a2877",
+        "a2378",
+        "a2360",
+        "a2533",
+        "a3214",
+        "a827"
+      ],
+      "date": "2021-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 8,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-05-05-1723",
+      "doi": "10.22331/q-2025-05-05-1723",
+      "title": "Fault-tolerant structures for measurement-based quantum computation on a network",
+      "authorIds": [
+        "a3364",
+        "a3365",
+        "a3366"
+      ],
+      "date": "2025-05",
+      "journalId": "j73",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 6,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-131-120603",
+      "doi": "10.1103/PhysRevLett.131.120603",
+      "title": "High-Threshold Quantum Computing by Fusing One-Dimensional Cluster States",
+      "authorIds": [
+        "a3218",
+        "a2368"
+      ],
+      "date": "2023-09",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 44,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevresearch-4-013010",
+      "doi": "10.1103/PhysRevResearch.4.013010",
+      "title": "Universal hardware-efficient topological measurement-based quantum computation via color-code-based cluster states",
+      "authorIds": [
+        "a3262",
+        "a3128"
+      ],
+      "date": "2022-01",
+      "journalId": "j121",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 9,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2303-16122",
+      "doi": "10.48550/arXiv.2303.16122",
+      "title": "Increasing error tolerance in quantum computers with dynamic bias arrangement",
+      "authorIds": [
+        "a2877",
+        "a3210",
+        "a2533",
+        "a3214",
+        "a3367"
+      ],
+      "date": "2023-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 5,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-93-040503",
+      "doi": "10.1103/PhysRevLett.93.040503",
+      "title": "Optical Quantum Computation Using Cluster States",
+      "authorIds": [
+        "a2842"
+      ],
+      "date": "2004-07",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 616,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-3788-lop250774",
+      "doi": "10.3788/lop250774",
+      "title": "基于融合的量子计算研究进展（特邀）",
+      "authorIds": [
+        "a3368",
+        "a3369",
+        "a3370",
+        "a3371"
+      ],
+      "date": "2025-01",
+      "journalId": "j249",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-019-08948-x",
+      "doi": "10.1038/s41467-019-08948-x",
+      "title": "Percolation thresholds for photonic quantum computing",
+      "authorIds": [
+        "a3214",
+        "a3372",
+        "a3373",
+        "a3258"
+      ],
+      "date": "2019-03",
+      "journalId": "j231",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 76,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41534-023-00705-9",
+      "doi": "10.1038/s41534-023-00705-9",
+      "title": "Parity-encoding-based quantum computing with Bayesian error tracking",
+      "authorIds": [
+        "a3262",
+        "a3226",
+        "a3263",
+        "a3128"
+      ],
+      "date": "2023-04",
+      "journalId": "j101",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 9,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1063-1-4976737",
+      "doi": "10.1063/1.4976737",
+      "title": "Why I am optimistic about the silicon-photonic route to quantum computing",
+      "authorIds": [
+        "a3215"
+      ],
+      "date": "2017-03",
+      "journalId": "j250",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 351,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2106-13825",
+      "doi": "10.48550/arXiv.2106.13825",
+      "title": "Creation of Entangled Photonic States Using Linear Optics",
+      "authorIds": [
+        "a3207",
+        "a3208",
+        "a3211",
+        "a3212",
+        "a3213",
+        "a827"
+      ],
+      "date": "2021-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 17,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-2-040353",
+      "doi": "10.1103/PRXQuantum.2.040353",
+      "title": "Fault-Tolerant Quantum Computation with Static Linear Optics",
+      "authorIds": [
+        "a2939",
+        "a3255",
+        "a3254",
+        "a2886",
+        "a3220",
+        "a827"
+      ],
+      "date": "2021-12",
+      "journalId": "j69",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 70,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-4-020303",
+      "doi": "10.1103/PRXQuantum.4.020303",
+      "title": "Logical Blocks for Fault-Tolerant Topological Quantum Computation",
+      "authorIds": [
+        "a2877",
+        "a3210",
+        "a524",
+        "a2533",
+        "a2879",
+        "a827"
+      ],
+      "date": "2023-04",
+      "journalId": "j69",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 59,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41586-022-04987-5",
+      "doi": "10.1038/s41586-022-04987-5",
+      "title": "Efficient generation of entangled multi-photon graph states from a single atom",
+      "authorIds": [
+        "a3374",
+        "a3375",
+        "a3376",
+        "a3377"
+      ],
+      "date": "2022-05",
+      "journalId": "j206",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 201,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-95-010501",
+      "doi": "10.1103/PhysRevLett.95.010501",
+      "title": "Resource-Efficient Linear Optical Quantum Computation",
+      "authorIds": [
+        "a2918",
+        "a3215"
+      ],
+      "date": "2005-06",
+      "journalId": "j103",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 793,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2025-06-04-1762",
+      "doi": "10.22331/q-2025-06-04-1762",
+      "title": "Building a fusion-based quantum computer using teleported gates",
+      "authorIds": [
+        "a3378",
+        "a3379",
+        "a3380",
+        "a3381"
+      ],
+      "date": "2025-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 0,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-101-032315",
+      "doi": "10.1103/PhysRevA.101.032315",
+      "title": "Progress towards practical qubit computation using approximate Gottesman-Kitaev-Preskill codes",
+      "authorIds": [
+        "a2939",
+        "a3220",
+        "a3260",
+        "a3259"
+      ],
+      "date": "2020-03",
+      "journalId": "j117",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 160,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-102-062411",
+      "doi": "10.1103/physreva.102.062411",
+      "title": "Continuous-variable gate teleportation and bosonic-code error correction",
+      "authorIds": [
+        "a3382",
+        "a3257",
+        "a3254",
+        "a3260"
+      ],
+      "date": "2020-12",
+      "journalId": "j117",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 84,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-prxquantum-4-020328",
+      "doi": "10.1103/prxquantum.4.020328",
+      "title": "Optimizing Graph Codes for Measurement-Based Loss Tolerance",
+      "authorIds": [
+        "a3383",
+        "a3247",
+        "a3218"
+      ],
+      "date": "2023-05",
+      "journalId": "j69",
+      "keywordIds": [
+        "photonic-quantum-computing",
+        "fault-tolerance"
+      ],
+      "citations": 33,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-113-080501",
+      "doi": "10.1103/PhysRevLett.113.080501",
+      "title": "Fault-Tolerant Conversion between the Steane and Reed-Muller Quantum Codes",
+      "authorIds": [
+        "a2882",
+        "a2828",
+        "a2829"
+      ],
+      "date": "2014-08",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 163,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1311-0879",
+      "doi": "10.48550/arXiv.1311.0879",
+      "title": "Gauge Color Codes: Optimal Transversal Gates and Gauge Fixing in Topological Stabilizer Codes",
+      "authorIds": [
+        "a2877"
+      ],
+      "date": "2013-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-112-010505",
+      "doi": "10.1103/PhysRevLett.112.010505",
+      "title": "Using Concatenated Quantum Codes for Universal Fault-Tolerant Quantum Gates",
+      "authorIds": [
+        "a2857",
+        "a3384"
+      ],
+      "date": "2014-01",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 98,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-95-022313",
+      "doi": "10.1103/PhysRevA.95.022313",
+      "title": "Overhead analysis of universal concatenated quantum codes",
+      "authorIds": [
+        "a1352",
+        "a2857",
+        "a3384"
+      ],
+      "date": "2017-02",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 50,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1367-2630-ab3378",
+      "doi": "10.1088/1367-2630/ab3378",
+      "title": "Universal fault-tolerant quantum computation using fault-tolerant conversion schemes",
+      "authorIds": [
+        "a3385",
+        "a3386"
+      ],
+      "date": "2019-07",
+      "journalId": "j67",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 2,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-92-022312",
+      "doi": "10.1103/PhysRevA.92.022312",
+      "title": "Qudit color codes and gauge color codes in all spatial dimensions",
+      "authorIds": [
+        "a3387",
+        "a2427",
+        "a3265",
+        "a2918"
+      ],
+      "date": "2015-08",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 45,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-quant-ph-0504218",
+      "doi": "10.48550/arXiv.quant-ph/0504218",
+      "title": "Quantum accuracy threshold for concatenated distance-3 codes",
+      "authorIds": [
+        "a3388",
+        "a2895",
+        "a2256"
+      ],
+      "date": "2005-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 91,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1108-5738",
+      "doi": "10.48550/arXiv.1108.5738",
+      "title": "Fault-tolerant quantum computing with color codes",
+      "authorIds": [
+        "a3389",
+        "a2882",
+        "a3390"
+      ],
+      "date": "2011-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 78,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1367-2630-18-4-043038",
+      "doi": "10.1088/1367-2630/18/4/043038",
+      "title": "Dimensional jump in quantum error correction",
+      "authorIds": [
+        "a2877"
+      ],
+      "date": "2016-04",
+      "journalId": "j67",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 69,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-s41467-017-01418-2",
+      "doi": "10.1038/s41467-017-01418-2",
+      "title": "Fault-tolerant interface between quantum memories and quantum processors",
+      "authorIds": [
+        "a3391",
+        "a3392",
+        "a3244"
+      ],
+      "date": "2017-10",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 41,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-97-032331",
+      "doi": "10.1103/PhysRevA.97.032331",
+      "title": "Efficient preparation of large-block-code ancilla states for fault-tolerant quantum computation",
+      "authorIds": [
+        "a3393",
+        "a3156",
+        "a3394"
+      ],
+      "date": "2018-03",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 15,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1109-tit-2011-2161917",
+      "doi": "10.1109/TIT.2011.2161917",
+      "title": "Transversality Versus Universality for Additive Quantum Codes",
+      "authorIds": [
+        "a3395",
+        "a1797",
+        "a2873"
+      ],
+      "date": "2011-09",
+      "journalId": "j232",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 132,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-22331-q-2023-02-21-929",
+      "doi": "10.22331/q-2023-02-21-929",
+      "title": "Efficient color code decoders in d ≥ 2 dimensions from toric code decoders",
+      "authorIds": [
+        "a2341",
+        "a3396"
+      ],
+      "date": "2023-02",
+      "journalId": "j73",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 28,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-93-052332",
+      "doi": "10.1103/PhysRevA.93.052332",
+      "title": "Gauge color codes in two dimensions",
+      "authorIds": [
+        "a967",
+        "a3026",
+        "a3397"
+      ],
+      "date": "2016-05",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 33,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-102-110502",
+      "doi": "10.1103/PhysRevLett.102.110502",
+      "title": "Restrictions on Transversal Encoded Quantum Gate Sets",
+      "authorIds": [
+        "a3398",
+        "a3399"
+      ],
+      "date": "2009-03",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 455,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-96-032337",
+      "doi": "10.1103/PhysRevA.96.032337",
+      "title": "Nonuniform code concatenation for universal fault-tolerant quantum computing",
+      "authorIds": [
+        "a3400",
+        "a3401",
+        "a3402"
+      ],
+      "date": "2017-09",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 15,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-93-022323",
+      "doi": "10.1103/PhysRevA.93.022323",
+      "title": "Stacked codes: Universal fault-tolerant quantum computation in a two-dimensional layout",
+      "authorIds": [
+        "a2857",
+        "a2888"
+      ],
+      "date": "2016-02",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 47,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-86-052329",
+      "doi": "10.1103/PhysRevA.86.052329",
+      "title": "Magic-state distillation with low overhead",
+      "authorIds": [
+        "a2920",
+        "a2890"
+      ],
+      "date": "2012-11",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 345,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-110-170503",
+      "doi": "10.1103/PhysRevLett.110.170503",
+      "title": "Classification of Topologically Protected Gates for Local Stabilizer Codes",
+      "authorIds": [
+        "a2920",
+        "a3403"
+      ],
+      "date": "2013-04",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 151,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-117-010501",
+      "doi": "10.1103/PhysRevLett.117.010501",
+      "title": "Thresholds for Universal Concatenated Quantum Codes",
+      "authorIds": [
+        "a1352",
+        "a2857",
+        "a3384"
+      ],
+      "date": "2016-06",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 49,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1302-3240",
+      "doi": "10.48550/arXiv.1302.3240",
+      "title": "Complex instruction set computing architecture for performing accurate quantum $Z$ rotations with less magic",
+      "authorIds": [
+        "a3389",
+        "a3404"
+      ],
+      "date": "2013-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 26,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-91-032330",
+      "doi": "10.1103/PhysRevA.91.032330",
+      "title": "Universal transversal gates with color codes: A simplified approach",
+      "authorIds": [
+        "a2341",
+        "a2527"
+      ],
+      "date": "2015-03",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 128,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-ncomms12302",
+      "doi": "10.1038/ncomms12302",
+      "title": "Fault-tolerant error correction with the gauge color code",
+      "authorIds": [
+        "a2368",
+        "a2533",
+        "a2918"
+      ],
+      "date": "2016-07",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 104,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevx-5-031043",
+      "doi": "10.1103/PhysRevX.5.031043",
+      "title": "Single-Shot Fault-Tolerant Quantum Error Correction",
+      "authorIds": [
+        "a2877"
+      ],
+      "date": "2015-09",
+      "journalId": "j131",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 159,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1751-8113-42-9-095302",
+      "doi": "10.1088/1751-8113/42/9/095302",
+      "title": "Quantum measurements and gates by code deformation",
+      "authorIds": [
+        "a2877",
+        "a2482"
+      ],
+      "date": "2009-02",
+      "journalId": "j230",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 107,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1038-srep01939",
+      "doi": "10.1038/srep01939",
+      "title": "Surface code implementation of block code state distillation",
+      "authorIds": [
+        "a938",
+        "a198",
+        "a967"
+      ],
+      "date": "2013-06",
+      "journalId": "j83",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 101,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1367-2630-13-4-043005",
+      "doi": "10.1088/1367-2630/13/4/043005",
+      "title": "Clifford gates by code deformation",
+      "authorIds": [
+        "a2877"
+      ],
+      "date": "2011-04",
+      "journalId": "j67",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 74,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1007-s11128-015-1022-0",
+      "doi": "10.1007/s11128-015-1022-0",
+      "title": "Dual-code quantum computation model",
+      "authorIds": [
+        "a3405"
+      ],
+      "date": "2015-05",
+      "journalId": "j74",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 9,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-1610-03507",
+      "doi": "10.48550/arXiv.1610.03507",
+      "title": "Quantum fault tolerance in small experiments",
+      "authorIds": [
+        "a2895"
+      ],
+      "date": "2016-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 30,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1088-1751-8121-aaad13",
+      "doi": "10.1088/1751-8121/aaad13",
+      "title": "Fault-tolerant conversion between adjacent Reed–Muller quantum codes based on gauge fixing",
+      "authorIds": [
+        "a3406",
+        "a3407",
+        "a3408",
+        "a3409"
+      ],
+      "date": "2018-02",
+      "journalId": "j230",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 8,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physrevlett-111-090505",
+      "doi": "10.1103/PhysRevLett.111.090505",
+      "title": "Universal Fault-Tolerant Quantum Computation with Only Transversal Gates and Error Correction",
+      "authorIds": [
+        "a2821",
+        "a3410"
+      ],
+      "date": "2013-08",
+      "journalId": "j103",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 245,
+      "added": "2026-10-01"
+    },
+    {
+      "id": "10-1103-physreva-91-012305",
+      "doi": "10.1103/PhysRevA.91.012305",
+      "title": "Fault-tolerant logical gates in quantum error-correcting codes",
+      "authorIds": [
+        "a2879",
+        "a2878"
+      ],
+      "date": "2015-01",
+      "journalId": "j117",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-circuits"
+      ],
+      "citations": 105,
+      "added": "2026-10-01"
     }
   ]
 }
