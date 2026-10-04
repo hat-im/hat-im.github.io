@@ -354,7 +354,7 @@
     },
     {
       "id": "postcard-23",
-      "enabled": true,
+      "enabled": false,
       "date": "2026-10-04",
       "from": "Hat",
       "to": "Sam",
