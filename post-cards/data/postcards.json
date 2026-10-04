@@ -349,8 +349,24 @@
         "type": "video",
         "src": "/post-cards/videos/postcard-22.mp4"
       },
-      "message": "Hey,\nTired, frustrated, overworked, sleepy.\nHope you're having a good weekend.\nI want to say more, but it's just more questions of how you are, and hoping that you're well. I don't have the wherewithal to decorate that embarrassingly simple sentiment today.",
+      "message": "Hey,\nTired, frustrated, overworked, sleepy.\nHope you're having a good weekend.\nI want to say more, but it's just more asking how you are, more hoping that you're okay. I don't have the wherewithal to decorate that embarrassingly simple sentiment today.",
       "postscript": "Hilbert has a cold. Hope Haju is okay."
+    },
+    {
+      "id": "postcard-23",
+      "enabled": true,
+      "date": "2026-10-04",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Garden Glimpse",
+      "color": "salmon",
+      "subject": "Sorry",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-23.mp4"
+      },
+      "message": "Hey,\nI'm trying, and I'm sorry.",
+      "postscript": ""
     }
   ]
 }
