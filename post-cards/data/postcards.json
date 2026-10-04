@@ -335,6 +335,22 @@
       },
       "message": "Hey,\nAnnoyed by people who shortcut for themselves. People at IBM, ORNL, Munich know my name now, not sure how to feel about it. People in London know you as well. I wonder how many people in London still know and think about you. I think of the places you walked, the restaurants and cafes you sat in. I imagine little lights across the globe of people who know you, people who know me, if the two groups ever pass, or know each other without knowing you and I are in common.",
       "postscript": "Hilbert has weird postures sometimes."
+    },
+    {
+      "id": "postcard-22",
+      "enabled": true,
+      "date": "2026-10-03",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Balcony Blues",
+      "color": "stone",
+      "subject": "Sleepy & Spent",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-22.mp4"
+      },
+      "message": "Hey,\nTired, frustrated, overworked, sleepy.\nHope you're having a good weekend. Thinking of you.",
+      "postscript": "Hilbert has a cold. Hope Haju is okay."
     }
   ]
 }
