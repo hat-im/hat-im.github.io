@@ -21688,6 +21688,527 @@
       ],
       "citations": 105,
       "added": "2026-10-01"
+    },
+    {
+      "id": "10-48550-arxiv-2609-31528",
+      "doi": "10.48550/arXiv.2609.31528",
+      "title": "Quantum-HPC Workflows Across Multiple Quantum Computing Platforms: Two Case Studies",
+      "authorIds": [
+        "a669",
+        "a1626",
+        "a3411",
+        "a2172",
+        "a3412",
+        "a827"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1109-isai-nlp64410-2024-10799377",
+      "doi": "10.1109/iSAI-NLP64410.2024.10799377",
+      "title": "Quantum Circuit Learning Enhanced by Dynamic Circuit",
+      "authorIds": [
+        "a3415",
+        "a3416"
+      ],
+      "date": "2024-11",
+      "journalId": "j251",
+      "keywordIds": [
+        "quantum-circuits",
+        "quantum-machine-learning"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-26421-qic14-3-4-7",
+      "doi": "10.26421/QIC14.3-4-7",
+      "title": "Faster phase estimation",
+      "authorIds": [
+        "a2528",
+        "a2850",
+        "a3417"
+      ],
+      "date": "2014-03",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 41,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1140-epja-s10050-024-01373-9",
+      "doi": "10.1140/epja/s10050-024-01373-9",
+      "title": "Demonstration of the rodeo algorithm on a quantum computer",
+      "authorIds": [
+        "a3418",
+        "a3419",
+        "a3420",
+        "a3421",
+        "a3422",
+        "a827"
+      ],
+      "date": "2024-07",
+      "journalId": "j252",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 14,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2607-12344",
+      "doi": "10.48550/arXiv.2607.12344",
+      "title": "Parallel Hadamard Test",
+      "authorIds": [
+        "a3424",
+        "a3425"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-22331-q-2021-06-07-469",
+      "doi": "10.22331/q-2021-06-07-469",
+      "title": "Efficient Bayesian phase estimation using mixed priors",
+      "authorIds": [
+        "a3426"
+      ],
+      "date": "2021-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 6,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-26421-qic18-5-6-1",
+      "doi": "10.26421/QIC18.5-6-1",
+      "title": "Perfect sampling for quantum Gibbs states",
+      "authorIds": [
+        "a3427"
+      ],
+      "date": "2018-05",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-algorithms",
+        "quantum-simulation"
+      ],
+      "citations": 3,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2601-15677",
+      "doi": "10.48550/arXiv.2601.15677",
+      "title": "Quantum-HPC hybrid computation of biomolecular excited-state energies",
+      "authorIds": [
+        "a3414",
+        "a3412",
+        "a3428",
+        "a1626",
+        "a1628",
+        "a827"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1145-3784828-3785259",
+      "doi": "10.1145/3784828.3785259",
+      "title": "Integrating Quantum and HPC: A Prototype Hybrid Implementation and Benchmark of Quantum-Selected Configuration Interaction",
+      "authorIds": [
+        "a2071",
+        "a3437",
+        "a3438",
+        "a3439",
+        "a3440",
+        "a827"
+      ],
+      "date": "2026-01",
+      "journalId": "j253",
+      "keywordIds": [
+        "hpc-integration",
+        "workflow-orchestration"
+      ],
+      "citations": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1109-qce53715-2022-00041",
+      "doi": "10.1109/QCE53715.2022.00041",
+      "title": "Accelerating Noisy VQE Optimization with Gaussian Processes",
+      "authorIds": [
+        "a3443",
+        "a442",
+        "a340",
+        "a3444"
+      ],
+      "date": "2022-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "variational-algorithms"
+      ],
+      "citations": 12,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1109-cict48419-2019-9066254",
+      "doi": "10.1109/CICT48419.2019.9066254",
+      "title": "Noise Analysis of Quantum Approximate Optimization Algorithm on Weighted MAX-CUT",
+      "authorIds": [
+        "a3445",
+        "a3446"
+      ],
+      "date": "2019-12",
+      "journalId": "j254",
+      "keywordIds": [
+        "quantum-optimization"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2607-27777",
+      "doi": "10.48550/arXiv.2607.27777",
+      "title": "Resource-efficient quantum-selected configuration interaction for molecular properties",
+      "authorIds": [
+        "a3447",
+        "a3448",
+        "a2089",
+        "a3449",
+        "a3450"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2503-06292",
+      "doi": "10.48550/arXiv.2503.06292",
+      "title": "HIVQE: Handover Iterative Variational Quantum Eigensolver for Efficient Quantum Chemistry Calculations",
+      "authorIds": [
+        "a2076",
+        "a2075",
+        "a3451",
+        "a3452",
+        "a3453",
+        "a827"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1140-epjp-s13360-022-02753-0",
+      "doi": "10.1140/epjp/s13360-022-02753-0",
+      "title": "Detection of energy levels of a spin system on a quantum computer by probe spin evolution",
+      "authorIds": [
+        "a3457",
+        "a3458",
+        "a3459"
+      ],
+      "date": "2022-04",
+      "journalId": "j255",
+      "keywordIds": [
+        "quantum-simulation"
+      ],
+      "citations": 6,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2209-00139",
+      "doi": "10.48550/arXiv.2209.00139",
+      "title": "Variational Quantum Circuits for Multi-Qubit Gate Automata",
+      "authorIds": [
+        "a3460",
+        "a3461",
+        "a3462",
+        "a3449",
+        "a3463"
+      ],
+      "date": "2022-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms",
+        "quantum-circuits"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2506-17207",
+      "doi": "10.48550/arXiv.2506.17207",
+      "title": "High-precision Quantum Phase Estimation on a Trapped-ion Quantum Computer",
+      "authorIds": [
+        "a3464",
+        "a3465",
+        "a3414",
+        "a3466",
+        "a3436"
+      ],
+      "date": "2025-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms",
+        "trapped-ion-qubits"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1109-qce49297-2020-00011",
+      "doi": "10.1109/QCE49297.2020.00011",
+      "title": "Iterative quantum phase estimation with optimized sample complexity",
+      "authorIds": [
+        "a3426"
+      ],
+      "date": "2020-10",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 4,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1103-physrevlett-132-240601",
+      "doi": "10.1103/PhysRevLett.132.240601",
+      "title": "Measurement-Based Infused Circuits for Variational Quantum Eigensolvers",
+      "authorIds": [
+        "a3467",
+        "a3468",
+        "a3469",
+        "a1742",
+        "a3470"
+      ],
+      "date": "2024-06",
+      "journalId": "j103",
+      "keywordIds": [
+        "variational-algorithms"
+      ],
+      "citations": 11,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-26421-qic19-11-12-5",
+      "doi": "10.26421/QIC19.11-12-5",
+      "title": "Simpler quantum counting",
+      "authorIds": [
+        "a3471"
+      ],
+      "date": "2019-09",
+      "journalId": "j229",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 34,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2605-23697",
+      "doi": "10.48550/arXiv.2605.23697",
+      "title": "Noise and Configuration Recovery Impact on Quantum Selected Configuration Interaction",
+      "authorIds": [
+        "a3472",
+        "a3473",
+        "a3474",
+        "a680",
+        "a803",
+        "a827"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
+      "citations": 1,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2309-16790",
+      "doi": "10.48550/arXiv.2309.16790",
+      "title": "Low-depth Gaussian State Energy Estimation",
+      "authorIds": [
+        "a3476",
+        "a369"
+      ],
+      "date": "2023-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-1902-11168",
+      "doi": "10.48550/arXiv.1902.11168",
+      "title": "Practical sampling schemes for quantum phase estimation",
+      "authorIds": [
+        "a3426"
+      ],
+      "date": "2019-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1140-epja-s10050-025-01750-y",
+      "doi": "10.1140/epja/s10050-025-01750-y",
+      "title": "Controlled gate networks: theory and application to eigenvalue estimation",
+      "authorIds": [
+        "a3477",
+        "a3418",
+        "a3478",
+        "a3479",
+        "a3480",
+        "a827"
+      ],
+      "date": "2025-11",
+      "journalId": "j252",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 3,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2607-10227",
+      "doi": "10.48550/arXiv.2607.10227",
+      "title": "Code-space recovery for sample-based quantum diagonalization beyond native symmetry constraints",
+      "authorIds": [
+        "a2166",
+        "a2167",
+        "a2170",
+        "a2171"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-diagonalization"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-1911-10205",
+      "doi": "10.48550/arXiv.1911.10205",
+      "title": "qubit-ADAPT-VQE: An adaptive algorithm for constructing hardware-efficient ansatze on a quantum processor",
+      "authorIds": [
+        "a3481",
+        "a1438",
+        "a1432",
+        "a3482",
+        "a3483"
+      ],
+      "date": "2019-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1063-5-0299885",
+      "doi": "10.1063/5.0299885",
+      "title": "Optimizing unitary coupled cluster wave functions on quantum hardware: Error bound and resource-efficient optimizer",
+      "authorIds": [
+        "a3484",
+        "a1576"
+      ],
+      "date": "2025-12",
+      "journalId": "j123",
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1021-acs-jctc-5c00961",
+      "doi": "10.1021/acs.jctc.5c00961",
+      "title": "A Variational Quantum Eigensolver Based on the Measurement Scheme Tailored to Multiband Tight-Binding Simulations",
+      "authorIds": [
+        "a3423",
+        "a3485"
+      ],
+      "date": "2025-08",
+      "journalId": "j60",
+      "keywordIds": [
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1088-2058-9565-abdca4",
+      "doi": "10.1088/2058-9565/abdca4",
+      "title": "Mutual information-assisted adaptive variational quantum eigensolver",
+      "authorIds": [
+        "a1714",
+        "a427",
+        "a3486",
+        "a2458",
+        "a39"
+      ],
+      "date": "2021-01",
+      "journalId": "j77",
+      "keywordIds": [
+        "variational-algorithms"
+      ],
+      "citations": 53,
+      "added": "2026-10-06"
+    },
+    {
+      "id": "10-1103-physrevlett-127-040505",
+      "doi": "10.1103/PhysRevLett.127.040505",
+      "title": "Rodeo Algorithm for Quantum Computing",
+      "authorIds": [
+        "a3422",
+        "a3423",
+        "a3421",
+        "a3418",
+        "a3419"
+      ],
+      "date": "2021-07",
+      "journalId": "j103",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 92,
+      "added": "2026-10-06"
     }
   ]
 }

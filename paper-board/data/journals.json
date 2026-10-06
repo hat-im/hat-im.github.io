@@ -998,5 +998,25 @@
   "j250": {
     "name": "APL Photonics",
     "type": "journal"
+  },
+  "j251": {
+    "name": "International Joint Symposium on Artificial Intelligence and Natural Language Processing (iSAI-NLP)",
+    "type": "conference"
+  },
+  "j252": {
+    "name": "The European Physical Journal A",
+    "type": "journal"
+  },
+  "j253": {
+    "name": "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+    "type": "conference"
+  },
+  "j254": {
+    "name": "IEEE Conference on Information and Communication Technology",
+    "type": "conference"
+  },
+  "j255": {
+    "name": "The European Physical Journal Plus",
+    "type": "journal"
   }
 }
