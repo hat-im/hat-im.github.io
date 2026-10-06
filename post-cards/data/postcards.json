@@ -367,6 +367,22 @@
       },
       "message": "Hey,\nMost days are exhausting, today's no exception. Hope you had a refreshing weekend. The weather's suffocating, but hope it gave you some breathing room after what I'm guessing was a hectic first week back. Hilbert has a dust allergy, he's sniffling.",
       "postscript": "Hope you have a good week ahead."
+    },
+    {
+      "id": "postcard-24",
+      "enabled": true,
+      "date": "2026-10-05",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Dusk Drift",
+      "color": "peach-blush",
+      "subject": "Passports & Pressure",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-24.mp4"
+      },
+      "message": "Hey,\nExhausting day: a rapidly approaching paper deadline, a passport appointment, and a project kickoff event this week, all at once.\nHope your Monday was less hectic than mine. I wonder if you've tried the matcha yet.",
+      "postscript": "Have you been writing anything about the London trip?"
     }
   ]
 }
