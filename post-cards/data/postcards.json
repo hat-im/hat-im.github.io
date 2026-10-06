@@ -383,6 +383,33 @@
       },
       "message": "Hey,\nExhausting day: a rapidly approaching paper deadline, a passport appointment, and a project kickoff event this week, all at once.\nHope your Monday was less hectic than mine. I wonder if you've tried the matcha yet.",
       "postscript": "Have you been writing anything about the London trip?"
+    },
+    {
+      "id": "postcard-25",
+      "enabled": true,
+      "date": "2026-10-06",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Feline Floor",
+      "color": "seashell",
+      "subject": "Launches",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-25.mp4"
+      },
+      "message": "Hey,\nTomorrow's the launch of my project. I wish you could be there to see it. I'll carry you with me when I stand or sit there, and work to honour you. I can never repay that, but I hope to try.\nI wonder if you've been playing any new puzzle games lately. I hope the rainy weather hasn't made you sick too. I hope you're keeping warm and cozy.",
+      "postscript": "If you see this, feel free to ask me for a link to watch it."
+    },
+    {
+      "id": "postcard-26",
+      "enabled": false,
+      "date": "2026-10-07",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
