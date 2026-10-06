@@ -24,8 +24,9 @@ memory notes for the long version):
   - Author display = "Last, F.M." (initials, no spaces); hyphenated given
     names get hyphenated initials; multi-word surname particles (van, der,
     den, de, von, le, la, du, di, al) stay attached to the surname.
-  - Papers with >=6 authors: keep the first 5 + the "et al." placeholder
-    author id (a827), for a 6-element array. <=5 authors: keep them all.
+  - authorIds holds every author, full stop — no truncation on import.
+    Display-side code (formatAuthors in app.js) truncates to the first 5 +
+    "et al." when rendering a card; the data itself keeps everyone.
   - arXiv DOIs (10.48550/arXiv.<id>) use journal id "j98" ("arXiv preprint").
   - New author/journal ids are the next unused integer suffix, no reuse.
 """
@@ -41,8 +42,6 @@ import urllib.request
 
 OPENALEX_BATCH_SIZE = 40
 ARXIV_PREPRINT_JOURNAL_ID = "j98"
-ET_AL_AUTHOR_ID = "a827"
-ET_AL_THRESHOLD = 6
 PARTICLES = {"van", "der", "den", "de", "von", "le", "la", "du", "di", "al"}
 
 
@@ -294,8 +293,6 @@ def main():
             aid, _lf, is_new = resolver.resolve_author(raw)
             author_ids.append(aid)
             new_author_count += is_new
-        if len(author_ids) >= ET_AL_THRESHOLD:
-            author_ids = author_ids[:5] + [ET_AL_AUTHOR_ID]
 
         jid, jid_is_new = resolver.resolve_journal(doi, venue, e["journal"])
         if jid is None:
@@ -353,8 +350,6 @@ def main():
         for a in p["authorIds"]:
             assert a in authors_db, f"dangling author id {a} in {p['id']}"
         assert p["journalId"] in journals_db, f"dangling journal id {p['journalId']} in {p['id']}"
-        if p["authorIds"][-1] == ET_AL_AUTHOR_ID:
-            assert len(p["authorIds"]) == 6, f"a827 array not length 6 in {p['id']}"
 
     save_json(authors_path, authors_db)
     save_json(journals_path, journals_db)

@@ -24,16 +24,8 @@
           "authorIds": {
             "type": "array",
             "minItems": 1,
-            "items": { "type": "string", "pattern": "^(a[0-9]+|a827)$" },
-            "if": { "minItems": 6 },
-            "then": {
-              "maxItems": 6,
-              "prefixItems": [
-                {}, {}, {}, {}, {},
-                { "const": "a827" }
-              ]
-            },
-            "description": "References keys in authors.json. Papers with 6+ real authors are truncated to the first 5 plus the 'a827' (\"et al.\") placeholder as the final, 6th entry — the array is never longer than 6."
+            "items": { "type": "string", "pattern": "^a[0-9]+$" },
+            "description": "References keys in authors.json — the complete author list, not truncated. Display-side code (formatAuthors in app.js) truncates to the first 5 + 'et al.' when rendering; the data itself keeps everyone."
           },
           "date": {
             "type": "string",

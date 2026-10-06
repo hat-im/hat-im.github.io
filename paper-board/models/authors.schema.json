@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://hat-im.github.io/paper-board/models/authors.schema.json",
   "title": "Paper Board — Authors",
-  "description": "paper-board/data/authors.json. Maps an author id to its display string. Referenced by papers.json's authorIds. a827 is the reserved \"et al.\" placeholder used to truncate 6+ author lists.",
+  "description": "paper-board/data/authors.json. Maps an author id to its display string. Referenced by papers.json's authorIds.",
   "type": "object",
   "propertyNames": {
     "pattern": "^a[0-9]+$"

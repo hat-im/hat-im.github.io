@@ -115,7 +115,6 @@
     var counts = {};
     state.papers.forEach(function (p) {
       p.authors.forEach(function (a) {
-        if (a === 'et al.') return;
         counts[a] = (counts[a] || 0) + 1;
       });
     });
@@ -158,7 +157,7 @@
     var adj = {};
     names.forEach(function (n) { adj[n] = new Set(); });
     state.papers.forEach(function (p) {
-      var as = p.authors.filter(function (a) { return a !== 'et al.' && nameSet.has(a); });
+      var as = p.authors.filter(function (a) { return nameSet.has(a); });
       for (var i = 0; i < as.length; i++) {
         for (var k = i + 1; k < as.length; k++) {
           adj[as[i]].add(as[k]);
@@ -308,6 +307,7 @@
   // ---------- Rendering ----------
 
   function formatAuthors(authors) {
+    if (authors.length > 5) return authors.slice(0, 5).join(', ') + ', et al.';
     return authors.join(', ');
   }
 
