@@ -24400,6 +24400,651 @@
       ],
       "citations": 92,
       "added": "2026-10-06"
+    },
+    {
+      "id": "10-48550-arxiv-2604-07639",
+      "doi": "10.48550/arXiv.2604.07639",
+      "title": "Exponential quantum advantage in processing massive classical data",
+      "authorIds": [
+        "a812",
+        "a4268",
+        "a1079",
+        "a45",
+        "a2443",
+        "a1007",
+        "a2442"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2505-12615",
+      "doi": "10.48550/arXiv.2505.12615",
+      "title": "Inverse nonlinear fast Fourier transform on SU(2) with applications to quantum signal processing",
+      "authorIds": [
+        "a4269",
+        "a4270",
+        "a4271",
+        "a1530"
+      ],
+      "date": "2025-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-52202-079017-0958",
+      "doi": "10.52202/079017-0958",
+      "title": "Exponential Quantum Communication Advantage in Distributed Inference and Learning",
+      "authorIds": [
+        "a944",
+        "a4272",
+        "a4273",
+        "a1007"
+      ],
+      "date": "2024-01",
+      "journalId": "j256",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-qce53715-2022-00029",
+      "doi": "10.1109/QCE53715.2022.00029",
+      "title": "FABLE: Fast Approximate Quantum Circuits for Block-Encodings",
+      "authorIds": [
+        "a4274",
+        "a4275"
+      ],
+      "date": "2022-09",
+      "journalId": "j28",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 36,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3808255",
+      "doi": "10.1145/3808255",
+      "title": "Cobble: Compiling Block Encodings for Quantum Computational Linear Algebra",
+      "authorIds": [
+        "a2484"
+      ],
+      "date": "2026-06",
+      "journalId": "j163",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2604-18276",
+      "doi": "10.48550/arXiv.2604.18276",
+      "title": "Block-encodings as programming abstractions: The Eclipse Qrisp BlockEncoding Interface",
+      "authorIds": [
+        "a4276",
+        "a4277"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1002-cpa-70007",
+      "doi": "10.1002/cpa.70007",
+      "title": "Infinite quantum signal processing for arbitrary Szegő functions",
+      "authorIds": [
+        "a4278",
+        "a1530",
+        "a4279",
+        "a4280",
+        "a758"
+      ],
+      "date": "2025-09",
+      "journalId": "j257",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 4,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2026-03-13-2025",
+      "doi": "10.22331/q-2026-03-13-2025",
+      "title": "An adversary bound for quantum signal processing",
+      "authorIds": [
+        "a4281"
+      ],
+      "date": "2026-03",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2502-14252",
+      "doi": "10.48550/arXiv.2502.14252",
+      "title": "Towards efficient quantum algorithms for diffusion probabilistic models",
+      "authorIds": [
+        "a763",
+        "a4282",
+        "a228",
+        "a4283",
+        "a1532",
+        "a466",
+        "a4284"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2507-20887",
+      "doi": "10.48550/arXiv.2507.20887",
+      "title": "Efficient LCU block encodings through Dicke states preparation",
+      "authorIds": [
+        "a4285",
+        "a4286",
+        "a4287",
+        "a4275"
+      ],
+      "date": "2025-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1038-s41467-023-43957-x",
+      "doi": "10.1038/s41467-023-43957-x",
+      "title": "Towards provably efficient quantum algorithms for large-scale machine-learning models",
+      "authorIds": [
+        "a466",
+        "a4288",
+        "a4284",
+        "a799",
+        "a763",
+        "a14",
+        "a1532",
+        "a2410"
+      ],
+      "date": "2024-01",
+      "journalId": "j231",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 84,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2025-07-22-1805",
+      "doi": "10.22331/q-2025-07-22-1805",
+      "title": "Dictionary-based Block Encoding of Sparse Matrices with Low Subnormalization and Circuit Depth",
+      "authorIds": [
+        "a4289",
+        "a457",
+        "a2963",
+        "a4290",
+        "a2959",
+        "a466"
+      ],
+      "date": "2025-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 4,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2603-12405",
+      "doi": "10.48550/arXiv.2603.12405",
+      "title": "Explicit Block Encodings of Discrete Laplacians with Mixed Boundary Conditions",
+      "authorIds": [
+        "a4291",
+        "a4292"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2503-03026",
+      "doi": "10.48550/arXiv.2503.03026",
+      "title": "Generalized Quantum Signal Processing and Non-Linear Fourier Transform are equivalent",
+      "authorIds": [
+        "a4281"
+      ],
+      "date": "2025-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1007-s13163-024-00494-5",
+      "doi": "10.1007/s13163-024-00494-5",
+      "title": "Quantum signal processing and nonlinear Fourier analysis",
+      "authorIds": [
+        "a4278",
+        "a4279",
+        "a4280"
+      ],
+      "date": "2024-06",
+      "journalId": "j258",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 13,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3837860",
+      "doi": "10.1145/3837860",
+      "title": "Efficient and Explicit Block Encoding of Finite Difference Discretizations of the Laplacian",
+      "authorIds": [
+        "a4293",
+        "a4294"
+      ],
+      "date": "2026-08",
+      "journalId": "j11",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1038-s41534-026-01360-6",
+      "doi": "10.1038/s41534-026-01360-6",
+      "title": "Quantum algorithm for linear matrix equations",
+      "authorIds": [
+        "a4295",
+        "a474",
+        "a2468",
+        "a45"
+      ],
+      "date": "2026-08",
+      "journalId": "j101",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2025-06-04-1764",
+      "doi": "10.22331/q-2025-06-04-1764",
+      "title": "Explicit block encodings of boundary value problems for many-body elliptic operators",
+      "authorIds": [
+        "a4296",
+        "a4297",
+        "a4284",
+        "a4298",
+        "a1391"
+      ],
+      "date": "2025-06",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 7,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-cvl9-97qg",
+      "doi": "10.1103/cvl9-97qg",
+      "title": "Designing a Nearly Optimal Quantum Algorithm for Linear Differential Equations via Lindbladians",
+      "authorIds": [
+        "a4299",
+        "a4300",
+        "a4301",
+        "a4302"
+      ],
+      "date": "2025-08",
+      "journalId": "j103",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 8,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2502-11239",
+      "doi": "10.48550/arXiv.2502.11239",
+      "title": "Towards identifying possible fault-tolerant advantage of quantum linear system algorithms in terms of space, time and energy",
+      "authorIds": [
+        "a3815",
+        "a4303",
+        "a4304",
+        "a4305",
+        "a154",
+        "a4306",
+        "a4307",
+        "a466"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2025-02-20-1641",
+      "doi": "10.22331/q-2025-02-20-1641",
+      "title": "On multivariate polynomials achievable with quantum signal processing",
+      "authorIds": [
+        "a4281",
+        "a4308"
+      ],
+      "date": "2025-02",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 5,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2024-12-10-1558",
+      "doi": "10.22331/q-2024-12-10-1558",
+      "title": "Infinite quantum signal processing",
+      "authorIds": [
+        "a1529",
+        "a1530",
+        "a4269",
+        "a758"
+      ],
+      "date": "2024-12",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 18,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2609-19676",
+      "doi": "10.48550/arXiv.2609.19676",
+      "title": "Linear combination of Schr\\\"odingerization for quantum linear systems with optimal matrix-query complexity",
+      "authorIds": [
+        "a2958",
+        "a1994",
+        "a1717"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2203-10236",
+      "doi": "10.48550/arXiv.2203.10236",
+      "title": "Explicit Quantum Circuits for Block Encodings of Certain Sparse Matrices",
+      "authorIds": [
+        "a4274",
+        "a1530",
+        "a4275",
+        "a4309"
+      ],
+      "date": "2022-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 13,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1137-25m1806120",
+      "doi": "10.1137/25M1806120",
+      "title": "Mathematical and Numerical Analysis of Quantum Signal Processing",
+      "authorIds": [
+        "a1530"
+      ],
+      "date": "2026-07",
+      "journalId": "j259",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2402-11205",
+      "doi": "10.48550/arXiv.2402.11205",
+      "title": "An Efficient Quantum Circuit for Block Encoding a Pairing Hamiltonian",
+      "authorIds": [
+        "a4310",
+        "a4311",
+        "a1530",
+        "a4312",
+        "a4289"
+      ],
+      "date": "2024-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2609-09977",
+      "doi": "10.48550/arXiv.2609.09977",
+      "title": "From Block-encoding to Generalized Quantum Signal Processing: Principles, Algorithms and Applications",
+      "authorIds": [
+        "a4313",
+        "a4314",
+        "a4315",
+        "a4316",
+        "a4317",
+        "a4318",
+        "a4319",
+        "a1140",
+        "a4320",
+        "a4321",
+        "a4322",
+        "a758"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2402-03016",
+      "doi": "10.48550/arXiv.2402.03016",
+      "title": "Robust Angle Finding for Generalized Quantum Signal Processing",
+      "authorIds": [
+        "a2997",
+        "a838"
+      ],
+      "date": "2024-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2026-05-12-2102",
+      "doi": "10.22331/q-2026-05-12-2102",
+      "title": "Polynomial time constructive decision algorithm for multivariable quantum signal processing",
+      "authorIds": [
+        "a4323",
+        "a4324",
+        "a4325",
+        "a251"
+      ],
+      "date": "2026-05",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2604-09538",
+      "doi": "10.48550/arXiv.2604.09538",
+      "title": "Explicit Block Encoding of Difference-of-Gaussian Operators on a Periodic Grid",
+      "authorIds": [
+        "a4326",
+        "a4327",
+        "a4328",
+        "a4188",
+        "a1970"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2410-06409",
+      "doi": "10.48550/arXiv.2410.06409",
+      "title": "Fast Phase Factor Finding for Quantum Signal Processing",
+      "authorIds": [
+        "a4269",
+        "a4271"
+      ],
+      "date": "2024-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2509-19667",
+      "doi": "10.48550/arXiv.2509.19667",
+      "title": "Efficient block-encodings require structure",
+      "authorIds": [
+        "a421",
+        "a621",
+        "a4329",
+        "a3757"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2602-10589",
+      "doi": "10.48550/arXiv.2602.10589",
+      "title": "Block encoding of sparse matrices with a periodic diagonal structure",
+      "authorIds": [
+        "a4330",
+        "a4331",
+        "a4332",
+        "a4333",
+        "a3743",
+        "a4334"
+      ],
+      "date": "2026-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2601-05740",
+      "doi": "10.48550/arXiv.2601.05740",
+      "title": "TARE: Block Encoding Linear Combinations of Pauli Strings Without Ancilla State Preparation",
+      "authorIds": [
+        "a4294",
+        "a4293",
+        "a4335"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2607-11596",
+      "doi": "10.48550/arXiv.2607.11596",
+      "title": "Moment-Structured Block Encodings of Periodic Finite-Difference Operators",
+      "authorIds": [
+        "a4326",
+        "a1970"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1007-s00220-025-05302-9",
+      "doi": "10.1007/s00220-025-05302-9",
+      "title": "Complementary Polynomials in Quantum Signal Processing",
+      "authorIds": [
+        "a2451",
+        "a2450"
+      ],
+      "date": "2025-06",
+      "journalId": "j246",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 7,
+      "added": "2026-10-07"
     }
   ]
 }

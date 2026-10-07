@@ -1018,5 +1018,21 @@
   "j255": {
     "name": "The European Physical Journal Plus",
     "type": "journal"
+  },
+  "j256": {
+    "name": "neural information processing systems",
+    "type": "journal"
+  },
+  "j257": {
+    "name": "Communications on Pure and Applied Mathematics",
+    "type": "journal"
+  },
+  "j258": {
+    "name": "Revista Matemática Complutense",
+    "type": "journal"
+  },
+  "j259": {
+    "name": "ArXiv",
+    "type": "journal"
   }
 }
