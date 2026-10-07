@@ -25045,6 +25045,547 @@
       ],
       "citations": 7,
       "added": "2026-10-07"
+    },
+    {
+      "id": "10-1007-s11227-019-03034-x",
+      "doi": "10.1007/s11227-019-03034-x",
+      "title": "An study of the effect of process malleability in the energy efficiency on GPU-based clusters",
+      "authorIds": [
+        "a345",
+        "a4336"
+      ],
+      "date": "2019-10",
+      "journalId": "j89",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 20,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2509-05248",
+      "doi": "10.48550/arXiv.2509.05248",
+      "title": "Dynamic reconfiguration for malleable applications using RMA",
+      "authorIds": [
+        "a4337",
+        "a4338",
+        "a4339"
+      ],
+      "date": "2025-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1007-s42979-025-04405-3",
+      "doi": "10.1007/s42979-025-04405-3",
+      "title": "Toward Dynamic Resource Management: An Asynchronous Many-Task (AMT) Runtime System leveraging Dynamic Processes with PSets (DPP)",
+      "authorIds": [
+        "a1238",
+        "a4340",
+        "a4341",
+        "a4342",
+        "a4343",
+        "a668"
+      ],
+      "date": "2025-11",
+      "journalId": "j169",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1016-j-future-2025-108188",
+      "doi": "10.1016/j.future.2025.108188",
+      "title": "A formal framework for fault tolerance in hybrid scientific workflows",
+      "authorIds": [
+        "a4344",
+        "a4012",
+        "a1768",
+        "a4345"
+      ],
+      "date": "2025-10",
+      "journalId": "j24",
+      "keywordIds": [
+        "fault-tolerance",
+        "hpc-integration"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3784828-3786263",
+      "doi": "10.1145/3784828.3786263",
+      "title": "Python-based Workflow System for Quantum-HPC Hybrid Application on HPC System and Quantum Computer with Shared Network",
+      "authorIds": [
+        "a4346",
+        "a1626",
+        "a1134",
+        "a1628"
+      ],
+      "date": "2026-01",
+      "journalId": "j253",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-pdp59025-2023-00027",
+      "doi": "10.1109/PDP59025.2023.00027",
+      "title": "Configurable synthetic application for studying malleability in HPC",
+      "authorIds": [
+        "a4337",
+        "a4338",
+        "a4339",
+        "a345"
+      ],
+      "date": "2023-03",
+      "journalId": "j260",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-icppw-2017-36",
+      "doi": "10.1109/ICPPW.2017.36",
+      "title": "Efficient Scalable Computing through Flexible Applications and Adaptive Workloads",
+      "authorIds": [
+        "a345",
+        "a4347",
+        "a4348",
+        "a4349",
+        "a1763"
+      ],
+      "date": "2017-08",
+      "journalId": "j261",
+      "keywordIds": [
+        "hpc-scheduling",
+        "scalability"
+      ],
+      "citations": 21,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1177-1094342018802347",
+      "doi": "10.1177/1094342018802347",
+      "title": "Dynamic reconfiguration of noniterative scientific applications: A case study with HPG aligner",
+      "authorIds": [
+        "a345",
+        "a4350",
+        "a4351",
+        "a4339",
+        "a4347",
+        "a1763"
+      ],
+      "date": "2018-09",
+      "journalId": "j88",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 15,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-32604-cmc-2025-073860",
+      "doi": "10.32604/cmc.2025.073860",
+      "title": "Virtual QPU: A Novel Implementation of Quantum Computing",
+      "authorIds": [
+        "a4352",
+        "a4353",
+        "a836",
+        "a1550"
+      ],
+      "date": "2025-12",
+      "journalId": "j262",
+      "keywordIds": [
+        "hpc-integration",
+        "quantum-programming"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2601-19635",
+      "doi": "10.48550/arXiv.2601.19635",
+      "title": "DynQ: A Dynamic Topology-Agnostic Quantum Virtual Machine via Quality-Weighted Community Detection",
+      "authorIds": [
+        "a3105",
+        "a4354",
+        "a4355"
+      ],
+      "date": "2026-01",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration",
+        "quantum-programming"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-tc-2020-3022933",
+      "doi": "10.1109/TC.2020.3022933",
+      "title": "DMRlib: Easy-Coding and Efficient Resource Management for Job Malleability",
+      "authorIds": [
+        "a345",
+        "a4347",
+        "a4348",
+        "a1763"
+      ],
+      "date": "2020-09",
+      "journalId": "j36",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 41,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1016-j-future-2025-108305",
+      "doi": "10.1016/j.future.2025.108305",
+      "title": "MPI malleability validation under replayed real-world HPC conditions",
+      "authorIds": [
+        "a345",
+        "a4356",
+        "a4357",
+        "a4358",
+        "a1763"
+      ],
+      "date": "2025-12",
+      "journalId": "j24",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-ipdpsw63119-2024-00180",
+      "doi": "10.1109/IPDPSW63119.2024.00180",
+      "title": "Hybrid Classical-Quantum Simulation of MaxCut using QAOA-in-QAOA",
+      "authorIds": [
+        "a224",
+        "a4359"
+      ],
+      "date": "2024-05",
+      "journalId": "j146",
+      "keywordIds": [
+        "quantum-optimization",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3659996-3673223",
+      "doi": "10.1145/3659996.3673223",
+      "title": "Demistifying HPC-Quantum integration: it's all about scheduling",
+      "authorIds": [
+        "a752"
+      ],
+      "date": "2024-06",
+      "journalId": "j153",
+      "keywordIds": [
+        "hpc-integration",
+        "hpc-scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1177-10943420231176527",
+      "doi": "10.1177/10943420231176527",
+      "title": "Dynamic spawning of MPI processes applied to malleability",
+      "authorIds": [
+        "a4337",
+        "a4338",
+        "a4339",
+        "a345",
+        "a4347"
+      ],
+      "date": "2023-05",
+      "journalId": "j88",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 13,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2407-20212",
+      "doi": "10.48550/arXiv.2407.20212",
+      "title": "Distributed Quantum Approximate Optimization Algorithm on a Quantum-Centric Supercomputing Architecture",
+      "authorIds": [
+        "a403",
+        "a4360",
+        "a1300",
+        "a481",
+        "a445",
+        "a3805"
+      ],
+      "date": "2024-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-optimization"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-tpds-2024-3406764",
+      "doi": "10.1109/TPDS.2024.3406764",
+      "title": "Malleability in Modern HPC Systems: Current Experiences, Challenges, and Future Opportunities",
+      "authorIds": [
+        "a4361",
+        "a4343",
+        "a4362",
+        "a4363",
+        "a4364",
+        "a4342",
+        "a4365",
+        "a2015",
+        "a4366",
+        "a4367",
+        "a4368",
+        "a1763",
+        "a4369",
+        "a4370",
+        "a668",
+        "a4371",
+        "a4372",
+        "a4373",
+        "a345",
+        "a4374",
+        "a4375",
+        "a4376",
+        "a4377",
+        "a4378"
+      ],
+      "date": "2024-05",
+      "journalId": "j37",
+      "keywordIds": [
+        "hpc-scheduling",
+        "survey"
+      ],
+      "citations": 31,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2511-05209",
+      "doi": "10.48550/arXiv.2511.05209",
+      "title": "CUNQA: a Distributed Quantum Computing emulator for HPC",
+      "authorIds": [
+        "a1800",
+        "a4379",
+        "a4380",
+        "a4381",
+        "a1804",
+        "a1803"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3555819-3555856",
+      "doi": "10.1145/3555819.3555856",
+      "title": "Towards Dynamic Resource Management with MPI Sessions and PMIx",
+      "authorIds": [
+        "a4382",
+        "a4383",
+        "a4384",
+        "a668",
+        "a4343",
+        "a4385"
+      ],
+      "date": "2022-09",
+      "journalId": "j263",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 33,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2502-21104",
+      "doi": "10.48550/arXiv.2502.21104",
+      "title": "Extending the OmpSs-2 Programming Model for Hybrid Quantum-Classical Programming",
+      "authorIds": [
+        "a4386",
+        "a4387",
+        "a4388",
+        "a4389",
+        "a4390",
+        "a4391"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-integration",
+        "quantum-programming"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1016-j-future-2025-107949",
+      "doi": "10.1016/j.future.2025.107949",
+      "title": "Resource optimization with MPI process malleability for dynamic workloads in HPC clusters",
+      "authorIds": [
+        "a345",
+        "a4337",
+        "a4336",
+        "a4338",
+        "a4339",
+        "a4392",
+        "a1763"
+      ],
+      "date": "2025-06",
+      "journalId": "j24",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 8,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1007-s11227-024-06277-5",
+      "doi": "10.1007/s11227-024-06277-5",
+      "title": "Proteo: a framework for the generation and evaluation of malleable MPI applications",
+      "authorIds": [
+        "a4337",
+        "a4338",
+        "a4339",
+        "a345"
+      ],
+      "date": "2024-07",
+      "journalId": "j89",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 7,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-cbi62504-2024-00015",
+      "doi": "10.1109/CBI62504.2024.00015",
+      "title": "RIGOLETTO: A Workflow Definition Language for Hybrid Quantum-Classical Scientific Applications",
+      "authorIds": [
+        "a4393",
+        "a4394",
+        "a4395"
+      ],
+      "date": "2024-09",
+      "journalId": "j264",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 3,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1016-j-parco-2018-07-006",
+      "doi": "10.1016/j.parco.2018.07.006",
+      "title": "DMR API: Improving cluster productivity by turning applications into malleable",
+      "authorIds": [
+        "a345",
+        "a4347",
+        "a4348",
+        "a4349",
+        "a1763"
+      ],
+      "date": "2018-07",
+      "journalId": "j265",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 25,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2511-04268",
+      "doi": "10.48550/arXiv.2511.04268",
+      "title": "Parallel Spawning Strategies for Dynamic-Aware MPI Applications",
+      "authorIds": [
+        "a4396",
+        "a4338",
+        "a4339",
+        "a345"
+      ],
+      "date": "2025-11",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-3389-fcomp-2025-1528985",
+      "doi": "10.3389/fcomp.2025.1528985",
+      "title": "Defining quantum-ready primitives for hybrid HPC-QC supercomputing: a case study in Hamiltonian simulation",
+      "authorIds": [
+        "a195",
+        "a4398"
+      ],
+      "date": "2025-03",
+      "journalId": "j266",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 7,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-23919-isc-2025-11018304",
+      "doi": "10.23919/isc.2025.11018304",
+      "title": "Bridging the Gap Between Genericity and Programmability of Dynamic Resources in HPC",
+      "authorIds": [
+        "a4342",
+        "a345",
+        "a4343",
+        "a1763",
+        "a668"
+      ],
+      "date": "2025-06",
+      "journalId": "j46",
+      "keywordIds": [
+        "hpc-scheduling"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-2172-2455092",
+      "doi": "10.2172/2455092",
+      "title": "High Performance Computing and Quantum Computing Integration Framework Architecture and Requirements Document",
+      "authorIds": [
+        "a677",
+        "a3515",
+        "a3805"
+      ],
+      "date": "2024-08",
+      "journalId": "j90",
+      "keywordIds": [
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
     }
   ]
 }

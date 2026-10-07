@@ -1034,5 +1034,33 @@
   "j259": {
     "name": "ArXiv",
     "type": "journal"
+  },
+  "j260": {
+    "name": "Proceedings - Euromicro Workshop on Parallel and Distributed Processing/Proceedings",
+    "type": "conference"
+  },
+  "j261": {
+    "name": "Proceedings - International Workshops on Parallel Processing",
+    "type": "conference"
+  },
+  "j262": {
+    "name": "Computers, materials & continua/Computers, materials & continua (Print)",
+    "type": "journal"
+  },
+  "j263": {
+    "name": "European MPI Users' Group Meeting (EuroMPI)",
+    "type": "journal"
+  },
+  "j264": {
+    "name": "26th International Conference on Business Informatics",
+    "type": "conference"
+  },
+  "j265": {
+    "name": "Parallel Computing",
+    "type": "journal"
+  },
+  "j266": {
+    "name": "Frontiers in Computer Science",
+    "type": "journal"
   }
 }
