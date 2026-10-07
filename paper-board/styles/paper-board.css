@@ -256,6 +256,8 @@ select.sort-select:focus-visible { outline: 2px solid var(--accent); outline-off
   border-radius: var(--radius-card);
 }
 
+.load-more-sentinel { height: 1px; }
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);

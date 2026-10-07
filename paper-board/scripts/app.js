@@ -648,13 +648,41 @@
     });
   }
 
+  // Lazy-loading: with 1000+ papers, rebuilding a DOM card for every match on
+  // every render (each keystroke, filter toggle, pass change...) gets slow.
+  // Render PAGE_SIZE cards per column and grow that as the user scrolls near
+  // the bottom, rather than all of them up front. Pagination resets when the
+  // filtered set actually changes (search/filters/sort), not on every
+  // unrelated re-render (e.g. moving one card between columns).
+  var PAGE_SIZE = 40;
+  var renderedCounts = {};
+  var lastFilterSignature = null;
+  var columnObservers = {};
+
+  function filterSignature() {
+    return JSON.stringify({
+      q: state.searchTerm,
+      kw: Array.from(state.activeKeywords).sort(),
+      au: Array.from(state.activeAuthors).sort(),
+      ve: Array.from(state.activeVenues).sort(),
+      sort: state.sortBy
+    });
+  }
+
   function renderBoard() {
     var pool = visiblePapers();
     var byColumn = { unread: [], 'pass-1': [], 'pass-2': [], 'pass-3': [] };
     pool.forEach(function (p) { byColumn[columnForPaper(p)].push(p); });
 
+    var sig = filterSignature();
+    if (sig !== lastFilterSignature) {
+      renderedCounts = {};
+      lastFilterSignature = sig;
+    }
+
     PASS_COLUMNS.forEach(function (col) {
       var dropEl = document.getElementById('drop-' + col);
+      if (columnObservers[col]) { columnObservers[col].disconnect(); columnObservers[col] = null; }
       dropEl.innerHTML = '';
       var list = sortPapers(byColumn[col], state.sortBy[col]);
       document.getElementById('count-' + col).textContent = list.length;
@@ -665,7 +693,24 @@
         dropEl.appendChild(empty);
         return;
       }
-      list.forEach(function (p) { dropEl.appendChild(buildCard(p)); });
+
+      if (!renderedCounts[col]) renderedCounts[col] = PAGE_SIZE;
+      var visibleCount = Math.min(renderedCounts[col], list.length);
+      for (var i = 0; i < visibleCount; i++) dropEl.appendChild(buildCard(list[i]));
+
+      if (visibleCount < list.length) {
+        var sentinel = document.createElement('div');
+        sentinel.className = 'load-more-sentinel';
+        dropEl.appendChild(sentinel);
+        var observer = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            renderedCounts[col] += PAGE_SIZE;
+            renderBoard();
+          }
+        }, { root: dropEl, rootMargin: '200px' });
+        observer.observe(sentinel);
+        columnObservers[col] = observer;
+      }
     });
   }
 
