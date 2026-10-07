@@ -12,7 +12,7 @@ html, body{
   -webkit-font-smoothing:antialiased;
 }
 
-.app { max-width: 1800px; margin: 0 auto; padding: clamp(16px, 2.5vw, 28px) clamp(16px, 2.5vw, 28px) 60px; }
+.app { max-width: 1800px; margin: 0 auto; padding: clamp(16px, 2.5vw, 28px); }
 
 /* ---------- Top bar ---------- */
 
