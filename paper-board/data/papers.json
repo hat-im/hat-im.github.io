@@ -25586,6 +25586,880 @@
       ],
       "citations": 0,
       "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2610-00971",
+      "doi": "10.48550/arXiv.2610.00971",
+      "title": "The Other Half of Workflow Portability: Evidence-Backed HPC Site Profiles with Agentic Discovery",
+      "authorIds": [
+        "a4399",
+        "a1159"
+      ],
+      "date": "2026-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-escience65000-2025-00029",
+      "doi": "10.1109/eScience65000.2025.00029",
+      "title": "Liberating the Data Aware Scheduler to Achieve Locality in Layered Scientific Workflow Systems",
+      "authorIds": [
+        "a4110",
+        "a1159"
+      ],
+      "date": "2025-09",
+      "journalId": "j142",
+      "keywordIds": [
+        "hpc-scheduling",
+        "scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3219104-3219125",
+      "doi": "10.1145/3219104.3219125",
+      "title": "VC3",
+      "authorIds": [
+        "a4400",
+        "a4401",
+        "a4402",
+        "a4403",
+        "a2764",
+        "a2771",
+        "a1695",
+        "a4404",
+        "a1159"
+      ],
+      "date": "2018-07",
+      "journalId": "j267",
+      "keywordIds": [
+        "hpc-integration",
+        "infrastructure"
+      ],
+      "citations": 8,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2608-23146",
+      "doi": "10.48550/arXiv.2608.23146",
+      "title": "An AI-Assisted Migration Framework for Transforming Legacy Scientific Applications into Reusable Cloud-Based Workflows",
+      "authorIds": [
+        "a4405",
+        "a4406",
+        "a4407",
+        "a815"
+      ],
+      "date": "2026-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-sc41406-2024-00068",
+      "doi": "10.1109/SC41406.2024.00068",
+      "title": "Reshaping High Energy Physics Applications for Near-Interactive Execution Using TaskVine",
+      "authorIds": [
+        "a1690",
+        "a1695",
+        "a3122",
+        "a1159"
+      ],
+      "date": "2024-11",
+      "journalId": "j268",
+      "keywordIds": [
+        "high-energy-physics",
+        "hpc-scheduling"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1371-journal-pcbi-1014777",
+      "doi": "10.1371/journal.pcbi.1014777",
+      "title": "Twelve quick tips for designing AI-driven HPC workflows",
+      "authorIds": [
+        "a4408"
+      ],
+      "date": "2026-09",
+      "journalId": "j269",
+      "keywordIds": [
+        "workflow-orchestration",
+        "survey"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-compsac57700-2023-00290",
+      "doi": "10.1109/COMPSAC57700.2023.00290",
+      "title": "WfCommons: Data Collection and Runtime Experiments using Multiple Workflow Systems",
+      "authorIds": [
+        "a3978",
+        "a4409",
+        "a4410",
+        "a3516"
+      ],
+      "date": "2023-06",
+      "journalId": "j270",
+      "keywordIds": [
+        "workflow-orchestration",
+        "benchmarking"
+      ],
+      "citations": 3,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-tpds-2026-3707191",
+      "doi": "10.1109/TPDS.2026.3707191",
+      "title": "X-Bucket : A Family of Algorithms for Adaptive Resource Allocation in Dynamic Workflows",
+      "authorIds": [
+        "a1691",
+        "a1159"
+      ],
+      "date": "2026-06",
+      "journalId": "j37",
+      "keywordIds": [
+        "hpc-scheduling",
+        "optimization-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-ic2e-2018-00029",
+      "doi": "10.1109/IC2E.2018.00029",
+      "title": "MAKER as a Service: Moving HPC Applications to Jetstream Cloud",
+      "authorIds": [
+        "a4411",
+        "a4412",
+        "a4413",
+        "a1159"
+      ],
+      "date": "2018-04",
+      "journalId": "j151",
+      "keywordIds": [
+        "cloud-computing",
+        "hpc-integration"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3624062-3624136",
+      "doi": "10.1145/3624062.3624136",
+      "title": "Maximizing Data Utility for HPC Python Workflow Execution",
+      "authorIds": [
+        "a1691",
+        "a1637",
+        "a144",
+        "a1159"
+      ],
+      "date": "2023-11",
+      "journalId": "j204",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-integration"
+      ],
+      "citations": 6,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1016-j-future-2025-108043",
+      "doi": "10.1016/j.future.2025.108043",
+      "title": "Improving reproducibility of interactive notebooks using application virtualization",
+      "authorIds": [
+        "a4414",
+        "a4415",
+        "a4416"
+      ],
+      "date": "2025-08",
+      "journalId": "j24",
+      "keywordIds": [
+        "workflow-orchestration",
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2605-15109",
+      "doi": "10.48550/arXiv.2605.15109",
+      "title": "Why Neighborhoods Matter: Traversal Context and Provenance in Agentic GraphRAG",
+      "authorIds": [
+        "a4417",
+        "a4418",
+        "a4419"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration",
+        "databases"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2609-03598",
+      "doi": "10.48550/arXiv.2609.03598",
+      "title": "RASER: Resilient Agent Scheduling and Execution Runtime for HPC Clusters",
+      "authorIds": [
+        "a4420",
+        "a4421",
+        "a4422"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "hpc-scheduling",
+        "scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-21105-joss-09795",
+      "doi": "10.21105/joss.09795",
+      "title": "Discovering the SUPER in computing - dagster-slurm for reproducible research on HPC",
+      "authorIds": [
+        "a4423",
+        "a4424",
+        "a4425",
+        "a4426"
+      ],
+      "date": "2026-03",
+      "journalId": "j271",
+      "keywordIds": [
+        "workflow-orchestration",
+        "hpc-scheduling"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-ipdps57955-2024-00034",
+      "doi": "10.1109/IPDPS57955.2024.00034",
+      "title": "Adaptive Task-Oriented Resource Allocation for Large Dynamic Workflows on Opportunistic Resources",
+      "authorIds": [
+        "a1691",
+        "a1159"
+      ],
+      "date": "2024-05",
+      "journalId": "j272",
+      "keywordIds": [
+        "hpc-scheduling",
+        "optimization-algorithms"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-ipdps47924-2020-00048",
+      "doi": "10.1109/IPDPS47924.2020.00048",
+      "title": "Solving the Container Explosion Problem for Distributed High Throughput Computing",
+      "authorIds": [
+        "a4427",
+        "a4411",
+        "a4428",
+        "a1159"
+      ],
+      "date": "2020-05",
+      "journalId": "j272",
+      "keywordIds": [
+        "infrastructure",
+        "scalability"
+      ],
+      "citations": 6,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3625549-3658663",
+      "doi": "10.1145/3625549.3658663",
+      "title": "Accelerating Function-Centric Applications by Discovering, Distributing, and Retaining Reusable Context in Workflow Systems",
+      "authorIds": [
+        "a1691",
+        "a4110",
+        "a4108",
+        "a144",
+        "a1159"
+      ],
+      "date": "2024-06",
+      "journalId": "j273",
+      "keywordIds": [
+        "serverless-computing",
+        "workflow-orchestration"
+      ],
+      "citations": 2,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3589806-3600037",
+      "doi": "10.1145/3589806.3600037",
+      "title": "Automatic Reproduction of Workflows in the Snakemake Workflow Catalog and nf-core Registries",
+      "authorIds": [
+        "a4002",
+        "a4429",
+        "a1636",
+        "a4430"
+      ],
+      "date": "2023-06",
+      "journalId": "j274",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 11,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3712285-3759874",
+      "doi": "10.1145/3712285.3759874",
+      "title": "Addressing Reproducibility Challenges in HPC with Continuous Integration",
+      "authorIds": [
+        "a1687",
+        "a1688",
+        "a1720",
+        "a4256",
+        "a2679",
+        "a144"
+      ],
+      "date": "2025-11",
+      "journalId": "j268",
+      "keywordIds": [
+        "workflow-orchestration",
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-67231-k829mj42",
+      "doi": "10.67231/k829mj42",
+      "title": "From YAML to Queue: DevOps Automation for Reproducible Benchmarks",
+      "authorIds": [
+        "a4431"
+      ],
+      "date": "2026-06",
+      "journalId": "j275",
+      "keywordIds": [
+        "hpc-scheduling",
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-ccgrid68966-2026-00017",
+      "doi": "10.1109/CCGrid68966.2026.00017",
+      "title": "Efficiently Reproducing Distributed Workflows in Notebook-based Systems",
+      "authorIds": [
+        "a4432",
+        "a4414",
+        "a4399",
+        "a1159",
+        "a4416"
+      ],
+      "date": "2026-05",
+      "journalId": "j276",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-escience65000-2025-00028",
+      "doi": "10.1109/eScience65000.2025.00028",
+      "title": "Backpacks for Notebooks: Enabling Containerized Notebook Workflows in Distributed Environments",
+      "authorIds": [
+        "a4399",
+        "a4432",
+        "a4414",
+        "a4436",
+        "a4437",
+        "a760",
+        "a4438",
+        "a4416",
+        "a1159"
+      ],
+      "date": "2025-09",
+      "journalId": "j142",
+      "keywordIds": [
+        "workflow-orchestration",
+        "infrastructure"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-tpds-2023-3241598",
+      "doi": "10.1109/TPDS.2023.3241598",
+      "title": "Landlord: Coordinating Dynamic Software Environments to Reduce Container Sprawl",
+      "authorIds": [
+        "a4427",
+        "a1691",
+        "a144",
+        "a1159"
+      ],
+      "date": "2023-02",
+      "journalId": "j37",
+      "keywordIds": [
+        "hpc-scheduling",
+        "infrastructure"
+      ],
+      "citations": 4,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-escience55777-2022-00015",
+      "doi": "10.1109/eScience55777.2022.00015",
+      "title": "Reproducible Notebook Containers using Application Virtualization",
+      "authorIds": [
+        "a4414",
+        "a4415",
+        "a4416"
+      ],
+      "date": "2022-10",
+      "journalId": "j142",
+      "keywordIds": [
+        "workflow-orchestration",
+        "infrastructure"
+      ],
+      "citations": 16,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-sci68648-2025-11333836",
+      "doi": "10.1109/sci68648.2025.11333836",
+      "title": "Practical Performance Trade-offs in Distributed Deep Learning on HPC: A Comparative Study of Enroot and Apptainer Containers",
+      "authorIds": [
+        "a4439",
+        "a4440",
+        "a3780",
+        "a4441",
+        "a4442",
+        "a4443"
+      ],
+      "date": "2025-12",
+      "journalId": "j277",
+      "keywordIds": [
+        "gpu-acceleration",
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3460210-3493546",
+      "doi": "10.1145/3460210.3493546",
+      "title": "User-friendly Composition of FAIR Workflows in a Notebook Environment",
+      "authorIds": [
+        "a4444",
+        "a4445",
+        "a4446",
+        "a4447",
+        "a4448",
+        "a4449",
+        "a4450"
+      ],
+      "date": "2021-11",
+      "journalId": "j278",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 9,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3214239-3214241",
+      "doi": "10.1145/3214239.3214241",
+      "title": "Improving Reproducibility of Distributed Computational Experiments",
+      "authorIds": [
+        "a4451",
+        "a4416",
+        "a4452",
+        "a4453"
+      ],
+      "date": "2018-06",
+      "journalId": "j279",
+      "keywordIds": [
+        "workflow-orchestration",
+        "benchmarking"
+      ],
+      "citations": 3,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3421537-3421539",
+      "doi": "10.1145/3421537.3421539",
+      "title": "COaaS",
+      "authorIds": [
+        "a4454",
+        "a4455",
+        "a4456"
+      ],
+      "date": "2020-08",
+      "journalId": "j280",
+      "keywordIds": [
+        "cloud-computing",
+        "serverless-computing"
+      ],
+      "citations": 5,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-escience51609-2021-00031",
+      "doi": "10.1109/eScience51609.2021.00031",
+      "title": "Extreme Scale Survey Simulation with Python Workflows",
+      "authorIds": [
+        "a4457",
+        "a47",
+        "a4458",
+        "a1636",
+        "a144",
+        "a4459"
+      ],
+      "date": "2021-09",
+      "journalId": "j142",
+      "keywordIds": [
+        "workflow-orchestration",
+        "scalability"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-e-science58273-2023-10254837",
+      "doi": "10.1109/e-Science58273.2023.10254837",
+      "title": "Reproducible eScience: The Data Containerization Challenge",
+      "authorIds": [
+        "a4416"
+      ],
+      "date": "2023-09",
+      "journalId": "j142",
+      "keywordIds": [
+        "infrastructure",
+        "workflow-orchestration"
+      ],
+      "citations": 3,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22369-issn-2153-4136-10-1-3",
+      "doi": "10.22369/issn.2153-4136/10/1/3",
+      "title": "Extending XSEDE Innovations to Campus Cyberinfrastructure - The XSEDE National Integration Toolkit",
+      "authorIds": [
+        "a4460",
+        "a4461",
+        "a4462",
+        "a4463"
+      ],
+      "date": "2019-01",
+      "journalId": "j281",
+      "keywordIds": [
+        "infrastructure",
+        "hpc-integration"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1145-3626203-36705",
+      "doi": "10.1145/3626203.36705",
+      "title": "Open Science Data Federation - operation and monitoring",
+      "authorIds": [
+        "a4464",
+        "a4465",
+        "a4466"
+      ],
+      "date": "2024-01",
+      "journalId": "j282",
+      "keywordIds": [
+        "infrastructure",
+        "databases"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2609-10509",
+      "doi": "10.48550/arXiv.2609.10509",
+      "title": "Avatar: Toward Autonomous End-to-End Orchestration of Scientific Workflows using LLMs",
+      "authorIds": [
+        "a610",
+        "a2809",
+        "a4255",
+        "a145",
+        "a144",
+        "a246"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "workflow-orchestration"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1109-works54523-2021-00008",
+      "doi": "10.1109/WORKS54523.2021.00008",
+      "title": "Not All Tasks Are Created Equal: Adaptive Resource Allocation for Heterogeneous Tasks in Dynamic Workflows",
+      "authorIds": [
+        "a1691",
+        "a4108",
+        "a144",
+        "a1159"
+      ],
+      "date": "2021-11",
+      "journalId": "j283",
+      "keywordIds": [
+        "hpc-scheduling",
+        "optimization-algorithms"
+      ],
+      "citations": 8,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-5753-sbc-4400-9-1",
+      "doi": "10.5753/sbc.4400.9.1",
+      "title": "Boas Práticas para Experimentos Computacionais de Alto Desempenho",
+      "authorIds": [
+        "a4433",
+        "a4434",
+        "a4435"
+      ],
+      "date": "2020-04",
+      "journalId": "j284",
+      "keywordIds": [
+        "benchmarking"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-physrevlett-126-141302",
+      "doi": "10.1103/PhysRevLett.126.141302",
+      "title": "Searching for Dark Matter with a Superconducting Qubit",
+      "authorIds": [
+        "a4467",
+        "a4468",
+        "a4469",
+        "a4470",
+        "a1561",
+        "a4471",
+        "a4472"
+      ],
+      "date": "2021-04",
+      "journalId": "j103",
+      "keywordIds": [
+        "superconducting-qubits",
+        "qubit-hardware",
+        "high-energy-physics"
+      ],
+      "citations": 180,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-physrevx-9-021023",
+      "doi": "10.1103/PhysRevX.9.021023",
+      "title": "Squeezed Vacuum Used to Accelerate the Search for a Weak Classical Signal",
+      "authorIds": [
+        "a4473",
+        "a4474",
+        "a4475",
+        "a4476",
+        "a4477",
+        "a4478"
+      ],
+      "date": "2019-05",
+      "journalId": "j131",
+      "keywordIds": [
+        "high-energy-physics"
+      ],
+      "citations": 80,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-physrevx-15-021031",
+      "doi": "10.1103/physrevx.15.021031",
+      "title": "Quantum-Enhanced Sensing of Axion Dark Matter with a Transmon-Based Single Microwave Photon Counter",
+      "authorIds": [
+        "a4479",
+        "a4480",
+        "a4481",
+        "a764",
+        "a4482",
+        "a4483",
+        "a4484",
+        "a4485",
+        "a4486",
+        "a4487",
+        "a4488",
+        "a4489",
+        "a4490"
+      ],
+      "date": "2025-04",
+      "journalId": "j131",
+      "keywordIds": [
+        "superconducting-qubits",
+        "qubit-hardware",
+        "high-energy-physics"
+      ],
+      "citations": 27,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-3390-instruments5030025",
+      "doi": "10.3390/INSTRUMENTS5030025",
+      "title": "Josephson Junctions as Single Microwave Photon Counters: Simulation and Characterization",
+      "authorIds": [
+        "a4491",
+        "a4492",
+        "a4493",
+        "a4494",
+        "a4495",
+        "a4496",
+        "a4497",
+        "a4498",
+        "a4499",
+        "a4500",
+        "a4501",
+        "a4502",
+        "a3997",
+        "a4503",
+        "a4504",
+        "a4505",
+        "a4506",
+        "a4507",
+        "a4508",
+        "a4509"
+      ],
+      "date": "2021-07",
+      "journalId": "j285",
+      "keywordIds": [
+        "superconducting-qubits",
+        "qubit-hardware",
+        "high-energy-physics"
+      ],
+      "citations": 14,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1038-s41586-021-03226-7",
+      "doi": "10.1038/s41586-021-03226-7",
+      "title": "A quantum enhanced search for dark matter axions",
+      "authorIds": [
+        "a4510",
+        "a4511",
+        "a4512",
+        "a4513",
+        "a4514",
+        "a4515",
+        "a4477",
+        "a267",
+        "a4516",
+        "a4517",
+        "a4518",
+        "a4478",
+        "a4519",
+        "a4473",
+        "a4520",
+        "a4521",
+        "a4522",
+        "a1585",
+        "a4523",
+        "a4524",
+        "a4476",
+        "a4525",
+        "a4526",
+        "a1999"
+      ],
+      "date": "2021-02",
+      "journalId": "j64",
+      "keywordIds": [
+        "high-energy-physics"
+      ],
+      "citations": 412,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-physrevd-110-115021",
+      "doi": "10.1103/physrevd.110.115021",
+      "title": "Search for QCD axion dark matter with transmon qubits and quantum circuit",
+      "authorIds": [
+        "a4527",
+        "a4528",
+        "a4529",
+        "a4530",
+        "a4531",
+        "a4532"
+      ],
+      "date": "2024-12",
+      "journalId": "j286",
+      "keywordIds": [
+        "superconducting-qubits",
+        "qubit-hardware",
+        "quantum-circuits",
+        "high-energy-physics"
+      ],
+      "citations": 12,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-m92t-xwgt",
+      "doi": "10.1103/m92t-xwgt",
+      "title": "Benchmarking dark matter search using a parity-check protocol with machine-learning optimized pulses",
+      "authorIds": [
+        "a2351",
+        "a4533",
+        "a4534",
+        "a4535",
+        "a4536",
+        "a4537",
+        "a2910",
+        "a4467",
+        "a4538",
+        "a4539"
+      ],
+      "date": "2026-08",
+      "journalId": "j286",
+      "keywordIds": [
+        "superconducting-qubits",
+        "qubit-hardware",
+        "high-energy-physics"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-prxquantum-3-030333",
+      "doi": "10.1103/PRXQuantum.3.030333",
+      "title": "Entangled Sensor-Networks for Dark-Matter Searches",
+      "authorIds": [
+        "a4540",
+        "a3638",
+        "a4541",
+        "a1679",
+        "a1714",
+        "a4542"
+      ],
+      "date": "2022-09",
+      "journalId": "j69",
+      "keywordIds": [
+        "high-energy-physics"
+      ],
+      "citations": 58,
+      "added": "2026-10-07"
     }
   ]
 }

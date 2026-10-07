@@ -1062,5 +1062,85 @@
   "j266": {
     "name": "Frontiers in Computer Science",
     "type": "journal"
+  },
+  "j267": {
+    "name": "Proceedings of the Practice and Experience on Advanced Research Computing: Seamless Creativity",
+    "type": "conference"
+  },
+  "j268": {
+    "name": "International Conference for High Performance Computing, Networking, Storage and Analysis",
+    "type": "conference"
+  },
+  "j269": {
+    "name": "PLoS Computational Biology",
+    "type": "journal"
+  },
+  "j270": {
+    "name": "IEEE Annual Computers, Software, and Applications Conference",
+    "type": "conference"
+  },
+  "j271": {
+    "name": "The Journal of Open Source Software",
+    "type": "journal"
+  },
+  "j272": {
+    "name": "Proceedings - IEEE International Parallel and Distributed Processing Symposium",
+    "type": "conference"
+  },
+  "j273": {
+    "name": "ACM International Symposium on High-Performance Parallel and Distributed Computing",
+    "type": "conference"
+  },
+  "j274": {
+    "name": "Proceedings of the 2023 ACM Conference on Reproducibility and Replicability",
+    "type": "conference"
+  },
+  "j275": {
+    "name": "International Journal of Intelligent Systems and Data Science",
+    "type": "journal"
+  },
+  "j276": {
+    "name": "IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid)",
+    "type": "conference"
+  },
+  "j277": {
+    "name": "Supercomputing India",
+    "type": "journal"
+  },
+  "j278": {
+    "name": "ACM International Conference on Knowledge Capture",
+    "type": "conference"
+  },
+  "j279": {
+    "name": "Proceedings of the First International Workshop on Practical Reproducible Evaluation of Computer Systems",
+    "type": "conference"
+  },
+  "j280": {
+    "name": "International Conference on Big Data and Internet of Things",
+    "type": "conference"
+  },
+  "j281": {
+    "name": "The Journal of Computational Science Education",
+    "type": "journal"
+  },
+  "j282": {
+    "name": "Practice and Experience in Advanced Research Computing 2024: Human Powered Computing",
+    "type": "journal"
+  },
+  "j283": {
+    "name": "IEEE Workshop on Workflows in Support of Large-Scale Science",
+    "type": "conference"
+  },
+  "j284": {
+    "name": "Minicursos da XX Escola Regional de Alto Desempenho da Região Sul",
+    "type": "conference"
+  },
+  "j285": {
+    "name": "Instruments",
+    "type": "journal"
+  },
+  "j286": {
+    "name": "Physical review. D/Physical review. D.",
+    "type": "journal"
   }
 }
