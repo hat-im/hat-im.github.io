@@ -26460,6 +26460,307 @@
       ],
       "citations": 58,
       "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-m7j3-5sk6",
+      "doi": "10.1103/m7j3-5sk6",
+      "title": "Quantum error-corrected computation of molecular energies",
+      "authorIds": [
+        "a3414",
+        "a2172",
+        "a4547",
+        "a4548",
+        "a4549",
+        "a4550",
+        "a3464",
+        "a3577",
+        "a4551",
+        "a3634",
+        "a4552",
+        "a4553",
+        "a4554",
+        "a4555",
+        "a4556",
+        "a4557",
+        "a4558",
+        "a4559",
+        "a111",
+        "a4560",
+        "a3436"
+      ],
+      "date": "2026-03",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-chemistry"
+      ],
+      "citations": 3,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1088-2058-9565-ae0aef",
+      "doi": "10.1088/2058-9565/ae0aef",
+      "title": "Unlocking early fault-tolerant quantum computing with mitigated magic dilution",
+      "authorIds": [
+        "a4561",
+        "a2526",
+        "a2918",
+        "a2427"
+      ],
+      "date": "2025-09",
+      "journalId": "j77",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-algorithms"
+      ],
+      "citations": 7,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2021-07-05-495",
+      "doi": "10.22331/q-2021-07-05-495",
+      "title": "Nearly tight Trotterization of interacting electrons",
+      "authorIds": [
+        "a4562",
+        "a2442",
+        "a2995"
+      ],
+      "date": "2021-07",
+      "journalId": "j259",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-chemistry"
+      ],
+      "citations": 60,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1021-acs-jctc-4c01390",
+      "doi": "10.1021/acs.jctc.4c01390",
+      "title": "Global Minimization of Electronic Hamiltonian 1-Norm via Linear Programming in the Block Invariant Symmetry Shift (BLISS) Method.",
+      "authorIds": [
+        "a3770",
+        "a3769",
+        "a126",
+        "a1709",
+        "a4563"
+      ],
+      "date": "2025-01",
+      "journalId": "j287",
+      "keywordIds": [
+        "quantum-chemistry",
+        "compilation"
+      ],
+      "citations": 5,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1038-s41467-025-66773-x",
+      "doi": "10.1038/s41467-025-66773-x",
+      "title": "Local clustering decoder as a fast and adaptive hardware decoder for the surface code",
+      "authorIds": [
+        "a4564",
+        "a4565",
+        "a4566",
+        "a2509",
+        "a2525",
+        "a4567",
+        "a2426"
+      ],
+      "date": "2025-12",
+      "journalId": "j231",
+      "keywordIds": [
+        "fault-tolerance"
+      ],
+      "citations": 9,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1038-s41534-024-00877-y",
+      "doi": "10.1038/s41534-024-00877-y",
+      "title": "Hamiltonian dynamics on digital quantum computers without discretization error",
+      "authorIds": [
+        "a1554",
+        "a1555"
+      ],
+      "date": "2024-09",
+      "journalId": "j101",
+      "keywordIds": [
+        "quantum-simulation"
+      ],
+      "citations": 15,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-physrevx-15-021057",
+      "doi": "10.1103/physrevx.15.021057",
+      "title": "Practical Quantum Advantage on Partially Fault-Tolerant Quantum Computer",
+      "authorIds": [
+        "a1373",
+        "a2359",
+        "a1375",
+        "a1376",
+        "a1377",
+        "a251"
+      ],
+      "date": "2025-05",
+      "journalId": "j131",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-algorithms"
+      ],
+      "citations": 19,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1088-2058-9565-ae2efa",
+      "doi": "10.1088/2058-9565/ae2efa",
+      "title": "Unbiased observable estimation with approximate channels in fault-tolerant quantum computation",
+      "authorIds": [
+        "a4568",
+        "a1449",
+        "a26"
+      ],
+      "date": "2025-12",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-physreva-105-012403",
+      "doi": "10.1103/PhysRevA.105.012403",
+      "title": "Exploiting fermion number in factorized decompositions of the electronic structure Hamiltonian",
+      "authorIds": [
+        "a507",
+        "a2995",
+        "a4562"
+      ],
+      "date": "2022-01",
+      "journalId": "j117",
+      "keywordIds": [
+        "quantum-chemistry"
+      ],
+      "citations": 17,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-22331-q-2025-07-21-1800",
+      "doi": "10.22331/q-2025-07-21-1800",
+      "title": "Averaging gate approximation error and performance of Unitary Coupled Cluster ansatz in Pre-FTQC Era",
+      "authorIds": [
+        "a4569",
+        "a2108"
+      ],
+      "date": "2025-07",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-algorithms",
+        "compilation"
+      ],
+      "citations": 1,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1088-2058-9565-ae1160",
+      "doi": "10.1088/2058-9565/ae1160",
+      "title": "TE-PAI: exact time evolution by sampling random circuits",
+      "authorIds": [
+        "a4570",
+        "a2827"
+      ],
+      "date": "2025-10",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-simulation"
+      ],
+      "citations": 6,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2604-07448",
+      "doi": "10.48550/arXiv.2604.07448",
+      "title": "When is randomization advantageous in quantum simulation?",
+      "authorIds": [
+        "a4571",
+        "a1322",
+        "a4572",
+        "a4224",
+        "a4573"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2508-20174",
+      "doi": "10.48550/arXiv.2508.20174",
+      "title": "Compilation-informed probabilistic logical-error cancellation",
+      "authorIds": [
+        "a4574",
+        "a4575",
+        "a4576",
+        "a4577",
+        "a4578",
+        "a4579",
+        "a4580"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "fault-tolerance",
+        "compilation"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2605-00745",
+      "doi": "10.48550/arXiv.2605.00745",
+      "title": "Quantum simulation of nanographenes and Trotter error cancellation",
+      "authorIds": [
+        "a2487",
+        "a4581",
+        "a4582",
+        "a2427",
+        "a2490",
+        "a2489"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-simulation",
+        "quantum-chemistry"
+      ],
+      "citations": 0,
+      "added": "2026-10-07"
+    },
+    {
+      "id": "10-1103-mlmy-yskj",
+      "doi": "10.1103/mlmy-yskj",
+      "title": "Error Mitigation and Circuit Division for Early Fault-Tolerant Quantum Phase Estimation",
+      "authorIds": [
+        "a4543",
+        "a4544",
+        "a4545",
+        "a4546",
+        "a962",
+        "a4224"
+      ],
+      "date": "2025-09",
+      "journalId": "j69",
+      "keywordIds": [
+        "fault-tolerance",
+        "quantum-algorithms"
+      ],
+      "citations": 4,
+      "added": "2026-10-07"
     }
   ]
 }

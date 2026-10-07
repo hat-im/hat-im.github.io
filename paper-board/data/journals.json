@@ -1142,5 +1142,9 @@
   "j286": {
     "name": "Physical review. D/Physical review. D.",
     "type": "journal"
+  },
+  "j287": {
+    "name": "Journal of chemical theory and computation",
+    "type": "journal"
   }
 }
