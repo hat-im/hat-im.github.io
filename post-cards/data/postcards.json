@@ -407,6 +407,7 @@
       "from": "Hat",
       "to": "Sam",
       "location": "Lecture Launch",
+      "color": "azure",
       "subject": "Melodies & Milestones",
       "media": {
         "type": "video",
