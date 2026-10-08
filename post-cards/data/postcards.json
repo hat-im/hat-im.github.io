@@ -415,6 +415,22 @@
       },
       "message": "Hey,\nThe meeting went well. I think this project is going to be something.\nI wonder how your work's going. I joined music classes again. I want to tell you more about the project and work, and hear about yours.",
       "postscript": "Hope work isn't too hectic."
+    },
+    {
+      "id": "postcard-27",
+      "enabled": true,
+      "date": "2026-10-08",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Nighttime Napper",
+      "color": "caramel",
+      "subject": "Drafts & Deadlines",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-27.mp4"
+      },
+      "message": "Hey,\nBeen writing papers all day. A couple of big ones in the works, and then the next one. I hope this one goes well.\nI hope your week was good.",
+      "postscript": "Been crocheting anything interesting lately?"
     }
   ]
 }
