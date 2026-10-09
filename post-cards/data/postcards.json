@@ -431,6 +431,22 @@
       },
       "message": "Hey,\nBeen writing papers all day. A couple of big ones in the works, and then the next one. I hope this one goes well. Hilbert's been assisting, he caught a few mathematical errors I made.\nSofia had her first cup of tea today. Apparently she's addicted now.\nI hope your week was good.",
       "postscript": "Been crocheting anything interesting lately?"
+    },
+    {
+      "id": "postcard-28",
+      "enabled": true,
+      "date": "2026-10-09",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Submission Scramble",
+      "color": "bubblegum",
+      "subject": "Hectic & Hushed",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-28.mp4"
+      },
+      "message": "Hey,\nSubmitted two papers today, one big one small. Always comes down to the wire on submission day, even after extensions. Two more after this, maybe three.\nThings are so hectic here, and I find myself wondering how they are for you. What's kept you busiest this week? Learned anything cool? What have you been cooking?\nI hope you have a fun weekend ahead, unless you're resting too? I think I'll sleep through mine, I'm so tired. I miss hearing from you.",
+      "postscript": "Rest well this weekend, you've earned it."
     }
   ]
 }
