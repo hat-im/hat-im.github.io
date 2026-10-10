@@ -29,7 +29,7 @@
   function formatDisplayDate(iso) {
     var parts = iso.split("-");
     var d = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
-    return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+    return d.toLocaleDateString(undefined, { weekday: "short", year: "numeric", month: "short", day: "numeric" });
   }
 
   // Both the formatted date and pickCardStyle's result are deterministic functions of a
