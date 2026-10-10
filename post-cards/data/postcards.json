@@ -447,6 +447,22 @@
       },
       "message": "Hey,\nSubmitted two papers today, one big one small. Always comes down to the wire on submission day, even after extensions. Two more after this, maybe three.\nThings are so hectic here, and I find myself wondering how they are for you. What's kept you busiest this week? Learned anything cool? What have you been cooking?\nI hope you have a fun weekend ahead, unless you're resting too? I think I'll sleep through mine, I'm so tired. I miss hearing from you.",
       "postscript": "Rest well this weekend, you've earned it."
+    },
+    {
+      "id": "postcard-29",
+      "enabled": true,
+      "date": "2026-10-10",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Protest Pause",
+      "color": "fog",
+      "subject": "Azure Afternoon",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-29.mp4"
+      },
+      "message": "Hey,\nI went to attend the protest today but got sidetracked by the detentions, so I turned around and went to the festival with friends first, then to a book store, where there was a cute dog. I wonder how your weekend's going, did you get some reading done? Some artwork? Meeting your friends? I'm home now, writing my paper, and I can't help but always write them with you in mind. It's just the way my hands always end up moving, whether it's pen over paper or keys beneath a screen.",
+      "postscript": "Please take care and stay safe."
     }
   ]
 }
