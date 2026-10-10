@@ -1146,5 +1146,77 @@
   "j287": {
     "name": "Journal of chemical theory and computation",
     "type": "journal"
+  },
+  "j288": {
+    "name": "JUSTC",
+    "type": "journal"
+  },
+  "j289": {
+    "name": "Applied Physics Reviews",
+    "type": "journal"
+  },
+  "j290": {
+    "name": "Proceedings of the National Academy of Sciences",
+    "type": "conference"
+  },
+  "j291": {
+    "name": "ChemRxiv",
+    "type": "journal"
+  },
+  "j292": {
+    "name": "International Journal of Molecular Sciences",
+    "type": "journal"
+  },
+  "j293": {
+    "name": "The Journal of Physical Chemistry B",
+    "type": "journal"
+  },
+  "j294": {
+    "name": "Chemical Science",
+    "type": "journal"
+  },
+  "j295": {
+    "name": "Princeton University Press eBooks",
+    "type": "journal"
+  },
+  "j296": {
+    "name": "Monthly Notices of the Royal Astronomical Society",
+    "type": "journal"
+  },
+  "j297": {
+    "name": "Journal of Cosmology and Astroparticle Physics",
+    "type": "journal"
+  },
+  "j298": {
+    "name": "The European Physical Journal C",
+    "type": "journal"
+  },
+  "j299": {
+    "name": "Astronomy and Astrophysics",
+    "type": "journal"
+  },
+  "j300": {
+    "name": "Universe",
+    "type": "journal"
+  },
+  "j301": {
+    "name": "Science",
+    "type": "journal"
+  },
+  "j302": {
+    "name": "Moscow University Physics Bulletin",
+    "type": "journal"
+  },
+  "j303": {
+    "name": "Symmetry",
+    "type": "journal"
+  },
+  "j304": {
+    "name": "The Astrophysical Journal Letters",
+    "type": "journal"
+  },
+  "j305": {
+    "name": "The Astrophysical Journal",
+    "type": "journal"
   }
 }

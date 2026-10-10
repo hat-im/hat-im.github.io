@@ -208,5 +208,10 @@
     "label": "databases",
     "bg": "#f0dbe0",
     "text": "#76263f"
+  },
+  "astrophysics": {
+    "label": "astrophysics",
+    "bg": "#dbe0f0",
+    "text": "#2d4376"
   }
 }

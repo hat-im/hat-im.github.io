@@ -26761,6 +26761,1907 @@
       ],
       "citations": 4,
       "added": "2026-10-07"
+    },
+    {
+      "id": "10-48550-arxiv-2610-07702",
+      "doi": "10.48550/arXiv.2610.07702",
+      "title": "Demonstration of Parallel Multi-QPU Execution for Fragment-Based Quantum Chemistry Using On-Premises Hardware",
+      "authorIds": [
+        "a4583",
+        "a4584",
+        "a3790",
+        "a4585",
+        "a4586",
+        "a4587",
+        "a170",
+        "a4588",
+        "a4589",
+        "a4590",
+        "a4591",
+        "a335",
+        "a4592",
+        "a4593",
+        "a4594",
+        "a4192",
+        "a4595",
+        "a4596",
+        "a4597",
+        "a4598",
+        "a4599",
+        "a4600",
+        "a4601",
+        "a4602"
+      ],
+      "date": "2026-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2208-14789",
+      "doi": "10.48550/arXiv.2208.14789",
+      "title": "Divide-and-conquer variational quantum algorithms for large-scale electronic structure simulations",
+      "authorIds": [
+        "a486",
+        "a228",
+        "a466",
+        "a4603",
+        "a457",
+        "a1422"
+      ],
+      "date": "2022-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1038-s41534-024-00952-4",
+      "doi": "10.1038/s41534-024-00952-4",
+      "title": "Contextual subspace variational quantum eigensolver calculation of the dissociation curve of molecular nitrogen on a superconducting quantum computer",
+      "authorIds": [
+        "a2156",
+        "a2158",
+        "a2476",
+        "a4334",
+        "a2159"
+      ],
+      "date": "2025-02",
+      "journalId": "j101",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 14,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2604-09857",
+      "doi": "10.48550/arXiv.2604.09857",
+      "title": "Protein-Ligand Free Energy Perturbation on Quantum Hardware",
+      "authorIds": [
+        "a457",
+        "a60",
+        "a587",
+        "a79",
+        "a186",
+        "a3776",
+        "a458",
+        "a675",
+        "a3779"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-52396-justc-2022-0118",
+      "doi": "10.52396/JUSTC-2022-0118",
+      "title": "Q2Chemistry: A quantum computation platform for quantum chemistry",
+      "authorIds": [
+        "a228",
+        "a466",
+        "a4604",
+        "a1300",
+        "a4603",
+        "a457",
+        "a1422"
+      ],
+      "date": "2022-01",
+      "journalId": "j288",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 17,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1103-physrevresearch-5-043054",
+      "doi": "10.1103/PhysRevResearch.5.043054",
+      "title": "Benchmarking noisy intermediate scale quantum error mitigation strategies for ground state preparation of the HCl molecule",
+      "authorIds": [
+        "a2156",
+        "a2158",
+        "a407",
+        "a2476",
+        "a4334",
+        "a2159"
+      ],
+      "date": "2023-10",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 14,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2606-17095",
+      "doi": "10.48550/arXiv.2606.17095",
+      "title": "Variational Quantum Eigensolver-Based Quantum Bootstrap Embedding for Molecules",
+      "authorIds": [
+        "a4605"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1088-2058-9565-acf9c7",
+      "doi": "10.1088/2058-9565/acf9c7",
+      "title": "Orbital expansion variational quantum eigensolver",
+      "authorIds": [
+        "a1140",
+        "a4606",
+        "a2444",
+        "a3674",
+        "a3866",
+        "a2445"
+      ],
+      "date": "2023-09",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1038-s41567-024-02530-z",
+      "doi": "10.1038/s41567-024-02530-z",
+      "title": "Experimental quantum computational chemistry with optimized unitary coupled cluster ansatz",
+      "authorIds": [
+        "a3065",
+        "a2444",
+        "a4607",
+        "a4608",
+        "a811",
+        "a3070",
+        "a3894",
+        "a1140",
+        "a128",
+        "a2933",
+        "a4609",
+        "a4610",
+        "a4611",
+        "a4612",
+        "a1314",
+        "a1875",
+        "a760",
+        "a802",
+        "a4613",
+        "a4614",
+        "a4615",
+        "a4616",
+        "a4617",
+        "a456",
+        "a2119",
+        "a4618",
+        "a458",
+        "a4619",
+        "a3052",
+        "a4620",
+        "a2251",
+        "a4621",
+        "a4622",
+        "a4623",
+        "a2413",
+        "a2446",
+        "a2614",
+        "a2414"
+      ],
+      "date": "2024-06",
+      "journalId": "j130",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 71,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1021-acs-jctc-5c01435",
+      "doi": "10.1021/acs.jctc.5c01435",
+      "title": "Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing",
+      "authorIds": [
+        "a4624",
+        "a4625",
+        "a762",
+        "a2446"
+      ],
+      "date": "2026-01",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 4,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2607-20585",
+      "doi": "10.48550/arXiv.2607.20585",
+      "title": "Machine-Learned Compact Subspace Generation for Quantum Selected Configuration Interaction within Density Matrix Embedding Framework",
+      "authorIds": [
+        "a2192",
+        "a4626",
+        "a2194",
+        "a2193",
+        "a3807",
+        "a4627"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-21203-rs-3-rs-5566874-v1",
+      "doi": "10.21203/rs.3.rs-5566874/v1",
+      "title": "Accurate quantum-centric simulations of supramolecular interactions",
+      "authorIds": [
+        "a3776",
+        "a675",
+        "a3777",
+        "a457",
+        "a526",
+        "a540",
+        "a3778",
+        "a649",
+        "a186",
+        "a1771",
+        "a1095",
+        "a3779"
+      ],
+      "date": "2025-03",
+      "journalId": "j175",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1038-s41467-019-10988-2",
+      "doi": "10.1038/s41467-019-10988-2",
+      "title": "An adaptive variational algorithm for exact molecular simulations on a quantum computer",
+      "authorIds": [
+        "a1432",
+        "a4062",
+        "a1438",
+        "a1433"
+      ],
+      "date": "2019-07",
+      "journalId": "j231",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 1029,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1063-5-0245874",
+      "doi": "10.1063/5.0245874",
+      "title": "Chemical applications of variational quantum eigenvalue-based quantum algorithms: Perspective and survey",
+      "authorIds": [
+        "a4628",
+        "a4629",
+        "a4630",
+        "a4631"
+      ],
+      "date": "2025-07",
+      "journalId": "j289",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 10,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1103-physrevresearch-4-023154",
+      "doi": "10.1103/PhysRevResearch.4.023154",
+      "title": "Qubit-efficient encoding scheme for quantum simulations of electronic structure",
+      "authorIds": [
+        "a4632",
+        "a2362",
+        "a4633",
+        "a4634",
+        "a4635"
+      ],
+      "date": "2022-05",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 44,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2607-16410",
+      "doi": "10.48550/arXiv.2607.16410",
+      "title": "Quantum-Centric Geometry Optimization with Wave-Function-Based Embedding",
+      "authorIds": [
+        "a3776",
+        "a675",
+        "a458",
+        "a457",
+        "a3810"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1021-acs-jctc-9b01083",
+      "doi": "10.1021/acs.jctc.9b01083",
+      "title": "Is the Trotterized UCCSD Ansatz Chemically Well-Defined?",
+      "authorIds": [
+        "a1432",
+        "a170",
+        "a4062",
+        "a1438",
+        "a1433"
+      ],
+      "date": "2019-12",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 158,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1021-acs-jpca-3c01753",
+      "doi": "10.1021/acs.jpca.3c01753",
+      "title": "Extension of the Trotterized Unitary Coupled Cluster to Triple Excitations",
+      "authorIds": [
+        "a4636",
+        "a4637",
+        "a4638",
+        "a3846"
+      ],
+      "date": "2023-04",
+      "journalId": "j120",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 15,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1103-physrevapplied-21-064017",
+      "doi": "10.1103/PhysRevApplied.21.064017",
+      "title": "Ground-state-energy calculation for the water molecule on a superconducting quantum processor",
+      "authorIds": [
+        "a1423",
+        "a1424",
+        "a1426"
+      ],
+      "date": "2024-06",
+      "journalId": "j124",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 7,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1021-acs-jctc-0c00447",
+      "doi": "10.1021/acs.jctc.0c00447",
+      "title": "Chemistry on Quantum Computers with Virtual Quantum Subspace Expansion",
+      "authorIds": [
+        "a4639",
+        "a4274",
+        "a4275",
+        "a3444"
+      ],
+      "date": "2020-08",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 47,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1073-pnas-2603914123",
+      "doi": "10.1073/pnas.2603914123",
+      "title": "Localized sample-based quantum diagonalization for strongly correlated chemistry",
+      "authorIds": [
+        "a759",
+        "a2098",
+        "a4640",
+        "a2189",
+        "a4216",
+        "a389",
+        "a4213",
+        "a4212",
+        "a540",
+        "a3791"
+      ],
+      "date": "2026-07",
+      "journalId": "j290",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-33774-chemrxiv-2021-w7n78",
+      "doi": "10.33774/chemrxiv-2021-w7n78",
+      "title": "Towards Accurate Description of Chemical Reaction Energetics by Using Variational Quantum Eigensolver: A Case Study of the C2v Quasi-Reaction Pathway of Beryllium Insertion to H2 Molecule",
+      "authorIds": [
+        "a2089",
+        "a4641",
+        "a4642",
+        "a4643",
+        "a4644"
+      ],
+      "date": "2021-06",
+      "journalId": "j291",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-3390-ijms26041550",
+      "doi": "10.3390/ijms26041550",
+      "title": "Quantum Embedding of Non-Local Quantum Many-Body Interactions in an Prototypal Anti-Tumor Vaccine Metalloprotein on Near-Term Quantum Computing Hardware",
+      "authorIds": [
+        "a4645",
+        "a4646",
+        "a4647",
+        "a4648",
+        "a4649"
+      ],
+      "date": "2025-02",
+      "journalId": "j292",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 1,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2604-01983",
+      "doi": "10.48550/arXiv.2604.01983",
+      "title": "Towards Chemically Accurate and Scalable Quantum Simulations on IQM Quantum Hardware: A Quantum-HPC Hybrid Approach",
+      "authorIds": [
+        "a4626",
+        "a2192",
+        "a4650",
+        "a4651",
+        "a2193",
+        "a2194",
+        "a4652",
+        "a4627"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2512-04962",
+      "doi": "10.48550/arXiv.2512.04962",
+      "title": "Convergence of sample-based quantum diagonalization on a variable-length cuprate chain",
+      "authorIds": [
+        "a4653",
+        "a4654",
+        "a4655",
+        "a4656"
+      ],
+      "date": "2025-12",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "variational-algorithms"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1038-s41467-025-59716-z",
+      "doi": "10.1038/s41467-025-59716-z",
+      "title": "Krylov diagonalization of large many-body Hamiltonians on a quantum processor",
+      "authorIds": [
+        "a838",
+        "a839",
+        "a407",
+        "a375",
+        "a840",
+        "a252",
+        "a260",
+        "a300",
+        "a2071",
+        "a4657",
+        "a490",
+        "a4658",
+        "a540",
+        "a1097",
+        "a4659",
+        "a676",
+        "a1736",
+        "a356",
+        "a1095"
+      ],
+      "date": "2025-06",
+      "journalId": "j231",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 25,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1088-2058-9565-adb781",
+      "doi": "10.1088/2058-9565/adb781",
+      "title": "Quantum-centric computation of molecular excited states with extended sample-based quantum diagonalization",
+      "authorIds": [
+        "a1088",
+        "a3777",
+        "a540"
+      ],
+      "date": "2025-02",
+      "journalId": "j77",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 33,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1021-acs-jctc-4c00846",
+      "doi": "10.1021/acs.jctc.4c00846",
+      "title": "ADAPT-QSCI: Adaptive Construction of an Input State for Quantum-Selected Configuration Interaction",
+      "authorIds": [
+        "a2108",
+        "a4660",
+        "a2118",
+        "a4661",
+        "a4213"
+      ],
+      "date": "2024-12",
+      "journalId": "j60",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 38,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-22331-q-2024-08-29-1457",
+      "doi": "10.22331/q-2024-08-29-1457",
+      "title": "Analysis of quantum Krylov algorithms with errors",
+      "authorIds": [
+        "a407"
+      ],
+      "date": "2024-08",
+      "journalId": "j73",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 15,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-48550-arxiv-2603-03496",
+      "doi": "10.48550/arXiv.2603.03496",
+      "title": "Observation of Improved Accuracy over Classical Sparse Ground-State Solvers using a Quantum Computer",
+      "authorIds": [
+        "a407",
+        "a1097",
+        "a3777",
+        "a4100",
+        "a2920",
+        "a2624",
+        "a3786",
+        "a252",
+        "a4662",
+        "a2139",
+        "a3778",
+        "a375",
+        "a4087",
+        "a1359",
+        "a540",
+        "a855",
+        "a4663",
+        "a2098",
+        "a4664",
+        "a735",
+        "a1419",
+        "a4665",
+        "a793",
+        "a3474",
+        "a680",
+        "a803",
+        "a676",
+        "a1095"
+      ],
+      "date": "2026-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 0,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1021-acs-jpcb-5c01030",
+      "doi": "10.1021/acs.jpcb.5c01030",
+      "title": "Implicit Solvent Sample-Based Quantum Diagonalization",
+      "authorIds": [
+        "a3776",
+        "a675",
+        "a458",
+        "a3779"
+      ],
+      "date": "2025-05",
+      "journalId": "j293",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 13,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1103-dmn4-snfx",
+      "doi": "10.1103/dmn4-snfx",
+      "title": "Quantum-selected configuration interaction: Classical diagonalization of Hamiltonians in subspaces selected by quantum computers",
+      "authorIds": [
+        "a2512",
+        "a2066",
+        "a4666",
+        "a2130",
+        "a1827",
+        "a2118",
+        "a2108"
+      ],
+      "date": "2026-05",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 22,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1039-d3sc02516k",
+      "doi": "10.1039/d3sc02516k",
+      "title": "Bridging physical intuition and hardware efficiency for correlated electronic states: the local unitary cluster Jastrow ansatz for electronic structure",
+      "authorIds": [
+        "a540",
+        "a2098",
+        "a1391",
+        "a3793",
+        "a2103"
+      ],
+      "date": "2023-01",
+      "journalId": "j294",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 53,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-1103-physrevresearch-4-033173",
+      "doi": "10.1103/PhysRevResearch.4.033173",
+      "title": "Quantum expectation-value estimation by computational basis sampling",
+      "authorIds": [
+        "a2066",
+        "a4666",
+        "a2512",
+        "a1827",
+        "a2118",
+        "a2108"
+      ],
+      "date": "2022-09",
+      "journalId": "j121",
+      "keywordIds": [
+        "quantum-chemistry",
+        "quantum-diagonalization"
+      ],
+      "citations": 29,
+      "added": "2026-10-09"
+    },
+    {
+      "id": "10-2307-jj-13110769",
+      "doi": "10.2307/jj.13110769",
+      "title": "Dark Matter",
+      "authorIds": [
+        "a4667",
+        "a4668",
+        "a4669"
+      ],
+      "date": "2024-10",
+      "journalId": "j295",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-stae423",
+      "doi": "10.1093/mnras/stae423",
+      "title": "Using the motion of S2 to constrain vector clouds around Sgr A*",
+      "authorIds": [
+        "a4670",
+        "a4671",
+        "a4672",
+        "a4673",
+        "a4674",
+        "a4675",
+        "a4676",
+        "a4677",
+        "a4678",
+        "a4679",
+        "a4680",
+        "a4681",
+        "a4682",
+        "a4683",
+        "a4684",
+        "a4685",
+        "a4686",
+        "a4687",
+        "a4688",
+        "a4689",
+        "a4690",
+        "a4691",
+        "a4692",
+        "a4693",
+        "a4694",
+        "a4695",
+        "a4696",
+        "a4697",
+        "a4698",
+        "a4699",
+        "a4700",
+        "a4701",
+        "a4702",
+        "a4703",
+        "a4704",
+        "a4705",
+        "a4706",
+        "a4707",
+        "a4708",
+        "a4706",
+        "a4709",
+        "a4710",
+        "a4711",
+        "a4712",
+        "a4713",
+        "a4714",
+        "a4715",
+        "a4716",
+        "a4717",
+        "a4718",
+        "a4719",
+        "a4720",
+        "a4721",
+        "a4722",
+        "a4723"
+      ],
+      "date": "2024-03",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 13,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-stad1939",
+      "doi": "10.1093/mnras/stad1939",
+      "title": "Using the motion of S2 to constrain scalar clouds around Sgr A*",
+      "authorIds": [
+        "a4670",
+        "a4671",
+        "a4673",
+        "a4674",
+        "a4675",
+        "a4724",
+        "a4676",
+        "a4677",
+        "a4678",
+        "a4679",
+        "a4725",
+        "a4726",
+        "a4727",
+        "a4680",
+        "a4681",
+        "a4682",
+        "a4683",
+        "a4684",
+        "a4685",
+        "a4686",
+        "a4728",
+        "a4687",
+        "a4688",
+        "a1933",
+        "a4729",
+        "a4689",
+        "a4690",
+        "a4691",
+        "a4730",
+        "a4692",
+        "a4693",
+        "a4694",
+        "a4731",
+        "a4732",
+        "a4733",
+        "a4695",
+        "a4696",
+        "a4697",
+        "a4734",
+        "a4698",
+        "a4699",
+        "a4700",
+        "a4701",
+        "a4702",
+        "a4703",
+        "a4705",
+        "a4735",
+        "a4707",
+        "a4708",
+        "a4706",
+        "a4709",
+        "a4710",
+        "a4711",
+        "a4712",
+        "a4713",
+        "a4714",
+        "a4715",
+        "a4716",
+        "a4736",
+        "a4717",
+        "a4718",
+        "a4737",
+        "a4720",
+        "a4721",
+        "a4722",
+        "a4738",
+        "a4739",
+        "a4740",
+        "a4723"
+      ],
+      "date": "2023-06",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 37,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-stz2300",
+      "doi": "10.1093/mnras/stz2300",
+      "title": "Scalar field effects on the orbit of S2 star",
+      "authorIds": [
+        "a4675",
+        "a4724",
+        "a4741",
+        "a4676",
+        "a4726",
+        "a4742",
+        "a4681",
+        "a4683",
+        "a4743",
+        "a4685",
+        "a4686",
+        "a4728",
+        "a1933",
+        "a4688",
+        "a4729",
+        "a4689",
+        "a4690",
+        "a4744",
+        "a4730",
+        "a4733",
+        "a4745",
+        "a4696",
+        "a4734",
+        "a4699",
+        "a4701",
+        "a4702",
+        "a4735",
+        "a4746",
+        "a4707",
+        "a4708",
+        "a4706",
+        "a4709",
+        "a4747",
+        "a4748",
+        "a4736",
+        "a4717",
+        "a4718",
+        "a4721",
+        "a4722",
+        "a4749",
+        "a4738"
+      ],
+      "date": "2019-08",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 68,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1088-1475-7516-2023-08-039",
+      "doi": "10.1088/1475-7516/2023/08/039",
+      "title": "Constraining an Einstein-Maxwell-dilaton-axion black hole at the Galactic Center with the orbit of the S2 star",
+      "authorIds": [
+        "a4750",
+        "a4751",
+        "a4752"
+      ],
+      "date": "2023-08",
+      "journalId": "j297",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 17,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-111-084083",
+      "doi": "10.1103/physrevd.111.084083",
+      "title": "Identifying axially symmetric Finslerian extensions of Schwarzschild black hole via the S2 star orbiting Sagittarius A ⋆",
+      "authorIds": [
+        "a4753",
+        "a4754",
+        "a1152"
+      ],
+      "date": "2025-04",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 4,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1140-epjc-s10052-024-13179-6",
+      "doi": "10.1140/epjc/s10052-024-13179-6",
+      "title": "Constraining a disformal Schwarzschild black hole in DHOST theories with the orbit of the S2 star",
+      "authorIds": [
+        "a1714",
+        "a4527",
+        "a4755"
+      ],
+      "date": "2024-08",
+      "journalId": "j298",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 7,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1051-0004-6361-201833718",
+      "doi": "10.1051/0004-6361/201833718",
+      "title": "Detection of the gravitational redshift in the orbit of the star S2 near the Galactic centre massive black hole",
+      "authorIds": [
+        "a4671",
+        "a4675",
+        "a4756",
+        "a4724",
+        "a4741",
+        "a4757",
+        "a4758",
+        "a4677",
+        "a4679",
+        "a4759",
+        "a4760",
+        "a4761",
+        "a4726",
+        "a4742",
+        "a4681",
+        "a4762",
+        "a4763",
+        "a4764",
+        "a4683",
+        "a4743",
+        "a4685",
+        "a4686",
+        "a4765",
+        "a4687",
+        "a4766",
+        "a4767",
+        "a4768",
+        "a1933",
+        "a4729",
+        "a4689",
+        "a4690",
+        "a4769",
+        "a4730",
+        "a4692",
+        "a4770",
+        "a4771",
+        "a4694",
+        "a4731",
+        "a4733",
+        "a4772",
+        "a4773",
+        "a4774",
+        "a4695",
+        "a4696",
+        "a4697",
+        "a4775",
+        "a4776",
+        "a4734",
+        "a4777",
+        "a4778",
+        "a4699",
+        "a4700",
+        "a4779",
+        "a4701",
+        "a4702",
+        "a4780",
+        "a4781",
+        "a4782",
+        "a4783",
+        "a4784",
+        "a4735",
+        "a4785",
+        "a4707",
+        "a4786",
+        "a4708",
+        "a4706",
+        "a4709",
+        "a4787",
+        "a4710",
+        "a4788",
+        "a4789",
+        "a4790",
+        "a4747",
+        "a4791",
+        "a4748",
+        "a4792",
+        "a4713",
+        "a4793",
+        "a4794",
+        "a4795",
+        "a4736",
+        "a4717",
+        "a4718",
+        "a4720",
+        "a4796",
+        "a4721",
+        "a4722",
+        "a4797",
+        "a4749",
+        "a4738",
+        "a4739",
+        "a4798",
+        "a4740",
+        "a4799",
+        "a4800",
+        "a4801",
+        "a4802"
+      ],
+      "date": "2018-07",
+      "journalId": "j299",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 946,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-108-l101303",
+      "doi": "10.1103/PhysRevD.108.L101303",
+      "title": "Bounding the mass of ultralight bosonic dark matter particles with the motion of the S2 star around Sgr A*",
+      "authorIds": [
+        "a4751",
+        "a4752"
+      ],
+      "date": "2023-11",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 32,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1051-0004-6361-202451065",
+      "doi": "10.1051/0004-6361/202451065",
+      "title": "Evidence for magnetic boundary layer accretion in RU Lup",
+      "authorIds": [
+        "a4803",
+        "a4804",
+        "a4805",
+        "a4806",
+        "a4807",
+        "a4808",
+        "a4809",
+        "a4810",
+        "a4811",
+        "a4812",
+        "a4813",
+        "a4814"
+      ],
+      "date": "2024-08",
+      "journalId": "j299",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 7,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-48550-arxiv-2207-08780",
+      "doi": "10.48550/arXiv.2207.08780",
+      "title": "The quasi-Keplerian motion in the regular Bardeen spacetime",
+      "authorIds": [
+        "a453",
+        "a1143",
+        "a4815"
+      ],
+      "date": "2022-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 0,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1088-1475-7516-2023-03-056",
+      "doi": "10.1088/1475-7516/2023/03/056",
+      "title": "Constraints on Yukawa gravity parameters from observations of bright stars",
+      "authorIds": [
+        "a4816",
+        "a4817",
+        "a4818",
+        "a4819"
+      ],
+      "date": "2023-03",
+      "journalId": "j297",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 31,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-48550-arxiv-2609-17675",
+      "doi": "10.48550/arXiv.2609.17675",
+      "title": "Evidence for an Extended Hydrogen Outflow on WASP-12 b",
+      "authorIds": [
+        "a4820",
+        "a4821",
+        "a4822",
+        "a4823",
+        "a4824",
+        "a4825",
+        "a4826",
+        "a4827",
+        "a4828"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 0,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1088-1475-7516-2022-12-018",
+      "doi": "10.1088/1475-7516/2022/12/018",
+      "title": "The impact of gravitational lensing in the reconstruction of stellar orbits around Sgr A*",
+      "authorIds": [
+        "a4829",
+        "a4830"
+      ],
+      "date": "2022-12",
+      "journalId": "j297",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 7,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-106-103024",
+      "doi": "10.1103/PhysRevD.106.103024",
+      "title": "Constraining ultralight bosonic dark matter with Keck observations of S2’s orbit and kinematics",
+      "authorIds": [
+        "a4831",
+        "a4832",
+        "a4833",
+        "a4834",
+        "a4835"
+      ],
+      "date": "2022-11",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 25,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-48550-arxiv-2403-07757",
+      "doi": "10.48550/arXiv.2403.07757",
+      "title": "FAUST XI: Enhancement of the complex organic material in the shocked matter surrounding the [BHB2007] 11 protobinary system",
+      "authorIds": [
+        "a4836",
+        "a4837",
+        "a4838",
+        "a4839",
+        "a4840",
+        "a4841",
+        "a4842",
+        "a4843",
+        "a4844",
+        "a4845",
+        "a4846",
+        "a1774",
+        "a4847",
+        "a4848",
+        "a4849",
+        "a4850",
+        "a4851",
+        "a4852",
+        "a4853",
+        "a4854",
+        "a4855",
+        "a4856",
+        "a2997"
+      ],
+      "date": "2024-03",
+      "journalId": "j98",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 0,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1051-0004-6361-202348526",
+      "doi": "10.1051/0004-6361/202348526",
+      "title": "The environment around young eruptive stars",
+      "authorIds": [
+        "a4857",
+        "a4858",
+        "a4859",
+        "a4860",
+        "a4861",
+        "a4862",
+        "a4863",
+        "a4864",
+        "a4865",
+        "a4866",
+        "a4867",
+        "a4868",
+        "a4741",
+        "a4806"
+      ],
+      "date": "2024-03",
+      "journalId": "j299",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 12,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3390-universe7110407",
+      "doi": "10.3390/universe7110407",
+      "title": "Estimating the Parameters of Extended Gravity Theories with the Schwarzschild Precession of S2 Star",
+      "authorIds": [
+        "a4818",
+        "a4817",
+        "a4869",
+        "a4870",
+        "a4816"
+      ],
+      "date": "2021-10",
+      "journalId": "j300",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 34,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-stac3170",
+      "doi": "10.1093/mnras/stac3170",
+      "title": "The effects of stellar rotation along the main sequence of the 100-Myr-old massive cluster NGC 1850",
+      "authorIds": [
+        "a4871",
+        "a4872",
+        "a4873",
+        "a4874",
+        "a4875",
+        "a4876",
+        "a4877",
+        "a4878",
+        "a4879",
+        "a4880",
+        "a4881",
+        "a4882",
+        "a4883",
+        "a4884",
+        "a4885",
+        "a4886"
+      ],
+      "date": "2022-11",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 40,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-106-123018",
+      "doi": "10.1103/PhysRevD.106.123018",
+      "title": "Crossing the dark matter soliton core: A possible reversed orbital precession",
+      "authorIds": [
+        "a4887",
+        "a4888"
+      ],
+      "date": "2022-12",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 1,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1126-science-aav8137",
+      "doi": "10.1126/science.aav8137",
+      "title": "Relativistic redshift of the star S0-2 orbiting the Galactic Center supermassive black hole",
+      "authorIds": [
+        "a4889",
+        "a4890",
+        "a4891",
+        "a4892",
+        "a4893",
+        "a4894",
+        "a4895",
+        "a4896",
+        "a4897",
+        "a4898",
+        "a4899",
+        "a4900",
+        "a4901",
+        "a4902",
+        "a4903",
+        "a4904",
+        "a911",
+        "a4905",
+        "a4906",
+        "a4907",
+        "a4908",
+        "a4909",
+        "a4910",
+        "a4911",
+        "a4912",
+        "a4913",
+        "a4914",
+        "a4915",
+        "a4916"
+      ],
+      "date": "2019-07",
+      "journalId": "j301",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 489,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-stag290",
+      "doi": "10.1093/mnras/stag290",
+      "title": "A detailed study of the physical and orbital characteristics, and eclipse timing variations of the Post Common Envelope Binary DD CrB",
+      "authorIds": [
+        "a4917",
+        "a4918",
+        "a4919",
+        "a4920",
+        "a4921",
+        "a4922",
+        "a4923",
+        "a4924",
+        "a4925",
+        "a4926",
+        "a4927",
+        "a4928",
+        "a4929"
+      ],
+      "date": "2026-02",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 0,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3103-s0027134918020157",
+      "doi": "10.3103/S0027134918020157",
+      "title": "Space Navigation by X-Ray Pulsars",
+      "authorIds": [
+        "a4930",
+        "a4931",
+        "a4932",
+        "a4933",
+        "a4934",
+        "a4935"
+      ],
+      "date": "2018-03",
+      "journalId": "j302",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 6,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1051-0004-6361-202037813",
+      "doi": "10.1051/0004-6361/202037813",
+      "title": "Detection of the Schwarzschild precession in the orbit of the star S2 near the Galactic centre massive black hole",
+      "authorIds": [
+        "a4671",
+        "a4675",
+        "a4724",
+        "a4757",
+        "a4677",
+        "a4679",
+        "a4725",
+        "a4726",
+        "a4681",
+        "a4683",
+        "a4685",
+        "a4686",
+        "a4687",
+        "a4767",
+        "a1933",
+        "a4729",
+        "a4689",
+        "a4690",
+        "a4730",
+        "a4692",
+        "a4694",
+        "a4731",
+        "a4733",
+        "a4745",
+        "a4695",
+        "a4696",
+        "a4697",
+        "a4734",
+        "a4699",
+        "a4700",
+        "a4701",
+        "a4702",
+        "a1464",
+        "a4735",
+        "a4707",
+        "a4708",
+        "a4706",
+        "a4709",
+        "a4747",
+        "a4714",
+        "a4713",
+        "a4716",
+        "a4736",
+        "a4717",
+        "a4718",
+        "a4720",
+        "a4721",
+        "a4722",
+        "a4749",
+        "a4738",
+        "a4739",
+        "a4740",
+        "a4799",
+        "a4800",
+        "a4802"
+      ],
+      "date": "2020-04",
+      "journalId": "j299",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 566,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-sty512",
+      "doi": "10.1093/mnras/sty512",
+      "title": "Unrecognized astrometric confusion in the Galactic Centre",
+      "authorIds": [
+        "a4787",
+        "a4936"
+      ],
+      "date": "2018-02",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 11,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1051-0004-6361-202040208",
+      "doi": "10.1051/0004-6361/202040208",
+      "title": "Improved GRAVITY astrometric accuracy from modeling optical aberrations",
+      "authorIds": [
+        "a4671",
+        "a4675",
+        "a4724",
+        "a4757",
+        "a4677",
+        "a4679",
+        "a4726",
+        "a4680",
+        "a4681",
+        "a4683",
+        "a4727",
+        "a4684",
+        "a4685",
+        "a4686",
+        "a4687",
+        "a4767",
+        "a1933",
+        "a4729",
+        "a4689",
+        "a4690",
+        "a4730",
+        "a4692",
+        "a4693",
+        "a4694",
+        "a4731",
+        "a4733",
+        "a4745",
+        "a4695",
+        "a4696",
+        "a4697",
+        "a4734",
+        "a4699",
+        "a4700",
+        "a4701",
+        "a4702",
+        "a4703",
+        "a1464",
+        "a4735",
+        "a4707",
+        "a4708",
+        "a4706",
+        "a4709",
+        "a4710",
+        "a4747",
+        "a4714",
+        "a4715",
+        "a4713",
+        "a4716",
+        "a4736",
+        "a4717",
+        "a4718",
+        "a4720",
+        "a4721",
+        "a4722",
+        "a4749",
+        "a4738",
+        "a4739",
+        "a4740",
+        "a4799",
+        "a4937",
+        "a4938",
+        "a4802"
+      ],
+      "date": "2021-02",
+      "journalId": "j299",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 194,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1093-mnras-stab129",
+      "doi": "10.1093/MNRAS/STAB129",
+      "title": "Periastron shift of compact stellar orbits from general relativistic and tidal distortion effects near Sgr A*",
+      "authorIds": [
+        "a4939",
+        "a4940"
+      ],
+      "date": "2021-01",
+      "journalId": "j296",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 10,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3390-sym16040397",
+      "doi": "10.3390/sym16040397",
+      "title": "Constraints on Graviton Mass from Schwarzschild Precession in the Orbits of S-Stars around the Galactic Center",
+      "authorIds": [
+        "a4816",
+        "a4817",
+        "a4818",
+        "a4819"
+      ],
+      "date": "2024-03",
+      "journalId": "j303",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 11,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-109-064046",
+      "doi": "10.1103/physrevd.109.064046",
+      "title": "Improvement of graviton mass constraints using GRAVITY’s detection of Schwarzschild precession in the orbit of S2 star around the Galactic Center",
+      "authorIds": [
+        "a4816",
+        "a4817",
+        "a4818",
+        "a4819"
+      ],
+      "date": "2024-03",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 18,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-104-l101502",
+      "doi": "10.1103/physrevd.104.l101502",
+      "title": "f(R) gravity after the detection of the orbital precession of the S2 star around the Galactic Center massive black hole",
+      "authorIds": [
+        "a4752",
+        "a4751",
+        "a4941"
+      ],
+      "date": "2021-11",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 57,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3847-2041-8213-abb9b4",
+      "doi": "10.3847/2041-8213/abb9b4",
+      "title": "An Upper Limit on the Spin of SgrA* Based on Stellar Orbits in Its Vicinity",
+      "authorIds": [
+        "a4942",
+        "a4943"
+      ],
+      "date": "2020-10",
+      "journalId": "j304",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 77,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3847-2041-8213-ac76ca",
+      "doi": "10.3847/2041-8213/ac76ca",
+      "title": "Implication of Spin Constraints by the Event Horizon Telescope on Stellar Orbits in the Galactic Center",
+      "authorIds": [
+        "a4942",
+        "a4943"
+      ],
+      "date": "2022-06",
+      "journalId": "j304",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 25,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1038-s41598-022-18946-7",
+      "doi": "10.1038/s41598-022-18946-7",
+      "title": "Investigating the nature of mass distribution surrounding the Galactic supermassive black hole",
+      "authorIds": [
+        "a4887",
+        "a4888",
+        "a4944"
+      ],
+      "date": "2022-09",
+      "journalId": "j83",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 17,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3847-1538-4357-ac0efc",
+      "doi": "10.3847/1538-4357/ac0efc",
+      "title": "Observation of the Apoapsis of S62 in 2019 with NIRC2 and SINFONI",
+      "authorIds": [
+        "a4945",
+        "a4685",
+        "a4946"
+      ],
+      "date": "2021-09",
+      "journalId": "j305",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 14,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-107-044038",
+      "doi": "10.1103/PhysRevD.107.044038",
+      "title": "Are nonsingular black holes with super-Planckian hair ruled out by S2 star data?",
+      "authorIds": [
+        "a4947",
+        "a4941",
+        "a4752",
+        "a4751",
+        "a4948",
+        "a4949"
+      ],
+      "date": "2023-02",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 29,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-109-044047",
+      "doi": "10.1103/physrevd.109.044047",
+      "title": "Constraining the Yukawa gravity with the post-Newtonian approximation using S-star orbits around the supermassive black hole in our Galactic Center",
+      "authorIds": [
+        "a4950",
+        "a2303"
+      ],
+      "date": "2024-02",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 12,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1088-1475-7516-2022-03-007",
+      "doi": "10.1088/1475-7516/2022/03/007",
+      "title": "Unveiling the nature of SgrA* with the geodesic motion of S-stars",
+      "authorIds": [
+        "a4751",
+        "a4752"
+      ],
+      "date": "2022-03",
+      "journalId": "j297",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 34,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-3847-1538-4357-accb52",
+      "doi": "10.3847/1538-4357/accb52",
+      "title": "Analytic Post-Newtonian Astrometric and Spectroscopic Models of Orbits around Black Holes",
+      "authorIds": [
+        "a4951",
+        "a4952",
+        "a4953"
+      ],
+      "date": "2023-07",
+      "journalId": "j305",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 2,
+      "added": "2026-10-10"
+    },
+    {
+      "id": "10-1103-physrevd-109-024016",
+      "doi": "10.1103/PhysRevD.109.024016",
+      "title": "Constraints on metric-affine gravity black holes from the stellar motion at the Galactic Center",
+      "authorIds": [
+        "a4752",
+        "a4751",
+        "a4954"
+      ],
+      "date": "2024-01",
+      "journalId": "j286",
+      "keywordIds": [
+        "astrophysics"
+      ],
+      "citations": 9,
+      "added": "2026-10-10"
     }
   ]
 }
