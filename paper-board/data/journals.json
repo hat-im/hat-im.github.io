@@ -1218,5 +1218,129 @@
   "j305": {
     "name": "The Astrophysical Journal",
     "type": "journal"
+  },
+  "j306": {
+    "name": "IEEE Transactions on Cloud Computing",
+    "type": "journal"
+  },
+  "j307": {
+    "name": "Journal of Computer Science and Technology",
+    "type": "journal"
+  },
+  "j308": {
+    "name": "Information Processing & Management",
+    "type": "journal"
+  },
+  "j309": {
+    "name": "Knowledge and Information Systems",
+    "type": "journal"
+  },
+  "j310": {
+    "name": "IEEE Internet of Things Journal",
+    "type": "journal"
+  },
+  "j311": {
+    "name": "Journal of Parallel and Distributed Computing",
+    "type": "journal"
+  },
+  "j312": {
+    "name": "Computer Communications",
+    "type": "journal"
+  },
+  "j313": {
+    "name": "Concurrency and Computation Practice and Experience",
+    "type": "journal"
+  },
+  "j314": {
+    "name": "Software Practice and Experience",
+    "type": "journal"
+  },
+  "j315": {
+    "name": "Proceedings/Proceedings - International Conference on Network Protocols",
+    "type": "conference"
+  },
+  "j316": {
+    "name": "Proceedings - International Conference on Data Engineering",
+    "type": "conference"
+  },
+  "j317": {
+    "name": "Journal of Lightwave Technology",
+    "type": "journal"
+  },
+  "j318": {
+    "name": "Proceedings of the International Conference on Parallel Processing",
+    "type": "conference"
+  },
+  "j319": {
+    "name": "Knowledge-Based Systems",
+    "type": "journal"
+  },
+  "j320": {
+    "name": "Journal of Systems and Software",
+    "type": "journal"
+  },
+  "j321": {
+    "name": "Journal Of Big Data",
+    "type": "journal"
+  },
+  "j322": {
+    "name": "IEEE/ACM Transactions on Networking",
+    "type": "journal"
+  },
+  "j323": {
+    "name": "Digital Communications and Networks",
+    "type": "journal"
+  },
+  "j324": {
+    "name": "Intelligent Data Analysis",
+    "type": "journal"
+  },
+  "j325": {
+    "name": "Proceedings",
+    "type": "conference"
+  },
+  "j326": {
+    "name": "Materials Today Proceedings",
+    "type": "conference"
+  },
+  "j327": {
+    "name": "Computer Science and Information Systems",
+    "type": "journal"
+  },
+  "j328": {
+    "name": "V International Conference on Neural Networks and Neurotechnologies (NeuroNT)",
+    "type": "conference"
+  },
+  "j329": {
+    "name": "Информатика Экономика Управление - Informatics Economics Management",
+    "type": "journal"
+  },
+  "j330": {
+    "name": "International Russian Smart Industry Conference (SmartIndustryCon)",
+    "type": "conference"
+  },
+  "j331": {
+    "name": "International Youth Conference on Radio Electronics, Electrical and Power Engineering",
+    "type": "conference"
+  },
+  "j332": {
+    "name": "International Russian Automation Conference (RusAutoCon)",
+    "type": "conference"
+  },
+  "j333": {
+    "name": "IEEE International Conference on Joint Cloud Computing",
+    "type": "conference"
+  },
+  "j334": {
+    "name": "13th International Conference on Smart Grid (icSmartGrid)",
+    "type": "conference"
+  },
+  "j335": {
+    "name": "Russian Electrical Engineering",
+    "type": "journal"
+  },
+  "j336": {
+    "name": "SSRN Electronic Journal",
+    "type": "journal"
   }
 }

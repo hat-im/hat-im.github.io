@@ -28662,6 +28662,791 @@
       ],
       "citations": 9,
       "added": "2026-10-10"
+    },
+    {
+      "id": "10-1109-tpds-2025-3591010",
+      "doi": "10.1109/TPDS.2025.3591010",
+      "title": "Task Scheduling in Geo-Distributed Computing: A Survey",
+      "authorIds": [
+        "a1140",
+        "a1141",
+        "a1142",
+        "a1143",
+        "a1144",
+        "a4955",
+        "a787",
+        "a4956"
+      ],
+      "date": "2025-07",
+      "journalId": "j37",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 15,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-tcc-2020-2994195",
+      "doi": "10.1109/TCC.2020.2994195",
+      "title": "Trading Cost and Throughput in Geo-Distributed Analytics With A Two Time Scale Approach",
+      "authorIds": [
+        "a794",
+        "a4957",
+        "a4958",
+        "a4959",
+        "a4960",
+        "a836",
+        "a4527"
+      ],
+      "date": "2020-05",
+      "journalId": "j306",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 6,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1007-s11390-025-4636-4",
+      "doi": "10.1007/s11390-025-4636-4",
+      "title": "Carbon-Aware Energy Cost Optimization of Data Analytics Across Geo-Distributed Data Centers",
+      "authorIds": [
+        "a152",
+        "a3385",
+        "a4961",
+        "a4962"
+      ],
+      "date": "2025-05",
+      "journalId": "j307",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 4,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-ipm-2021-102786",
+      "doi": "10.1016/j.ipm.2021.102786",
+      "title": "Blockchain-based Data Trading in Edge-cloud Computing Environment",
+      "authorIds": [
+        "a2943",
+        "a4963",
+        "a1652",
+        "a759",
+        "a483"
+      ],
+      "date": "2021-10",
+      "journalId": "j308",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 66,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1007-s10115-021-01627-8",
+      "doi": "10.1007/s10115-021-01627-8",
+      "title": "Efficient multi-attribute precedence-based task scheduling for edge computing in geo-distributed cloud environment",
+      "authorIds": [
+        "a2943",
+        "a2969",
+        "a4964",
+        "a483"
+      ],
+      "date": "2022-01",
+      "journalId": "j309",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 6,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-future-2021-08-014",
+      "doi": "10.1016/j.future.2021.08.014",
+      "title": "Optimal data placement strategy considering capacity limitation and load balancing in geographically distributed cloud",
+      "authorIds": [
+        "a2943",
+        "a4965",
+        "a4966"
+      ],
+      "date": "2021-08",
+      "journalId": "j24",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 63,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-jiot-2022-3186173",
+      "doi": "10.1109/JIOT.2022.3186173",
+      "title": "Geo-Distributed IoT Data Analytics With Deadline Constraints Across Network Edge",
+      "authorIds": [
+        "a152",
+        "a3385",
+        "a4967",
+        "a4961"
+      ],
+      "date": "2022-06",
+      "journalId": "j310",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 10,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-jpdc-2023-104830",
+      "doi": "10.1016/j.jpdc.2023.104830",
+      "title": "An efficient SSSP algorithm on time-evolving graphs with prediction of computation results",
+      "authorIds": [
+        "a1656",
+        "a329",
+        "a362",
+        "a794",
+        "a1204"
+      ],
+      "date": "2023-12",
+      "journalId": "j311",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-tpds-2024-3470532",
+      "doi": "10.1109/TPDS.2024.3470532",
+      "title": "GeoDeploy: Geo-Distributed Application Deployment Using Benchmarking",
+      "authorIds": [
+        "a4968",
+        "a456",
+        "a4969",
+        "a4970",
+        "a4971",
+        "a4972",
+        "a4973",
+        "a4974"
+      ],
+      "date": "2024-09",
+      "journalId": "j37",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 6,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-comcom-2021-12-022",
+      "doi": "10.1016/j.comcom.2021.12.022",
+      "title": "Multi-objective optimization of data deployment and scheduling based on the minimum cost in geo-distributed cloud",
+      "authorIds": [
+        "a4975",
+        "a2943",
+        "a4976",
+        "a483"
+      ],
+      "date": "2022-01",
+      "journalId": "j312",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 18,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1002-cpe-7973",
+      "doi": "10.1002/cpe.7973",
+      "title": "Multi‐objective Firefly algorithm for enhanced balanced exploitation and exploration capabilities",
+      "authorIds": [
+        "a4977"
+      ],
+      "date": "2023-12",
+      "journalId": "j313",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1002-spe-3292",
+      "doi": "10.1002/spe.3292",
+      "title": "A survey on energy‐efficient workflow scheduling algorithms in cloud computing",
+      "authorIds": [
+        "a4978",
+        "a4979",
+        "a4980"
+      ],
+      "date": "2023-12",
+      "journalId": "j314",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 28,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-access-2024-3487936",
+      "doi": "10.1109/ACCESS.2024.3487936",
+      "title": "GSelf-MapReduce: A Method for Enhancing Mapreduce Performance in Distributed Heterogeneous Data Centers",
+      "authorIds": [
+        "a4981",
+        "a4982",
+        "a4983"
+      ],
+      "date": "2024-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-icnp65844-2025-11192448",
+      "doi": "10.1109/ICNP65844.2025.11192448",
+      "title": "Copo: Joint Cost and Performance Optimization for Task Placement in Geo-Distributed Clouds",
+      "authorIds": [
+        "a3816",
+        "a758",
+        "a4984",
+        "a2405"
+      ],
+      "date": "2025-09",
+      "journalId": "j315",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-icde65706-2026-00079",
+      "doi": "10.1109/ICDE65706.2026.00079",
+      "title": "GeoLayer: Towards Low-Latency and Cost-Efficient Geo-Distributed Graph Stores with Layered Graph",
+      "authorIds": [
+        "a4985",
+        "a1400",
+        "a4986",
+        "a1310",
+        "a811",
+        "a4987"
+      ],
+      "date": "2026-05",
+      "journalId": "j316",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-jlt-2022-3232840",
+      "doi": "10.1109/JLT.2022.3232840",
+      "title": "Multi-Stage Geo-Distributed Data Aggregation With Coordinated Computation and Communication in Edge Compute First Networking",
+      "authorIds": [
+        "a1679",
+        "a3674",
+        "a4988",
+        "a1652",
+        "a4989",
+        "a1717"
+      ],
+      "date": "2022-12",
+      "journalId": "j317",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 8,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1145-3620665-3640421",
+      "doi": "10.1145/3620665.3640421",
+      "title": "Kimbap: A Node-Property Map System for Distributed Graph Analytics",
+      "authorIds": [
+        "a4990",
+        "a4991",
+        "a4992"
+      ],
+      "date": "2024-04",
+      "journalId": "j3",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1145-3786677",
+      "doi": "10.1145/3786677",
+      "title": "Performant Synchronization in Geo-Distributed Databases",
+      "authorIds": [
+        "a4993",
+        "a455",
+        "a1434",
+        "a911",
+        "a4994",
+        "a811",
+        "a4995",
+        "a4996"
+      ],
+      "date": "2026-04",
+      "journalId": "j172",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1145-3605573-3605575",
+      "doi": "10.1145/3605573.3605575",
+      "title": "DAG-Aware Optimization for Geo-Distributed Data Analytics",
+      "authorIds": [
+        "a759",
+        "a4997",
+        "a2043",
+        "a4998",
+        "a4999"
+      ],
+      "date": "2023-08",
+      "journalId": "j318",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 3,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-knosys-2021-107050",
+      "doi": "10.1016/j.knosys.2021.107050",
+      "title": "Adaptive priority-based data placement and multi-task scheduling in geo-distributed cloud systems",
+      "authorIds": [
+        "a2943",
+        "a466",
+        "a4957",
+        "a483"
+      ],
+      "date": "2021-04",
+      "journalId": "j319",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 27,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-jss-2022-111227",
+      "doi": "10.1016/j.jss.2022.111227",
+      "title": "Fault-tolerant scheduling and data placement for scientific workflow processing in geo-distributed clouds",
+      "authorIds": [
+        "a2943",
+        "a466",
+        "a1587",
+        "a483"
+      ],
+      "date": "2022-01",
+      "journalId": "j320",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 35,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1038-s41598-025-94068-0",
+      "doi": "10.1038/s41598-025-94068-0",
+      "title": "Research on computing task scheduling method for distributed heterogeneous parallel systems",
+      "authorIds": [
+        "a129",
+        "a148",
+        "a1875",
+        "a5000",
+        "a453",
+        "a758"
+      ],
+      "date": "2025-03",
+      "journalId": "j83",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 8,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1186-s40537-021-00427-9",
+      "doi": "10.1186/s40537-021-00427-9",
+      "title": "A survey on bandwidth-aware geo-distributed frameworks for big-data analytics",
+      "authorIds": [
+        "a5001",
+        "a5002",
+        "a5003"
+      ],
+      "date": "2021-02",
+      "journalId": "j321",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 22,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1007-s10723-025-09818-1",
+      "doi": "10.1007/s10723-025-09818-1",
+      "title": "Network-Aware Optimization for Efficient Data Placement in Geo-Distributed Cloud Systems",
+      "authorIds": [
+        "a5004",
+        "a5005",
+        "a5006"
+      ],
+      "date": "2025-11",
+      "journalId": "j108",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-tnet-2024-3412429",
+      "doi": "10.1109/TNET.2024.3412429",
+      "title": "Accelerating Geo-Distributed Machine Learning With Network-Aware Adaptive Tree and Auxiliary Route",
+      "authorIds": [
+        "a457",
+        "a5007",
+        "a5008",
+        "a2218",
+        "a3385",
+        "a5009",
+        "a5010",
+        "a5011"
+      ],
+      "date": "2024-06",
+      "journalId": "j322",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 14,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-dcan-2025-11-006",
+      "doi": "10.1016/j.dcan.2025.11.006",
+      "title": "Green scheduling for LLM workloads with model and data reuse across geo-distributed data centers",
+      "authorIds": [
+        "a4197",
+        "a5012",
+        "a2044",
+        "a5013",
+        "a5014",
+        "a810"
+      ],
+      "date": "2025-12",
+      "journalId": "j323",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1177-1088467x251399320",
+      "doi": "10.1177/1088467X251399320",
+      "title": "Hybrid quantum binary light spectrum classical convolutional neural network based Cost reduction and work load scheduling of geo-distributed data centres",
+      "authorIds": [
+        "a5015",
+        "a5016",
+        "a5017",
+        "a5018"
+      ],
+      "date": "2025-12",
+      "journalId": "j324",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 0,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-future-2024-04-004",
+      "doi": "10.1016/j.future.2024.04.004",
+      "title": "Multi-objective optimization-based workflow scheduling for applications with data locality and deadline constraints in geo-distributed clouds",
+      "authorIds": [
+        "a4614",
+        "a762",
+        "a762",
+        "a5019",
+        "a5020",
+        "a5021"
+      ],
+      "date": "2024-04",
+      "journalId": "j24",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 17,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-cluster-2019-8891053",
+      "doi": "10.1109/CLUSTER.2019.8891053",
+      "title": "Harmony: An Approach for Geo-distributed Processing of Big-Data Applications",
+      "authorIds": [
+        "a810",
+        "a5022",
+        "a5023"
+      ],
+      "date": "2019-09",
+      "journalId": "j325",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 6,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1016-j-matpr-2022-03-534",
+      "doi": "10.1016/j.matpr.2022.03.534",
+      "title": "Opposition based sunflower optimization algorithm using cloud computing environments",
+      "authorIds": [
+        "a5024",
+        "a5025"
+      ],
+      "date": "2022-01",
+      "journalId": "j326",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 7,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-2298-csis230923018p",
+      "doi": "10.2298/csis230923018p",
+      "title": "SSEPC cloud: Carbon footprint aware power efficient virtual machine placement in cloud milieu",
+      "authorIds": [
+        "a5026",
+        "a5027",
+        "a5028",
+        "a5029",
+        "a5030",
+        "a5031",
+        "a116"
+      ],
+      "date": "2024-01",
+      "journalId": "j327",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 7,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-neuront62606-2024-10585423",
+      "doi": "10.1109/NeuroNT62606.2024.10585423",
+      "title": "Predictive Diagnostics of Power Generating Equipment Failures Based on Neural Network Technology",
+      "authorIds": [
+        "a5032",
+        "a5033",
+        "a5034"
+      ],
+      "date": "2024-06",
+      "journalId": "j328",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 3,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-47813-2782-5280-2025-4-4-2033-2047",
+      "doi": "10.47813/2782-5280-2025-4-4-2033-2047",
+      "title": "Evaluating latency in logistics and operations management systems: a tech-based approach",
+      "authorIds": [
+        "a5035",
+        "a5036",
+        "a5037",
+        "a5038",
+        "a5039",
+        "a5040"
+      ],
+      "date": "2025-12",
+      "journalId": "j329",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 0,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-smartindustrycon65166-2025-10986009",
+      "doi": "10.1109/SmartIndustryCon65166.2025.10986009",
+      "title": "Analysis of the Problems of Visual Modeling of Internet of Things Components",
+      "authorIds": [
+        "a5041",
+        "a5042",
+        "a5043"
+      ],
+      "date": "2025-03",
+      "journalId": "j330",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-reepe60449-2024-10479674",
+      "doi": "10.1109/REEPE60449.2024.10479674",
+      "title": "The Concept of Modeling Multidimensional Signals, Processes and Images in Hybrid Real-Time Artificial Intelligence Systems",
+      "authorIds": [
+        "a5044",
+        "a5045",
+        "a5046",
+        "a5047"
+      ],
+      "date": "2024-02",
+      "journalId": "j331",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-rusautocon65989-2025-11177314",
+      "doi": "10.1109/RusAutoCon65989.2025.11177314",
+      "title": "Cluster Method of Optimal Vehicle Routing Using Geospatial Clustering",
+      "authorIds": [
+        "a5048",
+        "a5049"
+      ],
+      "date": "2025-09",
+      "journalId": "j332",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-jcc67032-2025-00007",
+      "doi": "10.1109/JCC67032.2025.00007",
+      "title": "Enabling Low-Latency Distributed Updates with Metadata-Guided Synchronization and Seamless Service Transition",
+      "authorIds": [
+        "a1679",
+        "a1354",
+        "a1107",
+        "a5050",
+        "a2273",
+        "a4966"
+      ],
+      "date": "2025-07",
+      "journalId": "j333",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-1109-icsmartgrid66138-2025-11071742",
+      "doi": "10.1109/icSmartGrid66138.2025.11071742",
+      "title": "Predictive Analysis of Smart Grid Reliability Using Enhanced Generator Metrics",
+      "authorIds": [
+        "a5051",
+        "a5052",
+        "a5053",
+        "a5054"
+      ],
+      "date": "2025-05",
+      "journalId": "j334",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 1,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-3103-s1068371223110135",
+      "doi": "10.3103/S1068371223110135",
+      "title": "Simulation Models of CAD System Transformers",
+      "authorIds": [
+        "a5055",
+        "a5056",
+        "a5057",
+        "a5058",
+        "a5059"
+      ],
+      "date": "2023-11",
+      "journalId": "j335",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 2,
+      "added": "2026-10-12"
+    },
+    {
+      "id": "10-2139-ssrn-5681045",
+      "doi": "10.2139/ssrn.5681045",
+      "title": "GAM-CoT Transformer: Hierarchical Attention Networks for Anomaly Detection in Blockchain Transactions",
+      "authorIds": [
+        "a2273",
+        "a2338",
+        "a1152",
+        "a5060",
+        "a2906"
+      ],
+      "date": "2025-10",
+      "journalId": "j336",
+      "keywordIds": [
+        "scheduling",
+        "cloud-computing"
+      ],
+      "citations": 0,
+      "added": "2026-10-12"
     }
   ]
 }
