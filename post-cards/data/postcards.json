@@ -495,6 +495,22 @@
       },
       "message": "Hey,\nI'm sorry for texting you yesterday, I'm sorry that I'm so stupid, I just missed hearing from you and wanted to share about the papers I've been working on. I wanted to open a conversation. I don't know if you want that, but I'll wait and try my best to respect the distance until you want that.\nI hope you have a good week ahead. I wonder what you did over the weekend.",
       "postscript": "Grandmother seems okay."
+    },
+    {
+      "id": "postcard-32",
+      "enabled": true,
+      "date": "2026-10-13",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Leafy Lookout",
+      "color": "moss",
+      "subject": "Puzzles & Parenting",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-32.mp4"
+      },
+      "message": "Hey,\nI'm wondering how your week is going so far. I miss playing Scrabble and Stardew and Overcooked and puzzles, I wonder if you've been playing on your own or with Neha or friends.\nI want to know how your days are, what you've been up to. Hope your health is okay. Rubina and her mother have been clashing over parenting styles, in which I've unfortunately become a mediator.",
+      "postscript": "How have your colleagues been? Has anything since London changed the way you work or see things?"
     }
   ]
 }
