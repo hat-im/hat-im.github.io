@@ -166,6 +166,19 @@ def guess_venue_type(name):
 
 # ---------- Resolution against existing data ----------
 
+class _NoJournal:
+    """Null object for an unresolvable journal: falsy, but distinct from None."""
+
+    def __bool__(self):
+        return False
+
+    def __repr__(self):
+        return "<no-journal>"
+
+
+NO_JOURNAL = _NoJournal()
+
+
 class Resolver:
     def __init__(self, authors_db, journals_db):
         self.authors_db = authors_db
@@ -195,7 +208,7 @@ class Resolver:
             return ARXIV_PREPRINT_JOURNAL_ID, False
         raw_name = openalex_venue or bib_journal_field
         if not raw_name:
-            return None, False
+            return NO_JOURNAL, False
         name = clean_venue_name(raw_name)
         if name in self.journals_by_name:
             return self.journals_by_name[name], False
@@ -295,7 +308,7 @@ def main():
             new_author_count += is_new
 
         jid, jid_is_new = resolver.resolve_journal(doi, venue, e["journal"])
-        if jid is None:
+        if not jid:
             unresolved_journal.append(e)
             continue
 
