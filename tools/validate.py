@@ -230,12 +230,25 @@ def run_postcard_length_check():
             fail(f"{pc['id']}: postscript overflows past the footer")
 
 
+def print_unused_palette_colors():
+    palette = json.loads((ROOT / "post-cards/data/theme/palette.json").read_text())["colors"]
+    postcards = json.loads((ROOT / "post-cards/data/postcards.json").read_text())["postcards"]
+    used = {pc["color"] for pc in postcards if pc.get("color")}
+    unused = [c for c in palette if c["name"] not in used]
+    if unused:
+        print(f"{len(unused)} unused: " + ", ".join(f"{c['name']} ({c['hex']})" for c in unused))
+    else:
+        print("none — every palette color is in use")
+
+
 print("Schema validation:")
 run_schema_checks()
 print("\nRequired fields check (enabled postcards):")
 run_live_postcard_fields_check()
 print("\nPostcard length check:")
 run_postcard_length_check()
+print("\nUnused palette colors:")
+print_unused_palette_colors()
 
 print()
 if not ok:
