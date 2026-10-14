@@ -511,6 +511,22 @@
       },
       "message": "Hey,\nI'm wondering how your week is going so far. I miss playing Scrabble and Stardew and Overcooked and puzzles, I wonder if you've been playing on your own or with Neha or friends.\nI want to know how your days are, what you've been up to. Hope your health is okay. Rubina and her mother have been clashing over parenting styles, in which I've unfortunately become a mediator.",
       "postscript": "How have your colleagues been? Has anything since London changed the way you work or see things?"
+    },
+    {
+      "id": "postcard-33",
+      "enabled": true,
+      "date": "2026-10-14",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Screen Side Stare",
+      "color": "willow",
+      "subject": "Blue & Bothered",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-33.mp4"
+      },
+      "message": "Hey,\nThe week feels slow, I wonder if it's similar for you. The weather's chilly and autumnal, with crunchy leaves around, I hope you've come across a few.\nSometimes I wonder about the little things, what did you have for lunch today? Is it an office day or a stay-home-and-annoy-Haju day?",
+      "postscript": "What are your plans for the rest of the week?"
     }
   ]
 }
