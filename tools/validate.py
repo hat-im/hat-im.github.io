@@ -189,6 +189,21 @@ def layout_text_zones(data, config, font_normal, font_postscript):
     return truncated, len(postscript_lines), postscript_overflow, full_lines, max_lines
 
 
+LIVE_REQUIRED_FIELDS = ["location", "color", "subject", "media", "message"]
+
+
+def run_live_postcard_fields_check():
+    postcards = json.loads((ROOT / "post-cards/data/postcards.json").read_text())["postcards"]
+    for pc in postcards:
+        if not pc.get("enabled", True):
+            continue
+        missing = [f for f in LIVE_REQUIRED_FIELDS if not pc.get(f)]
+        if missing:
+            fail(f"{pc['id']}: enabled but missing/empty field(s): {', '.join(missing)}")
+        else:
+            passed(f"{pc['id']}: all fields present")
+
+
 def run_postcard_length_check():
     config = load_config()
     font_path = ROOT / "tools/fonts/Kalam-Regular.ttf"
@@ -217,6 +232,8 @@ def run_postcard_length_check():
 
 print("Schema validation:")
 run_schema_checks()
+print("\nRequired fields check (enabled postcards):")
+run_live_postcard_fields_check()
 print("\nPostcard length check:")
 run_postcard_length_check()
 
