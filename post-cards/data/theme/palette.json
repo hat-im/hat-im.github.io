@@ -131,6 +131,58 @@
     {
       "name": "fog",
       "hex": "#e2e2df"
+    },
+    {
+      "name": "vanilla-peach",
+      "hex": "#ffeedd"
+    },
+    {
+      "name": "periwinkle-mist",
+      "hex": "#f8f7ff"
+    },
+    {
+      "name": "sunset-coral",
+      "hex": "#f39489"
+    },
+    {
+      "name": "aqua-mint",
+      "hex": "#a2e8dd"
+    },
+    {
+      "name": "cotton-candy",
+      "hex": "#ffc8dd"
+    },
+    {
+      "name": "baby-blue",
+      "hex": "#bde0fe"
+    },
+    {
+      "name": "spring-green",
+      "hex": "#d1f3ce"
+    },
+    {
+      "name": "glacier-blue",
+      "hex": "#d9f0fc"
+    },
+    {
+      "name": "terracotta",
+      "hex": "#d37b5b"
+    },
+    {
+      "name": "fawn",
+      "hex": "#e7bea5"
+    },
+    {
+      "name": "clay",
+      "hex": "#dec7b8"
+    },
+    {
+      "name": "slate-mist",
+      "hex": "#c9d2d7"
+    },
+    {
+      "name": "biscuit",
+      "hex": "#dcc3ac"
     }
   ]
 }
