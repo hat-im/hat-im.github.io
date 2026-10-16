@@ -543,6 +543,22 @@
       },
       "message": "Hey,\nIt's been pouring all evening, I hope it hasn't dampened your day. I hope you're enjoying the respite it's bringing from the dry spell we'd been enduring lately.\nI wonder if you're attending or following the events at Figma Config today, I imagine all the presentations must be giving you stuff to think about. I wonder if you've been writing anything lately, I would love to see something like the design retrospective you wrote back in May.",
       "postscript": "I hope work is going okay."
+    },
+    {
+      "id": "postcard-35",
+      "enabled": true,
+      "date": "2026-10-16",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Hardwood Hesitation",
+      "color": "fawn",
+      "subject": "Rainy Refuge",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-35.mp4"
+      },
+      "message": "Hey,\nI hope you're keeping warm in this rainy weather. It's oddly cozy, and I hope you're finding it cozy too. Hilbert is snuggling, I hope Haju is doing the same with you.",
+      "postscript": "I hope you have a good weekend."
     }
   ]
 }
