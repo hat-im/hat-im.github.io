@@ -559,6 +559,22 @@
       },
       "message": "Hey,\nI hope you're keeping warm in this rainy weather. It's oddly cozy, and I hope you're finding it cozy too. Hilbert is snuggling, I hope Haju is doing the same with you.",
       "postscript": "I hope you have a good weekend."
+    },
+    {
+      "id": "postcard-36",
+      "enabled": true,
+      "date": "2026-10-17",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Towel Tuckered",
+      "color": "clay",
+      "subject": "Teething Troubles",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-36.mp4"
+      },
+      "message": "Hey,\nHilbert has been teething, and very confused by the fact that his teeth break when he tries to attack me. I wish I could explain it to him.\nTomorrow is my mother's birthday, I'm tired, but we have plans. How was your Saturday? I hope you didn't have work like I did.",
+      "postscript": "I hope you're sleeping well."
     }
   ]
 }
