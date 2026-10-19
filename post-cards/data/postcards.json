@@ -594,14 +594,19 @@
     },
     {
       "id": "postcard-38",
-      "enabled": false,
+      "enabled": true,
       "date": "2026-10-19",
       "from": "Hat",
       "to": "Sam",
-      "location": "",
-      "subject": "",
-      "message": "",
-      "postscript": ""
+      "location": "Corkboard Curiosity",
+      "color": "biscuit",
+      "subject": "Proxy Pandemonium",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-38.mp4"
+      },
+      "message": "Hey,\nI've been dealing with some of the ugliest code I've seen, thanks to an overzealous meat proxy.\nI hope you're feeling better today. I wonder if you've got more holidays, or if it's just today.",
+      "postscript": "I hope you're having a good break from work, and that the burnout is getting better."
     }
   ]
 }
