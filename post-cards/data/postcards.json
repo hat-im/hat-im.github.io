@@ -591,6 +591,17 @@
       },
       "message": "Hey,\nMom's birthday has always been a bit of a delicate affair, since Grandad died on the same day in the pandemic. We try our best to get her mind off of that. We took her out for brunch with Rubina, Sofie and Salman, making ramen and sushi for dinner now.\nI'm aware you might be feeling crampy today or soon, I hope it's not too bad. I hope it doesn't prevent you from being able to enjoy the festivities with your friends.",
       "postscript": "I wonder if you'd prefer hot chocolate, or a cold Milo shake. I hope you're having a good long weekend."
+    },
+    {
+      "id": "postcard-38",
+      "enabled": false,
+      "date": "2026-10-19",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "",
+      "subject": "",
+      "message": "",
+      "postscript": ""
     }
   ]
 }
