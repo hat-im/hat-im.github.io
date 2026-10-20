@@ -607,6 +607,22 @@
       },
       "message": "Hey,\nI've been dealing with some of the ugliest code I've seen, thanks to an overzealous meat proxy.\nI hope you're feeling better today. I wonder if you've got more holidays, or if it's just today.",
       "postscript": "I hope you're having a good break from work, and that the burnout is getting better."
+    },
+    {
+      "id": "postcard-39",
+      "enabled": false,
+      "date": "2026-10-20",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Shelf Scramble",
+      "color": "spring-green",
+      "subject": "Soaring Scout",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-39.mp4"
+      },
+      "message": "Hey,\nI hope you're feeling better today. Hilbert has finished teething and is always finding a new place to climb to in the house. I wonder how work is going. I've got a nearly 1000 commit PR lined up over the week.\nI've not had the best day myself, been in therapy and mostly in bed. I hope yours has been better.",
+      "postscript": "I wonder if you're reading these."
     }
   ]
 }
