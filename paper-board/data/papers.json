@@ -81,7 +81,7 @@
     {
       "id": "10-5281-zenodo-5547407",
       "doi": "10.5281/zenodo.5547407",
-      "title": "Quantum Computing – A European Perspective",
+      "title": "Quantum Computing \u2013 A European Perspective",
       "authorIds": [
         "a367",
         "a418",
@@ -687,7 +687,7 @@
     {
       "id": "10-1145-3743149",
       "doi": "10.1145/3743149",
-      "title": "Integration of Quantum Accelerators with High Performance Computing—A Review of Quantum Programming Tools",
+      "title": "Integration of Quantum Accelerators with High Performance Computing\u2014A Review of Quantum Programming Tools",
       "authorIds": [
         "a221",
         "a3496",
@@ -868,7 +868,7 @@
     {
       "id": "10-48550-arxiv-2510-09508",
       "doi": "10.48550/arXiv.2510.09508",
-      "title": "Subspace Leakage Error Randomized Benchmarking of Mølmer-Sørensen Gates",
+      "title": "Subspace Leakage Error Randomized Benchmarking of M\u00f8lmer-S\u00f8rensen Gates",
       "authorIds": [
         "a715",
         "a333",
@@ -3498,7 +3498,7 @@
     {
       "id": "10-1021-acs-jctc-5c01038",
       "doi": "10.1021/acs.jctc.5c01038",
-      "title": "A Perspective on Quantum Computing Applications in Quantum Chemistry Using 25–100 Logical Qubits",
+      "title": "A Perspective on Quantum Computing Applications in Quantum Chemistry Using 25\u2013100 Logical Qubits",
       "authorIds": [
         "a14",
         "a57",
@@ -6141,7 +6141,7 @@
     {
       "id": "10-48550-arxiv-cs-0306060",
       "doi": "10.48550/arXiv.cs/0306060",
-      "title": "DIRAC – Distributed Infrastructure with Remote Agent Control",
+      "title": "DIRAC \u2013 Distributed Infrastructure with Remote Agent Control",
       "authorIds": [
         "a1173",
         "a1174",
@@ -9963,7 +9963,7 @@
     {
       "id": "10-5070-sr31154815",
       "doi": "10.5070/sr31154815",
-      "title": "SoK: Function-As-A-Service: From An Application Developer’s Perspective",
+      "title": "SoK: Function-As-A-Service: From An Application Developer\u2019s Perspective",
       "authorIds": [
         "a1661",
         "a1662",
@@ -10182,7 +10182,7 @@
     {
       "id": "10-1088-2058-9565-ab6bf6",
       "doi": "10.1088/2058-9565/ab6bf6",
-      "title": "XACC: a system-level software infrastructure for heterogeneous quantum–classical computing*",
+      "title": "XACC: a system-level software infrastructure for heterogeneous quantum\u2013classical computing*",
       "authorIds": [
         "a508",
         "a484",
@@ -11067,7 +11067,7 @@
     {
       "id": "10-23919-date58400-2024-10546746",
       "doi": "10.23919/DATE58400.2024.10546746",
-      "title": "Design Automation for Quantum Computing: Intermediate Stage Report of the ERC Consolidator Grant “DAQC”",
+      "title": "Design Automation for Quantum Computing: Intermediate Stage Report of the ERC Consolidator Grant \u201cDAQC\u201d",
       "authorIds": [
         "a777"
       ],
@@ -11427,7 +11427,7 @@
     {
       "id": "10-1109-qsw72780-2026-00020",
       "doi": "10.1109/QSW72780.2026.00020",
-      "title": "qScheduler: A Hybrid Reservation–Dispatch System for Integrating QPUs into Slurm-Managed HPC Workflows",
+      "title": "qScheduler: A Hybrid Reservation\u2013Dispatch System for Integrating QPUs into Slurm-Managed HPC Workflows",
       "authorIds": [
         "a1859",
         "a1860"
@@ -13344,7 +13344,7 @@
     {
       "id": "10-1088-2058-9565-ad33ac",
       "doi": "10.1088/2058-9565/ad33ac",
-      "title": "Computational capabilities and compiler development for neutral atom quantum processors—connecting tool developers and hardware experts",
+      "title": "Computational capabilities and compiler development for neutral atom quantum processors\u2014connecting tool developers and hardware experts",
       "authorIds": [
         "a1294",
         "a2020",
@@ -13660,7 +13660,7 @@
     {
       "id": "10-1002-qute-202500871",
       "doi": "10.1002/qute.202500871",
-      "title": "Quantum Simulations of Battery Electrolytes Using Variational Quantum Eigensolver, Equation‐of‐Motion, and Sample‐Based Diagonalization Methods: Active‐Space Design, Dissociation, and Excited States of LiPF6, NaPF6, and FSI Salts",
+      "title": "Quantum Simulations of Battery Electrolytes Using Variational Quantum Eigensolver, Equation\u2010of\u2010Motion, and Sample\u2010Based Diagonalization Methods: Active\u2010Space Design, Dissociation, and Excited States of LiPF6, NaPF6, and FSI Salts",
       "authorIds": [
         "a1743",
         "a1744",
@@ -13732,7 +13732,7 @@
     {
       "id": "10-1021-acs-jctc-5c01994",
       "doi": "10.1021/acs.jctc.5c01994",
-      "title": "Selected Configuration Interaction Using Time-Evolved Population Statistics",
+      "title": "Selected Configuration Interaction Using Time-Evolved Population\u00a0Statistics",
       "authorIds": [
         "a2156",
         "a2157",
@@ -13824,7 +13824,7 @@
     {
       "id": "10-1145-3815786",
       "doi": "10.1145/3815786",
-      "title": "Utility-scale Experimental Quantum Computation with Hardware Efficient Ansätze and Calibrated Hamiltonian",
+      "title": "Utility-scale Experimental Quantum Computation with Hardware Efficient Ans\u00e4tze and Calibrated Hamiltonian",
       "authorIds": [
         "a2163"
       ],
@@ -17229,7 +17229,7 @@
     {
       "id": "10-1109-nss-mic44845-2022-10398933",
       "doi": "10.1109/NSS/MIC44845.2022.10398933",
-      "title": "ePixHR10k 2M – A 2M Pixel X-ray Detector at 5,000 Frame Per Second for LCLS-II",
+      "title": "ePixHR10k 2M \u2013 A 2M Pixel X-ray Detector at 5,000 Frame Per Second for LCLS-II",
       "authorIds": [
         "a2705",
         "a2706",
@@ -17337,7 +17337,7 @@
     {
       "id": "10-17192-bfdm-2021-3-8348",
       "doi": "10.17192/BFDM.2021.3.8348",
-      "title": "Kriterien für die Auswahl einer Softwarelösung für den Betrieb eines Repositoriums für Forschungsdaten",
+      "title": "Kriterien f\u00fcr die Auswahl einer Softwarel\u00f6sung f\u00fcr den Betrieb eines Repositoriums f\u00fcr Forschungsdaten",
       "authorIds": [
         "a2730",
         "a2548",
@@ -17909,7 +17909,7 @@
     {
       "id": "10-22331-q-2019-04-30-135",
       "doi": "10.22331/q-2019-04-30-135",
-      "title": "Efficient magic state factories with a catalyzed | C C Z ⟩ to 2 | T ⟩ transformation",
+      "title": "Efficient magic state factories with a catalyzed | C C Z \u27e9 to 2 | T \u27e9 transformation",
       "authorIds": [
         "a943",
         "a938"
@@ -19794,7 +19794,7 @@
     {
       "id": "10-1109-tit-2019-2906374",
       "doi": "10.1109/TIT.2019.2906374",
-      "title": "T-Count Optimization and Reed–Muller Codes",
+      "title": "T-Count Optimization and Reed\u2013Muller Codes",
       "authorIds": [
         "a25",
         "a539"
@@ -20366,7 +20366,7 @@
     {
       "id": "10-1007-978-3-031-62746-0-10",
       "doi": "10.1007/978-3-031-62746-0_10",
-      "title": "Extending Regev’s Factoring Algorithm to Compute Discrete Logarithms",
+      "title": "Extending Regev\u2019s Factoring Algorithm to Compute Discrete Logarithms",
       "authorIds": [
         "a2521",
         "a3020"
@@ -20530,7 +20530,7 @@
     {
       "id": "10-1109-access-2026-3665887",
       "doi": "10.1109/ACCESS.2026.3665887",
-      "title": "An Evaluation of Computational Complexity of Shor’s Algorithm on Surface Codes for Factorization",
+      "title": "An Evaluation of Computational Complexity of Shor\u2019s Algorithm on Surface Codes for Factorization",
       "authorIds": [
         "a3031",
         "a3032"
@@ -23058,7 +23058,7 @@
     {
       "id": "10-3788-lop250774",
       "doi": "10.3788/lop250774",
-      "title": "基于融合的量子计算研究进展（特邀）",
+      "title": "\u57fa\u4e8e\u878d\u5408\u7684\u91cf\u5b50\u8ba1\u7b97\u7814\u7a76\u8fdb\u5c55\uff08\u7279\u9080\uff09",
       "authorIds": [
         "a3368",
         "a3369",
@@ -23522,7 +23522,7 @@
     {
       "id": "10-22331-q-2023-02-21-929",
       "doi": "10.22331/q-2023-02-21-929",
-      "title": "Efficient color code decoders in d ≥ 2 dimensions from toric code decoders",
+      "title": "Efficient color code decoders in d \u2265 2 dimensions from toric code decoders",
       "authorIds": [
         "a2341",
         "a3396"
@@ -23812,7 +23812,7 @@
     {
       "id": "10-1088-1751-8121-aaad13",
       "doi": "10.1088/1751-8121/aaad13",
-      "title": "Fault-tolerant conversion between adjacent Reed–Muller quantum codes based on gauge fixing",
+      "title": "Fault-tolerant conversion between adjacent Reed\u2013Muller quantum codes based on gauge fixing",
       "authorIds": [
         "a3406",
         "a3407",
@@ -24508,7 +24508,7 @@
     {
       "id": "10-1002-cpa-70007",
       "doi": "10.1002/cpa.70007",
-      "title": "Infinite quantum signal processing for arbitrary Szegő functions",
+      "title": "Infinite quantum signal processing for arbitrary Szeg\u0151 functions",
       "authorIds": [
         "a4278",
         "a1530",
@@ -26232,7 +26232,7 @@
     {
       "id": "10-5753-sbc-4400-9-1",
       "doi": "10.5753/sbc.4400.9.1",
-      "title": "Boas Práticas para Experimentos Computacionais de Alto Desempenho",
+      "title": "Boas Pr\u00e1ticas para Experimentos Computacionais de Alto Desempenho",
       "authorIds": [
         "a4433",
         "a4434",
@@ -27002,7 +27002,7 @@
     {
       "id": "10-1021-acs-jctc-5c01435",
       "doi": "10.1021/acs.jctc.5c01435",
-      "title": "Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing",
+      "title": "Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum\u2013Classical Computing",
       "authorIds": [
         "a4624",
         "a4625",
@@ -27784,7 +27784,7 @@
     {
       "id": "10-1103-physrevd-111-084083",
       "doi": "10.1103/physrevd.111.084083",
-      "title": "Identifying axially symmetric Finslerian extensions of Schwarzschild black hole via the S2 star orbiting Sagittarius A ⋆",
+      "title": "Identifying axially symmetric Finslerian extensions of Schwarzschild black hole via the S2 star orbiting Sagittarius A \u22c6",
       "authorIds": [
         "a4753",
         "a4754",
@@ -28045,7 +28045,7 @@
     {
       "id": "10-1103-physrevd-106-103024",
       "doi": "10.1103/PhysRevD.106.103024",
-      "title": "Constraining ultralight bosonic dark matter with Keck observations of S2’s orbit and kinematics",
+      "title": "Constraining ultralight bosonic dark matter with Keck observations of S2\u2019s orbit and kinematics",
       "authorIds": [
         "a4831",
         "a4832",
@@ -28479,7 +28479,7 @@
     {
       "id": "10-1103-physrevd-109-064046",
       "doi": "10.1103/physrevd.109.064046",
-      "title": "Improvement of graviton mass constraints using GRAVITY’s detection of Schwarzschild precession in the orbit of S2 star around the Galactic Center",
+      "title": "Improvement of graviton mass constraints using GRAVITY\u2019s detection of Schwarzschild precession in the orbit of S2 star around the Galactic Center",
       "authorIds": [
         "a4816",
         "a4817",
@@ -28868,7 +28868,7 @@
     {
       "id": "10-1002-cpe-7973",
       "doi": "10.1002/cpe.7973",
-      "title": "Multi‐objective Firefly algorithm for enhanced balanced exploitation and exploration capabilities",
+      "title": "Multi\u2010objective Firefly algorithm for enhanced balanced exploitation and exploration capabilities",
       "authorIds": [
         "a4977"
       ],
@@ -28884,7 +28884,7 @@
     {
       "id": "10-1002-spe-3292",
       "doi": "10.1002/spe.3292",
-      "title": "A survey on energy‐efficient workflow scheduling algorithms in cloud computing",
+      "title": "A survey on energy\u2010efficient workflow scheduling algorithms in cloud computing",
       "authorIds": [
         "a4978",
         "a4979",
@@ -29447,6 +29447,626 @@
       ],
       "citations": 0,
       "added": "2026-10-12"
+    },
+    {
+      "id": "10-48550-arxiv-2610-22367",
+      "doi": "10.48550/arXiv.2610.22367",
+      "title": "Discovering state-of-the-art quantum circuits with large language models",
+      "authorIds": [
+        "a2326",
+        "a5061",
+        "a1977",
+        "a2034"
+      ],
+      "date": "2026-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-46586-tches-v2025-i2-781-804",
+      "doi": "10.46586/tches.v2025.i2.781-804",
+      "title": "New Quantum Cryptanalysis of Binary Elliptic Curves",
+      "authorIds": [
+        "a5062",
+        "a5063",
+        "a5064",
+        "a5065",
+        "a5066"
+      ],
+      "date": "2025-03",
+      "journalId": "j337",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 3,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2410-00899",
+      "doi": "10.48550/arXiv.2410.00899",
+      "title": "Quantum schoolbook multiplication with fewer Toffoli gates",
+      "authorIds": [
+        "a2360"
+      ],
+      "date": "2024-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-978-3-031-63778-0-27",
+      "doi": "10.1007/978-3-031-63778-0_27",
+      "title": "Hybrid Approach to Public-Key Algorithms in the Near-Quantum Era",
+      "authorIds": [
+        "a5067",
+        "a5068",
+        "a5069"
+      ],
+      "date": "2024-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-978-3-030-44223-1-23",
+      "doi": "10.1007/978-3-030-44223-1_23",
+      "title": "Improved Quantum Circuits for Elliptic Curve Discrete Logarithms",
+      "authorIds": [
+        "a337",
+        "a2893",
+        "a5070",
+        "a631",
+        "a1828"
+      ],
+      "date": "2020-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 75,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2604-02311",
+      "doi": "10.48550/arXiv.2604.02311",
+      "title": "Space-Efficient Quantum Algorithm for Elliptic Curve Discrete Logarithms with Resource Estimation",
+      "authorIds": [
+        "a5071",
+        "a796",
+        "a764",
+        "a4562",
+        "a455"
+      ],
+      "date": "2026-04",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2610-23832",
+      "doi": "10.48550/arXiv.2610.23832",
+      "title": "Leveraging verifiable structure in quantum circuits to find more efficient compilations with agentic AI",
+      "authorIds": [
+        "a398",
+        "a1036",
+        "a943",
+        "a900",
+        "a474",
+        "a45"
+      ],
+      "date": "2026-10",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-s11128-023-04017-x",
+      "doi": "10.1007/s11128-023-04017-x",
+      "title": "Quantum circuits for hyperelliptic curve discrete logarithms over the Mersenne prime fields",
+      "authorIds": [
+        "a148",
+        "a5072",
+        "a5073",
+        "a1358"
+      ],
+      "date": "2023-07",
+      "journalId": "j74",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 4,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-978-3-031-54773-7-4",
+      "doi": "10.1007/978-3-031-54773-7_4",
+      "title": "On the Untapped Potential of the Quantum FLT-Based Inversion",
+      "authorIds": [
+        "a5074",
+        "a5075"
+      ],
+      "date": "2024-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 1,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-46586-tches-v2021-i1-451-472",
+      "doi": "10.46586/tches.v2021.i1.451-472",
+      "title": "Concrete quantum cryptanalysis of binary elliptic curves",
+      "authorIds": [
+        "a5076",
+        "a71",
+        "a5077",
+        "a434"
+      ],
+      "date": "2020-12",
+      "journalId": "j337",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 46,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2606-02235",
+      "doi": "10.48550/arXiv.2606.02235",
+      "title": "Optimized Point Addition Circuits for Elliptic Curve Discrete Logarithms",
+      "authorIds": [
+        "a3023"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2508-14011",
+      "doi": "10.48550/arXiv.2508.14011",
+      "title": "Brace for impact: ECDLP challenges for quantum cryptanalysis",
+      "authorIds": [
+        "a5078",
+        "a5079",
+        "a5080"
+      ],
+      "date": "2025-08",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2609-10965",
+      "doi": "10.48550/arXiv.2609.10965",
+      "title": "Low-cost algorithm-to-execution framework for surface-code quantum computing",
+      "authorIds": [
+        "a5081",
+        "a5082",
+        "a2202",
+        "a5083",
+        "a764",
+        "a5084",
+        "a5085",
+        "a2303",
+        "a330",
+        "a1714",
+        "a5086",
+        "a5087",
+        "a5088",
+        "a456",
+        "a2444",
+        "a3674",
+        "a4065"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1186-s42400-023-00181-w",
+      "doi": "10.1186/s42400-023-00181-w",
+      "title": "Minimizing CNOT-count in quantum circuit of the extended Shor\u2019s algorithm for ECDLP",
+      "authorIds": [
+        "a1507",
+        "a5089",
+        "a5090"
+      ],
+      "date": "2023-12",
+      "journalId": "j338",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 6,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-978-3-032-25291-3-13",
+      "doi": "10.1007/978-3-032-25291-3_13",
+      "title": "Reducing the Number of Qubits in Quantum Discrete Logarithms on Elliptic Curves",
+      "authorIds": [
+        "a3021",
+        "a3022",
+        "a3023"
+      ],
+      "date": "2026-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1109-access-2023-3273601",
+      "doi": "10.1109/ACCESS.2023.3273601",
+      "title": "Depth-Optimization of Quantum Cryptanalysis on Binary Elliptic Curves",
+      "authorIds": [
+        "a5091",
+        "a5092",
+        "a436",
+        "a5093",
+        "a401"
+      ],
+      "date": "2023-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 18,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2607-13816",
+      "doi": "10.48550/arXiv.2607.13816",
+      "title": "Quantum Algorithm for Elliptic Curve Discrete Logarithms with Space-Efficient Point Addition",
+      "authorIds": [
+        "a5071",
+        "a796",
+        "a5094",
+        "a764",
+        "a5095",
+        "a2252",
+        "a5096",
+        "a455"
+      ],
+      "date": "2026-07",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-978-3-319-70697-9-9",
+      "doi": "10.1007/978-3-319-70697-9_9",
+      "title": "Quantum Resource Estimates for Computing Elliptic Curve Discrete Logarithms",
+      "authorIds": [
+        "a631",
+        "a5070",
+        "a2528",
+        "a2819"
+      ],
+      "date": "2017-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 210,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2306-07530",
+      "doi": "10.48550/arXiv.2306.07530",
+      "title": "Quantum Circuit Designs of Point Doubling for Binary Elliptic Curves",
+      "authorIds": [
+        "a436",
+        "a401"
+      ],
+      "date": "2023-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-s11128-024-04323-y",
+      "doi": "10.1007/s11128-024-04323-y",
+      "title": "Concrete quantum cryptanalysis of binary elliptic curves via addition chain",
+      "authorIds": [
+        "a5074",
+        "a5075"
+      ],
+      "date": "2024-03",
+      "journalId": "j74",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 2,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2609-28882",
+      "doi": "10.48550/arXiv.2609.28882",
+      "title": "Efficient Record-and-Replay Arithmetic for Quantum Elliptic-Curve Point Addition",
+      "authorIds": [
+        "a4138",
+        "a5097",
+        "a4606",
+        "a5098",
+        "a5099",
+        "a5100",
+        "a5101",
+        "a5078",
+        "a5102",
+        "a5103",
+        "a5104",
+        "a5105",
+        "a5106",
+        "a5107",
+        "a5108",
+        "a5109",
+        "a5110",
+        "a5111",
+        "a5112",
+        "a5113",
+        "a5114",
+        "a5115",
+        "a3770",
+        "a5116",
+        "a5117",
+        "a5118",
+        "a5119",
+        "a445",
+        "a5120",
+        "a450",
+        "a5121",
+        "a5122",
+        "a5123",
+        "a5124",
+        "a5125",
+        "a3120"
+      ],
+      "date": "2026-09",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-s11128-025-04916-1",
+      "doi": "10.1007/s11128-025-04916-1",
+      "title": "Improved quantum circuits for elliptic curve discrete logarithm problems on Ed25519",
+      "authorIds": [
+        "a5073",
+        "a1358",
+        "a5126",
+        "a2043",
+        "a5127"
+      ],
+      "date": "2025-09",
+      "journalId": "j74",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1109-access-2025-3601565",
+      "doi": "10.1109/ACCESS.2025.3601565",
+      "title": "Enhancing Quantum Cryptanalysis of Binary Elliptic Curves Through Optimized Out-of-Place Point Addition and ECPM Integration",
+      "authorIds": [
+        "a5091",
+        "a5092",
+        "a401"
+      ],
+      "date": "2025-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1007-978-3-032-29918-5-4",
+      "doi": "10.1007/978-3-032-29918-5_4",
+      "title": "A Unified Renes\u2013Costello\u2013Batina Weierstrass Oracle for Shor-Style Cryptanalysis",
+      "authorIds": [
+        "a5069",
+        "a5128",
+        "a5129"
+      ],
+      "date": "2026-01",
+      "journalId": "j237",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1109-access-2024-3489552",
+      "doi": "10.1109/ACCESS.2024.3489552",
+      "title": "A Highly Efficient ECPM Quantum Circuit for Binary Elliptic Curve Cryptanalysis",
+      "authorIds": [
+        "a5092",
+        "a5091",
+        "a3127",
+        "a401"
+      ],
+      "date": "2024-01",
+      "journalId": "j25",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 5,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2502-12441",
+      "doi": "10.48550/arXiv.2502.12441",
+      "title": "Choosing Coordinate Forms for Solving ECDLP Using Shor's Algorithm",
+      "authorIds": [
+        "a5073",
+        "a1358",
+        "a1933",
+        "a2043",
+        "a5127"
+      ],
+      "date": "2025-02",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-1103-h741-4678",
+      "doi": "10.1103/h741-4678",
+      "title": "Accessible Quantum Gates on Classical Stabilizer Codes.",
+      "authorIds": [
+        "a3117",
+        "a3115",
+        "a3030"
+      ],
+      "date": "2025-07",
+      "journalId": "j339",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2606-22418",
+      "doi": "10.48550/arXiv.2606.22418",
+      "title": "A Three-Layer Architecture for Fault-Tolerant Quantum Computing",
+      "authorIds": [
+        "a764",
+        "a5083",
+        "a330",
+        "a455",
+        "a456",
+        "a3674",
+        "a4065"
+      ],
+      "date": "2026-06",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "10-48550-arxiv-2605-03616",
+      "doi": "10.48550/arXiv.2605.03616",
+      "title": "Reducing Postselection Overhead in Magic-State Cultivation by In-Patch Multiplexing",
+      "authorIds": [
+        "a5130",
+        "a2168",
+        "a2192",
+        "a2047"
+      ],
+      "date": "2026-05",
+      "journalId": "j98",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "eprint-2022-501",
+      "doi": "eprint:2022/501",
+      "title": "Another Concrete Quantum Cryptanalysis of Binary Elliptic Curves",
+      "authorIds": [
+        "a5131",
+        "a5132",
+        "a5133",
+        "a5134"
+      ],
+      "date": "2022-01",
+      "journalId": "j340",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "eprint-2026-106",
+      "doi": "eprint:2026/106",
+      "title": "New Quantum Circuits for ECDLP: Breaking Prime Elliptic Curve Cryptography in Minutes",
+      "authorIds": [
+        "a5135",
+        "a5136",
+        "a5137",
+        "a5138",
+        "a5139",
+        "a5140",
+        "a5141"
+      ],
+      "date": "2026-01",
+      "journalId": "j340",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
+    },
+    {
+      "id": "eprint-2025-869",
+      "doi": "eprint:2025/869",
+      "title": "One for All, All for One: Universal semi-agnostic quantum circuit for solving (Standard) Abelian Hidden Subgroup Problems",
+      "authorIds": [
+        "a5142",
+        "a5143",
+        "a5144",
+        "a5145"
+      ],
+      "date": "2025-01",
+      "journalId": "j340",
+      "keywordIds": [
+        "quantum-cryptanalysis"
+      ],
+      "citations": 0,
+      "added": "2026-10-21"
     }
   ]
 }

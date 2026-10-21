@@ -512,7 +512,7 @@
     "type": "conference"
   },
   "j129": {
-    "name": "KI - Künstliche Intelligenz",
+    "name": "KI - K\u00fcnstliche Intelligenz",
     "type": "journal"
   },
   "j130": {
@@ -1028,7 +1028,7 @@
     "type": "journal"
   },
   "j258": {
-    "name": "Revista Matemática Complutense",
+    "name": "Revista Matem\u00e1tica Complutense",
     "type": "journal"
   },
   "j259": {
@@ -1132,7 +1132,7 @@
     "type": "conference"
   },
   "j284": {
-    "name": "Minicursos da XX Escola Regional de Alto Desempenho da Região Sul",
+    "name": "Minicursos da XX Escola Regional de Alto Desempenho da Regi\u00e3o Sul",
     "type": "conference"
   },
   "j285": {
@@ -1312,7 +1312,7 @@
     "type": "conference"
   },
   "j329": {
-    "name": "Информатика Экономика Управление - Informatics Economics Management",
+    "name": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0442\u0438\u043a\u0430 \u042d\u043a\u043e\u043d\u043e\u043c\u0438\u043a\u0430 \u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 - Informatics Economics Management",
     "type": "journal"
   },
   "j330": {
@@ -1342,5 +1342,21 @@
   "j336": {
     "name": "SSRN Electronic Journal",
     "type": "journal"
+  },
+  "j337": {
+    "name": "IACR Transactions on Cryptographic Hardware and Embedded Systems",
+    "type": "journal"
+  },
+  "j338": {
+    "name": "Cybersecurity",
+    "type": "journal"
+  },
+  "j339": {
+    "name": "Physical review letters",
+    "type": "journal"
+  },
+  "j340": {
+    "name": "Cryptology ePrint Archive",
+    "type": "preprint"
   }
 }
