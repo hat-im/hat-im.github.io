@@ -623,6 +623,22 @@
       },
       "message": "Hey,\nI hope you're feeling better today. Hilbert has finished teething and is always finding a new place to climb to in the house. I wonder how work is going. I've got a nearly 1000 commit PR lined up over the week.\nI've not had the best day myself, been in therapy and mostly in bed. I hope yours has been better.",
       "postscript": "I wonder if you're reading these."
+    },
+    {
+      "id": "postcard-40",
+      "enabled": false,
+      "date": "2026-10-21",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Podium Promenade",
+      "color": "vanilla-peach",
+      "subject": "Evening Ease",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-40.mp4"
+      },
+      "message": "Hey,\nI went to the doctor and got a haircut today. I forgot just how messy my hair gets.\nI wonder how your day has been, and if you've been getting enough exercise. I hope you're getting enough steps instead of being hunched over a desk all day, like I have been. I hope the walks have been outside, accompanied by the smell of a promised downpour, and that the breeze cools the stress building in your head.",
+      "postscript": "I wonder if you've seen any good shows lately."
     }
   ]
 }
