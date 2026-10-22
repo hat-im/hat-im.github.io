@@ -639,6 +639,22 @@
       },
       "message": "Hey,\nI went to the doctor and got a haircut today. I forgot just how messy my hair gets.\nI wonder how your day has been, and if you've been getting enough exercise. I hope you're getting enough steps instead of being hunched over a desk all day, like I have been. I hope the walks have been outside, accompanied by the smell of a promised downpour, and that the breeze cools the stress building in your head.",
       "postscript": "I wonder if you've seen any good shows lately."
+    },
+    {
+      "id": "postcard-41",
+      "enabled": true,
+      "date": "2026-10-22",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Whisker Warmth",
+      "color": "sunset-coral",
+      "subject": "Tender Touch",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-41.mp4"
+      },
+      "message": "I found this website and thought you might like it: www.are.na\nI hope your first PR has been merged successfully. Here's a picture of Hilbert. I hope you're doing okay. I just thought of you.",
+      "postscript": ""
     }
   ]
 }
