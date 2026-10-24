@@ -81,7 +81,7 @@
     {
       "id": "10-5281-zenodo-5547407",
       "doi": "10.5281/zenodo.5547407",
-      "title": "Quantum Computing \u2013 A European Perspective",
+      "title": "Quantum Computing – A European Perspective",
       "authorIds": [
         "a367",
         "a418",
@@ -687,7 +687,7 @@
     {
       "id": "10-1145-3743149",
       "doi": "10.1145/3743149",
-      "title": "Integration of Quantum Accelerators with High Performance Computing\u2014A Review of Quantum Programming Tools",
+      "title": "Integration of Quantum Accelerators with High Performance Computing—A Review of Quantum Programming Tools",
       "authorIds": [
         "a221",
         "a3496",
@@ -868,7 +868,7 @@
     {
       "id": "10-48550-arxiv-2510-09508",
       "doi": "10.48550/arXiv.2510.09508",
-      "title": "Subspace Leakage Error Randomized Benchmarking of M\u00f8lmer-S\u00f8rensen Gates",
+      "title": "Subspace Leakage Error Randomized Benchmarking of Mølmer-Sørensen Gates",
       "authorIds": [
         "a715",
         "a333",
@@ -3498,7 +3498,7 @@
     {
       "id": "10-1021-acs-jctc-5c01038",
       "doi": "10.1021/acs.jctc.5c01038",
-      "title": "A Perspective on Quantum Computing Applications in Quantum Chemistry Using 25\u2013100 Logical Qubits",
+      "title": "A Perspective on Quantum Computing Applications in Quantum Chemistry Using 25–100 Logical Qubits",
       "authorIds": [
         "a14",
         "a57",
@@ -6141,7 +6141,7 @@
     {
       "id": "10-48550-arxiv-cs-0306060",
       "doi": "10.48550/arXiv.cs/0306060",
-      "title": "DIRAC \u2013 Distributed Infrastructure with Remote Agent Control",
+      "title": "DIRAC – Distributed Infrastructure with Remote Agent Control",
       "authorIds": [
         "a1173",
         "a1174",
@@ -9963,7 +9963,7 @@
     {
       "id": "10-5070-sr31154815",
       "doi": "10.5070/sr31154815",
-      "title": "SoK: Function-As-A-Service: From An Application Developer\u2019s Perspective",
+      "title": "SoK: Function-As-A-Service: From An Application Developer’s Perspective",
       "authorIds": [
         "a1661",
         "a1662",
@@ -10182,7 +10182,7 @@
     {
       "id": "10-1088-2058-9565-ab6bf6",
       "doi": "10.1088/2058-9565/ab6bf6",
-      "title": "XACC: a system-level software infrastructure for heterogeneous quantum\u2013classical computing*",
+      "title": "XACC: a system-level software infrastructure for heterogeneous quantum–classical computing*",
       "authorIds": [
         "a508",
         "a484",
@@ -11067,7 +11067,7 @@
     {
       "id": "10-23919-date58400-2024-10546746",
       "doi": "10.23919/DATE58400.2024.10546746",
-      "title": "Design Automation for Quantum Computing: Intermediate Stage Report of the ERC Consolidator Grant \u201cDAQC\u201d",
+      "title": "Design Automation for Quantum Computing: Intermediate Stage Report of the ERC Consolidator Grant “DAQC”",
       "authorIds": [
         "a777"
       ],
@@ -11427,7 +11427,7 @@
     {
       "id": "10-1109-qsw72780-2026-00020",
       "doi": "10.1109/QSW72780.2026.00020",
-      "title": "qScheduler: A Hybrid Reservation\u2013Dispatch System for Integrating QPUs into Slurm-Managed HPC Workflows",
+      "title": "qScheduler: A Hybrid Reservation–Dispatch System for Integrating QPUs into Slurm-Managed HPC Workflows",
       "authorIds": [
         "a1859",
         "a1860"
@@ -13344,7 +13344,7 @@
     {
       "id": "10-1088-2058-9565-ad33ac",
       "doi": "10.1088/2058-9565/ad33ac",
-      "title": "Computational capabilities and compiler development for neutral atom quantum processors\u2014connecting tool developers and hardware experts",
+      "title": "Computational capabilities and compiler development for neutral atom quantum processors—connecting tool developers and hardware experts",
       "authorIds": [
         "a1294",
         "a2020",
@@ -13660,7 +13660,7 @@
     {
       "id": "10-1002-qute-202500871",
       "doi": "10.1002/qute.202500871",
-      "title": "Quantum Simulations of Battery Electrolytes Using Variational Quantum Eigensolver, Equation\u2010of\u2010Motion, and Sample\u2010Based Diagonalization Methods: Active\u2010Space Design, Dissociation, and Excited States of LiPF6, NaPF6, and FSI Salts",
+      "title": "Quantum Simulations of Battery Electrolytes Using Variational Quantum Eigensolver, Equation‐of‐Motion, and Sample‐Based Diagonalization Methods: Active‐Space Design, Dissociation, and Excited States of LiPF6, NaPF6, and FSI Salts",
       "authorIds": [
         "a1743",
         "a1744",
@@ -13732,7 +13732,7 @@
     {
       "id": "10-1021-acs-jctc-5c01994",
       "doi": "10.1021/acs.jctc.5c01994",
-      "title": "Selected Configuration Interaction Using Time-Evolved Population\u00a0Statistics",
+      "title": "Selected Configuration Interaction Using Time-Evolved Population Statistics",
       "authorIds": [
         "a2156",
         "a2157",
@@ -13824,7 +13824,7 @@
     {
       "id": "10-1145-3815786",
       "doi": "10.1145/3815786",
-      "title": "Utility-scale Experimental Quantum Computation with Hardware Efficient Ans\u00e4tze and Calibrated Hamiltonian",
+      "title": "Utility-scale Experimental Quantum Computation with Hardware Efficient Ansätze and Calibrated Hamiltonian",
       "authorIds": [
         "a2163"
       ],
@@ -17229,7 +17229,7 @@
     {
       "id": "10-1109-nss-mic44845-2022-10398933",
       "doi": "10.1109/NSS/MIC44845.2022.10398933",
-      "title": "ePixHR10k 2M \u2013 A 2M Pixel X-ray Detector at 5,000 Frame Per Second for LCLS-II",
+      "title": "ePixHR10k 2M – A 2M Pixel X-ray Detector at 5,000 Frame Per Second for LCLS-II",
       "authorIds": [
         "a2705",
         "a2706",
@@ -17337,7 +17337,7 @@
     {
       "id": "10-17192-bfdm-2021-3-8348",
       "doi": "10.17192/BFDM.2021.3.8348",
-      "title": "Kriterien f\u00fcr die Auswahl einer Softwarel\u00f6sung f\u00fcr den Betrieb eines Repositoriums f\u00fcr Forschungsdaten",
+      "title": "Kriterien für die Auswahl einer Softwarelösung für den Betrieb eines Repositoriums für Forschungsdaten",
       "authorIds": [
         "a2730",
         "a2548",
@@ -17909,7 +17909,7 @@
     {
       "id": "10-22331-q-2019-04-30-135",
       "doi": "10.22331/q-2019-04-30-135",
-      "title": "Efficient magic state factories with a catalyzed | C C Z \u27e9 to 2 | T \u27e9 transformation",
+      "title": "Efficient magic state factories with a catalyzed | C C Z ⟩ to 2 | T ⟩ transformation",
       "authorIds": [
         "a943",
         "a938"
@@ -19794,7 +19794,7 @@
     {
       "id": "10-1109-tit-2019-2906374",
       "doi": "10.1109/TIT.2019.2906374",
-      "title": "T-Count Optimization and Reed\u2013Muller Codes",
+      "title": "T-Count Optimization and Reed–Muller Codes",
       "authorIds": [
         "a25",
         "a539"
@@ -20366,7 +20366,7 @@
     {
       "id": "10-1007-978-3-031-62746-0-10",
       "doi": "10.1007/978-3-031-62746-0_10",
-      "title": "Extending Regev\u2019s Factoring Algorithm to Compute Discrete Logarithms",
+      "title": "Extending Regev’s Factoring Algorithm to Compute Discrete Logarithms",
       "authorIds": [
         "a2521",
         "a3020"
@@ -20530,7 +20530,7 @@
     {
       "id": "10-1109-access-2026-3665887",
       "doi": "10.1109/ACCESS.2026.3665887",
-      "title": "An Evaluation of Computational Complexity of Shor\u2019s Algorithm on Surface Codes for Factorization",
+      "title": "An Evaluation of Computational Complexity of Shor’s Algorithm on Surface Codes for Factorization",
       "authorIds": [
         "a3031",
         "a3032"
@@ -23058,7 +23058,7 @@
     {
       "id": "10-3788-lop250774",
       "doi": "10.3788/lop250774",
-      "title": "\u57fa\u4e8e\u878d\u5408\u7684\u91cf\u5b50\u8ba1\u7b97\u7814\u7a76\u8fdb\u5c55\uff08\u7279\u9080\uff09",
+      "title": "基于融合的量子计算研究进展（特邀）",
       "authorIds": [
         "a3368",
         "a3369",
@@ -23522,7 +23522,7 @@
     {
       "id": "10-22331-q-2023-02-21-929",
       "doi": "10.22331/q-2023-02-21-929",
-      "title": "Efficient color code decoders in d \u2265 2 dimensions from toric code decoders",
+      "title": "Efficient color code decoders in d ≥ 2 dimensions from toric code decoders",
       "authorIds": [
         "a2341",
         "a3396"
@@ -23812,7 +23812,7 @@
     {
       "id": "10-1088-1751-8121-aaad13",
       "doi": "10.1088/1751-8121/aaad13",
-      "title": "Fault-tolerant conversion between adjacent Reed\u2013Muller quantum codes based on gauge fixing",
+      "title": "Fault-tolerant conversion between adjacent Reed–Muller quantum codes based on gauge fixing",
       "authorIds": [
         "a3406",
         "a3407",
@@ -24508,7 +24508,7 @@
     {
       "id": "10-1002-cpa-70007",
       "doi": "10.1002/cpa.70007",
-      "title": "Infinite quantum signal processing for arbitrary Szeg\u0151 functions",
+      "title": "Infinite quantum signal processing for arbitrary Szegő functions",
       "authorIds": [
         "a4278",
         "a1530",
@@ -26232,7 +26232,7 @@
     {
       "id": "10-5753-sbc-4400-9-1",
       "doi": "10.5753/sbc.4400.9.1",
-      "title": "Boas Pr\u00e1ticas para Experimentos Computacionais de Alto Desempenho",
+      "title": "Boas Práticas para Experimentos Computacionais de Alto Desempenho",
       "authorIds": [
         "a4433",
         "a4434",
@@ -27002,7 +27002,7 @@
     {
       "id": "10-1021-acs-jctc-5c01435",
       "doi": "10.1021/acs.jctc.5c01435",
-      "title": "Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum\u2013Classical Computing",
+      "title": "Large-Scale Efficient Molecule Geometry Optimization with Hybrid Quantum–Classical Computing",
       "authorIds": [
         "a4624",
         "a4625",
@@ -27784,7 +27784,7 @@
     {
       "id": "10-1103-physrevd-111-084083",
       "doi": "10.1103/physrevd.111.084083",
-      "title": "Identifying axially symmetric Finslerian extensions of Schwarzschild black hole via the S2 star orbiting Sagittarius A \u22c6",
+      "title": "Identifying axially symmetric Finslerian extensions of Schwarzschild black hole via the S2 star orbiting Sagittarius A ⋆",
       "authorIds": [
         "a4753",
         "a4754",
@@ -28045,7 +28045,7 @@
     {
       "id": "10-1103-physrevd-106-103024",
       "doi": "10.1103/PhysRevD.106.103024",
-      "title": "Constraining ultralight bosonic dark matter with Keck observations of S2\u2019s orbit and kinematics",
+      "title": "Constraining ultralight bosonic dark matter with Keck observations of S2’s orbit and kinematics",
       "authorIds": [
         "a4831",
         "a4832",
@@ -28479,7 +28479,7 @@
     {
       "id": "10-1103-physrevd-109-064046",
       "doi": "10.1103/physrevd.109.064046",
-      "title": "Improvement of graviton mass constraints using GRAVITY\u2019s detection of Schwarzschild precession in the orbit of S2 star around the Galactic Center",
+      "title": "Improvement of graviton mass constraints using GRAVITY’s detection of Schwarzschild precession in the orbit of S2 star around the Galactic Center",
       "authorIds": [
         "a4816",
         "a4817",
@@ -28868,7 +28868,7 @@
     {
       "id": "10-1002-cpe-7973",
       "doi": "10.1002/cpe.7973",
-      "title": "Multi\u2010objective Firefly algorithm for enhanced balanced exploitation and exploration capabilities",
+      "title": "Multi‐objective Firefly algorithm for enhanced balanced exploitation and exploration capabilities",
       "authorIds": [
         "a4977"
       ],
@@ -28884,7 +28884,7 @@
     {
       "id": "10-1002-spe-3292",
       "doi": "10.1002/spe.3292",
-      "title": "A survey on energy\u2010efficient workflow scheduling algorithms in cloud computing",
+      "title": "A survey on energy‐efficient workflow scheduling algorithms in cloud computing",
       "authorIds": [
         "a4978",
         "a4979",
@@ -29693,7 +29693,7 @@
     {
       "id": "10-1186-s42400-023-00181-w",
       "doi": "10.1186/s42400-023-00181-w",
-      "title": "Minimizing CNOT-count in quantum circuit of the extended Shor\u2019s algorithm for ECDLP",
+      "title": "Minimizing CNOT-count in quantum circuit of the extended Shor’s algorithm for ECDLP",
       "authorIds": [
         "a1507",
         "a5089",
@@ -29904,7 +29904,7 @@
     {
       "id": "10-1007-978-3-032-29918-5-4",
       "doi": "10.1007/978-3-032-29918-5_4",
-      "title": "A Unified Renes\u2013Costello\u2013Batina Weierstrass Oracle for Shor-Style Cryptanalysis",
+      "title": "A Unified Renes–Costello–Batina Weierstrass Oracle for Shor-Style Cryptanalysis",
       "authorIds": [
         "a5069",
         "a5128",
@@ -30067,6 +30067,864 @@
       ],
       "citations": 0,
       "added": "2026-10-21"
+    },
+    {
+      "id": "10-1145-3486897",
+      "doi": "10.1145/3486897",
+      "title": "Methods included",
+      "authorIds": [
+        "a3983",
+        "a5146",
+        "a5147",
+        "a5148",
+        "a5149",
+        "a5150",
+        "a5151",
+        "a4026",
+        "a5152",
+        "a3967",
+        "a5153"
+      ],
+      "date": "2022-05",
+      "journalId": "j137",
+      "keywordIds": [],
+      "citations": 182,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-4230-oasics-parma-ditam-2021-5",
+      "doi": "10.4230/OASIcs.PARMA-DITAM.2021.5",
+      "title": "HPC Application Cloudification: The StreamFlow Toolkit (Invited Paper)",
+      "authorIds": [
+        "a1768",
+        "a5154",
+        "a5155",
+        "a5156",
+        "a5157",
+        "a4345"
+      ],
+      "date": "2021-01",
+      "journalId": "j341",
+      "keywordIds": [],
+      "citations": 4,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1371-journal-pone-0309210",
+      "doi": "10.1371/journal.pone.0309210",
+      "title": "Recording provenance of workflow runs with RO-Crate",
+      "authorIds": [
+        "a5158",
+        "a3983",
+        "a5159",
+        "a3916",
+        "a5160",
+        "a5161",
+        "a5162",
+        "a5163",
+        "a3999",
+        "a5164",
+        "a1768",
+        "a5165",
+        "a5166",
+        "a5167",
+        "a5168",
+        "a5169",
+        "a3985",
+        "a4026"
+      ],
+      "date": "2024-09",
+      "journalId": "j342",
+      "keywordIds": [],
+      "citations": 46,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-48550-arxiv-2211-06429",
+      "doi": "10.48550/arXiv.2211.06429",
+      "title": "Evaluation of tools for describing, reproducing and reusing scientific workflows",
+      "authorIds": [
+        "a5170",
+        "a5171",
+        "a5172",
+        "a5173",
+        "a5174",
+        "a5175"
+      ],
+      "date": "2022-11",
+      "journalId": "j98",
+      "keywordIds": [],
+      "citations": 3,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1007-978-3-031-71162-6-12",
+      "doi": "10.1007/978-3-031-71162-6_12",
+      "title": "Introducing SWIRL: An Intermediate Representation Language for Scientific Workflows",
+      "authorIds": [
+        "a1768",
+        "a4012",
+        "a4344",
+        "a5176",
+        "a5177",
+        "a4345"
+      ],
+      "date": "2024-09",
+      "journalId": "j237",
+      "keywordIds": [],
+      "citations": 3,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-12688-f1000research-122924-2",
+      "doi": "10.12688/f1000research.122924.2",
+      "title": "Sapporo: A workflow execution service that encourages the reuse of workflows in various languages in bioinformatics",
+      "authorIds": [
+        "a5167",
+        "a5178",
+        "a5179",
+        "a3985",
+        "a5180",
+        "a5181",
+        "a3785",
+        "a5182",
+        "a5183",
+        "a5184",
+        "a5185",
+        "a5186",
+        "a5187",
+        "a5166"
+      ],
+      "date": "2024-06",
+      "journalId": "j343",
+      "keywordIds": [],
+      "citations": 8,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1145-3731599-3767577",
+      "doi": "10.1145/3731599.3767577",
+      "title": "Overcoming Dynamic I/O Boundaries: a Double-Sided Streaming Methodology with dispel4py and CAPIO",
+      "authorIds": [
+        "a5188",
+        "a3993",
+        "a4012",
+        "a1768",
+        "a4345"
+      ],
+      "date": "2025-11",
+      "journalId": "j344",
+      "keywordIds": [],
+      "citations": 1,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1162-dint-a-00033",
+      "doi": "10.1162/dint_a_00033",
+      "title": "FAIR Computational Workflows",
+      "authorIds": [
+        "a3967",
+        "a5189",
+        "a4026",
+        "a3999",
+        "a5190",
+        "a3983",
+        "a5191",
+        "a5192"
+      ],
+      "date": "2019-11",
+      "journalId": "j345",
+      "keywordIds": [],
+      "citations": 169,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-hipc58850-2023-00031",
+      "doi": "10.1109/HiPC58850.2023.00031",
+      "title": "CAPIO: a Middleware for Transparent I/O Streaming in Data- Intensive Workflows",
+      "authorIds": [
+        "a5193",
+        "a5194",
+        "a4345",
+        "a1768",
+        "a5154"
+      ],
+      "date": "2023-12",
+      "journalId": "j346",
+      "keywordIds": [],
+      "citations": 15,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1016-j-future-2021-10-007",
+      "doi": "10.1016/j.future.2021.10.007",
+      "title": "Distributed workflows with Jupyter",
+      "authorIds": [
+        "a1768",
+        "a4345",
+        "a5154",
+        "a5177",
+        "a5195",
+        "a5157",
+        "a5196",
+        "a5197",
+        "a5198",
+        "a5199"
+      ],
+      "date": "2021-10",
+      "journalId": "j24",
+      "keywordIds": [],
+      "citations": 25,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1016-j-future-2017-02-026",
+      "doi": "10.1016/j.future.2017.02.026",
+      "title": "A characterization of workflow management systems for extreme-scale applications",
+      "authorIds": [
+        "a3516",
+        "a3993",
+        "a5200",
+        "a5201",
+        "a648",
+        "a192"
+      ],
+      "date": "2017-02",
+      "journalId": "j24",
+      "keywordIds": [],
+      "citations": 149,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-works51914-2020-00008",
+      "doi": "10.1109/WORKS51914.2020.00008",
+      "title": "Supercomputing with MPI meets the Common Workflow Language standards: an experience report",
+      "authorIds": [
+        "a5202",
+        "a3983",
+        "a5203",
+        "a111"
+      ],
+      "date": "2020-11",
+      "journalId": "j347",
+      "keywordIds": [],
+      "citations": 8,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-tetc-2020-3019202",
+      "doi": "10.1109/TETC.2020.3019202",
+      "title": "StreamFlow: Cross-Breeding Cloud With HPC",
+      "authorIds": [
+        "a1768",
+        "a5154",
+        "a5204",
+        "a4345"
+      ],
+      "date": "2020-08",
+      "journalId": "j348",
+      "keywordIds": [],
+      "citations": 88,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-access-2021-3101454",
+      "doi": "10.1109/ACCESS.2021.3101454",
+      "title": "Optimizing Workflow Task Clustering Using Reinforcement Learning",
+      "authorIds": [
+        "a5205",
+        "a5206",
+        "a5207",
+        "a5208"
+      ],
+      "date": "2021-01",
+      "journalId": "j25",
+      "keywordIds": [],
+      "citations": 5,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1093-gigascience-giz095",
+      "doi": "10.1093/gigascience/giz095",
+      "title": "Sharing interoperable workflow provenance: A review of best practices and their practical application in CWLProv",
+      "authorIds": [
+        "a5209",
+        "a4026",
+        "a5210",
+        "a5211",
+        "a3967",
+        "a3983"
+      ],
+      "date": "2019-11",
+      "journalId": "j349",
+      "keywordIds": [],
+      "citations": 81,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1038-s41597-025-04451-9",
+      "doi": "10.1038/s41597-025-04451-9",
+      "title": "Applying the FAIR Principles to computational workflows",
+      "authorIds": [
+        "a1206",
+        "a5212",
+        "a5213",
+        "a3983",
+        "a3985",
+        "a3996",
+        "a3999",
+        "a5214",
+        "a5215",
+        "a5216",
+        "a5209",
+        "a2805",
+        "a5191",
+        "a4018",
+        "a5217",
+        "a4026",
+        "a5218",
+        "a5219",
+        "a1434",
+        "a5220",
+        "a5221",
+        "a5222",
+        "a3967"
+      ],
+      "date": "2025-02",
+      "journalId": "j350",
+      "keywordIds": [],
+      "citations": 73,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-bigdata62323-2024-10825405",
+      "doi": "10.1109/BigData62323.2024.10825405",
+      "title": "Enabling Provenance Tracking in Workflow Management Systems",
+      "authorIds": [
+        "a5223",
+        "a5224",
+        "a5225"
+      ],
+      "date": "2024-12",
+      "journalId": "j351",
+      "keywordIds": [],
+      "citations": 4,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1016-j-future-2019-01-015",
+      "doi": "10.1016/J.FUTURE.2019.01.015",
+      "title": "Using simple PID-inspired controllers for online resilient resource management of distributed scientific workflows",
+      "authorIds": [
+        "a3516",
+        "a3993",
+        "a192",
+        "a5226",
+        "a5227",
+        "a5228"
+      ],
+      "date": "2019-01",
+      "journalId": "j24",
+      "keywordIds": [],
+      "citations": 34,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1038-s41597-025-04786-3",
+      "doi": "10.1038/s41597-025-04786-3",
+      "title": "WorkflowHub: a registry for computational workflows",
+      "authorIds": [
+        "a5214",
+        "a1206",
+        "a5229",
+        "a4026",
+        "a5158",
+        "a5163",
+        "a5230",
+        "a5215",
+        "a5164",
+        "a5231",
+        "a5151",
+        "a5232",
+        "a5168",
+        "a3982",
+        "a3967"
+      ],
+      "date": "2025-05",
+      "journalId": "j350",
+      "keywordIds": [],
+      "citations": 46,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1016-j-future-2017-05-041",
+      "doi": "10.1016/J.FUTURE.2017.05.041",
+      "title": "Scientific workflows: Past, present and future",
+      "authorIds": [
+        "a5228",
+        "a5233",
+        "a5234",
+        "a5235"
+      ],
+      "date": "2017-06",
+      "journalId": "j24",
+      "keywordIds": [],
+      "citations": 131,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-bigdata47090-2019-9005494",
+      "doi": "10.1109/BigData47090.2019.9005494",
+      "title": "Exploration of Workflow Management Systems Emerging Features from Users Perspectives",
+      "authorIds": [
+        "a5236",
+        "a4017",
+        "a5237",
+        "a3516",
+        "a1187",
+        "a1185",
+        "a192"
+      ],
+      "date": "2019-12",
+      "journalId": "j351",
+      "keywordIds": [],
+      "citations": 37,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1016-j-future-2017-01-012",
+      "doi": "10.1016/J.FUTURE.2017.01.012",
+      "title": "Scientific workflows for computational reproducibility in the life sciences: Status, challenges and opportunities",
+      "authorIds": [
+        "a5189",
+        "a5213",
+        "a5238",
+        "a5239",
+        "a5240",
+        "a5241",
+        "a5242",
+        "a5243",
+        "a5244",
+        "a5245",
+        "a5246",
+        "a5151",
+        "a5247",
+        "a5248"
+      ],
+      "date": "2017-01",
+      "journalId": "j24",
+      "keywordIds": [],
+      "citations": 181,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1145-3642978-3652835",
+      "doi": "10.1145/3642978.3652835",
+      "title": "Advanced Resource Allocation in the Context of Heterogeneous Workflows Management",
+      "authorIds": [
+        "a5249",
+        "a1767",
+        "a751",
+        "a752",
+        "a1765",
+        "a1766"
+      ],
+      "date": "2024-04",
+      "journalId": "j352",
+      "keywordIds": [],
+      "citations": 3,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-works-2018-00012",
+      "doi": "10.1109/WORKS.2018.00012",
+      "title": "DagOn*: Executing Direct Acyclic Graphs as Parallel Jobs on Anything",
+      "authorIds": [
+        "a5250",
+        "a5251",
+        "a5252"
+      ],
+      "date": "2018-11",
+      "journalId": "j347",
+      "keywordIds": [],
+      "citations": 34,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-scw63240-2024-00253",
+      "doi": "10.1109/SCW63240.2024.00253",
+      "title": "A software ecosystem for multi-level provenance management in large-scale scientific workflows for AI applications",
+      "authorIds": [
+        "a5253",
+        "a2653",
+        "a5223",
+        "a5254",
+        "a5255",
+        "a5256",
+        "a5257",
+        "a5258",
+        "a5224",
+        "a5259",
+        "a5225"
+      ],
+      "date": "2024-11",
+      "journalId": "j353",
+      "keywordIds": [],
+      "citations": 3,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1007-s10766-025-00789-0",
+      "doi": "10.1007/s10766-025-00789-0",
+      "title": "CAPIO-CL: The CAPIO Coordination Language",
+      "authorIds": [
+        "a5188",
+        "a5193",
+        "a1768",
+        "a5154",
+        "a5194",
+        "a4345"
+      ],
+      "date": "2025-02",
+      "journalId": "j354",
+      "keywordIds": [],
+      "citations": 8,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1093-gigascience-giz084",
+      "doi": "10.1093/gigascience/giz084",
+      "title": "CWL-Airflow: a lightweight pipeline manager supporting Common Workflow Language",
+      "authorIds": [
+        "a5260",
+        "a5261",
+        "a5262"
+      ],
+      "date": "2019-07",
+      "journalId": "j349",
+      "keywordIds": [],
+      "citations": 65,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1186-s13059-025-03673-9",
+      "doi": "10.1186/s13059-025-03673-9",
+      "title": "Empowering bioinformatics communities with Nextflow and nf-core",
+      "authorIds": [
+        "a5263",
+        "a5264",
+        "a5265",
+        "a5266",
+        "a5267",
+        "a5268",
+        "a5269",
+        "a3986",
+        "a5270",
+        "a5271",
+        "a5272",
+        "a5273",
+        "a5274",
+        "a5275",
+        "a5276",
+        "a5277",
+        "a5278",
+        "a5279",
+        "a5280",
+        "a5281",
+        "a5282",
+        "a5283",
+        "a5284",
+        "a5285",
+        "a5286",
+        "a5287",
+        "a5288",
+        "a5289",
+        "a5290",
+        "a5291",
+        "a5292",
+        "a5293",
+        "a5294",
+        "a5295",
+        "a5296",
+        "a5297",
+        "a5298",
+        "a5299",
+        "a5300",
+        "a5301",
+        "a5302",
+        "a5303",
+        "a5304",
+        "a5305"
+      ],
+      "date": "2025-07",
+      "journalId": "j355",
+      "keywordIds": [],
+      "citations": 64,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-5281-zenodo-7750670",
+      "doi": "10.5281/zenodo.7750670",
+      "title": "Workflows Community Summit 2022: A Roadmap Revolution",
+      "authorIds": [
+        "a3516",
+        "a1170",
+        "a1269",
+        "a1270",
+        "a3966",
+        "a1272",
+        "a2784",
+        "a144",
+        "a3967",
+        "a360",
+        "a1636",
+        "a3968",
+        "a3969",
+        "a1139",
+        "a2633",
+        "a2640",
+        "a3970",
+        "a3971",
+        "a2538",
+        "a3972",
+        "a3973",
+        "a1351",
+        "a3974",
+        "a3975",
+        "a3976",
+        "a3977",
+        "a3978",
+        "a138",
+        "a3980",
+        "a1349",
+        "a3981",
+        "a1768",
+        "a3982",
+        "a3983",
+        "a3984",
+        "a3985",
+        "a3986",
+        "a3987",
+        "a3988",
+        "a3989",
+        "a2539",
+        "a3990",
+        "a3991",
+        "a3992",
+        "a3993",
+        "a3994",
+        "a3995",
+        "a3996",
+        "a3997",
+        "a3998",
+        "a3999",
+        "a4000",
+        "a4001",
+        "a4002",
+        "a4003",
+        "a4004",
+        "a1687",
+        "a4005",
+        "a4006",
+        "a5306",
+        "a4008",
+        "a4009",
+        "a479",
+        "a4010",
+        "a1134",
+        "a4011",
+        "a4012",
+        "a5307",
+        "a4014",
+        "a4015",
+        "a4016",
+        "a4017",
+        "a4018",
+        "a4019",
+        "a4020",
+        "a4021",
+        "a4022",
+        "a4023",
+        "a1203",
+        "a639",
+        "a4024",
+        "a659",
+        "a4025",
+        "a668",
+        "a2626",
+        "a3916",
+        "a1197",
+        "a4026",
+        "a4027",
+        "a4028",
+        "a1434",
+        "a4029",
+        "a1159",
+        "a4030",
+        "a1695",
+        "a4031",
+        "a739",
+        "a4032",
+        "a4033",
+        "a4034"
+      ],
+      "date": "2023-03",
+      "journalId": "j356",
+      "keywordIds": [],
+      "citations": 15,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-compsac57700-2023-00289",
+      "doi": "10.1109/COMPSAC57700.2023.00289",
+      "title": "Towards formal model for location aware workflows",
+      "authorIds": [
+        "a4012",
+        "a4345"
+      ],
+      "date": "2023-06",
+      "journalId": "j270",
+      "keywordIds": [],
+      "citations": 2,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1016-j-future-2017-12-023",
+      "doi": "10.1016/J.FUTURE.2017.12.023",
+      "title": "The MASi repository service — Comprehensive, metadata-driven and multi-community research data management",
+      "authorIds": [
+        "a5308",
+        "a5309",
+        "a5310",
+        "a5311",
+        "a5312",
+        "a5313",
+        "a5314",
+        "a5315",
+        "a5316",
+        "a5317",
+        "a5318",
+        "a5319",
+        "a5320",
+        "a5321",
+        "a5322",
+        "a5323"
+      ],
+      "date": "2018-01",
+      "journalId": "j24",
+      "keywordIds": [],
+      "citations": 17,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1038-s41598-021-99288-8",
+      "doi": "10.1038/s41598-021-99288-8",
+      "title": "Design considerations for workflow management systems use in production genomics research and the clinic",
+      "authorIds": [
+        "a5324",
+        "a5325",
+        "a5326",
+        "a5327",
+        "a5328",
+        "a5329",
+        "a5330",
+        "a5331",
+        "a5332",
+        "a5333",
+        "a5334",
+        "a5335",
+        "a5336",
+        "a5337",
+        "a5338",
+        "a5339",
+        "a5340",
+        "a5341",
+        "a5342",
+        "a5343"
+      ],
+      "date": "2021-11",
+      "journalId": "j83",
+      "keywordIds": [],
+      "citations": 43,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-3233-ds-210053",
+      "doi": "10.3233/DS-210053",
+      "title": "Packaging research artefacts with RO-Crate",
+      "authorIds": [
+        "a4026",
+        "a5344",
+        "a5345",
+        "a5346",
+        "a3982",
+        "a5164",
+        "a3999",
+        "a5232",
+        "a5347",
+        "a5158",
+        "a5348",
+        "a5349",
+        "a5350",
+        "a5351",
+        "a5352",
+        "a3967"
+      ],
+      "date": "2022-01",
+      "journalId": "j357",
+      "keywordIds": [],
+      "citations": 205,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1038-s41592-021-01254-9",
+      "doi": "10.1038/s41592-021-01254-9",
+      "title": "Reproducible, scalable, and shareable analysis pipelines with bioinformatics workflow managers",
+      "authorIds": [
+        "a5353",
+        "a5354",
+        "a5355"
+      ],
+      "date": "2021-09",
+      "journalId": "j358",
+      "keywordIds": [],
+      "citations": 227,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-3233-978-1-61499-843-3-605",
+      "doi": "10.3233/978-1-61499-843-3-605",
+      "title": "Scientific Workflows on Clouds with Heterogeneous and Preemptible Instances",
+      "authorIds": [
+        "a5356",
+        "a4345",
+        "a5357",
+        "a5358",
+        "a5359"
+      ],
+      "date": "2018-01",
+      "journalId": "j359",
+      "keywordIds": [],
+      "citations": 7,
+      "added": "2026-10-24"
+    },
+    {
+      "id": "10-1109-bibm-2018-8621141",
+      "doi": "10.1109/BIBM.2018.8621141",
+      "title": "Evaluating Workflow Management Systems: A Bioinformatics Use Case",
+      "authorIds": [
+        "a5360",
+        "a5361",
+        "a5362",
+        "a5363",
+        "a5364",
+        "a5365"
+      ],
+      "date": "2018-12",
+      "journalId": "j360",
+      "keywordIds": [],
+      "citations": 26,
+      "added": "2026-10-24"
     }
   ]
 }
