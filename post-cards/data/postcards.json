@@ -671,6 +671,22 @@
       },
       "message": "I heard they're sunsetting Arc and was sorry to hear it. Have you tried the other browser they made? I wonder what you think of it.\nHave you heard about the PHP bug and eMudhra fiasco? There's so much happening in tech right now, hard to keep up.\nI spent an all-nighter refactoring horrific code, resulting in a nearly 1000-commit PR. The smelliest code I've ever seen.\nI hope you had a nice week and have a good weekend ahead. I'm sure you've got fun plans.",
       "postscript": "Hilbert is snoring."
+    },
+    {
+      "id": "postcard-43",
+      "enabled": true,
+      "date": "2026-10-24",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Wandering Wonder",
+      "color": "willow",
+      "subject": "Phantom Pause",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-43.mp4"
+      },
+      "message": "I wasted my time today going to a meeting that didn't end up happening. Yesterday was our second presentation to the international group and I had to do it and I think it went well. I wonder how your weekend is going. I want to hear from you, I want to reach out. I just don't know how.",
+      "postscript": "Did you know that today is the last Pythagorean date of the century (10-24-26)."
     }
   ]
 }
