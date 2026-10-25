@@ -1438,5 +1438,461 @@
   "j360": {
     "name": "IEEE International Conference on Bioinformatics and Biomedicine",
     "type": "conference"
+  },
+  "j361": {
+    "name": "Conference on Lasers and Electro-Optics",
+    "type": "conference"
+  },
+  "j362": {
+    "name": "Proceedings - International Symposium on High-Performance Computer Architecture/Proceedings",
+    "type": "conference"
+  },
+  "j363": {
+    "name": "IEEE/ACM International Conference On Computer Aided Design",
+    "type": "conference"
+  },
+  "j364": {
+    "name": "ACM/IEEE International Symposium on Computer Architecture",
+    "type": "conference"
+  },
+  "j365": {
+    "name": "IEEE International Conference on Distributed Computing Systems",
+    "type": "conference"
+  },
+  "j366": {
+    "name": "Proceedings/Proceedings - International Symposium on Multiple-Valued Logic",
+    "type": "conference"
+  },
+  "j367": {
+    "name": "Journal of Low Temperature Physics",
+    "type": "journal"
+  },
+  "j368": {
+    "name": "Journal of Computer and System Sciences",
+    "type": "journal"
+  },
+  "j369": {
+    "name": "Electronics and Communications in Japan (Part III Fundamental Electronic Science)",
+    "type": "journal"
+  },
+  "j370": {
+    "name": "International Journal of Modern Physics C",
+    "type": "journal"
+  },
+  "j371": {
+    "name": "International Journal of Theoretical Physics",
+    "type": "journal"
+  },
+  "j372": {
+    "name": "Physical review. B./Physical review. B",
+    "type": "journal"
+  },
+  "j373": {
+    "name": "ACM SIGACT Symposium on Theory of Computing",
+    "type": "conference"
+  },
+  "j374": {
+    "name": "Algorithmica",
+    "type": "journal"
+  },
+  "j375": {
+    "name": "Theoretical Computer Science",
+    "type": "journal"
+  },
+  "j376": {
+    "name": "ACM-SIAM Symposium on Discrete Algorithms",
+    "type": "conference"
+  },
+  "j377": {
+    "name": "Annual Symposium on Foundations of Computer Science",
+    "type": "conference"
+  },
+  "j378": {
+    "name": "Springer eBooks",
+    "type": "journal"
+  },
+  "j379": {
+    "name": "IEEE/ACM International Conference on Automated Software Engineering",
+    "type": "conference"
+  },
+  "j380": {
+    "name": "ACM/IEEE International Conference on Model Driven Engineering Languages and Systems",
+    "type": "conference"
+  },
+  "j381": {
+    "name": "IEEE Transactions on Software Engineering",
+    "type": "journal"
+  },
+  "j382": {
+    "name": "IEEE CHILEAN Conference on Electrical, Electronics Engineering, Information and Communication Technologies",
+    "type": "conference"
+  },
+  "j383": {
+    "name": "National Science Review",
+    "type": "journal"
+  },
+  "j384": {
+    "name": "International Conference on Model-Based Software and Systems Engineering",
+    "type": "conference"
+  },
+  "j385": {
+    "name": "IEEE/ACM 2nd International Workshop on Quantum Software Engineering",
+    "type": "conference"
+  },
+  "j386": {
+    "name": "International Conference on Innovative Mechanisms for Industry Applications",
+    "type": "conference"
+  },
+  "j387": {
+    "name": "IEEE/ACM International Workshop on Quantum Software Engineering",
+    "type": "conference"
+  },
+  "j388": {
+    "name": "Computing",
+    "type": "journal"
+  },
+  "j389": {
+    "name": "Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation",
+    "type": "conference"
+  },
+  "j390": {
+    "name": "IEEE International Conference on Software Testing, Verification and Validation",
+    "type": "conference"
+  },
+  "j391": {
+    "name": "Proceedings of the Practice and Experience in Advanced Research Computing on Rise of the Machines (learning)",
+    "type": "conference"
+  },
+  "j392": {
+    "name": "ACM SIGAda Ada Letters",
+    "type": "journal"
+  },
+  "j393": {
+    "name": "10th International Conference on Computer and Communication System",
+    "type": "conference"
+  },
+  "j394": {
+    "name": "Future Gener. Comput. Syst.",
+    "type": "journal"
+  },
+  "j395": {
+    "name": "European Conference on Computer Systems",
+    "type": "conference"
+  },
+  "j396": {
+    "name": "Proceedings - International Symposium on Computer Architecture/Proceedings",
+    "type": "conference"
+  },
+  "j397": {
+    "name": "6th International Conference in Electronic Engineering & Information Technology",
+    "type": "conference"
+  },
+  "j398": {
+    "name": "Physics of Fluids",
+    "type": "journal"
+  },
+  "j399": {
+    "name": "International Conference on Electronics, Electrical and Information Engineering",
+    "type": "conference"
+  },
+  "j400": {
+    "name": "AIP Advances",
+    "type": "journal"
+  },
+  "j401": {
+    "name": "Frontiers in Quantum Science and Technology",
+    "type": "journal"
+  },
+  "j402": {
+    "name": "Journal of the American Chemical Society",
+    "type": "journal"
+  },
+  "j403": {
+    "name": "IEEE International Conference on Quantum Artificial Intelligence",
+    "type": "conference"
+  },
+  "j404": {
+    "name": "Conference on Pattern Languages of Programs",
+    "type": "conference"
+  },
+  "j405": {
+    "name": "bioRxiv (Cold Spring Harbor Laboratory)",
+    "type": "journal"
+  },
+  "j406": {
+    "name": "npj Quantum Materials",
+    "type": "journal"
+  },
+  "j407": {
+    "name": "npj Unconventional Computing",
+    "type": "journal"
+  },
+  "j408": {
+    "name": "Physical review. E",
+    "type": "journal"
+  },
+  "j409": {
+    "name": "SciPost Physics",
+    "type": "journal"
+  },
+  "j410": {
+    "name": "Philosophical Transactions of the Royal Society A Mathematical Physical and Engineering Sciences",
+    "type": "journal"
+  },
+  "j411": {
+    "name": "International Conference on Field Programmable Logic and Applications",
+    "type": "conference"
+  },
+  "j412": {
+    "name": "Archives of Computational Methods in Engineering",
+    "type": "journal"
+  },
+  "j413": {
+    "name": "IEEE International Symposium on Circuits and Systems proceedings",
+    "type": "conference"
+  },
+  "j414": {
+    "name": "International Conference on Software Defined Systems",
+    "type": "conference"
+  },
+  "j415": {
+    "name": "Proceedings, IEEE International Conference on Computer Design/Proceedings - IEEE International Conference on Computer Design",
+    "type": "conference"
+  },
+  "j416": {
+    "name": "PRX Life",
+    "type": "journal"
+  },
+  "j417": {
+    "name": "Reports on Progress in Physics",
+    "type": "journal"
+  },
+  "j418": {
+    "name": "Comptes Rendus Physique",
+    "type": "journal"
+  },
+  "j419": {
+    "name": "Information and Software Technology",
+    "type": "journal"
+  },
+  "j420": {
+    "name": "Science of Computer Programming",
+    "type": "journal"
+  },
+  "j421": {
+    "name": "Software Quality Journal",
+    "type": "journal"
+  },
+  "j422": {
+    "name": "IEEE International Conference on Software Analysis, Evolution and Reengineering - Companion",
+    "type": "conference"
+  },
+  "j423": {
+    "name": "K&uuml;nstliche Intell.",
+    "type": "journal"
+  },
+  "j424": {
+    "name": "ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)",
+    "type": "conference"
+  },
+  "j425": {
+    "name": "Future Internet",
+    "type": "journal"
+  },
+  "j426": {
+    "name": "IEEE International Conference on Software Services Engineering",
+    "type": "conference"
+  },
+  "j427": {
+    "name": "International Symposium on Information and Communication Technology",
+    "type": "conference"
+  },
+  "j428": {
+    "name": "SoftwareX",
+    "type": "journal"
+  },
+  "j429": {
+    "name": "Lecture notes in business information processing",
+    "type": "journal"
+  },
+  "j430": {
+    "name": "eNeuro",
+    "type": "journal"
+  },
+  "j431": {
+    "name": "PubMed",
+    "type": "journal"
+  },
+  "j432": {
+    "name": "IEEE/ACM International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+    "type": "conference"
+  },
+  "j433": {
+    "name": "Advances in Education",
+    "type": "journal"
+  },
+  "j434": {
+    "name": "International Journal of Innovative Science and Research Technology",
+    "type": "journal"
+  },
+  "j435": {
+    "name": "Applied Sciences",
+    "type": "journal"
+  },
+  "j436": {
+    "name": "New Astronomy",
+    "type": "journal"
+  },
+  "j437": {
+    "name": "medRxiv",
+    "type": "journal"
+  },
+  "j438": {
+    "name": "Biophysical Journal",
+    "type": "journal"
+  },
+  "j439": {
+    "name": "STAR Protocols",
+    "type": "journal"
+  },
+  "j440": {
+    "name": "Frontiers in Insect Science",
+    "type": "journal"
+  },
+  "j441": {
+    "name": "ACR Open Rheumatology",
+    "type": "journal"
+  },
+  "j442": {
+    "name": "14th International Conference on Electrical and Electronics Engineering",
+    "type": "conference"
+  },
+  "j443": {
+    "name": "International Conference on Computer Theory and Applications",
+    "type": "conference"
+  },
+  "j444": {
+    "name": "Journal of Physics Conference Series",
+    "type": "conference"
+  },
+  "j445": {
+    "name": "Metabolomics",
+    "type": "journal"
+  },
+  "j446": {
+    "name": "International Conference on Computer and Information Technology",
+    "type": "conference"
+  },
+  "j447": {
+    "name": "Behavior Research Methods",
+    "type": "journal"
+  },
+  "j448": {
+    "name": "Nucleic Acids Research",
+    "type": "journal"
+  },
+  "j449": {
+    "name": "Journal of Affective Disorders",
+    "type": "journal"
+  },
+  "j450": {
+    "name": "PLOS Digital Health",
+    "type": "journal"
+  },
+  "j451": {
+    "name": "IEEE International Conference on Software Maintenance and Evolution",
+    "type": "conference"
+  },
+  "j452": {
+    "name": "Journal of Clinical Medicine",
+    "type": "journal"
+  },
+  "j453": {
+    "name": "Proceedings of the 23rd ACM/IEEE International Symposium on Code Generation and Optimization",
+    "type": "conference"
+  },
+  "j454": {
+    "name": "Proceedings of the 33rd ACM International Conference on the Foundations of Software Engineering",
+    "type": "conference"
+  },
+  "j455": {
+    "name": "Journal of Software Evolution and Process",
+    "type": "journal"
+  },
+  "j456": {
+    "name": "Proceedings of the ACM on software engineering.",
+    "type": "conference"
+  },
+  "j457": {
+    "name": "Proceedings of the Institute for System Programming of RAS",
+    "type": "conference"
+  },
+  "j458": {
+    "name": "ACM/IEEE International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)",
+    "type": "conference"
+  },
+  "j459": {
+    "name": "Neurocomputing",
+    "type": "journal"
+  },
+  "j460": {
+    "name": "IEEE/ACM 3rd International Workshop on Quantum Software Engineering",
+    "type": "conference"
+  },
+  "j461": {
+    "name": "Information Technologies and Systems (Інформаційні технології та системи)",
+    "type": "journal"
+  },
+  "j462": {
+    "name": "IEEE/ACM 46th International Conference on Software Engineering: New Ideas and Emerging Results",
+    "type": "conference"
+  },
+  "j463": {
+    "name": "International Conference on Computing Methodologies and Communication",
+    "type": "conference"
+  },
+  "j464": {
+    "name": "Neuro Inspired Computational Elements",
+    "type": "journal"
+  },
+  "j465": {
+    "name": "Neuromorphic Computing and Engineering",
+    "type": "journal"
+  },
+  "j466": {
+    "name": "International Conference on Neuromorphic Systems",
+    "type": "conference"
+  },
+  "j467": {
+    "name": "Frontiers in Neuroscience",
+    "type": "journal"
+  },
+  "j468": {
+    "name": "Frontiers in Neuroinformatics",
+    "type": "journal"
+  },
+  "j469": {
+    "name": "Biologically Inspired Cognitive Architectures",
+    "type": "journal"
+  },
+  "j470": {
+    "name": "IEEE International Conference on Artificial Intelligence Circuits and Systems",
+    "type": "conference"
+  },
+  "j471": {
+    "name": "IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks (WoWMoM)",
+    "type": "conference"
+  },
+  "j472": {
+    "name": "International Joint Conference on Neural Networks",
+    "type": "conference"
+  },
+  "j473": {
+    "name": "Frontiers in Computational Neuroscience",
+    "type": "journal"
+  },
+  "j474": {
+    "name": "IEEE Nordic Circuits and Systems Conference (NorCAS)",
+    "type": "conference"
   }
 }
