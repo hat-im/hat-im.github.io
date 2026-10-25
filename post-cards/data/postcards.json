@@ -687,6 +687,22 @@
       },
       "message": "I wasted my time today going to a meeting that didn't end up happening. Yesterday was our second presentation to the international group and I had to do it and I think it went well. I wonder how your weekend is going. I want to hear from you, I want to reach out. I just don't know how.",
       "postscript": "Did you know that today is the last Pythagorean date of the century (10-24-26)."
+    },
+    {
+      "id": "postcard-44",
+      "enabled": true,
+      "date": "2026-10-25",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Suitor's Side",
+      "color": "terracotta",
+      "subject": "Steadying Stance",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-44.mp4"
+      },
+      "message": "Today a potential suitor for Saba came to meet her, and I went there as well so she would have someone in her corner. It's a tenuous situation, but far from as untenable as some would make it seem like it is. I wonder what this year's gift from your workplace was for Diwali, and how the terranium from last year is doing. Good night. I hope you have a good week ahead.",
+      "postscript": ""
     }
   ]
 }
