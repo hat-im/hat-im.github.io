@@ -719,6 +719,22 @@
       },
       "message": "It's going to be a tough week at work. I hope yours had a better start than mine did. Been ordering books but not really finishing any, hope you've had better luck (if you can call it luck) there. What are your plans for this week?",
       "postscript": "Have you been stitching anything lately?"
+    },
+    {
+      "id": "postcard-46",
+      "enabled": true,
+      "date": "2026-10-27",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Blooming Campus",
+      "color": "bloom-rose",
+      "subject": "Bountiful Bloom",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-46.mp4"
+      },
+      "message": "The amount of work is not letting up this week. The campus is quite beautiful these days as most of the flowers bloom. I hope some of the floral notes make their way to you. Have you been going on walks? I wonder how you are. I hope you know that in mere there is someone always hoping you have a good day.",
+      "postscript": ""
     }
   ]
 }

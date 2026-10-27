@@ -183,6 +183,62 @@
     {
       "name": "biscuit",
       "hex": "#dcc3ac"
+    },
+    {
+      "name": "bloom-rose",
+      "hex": "#f7e1e9"
+    },
+    {
+      "name": "petal-lavender",
+      "hex": "#eee5f5"
+    },
+    {
+      "name": "garden-sage",
+      "hex": "#dde8d5"
+    },
+    {
+      "name": "heather-purple",
+      "hex": "#e6d9f0"
+    },
+    {
+      "name": "dawn-gold",
+      "hex": "#fef4d9"
+    },
+    {
+      "name": "meadow-green",
+      "hex": "#e8f0e2"
+    },
+    {
+      "name": "cloud-grey",
+      "hex": "#ede9e4"
+    },
+    {
+      "name": "breeze-teal",
+      "hex": "#d9ebe8"
+    },
+    {
+      "name": "blossom-blush",
+      "hex": "#f5e9ef"
+    },
+    {
+      "name": "garden-path",
+      "hex": "#e8dfd4"
+    },
+    {
+      "name": "sky-dream",
+      "hex": "#e2ecf5"
+    },
+    {
+      "name": "petal-white",
+      "hex": "#fdfcfb"
+    },
+    {
+      "name": "garden-moss",
+      "hex": "#e0e8d8"
+    },
+    {
+      "name": "sunset-rose",
+      "hex": "#f0d4d9"
     }
   ]
 }
