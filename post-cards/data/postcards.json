@@ -703,6 +703,22 @@
       },
       "message": "Today a potential suitor for Saba came to meet her, and I went there as well so she would have someone in her corner. It's a tenuous situation, but far from as untenable as some would make it seem like it is. I wonder what this year's gift from your workplace was for Diwali, and how the terranium from last year is doing. Good night. I hope you have a good week ahead.",
       "postscript": ""
+    },
+    {
+      "id": "postcard-45",
+      "enabled": true,
+      "date": "2026-10-26",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Weary Week",
+      "color": "aqua-mint",
+      "subject": "Work's Wonder",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-45.mp4"
+      },
+      "message": "It's going to be a tough week at work. I hope yours had a better start than mine did. Been ordering books but not really finishing any, hope you've had better luck (if you can call it luck) there. What are your plans for this week?",
+      "postscript": "Have you been stitching anything lately?"
     }
   ]
 }
