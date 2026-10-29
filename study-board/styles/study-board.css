@@ -13,6 +13,7 @@
 .topbar{max-width:1800px;margin:0 auto;padding:22px clamp(16px, 2.5vw, 24px) 12px;display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:20px;}
 .topbar h1{margin:0 0 3px;font-size:20px;font-weight:700;}
 .topbar .sub{margin:0;font-size:13px;color:var(--text-secondary);}
+.topbar > div{flex:1 1 0;min-width:0;}
 
 .reset-btn{
   flex:none;
