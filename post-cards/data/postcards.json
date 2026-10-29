@@ -751,6 +751,22 @@
       },
       "message": "Sometimes I wish I wasn't so elitist about coding agents, but the majority of generated code I see is just so smelly that I can't help but feel safe from a layoff. I wonder how your quarterly review went and if you're satisfied with your direction. I hope you're lined up for a promotion because you do more than a product designer should. My day was pretty unproductive. I hope that yours was better and that even if it wasn't, that you're giving yourself more grace for it.",
       "postscript": "I hope you're sleeping well. Good night."
+    },
+    {
+      "id": "postcard-48",
+      "enabled": true,
+      "date": "2026-10-29",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Behind Barriers",
+      "color": "slate-mist",
+      "subject": "Barely Breathing",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-48.mp4"
+      },
+      "message": "I am not doing okay, actually. I know you think I might be, but I'm not okay. I hope you are, and I hope you talk to me.",
+      "postscript": ""
     }
   ]
 }
