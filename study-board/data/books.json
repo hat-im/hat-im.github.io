@@ -1,6 +1,20 @@
 {
-  "bookOrder": ["A", "D", "K", "B", "M", "N", "S", "W", "H"],
+  "bookOrder": ["A", "T", "X", "D", "K", "B", "M", "N", "S", "W", "H"],
   "books": {
+    "T": {
+      "name": "Pierce",
+      "title": "Types and Programming Languages",
+      "color": "#7d6b4f",
+      "meta": "The MIT Press &middot; 2002",
+      "desc": "A comprehensive introduction to type systems, building from the untyped lambda-calculus through simple types, subtyping, recursive types, polymorphism, and higher-order systems, with ML implementations of the type checkers along the way."
+    },
+    "X": {
+      "name": "Pierce (ed.)",
+      "title": "Advanced Topics in Types and Programming Languages",
+      "color": "#5f5f9c",
+      "meta": "The MIT Press &middot; 2004",
+      "desc": "A sequel to Types and Programming Languages with chapters by experts on each topic: precise type analyses, types for low-level languages, typed reasoning about programs, ML-style module systems, and ML type inference."
+    },
     "A": {
       "name": "Aho, Lam, Sethi & Ullman",
       "title": "Compilers: Principles, Techniques, and Tools",
