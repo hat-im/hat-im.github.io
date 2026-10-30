@@ -157,7 +157,7 @@ def layout_text_zones(data, config, font_normal, font_postscript):
         msg_top += config["SUBJECT_GAP"]
 
     msg_bottom = card_h - pad - config["MESSAGE_BOTTOM_MARGIN"]
-    line_height = config["MESSAGE_LINE_HEIGHT"] + data.get("msg_font_shift", 0)
+    line_height = config["MESSAGE_LINE_HEIGHT"]
     reserve_for_signature = 1 if data.get("from") else 0
 
     postscript_lines = []
@@ -214,12 +214,8 @@ def run_postcard_length_check():
     for pc in postcards:
         data = {"subject": pc.get("subject"), "message": pc.get("message", ""),
                 "postscript": pc.get("postscript"), "from": pc.get("from")}
-        msg_font = font_normal
-        if pc.get("messageFontSize"):
-            data["msg_font_shift"] = pc["messageFontSize"] - config["MESSAGE_FONT_SIZE"]
-            msg_font = ImageFont.truetype(str(font_path), pc["messageFontSize"])
         truncated, ps_line_count, ps_overflow, full_lines, max_lines = layout_text_zones(
-            data, config, msg_font, font_postscript
+            data, config, font_normal, font_postscript
         )
 
         if truncated:
