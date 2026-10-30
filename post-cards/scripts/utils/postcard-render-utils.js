@@ -122,13 +122,15 @@
       msgTop += Config.SUBJECT_GAP;
     }
 
-    var normalMsgFont = Config.MESSAGE_FONT_SIZE + 'px ' + Config.HANDWRITTEN_FONT;
-    var bookendMsgFont = Config.MESSAGE_BOOKEND_FONT_SIZE + 'px ' + Config.HANDWRITTEN_FONT;
+    // Optional per-card override; the bookend size and line height shift with it.
+    var msgFontShift = data.messageFontSize ? data.messageFontSize - Config.MESSAGE_FONT_SIZE : 0;
+    var normalMsgFont = (Config.MESSAGE_FONT_SIZE + msgFontShift) + 'px ' + Config.HANDWRITTEN_FONT;
+    var bookendMsgFont = (Config.MESSAGE_BOOKEND_FONT_SIZE + msgFontShift) + 'px ' + Config.HANDWRITTEN_FONT;
     var postscriptFont = 'italic ' + Config.POSTSCRIPT_FONT_SIZE + 'px ' + Config.HANDWRITTEN_FONT;
     var postscriptLineHeight = Config.POSTSCRIPT_LINE_HEIGHT;
     ctx.font = normalMsgFont;
     var msgBottom = CARD_H - PAD - Config.MESSAGE_BOTTOM_MARGIN;
-    var lineHeight = Config.MESSAGE_LINE_HEIGHT;
+    var lineHeight = Config.MESSAGE_LINE_HEIGHT + msgFontShift;
     var reserveForSignature = data.from ? 1 : 0;
 
     var postscriptLines = [];

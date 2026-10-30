@@ -87,6 +87,7 @@
       subject: pc.subject,
       message: pc.message,
       postscript: pc.postscript,
+      messageFontSize: pc.messageFontSize,
       color: pc.color,
       font: pc.font,
       stampIndex: pc._stampIndex

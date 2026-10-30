@@ -53,6 +53,10 @@
             "type": "string",
             "description": "An id from fonts.json. Not currently used by any entry; the renderer defaults if omitted."
           },
+          "messageFontSize": {
+            "type": "integer",
+            "description": "Smaller message size for a card whose letter would not otherwise fit; line height and first-line size shift with it. Omitted = MESSAGE_FONT_SIZE."
+          },
           "subject": {
             "type": "string",
             "description": "Typed header shown above the message. May be empty."
