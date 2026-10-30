@@ -767,6 +767,23 @@
       },
       "message": "I am not doing okay, actually. I know you think I might be, but I'm not okay. I hope you are, and I hope you talk to me.",
       "postscript": ""
+    },
+    {
+      "id": "postcard-49",
+      "enabled": true,
+      "date": "2026-10-30",
+      "from": "Hat",
+      "to": "Sam",
+      "location": "Watchful Whiskers",
+      "color": "dawn-gold",
+      "messageFontSize": 17,
+      "subject": "Missing Melodies",
+      "media": {
+        "type": "video",
+        "src": "/post-cards/videos/postcard-49.mp4"
+      },
+      "message": "I miss you, that's the truth of it. I miss the way you laugh when you do something smart. I miss the way your hair moves when you dance and walk. I miss the notes you sing, gliding through the air like butterflies in a field. I miss looking into your deep black eyes. I miss all of you, even the parts that annoyed me. I can still smell your hair. Please don't let these be lost forever. Please come back to me, forgive me. I know I have done wrong and I have lived every day wishing I could undo it, but I can't. But I want to make it alright. Please let me try. I don't know how to try, but I want to give it my all.",
+      "postscript": "You don't have to answer. If you aren't ready, I understand."
     }
   ]
 }
